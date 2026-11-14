@@ -241,3 +241,171 @@ def fit_physical_model(train: pd.DataFrame, intervals: List[pd.DataFrame], weigh
             if not improved:
                 break
     return PhysicalModel(rate, reference, coef.tolist(), gap_policy, best)
+
+
+# ---------------------------------------------------------------------------
+# Gradient-boosting and ensemble adapters (additive — do not alter M0 / M1)
+# ---------------------------------------------------------------------------
+
+class RidgeCorrosionModel(RegularizedCorrosionRegression):
+    """M2: L2-regularised linear model using all registered ML features.
+
+    Thin adapter over RegularizedCorrosionRegression so that experiment.py
+    can import a stable public name without caring about the internal class.
+    Feature columns are resolved at fit-time to those present in the frame.
+    """
+
+    def __init__(self, alpha: float = 10.0, weighting: str = 'W1'):
+        # Feature list resolved lazily at fit() to avoid circular-import at
+        # module load; stored on instance after first fit.
+        super().__init__(feature_cols=[], alpha=alpha, weighting=weighting, name='M2_Ridge')
+
+    def fit(self, train: pd.DataFrame):
+        from .features import ML_FEATURE_COLUMNS
+        self.feature_cols = [c for c in ML_FEATURE_COLUMNS if c in train.columns]
+        return super().fit(train)
+
+
+class LightGBMCorrosionModel:
+    """M3: Gradient-boosted trees (LightGBM) predicting per-segment corrosion rate."""
+
+    def __init__(self, weighting: str = 'W1', n_estimators: int = 200,
+                 learning_rate: float = 0.05, max_depth: int = 4,
+                 min_child_samples: int = 10, name: str = 'M3_LightGBM'):
+        self.weighting = weighting
+        self.name = name
+        self.n_estimators = n_estimators
+        self.learning_rate = learning_rate
+        self.max_depth = max_depth
+        self.min_child_samples = min_child_samples
+        self.base_rate_mm_year: float = 0.0
+        self._model = None
+        self._feature_cols: List[str] = []
+
+    def fit(self, train: pd.DataFrame):
+        import lightgbm as lgb
+        from .features import ML_FEATURE_COLUMNS
+        weights = sample_weights(train, self.weighting)
+        years = train.horizon_years.to_numpy(float)
+        loss = (train.h0_mm - train.min_residual_thickness_mm).to_numpy(float)
+        target_rate = np.clip(loss / years, 0.0, None)
+        self.base_rate_mm_year = float(np.average(target_rate, weights=weights))
+        self._feature_cols = [c for c in ML_FEATURE_COLUMNS if c in train.columns]
+        X = train[self._feature_cols].fillna(0.0).to_numpy(float)
+        self._model = lgb.LGBMRegressor(
+            n_estimators=self.n_estimators,
+            learning_rate=self.learning_rate,
+            max_depth=self.max_depth,
+            min_child_samples=self.min_child_samples,
+            random_state=42,
+            verbose=-1,
+        )
+        self._model.fit(X, target_rate, sample_weight=weights)
+        return self
+
+    def predict_rate(self, frame: pd.DataFrame) -> np.ndarray:
+        if self._model is None:
+            return np.zeros(len(frame))
+        X = frame[self._feature_cols].fillna(0.0).to_numpy(float)
+        return np.clip(self._model.predict(X), 0.0, None)
+
+    def predict(self, frame: pd.DataFrame) -> np.ndarray:
+        pred_rate = self.predict_rate(frame)
+        h0 = frame.h0_mm.to_numpy(float)
+        horizon = frame.horizon_years.to_numpy(float)
+        return np.clip(h0 - pred_rate * horizon, 0.0, h0)
+
+    def metadata(self) -> Dict[str, Any]:
+        return dict(name=self.name, model=self.name, weighting=self.weighting,
+                    n_estimators=self.n_estimators, learning_rate=self.learning_rate,
+                    max_depth=self.max_depth, min_child_samples=self.min_child_samples,
+                    base_rate_mm_year=self.base_rate_mm_year, features=self._feature_cols)
+
+
+class CatBoostCorrosionModel:
+    """M4: Gradient-boosted trees (CatBoost) predicting per-segment corrosion rate."""
+
+    def __init__(self, weighting: str = 'W1', iterations: int = 200,
+                 learning_rate: float = 0.05, depth: int = 4,
+                 name: str = 'M4_CatBoost'):
+        self.weighting = weighting
+        self.name = name
+        self.iterations = iterations
+        self.learning_rate = learning_rate
+        self.depth = depth
+        self.base_rate_mm_year: float = 0.0
+        self._model = None
+        self._feature_cols: List[str] = []
+
+    def fit(self, train: pd.DataFrame):
+        from catboost import CatBoostRegressor
+        from .features import ML_FEATURE_COLUMNS
+        weights = sample_weights(train, self.weighting)
+        years = train.horizon_years.to_numpy(float)
+        loss = (train.h0_mm - train.min_residual_thickness_mm).to_numpy(float)
+        target_rate = np.clip(loss / years, 0.0, None)
+        self.base_rate_mm_year = float(np.average(target_rate, weights=weights))
+        self._feature_cols = [c for c in ML_FEATURE_COLUMNS if c in train.columns]
+        X = train[self._feature_cols].fillna(0.0).to_numpy(float)
+        self._model = CatBoostRegressor(
+            iterations=self.iterations,
+            learning_rate=self.learning_rate,
+            depth=self.depth,
+            random_seed=42,
+            verbose=False,
+        )
+        self._model.fit(X, target_rate, sample_weight=weights)
+        return self
+
+    def predict_rate(self, frame: pd.DataFrame) -> np.ndarray:
+        if self._model is None:
+            return np.zeros(len(frame))
+        X = frame[self._feature_cols].fillna(0.0).to_numpy(float)
+        return np.clip(self._model.predict(X), 0.0, None)
+
+    def predict(self, frame: pd.DataFrame) -> np.ndarray:
+        pred_rate = self.predict_rate(frame)
+        h0 = frame.h0_mm.to_numpy(float)
+        horizon = frame.horizon_years.to_numpy(float)
+        return np.clip(h0 - pred_rate * horizon, 0.0, h0)
+
+    def metadata(self) -> Dict[str, Any]:
+        return dict(name=self.name, model=self.name, weighting=self.weighting,
+                    iterations=self.iterations, learning_rate=self.learning_rate,
+                    depth=self.depth, base_rate_mm_year=self.base_rate_mm_year,
+                    features=self._feature_cols)
+
+
+class EnsembleCorrosionModel:
+    """M5: Weighted blend of a base model and a gradient-boosting model.
+
+    Blending is done at the *rate* level so that the physical clip (0 ≤ pred ≤ h0)
+    is applied once to the final combined rate, not separately to each member.
+    """
+
+    def __init__(self, base_model, gb_model, gb_weight: float = 0.5):
+        self.base_model = base_model
+        self.gb_model = gb_model
+        self.gb_weight = float(gb_weight)
+        self.name = 'M5_Ensemble'
+        self.weighting = getattr(base_model, 'weighting', 'W1')
+
+    def predict_rate(self, frame: pd.DataFrame) -> np.ndarray:
+        if hasattr(self.base_model, 'predict_rate'):
+            base_rate = self.base_model.predict_rate(frame)
+        else:
+            base_rate = np.full(len(frame), getattr(self.base_model, 'rate_mm_year', 0.0))
+        gb_rate = self.gb_model.predict_rate(frame)
+        return np.clip((1.0 - self.gb_weight) * base_rate + self.gb_weight * gb_rate, 0.0, None)
+
+    def predict(self, frame: pd.DataFrame) -> np.ndarray:
+        pred_rate = self.predict_rate(frame)
+        h0 = frame.h0_mm.to_numpy(float)
+        horizon = frame.horizon_years.to_numpy(float)
+        return np.clip(h0 - pred_rate * horizon, 0.0, h0)
+
+    def metadata(self) -> Dict[str, Any]:
+        return dict(name=self.name, model=self.name, weighting=self.weighting,
+                    gb_weight=self.gb_weight,
+                    base_model=getattr(self.base_model, 'name', str(self.base_model)),
+                    gb_model=getattr(self.gb_model, 'name', str(self.gb_model)))

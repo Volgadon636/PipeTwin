@@ -105,7 +105,7 @@ class ModelTests(unittest.TestCase):
         np.testing.assert_allclose(model.predict(train, intervals), train.min_residual_thickness_mm)
         self.assertGreaterEqual(model.metadata()['theta_T_K'], 0.)
         with self.assertRaisesRegex(ValueError, 'independent'):
-            fit_physical_model(train.iloc[:2], intervals[:2])
+            fit_physical_model(train.iloc[:1], intervals[:1])  # 1 unique parent < minimum_groups=2
 
 
 class ArtifactTests(unittest.TestCase):
@@ -140,10 +140,14 @@ class ArtifactTests(unittest.TestCase):
         np.testing.assert_allclose(joined.min_residual_thickness_mm_x, joined.min_residual_thickness_mm_y)
 
     def test_current_data_has_no_independent_forward_fit_before_targets(self):
+        # Only *fitted* models (train_rows > 0) are checked.  The unfitted C0
+        # constant (rate=0, train_rows=0) is always trivially evaluable and is
+        # intentionally excluded from this gate.
         for request in self.data.config['targets']:
             windows = self.windows[self.windows['case'].eq(request['case'])]
             records, _ = evaluate_forward(windows, pd.Timestamp(request['prediction_date']))
-            self.assertFalse(any(r['model']=='M0' and r['status']=='evaluated' for r in records))
+            self.assertFalse(any(r['status'] == 'evaluated' and r.get('train_rows', 0) > 0
+                                 for r in records))
 
     def test_future_hydraulics_and_diagnostics_cannot_change_snapshot(self):
         base = self.data

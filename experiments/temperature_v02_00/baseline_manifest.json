@@ -1,0 +1,82 @@
+{
+  "stage": "00_baseline_reproduction",
+  "created_at": "2026-11-15T00:20:10+03:00",
+  "git": {
+    "branch": "model_v02",
+    "head_sha": "2efd775765bbfafa96330b32aa202b70d23466ec",
+    "status": "clean (no uncommitted changes)"
+  },
+  "entrypoint_status": {
+    "experiment.py_import": "FAILED",
+    "error": "ImportError: cannot import name 'enrich_segment_features' from 'src.ml.features'",
+    "missing_names_in_features_py": [
+      "enrich_segment_features",
+      "ML_FEATURE_COLUMNS"
+    ],
+    "missing_classes_in_models_py": [
+      "RidgeCorrosionModel",
+      "LightGBMCorrosionModel",
+      "CatBoostCorrosionModel",
+      "EnsembleCorrosionModel"
+    ],
+    "comparison_py_imports_ok": true,
+    "comparison_py_uses": [
+      "RegularizedCorrosionRegression",
+      "ConstrainedTreeCorrosionModel",
+      "REGISTRY"
+    ]
+  },
+  "tests": {
+    "ran": 17,
+    "passed": 15,
+    "failed": 2,
+    "failures": [
+      {
+        "test": "test_current_data_has_no_independent_forward_fit_before_targets",
+        "class": "ArtifactTests",
+        "error": "AssertionError: True is not false",
+        "analysis": "evaluate_forward now finds M0 evaluated folds before target cutoffs; test expectation may be stale after additional training windows were added"
+      },
+      {
+        "test": "test_physics_fit_recovers_constant_synthetic_rate_and_gates_groups",
+        "class": "ModelTests",
+        "error": "AssertionError: ValueError not raised",
+        "analysis": "fit_physical_model minimum_groups=2 gate check not raising for 2 unique parents in the 2-row slice (train.iloc[:2] has main_pipeline_id A,B which equals 2 >= 2)"
+      }
+    ]
+  },
+  "existing_results": {
+    "ml_baseline/result.csv": {
+      "sha256": "ef1c4e4e33217a5c821a94739f43288942f99e351c05ee454305eae9e3644394",
+      "rows": 2000,
+      "columns": ["id", "segment_id", "thickness_pred"]
+    },
+    "m0_baseline_reference/result.csv": {
+      "sha256": "ef1c4e4e33217a5c821a94739f43288942f99e351c05ee454305eae9e3644394",
+      "note": "identical to ml_baseline (both are M0 forecasts)"
+    }
+  },
+  "ml_code_sha256": {
+    "__init__.py": "c8080173a7916d41892ea671a60f69dce94d194a8149788d177b95d36df21990",
+    "audit.py": "6861779d82c377166236713de01772afa7e84640a85e9782689658afe535fb09",
+    "comparison.py": "4bea393ef2269dcab67998968e0be9875e891864e0fea1a6dbb5d5e799cadecc",
+    "data.py": "43698ae50f901b000d740acf1486a9a56f8426d14ea0cc08daf17a71ae2dd0de",
+    "evaluation.py": "1e1bc9d8ccd183556a47c2d644f1f1f8a28782d72c5e2ed9a60385457d46e45d",
+    "experiment.py": "af763d4950f668df1c22f9665b94cb2626210196f4ec7e8726f7226cf9009dfa",
+    "exposure.py": "fed8a7128d0ab6a413a968f1023df10e1ced8c0a0c8a8fc33c11038e448e87a9",
+    "features.py": "c9c09bcfc7d5c1f67f153a79d0d050191b6bf1956677a4a6c46223b32200a145",
+    "models.py": "5898c6b3144fd32411e9ff41db900ffba7132d6bf0ff812e28194176b56f51b0",
+    "submission.py": "bb83508c6e8dec098127c0dc1d45828e4df1964b521dcf1db51026e2402569b2",
+    "windows.py": "03aad916b783015b10e30e1300dedec08fd9bdd8129f0abf17e14626983f05fd"
+  },
+  "dependencies": {
+    "requirements_ml_txt": "numpy>=1.26.0, pandas>=2.2.0, scipy>=1.12.0, scikit-learn>=1.4.0, lightgbm>=4.0.0, catboost>=1.2.0"
+  },
+  "protected_artifacts": [
+    "processed/",
+    "data/",
+    "configs/preprocessing.json",
+    "experiments/ml_baseline/result.csv",
+    "experiments/m0_baseline_reference/result.csv"
+  ]
+}

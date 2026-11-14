@@ -374,3 +374,22 @@ REGISTRY = FeatureRegistry()
 def enrich_features_with_audit(df: pd.DataFrame, feature_names: Optional[List[str]] = None) -> Tuple[pd.DataFrame, List[FeatureReport]]:
     """Convenience wrapper for feature enrichment with auditable metadata."""
     return REGISTRY.apply(df, feature_names)
+
+
+# ---------------------------------------------------------------------------
+# Convenience API for experiment.py (additive — does not alter existing code)
+# ---------------------------------------------------------------------------
+
+#: Ordered list of all feature names registered in the default registry.
+ML_FEATURE_COLUMNS: List[str] = REGISTRY.list_features()
+
+
+def enrich_segment_features(df: pd.DataFrame) -> pd.DataFrame:
+    """Compute all registered ML features and attach them to *df*.
+
+    Thin wrapper around REGISTRY.apply so that experiment.py has a single
+    call-site.  The audit report is discarded here; use
+    ``enrich_features_with_audit`` when coverage metadata is needed.
+    """
+    enriched, _ = REGISTRY.apply(df)
+    return enriched
