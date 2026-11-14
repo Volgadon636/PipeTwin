@@ -7,7 +7,35 @@
 | 1250022871 | 01.12.2023 | Между ВТД | 525 |
 | 1250009583 | 01.07.2022 | Без истории ВТД/УЗТ | 1475 |
 
-Это этап подготовки данных. Модель, метрики прогноза и `result.csv` пока не реализованы. `processed/target_features.csv` содержит признаки для всех 2000 целевых сегментов, а не предсказания толщины.
+Предобработка описана ниже. Добавлен отдельный воспроизводимый ML-baseline в `src/ml/`; запуск и ограничения приведены в следующем разделе. `processed/target_features.csv` содержит признаки для всех 2000 целевых сегментов, а не предсказания толщины.
+
+## ML baseline (English)
+
+The first forecasting implementation reuses the published artifacts and existing
+`build_features_asof` API. It reconstructs historical windows, fits separate
+nonnegative constant-rate baselines for both cases, accounts for exposure gaps,
+and validates the exact submission keys and physical/assumed bounds.
+
+```bash
+python -m src.ml.experiment --output-root experiments/ml_baseline
+python -m unittest discover -s tests -p test_ml.py -v
+```
+
+For ML-only execution from the checked-in CSVs, use Python 3.12 and
+`pip install -r requirements-ml.txt` in a separate environment. Full raw-data
+preprocessing still uses the original `requirements.txt` and commands below.
+
+Outputs include `experiments/ml_baseline/result.csv` (2,000 rows), candidate
+forecasts, source audit, historical windows, metrics, risk ranks and a run manifest.
+The [model card](docs/ml_model_card.md) and [run report](experiments/ml_baseline/report.md)
+explain assumptions and test results.
+
+**Status: provisional baseline.** There are no eligible independent forward-time
+fitted-model validation folds before either production cutoff. The cold-start
+baseline is constant along the pipe and cannot establish spatial risk ranking.
+The nonlinear physical model is implemented and synthetically tested, but gated
+off because independent training/validation evidence is insufficient. No hybrid
+accuracy or calibrated confidence intervals are claimed.
 
 ## Запуск
 

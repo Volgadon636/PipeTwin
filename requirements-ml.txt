@@ -1,0 +1,4 @@
+# ML-only execution from the checked-in, manifest-verified CSV artifacts.
+# Tested with Python 3.12.14. Full preprocessing still uses requirements.txt.
+numpy==2.3.5
+pandas==2.2.3
