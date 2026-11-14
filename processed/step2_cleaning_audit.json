@@ -1,0 +1,101 @@
+{
+  "passport": {
+    "total_pipes": 16,
+    "pipe_lengths_m": {
+      "1250013653": 638.4,
+      "1250013655": 545.2,
+      "1250022875": 958.0999999999999,
+      "1250022876": 524.1,
+      "1250013657": 1592.1000000000001,
+      "1250009490": 44.699999999999996,
+      "1250022871": 5248.400000000001,
+      "1250011604": 493.4,
+      "1250028931": 1034.7,
+      "1250028932": 4450.8,
+      "1250028933": 377.7,
+      "1250028934": 7252.0,
+      "1250028935": 3497.0,
+      "1250009583": 14745.1,
+      "1250009584": 5073.9,
+      "1250009587": 129.1
+    },
+    "nominal_thicknesses_mm": {
+      "1250013653": 8.0,
+      "1250013655": 8.0,
+      "1250022875": 8.0,
+      "1250022876": 8.0,
+      "1250013657": 8.0,
+      "1250009490": 8.0,
+      "1250022871": 8.0,
+      "1250011604": 8.0,
+      "1250028931": 6.0,
+      "1250028932": 6.0,
+      "1250028933": 6.0,
+      "1250028934": 6.0,
+      "1250028935": 6.0,
+      "1250009583": 4.5,
+      "1250009584": 6.0,
+      "1250009587": 6.0
+    },
+    "status": "Validated without changes (16 sections, 100% consistent lengths and thicknesses)"
+  },
+  "profile": {
+    "initial_rows": 20218,
+    "dropped_duplicates": 38,
+    "overshoot_count": 0,
+    "final_rows": 20180,
+    "status": "Removed 38 duplicate coordinate rows, preserved unique points"
+  },
+  "vtd": {
+    "initial_rows": 48291,
+    "clipped_negative_distances_count": 4,
+    "clipped_negative_samples": [
+      {
+        "id": 1250011604,
+        "distance": -0.25200000000040745,
+        "defect_depth_pct": 14.5,
+        "feature_description": "Коррозия"
+      },
+      {
+        "id": 1250011604,
+        "distance": -0.125,
+        "defect_depth_pct": 17.75,
+        "feature_description": "Коррозия"
+      },
+      {
+        "id": 1250011604,
+        "distance": -0.09500000000025466,
+        "defect_depth_pct": 15.88,
+        "feature_description": "Коррозия"
+      },
+      {
+        "id": 1250011604,
+        "distance": -0.11157252451448585,
+        "defect_depth_pct": 18.0,
+        "feature_description": "Коррозия"
+      }
+    ],
+    "excluded_overshoot_count": 244,
+    "excluded_overshoot_by_pipe": {
+      "1250011604": 220,
+      "1250013655": 24
+    },
+    "final_rows": 48047,
+    "status": "Clipped 4 negative distances to 0.0m; filtered 244 defects beyond pipe length"
+  },
+  "uzt": {
+    "initial_rows": 67,
+    "final_rows": 67,
+    "status": "Validated and kept intact (67 measurements across 3 reinforced control locations)"
+  },
+  "regime": {
+    "initial_rows": 495,
+    "final_rows": 495,
+    "status": "Validated and kept intact (495 coupon corrosion monitoring records)"
+  },
+  "tech_mode": {
+    "initial_rows": 39052,
+    "final_rows": 39052,
+    "status": "Validated and kept intact (39,052 daily hydraulic computation records)"
+  }
+}
