@@ -62,7 +62,10 @@ def save_table(df, stem):
 
 
 def sha256(path):
-    return hashlib.sha256(Path(path).read_bytes()).hexdigest()
+    data = Path(path).read_bytes()
+    if str(path).lower().endswith(('.csv', '.json', '.md', '.txt')):
+        data = data.replace(b'\r\n', b'\n')
+    return hashlib.sha256(data).hexdigest()
 
 
 def publish_file(source, destination):

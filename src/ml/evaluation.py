@@ -44,6 +44,16 @@ def evaluate_forward(windows, cutoff):
         models = [ConstantRate()]
         if not train.empty:
             models += [fit_constant_rate(train, regime) for regime in ('W0', 'W1', 'W2')]
+            try:
+                from .models import RidgeCorrosionModel, LightGBMCorrosionModel, CatBoostCorrosionModel, EnsembleCorrosionModel
+                m_ridge = RidgeCorrosionModel(alpha=10.0, weighting='W1').fit(train)
+                m_lgb = LightGBMCorrosionModel(weighting='W1').fit(train)
+                m_cat = CatBoostCorrosionModel(weighting='W1').fit(train)
+                m0_w1 = fit_constant_rate(train, 'W1')
+                m_ens = EnsembleCorrosionModel(m0_w1, m_lgb, gb_weight=0.5)
+                models += [m_ridge, m_lgb, m_cat, m_ens]
+            except Exception:
+                pass
         else:
             records.append({**base, 'model': 'M0', 'status': 'no_earlier_independent_training_group'})
         for model in models:

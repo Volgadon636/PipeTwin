@@ -44,6 +44,7 @@ htmlcov/
 
 # Logs & scratch
 *.log
+catboost_info/
 scratch/
 step1_summary.json
 

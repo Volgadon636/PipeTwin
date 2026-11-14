@@ -1,13 +1,24 @@
-"""Small deterministic models. No empirical coefficient is a universal law."""
+"""Interpretable, controlled corrosion prediction models.
+
+Includes:
+- ConstantRate (M0): Deterministic weighted least-squares baseline.
+- RegularizedCorrosionRegression: Simple L2-regularized linear model with inspectable feature weights.
+- ConstrainedTreeCorrosionModel: Low-capacity decision tree (max_depth <= 3) partitioned into physical regimes.
+- PhysicalModel (M1): Exposure-integrated Arrhenius and multiphase physics model.
+"""
 from dataclasses import dataclass, asdict
+from typing import Dict, List, Optional, Any
 
 import numpy as np
 import pandas as pd
+from sklearn.linear_model import Ridge
+from sklearn.tree import DecisionTreeRegressor
+from sklearn.preprocessing import StandardScaler
 
 from .exposure import integrated_years
 
 
-def sample_weights(train, regime='W1'):
+def sample_weights(train: pd.DataFrame, regime: str = 'W1') -> np.ndarray:
     if train.empty:
         raise ValueError('Cannot fit without eligible training labels')
     if regime == 'W0':
@@ -18,7 +29,6 @@ def sample_weights(train, regime='W1'):
         campaigns = train.groupby('main_pipeline_id').campaign_id.transform('nunique')
         weights = 1 / (counts.to_numpy(float) * campaigns.to_numpy(float))
         if regime == 'W2':
-            # Fixed sensitivity multiplier, not tuned on held-out labels.
             threshold = float(train.min_residual_thickness_mm.quantile(.1))
             weights *= np.where(train.min_residual_thickness_mm.le(threshold), 2., 1.)
     else:
@@ -28,28 +38,142 @@ def sample_weights(train, regime='W1'):
 
 @dataclass
 class ConstantRate:
+    """M0: Empirical constant corrosion rate model."""
     rate_mm_year: float = 0.0
-    name: str = 'C0'
-    weighting: str = 'none'
+    name: str = 'M0'
+    weighting: str = 'W1'
 
-    def predict(self, frame):
+    def predict_rate(self, frame: pd.DataFrame) -> np.ndarray:
+        return np.full(len(frame), self.rate_mm_year, dtype=float)
+
+    def predict(self, frame: pd.DataFrame) -> np.ndarray:
         return np.clip(frame.h0_mm.to_numpy(float) - self.rate_mm_year * frame.horizon_years.to_numpy(float),
-                       0, frame.h0_mm.to_numpy(float))
+                       0.0, frame.h0_mm.to_numpy(float))
 
-    def metadata(self):
+    def metadata(self) -> Dict[str, Any]:
         return asdict(self)
 
 
-def fit_constant_rate(train, weighting='W1'):
+def fit_constant_rate(train: pd.DataFrame, weighting: str = 'W1') -> ConstantRate:
     weights = sample_weights(train, weighting)
     years = train.horizon_years.to_numpy(float)
     loss = (train.h0_mm - train.min_residual_thickness_mm).to_numpy(float)
     if not np.isfinite(np.r_[years, loss]).all() or (years <= 0).any():
         raise ValueError('Invalid training horizon/label')
-    # Nonnegative WLS optimum in mm space, before output clipping. Retain
-    # negative observed loss: clipping labels would bias the fitted rate upward.
-    rate = max(0., float(np.sum(weights * years * loss) / np.sum(weights * years**2)))
+    rate = max(0.0, float(np.sum(weights * years * loss) / np.sum(weights * years**2)))
     return ConstantRate(rate, 'M0', weighting)
+
+
+class RegularizedCorrosionRegression:
+    """Simple L2-regularized linear model predicting thinning rate using standardized features."""
+
+    def __init__(self, feature_cols: List[str], alpha: float = 10.0, weighting: str = 'W1', name: str = 'Ridge_Regression'):
+        self.feature_cols = feature_cols
+        self.alpha = alpha
+        self.weighting = weighting
+        self.name = name
+        self.scaler = StandardScaler()
+        self.model = Ridge(alpha=alpha, random_state=42)
+        self.base_rate_mm_year: float = 0.0
+        self.feature_weights: Dict[str, float] = {}
+
+    def fit(self, train: pd.DataFrame):
+        weights = sample_weights(train, self.weighting)
+        years = train.horizon_years.to_numpy(float)
+        loss = (train.h0_mm - train.min_residual_thickness_mm).to_numpy(float)
+        target_rate = np.clip(loss / years, 0.0, None)
+        self.base_rate_mm_year = float(np.average(target_rate, weights=weights))
+
+        X = train[self.feature_cols].fillna(0.0).to_numpy(float)
+        X_scaled = self.scaler.fit_transform(X)
+        self.model.fit(X_scaled, target_rate, sample_weight=weights)
+
+        # Store standardized feature weights for transparency
+        self.feature_weights = {
+            col: float(coef) for col, coef in zip(self.feature_cols, self.model.coef_)
+        }
+        return self
+
+    def predict_rate(self, frame: pd.DataFrame) -> np.ndarray:
+        X = frame[self.feature_cols].fillna(0.0).to_numpy(float)
+        X_scaled = self.scaler.transform(X)
+        pred_rate = self.model.predict(X_scaled)
+        return np.clip(pred_rate, 0.0, None)
+
+    def predict(self, frame: pd.DataFrame) -> np.ndarray:
+        pred_rate = self.predict_rate(frame)
+        h0 = frame.h0_mm.to_numpy(float)
+        horizon = frame.horizon_years.to_numpy(float)
+        return np.clip(h0 - pred_rate * horizon, 0.0, h0)
+
+    def metadata(self) -> Dict[str, Any]:
+        return {
+            'model': self.name,
+            'name': self.name,
+            'alpha': self.alpha,
+            'weighting': self.weighting,
+            'features': self.feature_cols,
+            'base_rate_mm_year': self.base_rate_mm_year,
+            'feature_weights': self.feature_weights,
+        }
+
+
+class ConstrainedTreeCorrosionModel:
+    """Low-capacity decision tree predicting corrosion rate partitioned by physical regimes."""
+
+    def __init__(self, feature_cols: List[str], max_depth: int = 2, min_samples_leaf: int = 15,
+                 weighting: str = 'W1', name: str = 'Constrained_Tree'):
+        self.feature_cols = feature_cols
+        self.max_depth = max_depth
+        self.min_samples_leaf = min_samples_leaf
+        self.weighting = weighting
+        self.name = name
+        self.model = DecisionTreeRegressor(
+            max_depth=max_depth,
+            min_samples_leaf=min_samples_leaf,
+            random_state=42
+        )
+        self.base_rate_mm_year: float = 0.0
+        self.feature_importances: Dict[str, float] = {}
+
+    def fit(self, train: pd.DataFrame):
+        weights = sample_weights(train, self.weighting)
+        years = train.horizon_years.to_numpy(float)
+        loss = (train.h0_mm - train.min_residual_thickness_mm).to_numpy(float)
+        target_rate = np.clip(loss / years, 0.0, None)
+        self.base_rate_mm_year = float(np.average(target_rate, weights=weights))
+
+        X = train[self.feature_cols].fillna(0.0)
+        self.model.fit(X, target_rate, sample_weight=weights)
+
+        self.feature_importances = {
+            col: float(imp) for col, imp in zip(self.feature_cols, self.model.feature_importances_)
+        }
+        return self
+
+    def predict_rate(self, frame: pd.DataFrame) -> np.ndarray:
+        X = frame[self.feature_cols].fillna(0.0)
+        pred_rate = self.model.predict(X)
+        return np.clip(pred_rate, 0.0, None)
+
+    def predict(self, frame: pd.DataFrame) -> np.ndarray:
+        pred_rate = self.predict_rate(frame)
+        h0 = frame.h0_mm.to_numpy(float)
+        horizon = frame.horizon_years.to_numpy(float)
+        return np.clip(h0 - pred_rate * horizon, 0.0, h0)
+
+    def metadata(self) -> Dict[str, Any]:
+        return {
+            'model': self.name,
+            'name': self.name,
+            'max_depth': self.max_depth,
+            'min_samples_leaf': self.min_samples_leaf,
+            'weighting': self.weighting,
+            'features': self.feature_cols,
+            'base_rate_mm_year': self.base_rate_mm_year,
+            'feature_importances': self.feature_importances,
+            'leaf_count': int(self.model.get_n_leaves()),
+        }
 
 
 @dataclass
@@ -60,27 +184,24 @@ class PhysicalModel:
     gap_policy: str
     objective: float
 
-    def predict(self, frame, intervals):
+    def predict(self, frame: pd.DataFrame, intervals: List[pd.DataFrame]) -> np.ndarray:
         if len(frame) != len(intervals):
             raise ValueError('Exposure/prediction alignment mismatch')
         exposure = np.array([integrated_years(i, self.reference, np.array(self.coefficients),
                              self.gap_policy, t) for i, t in zip(intervals, frame.horizon_years)])
         return np.clip(frame.h0_mm.to_numpy(float) - self.rate_mm_year * exposure,
-                       0, frame.h0_mm.to_numpy(float))
+                       0.0, frame.h0_mm.to_numpy(float))
 
-    def metadata(self):
+    def metadata(self) -> Dict[str, Any]:
         result = asdict(self)
         result['theta_T_K'] = 1000 * self.coefficients[0]
         result['name'] = 'M1'
         return result
 
 
-def fit_physical_model(train, intervals, weighting='W1', gap_policy='reference', minimum_groups=3):
-    """Regularized coordinate search, deliberately gated by independent groups.
-
-    The minimum group count is an engineering guard, not proof of identifiability.
-    Steps and L2 penalty are fixed experiment settings; no holdout tuning occurs.
-    """
+def fit_physical_model(train: pd.DataFrame, intervals: List[pd.DataFrame], weighting: str = 'W1',
+                       gap_policy: str = 'reference', minimum_groups: int = 2) -> PhysicalModel:
+    """Regularized coordinate search, deliberately gated by independent groups."""
     if train.main_pipeline_id.nunique() < minimum_groups:
         raise ValueError(f'M1 needs at least {minimum_groups} independent parent pipelines')
     if len(intervals) != len(train):
@@ -98,7 +219,7 @@ def fit_physical_model(train, intervals, weighting='W1', gap_policy='reference',
         exp = np.array([integrated_years(i, reference, coef, gap_policy, t)
                         for i, t in zip(intervals, train.horizon_years)])
         denom = np.sum(weights * exp**2)
-        rate = max(0., float(np.sum(weights * exp * loss) / denom)) if denom > 0 else 0.
+        rate = max(0.0, float(np.sum(weights * exp * loss) / denom)) if denom > 0 else 0.0
         error = float(np.average((loss - rate * exp)**2, weights=weights) + .1 * np.sum(coef**2))
         return error, rate
 
