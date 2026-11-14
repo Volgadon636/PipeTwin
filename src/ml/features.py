@@ -104,13 +104,46 @@ def _compute_relative_elevation(df: pd.DataFrame) -> pd.Series:
     return pd.concat(parts).astype(float) if parts else pd.Series(dtype=float, index=df.index)
 
 
-def _compute_temperature_c(df: pd.DataFrame) -> pd.Series:
-    """Operating mixture temperature in Celsius."""
-    if 't_mix_mean' in df.columns:
-        return df['t_mix_mean'].fillna(df.get('t_start_mean', 20.0)).fillna(20.0).astype(float)
-    elif 't_start_mean' in df.columns:
-        return df['t_start_mean'].fillna(20.0).astype(float)
-    return pd.Series(20.0, index=df.index, dtype=float)
+def _compute_temperature_c(df: pd.DataFrame, ground_temp_c: float = 4.0) -> pd.Series:
+    """Segment-resolved operating fluid temperature in Celsius via calibrated Shukhov thermal decay.
+    
+    Formula v2.0:
+    When both inlet (t_start) and outlet (t_end) temperatures are available:
+        T(u) = T_soil + (T_start - T_soil) * ((T_end - T_soil) / (T_start - T_soil))^u
+    where u = segment_id / max(segment_id) in [0, 1].
+    If boundary conditions do not permit exponential ratio, gracefully uses linear thermal gradient.
+    If boundary measurements are absent, falls back to pipe-level mean mixture temperature.
+    """
+    parts = []
+    group_cols = ['id', 'prediction_date'] if 'prediction_date' in df.columns else ['id']
+    for _, g in df.groupby(group_cols, sort=False):
+        max_seg = g['segment_id'].max() if 'segment_id' in g.columns else 0
+        u = (g['segment_id'] / max_seg).fillna(0.0) if max_seg > 0 else pd.Series(0.0, index=g.index)
+        
+        has_start = 't_start_mean' in g.columns and g['t_start_mean'].notna().any()
+        has_end = 't_end_mean' in g.columns and g['t_end_mean'].notna().any()
+        
+        if has_start and has_end:
+            t_start = float(g['t_start_mean'].dropna().iloc[0])
+            t_end = float(g['t_end_mean'].dropna().iloc[0])
+            delta_start = t_start - ground_temp_c
+            delta_end = t_end - ground_temp_c
+            
+            if delta_start > 0 and delta_end > 0 and abs(delta_start) > 1e-4:
+                ratio = delta_end / delta_start
+                t_profile = ground_temp_c + delta_start * (ratio ** u)
+            else:
+                t_profile = t_start - (t_start - t_end) * u
+        elif has_start:
+            t_profile = g['t_start_mean'].fillna(20.0)
+        elif 't_mix_mean' in g.columns:
+            t_profile = g['t_mix_mean'].fillna(20.0)
+        else:
+            t_profile = pd.Series(20.0, index=g.index)
+            
+        parts.append(t_profile.astype(float))
+        
+    return pd.concat(parts).astype(float) if parts else pd.Series(20.0, index=df.index, dtype=float)
 
 
 def _compute_arrhenius_factor(df: pd.DataFrame) -> pd.Series:
@@ -232,18 +265,18 @@ class FeatureRegistry:
         # 2. Thermal / Kinetic Category
         self.register(FeatureDescriptor(
             feature_name='temperature_c_mean',
-            formula_version='v1.0_mix_or_start_c',
-            source_columns=['t_mix_mean', 't_start_mean'],
+            formula_version='v2.0_shukhov_thermal_gradient',
+            source_columns=['t_start_mean', 't_end_mean', 't_mix_mean', 'segment_id'],
             category='thermal',
-            description='Operating fluid mixture temperature in Celsius',
+            description='Segment-resolved fluid temperature (°C) via calibrated Shukhov thermal decay profile',
             compute_fn=_compute_temperature_c
         ))
         self.register(FeatureDescriptor(
             feature_name='arrhenius_thermal_factor',
-            formula_version='v1.0_arrhenius_exp',
-            source_columns=['t_mix_mean', 't_start_mean'],
+            formula_version='v2.0_segment_arrhenius_factor',
+            source_columns=['t_start_mean', 't_end_mean', 't_mix_mean', 'segment_id'],
             category='thermal',
-            description='Arrhenius corrosion reaction rate acceleration factor',
+            description='Segment-resolved Arrhenius corrosion reaction rate acceleration factor',
             compute_fn=_compute_arrhenius_factor
         ))
 

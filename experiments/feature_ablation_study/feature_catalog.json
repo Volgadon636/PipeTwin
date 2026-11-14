@@ -15,101 +15,6 @@
     "total_count": 1080
   },
   {
-    "category": "profile",
-    "coverage": 1.0,
-    "feature_name": "water_trap_sag_m",
-    "formula_version": "v1.0_rolling_sag_500m",
-    "max_val": 6.7954415305942035,
-    "mean": 0.44220168620669037,
-    "min_val": 0.0,
-    "non_null_count": 1080,
-    "source_columns": [
-      "z_mean"
-    ],
-    "std": 0.9604890350060076,
-    "total_count": 1080
-  },
-  {
-    "category": "thermal",
-    "coverage": 1.0,
-    "feature_name": "temperature_c_mean",
-    "formula_version": "v1.0_mix_or_start_c",
-    "max_val": 22.98624180703971,
-    "mean": 16.216285740717534,
-    "min_val": 0.5144547671840355,
-    "non_null_count": 1080,
-    "source_columns": [
-      "t_mix_mean",
-      "t_start_mean"
-    ],
-    "std": 6.2804421236602375,
-    "total_count": 1080
-  },
-  {
-    "category": "degradation",
-    "coverage": 1.0,
-    "feature_name": "prior_annual_rate",
-    "formula_version": "v1.0_loss_over_age",
-    "max_val": 0.19095684340320593,
-    "mean": 0.04657941324709291,
-    "min_val": 0.0,
-    "non_null_count": 1080,
-    "source_columns": [
-      "nominal_thickness_mm",
-      "h0_mm",
-      "age_years"
-    ],
-    "std": 0.044640549305685354,
-    "total_count": 1080
-  },
-  {
-    "category": "flow",
-    "coverage": 1.0,
-    "feature_name": "liquid_kinetic_energy",
-    "formula_version": "v1.0_half_rho_v2",
-    "max_val": 72.91107961609005,
-    "mean": 55.51884031555071,
-    "min_val": 5.8222344698586905,
-    "non_null_count": 1080,
-    "source_columns": [
-      "density_liquid_work_mean",
-      "v_liquid_true_mean"
-    ],
-    "std": 15.899347899224036,
-    "total_count": 1080
-  },
-  {
-    "category": "thermal",
-    "coverage": 1.0,
-    "feature_name": "arrhenius_thermal_factor",
-    "formula_version": "v1.0_arrhenius_exp",
-    "max_val": 1.089803106293808,
-    "mean": 0.9061303311440314,
-    "min_val": 0.5448648474754917,
-    "non_null_count": 1080,
-    "source_columns": [
-      "t_mix_mean",
-      "t_start_mean"
-    ],
-    "std": 0.15537969720251354,
-    "total_count": 1080
-  },
-  {
-    "category": "profile",
-    "coverage": 1.0,
-    "feature_name": "slope_magnitude",
-    "formula_version": "v1.0_abs_slope",
-    "max_val": 0.16,
-    "mean": 0.0059113886335152655,
-    "min_val": 0.0,
-    "non_null_count": 1080,
-    "source_columns": [
-      "slope_m_per_m"
-    ],
-    "std": 0.013295784292684862,
-    "total_count": 1080
-  },
-  {
     "category": "flow",
     "coverage": 1.0,
     "feature_name": "pressure_drop_proxy",
@@ -141,19 +46,21 @@
     "total_count": 1080
   },
   {
-    "category": "degradation",
+    "category": "thermal",
     "coverage": 1.0,
-    "feature_name": "prior_thinning_mm",
-    "formula_version": "v1.0_nom_minus_h0",
-    "max_val": 4.24,
-    "mean": 1.0393796296296296,
-    "min_val": 0.0,
+    "feature_name": "arrhenius_thermal_factor",
+    "formula_version": "v2.0_segment_arrhenius_factor",
+    "max_val": 1.1046934855496047,
+    "mean": 0.9146629147695012,
+    "min_val": 0.5448648474754917,
     "non_null_count": 1080,
     "source_columns": [
-      "nominal_thickness_mm",
-      "h0_mm"
+      "t_start_mean",
+      "t_end_mean",
+      "t_mix_mean",
+      "segment_id"
     ],
-    "std": 0.9950541044064685,
+    "std": 0.15233542252021195,
     "total_count": 1080
   },
   {
@@ -170,6 +77,103 @@
       "v_liquid_true_mean"
     ],
     "std": 0.08551829917656728,
+    "total_count": 1080
+  },
+  {
+    "category": "thermal",
+    "coverage": 1.0,
+    "feature_name": "temperature_c_mean",
+    "formula_version": "v2.0_shukhov_thermal_gradient",
+    "max_val": 23.463056165565348,
+    "mean": 16.558798351060567,
+    "min_val": 0.5144547671840355,
+    "non_null_count": 1080,
+    "source_columns": [
+      "t_start_mean",
+      "t_end_mean",
+      "t_mix_mean",
+      "segment_id"
+    ],
+    "std": 6.080314318734509,
+    "total_count": 1080
+  },
+  {
+    "category": "flow",
+    "coverage": 1.0,
+    "feature_name": "liquid_kinetic_energy",
+    "formula_version": "v1.0_half_rho_v2",
+    "max_val": 72.91107961609005,
+    "mean": 55.51884031555071,
+    "min_val": 5.8222344698586905,
+    "non_null_count": 1080,
+    "source_columns": [
+      "density_liquid_work_mean",
+      "v_liquid_true_mean"
+    ],
+    "std": 15.899347899224036,
+    "total_count": 1080
+  },
+  {
+    "category": "degradation",
+    "coverage": 1.0,
+    "feature_name": "prior_thinning_mm",
+    "formula_version": "v1.0_nom_minus_h0",
+    "max_val": 4.24,
+    "mean": 1.0393796296296296,
+    "min_val": 0.0,
+    "non_null_count": 1080,
+    "source_columns": [
+      "nominal_thickness_mm",
+      "h0_mm"
+    ],
+    "std": 0.9950541044064685,
+    "total_count": 1080
+  },
+  {
+    "category": "degradation",
+    "coverage": 1.0,
+    "feature_name": "prior_annual_rate",
+    "formula_version": "v1.0_loss_over_age",
+    "max_val": 0.19095684340320593,
+    "mean": 0.04657941324709291,
+    "min_val": 0.0,
+    "non_null_count": 1080,
+    "source_columns": [
+      "nominal_thickness_mm",
+      "h0_mm",
+      "age_years"
+    ],
+    "std": 0.044640549305685354,
+    "total_count": 1080
+  },
+  {
+    "category": "profile",
+    "coverage": 1.0,
+    "feature_name": "slope_magnitude",
+    "formula_version": "v1.0_abs_slope",
+    "max_val": 0.16,
+    "mean": 0.0059113886335152655,
+    "min_val": 0.0,
+    "non_null_count": 1080,
+    "source_columns": [
+      "slope_m_per_m"
+    ],
+    "std": 0.013295784292684862,
+    "total_count": 1080
+  },
+  {
+    "category": "profile",
+    "coverage": 1.0,
+    "feature_name": "water_trap_sag_m",
+    "formula_version": "v1.0_rolling_sag_500m",
+    "max_val": 6.7954415305942035,
+    "mean": 0.44220168620669037,
+    "min_val": 0.0,
+    "non_null_count": 1080,
+    "source_columns": [
+      "z_mean"
+    ],
+    "std": 0.9604890350060076,
     "total_count": 1080
   }
 ]
