@@ -1,128 +1,165 @@
-"""
-Data cleaning and validation module.
-Implements domain-specific cleaning rules while preserving raw files intact.
-"""
+"""Normalize verified units and quarantine bad positions without inventing measurements."""
+import re
 
-from pathlib import Path
-from typing import Dict, Tuple, Any
-import pandas as pd
 import numpy as np
+import pandas as pd
+
+from .config import TECH_FILE
 
 
-def clean_datasets(dfs: Dict[str, pd.DataFrame], output_cleaned_dir: Path) -> Tuple[Dict[str, pd.DataFrame], Dict[str, Any]]:
-    """
-    Cleans raw standardized datasets according to verified domain rules:
-    - profile: removes identical duplicate coordinate rows.
-    - vtd: clips minor negative start distances (<= 25cm) to 0.0m;
-           filters out records exceeding pipeline length (receiver/trap overshoot).
-    - passport, uzt, regime, tech_mode: validates integrity and standardizes.
+class QualityLog:
+    def __init__(self, initial=()):
+        self.rows = list(initial)
 
-    Saves cleaned tables into output_cleaned_dir in both CSV and Parquet formats.
-    """
-    output_cleaned_dir.mkdir(parents=True, exist_ok=True)
-    cleaned_dfs = {}
-    audit = {}
+    def add(self, filename, df, mask, rule, action='flag_only', field=None):
+        for index in df.index[mask.fillna(False)]:
+            row = df.loc[index]
+            self.rows.append({
+                'file': filename, 'source_row': int(row['source_row']),
+                'id': '' if pd.isna(row.get('id')) else str(int(row['id'])),
+                'field': field or '', 'rule': rule, 'action': action,
+                'original_value': '' if field is None or pd.isna(row.get(field)) else str(row[field]),
+            })
 
-    # 1. Pipeline passport validation
-    pass_df = dfs['passport.csv'].copy()
-    pipe_lengths = {}
-    pipe_nominals = {}
-    for _, r in pass_df.iterrows():
-        pid = int(r['id'])
-        pipe_lengths[pid] = float(r['length_km']) * 1000.0
-        pipe_nominals[pid] = float(r['nominal_thickness_mm'])
+    def frame(self):
+        cols = ['file', 'source_row', 'id', 'field', 'rule', 'action', 'original_value']
+        return pd.DataFrame(self.rows, columns=cols).sort_values(
+            ['file', 'source_row', 'rule'], kind='stable').reset_index(drop=True)
 
-    cleaned_dfs['passport.csv'] = pass_df
-    audit['passport'] = {
-        'total_pipes': len(pass_df),
-        'pipe_lengths_m': pipe_lengths,
-        'nominal_thicknesses_mm': pipe_nominals,
-        'status': 'Validated without changes (16 sections, 100% consistent lengths and thicknesses)'
-    }
 
-    # 2. Elevation profile cleaning
-    prof_df = dfs['profile.csv'].copy()
-    dups_mask = prof_df.duplicated()
-    dups_count = int(dups_mask.sum())
-    prof_cleaned = prof_df[~dups_mask].copy()
+def _direction(value):
+    if pd.isna(value):
+        return ''
+    return re.sub(r'[^\w]', '', str(value).lower())
 
-    prof_cleaned['pipe_len'] = prof_cleaned['id'].map(pipe_lengths)
-    prof_overshoot = (prof_cleaned['total_distance'] > (prof_cleaned['pipe_len'] + 0.05)).sum()
-    prof_cleaned = prof_cleaned.drop(columns=['pipe_len'])
 
-    cleaned_dfs['profile.csv'] = prof_cleaned
-    audit['profile'] = {
-        'initial_rows': len(prof_df),
-        'dropped_duplicates': dups_count,
-        'overshoot_count': int(prof_overshoot),
-        'final_rows': len(prof_cleaned),
-        'status': f'Removed {dups_count} duplicate coordinate rows, preserved unique points'
-    }
+def clean_datasets(datasets, config, log):
+    cleaned = {name: df.copy() for name, df in datasets.items()}
+    quarantine = {}
+    passport = cleaned['passport.csv']
+    if passport.id.isna().any() or passport.id.duplicated().any():
+        raise ValueError('Passport must have one nonmissing, unique ID per pipe')
+    for col in ('length_km', 'diameter_mm', 'nominal_thickness_mm'):
+        if passport[col].isna().any() or (passport[col] <= 0).any():
+            raise ValueError(f'Invalid passport {col}')
+    lengths = passport.set_index('id').length_km * 1000
+    nominal = passport.set_index('id').nominal_thickness_mm
+    introduced = passport.set_index('id').commissioning_date
+    directions = passport.set_index('id').direction_name.map(_direction)
+    tol = config['vtd_thickness_tolerance_mm']
 
-    # 3. In-line inspection (VTD) defect cleaning
-    vtd_df = dfs['vtd.csv'].copy()
-    initial_vtd_rows = len(vtd_df)
+    profile = cleaned['profile.csv']
+    duplicates = profile.duplicated(subset=[c for c in profile if c != 'source_row'])
+    log.add('profile.csv', profile, duplicates, 'exact_duplicate', 'exclude_duplicate')
+    profile = profile.loc[~duplicates].copy()
+    invalid = (profile.id.isna() | ~profile.id.isin(lengths.index) | profile.z.isna()
+               | profile.total_distance.isna() | (profile.total_distance < 0)
+               | (profile.total_distance > profile.id.map(lengths) + config['profile_endpoint_tolerance_m']))
+    log.add('profile.csv', profile, invalid, 'invalid_profile_position', 'quarantine', 'total_distance')
+    quarantine['profile_rejected'] = profile.loc[invalid].copy()
+    profile = profile.loc[~invalid].sort_values(['id', 'total_distance', 'source_row']).copy()
+    spans = profile.groupby(['id', 'total_distance']).z.agg(['min', 'max'])
+    if ((spans['max'] - spans['min']) > 1e-8).any():
+        raise ValueError('Conflicting profile heights at the same distance; resolve before interpolation')
+    ds = profile.groupby('id').total_distance.diff()
+    dz = profile.groupby('id').z.diff()
+    profile['steep_step_flag'] = (dz.abs() > ds) & (ds > 0)
+    log.add('profile.csv', profile, profile.steep_step_flag, 'steep_profile_step', field='z')
+    cleaned['profile.csv'] = profile.reset_index(drop=True)
 
-    # 3.1 Clip negative distances to 0.0m
-    neg_dist_mask = vtd_df['distance'] < 0
-    neg_count = int(neg_dist_mask.sum())
-    neg_samples = vtd_df.loc[neg_dist_mask, ['id', 'distance', 'defect_depth_pct', 'feature_description']].to_dict(orient='records')
-    vtd_df.loc[neg_dist_mask, 'distance'] = 0.0
+    vtd = cleaned['vtd.csv']
+    vtd['nominal_thickness_mm'] = vtd.id.map(nominal)
+    vtd['before_commissioning_flag'] = vtd.date < vtd.id.map(introduced)
+    vtd['commissioning_unknown_flag'] = vtd.id.map(introduced).isna()
+    vtd['wall_nominal_mismatch_flag'] = (vtd.wall_thickness - vtd.nominal_thickness_mm).abs() > tol
+    vtd['defect_depth_pct_raw'] = vtd.defect_depth_pct
+    vtd['depth_fraction_normalized'] = False
+    # Scale only an explicitly identified inspection cohort, supported by measured residuals.
+    for date in config['vtd_fraction_dates']:
+        cohort = vtd.date.dt.normalize().eq(pd.Timestamp(date)) & vtd.defect_depth_pct.notna()
+        if not cohort.any():
+            continue
+        paired = cohort & vtd.residual_wall_thickness.notna() & vtd.wall_thickness.gt(0)
+        fraction_error = (vtd.residual_wall_thickness - vtd.wall_thickness * (1-vtd.defect_depth_pct)).abs()
+        if (vtd.loc[cohort, 'defect_depth_pct'].gt(1).any()
+                or not paired.any() or fraction_error[paired].median() > tol):
+            raise ValueError(f'Depth fraction rule is not supported for {date}')
+        log.add('vtd.csv', vtd, cohort, 'depth_fraction_to_percent', 'multiply_by_100', 'defect_depth_pct')
+        vtd.loc[cohort, 'defect_depth_pct'] *= 100
+        vtd.loc[cohort, 'depth_fraction_normalized'] = True
+    vtd['residual_invalid_flag'] = (vtd.residual_wall_thickness.notna() & (
+        vtd.residual_wall_thickness.le(0) |
+        (vtd.wall_thickness.notna() & (vtd.residual_wall_thickness > vtd.wall_thickness + tol))))
+    vtd['residual_for_target_mm'] = vtd.residual_wall_thickness.mask(vtd.residual_invalid_flag)
+    vtd['residual_missing_flag'] = vtd.residual_wall_thickness.isna()
+    vtd['depth_residual_mismatch_flag'] = (
+        vtd.residual_wall_thickness - vtd.wall_thickness * (1-vtd.defect_depth_pct/100)).abs() > tol
+    vtd['target_eligible'] = (vtd.residual_for_target_mm.notna() & ~vtd.before_commissioning_flag
+                              & ~vtd.commissioning_unknown_flag)
+    vtd['heldout_or_future_flag'] = False
+    for target in config['targets']:
+        hidden = vtd.id.eq(target['id']) & vtd.date.ge(pd.Timestamp(target['prediction_date']))
+        vtd.loc[hidden, 'heldout_or_future_flag'] = True
+    vtd.loc[vtd.heldout_or_future_flag, 'target_eligible'] = False
+    for col in ('before_commissioning_flag', 'wall_nominal_mismatch_flag', 'residual_invalid_flag',
+                'residual_missing_flag', 'depth_residual_mismatch_flag', 'heldout_or_future_flag'):
+        log.add('vtd.csv', vtd, vtd[col], col, field='residual_wall_thickness')
+    # Distance is local to the supplied ID. No zero-clipping or inferred offsets.
+    invalid = (vtd.id.isna() | ~vtd.id.isin(lengths.index) | vtd.date.isna() | vtd.distance.isna()
+               | vtd.distance.lt(0) | (vtd.distance > vtd.id.map(lengths)))
+    log.add('vtd.csv', vtd, invalid, 'outside_pipe_or_missing_key', 'quarantine', 'distance')
+    quarantine['vtd_rejected'] = vtd.loc[invalid].copy()
+    cleaned['vtd.csv'] = vtd.loc[~invalid].reset_index(drop=True)
+    conflicted = vtd.loc[vtd.before_commissioning_flag, 'id'].unique()
+    passport['history_date_conflict_flag'] = passport.id.isin(conflicted)
 
-    # 3.2 Exclude records beyond the end flange of the pipeline
-    vtd_df['pipe_len'] = vtd_df['id'].map(pipe_lengths)
-    overshoot_mask = vtd_df['distance'] > (vtd_df['pipe_len'] + 0.05)
-    overshoot_count = int(overshoot_mask.sum())
-    overshoot_by_pipe = vtd_df[overshoot_mask]['id'].value_counts().to_dict()
+    uzt = cleaned['uzt.csv']
+    uzt['nominal_thickness_mm'] = uzt.id.map(nominal)
+    uzt['above_nominal_flag'] = uzt.residual_wall_thickness > uzt.nominal_thickness_mm + tol
+    uzt['before_commissioning_flag'] = uzt.date < uzt.id.map(introduced)
+    uzt['measurement_eligible'] = (uzt.residual_wall_thickness.gt(0) & ~uzt.above_nominal_flag
+                                  & ~uzt.before_commissioning_flag & uzt.id.map(introduced).notna())
+    log.add('uzt.csv', uzt, uzt.above_nominal_flag, 'unresolved_thickness_above_nominal',
+            'exclude_from_features_keep_measurement', 'residual_wall_thickness')
+    invalid = (uzt.id.isna() | ~uzt.id.isin(lengths.index) | uzt.date.isna() | uzt.distance.isna()
+               | uzt.distance.lt(0) | (uzt.distance > uzt.id.map(lengths)))
+    log.add('uzt.csv', uzt, invalid, 'outside_pipe_or_missing_key', 'quarantine', 'distance')
+    quarantine['uzt_rejected'] = uzt.loc[invalid].copy()
+    cleaned['uzt.csv'] = uzt.loc[~invalid].reset_index(drop=True)
 
-    vtd_cleaned = vtd_df[~overshoot_mask].drop(columns=['pipe_len']).copy()
+    monitoring = cleaned['regime.csv']
+    monitoring['id_known'] = monitoring.id.isin(lengths.index)
+    monitoring['direction_conflict_flag'] = (monitoring.id_known &
+        monitoring.direction_name.map(_direction).ne(monitoring.id.map(directions)))
+    monitoring['exposure_days_from_dates'] = (
+        monitoring.sample_removal_date-monitoring.sample_installation_date).dt.total_seconds()/86400
+    monitoring['exposure_invalid_flag'] = monitoring.exposure_days_from_dates.le(0)
+    monitoring['exposure_mismatch_flag'] = (monitoring.exposure_days_from_dates-monitoring.exposure_days).abs() > 1
+    monitoring['density_suspect_flag'] = monitoring.fluid_density.notna() & ~monitoring.fluid_density.between(0.5, 2)
+    monitoring['negative_protective_effect_flag'] = monitoring.protective_effect_pct.lt(0)
+    monitoring['mapping_eligible'] = (monitoring.id_known & ~monitoring.direction_conflict_flag
+                                     & monitoring.direction_name.notna())
+    monitoring['observation_eligible'] = (monitoring.mapping_eligible &
+        monitoring.sample_removal_date.notna() & ~monitoring.exposure_invalid_flag & ~monitoring.exposure_mismatch_flag)
+    for flag in ('direction_conflict_flag', 'exposure_invalid_flag', 'exposure_mismatch_flag',
+                 'density_suspect_flag', 'negative_protective_effect_flag'):
+        log.add('regime.csv', monitoring, monitoring[flag], flag)
+    log.add('regime.csv', monitoring, ~monitoring.id_known, 'unmapped_id', 'exclude_from_features_keep_record', 'id')
 
-    cleaned_dfs['vtd.csv'] = vtd_cleaned
-    audit['vtd'] = {
-        'initial_rows': initial_vtd_rows,
-        'clipped_negative_distances_count': neg_count,
-        'clipped_negative_samples': neg_samples,
-        'excluded_overshoot_count': overshoot_count,
-        'excluded_overshoot_by_pipe': {int(k): int(v) for k, v in overshoot_by_pipe.items()},
-        'final_rows': len(vtd_cleaned),
-        'status': f'Clipped {neg_count} negative distances to 0.0m; filtered {overshoot_count} defects beyond pipe length'
-    }
-
-    # 4. Ultrasonic thickness (UZT) validation
-    uzt_df = dfs['uzt.csv'].copy()
-    cleaned_dfs['uzt.csv'] = uzt_df
-    audit['uzt'] = {
-        'initial_rows': len(uzt_df),
-        'final_rows': len(uzt_df),
-        'status': 'Validated and kept intact (67 measurements across 3 reinforced control locations)'
-    }
-
-    # 5. Operational regime validation
-    if 'regime.csv' in dfs:
-        regime_df = dfs['regime.csv'].copy()
-        cleaned_dfs['regime.csv'] = regime_df
-        audit['regime'] = {
-            'initial_rows': len(regime_df),
-            'final_rows': len(regime_df),
-            'status': 'Validated and kept intact (495 coupon corrosion monitoring records)'
-        }
-
-    tech_key = 'tech_mode_for_embedings_with_length_with_temperatures_ids16.csv'
-    if tech_key in dfs:
-        tech_df = dfs[tech_key].copy()
-        cleaned_dfs[tech_key] = tech_df
-        audit['tech_mode'] = {
-            'initial_rows': len(tech_df),
-            'final_rows': len(tech_df),
-            'status': 'Validated and kept intact (39,052 daily hydraulic computation records)'
-        }
-
-    # Persist cleaned tables in both CSV and Parquet
-    for fn, df_clean in cleaned_dfs.items():
-        base_name = Path(fn).stem
-        csv_path = output_cleaned_dir / f"{base_name}.csv"
-        parquet_path = output_cleaned_dir / f"{base_name}.parquet"
-        df_clean.to_csv(csv_path, index=False, encoding='utf-8')
-        df_clean.to_parquet(parquet_path, index=False)
-
-    return cleaned_dfs, audit
+    tech = cleaned[TECH_FILE]
+    tech['diameter_mm_raw'] = tech.diameter_mm
+    expected_d = tech.id.map(passport.set_index('id').diameter_mm)
+    in_meters = np.isclose(tech.diameter_mm*1000, expected_d, atol=0.1, rtol=0)
+    in_mm = np.isclose(tech.diameter_mm, expected_d, atol=0.1, rtol=0)
+    log.add(TECH_FILE, tech, pd.Series(in_meters, index=tech.index), 'diameter_m_to_mm', 'multiply_by_1000', 'diameter_mm')
+    tech.loc[in_meters, 'diameter_mm'] *= 1000
+    tech['diameter_mismatch_flag'] = ~(in_meters | in_mm)
+    tech['before_commissioning_flag'] = tech.date < tech.id.map(introduced)
+    tech['record_eligible'] = (tech.id.isin(lengths.index) & tech.date.notna()
+                              & tech.id.map(introduced).notna() & ~tech.before_commissioning_flag)
+    log.add(TECH_FILE, tech, ~tech.record_eligible, 'unusable_id_or_date', 'exclude_from_features_keep_record')
+    log.add(TECH_FILE, tech, tech.diameter_mismatch_flag, 'diameter_mismatch', field='diameter_mm_raw')
+    if tech.duplicated(['id', 'date']).any():
+        raise ValueError('Duplicate hydraulic timestamps: resolve before aggregation')
+    # Time-series filters must run AFTER a cutoff, never against the full future history.
+    return cleaned, quarantine

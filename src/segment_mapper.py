@@ -1,168 +1,136 @@
-"""
-Segment mapping module.
-Aggregates and attaches VTD defects, UZT measurements, elevation profile,
-and operational hydraulic regime to the 10-meter segments.
-"""
-
-from pathlib import Path
-from typing import Dict
-import pandas as pd
+"""Observed thickness histories and date-specific features for complete segment grids."""
 import numpy as np
+import pandas as pd
 
-from .config import SEGMENT_LENGTH_M
-
-
-def map_vtd_to_segments(vtd_df: pd.DataFrame, passport_df: pd.DataFrame) -> pd.DataFrame:
-    """
-    Maps in-line inspection (VTD) defects to 10m segments.
-    Aggregates per (id, date, segment_id):
-      - defect_count
-      - max_defect_depth_pct
-      - min_residual_thickness_mm = nominal * (1 - max_depth / 100)
-      - max_defect_length_mm, max_defect_width_mm
-      - defect_types
-    Segments without defects are kept empty (no default nominal thickness injected).
-    """
-    pipe_nominals = dict(zip(passport_df['id'].astype(int), passport_df['nominal_thickness_mm'].astype(float)))
-
-    # Filter defects with recorded wall loss depth
-    vtd_real = vtd_df[vtd_df['defect_depth_pct'].notnull()].copy()
-    vtd_real['segment_id'] = np.floor(vtd_real['distance'] / SEGMENT_LENGTH_M).astype(int)
-
-    vtd_by_segment = vtd_real.groupby(['id', 'date', 'segment_id']).agg(
-        defect_count=('defect_depth_pct', 'count'),
-        max_defect_depth_pct=('defect_depth_pct', 'max'),
-        max_defect_length_mm=('defect_length', 'max'),
-        max_defect_width_mm=('defect_width', 'max'),
-        defect_types=('defect_type', lambda s: ', '.join(sorted(set(str(x) for x in s.dropna()))))
-    ).reset_index()
-
-    vtd_by_segment['nominal_thickness_mm'] = vtd_by_segment['id'].map(pipe_nominals)
-    vtd_by_segment['min_residual_thickness_mm'] = (
-        vtd_by_segment['nominal_thickness_mm'] * (1.0 - vtd_by_segment['max_defect_depth_pct'] / 100.0)
-    ).round(3)
-
-    return vtd_by_segment
+from .config import TECH_FILE, STATIC_FEATURES
+from .grid_builder import assign_segments
+from .temporal import hydraulic_asof, hydraulic_summary
 
 
-def map_uzt_to_segments(uzt_df: pd.DataFrame) -> pd.DataFrame:
-    """
-    Maps ultrasonic thickness (UZT) measurements to 10m segments.
-    Aggregates per (id, date, segment_id):
-      - measurement_count
-      - min_residual_thickness_mm
-      - mean_residual_thickness_mm
-      - angles
-    """
-    uzt_copy = uzt_df.copy()
-    uzt_copy['segment_id'] = np.floor(uzt_copy['distance'] / SEGMENT_LENGTH_M).astype(int)
-
-    uzt_by_segment = uzt_copy.groupby(['id', 'date', 'segment_id']).agg(
-        measurement_count=('residual_wall_thickness', 'count'),
-        min_residual_thickness_mm=('residual_wall_thickness', 'min'),
-        mean_residual_thickness_mm=('residual_wall_thickness', 'mean'),
-        angles=('angle', lambda s: ', '.join(sorted(set(str(int(x)) for x in s.dropna()))))
-    ).reset_index()
-    uzt_by_segment['mean_residual_thickness_mm'] = uzt_by_segment['mean_residual_thickness_mm'].round(3)
-
-    return uzt_by_segment
+def map_vtd_to_segments(vtd, grid):
+    df = assign_segments(vtd, 'distance', grid)
+    result = df.groupby(['id', 'date', 'segment_id'], as_index=False).agg(
+        observation_count=('source_row','size'),
+        thickness_measurement_count=('residual_for_target_mm','count'),
+        min_residual_thickness_mm=('residual_for_target_mm','min'),
+        max_defect_depth_pct=('defect_depth_pct','max'),
+        before_commissioning_flag=('before_commissioning_flag','any'),
+        commissioning_unknown_flag=('commissioning_unknown_flag','any'),
+        wall_nominal_mismatch_flag=('wall_nominal_mismatch_flag','any'),
+        heldout_or_future_flag=('heldout_or_future_flag','any'),
+    )
+    result['target_eligible'] = (result.thickness_measurement_count.gt(0)
+        & ~result.before_commissioning_flag & ~result.commissioning_unknown_flag & ~result.heldout_or_future_flag)
+    return result
 
 
-def map_profile_to_segments(profile_df: pd.DataFrame, grid_df: pd.DataFrame) -> pd.DataFrame:
-    """
-    Maps elevation profile coordinates to 10m segments.
-    Computes mean, min, max Z coordinates, and slope between adjacent segments.
-    """
-    prof_copy = profile_df.copy()
-    prof_copy['segment_id'] = np.floor(prof_copy['total_distance'] / SEGMENT_LENGTH_M).astype(int)
-
-    prof_agg = prof_copy.groupby(['id', 'segment_id']).agg(
-        points_count=('z', 'count'),
-        z_mean=('z', 'mean'),
-        z_min=('z', 'min'),
-        z_max=('z', 'max')
-    ).reset_index()
-
-    profile_by_segment = pd.merge(grid_df, prof_agg, on=['id', 'segment_id'], how='left')
-
-    # Linear interpolation for rare segments lacking direct GPS waypoints
-    profile_by_segment['z_mean'] = profile_by_segment.groupby('id')['z_mean'].transform(
-        lambda s: s.interpolate(method='linear', limit_direction='both')
-    ).round(3)
-    profile_by_segment['z_min'] = profile_by_segment['z_min'].fillna(profile_by_segment['z_mean']).round(3)
-    profile_by_segment['z_max'] = profile_by_segment['z_max'].fillna(profile_by_segment['z_mean']).round(3)
-
-    # Slope between adjacent segments: delta(z_mean) / segment_length (m/m)
-    profile_by_segment['slope_m_per_m'] = (
-        profile_by_segment.groupby('id')['z_mean'].diff() / profile_by_segment['length_m']
-    ).fillna(0.0).round(5)
-
-    return profile_by_segment
+def map_uzt_to_segments(uzt, grid):
+    df = assign_segments(uzt, 'distance', grid)
+    df['eligible_thickness_mm'] = df.residual_wall_thickness.where(df.measurement_eligible)
+    return df.groupby(['id', 'date', 'segment_id'], as_index=False).agg(
+        measurement_count=('residual_wall_thickness','count'),
+        min_residual_thickness_mm=('residual_wall_thickness','min'),
+        mean_residual_thickness_mm=('residual_wall_thickness','mean'),
+        eligible_measurement_count=('eligible_thickness_mm','count'),
+        eligible_min_thickness_mm=('eligible_thickness_mm','min'),
+        above_nominal_flag=('above_nominal_flag','any'),
+    )
 
 
-def map_regime_to_segments(tech_df: pd.DataFrame, passport_df: pd.DataFrame, grid_df: pd.DataFrame) -> pd.DataFrame:
-    """
-    Maps daily hydraulic simulation regime to 10m segments.
-    Calculates pipeline-level operating statistics and applies linear hydrodynamic
-    pressure interpolation between p_start and p_end along the distance.
-    """
-    if tech_df is None or tech_df.empty:
-        return pd.DataFrame()
-
-    regime_stats = tech_df.groupby('id').agg(
-        records_count=('date', 'count'),
-        calc_date_min=('date', 'min'),
-        calc_date_max=('date', 'max'),
-        p_start_mean=('p_start', 'mean'),
-        p_end_mean=('p_end', 'mean'),
-        q_liquid_mean=('q_liquid', 'mean'),
-        watercut_pct_mean=('watercut_pct', 'mean'),
-        v_liquid_mean=('v_liquid_true', 'mean'),
-        t_mix_mean=('t_mix', 'mean'),
-        pit_corrosion_mean=('pit_corrosion_intensity', 'mean')
-    ).reset_index()
-
-    regime_mapped = pd.merge(grid_df, regime_stats, on='id', how='left')
-
-    # Hydrodynamic pressure linear interpolation at the midpoint of each segment
-    x_center = regime_mapped['start_m'] + regime_mapped['length_m'] / 2.0
-    pipe_lens = dict(zip(passport_df['id'].astype(int), passport_df['length_km'] * 1000.0))
-    total_len = regime_mapped['id'].map(pipe_lens)
-    rel_pos = (x_center / total_len).clip(0.0, 1.0)
-
-    regime_mapped['p_segment_mean'] = (
-        regime_mapped['p_start_mean'] + rel_pos * (regime_mapped['p_end_mean'] - regime_mapped['p_start_mean'])
-    ).round(3)
-
-    return regime_mapped
+def map_profile_to_segments(profile, grid):
+    rows = []
+    for pid, pipe_grid in grid.groupby('id', sort=True):
+        observations = profile[profile.id.eq(pid)].groupby('total_distance', as_index=False).agg(z=('z','mean'))
+        observations = observations.sort_values('total_distance')
+        if observations.empty:
+            raise ValueError(f'No valid elevation profile for {pid}')
+        x = observations.total_distance.to_numpy(float)
+        z = observations.z.to_numpy(float)
+        for segment in pipe_grid.itertuples():
+            start, end = segment.start_m, segment.end_m
+            inside = x[(x>start)&(x<end)]
+            nodes = np.r_[start, inside, end]
+            heights = np.interp(nodes, x, z)
+            area = np.sum((heights[:-1]+heights[1:])*0.5*np.diff(nodes))
+            count = int(((x>=start)&((x<end) | ((end==pipe_grid.end_m.max()) & (x<=end+0.05)))).sum())
+            rows.append({
+                'id': int(pid), 'segment_id': int(segment.segment_id), 'points_count': count,
+                'z_start': float(heights[0]), 'z_end': float(heights[-1]),
+                'z_center': float(np.interp((start+end)/2, x, z)),
+                'z_mean': float(area/(end-start)), 'z_min': float(heights.min()), 'z_max': float(heights.max()),
+                'slope_m_per_m': float((heights[-1]-heights[0])/(end-start)),
+                'profile_extrapolated_flag': bool(start<x[0] or end>x[-1]),
+                'max_profile_gap_m': float(np.diff(x[max(0,np.searchsorted(x,start)-1):min(len(x),np.searchsorted(x,end)+1)]).max())
+                    if len(x[max(0,np.searchsorted(x,start)-1):min(len(x),np.searchsorted(x,end)+1)])>1 else np.nan,
+            })
+    return grid.merge(pd.DataFrame(rows), on=['id','segment_id'], validate='one_to_one')
 
 
-def map_all_to_segments(cleaned_dfs: Dict[str, pd.DataFrame], grid_df: pd.DataFrame, output_dir: Path) -> Dict[str, pd.DataFrame]:
-    """
-    Orchestrates mapping of VTD, UZT, Profile, and Regime datasets to 10m segments
-    and saves output files in CSV and Parquet formats.
-    """
-    output_dir.mkdir(parents=True, exist_ok=True)
-    pass_df = cleaned_dfs['passport.csv']
+def map_monitoring_asof(monitoring, pid, cutoff):
+    candidates = monitoring[monitoring.id.eq(pid) & monitoring.sample_removal_date.lt(cutoff)]
+    usable = candidates[candidates.observation_eligible]
+    row = {'id': pid, 'monitoring_candidate_records': len(candidates),
+           'monitoring_records_count': len(usable), 'monitoring_source_date_max': usable.sample_removal_date.max()}
+    for col in ('ph','co2_water','total_mineralization'):
+        row[col+'_median'] = usable[col].median()
+    return pd.DataFrame([row])
 
-    vtd_by_segment = map_vtd_to_segments(cleaned_dfs['vtd.csv'], pass_df)
-    uzt_by_segment = map_uzt_to_segments(cleaned_dfs['uzt.csv'])
-    profile_by_segment = map_profile_to_segments(cleaned_dfs['profile.csv'], grid_df)
 
-    tech_key = 'tech_mode_for_embedings_with_length_with_temperatures_ids16.csv'
-    tech_df = cleaned_dfs.get(tech_key, pd.DataFrame())
-    regime_mapped = map_regime_to_segments(tech_df, pass_df, grid_df)
+def build_features_asof(cleaned, grid, profile, vtd_history, uzt_history, requests, config):
+    features, regimes, monitoring_tables, quality, hydraulic_rows = [], [], [], [], []
+    for request in requests:
+        pid, cutoff = int(request['id']), pd.Timestamp(request['prediction_date'])
+        case = request['case']
+        if case not in ('between_vtd','cold_start'):
+            raise ValueError(f'Unknown scenario: {case}')
+        if not grid.id.eq(pid).any():
+            raise ValueError(f'Target ID {pid} is not in passport')
+        target = profile[profile.id.eq(pid)].copy()
+        target['prediction_date'] = cutoff
+        target['case'] = case
+        # Only explicit static fields. Current diagnostic summaries are never model features.
+        static = cleaned['passport.csv'][STATIC_FEATURES+['history_date_conflict_flag']]
+        target = target.merge(static, on='id', validate='many_to_one')
+        target['age_years'] = (cutoff-target.commissioning_date).dt.total_seconds()/(86400*365.25)
+        target.loc[target.age_years.lt(0) | target.history_date_conflict_flag, 'age_years'] = np.nan
 
-    tables = {
-        'vtd_by_segment': vtd_by_segment,
-        'uzt_by_segment': uzt_by_segment,
-        'profile_by_segment': profile_by_segment,
-        'regime_mapped': regime_mapped
+        tech, tech_log = hydraulic_asof(cleaned[TECH_FILE], [pid], cutoff, config)
+        stats = hydraulic_summary(tech, [pid])
+        reg = grid[grid.id.eq(pid)].merge(stats, on='id', validate='many_to_one')
+        reg['prediction_date'] = cutoff
+        regimes.append(reg)
+        quality.append(tech_log)
+        hydraulic_rows.append(tech)
+        target = target.merge(stats, on='id', validate='many_to_one')
+
+        monitor = map_monitoring_asof(cleaned['regime.csv'], pid, cutoff)
+        monitor['prediction_date'] = cutoff
+        monitoring_tables.append(grid[grid.id.eq(pid)].merge(monitor, on='id', validate='many_to_one'))
+        target = target.merge(monitor.drop(columns='prediction_date'), on='id', validate='many_to_one')
+
+        # Cold start excludes every VTD/UZT observation, even if present in input files.
+        vh = vtd_history[vtd_history.id.eq(pid) & vtd_history.date.lt(cutoff) & vtd_history.target_eligible]
+        uh = uzt_history[uzt_history.id.eq(pid) & uzt_history.date.lt(cutoff) & uzt_history.eligible_measurement_count.gt(0)]
+        if case == 'cold_start':
+            vh, uh = vh.iloc[:0], uh.iloc[:0]
+        vh = vh.sort_values('date').drop_duplicates(['id','segment_id'], keep='last')
+        vh = vh[['id','segment_id','date','min_residual_thickness_mm']].rename(columns={
+            'date':'last_vtd_date', 'min_residual_thickness_mm':'last_vtd_thickness_mm'})
+        uh = uh.sort_values('date').drop_duplicates(['id','segment_id'], keep='last')
+        uh = uh[['id','segment_id','date','eligible_min_thickness_mm']].rename(columns={
+            'date':'last_uzt_date', 'eligible_min_thickness_mm':'last_uzt_thickness_mm'})
+        target = target.merge(vh, on=['id','segment_id'], how='left', validate='one_to_one')
+        target = target.merge(uh, on=['id','segment_id'], how='left', validate='one_to_one')
+        target['has_previous_vtd'] = target.last_vtd_thickness_mm.notna()
+        target['years_since_vtd'] = (cutoff-target.last_vtd_date).dt.total_seconds()/(86400*365.25)
+        # Missing past measurements stay missing; nominal thickness is already a separate feature.
+        features.append(target)
+    if not features:
+        raise ValueError('At least one prediction request is required')
+    return {
+        'target_features': pd.concat(features, ignore_index=True),
+        'regime_mapped': pd.concat(regimes, ignore_index=True),
+        'monitoring_mapped': pd.concat(monitoring_tables, ignore_index=True),
+        'hydraulic_asof': pd.concat(hydraulic_rows, ignore_index=True),
+        'hydraulic_quality': pd.concat(quality, ignore_index=True),
     }
-
-    for name, df_tab in tables.items():
-        if not df_tab.empty:
-            df_tab.to_csv(output_dir / f"{name}.csv", index=False, encoding='utf-8')
-            df_tab.to_parquet(output_dir / f"{name}.parquet", index=False)
-
-    return tables

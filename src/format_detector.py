@@ -1,219 +1,118 @@
-"""
-Format detection, character encoding sniffer, date parser, and column standardizer.
-"""
-
-import re
+"""Explicit source schemas, original filename aliases and loss-aware parsing."""
 import csv
+import hashlib
+import re
 from pathlib import Path
-from typing import Dict, Tuple, Any, List
-import pandas as pd
+
 import numpy as np
+import pandas as pd
 
-from .config import CYRILLIC_TO_LATIN, CANONICAL_COL_MAPPINGS
-
-
-def to_snake_case(text: str) -> str:
-    """
-    Converts arbitrary string into clean Latin snake_case.
-    Transliterates Cyrillic characters, strips special symbols, and merges underscores.
-    """
-    text = text.strip()
-    res = []
-    for ch in text.lower():
-        if ch in CYRILLIC_TO_LATIN:
-            res.append(CYRILLIC_TO_LATIN[ch])
-        elif ch.isalnum():
-            res.append(ch)
-        else:
-            res.append('_')
-    s = ''.join(res)
-    s = re.sub(r'_+', '_', s).strip('_')
-    return s or "col"
+from .config import (FILE_ALIASES, CANONICAL_COL_MAPPINGS, CYRILLIC_TO_LATIN,
+                     NUMERIC_COLUMNS, DATE_COLUMNS, REQUIRED_COLUMNS)
 
 
-def detect_file_format(filepath: Path) -> Tuple[str, str, str]:
-    """
-    Autodetects file encoding, field delimiter, and decimal separator.
-    Returns:
-        (encoding, delimiter, decimal_separator)
-    """
-    # 1. Detect encoding
-    detected_enc = 'utf-8'
-    for enc in ['utf-8', 'utf-8-sig', 'cp1251', 'windows-1251', 'iso-8859-1']:
+def to_snake_case(text):
+    return re.sub(r'_+', '_', ''.join(CYRILLIC_TO_LATIN.get(c, c if c.isalnum() else '_')
+                                    for c in text.strip().lower())).strip('_') or 'col'
+
+
+def detect_file_format(path):
+    blob = Path(path).read_bytes()
+    for encoding in ('utf-8-sig', 'cp1251'):
         try:
-            with open(filepath, 'r', encoding=enc) as f:
-                sample = f.read(65536)
-                detected_enc = enc
-                break
+            sample = blob.decode(encoding)
+            break
         except UnicodeDecodeError:
             continue
-
-    # 2. Detect delimiter
+    else:
+        raise ValueError(f'Unsupported encoding: {path}')
     try:
-        lines = [line for line in sample.splitlines()[:10] if line.strip()]
-        sample_text = '\n'.join(lines)
-        dialect = csv.Sniffer().sniff(sample_text, delimiters=',;\t|')
-        delim = dialect.delimiter
-    except Exception:
-        counts = {d: sample[:2000].count(d) for d in [',', ';', '\t', '|']}
-        delim = max(counts, key=counts.get)
-
-    # 3. Detect decimal separator
-    dec = '.'
-    try:
-        sample_df = pd.read_csv(filepath, encoding=detected_enc, sep=delim, nrows=50)
-        for col in sample_df.columns:
-            if sample_df[col].dtype == object or str(sample_df[col].dtype) in ('object', 'str', 'string'):
-                vals = sample_df[col].dropna().astype(str)
-                if any(re.match(r'^-?\d+,\d+$', s.strip()) for s in vals):
-                    dec = ','
-                    break
-    except Exception:
-        pass
-
-    return detected_enc, delim, dec
+        sep = csv.Sniffer().sniff(sample[:65536], delimiters=',;\t').delimiter
+    except csv.Error:
+        sep = ',' if sample.splitlines()[0].count(',') > sample.splitlines()[0].count(';') else ';'
+    return encoding, sep
 
 
-def build_column_mapping(filename: str, original_cols: List[str]) -> Dict[str, str]:
-    """
-    Builds a column rename mapping dictionary:
-    assigns canonical names to key attributes and automated snake_case to the rest.
-    Guarantees unique column names without collisions.
-    """
-    canon = CANONICAL_COL_MAPPINGS.get(filename, {})
-    mapping = {}
-    used_names = set()
-
-    for col in original_cols:
-        if col in canon:
-            new_name = canon[col]
-        else:
-            new_name = to_snake_case(col)
-
-        base_name = new_name
-        counter = 1
-        while new_name in used_names:
-            new_name = f"{base_name}_{counter}"
-            counter += 1
-
-        used_names.add(new_name)
-        mapping[col] = new_name
-
+def build_column_mapping(filename, columns):
+    canonical = CANONICAL_COL_MAPPINGS[filename]
+    mapping, used = {}, set()
+    for original in columns:
+        name = canonical.get(original, to_snake_case(original))
+        if name in used:
+            if original in canonical:
+                raise ValueError(f'{filename}: canonical column collision: {original} -> {name}')
+            # Archival fields such as impact strength at +20/-20 must both survive.
+            name += '_' + hashlib.sha256(original.encode('utf-8')).hexdigest()[:8]
+        mapping[original] = name
+        used.add(name)
     return mapping
 
 
-def robust_parse_dates(series: pd.Series) -> pd.Series:
-    """
-    Robust datetime parser supporting ISO (YYYY-MM-DD) and Russian format (DD.MM.YYYY).
-    """
-    sample = series.dropna().astype(str).head(100)
-    if len(sample) == 0:
-        return pd.to_datetime(series, errors='coerce')
-    if sample.str.match(r'^\d{4}-\d{2}-\d{2}').sum() > len(sample) * 0.5:
-        return pd.to_datetime(series, format='ISO8601', errors='coerce')
-    elif sample.str.match(r'^\d{2}\.\d{2}\.\d{4}').sum() > len(sample) * 0.5:
-        return pd.to_datetime(series, format='%d.%m.%Y', errors='coerce')
-    else:
-        return pd.to_datetime(series, format='mixed', errors='coerce')
+def robust_parse_dates(series):
+    # Dates are parsed per value, never inferred from the majority of a column.
+    s = series.astype('string').str.strip()
+    parsed = pd.Series(pd.NaT, index=s.index, dtype='datetime64[ns]')
+    iso = s.str.match(r'^\d{4}-\d{2}-\d{2}', na=False)
+    ru = s.str.match(r'^\d{2}\.\d{2}\.\d{4}', na=False)
+    parsed.loc[iso] = pd.to_datetime(s[iso], format='ISO8601', errors='coerce').astype('datetime64[ns]')
+    parsed.loc[ru] = pd.to_datetime(s[ru], format='mixed', dayfirst=True, errors='coerce').astype('datetime64[ns]')
+    return parsed
 
 
-def read_and_standardize_all(data_dir: Path) -> Tuple[Dict[str, pd.DataFrame], Dict[str, Any]]:
-    """
-    Loads all raw data files, standardizes column names, converts datatypes,
-    and returns DataFrames along with metadata summary.
-    """
-    files = [
-        'passport.csv',
-        'profile.csv',
-        'uzt.csv',
-        'vtd.csv',
-        'regime.csv',
-        'tech_mode_for_embedings_with_length_with_temperatures_ids16.csv'
-    ]
+def parse_numeric(series):
+    s = series.astype('string').str.strip().str.replace('\u00a0', '', regex=False)
+    s = s.str.replace(',', '.', regex=False)
+    return pd.to_numeric(s, errors='coerce').astype(float).replace([np.inf, -np.inf], np.nan)
 
-    dfs: Dict[str, pd.DataFrame] = {}
-    summary: Dict[str, Any] = {}
 
-    for fn in files:
-        filepath = data_dir / fn
-        if not filepath.exists():
-            continue
+def resolve_sources(data_dir):
+    resolved = {}
+    for name, aliases in FILE_ALIASES.items():
+        found = [Path(data_dir) / alias for alias in aliases if (Path(data_dir) / alias).is_file()]
+        if not found:
+            raise FileNotFoundError(f'Missing source {name}; accepted names: {aliases}')
+        # Reject ambiguous copies, allowing identical files with different line endings.
+        content = [p.read_bytes().replace(b'\r\n', b'\n') for p in found]
+        if any(c != content[0] for c in content[1:]):
+            raise ValueError(f'Conflicting aliases for {name}: {found}')
+        resolved[name] = found[0]
+    return resolved
 
-        enc, delim, dec = detect_file_format(filepath)
 
-        df_raw = pd.read_csv(
-            filepath,
-            encoding=enc,
-            sep=delim,
-            decimal=dec,
-            low_memory=False
-        )
-
-        col_mapping = build_column_mapping(fn, df_raw.columns.tolist())
-        df = df_raw.rename(columns=col_mapping).copy()
-
-        # Locate pipeline ID column
-        id_col = 'id' if 'id' in df.columns else None
-        if id_col is None:
-            for c in df.columns:
-                if 'id' in c:
-                    id_col = c
-                    break
-
-        # Standardize ID column to integer
-        if id_col and id_col in df.columns:
-            df[id_col] = pd.to_numeric(df[id_col], errors='coerce').astype('Int64')
-            unique_ids = [int(x) for x in df[id_col].dropna().unique()]
-            unique_ids.sort()
-        else:
-            unique_ids = []
-
-        # Standardize date columns to datetime
-        date_cols_found = []
-        date_ranges = {}
-        for col in df.columns:
-            if any(k in col.lower() for k in ['year', 'god', 'srok', 'let']):
-                continue
-
-            if any(k in col.lower() for k in ['date', 'data', 'vvod']):
-                if df[col].dtype.kind in ('O', 'U', 'S') or str(df[col].dtype) in ('object', 'str', 'string'):
-                    try:
-                        parsed = robust_parse_dates(df[col])
-                        if parsed.notnull().sum() > 0:
-                            df[col] = parsed
-                            date_cols_found.append(col)
-                            d_min = parsed.min().strftime('%Y-%m-%d') if pd.notnull(parsed.min()) else 'None'
-                            d_max = parsed.max().strftime('%Y-%m-%d') if pd.notnull(parsed.max()) else 'None'
-                            date_ranges[col] = f"{d_min} ... {d_max}"
-                    except Exception:
-                        pass
-
-        # Standardize numerical text columns to float
-        for col in df.columns:
-            if col not in date_cols_found and col != id_col:
-                if df[col].dtype.kind in ('O', 'U', 'S') or str(df[col].dtype) in ('object', 'str', 'string'):
-                    sample_vals = df[col].dropna()
-                    if len(sample_vals) > 0 and sample_vals.astype(str).str.replace('.', '', regex=False).str.replace('-', '', regex=False).str.isdigit().sum() > len(sample_vals) * 0.9:
-                        df[col] = pd.to_numeric(df[col], errors='coerce')
-
-        duplicates_count = int(df_raw.duplicated().sum())
-        null_counts = {col: int(df[col].isnull().sum()) for col in df.columns if df[col].isnull().sum() > 0}
-
-        summary[fn] = {
-            'encoding': enc,
-            'delimiter': delim,
-            'decimal': dec,
-            'rows_count': len(df),
-            'cols_count': len(df.columns),
-            'duplicates_count': duplicates_count,
-            'unique_pipe_ids': unique_ids,
-            'pipe_ids_count': len(unique_ids),
-            'date_ranges': date_ranges,
-            'null_cols_count': len(null_counts),
-            'null_sample': {k: null_counts[k] for k in list(null_counts.keys())[:8]},
-            'column_mapping': col_mapping,
+def read_and_standardize_all(data_dir):
+    datasets, summary, issues = {}, {}, []
+    for name, path in resolve_sources(data_dir).items():
+        encoding, sep = detect_file_format(path)
+        raw = pd.read_csv(path, encoding=encoding, sep=sep, dtype='string',
+                          keep_default_na=False)
+        mapping = build_column_mapping(name, raw.columns)
+        df = raw.rename(columns=mapping).copy()
+        # Literal absence markers only; a physical zero is never a global NA marker.
+        df = df.replace(['', '#N/A', 'NaN', 'nan', 'NULL'], pd.NA)
+        missing = set(REQUIRED_COLUMNS[name]) - set(df.columns)
+        if missing:
+            raise ValueError(f'{path.name}: missing required columns {sorted(missing)}')
+        df.insert(0, 'source_row', np.arange(2, len(df) + 2))
+        for col in NUMERIC_COLUMNS[name] + DATE_COLUMNS[name]:
+            before = df[col].copy()
+            parsed = robust_parse_dates(before) if col in DATE_COLUMNS[name] else parse_numeric(before)
+            bad = before.notna() & parsed.isna()
+            if bad.any():
+                df[col + '_source_text'] = before
+                for index in df.index[bad]:
+                    issues.append({'file': name, 'source_row': int(df.at[index, 'source_row']),
+                                   'field': col, 'rule': 'parse_failed', 'action': 'set_missing',
+                                   'original_value': str(before[index])})
+            df[col] = parsed
+        invalid_id = df.id.notna() & ((df.id % 1 != 0) | (df.id <= 0))
+        if invalid_id.any():
+            raise ValueError(f'{name}: non-integer or nonpositive IDs')
+        df['id'] = df.id.astype('Int64')
+        datasets[name] = df
+        summary[name] = {
+            'source_filename': path.name, 'sha256': hashlib.sha256(path.read_bytes()).hexdigest(),
+            'rows': len(df), 'columns': len(raw.columns), 'encoding': encoding, 'delimiter': sep,
+            'column_mapping': mapping,
+            'missing_by_column': {c: int(df[c].isna().sum()) for c in df},
         }
-
-        dfs[fn] = df
-
-    return dfs, summary
+    return datasets, summary, issues
