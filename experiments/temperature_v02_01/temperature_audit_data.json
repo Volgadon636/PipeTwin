@@ -1,0 +1,194 @@
+{
+  "stage": "01_temperature_data_audit",
+  "git": {
+    "branch": "model_v02",
+    "head_sha": "2efd775765bbfafa96330b32aa202b70d23466ec",
+    "status": "clean"
+  },
+  "field_provenance": {
+    "t_mix": {
+      "source": "data/cleaned/tech_mode_*.csv -> processed/hydraulic_asof.csv",
+      "semantics": "Measured mixture temperature at some point in the pipeline (inlet, outlet, or intermediate — exact meaning unresolved per src/temporal.py comment line 67). NOT a computed field.",
+      "units_stored": "Celsius",
+      "qa_applied": "zero_temperature_during_flow rule (soft, 3-day persistence); low/high threshold rules"
+    },
+    "t_start": {
+      "source": "data/cleaned/tech_mode_*.csv -> processed/hydraulic_asof.csv",
+      "semantics": "Measured temperature at pipe inlet. NOT computed.",
+      "units_stored": "Celsius",
+      "qa_applied": "zero_temperature_during_flow, low/high threshold"
+    },
+    "t_end": {
+      "source": "data/cleaned/tech_mode_*.csv -> processed/hydraulic_asof.csv",
+      "semantics": "Measured temperature at pipe outlet. NOT computed.",
+      "units_stored": "Celsius",
+      "qa_applied": "zero_temperature_during_flow, low/high threshold"
+    },
+    "t_mix_usable": {
+      "source": "derived from t_mix by src/temporal.py::hydraulic_asof()",
+      "semantics": "Copy of t_mix after QA; set to NaN where rule 'zero_temperature_during_flow' fires AND row is NOT part of a 3-consecutive-day persistent run",
+      "type": "OBSERVED (after QA filter)"
+    },
+    "t_start_usable": {
+      "source": "derived from t_start same mechanism",
+      "semantics": "Copy of t_start after QA",
+      "type": "OBSERVED (after QA filter)"
+    },
+    "t_end_usable": {
+      "source": "derived from t_end same mechanism",
+      "semantics": "Copy of t_end after QA",
+      "type": "OBSERVED (after QA filter)"
+    },
+    "t_mix_mean": {
+      "source": "processed/target_features.csv, processed/training_targets-era windows",
+      "semantics": "Daily-median then equal-weight mean of t_mix_usable over all observation days < cutoff, computed by src/temporal.py::hydraulic_summary(). Single scalar per pipe per cutoff — NOT segment-resolved.",
+      "type": "CALCULATED (time-average of observations)"
+    },
+    "t_start_mean": {
+      "source": "same mechanism",
+      "semantics": "Time-average of t_start_usable. Single scalar per pipe per cutoff.",
+      "type": "CALCULATED"
+    },
+    "t_end_mean": {
+      "source": "same mechanism",
+      "semantics": "Time-average of t_end_usable. Single scalar per pipe per cutoff.",
+      "type": "CALCULATED"
+    },
+    "temperature_c_mean": {
+      "source": "computed on-the-fly by src/ml/features.py::_compute_temperature_c()",
+      "semantics": "Segment-resolved temperature estimate via Shukhov exponential decay profile when t_start_mean and t_end_mean both available; linear fallback if ratios invalid; pipe-level t_mix_mean fallback if no boundary temps; hardcoded 20.0 if all missing.",
+      "type": "CALCULATED (spatial interpolation from pipe-level averages)",
+      "ground_temp_c": "4.0 is a fallback constant (soil reference), NOT a measurement",
+      "fillna_20": "fillna(20.0) is a code fallback, NOT a measurement"
+    },
+    "arrhenius_thermal_factor": {
+      "source": "computed by src/ml/features.py::_compute_arrhenius_factor() from temperature_c_mean",
+      "formula": "exp(theta * (1/T_ref - 1/T_K)), theta=2500 K (LEGACY PLACEHOLDER), T_ref=293.15 K",
+      "type": "CALCULATED",
+      "note": "theta=2500 K is explicitly a legacy placeholder per spec; team-proposed candidates are Ea={0,25,40,55,70} kJ/mol"
+    }
+  },
+  "coverage_by_target": {
+    "1250009583_cold_start_2022-07-01": {
+      "main_pipeline_id": "MAIN-4",
+      "commissioning_date": "1993-06-20",
+      "first_hydraulic_obs": "2014-12-24",
+      "pre_obs_gap_days": 7857,
+      "pre_obs_gap_years": 21.5,
+      "total_horizon_years": 29.0,
+      "fraction_unobserved_pre": 0.741,
+      "hydraulic_rows": 1415,
+      "unique_obs_days": 1414,
+      "max_intra_obs_gap_days": 398,
+      "t_mix_usable_valid_rows": 1415,
+      "t_start_usable_valid_rows": 1230,
+      "t_end_usable_valid_rows": 1230,
+      "t_all3_valid_rows": 1230,
+      "t_wv_all_valid_rows": 1414,
+      "t_only_rows_lost_to_wv": 1,
+      "t_mix_mean_value": 6.199,
+      "t_start_mean_value": 20.910,
+      "t_end_mean_value": 6.938,
+      "temperature_c_mean_range_C": [6.938, 20.910],
+      "temperature_c_mean_std_C": 3.9409,
+      "arrhenius_range": [0.671851, 1.026752],
+      "shukhov_path": "exponential (ratio=0.1737, spatially varying — large gradient inlet to outlet)",
+      "kelvin_range": [280.088, 294.060],
+      "any_below_253K": false,
+      "exposure_policy": "bounded_forward_hold_1_days",
+      "note": "74% of total life is unobserved (pre-2015). Observed window 2015-2022 has good T coverage (1414/1414 days). Arrhenius varies meaningfully (0.67–1.03) along pipe."
+    },
+    "1250022871_between_vtd_2023-12-01": {
+      "main_pipeline_id": "MAIN-2",
+      "commissioning_date": "2000-04-22",
+      "first_hydraulic_obs": "2012-12-12",
+      "pre_obs_gap_days": 4617,
+      "pre_obs_gap_years": 12.6,
+      "hydraulic_rows": 2793,
+      "unique_obs_days": 2771,
+      "max_intra_obs_gap_days": 195,
+      "t_mix_usable_valid_rows": 2780,
+      "t_start_usable_valid_rows": 2756,
+      "t_end_usable_valid_rows": 2756,
+      "t_all3_valid_rows": 2756,
+      "t_wv_all_valid_rows": 2780,
+      "t_only_rows_lost_to_wv": 0,
+      "t_mix_mean_value": 23.489,
+      "t_start_mean_value": 23.766,
+      "t_end_mean_value": 23.587,
+      "temperature_c_mean_range_C": [23.587, 23.766],
+      "temperature_c_mean_std_C": 0.0519,
+      "arrhenius_range": [1.108586, 1.114245],
+      "shukhov_path": "exponential (ratio=0.9909, nearly uniform — small gradient)",
+      "kelvin_range": [296.737, 296.916],
+      "any_below_253K": false,
+      "exposure_policy": "bounded_forward_hold_1_days",
+      "note": "12.6 years pre-obs gap. Observed 2013-2023 has good T coverage (2765/2771 days with t_mix valid). Arrhenius barely varies (1.108–1.114) — essentially constant spatially."
+    }
+  },
+  "qa_actions_temperature": {
+    "t_mix_zero_during_flow_set_missing": 13,
+    "t_mix_zero_during_flow_keep_persistent": 22,
+    "t_start_zero_during_flow": 0,
+    "t_end_zero_during_flow": 0,
+    "t_mix_low_threshold_violations": 0,
+    "t_mix_high_threshold_violations": 0,
+    "note": "Zero t_mix during no-flow (q_liquid=0): 185 rows — these are NOT removed (zero flow, sensor may read ambient). Legitimate 0 C readings at no-flow are preserved."
+  },
+  "celsius_to_kelvin": {
+    "conversion": "T_K = T_C + 273.15",
+    "t_mix_usable_range_C": [0.0, 44.52],
+    "t_mix_usable_range_K": [273.15, 317.67],
+    "clip_in_arrhenius": "lower=253.15 K (-20 C) — no rows affected",
+    "valid": true
+  },
+  "rows_lost_T_valid_but_wv_missing": {
+    "total": 1,
+    "note": "Only 1 row has t_mix_usable valid but v_liquid_true_usable missing. T-only experiment loses virtually no data vs T+W+v."
+  },
+  "temperature_only_experiment_feasibility": {
+    "conclusion": "FEASIBLE",
+    "fields_needed": ["t_mix_usable", "t_start_usable", "t_end_usable"],
+    "computed_from": ["t_mix_mean", "t_start_mean", "t_end_mean"],
+    "coverage_adequate": true,
+    "spatial_variation": {
+      "1250009583_cold_start": "SIGNIFICANT (std=3.94 C, range 13.97 C) — Shukhov exponential, good for Arrhenius experiment",
+      "1250022871_between_vtd": "MINIMAL (std=0.052 C, range 0.18 C) — nearly isothermal pipe"
+    },
+    "gap_risk": "cold_start has 74% pre-obs gap and max 398-day intra-obs gap. Under bounded_hold_1_day policy, pre-obs gap is UNKNOWN, not filled."
+  },
+  "proposed_test_cases_for_stage_02": [
+    {
+      "name": "test_temperature_c_mean_uses_shukhov_when_start_end_available",
+      "description": "When both t_start_mean and t_end_mean are non-null, _compute_temperature_c must produce a spatially varying profile, not a constant"
+    },
+    {
+      "name": "test_temperature_c_mean_fallback_to_tmix_when_no_boundary",
+      "description": "When t_start_mean/t_end_mean are null, function falls back to t_mix_mean (pipe-level constant per segment)"
+    },
+    {
+      "name": "test_temperature_c_mean_fallback_to_20_when_all_missing",
+      "description": "When all temperature means are null, function returns 20.0 — this must be flagged as imputation, not measurement"
+    },
+    {
+      "name": "test_arrhenius_uses_legacy_theta_2500",
+      "description": "Current code uses theta=2500 K; test must confirm this and document it as placeholder (not a nominated physical coefficient)"
+    },
+    {
+      "name": "test_no_future_temperature_in_snapshot",
+      "description": "t_mix_mean, t_start_mean, t_end_mean in make_snapshot must come only from records < prediction_date"
+    },
+    {
+      "name": "test_cold_start_has_no_vtd_temperature_leakage",
+      "description": "Cold-start snapshot must not use any hydraulic records on/after 2022-07-01"
+    },
+    {
+      "name": "test_zero_tmix_at_no_flow_not_invalidated",
+      "description": "Zero t_mix when q_liquid=0 (185 rows) must remain usable after QA"
+    },
+    {
+      "name": "test_kelvin_always_above_273K_for_valid_rows",
+      "description": "All usable t_mix values in [0, 44.52] C => K in [273.15, 317.67]; no value below 253.15 K clip threshold"
+    }
+  ]
+}
