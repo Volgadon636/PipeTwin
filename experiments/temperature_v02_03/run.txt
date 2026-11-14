@@ -1,0 +1,29 @@
+
+Fontconfig error: No writable cache directories
+	/opt/homebrew/var/cache/fontconfig
+	/Users/emil/.cache/fontconfig
+	/Users/emil/.fontconfig
+
+Fontconfig error: No writable cache directories
+	/opt/homebrew/var/cache/fontconfig
+	/Users/emil/.cache/fontconfig
+	/Users/emil/.fontconfig
+
+Fontconfig error: No writable cache directories
+	/opt/homebrew/var/cache/fontconfig
+	/Users/emil/.cache/fontconfig
+	/Users/emil/.fontconfig
+
+Fontconfig error: No writable cache directories
+	/opt/homebrew/var/cache/fontconfig
+	/Users/emil/.cache/fontconfig
+	/Users/emil/.fontconfig
+Matplotlib is building the font cache; this may take a moment.
+{
+  "window_groups": 11,
+  "exposure_rows": 55,
+  "review_rows": 10,
+  "pooled_observations": 3000,
+  "admissible_validation_folds": 0,
+  "models_fitted": 0
+}

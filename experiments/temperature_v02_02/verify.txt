@@ -1,0 +1,27 @@
+{
+  "historical_rows": 1080,
+  "production_rows": 2000,
+  "window_groups": 19,
+  "output": "/Users/emil/Desktop/PipeTwin/PipeTwin/experiments/temperature_v02_02/reproduction_t0w50j13"
+}
+{
+  "protected_files_checked": 104,
+  "protected_files_changed": [],
+  "baseline_prediction_sha256": {
+    "experiments/ml_baseline/result.csv": "ef1c4e4e33217a5c821a94739f43288942f99e351c05ee454305eae9e3644394",
+    "experiments/m0_baseline_reference/result.csv": "ef1c4e4e33217a5c821a94739f43288942f99e351c05ee454305eae9e3644394",
+    "experiments/temperature_v02_02/baseline_control/result.csv": "ef1c4e4e33217a5c821a94739f43288942f99e351c05ee454305eae9e3644394"
+  },
+  "deterministic_outputs_checked": 8,
+  "deterministic_outputs_match": true,
+  "feature_output_sha256": {
+    "coverage_by_window.csv": "71dcf5750221807ef2e1c9db6adc830a7c3c9a5130a67dae550fca7f82dfe12a",
+    "example_rows.csv": "a4d6e82212043e6de55bec79093e57df02d44e0e21be56e41488ecf2a149cb3c",
+    "example_rows.json": "d2d218491419b733a3a70e87c6c99caecc7fa96b5873f28a72f9ff67719b78b8",
+    "feature_audit.json": "145acdca16962b772cf038511d0756e2e03b540ecb5f6eeb805813b5475f6337",
+    "feature_catalog.json": "5b4d449c1cbf1512b92f3cdbabbc346818ac927248710630f21e1c5abd0ae676",
+    "historical_features.csv": "2656f91ac1c5ad76fbf160ebb145b037e3019321a6979134623fe5afc48098eb",
+    "production_features.csv": "6077f8231cebede2286b263a80b57a052a23a4dd5797f164312105913245949b",
+    "temperature_intervals.csv": "73d77e985a0c5ba71c8ce6452e3da4170f13b3da5d4d0aade088fc2972ab7d16"
+  }
+}

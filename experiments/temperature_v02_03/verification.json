@@ -1,0 +1,23 @@
+{
+  "protected_files_checked": 152,
+  "protected_files_changed": [],
+  "deterministic_artifacts_checked": 13,
+  "deterministic_artifacts_match": true,
+  "baseline_prediction_sha256": "ef1c4e4e33217a5c821a94739f43288942f99e351c05ee454305eae9e3644394",
+  "preregistration_sha256": "65c355de30a6889e78a0c76bde3fc46d4d5413a0921ba4131719d6c01934103c",
+  "output_sha256": {
+    "candidate_exposures.csv": "83eaf1a3c1d00b7bfa99773733b4a39c4850e1b4f11de198bdfdf43846b22759",
+    "candidate_sensitivity.png": "278889fece9c658f554f800cd89ed1f7925ce1d1ffcb621394927e6e86337984",
+    "candidate_sensitivity.svg": "3351aa8492b32f12c85f2f358affa3632fb72687dfc66df5df63874ee98da91d",
+    "ea_candidate_review.csv": "7e7d05a9039e182bd0ef2b2fa95e89b1f9433654eeffcf65ec969035d08a1f7c",
+    "ea_candidate_review.json": "7b09b24dd54157c081ab358f91cff971c5cc5fac27aa4b30ab573bf1b1443700",
+    "eligible_training_summary.json": "2e70c3937594ac96cef20af6373616ea720aa2f17b92db094a0b6ee227d644d8",
+    "factor_statistics.csv": "32e56ca8c77b83383867be762ef54adfa6d1411d89871ef63baf003859b6c5b2",
+    "intervals.csv": "b366d190c37ef7027cc2919c093b37d4e1d5269b26adb0d8b4084d722388a975",
+    "legacy_compatibility.json": "1af841c1db3f804c090aea4359fc62e9e8061ed2e89c59339a4cabc845245597",
+    "sensitivity_temperatures.csv": "3cddffd079a481571a1b28be1d9cea437e6a99764341e2c88231ace61bd6b7a1",
+    "temperature_confounding.csv": "74d8894208e1ef6528b0c1cc7177738a6a8bb57ea8d124d36e5fa16851633730",
+    "validation_fold_audit.csv": "15511b826fabb5ce3f394eefd84317dc434616212685ab6d06ea5e6a9257fa00",
+    "window_segments.csv": "c0758cab124b52e5b27615744479c87cc7057b8fc7a3bdc100bd797766167723"
+  }
+}

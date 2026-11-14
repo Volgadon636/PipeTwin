@@ -1,0 +1,138 @@
+{
+  "numeric_features": [
+    {
+      "feature_name": "thermal_exposure_observed_years",
+      "formula_version": "v1.0_t_only_bounded_arrhenius",
+      "source_columns": [
+        "t_mix_usable",
+        "date",
+        "start_date",
+        "prediction_date"
+      ],
+      "category": "thermal_exposure",
+      "description": "Sum of duration_years * F_T over valid bounded T intervals [years]"
+    },
+    {
+      "feature_name": "thermal_exposure_reference_years",
+      "formula_version": "v1.0_t_only_bounded_arrhenius",
+      "source_columns": [
+        "t_mix_usable",
+        "date",
+        "start_date",
+        "prediction_date"
+      ],
+      "category": "thermal_exposure",
+      "description": "Observed exposure + unobserved years; null unless reference gap assumption declared [years]"
+    },
+    {
+      "feature_name": "thermal_observed_years",
+      "formula_version": "v1.0_t_only_bounded_arrhenius",
+      "source_columns": [
+        "t_mix_usable",
+        "date",
+        "start_date",
+        "prediction_date"
+      ],
+      "category": "thermal_exposure",
+      "description": "Sum of valid bounded T interval durations [years]"
+    },
+    {
+      "feature_name": "thermal_unobserved_years",
+      "formula_version": "v1.0_t_only_bounded_arrhenius",
+      "source_columns": [
+        "t_mix_usable",
+        "date",
+        "start_date",
+        "prediction_date"
+      ],
+      "category": "thermal_exposure",
+      "description": "Full horizon minus supported duration; unknown history [years]"
+    },
+    {
+      "feature_name": "thermal_coverage_fraction",
+      "formula_version": "v1.0_t_only_bounded_arrhenius",
+      "source_columns": [
+        "t_mix_usable",
+        "date",
+        "start_date",
+        "prediction_date"
+      ],
+      "category": "thermal_exposure",
+      "description": "Supported duration / full horizon [fraction]"
+    },
+    {
+      "feature_name": "thermal_longest_gap_days",
+      "formula_version": "v1.0_t_only_bounded_arrhenius",
+      "source_columns": [
+        "t_mix_usable",
+        "date",
+        "start_date",
+        "prediction_date"
+      ],
+      "category": "thermal_exposure",
+      "description": "Longest unsupported gap, including leading and trailing gaps [days]"
+    },
+    {
+      "feature_name": "thermal_factor_observed_mean",
+      "formula_version": "v1.0_t_only_bounded_arrhenius",
+      "source_columns": [
+        "t_mix_usable",
+        "date",
+        "start_date",
+        "prediction_date"
+      ],
+      "category": "thermal_exposure",
+      "description": "Observed exposure / supported duration; null for no support [dimensionless]"
+    },
+    {
+      "feature_name": "thermal_history_missing",
+      "formula_version": "v1.0_t_only_bounded_arrhenius",
+      "source_columns": [
+        "t_mix_usable",
+        "date",
+        "start_date",
+        "prediction_date"
+      ],
+      "category": "thermal_exposure",
+      "description": "No supported temperature intervals [bool]"
+    },
+    {
+      "feature_name": "thermal_history_incomplete",
+      "formula_version": "v1.0_t_only_bounded_arrhenius",
+      "source_columns": [
+        "t_mix_usable",
+        "date",
+        "start_date",
+        "prediction_date"
+      ],
+      "category": "thermal_exposure",
+      "description": "Some horizon duration has no supported temperature [bool]"
+    }
+  ],
+  "metadata_columns": [
+    "thermal_theta_K",
+    "thermal_ea_kJ_mol",
+    "thermal_candidate_id",
+    "thermal_gap_policy",
+    "thermal_exposure_policy",
+    "thermal_profile_source"
+  ],
+  "metadata_excluded_from_learnable_features": true,
+  "parameters": {
+    "ea_kj_mol": 40.0,
+    "gap_policy": "reference",
+    "max_hold_days": 1.0,
+    "thermal_reference_temperature_K": 293.15,
+    "gas_constant_J_mol_K": 8.314462618,
+    "candidates": {
+      "EA00_null": 0.0,
+      "EA25_low": 25.0,
+      "EA40_mid": 40.0,
+      "EA55_elevated": 55.0,
+      "EA70_high": 70.0
+    }
+  },
+  "source_type": "team_hypothesis",
+  "evidence_status": "diagnostic_only",
+  "interpretation": "EA40_mid is provisional; reference gaps are assumptions, never measured history"
+}

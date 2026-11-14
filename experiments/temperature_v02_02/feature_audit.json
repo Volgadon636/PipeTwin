@@ -1,0 +1,330 @@
+{
+  "historical": [
+    {
+      "feature_name": "thermal_exposure_observed_years",
+      "formula_version": "v1.0_t_only_bounded_arrhenius",
+      "source_columns": [
+        "t_mix_usable",
+        "date",
+        "start_date",
+        "prediction_date"
+      ],
+      "category": "thermal_exposure",
+      "coverage": 1.0,
+      "non_null_count": 1080,
+      "total_count": 1080,
+      "mean": 3.866234322811486,
+      "std": 1.6542833914669979,
+      "min_val": 1.5357436729984304,
+      "max_val": 8.592039417539587
+    },
+    {
+      "feature_name": "thermal_exposure_reference_years",
+      "formula_version": "v1.0_t_only_bounded_arrhenius",
+      "source_columns": [
+        "t_mix_usable",
+        "date",
+        "start_date",
+        "prediction_date"
+      ],
+      "category": "thermal_exposure",
+      "coverage": 1.0,
+      "non_null_count": 1080,
+      "total_count": 1080,
+      "mean": 10.094029931652322,
+      "std": 5.3625117319789215,
+      "min_val": 3.2241924220231017,
+      "max_val": 17.402950306215423
+    },
+    {
+      "feature_name": "thermal_observed_years",
+      "formula_version": "v1.0_t_only_bounded_arrhenius",
+      "source_columns": [
+        "t_mix_usable",
+        "date",
+        "start_date",
+        "prediction_date"
+      ],
+      "category": "thermal_exposure",
+      "coverage": 1.0,
+      "non_null_count": 1080,
+      "total_count": 1080,
+      "mean": 3.1828186330533517,
+      "std": 0.6753200245671841,
+      "min_val": 1.28394599082313,
+      "max_val": 4.975450731361067
+    },
+    {
+      "feature_name": "thermal_unobserved_years",
+      "formula_version": "v1.0_t_only_bounded_arrhenius",
+      "source_columns": [
+        "t_mix_usable",
+        "date",
+        "start_date",
+        "prediction_date"
+      ],
+      "category": "thermal_exposure",
+      "coverage": 1.0,
+      "non_null_count": 1080,
+      "total_count": 1080,
+      "mean": 6.227795608840835,
+      "std": 6.716635387755917,
+      "min_val": 0.12057146297563781,
+      "max_val": 15.192579030091007
+    },
+    {
+      "feature_name": "thermal_coverage_fraction",
+      "formula_version": "v1.0_t_only_bounded_arrhenius",
+      "source_columns": [
+        "t_mix_usable",
+        "date",
+        "start_date",
+        "prediction_date"
+      ],
+      "category": "thermal_exposure",
+      "coverage": 1.0,
+      "non_null_count": 1080,
+      "total_count": 1080,
+      "mean": 0.5578207770086732,
+      "std": 0.29849112693473634,
+      "min_val": 0.17522451088871274,
+      "max_val": 0.9141545285538953
+    },
+    {
+      "feature_name": "thermal_longest_gap_days",
+      "formula_version": "v1.0_t_only_bounded_arrhenius",
+      "source_columns": [
+        "t_mix_usable",
+        "date",
+        "start_date",
+        "prediction_date"
+      ],
+      "category": "thermal_exposure",
+      "coverage": 1.0,
+      "non_null_count": 1080,
+      "total_count": 1080,
+      "mean": 1731.0415417952674,
+      "std": 2114.3537049902143,
+      "min_val": 35.29756944444444,
+      "max_val": 4618.487777777777
+    },
+    {
+      "feature_name": "thermal_factor_observed_mean",
+      "formula_version": "v1.0_t_only_bounded_arrhenius",
+      "source_columns": [
+        "t_mix_usable",
+        "date",
+        "start_date",
+        "prediction_date"
+      ],
+      "category": "thermal_exposure",
+      "coverage": 1.0,
+      "non_null_count": 1080,
+      "total_count": 1080,
+      "mean": 1.3112844729246447,
+      "std": 0.6425376100457783,
+      "min_val": 0.31157148459641965,
+      "max_val": 3.2101767125983636
+    },
+    {
+      "feature_name": "thermal_history_missing",
+      "formula_version": "v1.0_t_only_bounded_arrhenius",
+      "source_columns": [
+        "t_mix_usable",
+        "date",
+        "start_date",
+        "prediction_date"
+      ],
+      "category": "thermal_exposure",
+      "coverage": 1.0,
+      "non_null_count": 1080,
+      "total_count": 1080,
+      "mean": 0.0,
+      "std": 0.0,
+      "min_val": 0.0,
+      "max_val": 0.0
+    },
+    {
+      "feature_name": "thermal_history_incomplete",
+      "formula_version": "v1.0_t_only_bounded_arrhenius",
+      "source_columns": [
+        "t_mix_usable",
+        "date",
+        "start_date",
+        "prediction_date"
+      ],
+      "category": "thermal_exposure",
+      "coverage": 1.0,
+      "non_null_count": 1080,
+      "total_count": 1080,
+      "mean": 1.0,
+      "std": 0.0,
+      "min_val": 1.0,
+      "max_val": 1.0
+    }
+  ],
+  "production": [
+    {
+      "feature_name": "thermal_exposure_observed_years",
+      "formula_version": "v1.0_t_only_bounded_arrhenius",
+      "source_columns": [
+        "t_mix_usable",
+        "date",
+        "start_date",
+        "prediction_date"
+      ],
+      "category": "thermal_exposure",
+      "coverage": 1.0,
+      "non_null_count": 2000,
+      "total_count": 2000,
+      "mean": 2.1328305250892408,
+      "std": 0.7742755892689844,
+      "min_val": 1.75566009912212,
+      "max_val": 8.463689111266547
+    },
+    {
+      "feature_name": "thermal_exposure_reference_years",
+      "formula_version": "v1.0_t_only_bounded_arrhenius",
+      "source_columns": [
+        "t_mix_usable",
+        "date",
+        "start_date",
+        "prediction_date"
+      ],
+      "category": "thermal_exposure",
+      "coverage": 1.0,
+      "non_null_count": 2000,
+      "total_count": 2000,
+      "mean": 20.7296853122562,
+      "std": 10.391280372605475,
+      "min_val": 3.168655135021864,
+      "max_val": 26.921685177074817
+    },
+    {
+      "feature_name": "thermal_observed_years",
+      "formula_version": "v1.0_t_only_bounded_arrhenius",
+      "source_columns": [
+        "t_mix_usable",
+        "date",
+        "start_date",
+        "prediction_date"
+      ],
+      "category": "thermal_exposure",
+      "coverage": 1.0,
+      "non_null_count": 2000,
+      "total_count": 2000,
+      "mean": 3.2075230362416667,
+      "std": 1.1274972579726532,
+      "min_val": 1.28394599082313,
+      "max_val": 4.316043900676858
+    },
+    {
+      "feature_name": "thermal_unobserved_years",
+      "formula_version": "v1.0_t_only_bounded_arrhenius",
+      "source_columns": [
+        "t_mix_usable",
+        "date",
+        "start_date",
+        "prediction_date"
+      ],
+      "category": "thermal_exposure",
+      "coverage": 1.0,
+      "non_null_count": 2000,
+      "total_count": 2000,
+      "mean": 18.596854787166954,
+      "std": 11.01117771709009,
+      "min_val": 0.12057146297563781,
+      "max_val": 25.166025077952696
+    },
+    {
+      "feature_name": "thermal_coverage_fraction",
+      "formula_version": "v1.0_t_only_bounded_arrhenius",
+      "source_columns": [
+        "t_mix_usable",
+        "date",
+        "start_date",
+        "prediction_date"
+      ],
+      "category": "thermal_exposure",
+      "coverage": 1.0,
+      "non_null_count": 2000,
+      "total_count": 2000,
+      "mean": 0.33754054435148284,
+      "std": 0.3427667316505712,
+      "min_val": 0.13308585685916985,
+      "max_val": 0.9141545285538953
+    },
+    {
+      "feature_name": "thermal_longest_gap_days",
+      "formula_version": "v1.0_t_only_bounded_arrhenius",
+      "source_columns": [
+        "t_mix_usable",
+        "date",
+        "start_date",
+        "prediction_date"
+      ],
+      "category": "thermal_exposure",
+      "coverage": 1.0,
+      "non_null_count": 2000,
+      "total_count": 2000,
+      "mean": 5804.4098271585635,
+      "std": 3441.2726980384546,
+      "min_val": 35.29756944444444,
+      "max_val": 7857.474178240741
+    },
+    {
+      "feature_name": "thermal_factor_observed_mean",
+      "formula_version": "v1.0_t_only_bounded_arrhenius",
+      "source_columns": [
+        "t_mix_usable",
+        "date",
+        "start_date",
+        "prediction_date"
+      ],
+      "category": "thermal_exposure",
+      "coverage": 1.0,
+      "non_null_count": 2000,
+      "total_count": 2000,
+      "mean": 0.9554275059567958,
+      "std": 0.8404401466736949,
+      "min_val": 0.4544331419974322,
+      "max_val": 2.373996798800017
+    },
+    {
+      "feature_name": "thermal_history_missing",
+      "formula_version": "v1.0_t_only_bounded_arrhenius",
+      "source_columns": [
+        "t_mix_usable",
+        "date",
+        "start_date",
+        "prediction_date"
+      ],
+      "category": "thermal_exposure",
+      "coverage": 1.0,
+      "non_null_count": 2000,
+      "total_count": 2000,
+      "mean": 0.0,
+      "std": 0.0,
+      "min_val": 0.0,
+      "max_val": 0.0
+    },
+    {
+      "feature_name": "thermal_history_incomplete",
+      "formula_version": "v1.0_t_only_bounded_arrhenius",
+      "source_columns": [
+        "t_mix_usable",
+        "date",
+        "start_date",
+        "prediction_date"
+      ],
+      "category": "thermal_exposure",
+      "coverage": 1.0,
+      "non_null_count": 2000,
+      "total_count": 2000,
+      "mean": 1.0,
+      "std": 0.0,
+      "min_val": 1.0,
+      "max_val": 1.0
+    }
+  ]
+}

@@ -1,0 +1,83 @@
+test_all_historical_features_precede_their_own_label_dates (test_ml.ArtifactTests.test_all_historical_features_precede_their_own_label_dates) ... ok
+test_checksum_failure_is_not_silently_accepted (test_ml.ArtifactTests.test_checksum_failure_is_not_silently_accepted) ... ok
+test_cold_training_stops_before_july_2022_inspection (test_ml.ArtifactTests.test_cold_training_stops_before_july_2022_inspection) ... ok
+test_current_data_has_no_independent_forward_fit_before_targets (test_ml.ArtifactTests.test_current_data_has_no_independent_forward_fit_before_targets) ... ok
+test_future_hydraulics_and_diagnostics_cannot_change_snapshot (test_ml.ArtifactTests.test_future_hydraulics_and_diagnostics_cannot_change_snapshot) ... ok
+test_future_labels_cannot_change_production_fitted_rate (test_ml.ArtifactTests.test_future_labels_cannot_change_production_fitted_rate) ... ok
+test_missing_prior_fallback_is_explicit_and_uses_prior_timestamp (test_ml.ArtifactTests.test_missing_prior_fallback_is_explicit_and_uses_prior_timestamp) ... ok
+test_published_grid_and_features_reused_exactly (test_ml.ArtifactTests.test_published_grid_and_features_reused_exactly) ... ok
+test_cold_constant_ranking_discloses_ties (test_ml.ModelTests.test_cold_constant_ranking_discloses_ties) ... ok
+test_constant_rate_units_and_no_label_clipping (test_ml.ModelTests.test_constant_rate_units_and_no_label_clipping) ... ok
+test_exposure_holds_exact_duration_and_preserves_gap (test_ml.ModelTests.test_exposure_holds_exact_duration_and_preserves_gap) ... ok
+test_invalid_row_stops_prior_interval (test_ml.ModelTests.test_invalid_row_stops_prior_interval) ... ok
+test_missing_exposure_is_unknown_not_zero_measurement (test_ml.ModelTests.test_missing_exposure_is_unknown_not_zero_measurement) ... ok
+test_parent_balance_not_simple_section_balance (test_ml.ModelTests.test_parent_balance_not_simple_section_balance) ... ok
+test_pearson_square_is_not_r2 (test_ml.ModelTests.test_pearson_square_is_not_r2) ... ok
+test_physics_fit_recovers_constant_synthetic_rate_and_gates_groups (test_ml.ModelTests.test_physics_fit_recovers_constant_synthetic_rate_and_gates_groups) ... ok
+test_submission_rejects_duplicate_extra_missing_and_nonfinite (test_ml.ModelTests.test_submission_rejects_duplicate_extra_missing_and_nonfinite) ... ok
+1/5 Reading and checking source schemas...
+2/5 Constructing complete grids and observed thickness histories...
+3/5 Building cutoff-specific features and calendar-day filters...
+4/5 Validating measurements, boundaries, cutoffs and coverage...
+5/5 Writing and verifying every CSV/Parquet pair...
+PASS: 270 checks, 22 CSV/Parquet pairs; 2000 target segments.
+test_bad_coordinates_quarantined_not_clipped (test_preprocessing.DatasetTests.test_bad_coordinates_quarantined_not_clipped) ... ok
+test_cold_start_excludes_diagnostic_history (test_preprocessing.DatasetTests.test_cold_start_excludes_diagnostic_history) ... ok
+test_diameter_in_millimeters (test_preprocessing.DatasetTests.test_diameter_in_millimeters) ... ok
+test_empty_past_history_stays_missing (test_preprocessing.DatasetTests.test_empty_past_history_stays_missing) ... ok
+test_every_export_roundtrip_checked (test_preprocessing.DatasetTests.test_every_export_roundtrip_checked) ... ok
+test_fraction_depth_normalized_without_altering_residual (test_preprocessing.DatasetTests.test_fraction_depth_normalized_without_altering_residual) ... ok
+test_future_injection_cannot_change_features (test_preprocessing.DatasetTests.test_future_injection_cannot_change_features) ... ok
+test_impossible_quantities_not_rescued_by_persistence (test_preprocessing.DatasetTests.test_impossible_quantities_not_rescued_by_persistence) ... ok
+test_invalid_chronology_not_training_target (test_preprocessing.DatasetTests.test_invalid_chronology_not_training_target) ... ok
+test_monitoring_conflict_not_joined (test_preprocessing.DatasetTests.test_monitoring_conflict_not_joined) ... ok
+test_original_measured_minimum (test_preprocessing.DatasetTests.test_original_measured_minimum) ... ok
+test_questionable_uzt_kept_but_not_used (test_preprocessing.DatasetTests.test_questionable_uzt_kept_but_not_used) ... ok
+test_target_grid_exact_keys (test_preprocessing.DatasetTests.test_target_grid_exact_keys) ... ok
+test_third_future_day_does_not_validate_two_day_anomaly (test_preprocessing.DatasetTests.test_third_future_day_does_not_validate_two_day_anomaly) ... ok
+test_archival_column_collision_preserved (test_preprocessing.UnitTests.test_archival_column_collision_preserved) ... ok
+test_calendar_gap_breaks_persistence (test_preprocessing.UnitTests.test_calendar_gap_breaks_persistence) ... ok
+test_checks_not_python_asserts (test_preprocessing.UnitTests.test_checks_not_python_asserts) ... ok
+test_dates_parsed_individually (test_preprocessing.UnitTests.test_dates_parsed_individually) ... ok
+test_good_day_breaks_anomaly_run (test_preprocessing.UnitTests.test_good_day_breaks_anomaly_run) ... ok
+test_grid_and_exact_endpoint (test_preprocessing.UnitTests.test_grid_and_exact_endpoint) ... ok
+test_invalid_length_rejected (test_preprocessing.UnitTests.test_invalid_length_rejected) ... ok
+test_missing_source_fails_loudly (test_preprocessing.UnitTests.test_missing_source_fails_loudly) ... ok
+test_mixed_numeric_separators (test_preprocessing.UnitTests.test_mixed_numeric_separators) ... ok
+test_original_aliases_and_ambiguity (test_preprocessing.UnitTests.test_original_aliases_and_ambiguity) ... ok
+test_persistent_run_retained_separately_per_pipe (test_preprocessing.UnitTests.test_persistent_run_retained_separately_per_pipe) ... ok
+test_profile_linear_ramp_and_short_last_segment (test_preprocessing.UnitTests.test_profile_linear_ramp_and_short_last_segment) ... ok
+test_profile_mean_is_distance_weighted (test_preprocessing.UnitTests.test_profile_mean_is_distance_weighted) ... ok
+test_target_is_measured_residual_not_nominal_formula (test_preprocessing.UnitTests.test_target_is_measured_residual_not_nominal_formula) ... ok
+test_three_calendar_days_not_three_rows (test_preprocessing.UnitTests.test_three_calendar_days_not_three_rows) ... ok
+test_windows_rename_denied_falls_back_to_verified_copy (test_preprocessing.UnitTests.test_windows_rename_denied_falls_back_to_verified_copy) ... ok
+test_historical_windows_use_own_qa_and_cutoffs (experiments.temperature_v02_02.test_temperature.TemperatureIntegrationTests.test_historical_windows_use_own_qa_and_cutoffs) ... ok
+test_production_asof_windows_and_joint_compatibility (experiments.temperature_v02_02.test_temperature.TemperatureIntegrationTests.test_production_asof_windows_and_joint_compatibility) ... ok
+test_adjacent_unsorted_intraday_intervals_never_overlap (experiments.temperature_v02_02.test_temperature.TemperatureTests.test_adjacent_unsorted_intraday_intervals_never_overlap) ... ok
+test_bad_horizons_duplicates_and_unknown_parameters_fail (experiments.temperature_v02_02.test_temperature.TemperatureTests.test_bad_horizons_duplicates_and_unknown_parameters_fail) ... ok
+test_hold_cap_leading_trailing_gaps_and_no_backward_fill (experiments.temperature_v02_02.test_temperature.TemperatureTests.test_hold_cap_leading_trailing_gaps_and_no_backward_fill) ... ok
+test_integrates_factors_before_averaging_temperature (experiments.temperature_v02_02.test_temperature.TemperatureTests.test_integrates_factors_before_averaging_temperature) ... ok
+test_invalid_physical_temperatures_stop_hold_but_zero_celsius_valid (experiments.temperature_v02_02.test_temperature.TemperatureTests.test_invalid_physical_temperatures_stop_hold_but_zero_celsius_valid) ... ok
+test_kelvin_reference_and_all_candidate_units (experiments.temperature_v02_02.test_temperature.TemperatureTests.test_kelvin_reference_and_all_candidate_units) ... ok
+test_legacy_factor_and_baseline_files_unchanged (experiments.temperature_v02_02.test_temperature.TemperatureTests.test_legacy_factor_and_baseline_files_unchanged) ... ok
+test_monotonic_temperature_and_energy_above_reference (experiments.temperature_v02_02.test_temperature.TemperatureTests.test_monotonic_temperature_and_energy_above_reference) ... ok
+test_no_support_has_zero_integral_null_mean_and_explicit_assumption (experiments.temperature_v02_02.test_temperature.TemperatureTests.test_no_support_has_zero_integral_null_mean_and_explicit_assumption) ... ok
+test_null_candidate_exact_identities_with_gaps (experiments.temperature_v02_02.test_temperature.TemperatureTests.test_null_candidate_exact_identities_with_gaps) ... ok
+test_opt_in_registry_keeps_default_inputs_and_indices (experiments.temperature_v02_02.test_temperature.TemperatureTests.test_opt_in_registry_keeps_default_inputs_and_indices) ... ok
+test_start_end_clipping_invalid_next_and_no_future (experiments.temperature_v02_02.test_temperature.TemperatureTests.test_start_end_clipping_invalid_next_and_no_future) ... ok
+test_temperature_available_without_water_or_velocity (experiments.temperature_v02_02.test_temperature.TemperatureTests.test_temperature_available_without_water_or_velocity) ... ok
+test_window_history_identity_and_qa_cutoff_checked (experiments.temperature_v02_02.test_temperature.TemperatureTests.test_window_history_identity_and_qa_cutoff_checked) ... ok
+test_every_candidate_uses_identical_support (experiments.temperature_v02_03.test_candidates.CandidateArtifactTests.test_every_candidate_uses_identical_support) ... ok
+test_exact_review_schema_and_null_metrics (experiments.temperature_v02_03.test_candidates.CandidateArtifactTests.test_exact_review_schema_and_null_metrics) ... ok
+test_historical_cohorts_and_production_keys (experiments.temperature_v02_03.test_candidates.CandidateArtifactTests.test_historical_cohorts_and_production_keys) ... ok
+test_sensitivity_and_legacy_control (experiments.temperature_v02_03.test_candidates.CandidateArtifactTests.test_sensitivity_and_legacy_control) ... ok
+test_fixed_intervals_agree_with_stage02_for_every_candidate (experiments.temperature_v02_03.test_candidates.CandidateTests.test_fixed_intervals_agree_with_stage02_for_every_candidate) ... ok
+test_fold_gates_exclude_same_parent_same_day_future_and_cold_target (experiments.temperature_v02_03.test_candidates.CandidateTests.test_fold_gates_exclude_same_parent_same_day_future_and_cold_target) ... ok
+test_no_intervals_stays_unknown (experiments.temperature_v02_03.test_candidates.CandidateTests.test_no_intervals_stays_unknown) ... ok
+test_observation_distribution_distinct_from_duration_weighting (experiments.temperature_v02_03.test_candidates.CandidateTests.test_observation_distribution_distinct_from_duration_weighting) ... ok
+test_preregistered_grid_and_controls_are_separate (experiments.temperature_v02_03.test_candidates.CandidateTests.test_preregistered_grid_and_controls_are_separate) ... ok
+
+----------------------------------------------------------------------
+Ran 72 tests in 20.789s
+
+OK

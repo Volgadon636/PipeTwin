@@ -1,0 +1,22 @@
+{
+  "source_type": "literature_context_only",
+  "authors": [
+    "Peter C. Okafor",
+    "Bruce Brown",
+    "Srdjan Nesic"
+  ],
+  "title": "CO2 corrosion of carbon steel in the presence of acetic acid at higher temperatures",
+  "journal": "Journal of Applied Electrochemistry",
+  "year": 2009,
+  "volume": 39,
+  "pages": "873\u2013877",
+  "doi": "10.1007/s10800-008-9733-x",
+  "primary_source_url": "https://www.icmt.ohio.edu/documents/Journals2009/CO2%20Corrosion%20of%20Carbon%20Steel%20in%20The%20Presence%20of%20Acetic%20Acid%20at%20Higher%20Temperatures.pdf",
+  "verified_at_client_date": "2026-11-15",
+  "source_location": "p. 876, section 3.2; Table 1 on p. 875",
+  "E_a_kJ_mol_without_acetic_acid": 31.26,
+  "E_a_kJ_mol_with_acetic_acid": 73.29,
+  "conditions": "X65 steel, CO2-saturated 1% NaCl, pH 5; activation energies from 40 and 80 C; acetic acid condition 1000 ppm",
+  "included_in_candidate_grid": false,
+  "interpretation": "Laboratory context, not measured or fitted PipeTwin values; does not establish 40 kJ/mol as correct"
+}

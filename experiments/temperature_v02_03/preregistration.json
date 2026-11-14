@@ -1,0 +1,21 @@
+{
+  "version": "stage03_v1",
+  "candidates_kJ_mol": {"EA00_null": 0.0, "EA25_low": 25.0, "EA40_mid": 40.0, "EA55_elevated": 55.0, "EA70_high": 70.0},
+  "R_J_mol_K": 8.314462618,
+  "reference_temperature_K": 293.15,
+  "max_hold_days": 1.0,
+  "gap_policies": ["observed_only", "reference"],
+  "sensitivity_temperatures_C": [20.0, 40.0, 58.16],
+  "targets": [
+    {"id": 1250022871, "prediction_date": "2023-12-01", "case": "between_vtd"},
+    {"id": 1250009583, "prediction_date": "2022-07-01", "case": "cold_start"}
+  ],
+  "weighting_if_validation_available": "W1",
+  "validation": "same case; label date strictly before production cutoff; training strictly before test date; exclude entire held-out parent and cold-start target parent",
+  "review_scope": "production union: one earliest-start-to-cutoff horizon per target section, pooled without segment or overlapping-window replication",
+  "observation_weighting": "one per valid contributing timestamp; p95 numpy linear quantile; separate duration-weighted mean",
+  "historical_scope": "only target-specific eligible training windows; no target-date or later labels",
+  "decision_rule": "retain all five for testing; no winner or narrowed grid without independent validation",
+  "legacy_theta_K": 2500.0,
+  "legacy_role": "compatibility control only; excluded from candidate grid and selection"
+}

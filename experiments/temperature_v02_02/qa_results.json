@@ -1,0 +1,49 @@
+{
+  "stage": "02_temperature_only_features",
+  "git_sha": "8770be9693de299f0b9b4c27db1ad7ae9ce517af",
+  "branch": "model_v02",
+  "task_changes": [
+    "src/ml/temperature.py",
+    "tests/test_temperature.py",
+    "experiments/temperature_v02_02/"
+  ],
+  "tests": {
+    "full_suite": {
+      "command": ".venv/bin/python -m unittest discover -s tests -v",
+      "exit_code": 0,
+      "tests_run": 63,
+      "passed": 63,
+      "elapsed_seconds": 25.776,
+      "log": "tests.txt"
+    },
+    "stage_suite": {
+      "command": ".venv/bin/python -m unittest discover -s experiments/temperature_v02_02 -p test_temperature.py -v",
+      "exit_code": 0,
+      "tests_run": 16,
+      "passed": 16,
+      "elapsed_seconds": 3.352,
+      "log": "temperature_tests.txt"
+    }
+  },
+  "baseline": {
+    "command": ".venv/bin/python -m src.ml.experiment --model m0 --output-root experiments/temperature_v02_02/baseline_control",
+    "exit_code": 0,
+    "rows": 2000,
+    "exact_columns": [
+      "id",
+      "segment_id",
+      "thickness_pred"
+    ],
+    "prediction_sha256": "ef1c4e4e33217a5c821a94739f43288942f99e351c05ee454305eae9e3644394",
+    "log": "baseline_control.txt"
+  },
+  "go_for_stage_03": true,
+  "temperature_model_selected": false,
+  "implementation_blockers": [],
+  "limitations": [
+    "English technical specification absent; supplied Russian v1.1 used",
+    "Optional LightGBM variants unavailable because libomp.dylib is missing",
+    "No validated Ea selection or temperature regression performed",
+    "Cold-start bounded-support coverage is 13.3086%, not the earlier observation-span estimate"
+  ]
+}

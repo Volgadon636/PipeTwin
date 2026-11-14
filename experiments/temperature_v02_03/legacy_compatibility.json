@@ -1,0 +1,9 @@
+{
+  "source_type": "legacy_placeholder",
+  "theta_K": 2500.0,
+  "E_a_kJ_mol": 20.786156545,
+  "candidate": false,
+  "compared_observations": 3000,
+  "max_absolute_difference": 0.0,
+  "interpretation": "Same QA temperatures, no fallback; scalar-factor compatibility only, not equivalent temporal models"
+}

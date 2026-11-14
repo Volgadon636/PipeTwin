@@ -1,0 +1,7 @@
+id,main_pipeline_id,variable,paired_rows,pearson_r,status
+1250022871,MAIN-2,watercut_pct_usable,1585,0.043397622611374483,descriptive_only
+1250022871,MAIN-2,v_liquid_true_usable,1585,0.1577790007826656,descriptive_only
+1250022871,MAIN-2,elapsed_days,1585,0.69810024917295632,descriptive_only
+1250009583,MAIN-4,watercut_pct_usable,1415,-0.13549630259767009,descriptive_only
+1250009583,MAIN-4,v_liquid_true_usable,1414,0.86772624639914586,descriptive_only
+1250009583,MAIN-4,elapsed_days,1415,-0.34482154065607701,descriptive_only

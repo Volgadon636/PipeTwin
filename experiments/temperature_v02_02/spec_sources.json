@@ -1,0 +1,10 @@
+{
+  "english_spec_available": false,
+  "technical_spec_used": "TECHNICAL_SPEC_TEMPERATURE_RU.md v1.1",
+  "sha256": {
+    "/Users/emil/Downloads/PipeTwin_model_v02_temperature_package/TECHNICAL_SPEC_TEMPERATURE_RU.md": "4fc7726e2e962aa77da57cb2d97b4bb3a0d6dbf7fb0f9aec987a36cc1bb4e8cb",
+    "/Users/emil/Downloads/PipeTwin_model_v02_temperature_package/stage_prompts/STAGE_00_BASELINE_REPRODUCTION_EN.md": "d4f47d796817379d10e2e1e16f24ed1522b9d77ecb485eb4af717dc25fd76009",
+    "/Users/emil/Downloads/PipeTwin_model_v02_temperature_package/stage_prompts/STAGE_01_TEMPERATURE_DATA_AUDIT_EN.md": "ad1594383d0fe1d0f4319aea484d59f3dff93770763e05499e0aae5252668ffa",
+    "/Users/emil/Downloads/PipeTwin_model_v02_temperature_package/stage_prompts/STAGE_02_TEMPERATURE_ONLY_FEATURES_EN.md": "cf8d619f88de0d15f04b492b5ead43da58fd4a97503b7fb364867e3502da8594"
+  }
+}

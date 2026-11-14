@@ -1,0 +1,46 @@
+{
+  "git_sha": "8770be9693de299f0b9b4c27db1ad7ae9ce517af",
+  "branch": "model_v02",
+  "command": ".venv/bin/python -m experiments.temperature_v02_03.run",
+  "versions": {
+    "python": "3.14.2",
+    "numpy": "2.5.4",
+    "pandas": "3.0.6"
+  },
+  "preregistration_sha256": "65c355de30a6889e78a0c76bde3fc46d4d5413a0921ba4131719d6c01934103c",
+  "input_sha256": {
+    "processed/training_targets.csv": "d15dc17a4ee61e428163447945967d174a0ecb55272d5724cdce0c5855ff22f2",
+    "data/cleaned/passport.csv": "4f3474ae8719c86774290861777a58f5b04528c8188d33df9deb98018b5a8b0d",
+    "data/cleaned/regime.csv": "8a13cabe853a74def23c9917dd4d1f5534832d5f95d763348bf2cb844ed06590",
+    "data/cleaned/tech_mode_for_embedings_with_length_with_temperatures_ids16.csv": "c6ea4562e46d2241a220422fe15553fc7a7868b234448c0e5cfbb8706e2323f1",
+    "processed/vtd_by_segment.csv": "085a2aeb930d1b01112bbc379d156f87a67db4180121d80f922962c5f1ef3158",
+    "processed/uzt_by_segment.csv": "e02975b895559903a6caa471a6b5ff28042213531258c31fa1d29cbc756e760e",
+    "processed/segments_grid.csv": "55cce38f655fc47eaabf2255d4e74e31e6d81f774f95df40f47f23adcfeb48a3",
+    "processed/profile_by_segment.csv": "b67848066b70ff44234df8a7a97e4726b5f2a7c167885356b34380115d0906c7"
+  },
+  "source_sha256": {
+    "experiments/temperature_v02_03/run.py": "12e852245f49a757ea02bc5042ee5f9ffca0f9097d771da16e82fbfd117808cc",
+    "src/ml/temperature.py": "bbc577e5cf09425d49a52c453b3b66e4a0e04f24a4c0ec97686344ab9cf50878",
+    "src/ml/windows.py": "49d45b2c161755a12cdf0d73caf41b08489e9fe8d50fdd9bddd33f2137ba3a0b"
+  },
+  "window_groups": 11,
+  "exposure_rows": 55,
+  "pooled_observations": 3000,
+  "admissible_validation_folds": 0,
+  "models_fitted": 0,
+  "outputs_sha256": {
+    "candidate_exposures.csv": "83eaf1a3c1d00b7bfa99773733b4a39c4850e1b4f11de198bdfdf43846b22759",
+    "candidate_sensitivity.png": "278889fece9c658f554f800cd89ed1f7925ce1d1ffcb621394927e6e86337984",
+    "candidate_sensitivity.svg": "3351aa8492b32f12c85f2f358affa3632fb72687dfc66df5df63874ee98da91d",
+    "ea_candidate_review.csv": "7e7d05a9039e182bd0ef2b2fa95e89b1f9433654eeffcf65ec969035d08a1f7c",
+    "ea_candidate_review.json": "7b09b24dd54157c081ab358f91cff971c5cc5fac27aa4b30ab573bf1b1443700",
+    "eligible_training_summary.json": "2e70c3937594ac96cef20af6373616ea720aa2f17b92db094a0b6ee227d644d8",
+    "factor_statistics.csv": "32e56ca8c77b83383867be762ef54adfa6d1411d89871ef63baf003859b6c5b2",
+    "intervals.csv": "b366d190c37ef7027cc2919c093b37d4e1d5269b26adb0d8b4084d722388a975",
+    "legacy_compatibility.json": "1af841c1db3f804c090aea4359fc62e9e8061ed2e89c59339a4cabc845245597",
+    "sensitivity_temperatures.csv": "3cddffd079a481571a1b28be1d9cea437e6a99764341e2c88231ace61bd6b7a1",
+    "temperature_confounding.csv": "74d8894208e1ef6528b0c1cc7177738a6a8bb57ea8d124d36e5fa16851633730",
+    "validation_fold_audit.csv": "15511b826fabb5ce3f394eefd84317dc434616212685ab6d06ea5e6a9257fa00",
+    "window_segments.csv": "c0758cab124b52e5b27615744479c87cc7057b8fc7a3bdc100bd797766167723"
+  }
+}

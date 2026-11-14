@@ -1,0 +1,6 @@
+{
+  "historical_rows": 1080,
+  "production_rows": 2000,
+  "window_groups": 19,
+  "output": "/Users/emil/Desktop/PipeTwin/PipeTwin/experiments/temperature_v02_02"
+}

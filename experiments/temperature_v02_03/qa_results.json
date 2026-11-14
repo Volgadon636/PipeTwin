@@ -1,0 +1,40 @@
+{
+  "git_sha": "8770be9693de299f0b9b4c27db1ad7ae9ce517af",
+  "branch": "model_v02",
+  "new_files": [
+    "experiments/temperature_v02_03/",
+    "tests/test_temperature_candidates.py"
+  ],
+  "tests": {
+    "command": ".venv/bin/python -m unittest discover -s tests -v",
+    "run": 72,
+    "passed": 72,
+    "exit_code": 0,
+    "elapsed_seconds": 20.789,
+    "log": "tests.txt"
+  },
+  "study": {
+    "command": ".venv/bin/python -m experiments.temperature_v02_03.run",
+    "exit_code": 0,
+    "window_groups": 11,
+    "exposure_rows": 55,
+    "review_rows": 10,
+    "pooled_observations": 3000,
+    "admissible_folds": 0,
+    "fitted_models": 0
+  },
+  "verification": {
+    "command": ".venv/bin/python -m experiments.temperature_v02_03.verify",
+    "exit_code": 0,
+    "preserved_files": 152,
+    "deterministic_artifacts": 13
+  },
+  "go_stage04": "exploratory_training_only",
+  "validated_coefficient_selection": false,
+  "implementation_blockers": [],
+  "limitations": [
+    "English technical specification absent; supplied Russian v1.1 read in preceding stage and Section 8 rechecked",
+    "No earlier independent parent-pipeline training data for either test campaign",
+    "Gap-policy and temperature/flow confounding prevent validated Ea selection"
+  ]
+}

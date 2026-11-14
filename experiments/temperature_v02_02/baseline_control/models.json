@@ -1,0 +1,103 @@
+{
+  "between_vtd": {
+    "baseline_missing_count": 4,
+    "evaluated_model_folds": 3,
+    "exposure_coverage_max": 0.9141545285538953,
+    "exposure_coverage_min": 0.8318918389035475,
+    "fallback": {
+      "bias_mm": -0.0309252742247481,
+      "independent_validation": false,
+      "mae_mm": 0.541426299053053,
+      "mape_pct": 9.05154526739223,
+      "method": "100m_block_masked_prior_measurements",
+      "n": 521,
+      "pearson_squared": 0.03438924641345423,
+      "pearson_status": "defined",
+      "r2": -0.7502756130022308,
+      "rmse_mm": 0.7352574202744546,
+      "thin_count": 0,
+      "thin_mae_mm": null,
+      "thin_recall": null,
+      "thin_threshold_mm": null
+    },
+    "feature_columns": [
+      "water_trap_sag_m",
+      "slope_magnitude",
+      "profile_curvature",
+      "relative_distance",
+      "relative_elevation",
+      "temperature_c_mean",
+      "arrhenius_thermal_factor",
+      "liquid_kinetic_energy",
+      "water_velocity_flux",
+      "pressure_drop_proxy",
+      "prior_thinning_mm",
+      "prior_annual_rate"
+    ],
+    "selection": "Primary model: M0",
+    "target": {
+      "case": "between_vtd",
+      "id": 1250022871,
+      "prediction_date": "2023-12-01"
+    },
+    "training": {
+      "campaign_count": 1,
+      "interpretation": "Fitted ML corrosion model incorporating terrain sags, hydraulics, and degradation history",
+      "label_date_max": "2022-07-06",
+      "name": "M0",
+      "negative_observed_loss_rows": 177,
+      "parent_pipeline_count": 1,
+      "parents": [
+        "MAIN-2"
+      ],
+      "rate_mm_year": 0.013033550759625047,
+      "training_rows": 357,
+      "weight_max": 1.0,
+      "weight_min": 1.0,
+      "weighting": "W1"
+    }
+  },
+  "cold_start": {
+    "baseline_missing_count": 0,
+    "evaluated_model_folds": 2,
+    "exposure_coverage_max": 0.1329915439288671,
+    "exposure_coverage_min": 0.1329915439288671,
+    "fallback": null,
+    "feature_columns": [
+      "water_trap_sag_m",
+      "slope_magnitude",
+      "profile_curvature",
+      "relative_distance",
+      "relative_elevation",
+      "temperature_c_mean",
+      "arrhenius_thermal_factor",
+      "liquid_kinetic_energy",
+      "water_velocity_flux",
+      "pressure_drop_proxy",
+      "prior_thinning_mm",
+      "prior_annual_rate"
+    ],
+    "selection": "Primary model: M0",
+    "target": {
+      "case": "cold_start",
+      "id": 1250009583,
+      "prediction_date": "2022-07-01"
+    },
+    "training": {
+      "campaign_count": 1,
+      "interpretation": "Fitted ML corrosion model incorporating terrain sags, hydraulics, and degradation history",
+      "label_date_max": "2018-09-23",
+      "name": "M0",
+      "negative_observed_loss_rows": 0,
+      "parent_pipeline_count": 1,
+      "parents": [
+        "MAIN-2"
+      ],
+      "rate_mm_year": 0.10197980994208126,
+      "training_rows": 372,
+      "weight_max": 0.9999999999999999,
+      "weight_min": 0.9999999999999999,
+      "weighting": "W1"
+    }
+  }
+}

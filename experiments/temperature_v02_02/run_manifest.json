@@ -1,0 +1,41 @@
+{
+  "git_sha": "8770be9693de299f0b9b4c27db1ad7ae9ce517af",
+  "branch": "model_v02",
+  "command": ".venv/bin/python -m experiments.temperature_v02_02.compute",
+  "versions": {
+    "python": "3.14.2",
+    "numpy": "2.5.4",
+    "pandas": "3.0.6"
+  },
+  "parameters": {
+    "ea_kj_mol": 40.0,
+    "gap_policy": "reference",
+    "max_hold_days": 1.0
+  },
+  "historical_rows": 1080,
+  "production_rows": 2000,
+  "input_sha256": {
+    "processed/training_targets.csv": "d15dc17a4ee61e428163447945967d174a0ecb55272d5724cdce0c5855ff22f2",
+    "data/cleaned/passport.csv": "4f3474ae8719c86774290861777a58f5b04528c8188d33df9deb98018b5a8b0d",
+    "data/cleaned/regime.csv": "8a13cabe853a74def23c9917dd4d1f5534832d5f95d763348bf2cb844ed06590",
+    "data/cleaned/tech_mode_for_embedings_with_length_with_temperatures_ids16.csv": "c6ea4562e46d2241a220422fe15553fc7a7868b234448c0e5cfbb8706e2323f1",
+    "processed/vtd_by_segment.csv": "085a2aeb930d1b01112bbc379d156f87a67db4180121d80f922962c5f1ef3158",
+    "processed/uzt_by_segment.csv": "e02975b895559903a6caa471a6b5ff28042213531258c31fa1d29cbc756e760e",
+    "processed/segments_grid.csv": "55cce38f655fc47eaabf2255d4e74e31e6d81f774f95df40f47f23adcfeb48a3",
+    "processed/profile_by_segment.csv": "b67848066b70ff44234df8a7a97e4726b5f2a7c167885356b34380115d0906c7"
+  },
+  "code_sha256": {
+    "src/ml/temperature.py": "bbc577e5cf09425d49a52c453b3b66e4a0e04f24a4c0ec97686344ab9cf50878",
+    "experiments/temperature_v02_02/compute.py": "c0eae9207604d36eee59c8f44a3906765ae1571ea43fe471adec8059fe32d824"
+  },
+  "output_sha256": {
+    "coverage_by_window.csv": "71dcf5750221807ef2e1c9db6adc830a7c3c9a5130a67dae550fca7f82dfe12a",
+    "example_rows.csv": "a4d6e82212043e6de55bec79093e57df02d44e0e21be56e41488ecf2a149cb3c",
+    "example_rows.json": "d2d218491419b733a3a70e87c6c99caecc7fa96b5873f28a72f9ff67719b78b8",
+    "feature_audit.json": "145acdca16962b772cf038511d0756e2e03b540ecb5f6eeb805813b5475f6337",
+    "feature_catalog.json": "5b4d449c1cbf1512b92f3cdbabbc346818ac927248710630f21e1c5abd0ae676",
+    "historical_features.csv": "2656f91ac1c5ad76fbf160ebb145b037e3019321a6979134623fe5afc48098eb",
+    "production_features.csv": "6077f8231cebede2286b263a80b57a052a23a4dd5797f164312105913245949b",
+    "temperature_intervals.csv": "73d77e985a0c5ba71c8ce6452e3da4170f13b3da5d4d0aade088fc2972ab7d16"
+  }
+}

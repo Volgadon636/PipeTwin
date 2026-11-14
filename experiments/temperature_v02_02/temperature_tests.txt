@@ -1,0 +1,21 @@
+test_historical_windows_use_own_qa_and_cutoffs (test_temperature.TemperatureIntegrationTests.test_historical_windows_use_own_qa_and_cutoffs) ... ok
+test_production_asof_windows_and_joint_compatibility (test_temperature.TemperatureIntegrationTests.test_production_asof_windows_and_joint_compatibility) ... ok
+test_adjacent_unsorted_intraday_intervals_never_overlap (test_temperature.TemperatureTests.test_adjacent_unsorted_intraday_intervals_never_overlap) ... ok
+test_bad_horizons_duplicates_and_unknown_parameters_fail (test_temperature.TemperatureTests.test_bad_horizons_duplicates_and_unknown_parameters_fail) ... ok
+test_hold_cap_leading_trailing_gaps_and_no_backward_fill (test_temperature.TemperatureTests.test_hold_cap_leading_trailing_gaps_and_no_backward_fill) ... ok
+test_integrates_factors_before_averaging_temperature (test_temperature.TemperatureTests.test_integrates_factors_before_averaging_temperature) ... ok
+test_invalid_physical_temperatures_stop_hold_but_zero_celsius_valid (test_temperature.TemperatureTests.test_invalid_physical_temperatures_stop_hold_but_zero_celsius_valid) ... ok
+test_kelvin_reference_and_all_candidate_units (test_temperature.TemperatureTests.test_kelvin_reference_and_all_candidate_units) ... ok
+test_legacy_factor_and_baseline_files_unchanged (test_temperature.TemperatureTests.test_legacy_factor_and_baseline_files_unchanged) ... ok
+test_monotonic_temperature_and_energy_above_reference (test_temperature.TemperatureTests.test_monotonic_temperature_and_energy_above_reference) ... ok
+test_no_support_has_zero_integral_null_mean_and_explicit_assumption (test_temperature.TemperatureTests.test_no_support_has_zero_integral_null_mean_and_explicit_assumption) ... ok
+test_null_candidate_exact_identities_with_gaps (test_temperature.TemperatureTests.test_null_candidate_exact_identities_with_gaps) ... ok
+test_opt_in_registry_keeps_default_inputs_and_indices (test_temperature.TemperatureTests.test_opt_in_registry_keeps_default_inputs_and_indices) ... ok
+test_start_end_clipping_invalid_next_and_no_future (test_temperature.TemperatureTests.test_start_end_clipping_invalid_next_and_no_future) ... ok
+test_temperature_available_without_water_or_velocity (test_temperature.TemperatureTests.test_temperature_available_without_water_or_velocity) ... ok
+test_window_history_identity_and_qa_cutoff_checked (test_temperature.TemperatureTests.test_window_history_identity_and_qa_cutoff_checked) ... ok
+
+----------------------------------------------------------------------
+Ran 16 tests in 3.352s
+
+OK
