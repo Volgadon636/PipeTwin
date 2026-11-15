@@ -1,0 +1,28 @@
+{
+  "endpoint_rule": "a point exactly at pipe length maps to the final segment; no extra endpoint segment",
+  "grid_length_m": 46604.700000000004,
+  "grid_pipes": 16,
+  "grid_segments": 4668,
+  "out_of_pipe": {
+    "uzt_rejected": {
+      "above_pipe_length": 0,
+      "negative_coordinates": 0,
+      "rows": 0
+    },
+    "vtd_rejected": {
+      "above_pipe_length": 247,
+      "negative_coordinates": 4,
+      "rows": 251
+    }
+  },
+  "profile": {
+    "duplicate_rows_removed": 38,
+    "max_gap_m": 12.781535789999964,
+    "pipes": 16,
+    "pipes_missing_profile": [],
+    "rows": 20180,
+    "short_pipes_under_10m": 0
+  },
+  "short_final_segments": 16,
+  "zero_or_negative_segments": 0
+}

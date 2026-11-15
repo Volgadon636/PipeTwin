@@ -2,13 +2,15 @@
   "passport.csv": {
     "cleaned_rows": 16,
     "flag_counts": {
-      "history_date_conflict_flag": 5
+      "history_date_conflict_flag": 5,
+      "id_leading_zero_flag": 0
     },
     "input_rows": 16
   },
   "profile.csv": {
     "cleaned_rows": 20180,
     "flag_counts": {
+      "id_leading_zero_flag": 0,
       "steep_step_flag": 61
     },
     "input_rows": 20218
@@ -20,6 +22,7 @@
       "direction_conflict_flag": 83,
       "exposure_invalid_flag": 3,
       "exposure_mismatch_flag": 92,
+      "id_leading_zero_flag": 0,
       "negative_protective_effect_flag": 2
     },
     "input_rows": 495
@@ -28,7 +31,8 @@
     "cleaned_rows": 39052,
     "flag_counts": {
       "before_commissioning_flag": 0,
-      "diameter_mismatch_flag": 0
+      "diameter_mismatch_flag": 0,
+      "id_leading_zero_flag": 0
     },
     "input_rows": 39052
   },
@@ -36,7 +40,8 @@
     "cleaned_rows": 67,
     "flag_counts": {
       "above_nominal_flag": 67,
-      "before_commissioning_flag": 0
+      "before_commissioning_flag": 0,
+      "id_leading_zero_flag": 0
     },
     "input_rows": 67
   },
@@ -49,6 +54,7 @@
       "commissioning_unknown_flag": 0,
       "depth_residual_mismatch_flag": 6,
       "heldout_or_future_flag": 0,
+      "id_leading_zero_flag": 0,
       "nominal_unresolved_flag": 0,
       "residual_invalid_flag": 24,
       "residual_missing_flag": 344,

@@ -20,10 +20,10 @@ import pandas as pd
 from src.config import BASE_DIR
 from src.storage import sha256, write_json
 from .data import RepositoryData
-from .next_common import (evaluate_predictions, fit_catboost, fit_ridge,
-                          json_safe, load_artifact, make_weights,
-                          predict_catboost, predict_ridge, s1_fit_rows,
-                          s1_production_table, s1_training_table,
+from .next_common import (S1_LOCAL_PRIOR_FEATURES, evaluate_predictions,
+                          fit_catboost, fit_ridge, json_safe, load_artifact,
+                          make_weights, predict_catboost, predict_ridge,
+                          s1_fit_rows, s1_production_table, s1_training_table,
                           save_artifact, utcnow, write_csv as _write_csv, write_manifest)
 from .s1_contract import S1_ID
 from .targeted_audit import tail_metrics
@@ -39,7 +39,9 @@ CORE_FEATURES = ['last_mm', 'age_last_vtd_years', 'prior_vtd_campaign_count',
                  'neighbor_missing', 'slope_m_per_m', 'abs_slope_m_per_m',
                  'local_low_m', 'relative_position']
 MODELS = ['s1a', 'train_median', 'affine_global', 'affine_target',
-          'global_ridge_geometry', 'target_ridge_geometry', 'catboost_reference']
+          'global_ridge_geometry', 'target_ridge_geometry',
+          'global_ridge_local', 'catboost_reference']
+LOCAL_FEATURES = S1_LOCAL_PRIOR_FEATURES
 CENTRED = 'within_block'
 
 
@@ -99,6 +101,10 @@ def _fit_fold_models(fold: dict[str, Any]) -> dict[str, Any]:
     global_ridge = fit_ridge(train_global, CORE_FEATURES, 'target_delta_mm',
                              weights_global, alpha=10.0, baseline='last_mm',
                              model_name='global_ridge_geometry')
+    global_ridge_local = fit_ridge(
+        train_global, CORE_FEATURES + LOCAL_FEATURES, 'target_delta_mm',
+        weights_global, alpha=10.0, baseline='last_mm',
+        model_name='global_ridge_local')
     target_ridge = fit_ridge(train_local, CORE_FEATURES, 'target_delta_mm',
                              weights_local, alpha=10.0, baseline='last_mm',
                              model_name='target_ridge_geometry')
@@ -108,6 +114,7 @@ def _fit_fold_models(fold: dict[str, Any]) -> dict[str, Any]:
     return {
         'a_global': a_g, 'b_global': b_g, 'a_target': a_l, 'b_target': b_l,
         'median': median, 'global_ridge': global_ridge,
+        'global_ridge_local': global_ridge_local,
         'target_ridge': target_ridge, 'catboost': cat,
     }
 
@@ -121,6 +128,8 @@ def _predict_fold(models: dict[str, Any], test: pd.DataFrame) -> dict[str, np.nd
         'affine_target': _affine_predict(test, models['a_target'], models['b_target']),
         'global_ridge_geometry': predict_ridge(models['global_ridge'], test,
                                                baseline='last_mm'),
+        'global_ridge_local': predict_ridge(models['global_ridge_local'], test,
+                                            baseline='last_mm'),
         'target_ridge_geometry': predict_ridge(models['target_ridge'], test,
                                                baseline='last_mm'),
         'catboost_reference': predict_catboost(models['catboost'], test,
@@ -254,6 +263,9 @@ def _fit_full_models(fit: pd.DataFrame, target: pd.DataFrame) -> dict[str, Any]:
         'global_ridge_geometry': fit_ridge(
             fit, CORE_FEATURES, 'target_delta_mm', weights, alpha=10.0,
             baseline='last_mm', model_name='global_ridge_geometry'),
+        'global_ridge_local': fit_ridge(
+            fit, CORE_FEATURES + LOCAL_FEATURES, 'target_delta_mm', weights,
+            alpha=10.0, baseline='last_mm', model_name='global_ridge_local'),
         'target_ridge_geometry': fit_ridge(
             target, CORE_FEATURES, 'target_delta_mm',
             make_weights(target, 'row_uniform'), alpha=10.0,
@@ -277,7 +289,8 @@ def _target_predictions(prod: pd.DataFrame, models: dict[str, Any]) -> dict[str,
     for name in ('affine_global', 'affine_target'):
         out[name] = base.assign(thickness_pred=_affine_predict(
             prod, models[name]['a'], models[name]['b']))
-    for name in ('global_ridge_geometry', 'target_ridge_geometry'):
+    for name in ('global_ridge_geometry', 'global_ridge_local',
+                 'target_ridge_geometry'):
         out[name] = base.assign(thickness_pred=predict_ridge(
             models[name], prod, baseline='last_mm'))
     out['catboost_reference'] = base.assign(thickness_pred=predict_catboost(
@@ -436,7 +449,8 @@ def run_stage3(root: Path = BASE_DIR, data_root: Path | None = None,
     # Models and full-target predictions.
     models = _fit_full_models(fit, target)
     model_rows = []
-    for name in ('global_ridge_geometry', 'target_ridge_geometry', 'catboost_reference'):
+    for name in ('global_ridge_geometry', 'global_ridge_local',
+                 'target_ridge_geometry', 'catboost_reference'):
         directory = output / 'models' / name
         saved = save_artifact(models[name], directory)
         model_rows.append({'model': name, **saved})
@@ -463,6 +477,7 @@ def run_stage3(root: Path = BASE_DIR, data_root: Path | None = None,
     # Full-model training IDs.
     train_ids = []
     for name, frame in [('global_ridge_geometry', fit),
+                        ('global_ridge_local', fit),
                         ('target_ridge_geometry', target),
                         ('catboost_reference', fit)]:
         for r in frame.itertuples():

@@ -51,6 +51,36 @@ GEOMETRY_FEATURES = [
 S1_CORE_FEATURES = HISTORY_FEATURES + GEOMETRY_FEATURES
 S1_HISTORY_ONLY_FEATURES = HISTORY_FEATURES
 
+# Local denoising features of the last prior VTD profile.  The target is a
+# 10 m segment *minimum* of residual wall thickness, so a single-segment prior
+# minimum is noisy; a 3-segment rolling median and rolling minimum recover the
+# persistent local thinning pattern (validated in block CV, see
+# scratch/metrics_upgrade).  These are inputs-only features, never labels.
+S1_LOCAL_PRIOR_FEATURES = ['last_smooth3', 'last_rollmin3']
+
+
+def add_local_prior_features(frame: pd.DataFrame) -> pd.DataFrame:
+    """Add 3-segment rolling median/min of ``last_mm`` (input-only).
+
+    The window is spatial only: features are computed within a single
+    ``(id, prediction_date)`` snapshot so that different campaigns for the
+    same segment are never mixed into one window.
+    """
+    missing = {'id', 'segment_id', 'prediction_date', 'last_mm'} - set(frame.columns)
+    if missing:
+        raise ValueError(f'Local prior features need columns: {sorted(missing)}')
+    result = frame.copy()
+    ordered = result.sort_values(['id', 'prediction_date', 'segment_id'])
+    group_keys = ['id', 'prediction_date']
+    for name, window in [('last_smooth3', 3), ('last_rollmin3', 3)]:
+        func = 'median' if 'smooth' in name else 'min'
+        ordered[name] = ordered.groupby(group_keys, sort=True)['last_mm'].transform(
+            lambda s: s.rolling(window, center=True, min_periods=1).agg(func))
+    ordered = ordered.sort_index()
+    for column in S1_LOCAL_PRIOR_FEATURES:
+        result[column] = ordered[column].to_numpy(float)
+    return result
+
 
 def utcnow() -> str:
     return datetime.now(timezone.utc).isoformat(timespec='seconds')
@@ -184,7 +214,7 @@ def s1_training_table(data: RepositoryData) -> pd.DataFrame:
     frame['last_minus_min_mm'] = (frame['last_own_mm']
                                   - frame['prior_vtd_min_thickness_mm'])
     frame['baseline_missing'] = ~frame['has_own_prior_vtd'].astype(bool)
-    return frame
+    return add_local_prior_features(frame)
 
 
 def s1_fit_rows(table: pd.DataFrame) -> pd.DataFrame:
@@ -199,7 +229,7 @@ def s1_production_table(data: RepositoryData) -> pd.DataFrame:
     prod['dt_years'] = (prod['prediction_date'] - prod['last_vtd_date']).dt.total_seconds() / YEAR_SECONDS
     prod['section_size'] = prod.groupby('id').segment_id.transform('size')
     prod['baseline_missing'] = ~prod['has_own_prior_vtd'].astype(bool)
-    return prod
+    return add_local_prior_features(prod)
 
 
 # --------------------------------------------------------------------------- #

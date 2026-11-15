@@ -1,6 +1,6 @@
 # Stage 3 — S1 fixed 100 m block / 20 m buffer
 
-Generated: `2026-11-15T20:03:56+00:00`. Physical blocks: `center_m=(start+end)/2`, `block=floor(center_m/100)`, buffer 20 m; training excludes the entire target block plus buffer. No future answer is used in features.
+Generated: `2026-11-15T21:42:54+00:00`. Physical blocks: `center_m=(start+end)/2`, `block=floor(center_m/100)`, buffer 20 m; training excludes the entire target block plus buffer. No future answer is used in features.
 
 ## 1. Protocol and keys
 
@@ -20,6 +20,7 @@ Generated: `2026-11-15T20:03:56+00:00`. Physical blocks: `center_m=(start+end)/2
 | affine_target | 0.4265 | 0.5702 | 0.0027 | 0.2961 | 0.0877 | 0.0853 | 0.2054 | 0.5962 | 1.1302 | 0.3030 | 0.3077 | 0.2218 | 0.0492 |
 | global_ridge_geometry | 0.4187 | 0.5464 | 0.0082 | 0.4031 | 0.1625 | 0.1599 | 0.2691 | 0.5962 | 1.0090 | 0.4545 | 0.3462 | 0.2491 | 0.0621 |
 | target_ridge_geometry | 0.4214 | 0.5482 | 0.0027 | 0.4018 | 0.1614 | 0.1545 | 0.2892 | 0.5962 | 0.9857 | 0.4545 | 0.3462 | 0.2521 | 0.0636 |
+| global_ridge_local | 0.4166 | 0.5461 | 0.0079 | 0.4049 | 0.1640 | 0.1610 | 0.2730 | 0.5962 | 0.9983 | 0.4242 | 0.3269 | 0.2500 | 0.0625 |
 | catboost_reference | 0.4185 | 0.5637 | 0.0040 | 0.3604 | 0.1299 | 0.1059 | 0.3071 | 0.5962 | 1.0112 | 0.2727 | 0.3654 | 0.1978 | 0.0391 |
 
 `top10 global`: k=ceil(0.1*321)=33 on the pooled target sample; `top10 per-block`: k=ceil(0.1*n_block) per block aggregated as sum(overlap)/sum(k). They have different denominators and are not interchangeable.
@@ -32,6 +33,7 @@ Generated: `2026-11-15T20:03:56+00:00`. Physical blocks: `center_m=(start+end)/2
 | affine_target | -0.0920 | -0.0686 | -0.3162 | 0.1577 | 41 | 52 |
 | catboost_reference | -0.1000 | -0.0927 | -0.3333 | 0.1099 | 41 | 52 |
 | global_ridge_geometry | -0.0881 | -0.0649 | -0.3873 | 0.1224 | 36 | 52 |
+| global_ridge_local | -0.0877 | -0.0672 | -0.3562 | 0.0934 | 40 | 52 |
 | target_ridge_geometry | -0.0839 | -0.0582 | -0.3760 | 0.1430 | 36 | 52 |
 | train_median | -0.0912 | -0.0765 | -0.5558 | 0.1630 | 33 | 52 |
 
@@ -69,6 +71,11 @@ Generated: `2026-11-15T20:03:56+00:00`. Physical blocks: `center_m=(start+end)/2
 | target_ridge_geometry | [5.0, 6.0) | 119 | 0.4805 | 0.0283 |
 | target_ridge_geometry | [6.0, 7.0) | 172 | 0.3710 | -0.0292 |
 | target_ridge_geometry | [7.0, 8.0) | 24 | 0.3363 | 0.0899 |
+| global_ridge_local | [0.0, 4.0) | 1 | 0.9633 | -0.9633 |
+| global_ridge_local | [4.0, 5.0) | 5 | 1.0610 | 0.3000 |
+| global_ridge_local | [5.0, 6.0) | 119 | 0.4717 | 0.0443 |
+| global_ridge_local | [6.0, 7.0) | 172 | 0.3659 | -0.0284 |
+| global_ridge_local | [7.0, 8.0) | 24 | 0.3500 | 0.0672 |
 | catboost_reference | [0.0, 4.0) | 1 | 2.1159 | -2.1159 |
 | catboost_reference | [4.0, 5.0) | 5 | 1.1434 | 0.1568 |
 | catboost_reference | [5.0, 6.0) | 119 | 0.4960 | -0.0195 |
@@ -83,6 +90,7 @@ Generated: `2026-11-15T20:03:56+00:00`. Physical blocks: `center_m=(start+end)/2
 - `affine_target`: pooled r=0.2218, r²=0.0492, defined blocks=51, undefined/small=1.
 - `global_ridge_geometry`: pooled r=0.2491, r²=0.0621, defined blocks=51, undefined/small=1.
 - `target_ridge_geometry`: pooled r=0.2521, r²=0.0636, defined blocks=51, undefined/small=1.
+- `global_ridge_local`: pooled r=0.2500, r²=0.0625, defined blocks=51, undefined/small=1.
 - `catboost_reference`: pooled r=0.1978, r²=0.0391, defined blocks=51, undefined/small=1.
 
 ## 6. Прямые ответы

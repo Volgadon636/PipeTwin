@@ -2,68 +2,68 @@
   "artifact_hashes": {
     "configs/preprocessing.json": "64669ba69e237bf00a38af5148ad6f801c89b31f12377d37ac0e00b6e6bdbb0c",
     "data/cleaned/passport.csv": "4d5245d8a7702cba3f739538726325972db1afc44e36df956200725b879a01ab",
-    "data/cleaned/passport.parquet": "14bbc0d7e1cf8cbab8554c09c8585edb5adddd7b5314af17ecb428b69b9775a3",
+    "data/cleaned/passport.parquet": "7ef868bde74b3fca95afc7cd2e8f113c1d69a6057a3cb9ed84ed414954183fd0",
     "data/cleaned/profile.csv": "394dbcdfbc9b140a89e86131305b41f641917e3b7e64c4737ae9cef25afc6d02",
-    "data/cleaned/profile.parquet": "7a928916ae06fdf664b78bb75e183a2eaf8dec049277c55ccd91ee951bdcccbb",
+    "data/cleaned/profile.parquet": "8a9831453dcf4e7086b25df1b86b89980bd05d705f5ab21a38fac52d758ebeb3",
     "data/cleaned/regime.csv": "65e53ebe1a154c5a7a3b6fa5806f1d8e83122c985e1049f38162e316eb95cb79",
-    "data/cleaned/regime.parquet": "83b3ccbfcd9c17e559e254b54a8922fc57b45be07221066197722a307c6a8a12",
+    "data/cleaned/regime.parquet": "a9851cc108609e1a57a93e236c77217f8cec9820f31c52cc60550cfddcd80391",
     "data/cleaned/tech_mode_for_embedings_with_length_with_temperatures_ids16.csv": "a0e58cf2deb665f5c99efc71416edeed68c33334d865ceee1f566a8df031ebfd",
-    "data/cleaned/tech_mode_for_embedings_with_length_with_temperatures_ids16.parquet": "fb61b87f191d4b3a16aaa64c98ae18b8a5969433de2f69aa706cbbf3065fa793",
+    "data/cleaned/tech_mode_for_embedings_with_length_with_temperatures_ids16.parquet": "883538aa3e226f38c77af80b421b4043682ed5a6bea6ee891c9ea5fd99539dfe",
     "data/cleaned/uzt.csv": "80c67ab7ed812ea195f0965467051dd4871dc78a87d1a9f0445d471dfcbea529",
-    "data/cleaned/uzt.parquet": "c209363beaf66849bb104901cb8d9c5b43b74712f697bbf86386db0330f1dc8b",
+    "data/cleaned/uzt.parquet": "198afae6f6580190d13b6a67b8e2a0ae851d126c3ca5a3fa041d19f397a4394a",
     "data/cleaned/vtd.csv": "e52f3a5c573078cd03689cc8774047a01fa3176192db9b84b095b45f5c752ab2",
-    "data/cleaned/vtd.parquet": "16ffbf0565e351ac2447a7336906cb5497e5e595ec95e0abf0570219add2df3c",
+    "data/cleaned/vtd.parquet": "3e29632174b431b1ab1d51caa4dcfdccc750cdad4b3aded7ec88ac0abd3029fd",
     "processed/hydraulic_asof.csv": "2e2fb85ee43d37490b24e39df4f20736077dbd43796c46c2c1062f171fb59951",
-    "processed/hydraulic_asof.parquet": "9cf0361aa114ed5912ee654d0aeff0051838c046069700cc4f9774276380c55e",
+    "processed/hydraulic_asof.parquet": "e0a216d00fcb38fa0d253ae38f19480f91ca5463bc45d7e6a6be815ab5ef54dc",
     "processed/hydraulic_quality.csv": "b3838662af9e71718113715c4082a17b7724273c7c94f9cb6cc8e8c264611f39",
-    "processed/hydraulic_quality.parquet": "c971fd63b446befb38ab7d365ab2d0281ec3d26fbc40b113ce6d91429a04fee7",
-    "processed/lineage_keys.csv": "5f0dbd87ddb973946dc05ea40d20e3c1bf5594809195d9be4c54f304653ad1f0",
-    "processed/lineage_keys.parquet": "7da48fe1257aaf263b815c01ff7e55cab753eaf26f131476b724168b6c1e39cb",
+    "processed/hydraulic_quality.parquet": "538e6e163e4d137ddaf42340801612a4b55a5aeb84c806f13ead8f8eb78ff0ac",
+    "processed/lineage_keys.csv": "c210b1cdd699c13af8fd5109147f87506ab972ab5665b05c382b1c6b4b33eddf",
+    "processed/lineage_keys.parquet": "868c6f6457c0b53658eb86f42440910e5260d01db336834c26125cb997b10d80",
     "processed/monitoring_mapped.csv": "f6e51a342bb9f91565f5b5bcc5994c46c64c42c5c901f377e3f0999f5eb5e248",
-    "processed/monitoring_mapped.parquet": "bcc6a32ff425ab095b5cf43a30f6139576af635f6363083c01797ba9d900f3e9",
+    "processed/monitoring_mapped.parquet": "e3f86ec3ab0f0e9bb909cd6c3c5ef479a5a2cb6ab71a018134520ad476b50671",
     "processed/pipes_summary.csv": "902ed93728afdfc8d8f204b81ce54eb607cffe4f2bd3ad79ccaea88ac915f49c",
-    "processed/pipes_summary.parquet": "ed9d9d73e54709926a88dd1df7c2de127591da0ed696b9a6ee6b2dde81b8ffbf",
+    "processed/pipes_summary.parquet": "7d74d13cd716204608206fafa895cda37c48ab23fc637d17ad2d5e9a66183bb6",
     "processed/profile_by_segment.csv": "3e4b4994a3f3da4fa04c403dcac85bf4484ca9feca68103665db6cc39f2d04ca",
-    "processed/profile_by_segment.parquet": "b385e47cb41a26cbf47472f962b975758494f3dc234abc2c1f58e6c4de4fca57",
+    "processed/profile_by_segment.parquet": "46af5823aa813d282df2266c92308412205f0d014a5ef0a293afb09f337f2168",
     "processed/profile_rejected.csv": "c294007bc5dffc5a496269f5019c190ad4cbb72e8c7934451661477b61337776",
-    "processed/profile_rejected.parquet": "016b358510e0e0ccdfa04e357e9311ea3903fbc57425a4761600fc11f3bb2d9f",
+    "processed/profile_rejected.parquet": "af1629841d42fa18dde170e4809ef7ce87995825bfeafb8c3a618d9a55070e14",
     "processed/quality_issues.csv": "9f9fe8cbfcbb8a777a9eca1d8ba97b568f30a4e3159bb117880fb03f6b190d58",
-    "processed/quality_issues.parquet": "6196008d36a4dc24a2741292ddf7bdf95c9bca2586adadae42e3932e6caa158f",
+    "processed/quality_issues.parquet": "f99b092e11ba8b0d4abfc8bb42e040c885910263a5937c75bbcd168fb0e50737",
     "processed/regime_mapped.csv": "024a5fdbb032a47c5f6938cf50a0fd3971089b5cd1b2c6915a997589018dcc63",
-    "processed/regime_mapped.parquet": "6fd2549de9aeab17750f336a66b08883258a821b15e4799b8227a602a8845266",
+    "processed/regime_mapped.parquet": "af0fcd453a0a4a56e02f6c6a718e615b347d51479a14a51887333b0bdad7678e",
     "processed/rejected_records.csv": "6a3ff831ca96d678edfebbe653b74e49bde7e43a481fbd8af64d73788dbe8264",
-    "processed/rejected_records.parquet": "1e91aa55632b5304e229374f1c376b050cd4a38a1e41dc8b7c5bf75ec042c900",
+    "processed/rejected_records.parquet": "6243fdbd0d7995fb80d4580be629416afa819b5aedaa4054767a3c955ed1d9fd",
     "processed/segments_grid.csv": "55cce38f655fc47eaabf2255d4e74e31e6d81f774f95df40f47f23adcfeb48a3",
-    "processed/segments_grid.parquet": "00c621723c83a8d1b4a48bc856d51273346a3ab11b977dcc9f6e7540fd78e9f6",
+    "processed/segments_grid.parquet": "a635091026c68526311700bba98adde44d66875dd1d85ac106569e68147039ec",
     "processed/step1_column_mappings.json": "4538cb87030b04b2ea76a7e51f0580cce7308c9a1608dd21b243c1fe0eaaaf1d",
     "processed/step2_cleaning_audit.json": "b4ff149e13499aaff5fe12b4cf0ddf0cbe68e2fc4f2501de767448a08bf5635c",
     "processed/target_features.csv": "1ff33a4842b63f9b255afb189bb36676d202b5ebaacca9c925d18885abbac767",
-    "processed/target_features.parquet": "cbb39ef25aef462cf70876d130a3bee01da6a877917a831fa64bd47d5ae49362",
+    "processed/target_features.parquet": "1504fa45432a267daa2987cd41a081dc5ec7920f74c765903a491ec333fce771",
     "processed/target_segments_grid.csv": "89ee38ef86368798426a5d91daeb4e849518cb40b2185e1c632dd9f3953db936",
-    "processed/target_segments_grid.parquet": "f9a9bf3d27bd0652406cbb04eba0b5416e916037b9f3cafcf38cb137a03b6e77",
+    "processed/target_segments_grid.parquet": "30260db956a902f761e4fe6d10c82edc78d21d0e20a16cea36a67f777a10ec6f",
     "processed/training_targets.csv": "8f32b9c374533183abf02e25a6a990988d0e7a661b48f34252667708800cdd18",
-    "processed/training_targets.parquet": "1fe8ac0cae557490dbdcf7904e6f55569781318c639a06e31777c621b12b0a7e",
+    "processed/training_targets.parquet": "9d7320046bf11fdcbcc9120754ae78e0aabf8afb74f5a6b7e22e6e4c99be9a2f",
     "processed/uzt_by_segment.csv": "aed45ba93f914f2f4d66f02c31d4b144cd865d69bfc6113a94f1fb1689e364ef",
-    "processed/uzt_by_segment.parquet": "04161d14075a22bc6a2cd7ded956e2eada45ef98eaadf9f7505117b03bbce3ee",
+    "processed/uzt_by_segment.parquet": "830cd07f59796dfe20946d8383499e056705ce3e98e059188f8fecf67c52c715",
     "processed/uzt_rejected.csv": "336f046ab254f9a739bd306111b147ed2017a60dc12e2d639faf3cb669c83d57",
-    "processed/uzt_rejected.parquet": "743756d6205340c5f125982f8c1624be78918bc866a744d2bbf56bba148c3d33",
+    "processed/uzt_rejected.parquet": "31a64db68f5dc71163a0e2389864ab96f0dc495c396293343ae46021aeb5d202",
     "processed/vtd_by_segment.csv": "ab6e17e9f5f286b884b5a3f47ef9109061ccf55c880f961f2cc5c149fd7ccc5e",
-    "processed/vtd_by_segment.parquet": "d910e8b220904221900cd544c06d7fe8af935a128e04a536ddee8d4eac2658cd",
+    "processed/vtd_by_segment.parquet": "0ce6ab596b1f9591efe0b7fa92a4d1eafb7a1f571d01ebb8cc2a302601cc5e3f",
     "processed/vtd_rejected.csv": "ddc149382a52f8a26295c1ea91c61091ea7771306fe1e94c120e159d9c4a4fc4",
-    "processed/vtd_rejected.parquet": "27fb97cf6bc53f784b4e71cefb196131494461f74dbbc2cdd33260afc496cfd3",
-    "reports/data_quality.json": "d6381206eab29d4f9c7a51f5d9ad2e037c005fcac3214ae45cf061677e64c133",
-    "reports/data_quality.md": "3d588085873337ff5598b9bff5a71b9cf132b8a3a0b253e65226e129b1c4fa11",
+    "processed/vtd_rejected.parquet": "ff0763f45c6fb6bd170d635b9d8a0f7aeec91dda82f443aa25b2e74fc6a17d44",
+    "reports/data_quality.json": "f31b103007ec0bf2b9b0483fe0c6b94bf31b5118ad02f91c6583059a7a32db4e",
+    "reports/data_quality.md": "b9aef6d71f6aaf27a3f07221073e1b6540d9134c18c5871a711e2284a890f190",
     "reports/date_coverage.json": "834c040dc9264af580ecb92df8591590b241b3d1f22e2f04e71286546d86c87a",
     "reports/feature_coverage.json": "e41145929d2b1427e6236822215f08430d675baea665fb88e279c62b9fc13c91",
     "reports/feature_inventory.csv": "18f1b27538e9b9bceb1c68de197a5d6de16581625ac04dbfb6e089cbe85b8014",
-    "reports/feature_inventory.parquet": "df67bdeecad5a320f3146d877f646ff50657571ea849e88cd24761e465ff1c7f",
+    "reports/feature_inventory.parquet": "a44cacb26c89eebcc790fcf7af947d4cd407c9cd452e8e53dd7a8e2da59232ec",
     "reports/join_audit.json": "1c44e852da79338d94bec398368f5d1bb2a28f0bf258f3661b07ccd68b420312",
     "reports/leakage_audit.json": "8013a2e537ab998085d8f50fbf3bade3d958a8921e8f803081447890299d32d7",
-    "reports/lineage.json": "0d6d8e47d3844c3585c70dae758813fcb7ce7b9b2b2259de09bce8a1d90cc046",
+    "reports/lineage.json": "3eff7bb0ddd8d4a4469d1e1fab17d777026b8beb3a7742afe514982b0fe2b921",
     "reports/persistence_filter.json": "03611232c05b2a2094e5d8d5e064ea4c507f573c1b5068f47953db6a2bd1f4fb",
     "reports/row_reconciliation.json": "318812662c5f4afab5be9936b1f6a284074714e10071524f276106bb5a6c6b43",
-    "reports/schema_mapping.json": "101126ca9943609e892181224e6f0b0282b4949191f899348359beac64a253f0",
-    "reports/source_inventory.json": "55838718bc479fd5620dd3b76da046c5757ceed2c58e763b3ce11a938fc68b02",
+    "reports/schema_mapping.json": "d354bcaa3a06e527278067d27c8a6fddfccaf8af6dbdf7fa20a1087412312e6b",
+    "reports/source_inventory.json": "693b26a9eb571c9a6be184fcf59afc10db46ff485154d7bcc0d7f5ba7f62672a",
     "reports/spatial_coverage.json": "37f9ff3499b4d4cb2e6f1d5a2697f7748ead2225edee6e9e2c453c48d15e299c",
     "reports/spreadsheet_safe_quality_issues.csv": "77258a0fd69c87497a572b39c63702067980712617b562a0b104189ed0f223cd",
     "reports/template_validation.json": "a9a4770f26de11af26d9fb41d368c7f5a84e63327977bb73d187ac7b18da30fc",
@@ -71,30 +71,30 @@
     "reports/validation.json": "6f98b81877a4cc5242bcddb25a870143895665fd377114774a08cbf1cb6d0a42",
     "reports/vtd_campaigns.json": "835a6ef38590b2a52a836fd721426a6d096736702dca1c9bb77b5244d910e6d6"
   },
-  "cache_key": "67d4d07e26d42037e3064e3bece6c0227850432e74ac94ae61bdd9f50cef90c4",
+  "cache_key": "0467a9f320a96f503d4faf7f767f862d16c9c6109304b4361589c229fa033d45",
   "cache_reused": false,
   "code_sha256": {
-    "__init__.py": "efb1820d15c1d8368b8d420fb4d5686e6058f9a5e4666d1c437f4b9a747b12e5",
-    "cache.py": "80364008d34df71be4217fec50cb2d75551a6533f9593db3916143e7fecc7519",
-    "config.py": "8d18a14f9813b41db192d994e9ffbc72890f8b632aae28d7c9bfd7470b2f4019",
-    "data_cleaner.py": "3a3cba9a59aed44bfc4a624de6b495a050e6ad1cb58ffe09885f2379b4d40646",
-    "data_prep.py": "83fc6bc169d22d1acd3e1cffd719bc1df272b29b76072f0ed859429427e387a1",
-    "fluid.py": "8d663799bb9c9d1377f7dd52ef4b70a531aa238d5361bed55a3acd34d1a3d4e1",
-    "format_detector.py": "37f9c48a80cdaf25eba8edf6b307826344015e9a4bb7c2f07eb7f672c90c9207",
-    "grid_builder.py": "6e68a6eb054b02be0635ea4dda30bc571e3522222553b5e4ba42a0f7c7311f72",
-    "heat_transfer.py": "3386acfa1d85e3bff14136957c0a1e7f9ce532f11778b14f4c1bbfcfeb99ea1b",
-    "leakage.py": "4f28a71a603bfa556f41c837a71b5ad83023b13e99f10e5d053bbfd3720045e0",
-    "lineage.py": "1f88611cbe3833ac1025ffb239b40b2b6530957288022be290103062d989d01f",
-    "mentor_ingest.py": "24e0685005d3d1097fdd7d7500ea2d0fee82e0c7e3d68cf01e909a4e3b6a4584",
-    "parsing.py": "e5bd4c9a5693545638abe9ce00e3e3d9129c0769ed1e116969abfcce4715c268",
-    "quality.py": "3a527a6b11a261bbef830026701b6f38be52898b8954ec5c3f3db524effc3bd4",
-    "schema_registry.py": "c986c2cc81c4bf90f9f0357a266e4e65f6cc51c1a413172f763ce9d96764eccb",
-    "segment_mapper.py": "694bf77697f5ddaec0943c18e33fe323efd4d82a8034e811380e265f963bfdb9",
-    "source_registry.py": "df9b2e6fb6877405a1afe26824e4057f751494fc94fee284fe2e118f56549992",
-    "storage.py": "2fc7aa86a2d2a75d56bf3a02014f6b9161d1648d9abd5b1b443284ece37c839a",
-    "temporal.py": "95e95822eed283031dad606b1311881ece4c79e25fc6eed66a2208667663c2b7",
-    "units.py": "060b97a102e2cc8666af708c9b55ef7e393bea83297b8c9f8331dc0d126d7138",
-    "validator.py": "adbb0f573077a381ec723d018603af80d204d4c170be73aafd5c187e85458675"
+    "__init__.py": "12eb4e6a222cd629a0b3cd1ca4c511291094d28ecf18fde8235dd633a359b840",
+    "cache.py": "e7fb89365aa6f3696ed1b6d302a16dc4a0d823d2ea8b6e9ef284ee6cf50e251b",
+    "config.py": "a8c5f490b84a8b77a14f63e6cd100aeccb2e51269361e803d11bb564834eaf82",
+    "data_cleaner.py": "af966a254949001b1910ab6aa2e40eb3fea13df5e43995395c467edf7d2647da",
+    "data_prep.py": "b99d5e209a32c8ab880dd04b616680561b6129d6353c9a7f5957dd6088389480",
+    "fluid.py": "3448199a1400600c819e1fb4f7c7f1a8e4731e1bc8109ce24085cb24e4878768",
+    "format_detector.py": "7540be5dee62e13b0e2c473209065f0fe9e8f4e8b69ec3edce909753f82701c0",
+    "grid_builder.py": "5c942f17e51c95cbdc13e04f48a4bd8662dff2f5d1cfbef9e17ff934d5d292f6",
+    "heat_transfer.py": "c45833f0e9cd093ce8956904d8bb4455137321c111d4053356dddbedc2e5a46b",
+    "leakage.py": "49846f8342ee64765fb2097ffe2280458a7dc4c5d1c36e320ddde6cc49cb388f",
+    "lineage.py": "ff05e01998eb8f75ea4abc1084338a80e299ec806546e19a32c6d0ad9af47d20",
+    "mentor_ingest.py": "a5700435344d869d952abd171888944df362f6b4db35894fb8cb28e4b4bd8f66",
+    "parsing.py": "fce9e7bbad291c18a791f8a8b3c3c7a69b981279c58f1b300c7ba2e4a131440f",
+    "quality.py": "c4f46d6dbe5b1ab9b9184f70dd6f46c14458666eddb6e8cad3b4892c2c35cf97",
+    "schema_registry.py": "4dddae070e531c9dd80b91399787372bacc34519c67fd09aab276d40022c0989",
+    "segment_mapper.py": "5a6360a54f2e0d282854f8038c4cf50c507ff2ac3a68456c5680b396ca4ee302",
+    "source_registry.py": "b4707b4851246c1a375567fdb86c14199d15cfea31b33d600aaa83d25e348910",
+    "storage.py": "7f1d53a83f136c5fa22b9c7e079ff8f5584d0f60378572b43e1fa47f4f4348e6",
+    "temporal.py": "3eef057e56456fe094052a072affb8b4a777eb652556602e3beab14ba78bd55e",
+    "units.py": "6f11d778b55db59e2145fe8d072457f7d6836a63f8ec07f22f39335f09bc8f44",
+    "validator.py": "83300b66ba7b081b008d6793f38bc474e7e8cf3b7bf2efb30553d47cce4599e0"
   },
   "config": {
     "cutoff_policy": "strictly_before_prediction_date",
@@ -129,10 +129,31 @@
   },
   "config_hash": "0045088a4c1ce2b9fc0e5e0659b8a405671cd803f928ffd776dc5be935a767cc",
   "git": {
-    "dirty_status_excerpt": [],
-    "dirty_status_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-    "revision": "855da1853cc2e4e2017d2d6401ccada28ae48d9f",
-    "working_tree_dirty": false
+    "dirty_status_excerpt": [
+      " M configs/preprocessing.json",
+      " M data/cleaned/passport.csv",
+      " M data/cleaned/passport.parquet",
+      " M data/cleaned/profile.csv",
+      " M data/cleaned/profile.parquet",
+      " M data/cleaned/regime.csv",
+      " M data/cleaned/regime.parquet",
+      " M data/cleaned/tech_mode_for_embedings_with_length_with_temperatures_ids16.csv",
+      " M data/cleaned/tech_mode_for_embedings_with_length_with_temperatures_ids16.parquet",
+      " M data/cleaned/uzt.csv",
+      " M data/cleaned/uzt.parquet",
+      " M data/cleaned/vtd.csv",
+      " M data/cleaned/vtd.parquet",
+      " M experiments/targeted_cycle/stage_3_report_ru.md",
+      " M experiments/targeted_cycle/stage_3_s1_100m_20m/baseline_thickness_bins.csv",
+      " M experiments/targeted_cycle/stage_3_s1_100m_20m/figures/paired_block_mae.png",
+      " M experiments/targeted_cycle/stage_3_s1_100m_20m/figures/s1_oof_profiles.png",
+      " M experiments/targeted_cycle/stage_3_s1_100m_20m/fold_fit_metadata.json",
+      " M experiments/targeted_cycle/stage_3_s1_100m_20m/metrics_details.json",
+      " M experiments/targeted_cycle/stage_3_s1_100m_20m/metrics_overall.csv"
+    ],
+    "dirty_status_sha256": "4f32024c82baad3ab91d646ef5a72e9c63c3be9a5ce7e40f335e44cb53937f2a",
+    "revision": "17a09168c60e5c67a1de492f13ad6b3b07489894",
+    "working_tree_dirty": true
   },
   "inputs": {
     "passport.csv": {
@@ -1017,7 +1038,7 @@
       ],
       "record_count": 16,
       "rows": 16,
-      "sha256": "c613a97a4e3d8b33e3ef2357caa98dd5fd6dbedefc8f52c8fa28a80ea29bf9e8",
+      "sha256": "c132ed4ab2974b72d2be308b892ccabb703bc8f3a944a3d7ac5badb67d863017",
       "source_filename": "passport.csv",
       "source_type": "passport",
       "status": "parsed"
@@ -1059,7 +1080,7 @@
       ],
       "record_count": 20218,
       "rows": 20218,
-      "sha256": "2b3f5d05d34fff4ff066e9c3da9d47ad5bed0323de08be94b4ab4c06f967947c",
+      "sha256": "3c68f09fb0d9ac575a55506841d5b25fe23c012a5b9f9768a9098a7a704a313f",
       "source_filename": "profile.csv",
       "source_type": "profile",
       "status": "parsed"
@@ -1268,7 +1289,7 @@
       ],
       "record_count": 495,
       "rows": 495,
-      "sha256": "1c17535b437b0ea036330db1996d04f7e0a4792b555b249b02d57f4e593f2dbf",
+      "sha256": "12208a887775cda5763180df04f43dd9fb4dcc1952d9d959b2fd14ddccb6937a",
       "source_filename": "regime.csv",
       "source_type": "corrosion_monitoring",
       "status": "parsed"
@@ -1369,7 +1390,7 @@
       ],
       "record_count": 39052,
       "rows": 39052,
-      "sha256": "560ba4c56429ae07969385a161e9d1b9665399af728e6d29f66d6e26cb227134",
+      "sha256": "ebb1cdbdab0ead66fcbc48c59ce04386f5799ea4415a5a0417306e9e998b3c89",
       "source_filename": "tech_mode_for_embedings_with_length_with_temperatures_ids16.csv",
       "source_type": "hydraulic_regime",
       "status": "parsed"
@@ -1428,7 +1449,7 @@
       ],
       "record_count": 67,
       "rows": 67,
-      "sha256": "25187e44c134a2bbf157471e03f0c8d37178796d062af4e613dd6a0f4e9a42b9",
+      "sha256": "162bf7fb6dfab70c2af3ca85735a99ae0fa5e6c936f8f764c4a8ef3f2b295961",
       "source_filename": "uzt.csv",
       "source_type": "uzt",
       "status": "parsed"
@@ -1583,7 +1604,7 @@
       ],
       "record_count": 48291,
       "rows": 48291,
-      "sha256": "e4cae76524ea06e44bf5e315f99786f655cebc5fe8206871da4fb70ef8f687b2",
+      "sha256": "c584d7ae0eb80e43970ec387c814424a2df081c41bb32f9c7e5c2d2fefcbbbf4",
       "source_filename": "vtd.csv",
       "source_type": "vtd",
       "status": "parsed"
@@ -1890,7 +1911,7 @@
         "vodnye_i_podvodnye_perekhody_sudokhodnost": "string",
         "vodnye_i_podvodnye_perekhody_tolshchina_stenki_mm": "string"
       },
-      "parquet_sha256": "14bbc0d7e1cf8cbab8554c09c8585edb5adddd7b5314af17ecb428b69b9775a3",
+      "parquet_sha256": "7ef868bde74b3fca95afc7cd2e8f113c1d69a6057a3cb9ed84ed414954183fd0",
       "rows": 16
     },
     "data/cleaned/profile": {
@@ -1910,7 +1931,7 @@
         "total_distance": "float64",
         "z": "float64"
       },
-      "parquet_sha256": "7a928916ae06fdf664b78bb75e183a2eaf8dec049277c55ccd91ee951bdcccbb",
+      "parquet_sha256": "8a9831453dcf4e7086b25df1b86b89980bd05d705f5ab21a38fac52d758ebeb3",
       "rows": 20180
     },
     "data/cleaned/regime": {
@@ -1997,7 +2018,7 @@
         "workshop": "string",
         "year": "float64"
       },
-      "parquet_sha256": "83b3ccbfcd9c17e559e254b54a8922fc57b45be07221066197722a307c6a8a12",
+      "parquet_sha256": "a9851cc108609e1a57a93e236c77217f8cec9820f31c52cc60550cfddcd80391",
       "rows": 495
     },
     "data/cleaned/tech_mode_for_embedings_with_length_with_temperatures_ids16": {
@@ -2041,7 +2062,7 @@
         "viscosity_liquid_work": "float64",
         "watercut_pct": "float64"
       },
-      "parquet_sha256": "fb61b87f191d4b3a16aaa64c98ae18b8a5969433de2f69aa706cbbf3065fa793",
+      "parquet_sha256": "883538aa3e226f38c77af80b421b4043682ed5a6bea6ee891c9ea5fd99539dfe",
       "rows": 39052
     },
     "data/cleaned/uzt": {
@@ -2071,7 +2092,7 @@
         "source_row": "int64",
         "start_distance": "float64"
       },
-      "parquet_sha256": "c209363beaf66849bb104901cb8d9c5b43b74712f697bbf86386db0330f1dc8b",
+      "parquet_sha256": "198afae6f6580190d13b6a67b8e2a0ae851d126c3ca5a3fa041d19f397a4394a",
       "rows": 67
     },
     "data/cleaned/vtd": {
@@ -2144,7 +2165,7 @@
         "wall_nominal_mismatch_flag": "bool",
         "wall_thickness": "float64"
       },
-      "parquet_sha256": "16ffbf0565e351ac2447a7336906cb5497e5e595ec95e0abf0570219add2df3c",
+      "parquet_sha256": "3e29632174b431b1ab1d51caa4dcfdccc750cdad4b3aded7ec88ac0abd3029fd",
       "rows": 48040
     },
     "processed/hydraulic_asof": {
@@ -2201,7 +2222,7 @@
         "watercut_pct": "float64",
         "watercut_pct_usable": "float64"
       },
-      "parquet_sha256": "9cf0361aa114ed5912ee654d0aeff0051838c046069700cc4f9774276380c55e",
+      "parquet_sha256": "e0a216d00fcb38fa0d253ae38f19480f91ca5463bc45d7e6a6be815ab5ef54dc",
       "rows": 4208
     },
     "processed/hydraulic_quality": {
@@ -2209,35 +2230,35 @@
       "csv_parquet_verified": true,
       "csv_sha256": "b3838662af9e71718113715c4082a17b7724273c7c94f9cb6cc8e8c264611f39",
       "dtypes": {
-        "action": "object",
+        "action": "str",
         "date": "datetime64[ns]",
-        "field": "object",
+        "field": "str",
         "id": "int64",
         "original_value": "float64",
         "prediction_date": "datetime64[ns]",
-        "rule": "object",
+        "rule": "str",
         "source_row": "int64"
       },
-      "parquet_sha256": "c971fd63b446befb38ab7d365ab2d0281ec3d26fbc40b113ce6d91429a04fee7",
+      "parquet_sha256": "538e6e163e4d137ddaf42340801612a4b55a5aeb84c806f13ead8f8eb78ff0ac",
       "rows": 41
     },
     "processed/lineage_keys": {
       "columns": 10,
       "csv_parquet_verified": true,
-      "csv_sha256": "5f0dbd87ddb973946dc05ea40d20e3c1bf5594809195d9be4c54f304653ad1f0",
+      "csv_sha256": "c210b1cdd699c13af8fd5109147f87506ab972ab5665b05c382b1c6b4b33eddf",
       "dtypes": {
-        "case": "object",
-        "config_hash": "object",
-        "hydraulic_ref": "object",
+        "case": "str",
+        "config_hash": "str",
+        "hydraulic_ref": "str",
         "id": "int64",
-        "lineage_id": "object",
-        "passport_ref": "object",
+        "lineage_id": "str",
+        "passport_ref": "str",
         "prediction_date": "datetime64[ns]",
-        "profile_ref": "object",
+        "profile_ref": "str",
         "segment_id": "int64",
-        "vtd_ref": "object"
+        "vtd_ref": "str"
       },
-      "parquet_sha256": "7da48fe1257aaf263b815c01ff7e55cab753eaf26f131476b724168b6c1e39cb",
+      "parquet_sha256": "868c6f6457c0b53658eb86f42440910e5260d01db336834c26125cb997b10d80",
       "rows": 2000
     },
     "processed/monitoring_mapped": {
@@ -2258,7 +2279,7 @@
         "start_m": "float64",
         "total_mineralization_median": "float64"
       },
-      "parquet_sha256": "bcc6a32ff425ab095b5cf43a30f6139576af635f6363083c01797ba9d900f3e9",
+      "parquet_sha256": "e3f86ec3ab0f0e9bb909cd6c3c5ef479a5a2cb6ab71a018134520ad476b50671",
       "rows": 2000
     },
     "processed/pipes_summary": {
@@ -2275,7 +2296,7 @@
         "target_segments_with_regime": "Int64",
         "total_segments": "int64"
       },
-      "parquet_sha256": "ed9d9d73e54709926a88dd1df7c2de127591da0ed696b9a6ee6b2dde81b8ffbf",
+      "parquet_sha256": "7d74d13cd716204608206fafa895cda37c48ab23fc637d17ad2d5e9a66183bb6",
       "rows": 16
     },
     "processed/profile_by_segment": {
@@ -2299,7 +2320,7 @@
         "z_min": "float64",
         "z_start": "float64"
       },
-      "parquet_sha256": "b385e47cb41a26cbf47472f962b975758494f3dc234abc2c1f58e6c4de4fca57",
+      "parquet_sha256": "46af5823aa813d282df2266c92308412205f0d014a5ef0a293afb09f337f2168",
       "rows": 4668
     },
     "processed/profile_rejected": {
@@ -2318,7 +2339,7 @@
         "total_distance": "float64",
         "z": "float64"
       },
-      "parquet_sha256": "016b358510e0e0ccdfa04e357e9311ea3903fbc57425a4761600fc11f3bb2d9f",
+      "parquet_sha256": "af1629841d42fa18dde170e4809ef7ce87995825bfeafb8c3a618d9a55070e14",
       "rows": 0
     },
     "processed/quality_issues": {
@@ -2326,15 +2347,15 @@
       "csv_parquet_verified": true,
       "csv_sha256": "9f9fe8cbfcbb8a777a9eca1d8ba97b568f30a4e3159bb117880fb03f6b190d58",
       "dtypes": {
-        "action": "object",
-        "field": "object",
-        "file": "object",
-        "id": "object",
-        "original_value": "object",
-        "rule": "object",
+        "action": "str",
+        "field": "str",
+        "file": "str",
+        "id": "str",
+        "original_value": "str",
+        "rule": "str",
         "source_row": "int64"
       },
-      "parquet_sha256": "6196008d36a4dc24a2741292ddf7bdf95c9bca2586adadae42e3932e6caa158f",
+      "parquet_sha256": "f99b092e11ba8b0d4abfc8bb42e040c885910263a5937c75bbcd168fb0e50737",
       "rows": 70716
     },
     "processed/regime_mapped": {
@@ -2397,7 +2418,7 @@
         "watercut_pct_std": "float64",
         "watercut_pct_valid_days": "int64"
       },
-      "parquet_sha256": "6fd2549de9aeab17750f336a66b08883258a821b15e4799b8227a602a8845266",
+      "parquet_sha256": "af0fcd453a0a4a56e02f6c6a718e615b347d51479a14a51887333b0bdad7678e",
       "rows": 2000
     },
     "processed/rejected_records": {
@@ -2416,7 +2437,7 @@
         "source_reference": "string",
         "source_row": "string"
       },
-      "parquet_sha256": "1e91aa55632b5304e229374f1c376b050cd4a38a1e41dc8b7c5bf75ec042c900",
+      "parquet_sha256": "6243fdbd0d7995fb80d4580be629416afa819b5aedaa4054767a3c955ed1d9fd",
       "rows": 540
     },
     "processed/segments_grid": {
@@ -2430,7 +2451,7 @@
         "segment_id": "int64",
         "start_m": "float64"
       },
-      "parquet_sha256": "00c621723c83a8d1b4a48bc856d51273346a3ab11b977dcc9f6e7540fd78e9f6",
+      "parquet_sha256": "a635091026c68526311700bba98adde44d66875dd1d85ac106569e68147039ec",
       "rows": 4668
     },
     "processed/target_features": {
@@ -2440,7 +2461,7 @@
       "dtypes": {
         "age_days": "float64",
         "age_years": "float64",
-        "case": "object",
+        "case": "str",
         "co2_water_median": "float64",
         "commissioning_date": "datetime64[ns]",
         "d_inner_assumed_flag": "bool",
@@ -2528,7 +2549,7 @@
         "z_min": "float64",
         "z_start": "float64"
       },
-      "parquet_sha256": "cbb39ef25aef462cf70876d130a3bee01da6a877917a831fa64bd47d5ae49362",
+      "parquet_sha256": "1504fa45432a267daa2987cd41a081dc5ec7920f74c765903a491ec333fce771",
       "rows": 2000
     },
     "processed/target_segments_grid": {
@@ -2536,7 +2557,7 @@
       "csv_parquet_verified": true,
       "csv_sha256": "89ee38ef86368798426a5d91daeb4e849518cb40b2185e1c632dd9f3953db936",
       "dtypes": {
-        "case": "object",
+        "case": "str",
         "end_m": "float64",
         "id": "int64",
         "length_m": "float64",
@@ -2544,7 +2565,7 @@
         "segment_id": "int64",
         "start_m": "float64"
       },
-      "parquet_sha256": "f9a9bf3d27bd0652406cbb04eba0b5416e916037b9f3cafcf38cb137a03b6e77",
+      "parquet_sha256": "30260db956a902f761e4fe6d10c82edc78d21d0e20a16cea36a67f777a10ec6f",
       "rows": 2000
     },
     "processed/training_targets": {
@@ -2573,7 +2594,7 @@
         "thickness_measurement_count": "int64",
         "wall_nominal_mismatch_flag": "bool"
       },
-      "parquet_sha256": "1fe8ac0cae557490dbdcf7904e6f55569781318c639a06e31777c621b12b0a7e",
+      "parquet_sha256": "9d7320046bf11fdcbcc9120754ae78e0aabf8afb74f5a6b7e22e6e4c99be9a2f",
       "rows": 1080
     },
     "processed/uzt_by_segment": {
@@ -2592,7 +2613,7 @@
         "min_residual_thickness_mm": "float64",
         "segment_id": "int64"
       },
-      "parquet_sha256": "04161d14075a22bc6a2cd7ded956e2eada45ef98eaadf9f7505117b03bbce3ee",
+      "parquet_sha256": "830cd07f59796dfe20946d8383499e056705ce3e98e059188f8fecf67c52c715",
       "rows": 3
     },
     "processed/uzt_rejected": {
@@ -2622,7 +2643,7 @@
         "source_row": "int64",
         "start_distance": "float64"
       },
-      "parquet_sha256": "743756d6205340c5f125982f8c1624be78918bc866a744d2bbf56bba148c3d33",
+      "parquet_sha256": "31a64db68f5dc71163a0e2389864ab96f0dc495c396293343ae46021aeb5d202",
       "rows": 0
     },
     "processed/vtd_by_segment": {
@@ -2651,7 +2672,7 @@
         "thickness_measurement_count": "int64",
         "wall_nominal_mismatch_flag": "bool"
       },
-      "parquet_sha256": "d910e8b220904221900cd544c06d7fe8af935a128e04a536ddee8d4eac2658cd",
+      "parquet_sha256": "0ce6ab596b1f9591efe0b7fa92a4d1eafb7a1f571d01ebb8cc2a302601cc5e3f",
       "rows": 1543
     },
     "processed/vtd_rejected": {
@@ -2724,7 +2745,7 @@
         "wall_nominal_mismatch_flag": "bool",
         "wall_thickness": "float64"
       },
-      "parquet_sha256": "27fb97cf6bc53f784b4e71cefb196131494461f74dbbc2cdd33260afc496cfd3",
+      "parquet_sha256": "ff0763f45c6fb6bd170d635b9d8a0f7aeec91dda82f443aa25b2e74fc6a17d44",
       "rows": 251
     },
     "reports/feature_inventory": {
@@ -2732,31 +2753,31 @@
       "csv_parquet_verified": true,
       "csv_sha256": "18f1b27538e9b9bceb1c68de197a5d6de16581625ac04dbfb6e089cbe85b8014",
       "dtypes": {
-        "canonical_field": "object",
-        "exclusion_reason": "object",
-        "feature_status": "object",
-        "field_id": "object",
-        "mentor_question_id": "object",
-        "missing_pct_folds": "object",
+        "canonical_field": "str",
+        "exclusion_reason": "str",
+        "feature_status": "str",
+        "field_id": "str",
+        "mentor_question_id": "str",
+        "missing_pct_folds": "str",
         "missing_pct_global": "float64",
         "missing_pct_target_1250009583": "float64",
         "missing_pct_target_1250022871": "float64",
-        "normalized_unit": "object",
-        "raw_unit": "object",
-        "scope_grain": "object",
-        "source_calculation": "object",
-        "source_column": "object",
-        "source_file": "object",
-        "source_type": "object",
-        "temporal_availability": "object",
-        "transformation": "object",
-        "unit_verified": "object"
+        "normalized_unit": "str",
+        "raw_unit": "str",
+        "scope_grain": "str",
+        "source_calculation": "str",
+        "source_column": "str",
+        "source_file": "str",
+        "source_type": "str",
+        "temporal_availability": "str",
+        "transformation": "str",
+        "unit_verified": "str"
       },
-      "parquet_sha256": "df67bdeecad5a320f3146d877f646ff50657571ea849e88cd24761e465ff1c7f",
+      "parquet_sha256": "a44cacb26c89eebcc790fcf7af947d4cd407c9cd452e8e53dd7a8e2da59232ec",
       "rows": 515
     }
   },
-  "peak_traced_memory_mb": 349.214,
+  "peak_traced_memory_mb": 207.531,
   "prediction_requests": [
     {
       "case": "between_vtd",
@@ -2961,15 +2982,15 @@
     "schema": "schema-v2",
     "vtd_nominal_tolerance_mm": 0.02
   },
-  "run_id": "67d4d07e26d42037e306",
+  "run_id": "0467a9f320a96f503d4f",
   "runtime_seconds": {
-    "audits": 4.3414,
-    "features": 0.9207,
-    "grid_and_measurements": 2.1892,
-    "parse_clean": 59.6405,
-    "total_before_publish": 103.6557,
-    "validation": 0.2064,
-    "write_and_roundtrip": 36.1051
+    "audits": 5.4314,
+    "features": 1.1536,
+    "grid_and_measurements": 2.6082,
+    "parse_clean": 70.3159,
+    "total_before_publish": 130.2207,
+    "validation": 0.1865,
+    "write_and_roundtrip": 50.3195
   },
   "scenario_cutoffs": {
     "1250009583": "2022-07-01",
@@ -2977,12 +2998,12 @@
   },
   "schema_hash": "98de4e41972129d303985168cba86e6ee2927bb40e2bd2f66fc2c25ef01474f7",
   "source_hashes": {
-    "passport.csv": "c613a97a4e3d8b33e3ef2357caa98dd5fd6dbedefc8f52c8fa28a80ea29bf9e8",
-    "profile.csv": "2b3f5d05d34fff4ff066e9c3da9d47ad5bed0323de08be94b4ab4c06f967947c",
-    "regime.csv": "1c17535b437b0ea036330db1996d04f7e0a4792b555b249b02d57f4e593f2dbf",
-    "tech_mode_for_embedings_with_length_with_temperatures_ids16.csv": "560ba4c56429ae07969385a161e9d1b9665399af728e6d29f66d6e26cb227134",
-    "uzt.csv": "25187e44c134a2bbf157471e03f0c8d37178796d062af4e613dd6a0f4e9a42b9",
-    "vtd.csv": "e4cae76524ea06e44bf5e315f99786f655cebc5fe8206871da4fb70ef8f687b2"
+    "passport.csv": "c132ed4ab2974b72d2be308b892ccabb703bc8f3a944a3d7ac5badb67d863017",
+    "profile.csv": "3c68f09fb0d9ac575a55506841d5b25fe23c012a5b9f9768a9098a7a704a313f",
+    "regime.csv": "12208a887775cda5763180df04f43dd9fb4dcc1952d9d959b2fd14ddccb6937a",
+    "tech_mode_for_embedings_with_length_with_temperatures_ids16.csv": "ebb1cdbdab0ead66fcbc48c59ce04386f5799ea4415a5a0417306e9e998b3c89",
+    "uzt.csv": "162bf7fb6dfab70c2af3ca85735a99ae0fa5e6c936f8f764c4a8ef3f2b295961",
+    "vtd.csv": "c584d7ae0eb80e43970ec387c814424a2df081c41bb32f9c7e5c2d2fefcbbbf4"
   },
   "source_snapshot": {
     "policy": "Schema fingerprint decides meaning; filenames are hints. Conflicting copies fail closed.",
@@ -3008,7 +3029,7 @@
           "length_accounting_m",
           "scrap_wall_thickness_mm"
         ],
-        "path": "C:\\Users\\Администратор\\Documents\\PipeTwin_next\\data\\passport.csv",
+        "path": "C:\\Program Files\\PipeTwin\\data\\passport.csv",
         "record_count": 16,
         "record_count_summary": 16,
         "required_fields": [
@@ -3021,8 +3042,8 @@
         "schema_fingerprint": "3c23361b75656e2c6a7a31d8f57d6f10373c59f1f06ebfb5709810f5a3e24592",
         "schema_version": "passport-v1",
         "selected": true,
-        "sha256": "c613a97a4e3d8b33e3ef2357caa98dd5fd6dbedefc8f52c8fa28a80ea29bf9e8",
-        "size_bytes": 88948,
+        "sha256": "c132ed4ab2974b72d2be308b892ccabb703bc8f3a944a3d7ac5badb67d863017",
+        "size_bytes": 88965,
         "source_type": "passport"
       },
       {
@@ -3039,7 +3060,7 @@
           "lon",
           "lat"
         ],
-        "path": "C:\\Users\\Администратор\\Documents\\PipeTwin_next\\data\\profile.csv",
+        "path": "C:\\Program Files\\PipeTwin\\data\\profile.csv",
         "record_count": 20218,
         "record_count_summary": 20218,
         "required_fields": [
@@ -3051,8 +3072,8 @@
         "schema_fingerprint": "78c9989d4901c84676e07a54c4b18fdb6edb0c7b54e59f2797fa970a86bc2991",
         "schema_version": "profile-v1",
         "selected": true,
-        "sha256": "2b3f5d05d34fff4ff066e9c3da9d47ad5bed0323de08be94b4ab4c06f967947c",
-        "size_bytes": 1196159,
+        "sha256": "3c68f09fb0d9ac575a55506841d5b25fe23c012a5b9f9768a9098a7a704a313f",
+        "size_bytes": 1216378,
         "source_type": "profile"
       },
       {
@@ -3078,7 +3099,7 @@
           "section_number",
           "feature_number"
         ],
-        "path": "C:\\Users\\Администратор\\Documents\\PipeTwin_next\\data\\vtd.csv",
+        "path": "C:\\Program Files\\PipeTwin\\data\\vtd.csv",
         "record_count": 48291,
         "record_count_summary": 48291,
         "required_fields": [
@@ -3091,8 +3112,8 @@
         "schema_fingerprint": "165d6f7e8f7fd3e5d4e6e4be7c7222b3887260d196c4925cedfb6fb78d7e1b73",
         "schema_version": "vtd-v1",
         "selected": true,
-        "sha256": "e4cae76524ea06e44bf5e315f99786f655cebc5fe8206871da4fb70ef8f687b2",
-        "size_bytes": 21268674,
+        "sha256": "c584d7ae0eb80e43970ec387c814424a2df081c41bb32f9c7e5c2d2fefcbbbf4",
+        "size_bytes": 21316966,
         "source_type": "vtd"
       },
       {
@@ -3113,7 +3134,7 @@
           "measurement_id",
           "angle"
         ],
-        "path": "C:\\Users\\Администратор\\Documents\\PipeTwin_next\\data\\uzt.csv",
+        "path": "C:\\Program Files\\PipeTwin\\data\\uzt.csv",
         "record_count": 67,
         "record_count_summary": 67,
         "required_fields": [
@@ -3126,8 +3147,8 @@
         "schema_fingerprint": "6574dbfc018e0292067362ca52cf930b2073cde47bb9fb88508c1c61fda7271a",
         "schema_version": "uzt-v1",
         "selected": true,
-        "sha256": "25187e44c134a2bbf157471e03f0c8d37178796d062af4e613dd6a0f4e9a42b9",
-        "size_bytes": 4411,
+        "sha256": "162bf7fb6dfab70c2af3ca85735a99ae0fa5e6c936f8f764c4a8ef3f2b295961",
+        "size_bytes": 4479,
         "source_type": "uzt"
       },
       {
@@ -3162,7 +3183,7 @@
           "t_end",
           "t_mix"
         ],
-        "path": "C:\\Users\\Администратор\\Documents\\PipeTwin_next\\data\\tech_mode_for_embedings_with_length_with_temperatures_ids16.csv",
+        "path": "C:\\Program Files\\PipeTwin\\data\\tech_mode_for_embedings_with_length_with_temperatures_ids16.csv",
         "record_count": 39052,
         "record_count_summary": 39052,
         "required_fields": [
@@ -3175,8 +3196,8 @@
         "schema_fingerprint": "bca9fa6dbab574c72b0393f7693db95487fd19956d9fe06ecc2d0448243302b5",
         "schema_version": "hydraulic-v1",
         "selected": true,
-        "sha256": "560ba4c56429ae07969385a161e9d1b9665399af728e6d29f66d6e26cb227134",
-        "size_bytes": 6837673,
+        "sha256": "ebb1cdbdab0ead66fcbc48c59ce04386f5799ea4415a5a0417306e9e998b3c89",
+        "size_bytes": 6876726,
         "source_type": "hydraulic_regime"
       },
       {
@@ -3208,7 +3229,7 @@
           "co2_water",
           "total_mineralization"
         ],
-        "path": "C:\\Users\\Администратор\\Documents\\PipeTwin_next\\data\\regime.csv",
+        "path": "C:\\Program Files\\PipeTwin\\data\\regime.csv",
         "record_count": 495,
         "record_count_summary": 495,
         "required_fields": [
@@ -3218,8 +3239,8 @@
         "schema_fingerprint": "263e8242574baa1ddae2adbfec6752381b9db9157fec9112c2f1e24bbf4f511f",
         "schema_version": "monitoring-v1",
         "selected": true,
-        "sha256": "1c17535b437b0ea036330db1996d04f7e0a4792b555b249b02d57f4e593f2dbf",
-        "size_bytes": 218509,
+        "sha256": "12208a887775cda5763180df04f43dd9fb4dcc1952d9d959b2fd14ddccb6937a",
+        "size_bytes": 219005,
         "source_type": "corrosion_monitoring"
       }
     ],
@@ -3235,13 +3256,13 @@
     "status": "not_run_in_this_command"
   },
   "versions": {
-    "numpy": "2.3.5",
-    "pandas": "2.2.3",
-    "pyarrow": "21.0.0",
-    "python": "3.12.8"
+    "numpy": "2.5.4",
+    "pandas": "3.0.6",
+    "pyarrow": "26.0.1",
+    "python": "3.13.5"
   },
   "warnings": [
     "filename/schema conflict: regime.csv looks like corrosion_monitoring by contents; filename also appears in another source's alias list",
-    "peak_traced_memory_mb=349.214"
+    "peak_traced_memory_mb=207.531"
   ]
 }

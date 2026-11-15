@@ -139,6 +139,163 @@
     "model": "global_ridge_geometry"
   },
   {
+    "artifact_path": "C:\\Program Files\\PipeTwin\\experiments\\targeted_cycle\\stage_3_s1_100m_20m\\models\\global_ridge_local\\model_artifact.joblib",
+    "artifact_sha256": "da7261f4ca27d0f973de79f282248eedd01c3b700766a0468e93d8d02b69ceb1",
+    "metadata": {
+      "alpha": 10.0,
+      "baseline_column": "last_mm",
+      "coefficient_by_feature": {
+        "abs_slope_m_per_m": 0.052584870240800774,
+        "last_mm": -0.42852888929583033,
+        "last_rollmin3": 0.04606027320245548,
+        "last_smooth3": 0.03544127302294025,
+        "local_low_m": 0.05073439028752826,
+        "neighbor_missing": -0.029288566946783903,
+        "neighbor_prior_count": -0.08753879669204848,
+        "neighbor_prior_median_mm": 0.061102530573361145,
+        "relative_position": 0.0647401883278271,
+        "slope_m_per_m": 0.011756280572858812
+      },
+      "coefficients": [
+        -0.42852888929583033,
+        0.061102530573361145,
+        -0.08753879669204848,
+        -0.029288566946783903,
+        0.011756280572858812,
+        0.052584870240800774,
+        0.05073439028752826,
+        0.0647401883278271,
+        0.03544127302294025,
+        0.04606027320245548
+      ],
+      "dropped_columns": {
+        "age_last_vtd_years": "constant_on_train",
+        "prior_vtd_campaign_count": "constant_on_train"
+      },
+      "features": [
+        "last_mm",
+        "age_last_vtd_years",
+        "prior_vtd_campaign_count",
+        "neighbor_prior_median_mm",
+        "neighbor_prior_count",
+        "neighbor_missing",
+        "slope_m_per_m",
+        "abs_slope_m_per_m",
+        "local_low_m",
+        "relative_position",
+        "last_smooth3",
+        "last_rollmin3"
+      ],
+      "fit_intercept": true,
+      "intercept": -0.04931517357919722,
+      "model_name": "global_ridge_local",
+      "model_type": "Ridge",
+      "prediction_policy": "delta",
+      "preprocessing": {
+        "constant_columns": [
+          "age_last_vtd_years",
+          "prior_vtd_campaign_count"
+        ],
+        "dropped_columns": {
+          "age_last_vtd_years": "constant_on_train",
+          "prior_vtd_campaign_count": "constant_on_train"
+        },
+        "duplicate_columns": {},
+        "empty_columns": [],
+        "feature_order": [
+          "last_mm",
+          "age_last_vtd_years",
+          "prior_vtd_campaign_count",
+          "neighbor_prior_median_mm",
+          "neighbor_prior_count",
+          "neighbor_missing",
+          "slope_m_per_m",
+          "abs_slope_m_per_m",
+          "local_low_m",
+          "relative_position",
+          "last_smooth3",
+          "last_rollmin3"
+        ],
+        "imputer": "median",
+        "imputer_statistics": {
+          "abs_slope_m_per_m": 0.0,
+          "last_mm": 6.11,
+          "last_rollmin3": 5.78,
+          "last_smooth3": 6.11,
+          "local_low_m": 0.0,
+          "neighbor_missing": 0.0,
+          "neighbor_prior_count": 3.0,
+          "neighbor_prior_median_mm": 6.1,
+          "relative_position": 0.438228793537078,
+          "slope_m_per_m": 0.0
+        },
+        "scaler": "StandardScaler",
+        "scaler_mean": {
+          "abs_slope_m_per_m": 0.005058970038990697,
+          "last_mm": 6.130504201680672,
+          "last_rollmin3": 5.787198879551822,
+          "last_smooth3": 6.121176470588236,
+          "local_low_m": -0.004764359930490752,
+          "neighbor_missing": 0.0392156862745098,
+          "neighbor_prior_count": 2.764705882352941,
+          "neighbor_prior_median_mm": 6.113893557422969,
+          "relative_position": 0.45956816385026394,
+          "slope_m_per_m": -0.0011917096449217588
+        },
+        "scaler_scale": {
+          "abs_slope_m_per_m": 0.010132041994656983,
+          "last_mm": 0.5507186780083602,
+          "last_rollmin3": 0.48779386425450955,
+          "last_smooth3": 0.46762288752429865,
+          "local_low_m": 0.12023276779833235,
+          "neighbor_missing": 0.1941077438551307,
+          "neighbor_prior_count": 1.1155073133583098,
+          "neighbor_prior_median_mm": 0.40449050829782274,
+          "relative_position": 0.27458872294749737,
+          "slope_m_per_m": 0.011261939484791181
+        },
+        "used_features": [
+          "last_mm",
+          "neighbor_prior_median_mm",
+          "neighbor_prior_count",
+          "neighbor_missing",
+          "slope_m_per_m",
+          "abs_slope_m_per_m",
+          "local_low_m",
+          "relative_position",
+          "last_smooth3",
+          "last_rollmin3"
+        ]
+      },
+      "solver": "cholesky",
+      "target": "target_delta_mm",
+      "target_mean": -0.04931517357919729,
+      "target_std": 0.6503883416768479,
+      "training_dates": [
+        "2022-07-06"
+      ],
+      "training_rows": 357,
+      "training_sections": [
+        1250009490,
+        1250011604,
+        1250022871
+      ],
+      "used_features": [
+        "last_mm",
+        "neighbor_prior_median_mm",
+        "neighbor_prior_count",
+        "neighbor_missing",
+        "slope_m_per_m",
+        "abs_slope_m_per_m",
+        "local_low_m",
+        "relative_position",
+        "last_smooth3",
+        "last_rollmin3"
+      ]
+    },
+    "model": "global_ridge_local"
+  },
+  {
     "artifact_path": "C:\\Program Files\\PipeTwin\\experiments\\targeted_cycle\\stage_3_s1_100m_20m\\models\\target_ridge_geometry\\model_artifact.joblib",
     "artifact_sha256": "6622d9a1d9c79e70c3428fc6a1fd0a17e6379fe702e9b113fcb248b6de85d2ad",
     "metadata": {
@@ -277,7 +434,7 @@
   },
   {
     "artifact_path": "C:\\Program Files\\PipeTwin\\experiments\\targeted_cycle\\stage_3_s1_100m_20m\\models\\catboost_reference\\model_artifact.joblib",
-    "artifact_sha256": "cc528db9e48641362461fdc65f91fadfb9d0f9e7e35eb09c573dbe7e396b6c3b",
+    "artifact_sha256": "d8d479d9dd9397f8c19e810d2bdd854548c0c45675254a76e5641ae3dc4160de",
     "metadata": {
       "baseline_column": "last_mm",
       "dropped_columns": {

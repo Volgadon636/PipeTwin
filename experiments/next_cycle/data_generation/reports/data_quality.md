@@ -24,12 +24,12 @@
 
 | Путь | Тип | Строк | SHA-256 (12) | Schema | Ограничение |
 |---|---|---:|---|---|---|
-| passport.csv | passport | 16 | c613a97a4e3d | passport-v1 |  |
-| profile.csv | profile | 20218 | 2b3f5d05d34f | profile-v1 |  |
-| vtd.csv | vtd | 48291 | e4cae76524ea | vtd-v1 |  |
-| uzt.csv | uzt | 67 | 25187e44c134 | uzt-v1 |  |
-| tech_mode_for_embedings_with_length_with_temperatures_ids16.csv | hydraulic_regime | 39052 | 560ba4c56429 | hydraulic-v1 |  |
-| regime.csv | corrosion_monitoring | 495 | 1c17535b437b | monitoring-v1 |  |
+| passport.csv | passport | 16 | c132ed4ab297 | passport-v1 |  |
+| profile.csv | profile | 20218 | 3c68f09fb0d9 | profile-v1 |  |
+| vtd.csv | vtd | 48291 | c584d7ae0eb8 | vtd-v1 |  |
+| uzt.csv | uzt | 67 | 162bf7fb6dfa | uzt-v1 |  |
+| tech_mode_for_embedings_with_length_with_temperatures_ids16.csv | hydraulic_regime | 39052 | ebb1cdbdab0e | hydraulic-v1 |  |
+| regime.csv | corrosion_monitoring | 495 | 12208a887775 | monitoring-v1 |  |
 
 ## Сверка строк (непересекающиеся disposition)
 

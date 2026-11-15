@@ -31,6 +31,14 @@
     "q05_delta_mae_mm": -0.3873356979834436,
     "q95_delta_mae_mm": 0.12235344679916516
   },
+  "global_ridge_local": {
+    "blocks": 52,
+    "blocks_model_better": 40,
+    "mean_delta_mae_mm": -0.0877494881422251,
+    "median_delta_mae_mm": -0.06716735771420622,
+    "q05_delta_mae_mm": -0.3562236164557313,
+    "q95_delta_mae_mm": 0.09335657351578343
+  },
   "target_ridge_geometry": {
     "blocks": 52,
     "blocks_model_better": 36,
