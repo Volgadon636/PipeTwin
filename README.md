@@ -66,6 +66,30 @@ validated hidden-test score, calibrated intervals, or a proven spatial ranking.
 The document lists the open mentor questions, including whether the dense
 2022→2023 campaign may be used for S1 calibration.
 
+## S1A / S1B / S1C: as-of baselines and Ridge correction
+
+The S1 experiment is implemented in a separate local branch/worktree
+(`s1abc-ridge`, based on the `model_v2` tree). It does not retrain or change S2.
+S1A is last-prior persistence, S1B is the minimum of all prior VTD campaigns,
+and S1C is a small Ridge correction to S1B. The full contract, artifacts and
+honest limitations are in [docs/s1abc.md](docs/s1abc.md).
+
+```bash
+python -m src.ml.s1a --root . --output-root experiments/s1abc/s1a
+python -m src.ml.s1b --root . --output-root experiments/s1abc/s1b
+python -m src.ml.s1c train --root . --output-root experiments/s1abc/s1c --alpha 10.0
+python -m src.ml.s1c predict --root . --output-root experiments/s1abc/s1c
+python -m src.ml.s1_metrics --root . --output-root experiments/s1abc
+# sequential
+python -m src.ml.s1_all --root . --output-root experiments/s1abc
+```
+
+S1C is fitted on 357 historical rows (3 simple sections, one campaign
+`2022-07-06`, one parent pipeline). The only validation is leave-one-simple-
+pipe-out spatial transfer, not a forward-time forecast. It lowers MAE but also
+lowers Pearson r²; this is saved as a negative/limited result, not promoted as
+a proven improvement. S2 stays unchanged from the explicit v2 `result.csv`.
+
 ## Ingestion v2: evidence, adapters and audits
 
 The parser/ingestion layer was extended without changing the scientific model or

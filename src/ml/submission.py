@@ -44,18 +44,28 @@ def _check_keys(frame, expected, label):
         raise ValueError(f'{label}: key set does not match target grid')
 
 
-def validate_submission(result, target_grid, bounds, template_path=None):
+def validate_submission(result, target_grid, bounds, template_path=None,
+                        upper_column='h0_mm'):
     if list(result.columns) != COLUMNS:
         raise ValueError('Submission columns must be id,segment_id,thickness_pred in that order')
+    if upper_column not in bounds.columns:
+        raise ValueError(f'Bounds are missing the requested upper column: {upper_column}')
     for frame, label in ((result, 'result'), (target_grid, 'target_grid'), (bounds, 'bounds')):
         _check_keys(frame, target_grid, label)
-    _check_keys(bounds, target_grid, 'bounds')
     if not pd.api.types.is_numeric_dtype(result.thickness_pred):
         raise ValueError('Predictions must be numeric')
     if not np.isfinite(result.thickness_pred.to_numpy(float)).all():
         raise ValueError('Predictions must be finite')
-    aligned = result.merge(bounds[['id', 'segment_id', 'h0_mm']], on=['id', 'segment_id'], validate='one_to_one')
-    if aligned.h0_mm.le(0).any() or aligned.thickness_pred.lt(0).any() or (aligned.thickness_pred > aligned.h0_mm + 1e-10).any():
+    if not pd.api.types.is_numeric_dtype(bounds[upper_column]):
+        raise ValueError(f'Bounds column {upper_column} must be numeric')
+    if not np.isfinite(bounds[upper_column].to_numpy(float)).all():
+        raise ValueError(f'Bounds column {upper_column} must be finite')
+    columns = ['id', 'segment_id', 'h0_mm'] + (
+        [] if upper_column == 'h0_mm' else [upper_column])
+    aligned = result.merge(bounds[columns], on=['id', 'segment_id'], validate='one_to_one')
+    if (aligned.h0_mm.le(0).any() or (aligned[upper_column].le(0).any())
+            or aligned.thickness_pred.lt(0).any()
+            or (aligned.thickness_pred > aligned[upper_column] + 1e-10).any()):
         raise ValueError('Prediction outside physical/assumed baseline bounds')
     template = inspect_template(template_path)
     if template.get('status') == 'authoritative_schema_match':
@@ -70,12 +80,14 @@ def validate_submission(result, target_grid, bounds, template_path=None):
         template['key_set_compared'] = False
         template['validation_grid'] = 'derived_target_grid'
     return {'rows': len(result), 'unique_keys': True, 'finite_mm': True, 'bounded': True,
-            'template': template}
+            'upper_bound_column': upper_column, 'template': template}
 
 
-def export_result(result, path, target_grid, bounds, template_path=None):
+def export_result(result, path, target_grid, bounds, template_path=None,
+                  upper_column='h0_mm'):
     """Write the exact three-column submission after validation; no index column."""
-    validation = validate_submission(result, target_grid, bounds, template_path)
+    validation = validate_submission(result, target_grid, bounds, template_path,
+                                     upper_column=upper_column)
     frame = result[COLUMNS].sort_values(['id', 'segment_id'], kind='stable').reset_index(drop=True)
     path = Path(path)
     path.parent.mkdir(parents=True, exist_ok=True)

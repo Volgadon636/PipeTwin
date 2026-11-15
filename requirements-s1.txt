@@ -1,0 +1,7 @@
+# Minimal S1A/S1B/S1C execution environment.
+# Tested on Windows with CPython 3.12.8 on 2026-11-15.
+# CSV artifacts only; PyArrow is not required for these stages.
+numpy==2.3.5
+pandas==2.2.3
+scikit-learn==1.7.2
+joblib==1.5.3
