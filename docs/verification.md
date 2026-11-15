@@ -24,3 +24,18 @@
 ## Границы результата
 
 Прохождение тестов подтверждает реализованную логику, но не доказывает физическую достоверность всех исходных измерений. Неразрешённые вопросы УЗТ, паспортных дат, ремонтов, соответствия ID мониторинга и единиц части показателей отражены в `cleaning_rules.md` и отчёте качества. Обучение модели и итоговый `result.csv` не входят в эту правку подготовки данных.
+
+## Обновление после второй встречи с менторами (правило паспортного номинала)
+
+Правило второго совещания реализовано на уровне отдельного наблюдения ВТД: остаток больше паспортного номинала простого участка (+0,02 мм) не участвует в минимуме сегмента. Добавлены флаги `above_nominal_flag`, `above_local_wall_flag` (информационный) и `nominal_unresolved_flag`; причина и действие по каждой строке записаны в `processed/quality_issues.csv`.
+
+Результат пересчёта на текущем архиве: исключены **24** наблюдения (21 в `1250022871` за 23.09.2018 и 3 в `1250013653` за 28.12.2014, последние и так были вне допустимых меток). Минимумы сегментов, `training_targets` (1080 строк) и `target_features` (2000 строк) не изменились; у 7 сегментов уменьшился только `thickness_measurement_count`, у 7 появился флаг `above_nominal_flag`. Проверка подготовки данных: **270 проверок**, 22 пары CSV/Parquet. Новые модульные и интеграционные тесты добавлены в `tests/test_preprocessing.py`.
+
+## Ingestion v2 verification
+
+The ingestion/evidence extension is documented separately in
+[`ingestion_v2_verification.md`](ingestion_v2_verification.md).  It records the
+latest observed test count (91 passed), full-archive run (306 checks, 25
+CSV/Parquet pairs, 2,000 target segments), renamed-layout equivalence, unchanged
+v1/v2 predictions on unchanged inputs, and the isolated temperature scenario
+whose parameters remain assumptions.

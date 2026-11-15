@@ -3,6 +3,7 @@ from pathlib import Path
 
 import pandas as pd
 
+from src.config import BASE_DIR
 from src.storage import sha256
 
 JOIN_KEYS = {
@@ -33,8 +34,9 @@ def source_audit(data):
             columns=list(frame), dtypes={c: str(frame[c].dtype) for c in frame},
             missing_by_column={c: int(frame[c].isna().sum()) for c in frame}, dates=dates,
             representative_rows=frame.head(2).astype('string').where(frame.head(2).notna(), None).to_dict('records'))
+    code_root = (data.root/'src') if (data.root/'src').is_dir() else (BASE_DIR/'src')
     mismatches = [name for name, digest in data.manifest['code_sha256'].items()
-                  if sha256(data.root/'src'/name) != digest]
+                  if not (code_root/name).is_file() or sha256(code_root/name) != digest]
     return dict(tables=tables, manifest_code_hash_mismatches=mismatches,
                 published_validation=pd.read_json(data.root/'reports/validation.json', typ='series').to_dict(),
                 warning='Published preprocessing checks are not tests rerun by this audit.',

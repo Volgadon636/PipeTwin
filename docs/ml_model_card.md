@@ -1,5 +1,25 @@
 # PipeTwin provisional ML baseline and audit
 
+## v2 update (branch `model_v2`)
+
+A second, environment-aware model is implemented in `src/ml/physics.py`,
+`src/ml/spatial.py` and `src/ml/experiment_v2.py`; its run is in
+`experiments/ml_v2/`, and the full reasoning is in `docs/model_v2.md`. The v1
+text below is kept as the historical baseline record.
+
+| Item | v1 | v2 |
+|---|---|---|
+| Cold-start model | one constant rate fitted on warm/wet MAIN-2 | environment factors (T, watercut, velocity) with declared priors and a 243-point sensitivity grid; only `r_ref` fitted |
+| Cold-start output | 1.540 mm on every segment | 2.810 mm mean, sd 0.07 mm (gated profile term) |
+| Between-VTD rate | 0.0130 mm/year from all 2018→2022 pairs | 0.0 mm/year from all pre-cutoff pairs; no pair is comparable |
+| Validation | no forward held-parent folds | leave-one-pipe-out, leave-one-parent-out (cross-environment), leave-one-campaign-out; still no forward held-parent folds |
+| New dependencies | — | none (NumPy/pandas only) |
+| Tests | 17 in `tests/test_ml.py` | +12 in `tests/test_ml_v2.py` |
+
+The v2 result is still provisional: hidden inspections are absent, the
+environment coefficients are declared priors (two confounded environments), and
+the only dense 2022→2023 pair lies on the production cutoff.
+
 ## Scope and status
 
 Implemented against `main` at `5f06c32e682fe43433213d6a51087733ccc27570` on 2026-11-14.

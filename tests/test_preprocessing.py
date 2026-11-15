@@ -10,6 +10,7 @@ import numpy as np
 import pandas as pd
 
 from src.config import BASE_DIR, FILE_ALIASES, TECH_FILE
+from src.data_cleaner import residual_validity
 from src.format_detector import parse_numeric, robust_parse_dates, resolve_sources, build_column_mapping
 from src.grid_builder import build_segments_grid, assign_segments
 from src.segment_mapper import map_vtd_to_segments, map_profile_to_segments, build_features_asof
@@ -75,6 +76,35 @@ class UnitTests(unittest.TestCase):
     def test_invalid_length_rejected(self):
         with self.assertRaises(ValueError):
             build_segments_grid(pd.DataFrame({'id':[1],'length_km':[0]}))
+
+    def test_residual_above_passport_nominal_is_not_a_candidate(self):
+        frame = pd.DataFrame(dict(
+            residual_wall_thickness=[8.03, 8.00, 7.90, 0.0, np.nan, 5.0],
+            nominal_thickness_mm=[8.0, 8.0, 8.0, 8.0, 8.0, np.nan],
+            wall_thickness=[8.0, 8.0, 8.0, 8.0, 8.0, 8.0]))
+        flags = residual_validity(frame, 0.02)
+        self.assertEqual(flags.above_nominal_flag.tolist(), [True, False, False, False, False, False])
+        self.assertEqual(flags.nominal_unresolved_flag.tolist(), [False] * 5 + [True])
+        self.assertEqual(flags.residual_invalid_flag.tolist(), [True, False, False, True, False, True])
+        self.assertEqual(flags.above_local_wall_flag.tolist(), [True, False, False, False, False, False])
+        # At exactly the nominal value the observation remains a candidate.
+        self.assertFalse(flags.residual_invalid_flag.iloc[1])
+
+    def test_segment_with_only_above_nominal_observations_is_missing(self):
+        grid = build_segments_grid(pd.DataFrame({'id': [1], 'length_km': [.02]}))
+        source = pd.DataFrame({
+            'id': [1, 1, 1, 1], 'distance': [1., 2., 11., 12.],
+            'date': pd.to_datetime(['2018-09-23'] * 4), 'source_row': [1, 2, 3, 4],
+            'residual_for_target_mm': [np.nan, 7.9, np.nan, np.nan],
+            'defect_depth_pct': [10., 20., 10., 10.],
+            'before_commissioning_flag': [False] * 4, 'commissioning_unknown_flag': [False] * 4,
+            'wall_nominal_mismatch_flag': [False] * 4, 'above_nominal_flag': [True, False, True, True],
+            'nominal_unresolved_flag': [False] * 4, 'heldout_or_future_flag': [False] * 4})
+        result = map_vtd_to_segments(source, grid).set_index('segment_id')
+        self.assertEqual(result.loc[0].min_residual_thickness_mm, 7.9)
+        self.assertTrue(result.loc[0].above_nominal_flag)
+        self.assertTrue(np.isnan(result.loc[1].min_residual_thickness_mm))
+        self.assertFalse(result.loc[1].target_eligible)
 
     def test_target_is_measured_residual_not_nominal_formula(self):
         grid = build_segments_grid(pd.DataFrame({'id':[1],'length_km':[.02]}))
@@ -187,6 +217,30 @@ class DatasetTests(unittest.TestCase):
         target = self.result['tables']['training_targets']
         self.assertFalse(target.before_commissioning_flag.any())
         self.assertFalse(target.date.eq(pd.Timestamp('2014-12-28')).any())
+
+    def test_passport_nominal_ceiling_applied_before_segment_minimum(self):
+        clean = self.result['cleaned']['vtd.csv']
+        tol = CONFIG['vtd_thickness_tolerance_mm']
+        eligible = clean[clean.target_eligible]
+        self.assertTrue((eligible.residual_wall_thickness
+                         <= eligible.nominal_thickness_mm + tol).all())
+        # The rule is not vacuous on this archive: 2018 observations above the
+        # passport nominal exist and are retained with an explicit flag.
+        flagged = clean[clean.above_nominal_flag]
+        self.assertGreater(len(flagged), 0)
+        self.assertTrue(flagged.residual_wall_thickness.gt(flagged.nominal_thickness_mm).all())
+        # Segment rows keep the audit flag while their minimum comes from other,
+        # eligible observations; excluded values never become the minimum.
+        segments = self.result['tables']['vtd_by_segment']
+        self.assertTrue(segments.above_nominal_flag.any())
+        touched = segments[segments.above_nominal_flag]
+        self.assertTrue((touched.observation_count > touched.thickness_measurement_count).all())
+        expected = assign_segments(clean, 'distance', self.result['grid'])
+        expected = expected[expected.target_eligible].groupby(
+            ['id', 'date', 'segment_id']).residual_wall_thickness.min()
+        aligned = touched.set_index(['id', 'date', 'segment_id']).min_residual_thickness_mm
+        shared = aligned.index.intersection(expected.index)
+        np.testing.assert_allclose(aligned.loc[shared], expected.loc[shared], equal_nan=True)
 
     def test_future_injection_cannot_change_features(self):
         result = self.result

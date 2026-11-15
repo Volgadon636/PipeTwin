@@ -43,11 +43,14 @@
   "vtd.csv": {
     "cleaned_rows": 48040,
     "flag_counts": {
+      "above_local_wall_flag": 0,
+      "above_nominal_flag": 24,
       "before_commissioning_flag": 13485,
       "commissioning_unknown_flag": 0,
       "depth_residual_mismatch_flag": 6,
       "heldout_or_future_flag": 0,
-      "residual_invalid_flag": 0,
+      "nominal_unresolved_flag": 0,
+      "residual_invalid_flag": 24,
       "residual_missing_flag": 344,
       "wall_nominal_mismatch_flag": 14239
     },

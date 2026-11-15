@@ -11,8 +11,10 @@ from src.storage import sha256
 class RepositoryData:
     def __init__(self, root=BASE_DIR):
         self.root = Path(root)
-        self.config = json.loads((self.root / 'configs/preprocessing.json').read_text())
-        self.manifest = json.loads((self.root / 'reports/run_manifest.json').read_text())
+        # Explicit UTF-8: the default Windows locale (cp1251) cannot decode the
+        # Russian source names stored in the manifest.
+        self.config = json.loads((self.root / 'configs/preprocessing.json').read_text(encoding='utf-8'))
+        self.manifest = json.loads((self.root / 'reports/run_manifest.json').read_text(encoding='utf-8'))
         if self.config != self.manifest['config']:
             raise ValueError('Preprocessing config changed: rebuild artifacts in a separate output root')
         self.hashes = {}

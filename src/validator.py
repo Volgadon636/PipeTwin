@@ -9,7 +9,7 @@ def require(condition, message):
         raise ValueError(message)
 
 
-def validate_and_summarize(grid, tables, cleaned, requests):
+def validate_and_summarize(grid, tables, cleaned, requests, template_validation=None):
     checks = []
     def check(condition, message):
         require(condition, message)
@@ -42,14 +42,32 @@ def validate_and_summarize(grid, tables, cleaned, requests):
 
     features = tables['target_features']
     check(not features.duplicated(['id','prediction_date','segment_id']).any(), 'features_unique_keys')
-    expected_n = sum(int(grid.id.eq(r['id']).sum()) for r in requests)
+    expected_counts = {int(r['id']): int(__import__('math').ceil(round(float(passport.loc[r['id'], 'length_km'])*1000, 6)/10.0))
+                       for r in requests}
+    expected_n = sum(expected_counts.values())
     check(len(features)==expected_n, 'features_complete_target_grid')
+    actual_counts = features.groupby('id').size().to_dict()
+    check(actual_counts == expected_counts, f'target_counts_recomputed_from_lengths_{actual_counts}')
+    check(tables['target_segments_grid'].groupby('id').size().to_dict() == expected_counts,
+          'target_grid_counts_recomputed_from_lengths')
     check(set(features.id)=={r['id'] for r in requests}, 'features_only_requested_ids')
     for field in ('hydraulic_source_date_max','monitoring_source_date_max','last_vtd_date','last_uzt_date'):
         check((features[field].isna() | features[field].lt(features.prediction_date)).all(), field+'_before_prediction')
     cold = features['case'].eq('cold_start')
     check(features.loc[cold,['last_vtd_thickness_mm','last_uzt_thickness_mm']].isna().all().all(), 'cold_start_has_no_diagnostic_history')
     check('pit_corrosion_mean' not in features and 'pit_corrosion_intensity' not in features, 'unverified_corrosion_model_excluded')
+    check('history_date_conflict_flag' not in features, 'archive_wide_diagnostic_not_published_as_feature')
+    check('prior_vtd_min_date' not in features or (features.prior_vtd_min_date.isna() | features.prior_vtd_min_date.lt(features.prediction_date)).all(),
+          'prior_inspection_min_date_before_cutoff')
+    if 'water_fraction_mean' in features:
+        wf = features.water_fraction_mean
+        check((wf.isna() | wf.between(0, 1)).all(), 'water_fraction_in_0_1')
+    if 'd_inner_assumed_flag' in features:
+        check(features.d_inner_assumed_flag.fillna(False).all(), 'd_inner_assumption_flag_present')
+    if template_validation is not None:
+        check(template_validation.get('status') in ('authoritative_schema_match', 'not_a_submission_template',
+                                                    'no_authoritative_template'),
+              'template_candidate_classified')
     check(tables['hydraulic_asof'].date.lt(tables['hydraulic_asof'].prediction_date).all(), 'all_hydraulic_inputs_before_prediction')
     for name, df in tables.items():
         for col in df.select_dtypes(include='number'):
