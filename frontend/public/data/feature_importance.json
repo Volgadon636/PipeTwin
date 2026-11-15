@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "method": null,
+  "description": "Feature importance и SHAP не сохранены. Числовую важность признаков показать невозможно без нового расчёта.",
+  "available": false,
+  "models": [],
+  "known_factors": [
+    "Температура смеси",
+    "Обводнённость",
+    "Скорость смеси",
+    "Высотный профиль"
+  ],
+  "source": "experiments/ml_v2/models.json",
+  "physical_model": "M1S"
+}
