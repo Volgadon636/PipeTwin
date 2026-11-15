@@ -1,0 +1,44 @@
+{
+  "artifact_sha256": "b6d1f644100e1283d7884f01d8c8c5b4244a5d0da83a9e38b5bd6d44d44ce2b8",
+  "baseline_oof_max_abs_mm": 4.993605529080014e-11,
+  "baseline_oof_sha256": "f13b0099ac12fe5fd28f00be7f40a2c7ea0bd4d51a464824fb674b024fa09fa3",
+  "chosen": "basin_ranks",
+  "code_sha256": "f20efc480709c0466325e88601978253f5c40fa897bb2c04b03aa7acdb2fb6ca",
+  "export": {
+    "bounded": true,
+    "finite_mm": true,
+    "rows": 2000,
+    "s1_max_abs_difference_mm": 0.0,
+    "s2_clipped": 0,
+    "s2_mean_mm": 2.809487375000623,
+    "s2_rows": 1475,
+    "s2_std_mm": 0.1323725293377428,
+    "sha256": "4353068fa8af55bee589d451e41c74fd455847c914d82f0ed4d1e710bbf4a2d7",
+    "template": {
+      "available": false,
+      "key_set_compared": false,
+      "status": "no_template_supplied",
+      "validation_grid": "derived_target_grid"
+    },
+    "unique_keys": true,
+    "upper_bound_column": "h0_mm"
+  },
+  "input_sha256": {
+    "data/cleaned/passport.csv": "4d5245d8a7702cba3f739538726325972db1afc44e36df956200725b879a01ab",
+    "data/cleaned/regime.csv": "65e53ebe1a154c5a7a3b6fa5806f1d8e83122c985e1049f38162e316eb95cb79",
+    "data/cleaned/tech_mode_for_embedings_with_length_with_temperatures_ids16.csv": "a0e58cf2deb665f5c99efc71416edeed68c33334d865ceee1f566a8df031ebfd",
+    "processed/profile_by_segment.csv": "3e4b4994a3f3da4fa04c403dcac85bf4484ca9feca68103665db6cc39f2d04ca",
+    "processed/segments_grid.csv": "55cce38f655fc47eaabf2255d4e74e31e6d81f774f95df40f47f23adcfeb48a3",
+    "processed/target_features.csv": "1ff33a4842b63f9b255afb189bb36676d202b5ebaacca9c925d18885abbac767",
+    "processed/training_targets.csv": "8f32b9c374533183abf02e25a6a990988d0e7a661b48f34252667708800cdd18",
+    "processed/uzt_by_segment.csv": "aed45ba93f914f2f4d66f02c31d4b144cd865d69bfc6113a94f1fb1689e364ef",
+    "processed/vtd_by_segment.csv": "ab6e17e9f5f286b884b5a3f47ef9109061ccf55c880f961f2cc5c149fd7ccc5e"
+  },
+  "retrospective_rows": 94,
+  "started_utc": "2026-11-15T23:02:25+00:00",
+  "strict_dates": [
+    "2018-09-23"
+  ],
+  "strict_parent_count": 1,
+  "strict_rows": 372
+}

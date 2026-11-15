@@ -1,0 +1,170 @@
+{
+  "alpha": 10.0,
+  "baseline_column": "last_mm",
+  "coefficient_by_feature": {
+    "abs_slope_m_per_m": 0.06143307629461447,
+    "last_mm": -0.5004221859167887,
+    "local_low_m": 0.03885977095159377,
+    "neighbor_missing": -0.011892679969257514,
+    "neighbor_prior_count": -0.053294041458074634,
+    "neighbor_prior_median_mm": 0.04530621273770698,
+    "prior_defect_count_log": -0.13574814260834728,
+    "prior_low_count": -0.04924553595265459,
+    "prior_measured_count_log": -0.1424933393737812,
+    "prior_min_boundary_m": 0.03464987995838217,
+    "relative_position": 0.05027091271582613,
+    "slope_m_per_m": 0.024772318759036942
+  },
+  "coefficients": [
+    -0.5004221859167887,
+    0.04530621273770698,
+    -0.053294041458074634,
+    -0.011892679969257514,
+    0.024772318759036942,
+    0.06143307629461447,
+    0.03885977095159377,
+    0.05027091271582613,
+    -0.13574814260834728,
+    -0.1424933393737812,
+    -0.04924553595265459,
+    0.03464987995838217
+  ],
+  "dropped_columns": {
+    "age_last_vtd_years": "constant_on_train",
+    "prior_vtd_campaign_count": "constant_on_train"
+  },
+  "features": [
+    "last_mm",
+    "age_last_vtd_years",
+    "prior_vtd_campaign_count",
+    "neighbor_prior_median_mm",
+    "neighbor_prior_count",
+    "neighbor_missing",
+    "slope_m_per_m",
+    "abs_slope_m_per_m",
+    "local_low_m",
+    "relative_position",
+    "prior_defect_count_log",
+    "prior_measured_count_log",
+    "prior_low_count",
+    "prior_min_boundary_m"
+  ],
+  "fit_intercept": true,
+  "intercept": -0.049315173579197354,
+  "model_name": "defect_stats_support",
+  "model_type": "Ridge",
+  "prediction_policy": "delta",
+  "preprocessing": {
+    "constant_columns": [
+      "age_last_vtd_years",
+      "prior_vtd_campaign_count"
+    ],
+    "dropped_columns": {
+      "age_last_vtd_years": "constant_on_train",
+      "prior_vtd_campaign_count": "constant_on_train"
+    },
+    "duplicate_columns": {},
+    "empty_columns": [],
+    "feature_order": [
+      "last_mm",
+      "age_last_vtd_years",
+      "prior_vtd_campaign_count",
+      "neighbor_prior_median_mm",
+      "neighbor_prior_count",
+      "neighbor_missing",
+      "slope_m_per_m",
+      "abs_slope_m_per_m",
+      "local_low_m",
+      "relative_position",
+      "prior_defect_count_log",
+      "prior_measured_count_log",
+      "prior_low_count",
+      "prior_min_boundary_m"
+    ],
+    "imputer": "median",
+    "imputer_statistics": {
+      "abs_slope_m_per_m": 0.0,
+      "last_mm": 6.11,
+      "local_low_m": 0.0,
+      "neighbor_missing": 0.0,
+      "neighbor_prior_count": 3.0,
+      "neighbor_prior_median_mm": 6.1,
+      "prior_defect_count_log": 1.3862943611198906,
+      "prior_low_count": 0.0,
+      "prior_measured_count_log": 1.3862943611198906,
+      "prior_min_boundary_m": 2.50725757935993,
+      "relative_position": 0.438228793537078,
+      "slope_m_per_m": 0.0
+    },
+    "scaler": "StandardScaler",
+    "scaler_mean": {
+      "abs_slope_m_per_m": 0.005058970038990697,
+      "last_mm": 6.130504201680672,
+      "local_low_m": -0.004764359930490752,
+      "neighbor_missing": 0.0392156862745098,
+      "neighbor_prior_count": 2.764705882352941,
+      "neighbor_prior_median_mm": 6.113893557422969,
+      "prior_defect_count_log": 1.4727034697237533,
+      "prior_low_count": 0.32492997198879553,
+      "prior_measured_count_log": 1.4718437982011303,
+      "prior_min_boundary_m": 2.442449546192877,
+      "relative_position": 0.45956816385026394,
+      "slope_m_per_m": -0.0011917096449217588
+    },
+    "scaler_scale": {
+      "abs_slope_m_per_m": 0.010132041994656983,
+      "last_mm": 0.5507186780083602,
+      "local_low_m": 0.12023276779833235,
+      "neighbor_missing": 0.1941077438551307,
+      "neighbor_prior_count": 1.1155073133583098,
+      "neighbor_prior_median_mm": 0.40449050829782274,
+      "prior_defect_count_log": 0.8516143470449105,
+      "prior_low_count": 0.4683486791826749,
+      "prior_measured_count_log": 0.8482840224498577,
+      "prior_min_boundary_m": 1.4843937090635382,
+      "relative_position": 0.27458872294749737,
+      "slope_m_per_m": 0.011261939484791181
+    },
+    "used_features": [
+      "last_mm",
+      "neighbor_prior_median_mm",
+      "neighbor_prior_count",
+      "neighbor_missing",
+      "slope_m_per_m",
+      "abs_slope_m_per_m",
+      "local_low_m",
+      "relative_position",
+      "prior_defect_count_log",
+      "prior_measured_count_log",
+      "prior_low_count",
+      "prior_min_boundary_m"
+    ]
+  },
+  "solver": "cholesky",
+  "target": "target_delta_mm",
+  "target_mean": -0.04931517357919729,
+  "target_std": 0.6503883416768479,
+  "training_dates": [
+    "2022-07-06"
+  ],
+  "training_rows": 357,
+  "training_sections": [
+    1250009490,
+    1250011604,
+    1250022871
+  ],
+  "used_features": [
+    "last_mm",
+    "neighbor_prior_median_mm",
+    "neighbor_prior_count",
+    "neighbor_missing",
+    "slope_m_per_m",
+    "abs_slope_m_per_m",
+    "local_low_m",
+    "relative_position",
+    "prior_defect_count_log",
+    "prior_measured_count_log",
+    "prior_low_count",
+    "prior_min_boundary_m"
+  ]
+}

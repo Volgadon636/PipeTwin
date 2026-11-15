@@ -1,0 +1,154 @@
+{
+  "alpha": 10.0,
+  "baseline_column": null,
+  "candidate": "multiscale_1000",
+  "centering": "length-weighted full grid",
+  "coefficient_by_feature": {
+    "abs_slope": -0.013988027117191704,
+    "elevation_relative_1000m": 0.07287491830535937,
+    "elevation_slope_1000m": 0.008052190573200353,
+    "elevation_smooth_1000m": 0.015441522943599545,
+    "local_low": -0.06775031430140734,
+    "pool_depth": 0.06841798197406654,
+    "position": -0.026103725116497355,
+    "slope": -0.04600070575324363,
+    "z": -0.03165109498218712
+  },
+  "coefficients": [
+    -0.03165109498218712,
+    -0.04600070575324363,
+    -0.013988027117191704,
+    -0.026103725116497355,
+    -0.06775031430140734,
+    0.06841798197406654,
+    0.015441522943599545,
+    0.07287491830535937,
+    0.008052190573200353
+  ],
+  "dropped_columns": {},
+  "features": [
+    "z",
+    "slope",
+    "abs_slope",
+    "position",
+    "local_low",
+    "pool_depth",
+    "elevation_smooth_1000m",
+    "elevation_relative_1000m",
+    "elevation_slope_1000m"
+  ],
+  "fit_intercept": true,
+  "intercept": -8.877624159258789e-17,
+  "model_name": "s2_spatial_ridge",
+  "model_type": "Ridge",
+  "physics_metadata": {
+    "gap_policy": "own_mean",
+    "interpretation": "Effective segment-minimum thinning rate under declared environment priors; not an electrochemical CO2/H2S constant",
+    "name": "M1",
+    "priors": {
+      "age_exponent": 1.0,
+      "beta_W": 0.3,
+      "beta_v": 0.1,
+      "theta_K": 2500.0,
+      "velocity_offset_m_s": 0.1
+    },
+    "r_ref_mm_year": 0.10555247320293284,
+    "reference": {
+      "temperature_K": 285.6940825298223,
+      "velocity_m_s": 0.5707789385004212,
+      "water_fraction": 0.867897304128054
+    },
+    "training_groups": 1,
+    "training_rows": 372,
+    "weighting": "W0"
+  },
+  "prediction_policy": "delta",
+  "preprocessing": {
+    "constant_columns": [],
+    "dropped_columns": {},
+    "duplicate_columns": {},
+    "empty_columns": [],
+    "feature_order": [
+      "z",
+      "slope",
+      "abs_slope",
+      "position",
+      "local_low",
+      "pool_depth",
+      "elevation_smooth_1000m",
+      "elevation_relative_1000m",
+      "elevation_slope_1000m"
+    ],
+    "imputer": "median",
+    "imputer_statistics": {
+      "abs_slope": -0.44923552528216465,
+      "elevation_relative_1000m": -0.04070221402918861,
+      "elevation_slope_1000m": -0.00018483358551337896,
+      "elevation_smooth_1000m": 85.46883313019418,
+      "local_low": 0.03987353589666821,
+      "pool_depth": -0.4561191788135494,
+      "position": -0.23401648525708696,
+      "slope": -0.02304655387687253,
+      "z": 0.06337914076041866
+    },
+    "scaler": "StandardScaler",
+    "scaler_mean": {
+      "abs_slope": -0.07462613643461653,
+      "elevation_relative_1000m": 0.0005647898465829642,
+      "elevation_slope_1000m": -0.0007008303947239975,
+      "elevation_smooth_1000m": 85.45771498022535,
+      "local_low": -0.011665241473470495,
+      "pool_depth": -0.15571808987257665,
+      "position": -0.17145651045226365,
+      "slope": -0.038763229481698386,
+      "z": 0.1405633701184284
+    },
+    "scaler_scale": {
+      "abs_slope": 0.7617851488028493,
+      "elevation_relative_1000m": 0.7699001026449469,
+      "elevation_slope_1000m": 0.004013432462233881,
+      "elevation_smooth_1000m": 0.9378233570737515,
+      "local_low": 1.0327842659649233,
+      "pool_depth": 0.7886213479436135,
+      "position": 0.9635774092115081,
+      "slope": 0.7749841572840873,
+      "z": 0.8745879935439962
+    },
+    "used_features": [
+      "z",
+      "slope",
+      "abs_slope",
+      "position",
+      "local_low",
+      "pool_depth",
+      "elevation_smooth_1000m",
+      "elevation_relative_1000m",
+      "elevation_slope_1000m"
+    ]
+  },
+  "residual_centering": "within training simple section",
+  "solver": "cholesky",
+  "target": "residual_centered_mm",
+  "target_mean": -1.850371707708594e-17,
+  "target_std": 0.5510921878606806,
+  "training_dates": [
+    "2018-09-23"
+  ],
+  "training_rows": 372,
+  "training_sections": [
+    1250009490,
+    1250011604,
+    1250022871
+  ],
+  "used_features": [
+    "z",
+    "slope",
+    "abs_slope",
+    "position",
+    "local_low",
+    "pool_depth",
+    "elevation_smooth_1000m",
+    "elevation_relative_1000m",
+    "elevation_slope_1000m"
+  ]
+}
