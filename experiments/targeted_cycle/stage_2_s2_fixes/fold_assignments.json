@@ -1,0 +1,408 @@
+{
+  "contexts": [
+    {
+      "candidate": "spatial_no_temperature_uncentered",
+      "context_sha256": "a150f82c890a775fe19d43903eb26d0543a82f4f395869170133547d3426f38f",
+      "fold": 1250009490,
+      "mean_arithmetic": 0.005119020978267358,
+      "mean_length_weighted": 0.018609360358626655,
+      "n": 5,
+      "sum_length_m": 44.7
+    },
+    {
+      "candidate": "spatial_no_temperature_centered",
+      "context_sha256": "a150f82c890a775fe19d43903eb26d0543a82f4f395869170133547d3426f38f",
+      "fold": 1250009490,
+      "mean_arithmetic": 0.005119020978267358,
+      "mean_length_weighted": 0.018609360358626655,
+      "n": 5,
+      "sum_length_m": 44.7
+    },
+    {
+      "candidate": "spatial_centered_corrected_temperature",
+      "context_sha256": "a150f82c890a775fe19d43903eb26d0543a82f4f395869170133547d3426f38f",
+      "fold": 1250009490,
+      "mean_arithmetic": 0.0017217881076424912,
+      "mean_length_weighted": 0.01556628652260044,
+      "n": 5,
+      "sum_length_m": 44.7
+    },
+    {
+      "candidate": "spatial_no_temperature_uncentered",
+      "context_sha256": "8ec2a0da0e3e2be4160e02471a37783ee95df1d1ab6a8e8d1c8e4fe47afd34f6",
+      "fold": 1250011604,
+      "mean_arithmetic": 0.004609164300903314,
+      "mean_length_weighted": 0.0052487176621535845,
+      "n": 50,
+      "sum_length_m": 493.4
+    },
+    {
+      "candidate": "spatial_no_temperature_centered",
+      "context_sha256": "8ec2a0da0e3e2be4160e02471a37783ee95df1d1ab6a8e8d1c8e4fe47afd34f6",
+      "fold": 1250011604,
+      "mean_arithmetic": 0.004609164300903314,
+      "mean_length_weighted": 0.0052487176621535845,
+      "n": 50,
+      "sum_length_m": 493.4
+    },
+    {
+      "candidate": "spatial_centered_corrected_temperature",
+      "context_sha256": "8ec2a0da0e3e2be4160e02471a37783ee95df1d1ab6a8e8d1c8e4fe47afd34f6",
+      "fold": 1250011604,
+      "mean_arithmetic": 0.035395290692931,
+      "mean_length_weighted": 0.03501681185230293,
+      "n": 50,
+      "sum_length_m": 493.4
+    },
+    {
+      "candidate": "spatial_no_temperature_uncentered",
+      "context_sha256": "11c6895cb088989d6f4590de610beab1d3bee33d2245330e9dcdb40c59a5c757",
+      "fold": 1250022871,
+      "mean_arithmetic": 0.008050593234488026,
+      "mean_length_weighted": 0.008036134412030682,
+      "n": 525,
+      "sum_length_m": 5248.4
+    },
+    {
+      "candidate": "spatial_no_temperature_centered",
+      "context_sha256": "11c6895cb088989d6f4590de610beab1d3bee33d2245330e9dcdb40c59a5c757",
+      "fold": 1250022871,
+      "mean_arithmetic": 0.008050593234488026,
+      "mean_length_weighted": 0.008036134412030682,
+      "n": 525,
+      "sum_length_m": 5248.4
+    },
+    {
+      "candidate": "spatial_centered_corrected_temperature",
+      "context_sha256": "11c6895cb088989d6f4590de610beab1d3bee33d2245330e9dcdb40c59a5c757",
+      "fold": 1250022871,
+      "mean_arithmetic": -0.00423536404785349,
+      "mean_length_weighted": -0.004254746317418948,
+      "n": 525,
+      "sum_length_m": 5248.4
+    }
+  ],
+  "folds": [
+    {
+      "candidate": "spatial_no_temperature_uncentered",
+      "centered": false,
+      "context": {
+        "context_sha256": "a150f82c890a775fe19d43903eb26d0543a82f4f395869170133547d3426f38f",
+        "mean_arithmetic": 0.005119020978267358,
+        "mean_length_weighted": 0.018609360358626655,
+        "n": 5,
+        "sum_length_m": 44.7
+      },
+      "dropped_columns": {},
+      "features": [
+        "z",
+        "slope",
+        "abs_slope",
+        "position",
+        "local_low",
+        "pool_depth"
+      ],
+      "fold": 1250009490,
+      "test_rows": 4,
+      "train_ids": [
+        1250011604,
+        1250022871
+      ],
+      "train_rows": 368,
+      "used_features": [
+        "z",
+        "slope",
+        "abs_slope",
+        "position",
+        "local_low",
+        "pool_depth"
+      ]
+    },
+    {
+      "candidate": "spatial_no_temperature_centered",
+      "centered": true,
+      "context": {
+        "context_sha256": "a150f82c890a775fe19d43903eb26d0543a82f4f395869170133547d3426f38f",
+        "mean_arithmetic": 0.005119020978267358,
+        "mean_length_weighted": 0.018609360358626655,
+        "n": 5,
+        "sum_length_m": 44.7
+      },
+      "dropped_columns": {},
+      "features": [
+        "z",
+        "slope",
+        "abs_slope",
+        "position",
+        "local_low",
+        "pool_depth"
+      ],
+      "fold": 1250009490,
+      "test_rows": 4,
+      "train_ids": [
+        1250011604,
+        1250022871
+      ],
+      "train_rows": 368,
+      "used_features": [
+        "z",
+        "slope",
+        "abs_slope",
+        "position",
+        "local_low",
+        "pool_depth"
+      ]
+    },
+    {
+      "candidate": "spatial_centered_corrected_temperature",
+      "centered": true,
+      "context": {
+        "context_sha256": "a150f82c890a775fe19d43903eb26d0543a82f4f395869170133547d3426f38f",
+        "mean_arithmetic": 0.0017217881076424912,
+        "mean_length_weighted": 0.01556628652260044,
+        "n": 5,
+        "sum_length_m": 44.7
+      },
+      "dropped_columns": {},
+      "features": [
+        "z",
+        "slope",
+        "abs_slope",
+        "position",
+        "local_low",
+        "pool_depth",
+        "scenario_cooling_c"
+      ],
+      "fold": 1250009490,
+      "test_rows": 4,
+      "train_ids": [
+        1250011604,
+        1250022871
+      ],
+      "train_rows": 368,
+      "used_features": [
+        "z",
+        "slope",
+        "abs_slope",
+        "position",
+        "local_low",
+        "pool_depth",
+        "scenario_cooling_c"
+      ]
+    },
+    {
+      "candidate": "spatial_no_temperature_uncentered",
+      "centered": false,
+      "context": {
+        "context_sha256": "8ec2a0da0e3e2be4160e02471a37783ee95df1d1ab6a8e8d1c8e4fe47afd34f6",
+        "mean_arithmetic": 0.004609164300903314,
+        "mean_length_weighted": 0.0052487176621535845,
+        "n": 50,
+        "sum_length_m": 493.4
+      },
+      "dropped_columns": {},
+      "features": [
+        "z",
+        "slope",
+        "abs_slope",
+        "position",
+        "local_low",
+        "pool_depth"
+      ],
+      "fold": 1250011604,
+      "test_rows": 34,
+      "train_ids": [
+        1250009490,
+        1250022871
+      ],
+      "train_rows": 338,
+      "used_features": [
+        "z",
+        "slope",
+        "abs_slope",
+        "position",
+        "local_low",
+        "pool_depth"
+      ]
+    },
+    {
+      "candidate": "spatial_no_temperature_centered",
+      "centered": true,
+      "context": {
+        "context_sha256": "8ec2a0da0e3e2be4160e02471a37783ee95df1d1ab6a8e8d1c8e4fe47afd34f6",
+        "mean_arithmetic": 0.004609164300903314,
+        "mean_length_weighted": 0.0052487176621535845,
+        "n": 50,
+        "sum_length_m": 493.4
+      },
+      "dropped_columns": {},
+      "features": [
+        "z",
+        "slope",
+        "abs_slope",
+        "position",
+        "local_low",
+        "pool_depth"
+      ],
+      "fold": 1250011604,
+      "test_rows": 34,
+      "train_ids": [
+        1250009490,
+        1250022871
+      ],
+      "train_rows": 338,
+      "used_features": [
+        "z",
+        "slope",
+        "abs_slope",
+        "position",
+        "local_low",
+        "pool_depth"
+      ]
+    },
+    {
+      "candidate": "spatial_centered_corrected_temperature",
+      "centered": true,
+      "context": {
+        "context_sha256": "8ec2a0da0e3e2be4160e02471a37783ee95df1d1ab6a8e8d1c8e4fe47afd34f6",
+        "mean_arithmetic": 0.035395290692931,
+        "mean_length_weighted": 0.03501681185230293,
+        "n": 50,
+        "sum_length_m": 493.4
+      },
+      "dropped_columns": {},
+      "features": [
+        "z",
+        "slope",
+        "abs_slope",
+        "position",
+        "local_low",
+        "pool_depth",
+        "scenario_cooling_c"
+      ],
+      "fold": 1250011604,
+      "test_rows": 34,
+      "train_ids": [
+        1250009490,
+        1250022871
+      ],
+      "train_rows": 338,
+      "used_features": [
+        "z",
+        "slope",
+        "abs_slope",
+        "position",
+        "local_low",
+        "pool_depth",
+        "scenario_cooling_c"
+      ]
+    },
+    {
+      "candidate": "spatial_no_temperature_uncentered",
+      "centered": false,
+      "context": {
+        "context_sha256": "11c6895cb088989d6f4590de610beab1d3bee33d2245330e9dcdb40c59a5c757",
+        "mean_arithmetic": 0.008050593234488026,
+        "mean_length_weighted": 0.008036134412030682,
+        "n": 525,
+        "sum_length_m": 5248.4
+      },
+      "dropped_columns": {},
+      "features": [
+        "z",
+        "slope",
+        "abs_slope",
+        "position",
+        "local_low",
+        "pool_depth"
+      ],
+      "fold": 1250022871,
+      "test_rows": 334,
+      "train_ids": [
+        1250009490,
+        1250011604
+      ],
+      "train_rows": 38,
+      "used_features": [
+        "z",
+        "slope",
+        "abs_slope",
+        "position",
+        "local_low",
+        "pool_depth"
+      ]
+    },
+    {
+      "candidate": "spatial_no_temperature_centered",
+      "centered": true,
+      "context": {
+        "context_sha256": "11c6895cb088989d6f4590de610beab1d3bee33d2245330e9dcdb40c59a5c757",
+        "mean_arithmetic": 0.008050593234488026,
+        "mean_length_weighted": 0.008036134412030682,
+        "n": 525,
+        "sum_length_m": 5248.4
+      },
+      "dropped_columns": {},
+      "features": [
+        "z",
+        "slope",
+        "abs_slope",
+        "position",
+        "local_low",
+        "pool_depth"
+      ],
+      "fold": 1250022871,
+      "test_rows": 334,
+      "train_ids": [
+        1250009490,
+        1250011604
+      ],
+      "train_rows": 38,
+      "used_features": [
+        "z",
+        "slope",
+        "abs_slope",
+        "position",
+        "local_low",
+        "pool_depth"
+      ]
+    },
+    {
+      "candidate": "spatial_centered_corrected_temperature",
+      "centered": true,
+      "context": {
+        "context_sha256": "11c6895cb088989d6f4590de610beab1d3bee33d2245330e9dcdb40c59a5c757",
+        "mean_arithmetic": -0.00423536404785349,
+        "mean_length_weighted": -0.004254746317418948,
+        "n": 525,
+        "sum_length_m": 5248.4
+      },
+      "dropped_columns": {},
+      "features": [
+        "z",
+        "slope",
+        "abs_slope",
+        "position",
+        "local_low",
+        "pool_depth",
+        "scenario_cooling_c"
+      ],
+      "fold": 1250022871,
+      "test_rows": 334,
+      "train_ids": [
+        1250009490,
+        1250011604
+      ],
+      "train_rows": 38,
+      "used_features": [
+        "z",
+        "slope",
+        "abs_slope",
+        "position",
+        "local_low",
+        "pool_depth",
+        "scenario_cooling_c"
+      ]
+    }
+  ]
+}

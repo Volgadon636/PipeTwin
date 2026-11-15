@@ -1,0 +1,10 @@
+{
+  "blocks": 52,
+  "definition": "per-block MAE; lower is better; blocks correlated",
+  "wins_vs_s1a": {
+    "catboost": 41,
+    "rate_signed": 36,
+    "ridge_geometry": 36,
+    "s1b": 0
+  }
+}

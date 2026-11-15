@@ -1,0 +1,18 @@
+{
+  "dt_train_common": true,
+  "dt_train_years": 3.783709787817,
+  "fallback_rows": 4,
+  "note": "dt_target is computed from each segment own last VTD date; fallback rows have no own dt.",
+  "production_dt_counts": {
+    "1.404517453799": 508,
+    "5.188227241615": 13
+  },
+  "production_own_rows": 521,
+  "train_dates": [
+    "2022-07-06"
+  ],
+  "train_rows": 357,
+  "train_unique_dt": {
+    "3.783709787817": 357
+  }
+}

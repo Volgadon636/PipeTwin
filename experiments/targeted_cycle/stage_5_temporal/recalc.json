@@ -1,0 +1,20 @@
+{
+  "max_abs_difference": {
+    "global_ridge_geometry": {
+      "conservative_0_25": 1.1027555336,
+      "correction": 0.0,
+      "time_scaled": 0.9245485370999997
+    },
+    "target_ridge_geometry": {
+      "conservative_0_25": 1.0435322619000003,
+      "correction": 0.0,
+      "time_scaled": 0.8748958375000004
+    }
+  },
+  "method": "recalculated from saved production diagnostics; no model fit, no prediction change",
+  "rows": {
+    "global_ridge_geometry": 525,
+    "target_ridge_geometry": 525
+  },
+  "std_policy": "std(prediction) and std(|prediction-last|) reported separately"
+}

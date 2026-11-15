@@ -1,0 +1,8 @@
+{
+  "feature_contract": "historical last measurement only",
+  "model": "train_median",
+  "params": {
+    "n": 357,
+    "value": 6.16
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "candidate": "physics_priors",
+  "clipping_count": 0,
+  "finite": true,
+  "max_mm": 2.809539379039712,
+  "mean_mm": 2.8095393790397125,
+  "min_mm": 2.809539379039712,
+  "prediction_mode": "loaded_artifact_full_grid_no_fit",
+  "rows": 1475,
+  "std_mm": 4.440892098500626e-16,
+  "within_bounds": true
+}

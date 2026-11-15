@@ -1,0 +1,27 @@
+{
+  "bounds": "[0, nominal_thickness_mm]",
+  "challengers": [
+    {
+      "base_model": "global_ridge_geometry",
+      "id": "global_ridge_geometry_correction",
+      "model_path": "C:\\Program Files\\PipeTwin\\experiments\\targeted_cycle\\stage_3_s1_100m_20m\\models\\global_ridge_geometry\\model_artifact.joblib",
+      "model_sha256": "4a6ed7b24404e0883b95ae4fb9e640269374c77284bf86129b300aa43af61d36",
+      "temporal_assumption": "h_last + g(X)"
+    },
+    {
+      "base_model": "global_ridge_geometry",
+      "id": "global_ridge_geometry_time_scaled",
+      "model_path": "C:\\Program Files\\PipeTwin\\experiments\\targeted_cycle\\stage_3_s1_100m_20m\\models\\global_ridge_geometry\\model_artifact.joblib",
+      "model_sha256": "4a6ed7b24404e0883b95ae4fb9e640269374c77284bf86129b300aa43af61d36",
+      "temporal_assumption": "h_last + (dt_target/dt_train)*g(X)"
+    }
+  ],
+  "no_unconditional_prediction_gt_last_ban": true,
+  "reference": "s1a",
+  "selection_basis": "Common train dt permits the time-scaled expression; OOF cannot distinguish correction from time-scaled because all historical dt equal. No temporal winner is declared.",
+  "sensitivity_not_frozen": [
+    "conservative_0_25 (fixed shrinkage; not selected by OOF)",
+    "target_ridge_geometry variants (local fit; no clear advantage in Stage 4)"
+  ],
+  "status": "awaiting_user_freeze_choice"
+}

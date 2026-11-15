@@ -1,0 +1,9 @@
+{
+  "feature_contract": "affine on last measurement, a>=0",
+  "model": "affine_target",
+  "params": {
+    "a": 0.3719915409477965,
+    "b": 3.789666485565992,
+    "n": 321
+  }
+}

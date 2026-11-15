@@ -1,0 +1,28 @@
+{
+  "candidate_freeze_sha256": "52e20091bd56c418c61efe63b8c650610829e5085e4a8ca443f012ae561ad7ed",
+  "combination_sha256": {
+    "global_ridge_geometry_correction__physics_priors": "66e3909ae8e11729bce76684c51d132b7300fd76db8e62ef0b17c4a18029d8c9",
+    "global_ridge_geometry_time_scaled__physics_priors": "e6a5d757329ee8ca2acb90d0487969e07066ced30a26c3d7e86d79e4a7775354",
+    "s1a__physics_priors": "4fd624c7b605c7bfab12b8855dbe6fad68decb0f3a46e5a732176f72fd5655b2",
+    "s1a__spatial_centered_corrected_temperature": "2327b9fe37bce72b865d902a4f44aaa967434d94258528e323a8bacb3add9634",
+    "s1a__spatial_no_temperature_centered": "59b22ddcef9543443f3a7fdd1d02a421f029e4e0e87f726fd13a8262f5086b5c"
+  },
+  "created_utc": "2026-11-15T20:43:24+00:00",
+  "data_root": "C:\\Users\\Администратор\\Documents\\PipeTwin_next\\experiments\\next_cycle\\data_generation",
+  "freeze_id": "targeted_2026-11-15T204324+0000",
+  "no_fit": true,
+  "no_main_result_overwrite": true,
+  "recheck": {
+    "full_partial_inference": "covered by tests/test_stage_2_s2_fixes.py and tests/test_stage_3_s1.py",
+    "max_abs_differences": {
+      "global_ridge_geometry_correction": 0.0,
+      "global_ridge_geometry_time_scaled": 0.0,
+      "physics_priors": 0.0,
+      "spatial_centered_corrected_temperature": 0.0,
+      "spatial_no_temperature_centered": 0.0
+    },
+    "new_process": true,
+    "no_fit": true
+  },
+  "stage": "Stage_6_freeze"
+}

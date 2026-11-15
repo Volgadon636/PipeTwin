@@ -1,0 +1,48 @@
+{
+  "constant_diagnostics": {
+    "S1": {
+      "is_constant": false,
+      "max": 6.9094995989,
+      "min": 4.0657921744,
+      "near_constant": false,
+      "nunique": 525,
+      "rows": 525,
+      "std_mm": 0.44336988392753685
+    },
+    "S2": {
+      "is_constant": true,
+      "max": 2.809539379,
+      "min": 2.809539379,
+      "near_constant": true,
+      "nunique": 1,
+      "rows": 1475,
+      "std_mm": 4.440892098500626e-16
+    }
+  },
+  "name": "global_ridge_geometry_time_scaled__physics_priors",
+  "prediction_sha256": "ba7410126f9066fc26642ce3127642d924c7ab75e7ef2c670eacd847d09f7328",
+  "result_path": "C:\\Program Files\\PipeTwin\\experiments\\targeted_cycle\\frozen_candidates\\combinations\\global_ridge_geometry_time_scaled__physics_priors\\result.csv",
+  "result_sha256": "e6a5d757329ee8ca2acb90d0487969e07066ced30a26c3d7e86d79e4a7775354",
+  "role": "temporal_alt_pair",
+  "rows": 2000,
+  "s1": "global_ridge_geometry_time_scaled",
+  "s1_max_abs_diff_vs_frozen": 0.0,
+  "s1_rows": 525,
+  "s2": "physics_priors",
+  "s2_max_abs_diff_vs_frozen": 0.0,
+  "s2_rows": 1475,
+  "unique_keys": true,
+  "validation": {
+    "bounded": true,
+    "finite_mm": true,
+    "rows": 2000,
+    "template": {
+      "available": false,
+      "key_set_compared": false,
+      "status": "no_template_supplied",
+      "validation_grid": "derived_target_grid"
+    },
+    "unique_keys": true,
+    "upper_bound_column": "upper_mm"
+  }
+}

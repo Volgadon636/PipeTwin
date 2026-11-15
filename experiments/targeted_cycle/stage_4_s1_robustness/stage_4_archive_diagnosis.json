@@ -1,0 +1,17 @@
+{
+  "archive_mask_refit_catboost_max_abs": 4.993783164763954e-11,
+  "archive_mask_refit_ridge_max_abs": 4.994671343183654e-11,
+  "conclusion": "The archive difference is caused by different train masks: the old buffer followed measured min/max segment IDs rather than physical block bounds. Test keys, S1A and preprocessing are identical; old-mask refit matches the archive. The current physical protocol is retained for 200/50 and 500/100.",
+  "current_catboost_vs_archive_max_abs": 0.10080499519999986,
+  "current_ridge_vs_archive_max_abs": 0.07982826599999981,
+  "current_rule": "physical blocks: center=(start+end)/2, block=floor(center/100); buffer 20 m around block bounds; train excludes target rows in block+buffer",
+  "mask_diff_blocks": 23,
+  "mask_diff_keys_total": 28,
+  "old_rule": "test = segment_id // 10; buffer = min/max measured segment_id ± 2 segments; train excludes target rows in that interval",
+  "preprocessing": "same fit_ridge/fit_catboost, CORE_FEATURES, alpha=10, row-uniform weights, fixed CatBoost parameters; refit on old masks reproduces archive predictions to numerical precision",
+  "rows_both": 321,
+  "s1a_current_vs_archive_max_abs": 0.0,
+  "status": "diagnosed",
+  "test_key_sets_equal": true,
+  "used_for_selection": false
+}

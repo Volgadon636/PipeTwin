@@ -1,0 +1,30 @@
+{
+  "best_mae": {
+    "mae_mm": 0.41860297039631456,
+    "model": "global_ridge_geometry",
+    "scheme": "200m_50m"
+  },
+  "common_promising": [
+    "global_ridge_geometry",
+    "target_ridge_geometry"
+  ],
+  "lower_tail_caveat": "Ridge improves MAE/top10 and positive r, but lower-tail global MAE is worse than S1A; promising_S1 is not a thin-tail or stability claim.",
+  "max_two": true,
+  "no_candidate_passed": false,
+  "promising_by_scheme": {
+    "200m_50m": [
+      "global_ridge_geometry",
+      "target_ridge_geometry"
+    ],
+    "500m_100m": [
+      "global_ridge_geometry",
+      "target_ridge_geometry"
+    ]
+  },
+  "reference": "s1a",
+  "selected_candidates": [
+    "global_ridge_geometry",
+    "target_ridge_geometry"
+  ],
+  "selection_basis": "both schemes: MAE<S1A, positive Pearson r not worse than S1A, global top10 recall not worse than S1A; affine preferred when Ridge does not strictly dominate on both schemes"
+}

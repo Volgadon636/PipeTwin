@@ -1,0 +1,10 @@
+{
+  "analytic_exponential": true,
+  "full_grid_to_subset": true,
+  "gap_detected": true,
+  "label_subset_invariance": true,
+  "local_sum_equals_total": true,
+  "overlap_detected": true,
+  "row_order_invariance": true,
+  "zero_flow_invalid": true
+}

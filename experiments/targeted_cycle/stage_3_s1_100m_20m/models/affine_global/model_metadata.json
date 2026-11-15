@@ -1,0 +1,9 @@
+{
+  "feature_contract": "affine on last measurement, a>=0",
+  "model": "affine_global",
+  "params": {
+    "a": 0.35143920486167013,
+    "b": 3.9266895060616913,
+    "n": 357
+  }
+}

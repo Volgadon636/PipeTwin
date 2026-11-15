@@ -1,0 +1,136 @@
+{
+  "archive_diagnosis": {
+    "archive_mask_refit_catboost_max_abs": 4.993783164763954e-11,
+    "archive_mask_refit_ridge_max_abs": 4.994671343183654e-11,
+    "conclusion": "The archive difference is caused by different train masks: the old buffer followed measured min/max segment IDs rather than physical block bounds. Test keys, S1A and preprocessing are identical; old-mask refit matches the archive. The current physical protocol is retained for 200/50 and 500/100.",
+    "current_catboost_vs_archive_max_abs": 0.10080499519999986,
+    "current_ridge_vs_archive_max_abs": 0.07982826599999981,
+    "current_rule": "physical blocks: center=(start+end)/2, block=floor(center/100); buffer 20 m around block bounds; train excludes target rows in block+buffer",
+    "mask_diff_blocks": 23,
+    "mask_diff_keys_total": 28,
+    "old_rule": "test = segment_id // 10; buffer = min/max measured segment_id ± 2 segments; train excludes target rows in that interval",
+    "preprocessing": "same fit_ridge/fit_catboost, CORE_FEATURES, alpha=10, row-uniform weights, fixed CatBoost parameters; refit on old masks reproduces archive predictions to numerical precision",
+    "rows_both": 321,
+    "s1a_current_vs_archive_max_abs": 0.0,
+    "status": "diagnosed",
+    "test_key_sets_equal": true,
+    "used_for_selection": false
+  },
+  "code_sha256": {
+    "src\\ml\\next_all.py": "8a1f4749973f540e8be3f3a34063c557076127787c5635aeb11f1f1aa9945d34",
+    "src\\ml\\next_audit.py": "a837a0f07db72fef2a18103f9db1d76aee24765dc365bcdf595ca6b2e6010b61",
+    "src\\ml\\next_common.py": "7b00b9320ad8608b0368a65548af88f812f86beaabfb7b94169613d808537e71",
+    "src\\ml\\next_compare.py": "bb7032dfa73dab9b2566ccbe5f8d05bbc74e5b58a46f88b16481057838549137",
+    "src\\ml\\next_s1.py": "e00a7091917d9e0879c953fd721c53d3638dcbb2bb97d11e8ab4ccc586573dd0",
+    "src\\ml\\next_s2.py": "7dda82276377da1730521302dd68fc02bfba72deadac6f5f793e244ac8cbb349",
+    "src\\ml\\s1_all.py": "b8b92cb8dbaa6038f4663a6e6611430d018e26fb861ac90acd7dfb71d6ed42de",
+    "src\\ml\\s1_contract.py": "37cd023e7f4324e3db0b8230a0bbdcde9474c61de3793ec782a2c118f0e35816",
+    "src\\ml\\s1_metrics.py": "e0c31bffbbbbb76c5286ddc14c93247500f6dbbaadd52e168fb0aa9febd717d8",
+    "src\\ml\\s1_model.py": "67c63d3660250329f09a260e70a1667bab28de1835676a16b5f702ee38c1cab5",
+    "src\\ml\\s1_next.py": "abb866d3ddbb465c4a95dbff80f8409769169128dbf7700f7c6f0bfad19aaff5",
+    "src\\ml\\s1_stages.py": "67fa32fab8587c14dc9b2338d636fd0be152eee2a3dd72675e6d360b3e1f593a",
+    "src\\ml\\s2_next.py": "65441bd0ceabc0d83571997ae0dfcbcf4ea4d35efa3315a1c0f623d3ac3b56a6",
+    "src\\ml\\submission.py": "e33e4d9466897abd0f9bd106a2f0f4f4e00f06e07ab32869bd82b6094adc0bb4"
+  },
+  "data_root": "C:\\Users\\Администратор\\Documents\\PipeTwin_next\\experiments\\next_cycle\\data_generation",
+  "decision": {
+    "best_mae": {
+      "mae_mm": 0.41860297039631456,
+      "model": "global_ridge_geometry",
+      "scheme": "200m_50m"
+    },
+    "common_promising": [
+      "global_ridge_geometry",
+      "target_ridge_geometry"
+    ],
+    "lower_tail_caveat": "Ridge improves MAE/top10 and positive r, but lower-tail global MAE is worse than S1A; promising_S1 is not a thin-tail or stability claim.",
+    "max_two": true,
+    "no_candidate_passed": false,
+    "promising_by_scheme": {
+      "200m_50m": [
+        "global_ridge_geometry",
+        "target_ridge_geometry"
+      ],
+      "500m_100m": [
+        "global_ridge_geometry",
+        "target_ridge_geometry"
+      ]
+    },
+    "reference": "s1a",
+    "selected_candidates": [
+      "global_ridge_geometry",
+      "target_ridge_geometry"
+    ],
+    "selection_basis": "both schemes: MAE<S1A, positive Pearson r not worse than S1A, global top10 recall not worse than S1A; affine preferred when Ridge does not strictly dominate on both schemes"
+  },
+  "finished_utc": "2026-11-15T20:21:11+00:00",
+  "git": {
+    "branch": "momo",
+    "commit": "ab57c280061ff919cce4c4240051a4760a0f8019",
+    "dirty": true,
+    "status": [
+      "?? experiments/targeted_cycle/",
+      "?? src/ml/targeted_audit.py",
+      "?? src/ml/targeted_s1.py",
+      "?? src/ml/targeted_s1_stage4.py",
+      "?? src/ml/targeted_s2.py",
+      "?? tests/test_stage_2_s2_fixes.py",
+      "?? tests/test_stage_3_s1.py",
+      "?? tests/test_stage_4_s1.py"
+    ],
+    "tracked_dirty": false
+  },
+  "input_sha256": {
+    "C:\\Program Files\\PipeTwin\\experiments\\next_cycle\\s1\\block_cv\\oof_predictions.csv": "0a87d43455dfd8804b54cd62d32438cbeee45ce495bfdab8f5cd1d48ec653a91",
+    "configs/preprocessing.json": "64669ba69e237bf00a38af5148ad6f801c89b31f12377d37ac0e00b6e6bdbb0c",
+    "data/cleaned/passport.csv": "4d5245d8a7702cba3f739538726325972db1afc44e36df956200725b879a01ab",
+    "data/cleaned/regime.csv": "65e53ebe1a154c5a7a3b6fa5806f1d8e83122c985e1049f38162e316eb95cb79",
+    "data/cleaned/tech_mode_for_embedings_with_length_with_temperatures_ids16.csv": "a0e58cf2deb665f5c99efc71416edeed68c33334d865ceee1f566a8df031ebfd",
+    "processed/profile_by_segment.csv": "3e4b4994a3f3da4fa04c403dcac85bf4484ca9feca68103665db6cc39f2d04ca",
+    "processed/segments_grid.csv": "55cce38f655fc47eaabf2255d4e74e31e6d81f774f95df40f47f23adcfeb48a3",
+    "processed/training_targets.csv": "8f32b9c374533183abf02e25a6a990988d0e7a661b48f34252667708800cdd18",
+    "processed/uzt_by_segment.csv": "aed45ba93f914f2f4d66f02c31d4b144cd865d69bfc6113a94f1fb1689e364ef",
+    "processed/vtd_by_segment.csv": "ab6e17e9f5f286b884b5a3f47ef9109061ccf55c880f961f2cc5c149fd7ccc5e",
+    "reports/run_manifest.json": "eba9d43c1cf5da4b1148d89e34ad5d922eac4f8752c0c4a790bf9b0f93a4c72b"
+  },
+  "output_root": "C:\\Program Files\\PipeTwin\\experiments\\targeted_cycle\\stage_4_s1_robustness",
+  "outputs_sha256": {
+    "candidate_decisions.json": "84b4fa76d979e36e9e6ec0d5aff2826d1cdd7749df617fc2f7a0787b76b5e210",
+    "combined_metrics.csv": "96621820b4aad31674e6c48838a1f3e7c384920ee91d537c04bb4eecca125497",
+    "stage_4_archive_diagnosis.json": "9c2a8c79334c8c58338fc4591569df81af302b48a671fc9e913b078f8a847a7f",
+    "stage_4_archive_mask_diff.csv": "c478bdb0f2f0f9784ac68a0da74ceca1571449b5353defd24e01f1869cdf82e3",
+    "stage_4_report_ru.md": "b6a796ef19f1590a8412954d4c96fdb06e18f41e56a87e6c17d391cbcaa31b84",
+    "three_scheme_metrics.csv": "e5beebddbb4f4d42c9da0057df978289efdfd9fcdc45d80d9ab0aeef08ff981c"
+  },
+  "plan_version": 2,
+  "promising_by_scheme": {
+    "200m_50m": [
+      "global_ridge_geometry",
+      "target_ridge_geometry"
+    ],
+    "500m_100m": [
+      "global_ridge_geometry",
+      "target_ridge_geometry"
+    ]
+  },
+  "report": "C:\\Program Files\\PipeTwin\\experiments\\targeted_cycle\\stage_4_report_ru.md",
+  "root": "C:\\Program Files\\PipeTwin",
+  "selection_status": "promising_S1_preliminary_not_final",
+  "stage": "Stage_4_S1_robustness",
+  "stage_code_sha256": {
+    "src/ml/targeted_s1_stage4.py": "ba70954073b870db5d8baf42510466aa59f19f11b391591f96c372fac48559ce"
+  },
+  "started_utc": "2026-11-15T20:20:55+00:00",
+  "versions": {
+    "catboost": "1.2.10",
+    "executable": "C:\\Users\\Администратор\\Documents\\PipeTwin_s1abc_env\\Scripts\\python.exe",
+    "joblib": "1.5.3",
+    "matplotlib": "3.10.8",
+    "numpy": "2.3.5",
+    "pandas": "2.2.3",
+    "platform": "Windows-11-10.0.26300-SP0",
+    "pyarrow": "21.0.0",
+    "python": "3.12.8",
+    "scikit-learn": "1.7.2"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "adjacent_section_shared_buffer": false,
+  "all_buffers_physically_excluded": true,
+  "all_test_train_disjoint": true,
+  "block_m": 500.0,
+  "buffer_m": 100.0,
+  "folds": 11,
+  "rows": 321,
+  "scheme": "500m_100m",
+  "status": "evaluated",
+  "unique_keys": true
+}

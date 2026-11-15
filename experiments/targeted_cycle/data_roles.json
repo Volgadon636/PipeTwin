@@ -1,0 +1,194 @@
+{
+  "cutoffs": {
+    "S1": {
+      "allowed_strict_max": "2023-11-30",
+      "id": 1250022871,
+      "prediction_date": "2023-12-01",
+      "train_rule": "strictly before prediction_date"
+    },
+    "S2": {
+      "allowed_strict_max": "2022-06-30",
+      "id": 1250009583,
+      "prediction_date": "2022-07-01",
+      "train_rule": "strictly before prediction_date"
+    }
+  },
+  "generated_utc": "2026-11-15T18:57:22+00:00",
+  "guards": [
+    "Do not use labels on/after the production cutoff in strict fit/selection.",
+    "Existing retrospective is used diagnostics, not an untouched holdout.",
+    "Target truth is pending external evaluation and unavailable locally.",
+    "S2 target diagnostics must not enter features or fit.",
+    "No new experiments were run in Stage 1."
+  ],
+  "project_root": "C:\\Program Files\\PipeTwin",
+  "roles": {
+    "existing_retrospective": [
+      {
+        "allowed_uses": [
+          "frozen retrospective diagnostic only"
+        ],
+        "answer_date": "2023-08-12",
+        "ids": [
+          1250009584,
+          1250009587,
+          1250028931,
+          1250028932,
+          1250028933,
+          1250028934,
+          1250028935
+        ],
+        "leakage_note": "Already viewed by the team; not an untouched holdout. Do not use for selection.",
+        "models": 6,
+        "name": "S2_2023_post_cutoff_retrospective",
+        "path": "experiments/next_cycle/s2/post_cutoff_retrospective/predictions.csv",
+        "rows_long": 564,
+        "unique_keys": 94
+      },
+      {
+        "allowed_uses": [
+          "none for strict S1 training/selection"
+        ],
+        "answer_date": "2023-12-01",
+        "ids": [
+          1250009490,
+          1250011604
+        ],
+        "leakage_note": "At the S1 production cutoff, not strictly before; excluded.",
+        "name": "S1_2023-12-01_labels_other_pipes",
+        "path": "experiments/next_cycle/data_generation/processed/training_targets.csv",
+        "rows": 53
+      }
+    ],
+    "historical_development": [
+      {
+        "allowed_uses": [
+          "train folds",
+          "OOF diagnostics",
+          "model comparison"
+        ],
+        "answer_dates": [
+          "2022-07-06"
+        ],
+        "leakage_note": "Own prior VTD only; answer labels strictly before 2023-12-01.",
+        "name": "S1_LOPO_fit_eligible",
+        "path": "experiments/next_cycle/s1/fit_table.csv",
+        "rows": 357,
+        "sections": {
+          "1250009490": 4,
+          "1250011604": 32,
+          "1250022871": 321
+        }
+      },
+      {
+        "allowed_uses": [
+          "OOF metrics",
+          "full-pipeline metrics"
+        ],
+        "answer_dates": [
+          "2022-07-06"
+        ],
+        "fallback_rows": 204,
+        "fit_eligible_rows": 357,
+        "leakage_note": "Fallback rows are not fit-eligible; they remain visible in all-pipeline metrics.",
+        "name": "S1_all_historical_rows",
+        "path": "experiments/next_cycle/s1/training_table.csv",
+        "rows": 561
+      },
+      {
+        "allowed_uses": [
+          "strict train",
+          "LOO diagnostics"
+        ],
+        "answer_dates": [
+          "2018-09-23"
+        ],
+        "ids": [
+          1250009490,
+          1250011604,
+          1250022871
+        ],
+        "leakage_note": "Only 2018-09-23 cold-start labels; target id absent.",
+        "name": "S2_strict_train",
+        "parents": [
+          "MAIN-2"
+        ],
+        "path": "experiments/next_cycle/s2/training_table.csv",
+        "rows": 372
+      }
+    ],
+    "pending_external_evaluation": [
+      {
+        "id": 1250022871,
+        "name": "S1_target_truth",
+        "prediction_date": "2023-12-01",
+        "reason": "Organizer target VTD is not in the repository.",
+        "rows": 525,
+        "truth_available": false
+      },
+      {
+        "id": 1250009583,
+        "name": "S2_target_truth",
+        "prediction_date": "2022-07-01",
+        "reason": "Target pipe has no supplied VTD/UZT labels; do not use target diagnostics.",
+        "rows": 1475,
+        "truth_available": false
+      }
+    ],
+    "production_features_only": [
+      {
+        "allowed_uses": [
+          "inference features only"
+        ],
+        "id": 1250022871,
+        "leakage_note": "Past VTD allowed; no 2023-12-01 target labels read.",
+        "name": "S1_target_features",
+        "path": "experiments/next_cycle/data_generation/processed/target_features.csv",
+        "prediction_date": "2023-12-01",
+        "rows": 525
+      },
+      {
+        "allowed_uses": [
+          "inference features only"
+        ],
+        "id": 1250009583,
+        "leakage_note": "Target has no VTD; one UZT segment row exists but all measurements are above nominal and ineligible. Target diagnostics excluded.",
+        "name": "S2_target_features",
+        "path": "experiments/next_cycle/data_generation/processed/target_features.csv",
+        "prediction_date": "2022-07-01",
+        "rows": 1475
+      }
+    ]
+  },
+  "source_inventory": {
+    "s1_target_prior_vtd_rows": 849,
+    "s2_target_training_targets_rows": 0,
+    "s2_target_uzt_above_nominal_rows": 1,
+    "s2_target_uzt_eligible_rows": 0,
+    "s2_target_uzt_measurement_count": 3,
+    "s2_target_uzt_rows": 1,
+    "s2_target_vtd_rows": 0,
+    "vtd_campaigns": {
+      "1250009490|2018-09-23": 5,
+      "1250009490|2022-07-06": 5,
+      "1250009490|2023-12-01": 5,
+      "1250009584|2023-08-12": 39,
+      "1250009587|2023-08-12": 3,
+      "1250011604|2018-09-23": 37,
+      "1250011604|2022-07-06": 49,
+      "1250011604|2023-12-01": 50,
+      "1250013653|2014-12-28": 64,
+      "1250013655|2014-12-28": 55,
+      "1250013657|2014-12-28": 133,
+      "1250022871|2018-09-23": 340,
+      "1250022871|2022-07-06": 509,
+      "1250022875|2014-12-28": 95,
+      "1250022876|2014-12-28": 51,
+      "1250028931|2023-08-12": 7,
+      "1250028932|2023-08-12": 14,
+      "1250028933|2023-08-12": 2,
+      "1250028934|2023-08-12": 42,
+      "1250028935|2023-08-12": 38
+    }
+  }
+}

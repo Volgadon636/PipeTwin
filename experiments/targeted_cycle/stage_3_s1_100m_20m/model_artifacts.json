@@ -1,0 +1,441 @@
+[
+  {
+    "artifact_path": "C:\\Program Files\\PipeTwin\\experiments\\targeted_cycle\\stage_3_s1_100m_20m\\models\\global_ridge_geometry\\model_artifact.joblib",
+    "artifact_sha256": "4a6ed7b24404e0883b95ae4fb9e640269374c77284bf86129b300aa43af61d36",
+    "metadata": {
+      "alpha": 10.0,
+      "baseline_column": "last_mm",
+      "coefficient_by_feature": {
+        "abs_slope_m_per_m": 0.055637038692988375,
+        "last_mm": -0.3781409329505391,
+        "local_low_m": 0.050154365925213336,
+        "neighbor_missing": -0.024681888444302327,
+        "neighbor_prior_count": -0.09293789815243247,
+        "neighbor_prior_median_mm": 0.08904653560507328,
+        "relative_position": 0.06571482844863703,
+        "slope_m_per_m": 0.01286249962883306
+      },
+      "coefficients": [
+        -0.3781409329505391,
+        0.08904653560507328,
+        -0.09293789815243247,
+        -0.024681888444302327,
+        0.01286249962883306,
+        0.055637038692988375,
+        0.050154365925213336,
+        0.06571482844863703
+      ],
+      "dropped_columns": {
+        "age_last_vtd_years": "constant_on_train",
+        "prior_vtd_campaign_count": "constant_on_train"
+      },
+      "features": [
+        "last_mm",
+        "age_last_vtd_years",
+        "prior_vtd_campaign_count",
+        "neighbor_prior_median_mm",
+        "neighbor_prior_count",
+        "neighbor_missing",
+        "slope_m_per_m",
+        "abs_slope_m_per_m",
+        "local_low_m",
+        "relative_position"
+      ],
+      "fit_intercept": true,
+      "intercept": -0.04931517357919737,
+      "model_name": "global_ridge_geometry",
+      "model_type": "Ridge",
+      "prediction_policy": "delta",
+      "preprocessing": {
+        "constant_columns": [
+          "age_last_vtd_years",
+          "prior_vtd_campaign_count"
+        ],
+        "dropped_columns": {
+          "age_last_vtd_years": "constant_on_train",
+          "prior_vtd_campaign_count": "constant_on_train"
+        },
+        "duplicate_columns": {},
+        "empty_columns": [],
+        "feature_order": [
+          "last_mm",
+          "age_last_vtd_years",
+          "prior_vtd_campaign_count",
+          "neighbor_prior_median_mm",
+          "neighbor_prior_count",
+          "neighbor_missing",
+          "slope_m_per_m",
+          "abs_slope_m_per_m",
+          "local_low_m",
+          "relative_position"
+        ],
+        "imputer": "median",
+        "imputer_statistics": {
+          "abs_slope_m_per_m": 0.0,
+          "last_mm": 6.11,
+          "local_low_m": 0.0,
+          "neighbor_missing": 0.0,
+          "neighbor_prior_count": 3.0,
+          "neighbor_prior_median_mm": 6.1,
+          "relative_position": 0.438228793537078,
+          "slope_m_per_m": 0.0
+        },
+        "scaler": "StandardScaler",
+        "scaler_mean": {
+          "abs_slope_m_per_m": 0.005058970038990697,
+          "last_mm": 6.130504201680672,
+          "local_low_m": -0.004764359930490752,
+          "neighbor_missing": 0.0392156862745098,
+          "neighbor_prior_count": 2.764705882352941,
+          "neighbor_prior_median_mm": 6.113893557422969,
+          "relative_position": 0.45956816385026394,
+          "slope_m_per_m": -0.0011917096449217588
+        },
+        "scaler_scale": {
+          "abs_slope_m_per_m": 0.010132041994656983,
+          "last_mm": 0.5507186780083602,
+          "local_low_m": 0.12023276779833235,
+          "neighbor_missing": 0.1941077438551307,
+          "neighbor_prior_count": 1.1155073133583098,
+          "neighbor_prior_median_mm": 0.40449050829782274,
+          "relative_position": 0.27458872294749737,
+          "slope_m_per_m": 0.011261939484791181
+        },
+        "used_features": [
+          "last_mm",
+          "neighbor_prior_median_mm",
+          "neighbor_prior_count",
+          "neighbor_missing",
+          "slope_m_per_m",
+          "abs_slope_m_per_m",
+          "local_low_m",
+          "relative_position"
+        ]
+      },
+      "solver": "cholesky",
+      "target": "target_delta_mm",
+      "target_mean": -0.04931517357919729,
+      "target_std": 0.6503883416768479,
+      "training_dates": [
+        "2022-07-06"
+      ],
+      "training_rows": 357,
+      "training_sections": [
+        1250009490,
+        1250011604,
+        1250022871
+      ],
+      "used_features": [
+        "last_mm",
+        "neighbor_prior_median_mm",
+        "neighbor_prior_count",
+        "neighbor_missing",
+        "slope_m_per_m",
+        "abs_slope_m_per_m",
+        "local_low_m",
+        "relative_position"
+      ]
+    },
+    "model": "global_ridge_geometry"
+  },
+  {
+    "artifact_path": "C:\\Program Files\\PipeTwin\\experiments\\targeted_cycle\\stage_3_s1_100m_20m\\models\\target_ridge_geometry\\model_artifact.joblib",
+    "artifact_sha256": "6622d9a1d9c79e70c3428fc6a1fd0a17e6379fe702e9b113fcb248b6de85d2ad",
+    "metadata": {
+      "alpha": 10.0,
+      "baseline_column": "last_mm",
+      "coefficient_by_feature": {
+        "abs_slope_m_per_m": 0.05802296210496395,
+        "last_mm": -0.37428036366254647,
+        "local_low_m": 0.05820741168535651,
+        "neighbor_missing": -0.0246786388483005,
+        "neighbor_prior_count": -0.09030720359129696,
+        "neighbor_prior_median_mm": 0.10204010344506834,
+        "relative_position": 0.06507460323346459,
+        "slope_m_per_m": 0.007507491747430834
+      },
+      "coefficients": [
+        -0.37428036366254647,
+        0.10204010344506834,
+        -0.09030720359129696,
+        -0.0246786388483005,
+        0.007507491747430834,
+        0.05802296210496395,
+        0.05820741168535651,
+        0.06507460323346459
+      ],
+      "dropped_columns": {
+        "age_last_vtd_years": "constant_on_train",
+        "prior_vtd_campaign_count": "constant_on_train"
+      },
+      "features": [
+        "last_mm",
+        "age_last_vtd_years",
+        "prior_vtd_campaign_count",
+        "neighbor_prior_median_mm",
+        "neighbor_prior_count",
+        "neighbor_missing",
+        "slope_m_per_m",
+        "abs_slope_m_per_m",
+        "local_low_m",
+        "relative_position"
+      ],
+      "fit_intercept": true,
+      "intercept": -0.06319475690895096,
+      "model_name": "target_ridge_geometry",
+      "model_type": "Ridge",
+      "prediction_policy": "delta",
+      "preprocessing": {
+        "constant_columns": [
+          "age_last_vtd_years",
+          "prior_vtd_campaign_count"
+        ],
+        "dropped_columns": {
+          "age_last_vtd_years": "constant_on_train",
+          "prior_vtd_campaign_count": "constant_on_train"
+        },
+        "duplicate_columns": {},
+        "empty_columns": [],
+        "feature_order": [
+          "last_mm",
+          "age_last_vtd_years",
+          "prior_vtd_campaign_count",
+          "neighbor_prior_median_mm",
+          "neighbor_prior_count",
+          "neighbor_missing",
+          "slope_m_per_m",
+          "abs_slope_m_per_m",
+          "local_low_m",
+          "relative_position"
+        ],
+        "imputer": "median",
+        "imputer_statistics": {
+          "abs_slope_m_per_m": 0.0,
+          "last_mm": 6.12,
+          "local_low_m": 0.0,
+          "neighbor_missing": 0.0,
+          "neighbor_prior_count": 3.0,
+          "neighbor_prior_median_mm": 6.11,
+          "relative_position": 0.43251276579529,
+          "slope_m_per_m": 0.0
+        },
+        "scaler": "StandardScaler",
+        "scaler_mean": {
+          "abs_slope_m_per_m": 0.004511376914354379,
+          "last_mm": 6.135046728971962,
+          "local_low_m": -0.0026507055924773165,
+          "neighbor_missing": 0.040498442367601244,
+          "neighbor_prior_count": 2.809968847352025,
+          "neighbor_prior_median_mm": 6.115919003115265,
+          "relative_position": 0.45496138149564525,
+          "slope_m_per_m": -0.0002768561375895017
+        },
+        "scaler_scale": {
+          "abs_slope_m_per_m": 0.008764506220924223,
+          "last_mm": 0.5604149116554727,
+          "local_low_m": 0.10122475920543862,
+          "neighbor_missing": 0.1971251342000794,
+          "neighbor_prior_count": 1.118254229767989,
+          "neighbor_prior_median_mm": 0.4184026288094338,
+          "relative_position": 0.2682888718258201,
+          "slope_m_per_m": 0.009853549697396775
+        },
+        "used_features": [
+          "last_mm",
+          "neighbor_prior_median_mm",
+          "neighbor_prior_count",
+          "neighbor_missing",
+          "slope_m_per_m",
+          "abs_slope_m_per_m",
+          "local_low_m",
+          "relative_position"
+        ]
+      },
+      "solver": "cholesky",
+      "target": "target_delta_mm",
+      "target_mean": -0.06319475690895153,
+      "target_std": 0.6601601429965578,
+      "training_dates": [
+        "2022-07-06"
+      ],
+      "training_rows": 321,
+      "training_sections": [
+        1250022871
+      ],
+      "used_features": [
+        "last_mm",
+        "neighbor_prior_median_mm",
+        "neighbor_prior_count",
+        "neighbor_missing",
+        "slope_m_per_m",
+        "abs_slope_m_per_m",
+        "local_low_m",
+        "relative_position"
+      ]
+    },
+    "model": "target_ridge_geometry"
+  },
+  {
+    "artifact_path": "C:\\Program Files\\PipeTwin\\experiments\\targeted_cycle\\stage_3_s1_100m_20m\\models\\catboost_reference\\model_artifact.joblib",
+    "artifact_sha256": "cc528db9e48641362461fdc65f91fadfb9d0f9e7e35eb09c573dbe7e396b6c3b",
+    "metadata": {
+      "baseline_column": "last_mm",
+      "dropped_columns": {
+        "age_last_vtd_years": "constant_on_train",
+        "prior_vtd_campaign_count": "constant_on_train"
+      },
+      "feature_importance": {
+        "abs_slope_m_per_m": 3.2905002835835484,
+        "last_mm": 70.2712039328884,
+        "local_low_m": 0.31576842223129414,
+        "neighbor_missing": 0.0,
+        "neighbor_prior_count": 5.999492020451572,
+        "neighbor_prior_median_mm": 8.87040605196017,
+        "relative_position": 10.316213423079391,
+        "slope_m_per_m": 0.9364158658056396
+      },
+      "features": [
+        "last_mm",
+        "age_last_vtd_years",
+        "prior_vtd_campaign_count",
+        "neighbor_prior_median_mm",
+        "neighbor_prior_count",
+        "neighbor_missing",
+        "slope_m_per_m",
+        "abs_slope_m_per_m",
+        "local_low_m",
+        "relative_position"
+      ],
+      "model_name": "catboost_reference",
+      "model_type": "CatBoostRegressor",
+      "params": {
+        "allow_writing_files": false,
+        "depth": 2,
+        "iterations": 200,
+        "l2_leaf_reg": 10,
+        "learning_rate": 0.03,
+        "loss_function": "RMSE",
+        "random_seed": 17,
+        "thread_count": 4,
+        "use_best_model": false
+      },
+      "prediction_policy": "delta",
+      "preprocessing": {
+        "constant_columns": [
+          "age_last_vtd_years",
+          "prior_vtd_campaign_count"
+        ],
+        "dropped_columns": {
+          "age_last_vtd_years": "constant_on_train",
+          "prior_vtd_campaign_count": "constant_on_train"
+        },
+        "duplicate_columns": {},
+        "empty_columns": [],
+        "feature_order": [
+          "last_mm",
+          "age_last_vtd_years",
+          "prior_vtd_campaign_count",
+          "neighbor_prior_median_mm",
+          "neighbor_prior_count",
+          "neighbor_missing",
+          "slope_m_per_m",
+          "abs_slope_m_per_m",
+          "local_low_m",
+          "relative_position"
+        ],
+        "imputer": "median",
+        "imputer_statistics": {
+          "abs_slope_m_per_m": 0.0,
+          "last_mm": 6.11,
+          "local_low_m": 0.0,
+          "neighbor_missing": 0.0,
+          "neighbor_prior_count": 3.0,
+          "neighbor_prior_median_mm": 6.1,
+          "relative_position": 0.438228793537078,
+          "slope_m_per_m": 0.0
+        },
+        "scaler": "StandardScaler",
+        "scaler_mean": {
+          "abs_slope_m_per_m": 0.005058970038990697,
+          "last_mm": 6.130504201680672,
+          "local_low_m": -0.004764359930490752,
+          "neighbor_missing": 0.0392156862745098,
+          "neighbor_prior_count": 2.764705882352941,
+          "neighbor_prior_median_mm": 6.113893557422969,
+          "relative_position": 0.45956816385026394,
+          "slope_m_per_m": -0.0011917096449217588
+        },
+        "scaler_scale": {
+          "abs_slope_m_per_m": 0.010132041994656983,
+          "last_mm": 0.5507186780083602,
+          "local_low_m": 0.12023276779833235,
+          "neighbor_missing": 0.1941077438551307,
+          "neighbor_prior_count": 1.1155073133583098,
+          "neighbor_prior_median_mm": 0.40449050829782274,
+          "relative_position": 0.27458872294749737,
+          "slope_m_per_m": 0.011261939484791181
+        },
+        "used_features": [
+          "last_mm",
+          "neighbor_prior_median_mm",
+          "neighbor_prior_count",
+          "neighbor_missing",
+          "slope_m_per_m",
+          "abs_slope_m_per_m",
+          "local_low_m",
+          "relative_position"
+        ]
+      },
+      "target": "target_delta_mm",
+      "training_dates": [
+        "2022-07-06"
+      ],
+      "training_rows": 357,
+      "training_sections": [
+        1250009490,
+        1250011604,
+        1250022871
+      ],
+      "used_features": [
+        "last_mm",
+        "neighbor_prior_median_mm",
+        "neighbor_prior_count",
+        "neighbor_missing",
+        "slope_m_per_m",
+        "abs_slope_m_per_m",
+        "local_low_m",
+        "relative_position"
+      ]
+    },
+    "model": "catboost_reference"
+  },
+  {
+    "artifact_path": null,
+    "artifact_sha256": null,
+    "metadata": {
+      "a": 0.35143920486167013,
+      "b": 3.9266895060616913,
+      "n": 357
+    },
+    "model": "affine_global"
+  },
+  {
+    "artifact_path": null,
+    "artifact_sha256": null,
+    "metadata": {
+      "a": 0.3719915409477965,
+      "b": 3.789666485565992,
+      "n": 321
+    },
+    "model": "affine_target"
+  },
+  {
+    "artifact_path": null,
+    "artifact_sha256": null,
+    "metadata": {
+      "n": 357,
+      "value": 6.16
+    },
+    "model": "train_median"
+  }
+]

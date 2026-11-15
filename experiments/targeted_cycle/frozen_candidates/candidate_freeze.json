@@ -1,0 +1,1511 @@
+{
+  "candidate_count_s1": 3,
+  "candidate_count_s2": 3,
+  "candidates": {
+    "global_ridge_geometry_correction": {
+      "candidate_id": "global_ridge_geometry_correction",
+      "canonical_prediction_sha256": "150ca4cbd78bd6cff96866434b3b12f27ed6a493a3ea1f96f19943e5d22eebaa",
+      "case": "S1",
+      "code_sha256": {
+        "src\\ml\\next_common.py": "7b00b9320ad8608b0368a65548af88f812f86beaabfb7b94169613d808537e71",
+        "src\\ml\\targeted_s1.py": "a2d5794f5be940c0e50bee6649ec5a61b98e1e0ccfd7b6add1cd4c6a864aeed2",
+        "src\\ml\\targeted_s1_temporal.py": "89e06b85664b785eed223ba9ac5a74fbd57dc702728fa7be340a7486d34ced1f"
+      },
+      "created_utc": "2026-11-15T20:43:09+00:00",
+      "evidence_status": "promising on 100/200/500 block schemes; temporal law not identified",
+      "feature_contract": {
+        "baseline": "last eligible own prior VTD measurement (last_mm)",
+        "bounds": "[0, nominal_thickness_mm]",
+        "catboost": "fixed reference parameters; no search",
+        "core_features": [
+          "last_mm",
+          "age_last_vtd_years",
+          "prior_vtd_campaign_count",
+          "neighbor_prior_median_mm",
+          "neighbor_prior_count",
+          "neighbor_missing",
+          "slope_m_per_m",
+          "abs_slope_m_per_m",
+          "local_low_m",
+          "relative_position"
+        ],
+        "global_ridge": "fit on all eligible rows outside target block+buffer, including other simple sections",
+        "preprocessing": "NextPreprocessor train-only: median imputer, constant/duplicate/empty drop, StandardScaler",
+        "target": "target_delta_mm = next_mm - last_mm",
+        "target_ridge": "fit only on target-section rows outside held-out block+buffer"
+      },
+      "frozen_prediction": "C:\\Program Files\\PipeTwin\\experiments\\targeted_cycle\\frozen_candidates\\predictions\\S1\\global_ridge_geometry_correction.csv",
+      "frozen_prediction_sha256": "3df4dd7972346d66209b9e7588713fe5e00880e28e080f36743b8a76307b8fb6",
+      "input_sha256": {
+        "data_manifest": "eba9d43c1cf5da4b1148d89e34ad5d922eac4f8752c0c4a790bf9b0f93a4c72b",
+        "model": "4a6ed7b24404e0883b95ae4fb9e640269374c77284bf86129b300aa43af61d36",
+        "source_prediction": "150ca4cbd78bd6cff96866434b3b12f27ed6a493a3ea1f96f19943e5d22eebaa"
+      },
+      "is_constant": false,
+      "model_metadata": {
+        "alpha": 10.0,
+        "baseline_column": "last_mm",
+        "coefficient_by_feature": {
+          "abs_slope_m_per_m": 0.055637038692988375,
+          "last_mm": -0.3781409329505391,
+          "local_low_m": 0.050154365925213336,
+          "neighbor_missing": -0.024681888444302327,
+          "neighbor_prior_count": -0.09293789815243247,
+          "neighbor_prior_median_mm": 0.08904653560507328,
+          "relative_position": 0.06571482844863703,
+          "slope_m_per_m": 0.01286249962883306
+        },
+        "coefficients": [
+          -0.3781409329505391,
+          0.08904653560507328,
+          -0.09293789815243247,
+          -0.024681888444302327,
+          0.01286249962883306,
+          0.055637038692988375,
+          0.050154365925213336,
+          0.06571482844863703
+        ],
+        "dropped_columns": {
+          "age_last_vtd_years": "constant_on_train",
+          "prior_vtd_campaign_count": "constant_on_train"
+        },
+        "features": [
+          "last_mm",
+          "age_last_vtd_years",
+          "prior_vtd_campaign_count",
+          "neighbor_prior_median_mm",
+          "neighbor_prior_count",
+          "neighbor_missing",
+          "slope_m_per_m",
+          "abs_slope_m_per_m",
+          "local_low_m",
+          "relative_position"
+        ],
+        "fit_intercept": true,
+        "intercept": -0.04931517357919737,
+        "model_name": "global_ridge_geometry",
+        "model_type": "Ridge",
+        "prediction_policy": "delta",
+        "preprocessing": {
+          "constant_columns": [
+            "age_last_vtd_years",
+            "prior_vtd_campaign_count"
+          ],
+          "dropped_columns": {
+            "age_last_vtd_years": "constant_on_train",
+            "prior_vtd_campaign_count": "constant_on_train"
+          },
+          "duplicate_columns": {},
+          "empty_columns": [],
+          "feature_order": [
+            "last_mm",
+            "age_last_vtd_years",
+            "prior_vtd_campaign_count",
+            "neighbor_prior_median_mm",
+            "neighbor_prior_count",
+            "neighbor_missing",
+            "slope_m_per_m",
+            "abs_slope_m_per_m",
+            "local_low_m",
+            "relative_position"
+          ],
+          "imputer": "median",
+          "imputer_statistics": {
+            "abs_slope_m_per_m": 0.0,
+            "last_mm": 6.11,
+            "local_low_m": 0.0,
+            "neighbor_missing": 0.0,
+            "neighbor_prior_count": 3.0,
+            "neighbor_prior_median_mm": 6.1,
+            "relative_position": 0.438228793537078,
+            "slope_m_per_m": 0.0
+          },
+          "scaler": "StandardScaler",
+          "scaler_mean": {
+            "abs_slope_m_per_m": 0.005058970038990697,
+            "last_mm": 6.130504201680672,
+            "local_low_m": -0.004764359930490752,
+            "neighbor_missing": 0.0392156862745098,
+            "neighbor_prior_count": 2.764705882352941,
+            "neighbor_prior_median_mm": 6.113893557422969,
+            "relative_position": 0.45956816385026394,
+            "slope_m_per_m": -0.0011917096449217588
+          },
+          "scaler_scale": {
+            "abs_slope_m_per_m": 0.010132041994656983,
+            "last_mm": 0.5507186780083602,
+            "local_low_m": 0.12023276779833235,
+            "neighbor_missing": 0.1941077438551307,
+            "neighbor_prior_count": 1.1155073133583098,
+            "neighbor_prior_median_mm": 0.40449050829782274,
+            "relative_position": 0.27458872294749737,
+            "slope_m_per_m": 0.011261939484791181
+          },
+          "used_features": [
+            "last_mm",
+            "neighbor_prior_median_mm",
+            "neighbor_prior_count",
+            "neighbor_missing",
+            "slope_m_per_m",
+            "abs_slope_m_per_m",
+            "local_low_m",
+            "relative_position"
+          ]
+        },
+        "solver": "cholesky",
+        "target": "target_delta_mm",
+        "target_mean": -0.04931517357919729,
+        "target_std": 0.6503883416768479,
+        "training_dates": [
+          "2022-07-06"
+        ],
+        "training_rows": 357,
+        "training_sections": [
+          1250009490,
+          1250011604,
+          1250022871
+        ],
+        "used_features": [
+          "last_mm",
+          "neighbor_prior_median_mm",
+          "neighbor_prior_count",
+          "neighbor_missing",
+          "slope_m_per_m",
+          "abs_slope_m_per_m",
+          "local_low_m",
+          "relative_position"
+        ]
+      },
+      "model_path": "experiments\\targeted_cycle\\stage_3_s1_100m_20m\\models\\global_ridge_geometry\\model_artifact.joblib",
+      "model_sha256": "4a6ed7b24404e0883b95ae4fb9e640269374c77284bf86129b300aa43af61d36",
+      "nunique": 525,
+      "params": {
+        "base": "global_ridge_geometry",
+        "temporal": "h_last + g(X)"
+      },
+      "prediction_sha256": "150ca4cbd78bd6cff96866434b3b12f27ed6a493a3ea1f96f19943e5d22eebaa",
+      "rationale": "Stage 4 common promising Ridge; no time scaling; simplest Ridge interpretation",
+      "roles": [
+        "spatial_challenger",
+        "submission_candidate"
+      ],
+      "rows": 525,
+      "seen_evaluations": [
+        {
+          "path": "experiments/targeted_cycle/stage_2_report_ru.md",
+          "stage": "S2 fixes",
+          "status": "reviewed"
+        },
+        {
+          "path": "experiments/targeted_cycle/stage_3_report_ru.md",
+          "stage": "S1 100/20",
+          "status": "reviewed"
+        },
+        {
+          "path": "experiments/targeted_cycle/stage_4_report_ru.md",
+          "stage": "S1 robustness",
+          "status": "reviewed"
+        },
+        {
+          "path": "experiments/targeted_cycle/stage_5_report_ru.md",
+          "stage": "S1 temporal",
+          "status": "reviewed"
+        }
+      ],
+      "source_prediction": "experiments\\targeted_cycle\\stage_5_temporal\\production\\global_ridge_geometry_correction_predictions.csv",
+      "source_prediction_sha256": "150ca4cbd78bd6cff96866434b3b12f27ed6a493a3ea1f96f19943e5d22eebaa",
+      "std_prediction_mm": 0.29644435217196485
+    },
+    "global_ridge_geometry_time_scaled": {
+      "candidate_id": "global_ridge_geometry_time_scaled",
+      "canonical_prediction_sha256": "f959edddafebf5522cda3f0b669c15155e4d8b264bf6145b7e73ae4e85da40ab",
+      "case": "S1",
+      "code_sha256": {
+        "src\\ml\\next_common.py": "7b00b9320ad8608b0368a65548af88f812f86beaabfb7b94169613d808537e71",
+        "src\\ml\\targeted_s1.py": "a2d5794f5be940c0e50bee6649ec5a61b98e1e0ccfd7b6add1cd4c6a864aeed2",
+        "src\\ml\\targeted_s1_temporal.py": "89e06b85664b785eed223ba9ac5a74fbd57dc702728fa7be340a7486d34ced1f"
+      },
+      "created_utc": "2026-11-15T20:43:09+00:00",
+      "evidence_status": "historical correction/time-scaled identical because dt_train is common; not a winner",
+      "feature_contract": {
+        "baseline": "last eligible own prior VTD measurement (last_mm)",
+        "bounds": "[0, nominal_thickness_mm]",
+        "catboost": "fixed reference parameters; no search",
+        "core_features": [
+          "last_mm",
+          "age_last_vtd_years",
+          "prior_vtd_campaign_count",
+          "neighbor_prior_median_mm",
+          "neighbor_prior_count",
+          "neighbor_missing",
+          "slope_m_per_m",
+          "abs_slope_m_per_m",
+          "local_low_m",
+          "relative_position"
+        ],
+        "global_ridge": "fit on all eligible rows outside target block+buffer, including other simple sections",
+        "preprocessing": "NextPreprocessor train-only: median imputer, constant/duplicate/empty drop, StandardScaler",
+        "target": "target_delta_mm = next_mm - last_mm",
+        "target_ridge": "fit only on target-section rows outside held-out block+buffer"
+      },
+      "frozen_prediction": "C:\\Program Files\\PipeTwin\\experiments\\targeted_cycle\\frozen_candidates\\predictions\\S1\\global_ridge_geometry_time_scaled.csv",
+      "frozen_prediction_sha256": "02f0020ac4661f5c43a55ab6bded6127d816824d6be55861d333339e6b07f2c8",
+      "input_sha256": {
+        "data_manifest": "eba9d43c1cf5da4b1148d89e34ad5d922eac4f8752c0c4a790bf9b0f93a4c72b",
+        "model": "4a6ed7b24404e0883b95ae4fb9e640269374c77284bf86129b300aa43af61d36",
+        "source_prediction": "f959edddafebf5522cda3f0b669c15155e4d8b264bf6145b7e73ae4e85da40ab"
+      },
+      "is_constant": false,
+      "model_metadata": {
+        "alpha": 10.0,
+        "baseline_column": "last_mm",
+        "coefficient_by_feature": {
+          "abs_slope_m_per_m": 0.055637038692988375,
+          "last_mm": -0.3781409329505391,
+          "local_low_m": 0.050154365925213336,
+          "neighbor_missing": -0.024681888444302327,
+          "neighbor_prior_count": -0.09293789815243247,
+          "neighbor_prior_median_mm": 0.08904653560507328,
+          "relative_position": 0.06571482844863703,
+          "slope_m_per_m": 0.01286249962883306
+        },
+        "coefficients": [
+          -0.3781409329505391,
+          0.08904653560507328,
+          -0.09293789815243247,
+          -0.024681888444302327,
+          0.01286249962883306,
+          0.055637038692988375,
+          0.050154365925213336,
+          0.06571482844863703
+        ],
+        "dropped_columns": {
+          "age_last_vtd_years": "constant_on_train",
+          "prior_vtd_campaign_count": "constant_on_train"
+        },
+        "features": [
+          "last_mm",
+          "age_last_vtd_years",
+          "prior_vtd_campaign_count",
+          "neighbor_prior_median_mm",
+          "neighbor_prior_count",
+          "neighbor_missing",
+          "slope_m_per_m",
+          "abs_slope_m_per_m",
+          "local_low_m",
+          "relative_position"
+        ],
+        "fit_intercept": true,
+        "intercept": -0.04931517357919737,
+        "model_name": "global_ridge_geometry",
+        "model_type": "Ridge",
+        "prediction_policy": "delta",
+        "preprocessing": {
+          "constant_columns": [
+            "age_last_vtd_years",
+            "prior_vtd_campaign_count"
+          ],
+          "dropped_columns": {
+            "age_last_vtd_years": "constant_on_train",
+            "prior_vtd_campaign_count": "constant_on_train"
+          },
+          "duplicate_columns": {},
+          "empty_columns": [],
+          "feature_order": [
+            "last_mm",
+            "age_last_vtd_years",
+            "prior_vtd_campaign_count",
+            "neighbor_prior_median_mm",
+            "neighbor_prior_count",
+            "neighbor_missing",
+            "slope_m_per_m",
+            "abs_slope_m_per_m",
+            "local_low_m",
+            "relative_position"
+          ],
+          "imputer": "median",
+          "imputer_statistics": {
+            "abs_slope_m_per_m": 0.0,
+            "last_mm": 6.11,
+            "local_low_m": 0.0,
+            "neighbor_missing": 0.0,
+            "neighbor_prior_count": 3.0,
+            "neighbor_prior_median_mm": 6.1,
+            "relative_position": 0.438228793537078,
+            "slope_m_per_m": 0.0
+          },
+          "scaler": "StandardScaler",
+          "scaler_mean": {
+            "abs_slope_m_per_m": 0.005058970038990697,
+            "last_mm": 6.130504201680672,
+            "local_low_m": -0.004764359930490752,
+            "neighbor_missing": 0.0392156862745098,
+            "neighbor_prior_count": 2.764705882352941,
+            "neighbor_prior_median_mm": 6.113893557422969,
+            "relative_position": 0.45956816385026394,
+            "slope_m_per_m": -0.0011917096449217588
+          },
+          "scaler_scale": {
+            "abs_slope_m_per_m": 0.010132041994656983,
+            "last_mm": 0.5507186780083602,
+            "local_low_m": 0.12023276779833235,
+            "neighbor_missing": 0.1941077438551307,
+            "neighbor_prior_count": 1.1155073133583098,
+            "neighbor_prior_median_mm": 0.40449050829782274,
+            "relative_position": 0.27458872294749737,
+            "slope_m_per_m": 0.011261939484791181
+          },
+          "used_features": [
+            "last_mm",
+            "neighbor_prior_median_mm",
+            "neighbor_prior_count",
+            "neighbor_missing",
+            "slope_m_per_m",
+            "abs_slope_m_per_m",
+            "local_low_m",
+            "relative_position"
+          ]
+        },
+        "solver": "cholesky",
+        "target": "target_delta_mm",
+        "target_mean": -0.04931517357919729,
+        "target_std": 0.6503883416768479,
+        "training_dates": [
+          "2022-07-06"
+        ],
+        "training_rows": 357,
+        "training_sections": [
+          1250009490,
+          1250011604,
+          1250022871
+        ],
+        "used_features": [
+          "last_mm",
+          "neighbor_prior_median_mm",
+          "neighbor_prior_count",
+          "neighbor_missing",
+          "slope_m_per_m",
+          "abs_slope_m_per_m",
+          "local_low_m",
+          "relative_position"
+        ]
+      },
+      "model_path": "experiments\\targeted_cycle\\stage_3_s1_100m_20m\\models\\global_ridge_geometry\\model_artifact.joblib",
+      "model_sha256": "4a6ed7b24404e0883b95ae4fb9e640269374c77284bf86129b300aa43af61d36",
+      "nunique": 525,
+      "params": {
+        "base": "global_ridge_geometry",
+        "dt_train": 3.783709787817,
+        "temporal": "h_last + (dt_target/dt_train)*g(X)"
+      },
+      "prediction_sha256": "f959edddafebf5522cda3f0b669c15155e4d8b264bf6145b7e73ae4e85da40ab",
+      "rationale": "fixed time-scaling sensitivity; OOF cannot distinguish it from correction",
+      "roles": [
+        "spatial_challenger"
+      ],
+      "rows": 525,
+      "seen_evaluations": [
+        {
+          "path": "experiments/targeted_cycle/stage_2_report_ru.md",
+          "stage": "S2 fixes",
+          "status": "reviewed"
+        },
+        {
+          "path": "experiments/targeted_cycle/stage_3_report_ru.md",
+          "stage": "S1 100/20",
+          "status": "reviewed"
+        },
+        {
+          "path": "experiments/targeted_cycle/stage_4_report_ru.md",
+          "stage": "S1 robustness",
+          "status": "reviewed"
+        },
+        {
+          "path": "experiments/targeted_cycle/stage_5_report_ru.md",
+          "stage": "S1 temporal",
+          "status": "reviewed"
+        }
+      ],
+      "source_prediction": "experiments\\targeted_cycle\\stage_5_temporal\\production\\global_ridge_geometry_time_scaled_predictions.csv",
+      "source_prediction_sha256": "f959edddafebf5522cda3f0b669c15155e4d8b264bf6145b7e73ae4e85da40ab",
+      "std_prediction_mm": 0.44336988392753685
+    },
+    "physics_priors": {
+      "candidate_id": "physics_priors",
+      "canonical_prediction_sha256": "c2aa262998449d1e5d0299ff32dbd0141fd2a5133120840238680f6967b910cb",
+      "case": "S2",
+      "code_sha256": {
+        "src\\ml\\next_common.py": "7b00b9320ad8608b0368a65548af88f812f86beaabfb7b94169613d808537e71",
+        "src\\ml\\s2_next.py": "65441bd0ceabc0d83571997ae0dfcbcf4ea4d35efa3315a1c0f623d3ac3b56a6",
+        "src\\ml\\targeted_s2.py": "f05c2a6f003ea4c81c3d633905e88e62bd24338a2e9dcd9d0f1faeb9244acdbb"
+      },
+      "created_utc": "2026-11-15T20:43:09+00:00",
+      "evidence_status": "strict train 2018 only; target level 2.809539; target accuracy unavailable",
+      "feature_contract": {
+        "centering": null,
+        "features": [
+          "t_mix_mean",
+          "watercut_pct_mean",
+          "v_mix_mean",
+          "age_years",
+          "nominal_thickness_mm",
+          "exposure"
+        ],
+        "lambda": null,
+        "model_type": "ColdStartPhysics",
+        "physics_metadata": {
+          "gap_policy": "own_mean",
+          "interpretation": "Effective segment-minimum thinning rate under declared environment priors; not an electrochemical CO2/H2S constant",
+          "name": "M1",
+          "priors": {
+            "age_exponent": 1.0,
+            "beta_W": 0.3,
+            "beta_v": 0.1,
+            "theta_K": 2500.0,
+            "velocity_offset_m_s": 0.1
+          },
+          "r_ref_mm_year": 0.10555247320293284,
+          "reference": {
+            "temperature_K": 285.6940825298223,
+            "velocity_m_s": 0.5707789385004212,
+            "water_fraction": 0.867897304128054
+          },
+          "training_groups": 1,
+          "training_rows": 372,
+          "weighting": "W0"
+        },
+        "preprocessing": "environmental aggregates and bounded exposure; no spatial imputer"
+      },
+      "frozen_prediction": "C:\\Program Files\\PipeTwin\\experiments\\targeted_cycle\\frozen_candidates\\predictions\\S2\\physics_priors.csv",
+      "frozen_prediction_sha256": "7a01e6b255aa972f96193889ee9665c7baa0f0e4cc96c1cf22508fe06e54f8f0",
+      "input_sha256": {
+        "data_manifest": "eba9d43c1cf5da4b1148d89e34ad5d922eac4f8752c0c4a790bf9b0f93a4c72b",
+        "model": "1321b6bfe6ae563a1eb8e1cc9819d587bcc15a06bc4475bfb163e095b187a420",
+        "source_prediction": "c2aa262998449d1e5d0299ff32dbd0141fd2a5133120840238680f6967b910cb"
+      },
+      "is_constant": true,
+      "model_metadata": {
+        "gap_policy": "own_mean",
+        "interpretation": "Effective segment-minimum thinning rate under declared environment priors; not an electrochemical CO2/H2S constant",
+        "name": "M1",
+        "priors": {
+          "age_exponent": 1.0,
+          "beta_W": 0.3,
+          "beta_v": 0.1,
+          "theta_K": 2500.0,
+          "velocity_offset_m_s": 0.1
+        },
+        "r_ref_mm_year": 0.10555247320293284,
+        "reference": {
+          "temperature_K": 285.6940825298223,
+          "velocity_m_s": 0.5707789385004212,
+          "water_fraction": 0.867897304128054
+        },
+        "training_groups": 1,
+        "training_rows": 372,
+        "weighting": "W0"
+      },
+      "model_path": "experiments\\targeted_cycle\\stage_2_s2_fixes\\models\\physics_priors\\model_artifact.joblib",
+      "model_sha256": "1321b6bfe6ae563a1eb8e1cc9819d587bcc15a06bc4475bfb163e095b187a420",
+      "nunique": 1,
+      "params": {
+        "gap_policy": "own_mean",
+        "model": "ColdStartPhysics"
+      },
+      "prediction_sha256": "c2aa262998449d1e5d0299ff32dbd0141fd2a5133120840238680f6967b910cb",
+      "rationale": "strict physics level reference; no target labels were used",
+      "roles": [
+        "level_reference",
+        "submission_candidate"
+      ],
+      "rows": 1475,
+      "seen_evaluations": [
+        {
+          "path": "experiments/targeted_cycle/stage_2_report_ru.md",
+          "stage": "S2 fixes",
+          "status": "reviewed"
+        },
+        {
+          "path": "experiments/targeted_cycle/stage_3_report_ru.md",
+          "stage": "S1 100/20",
+          "status": "reviewed"
+        },
+        {
+          "path": "experiments/targeted_cycle/stage_4_report_ru.md",
+          "stage": "S1 robustness",
+          "status": "reviewed"
+        },
+        {
+          "path": "experiments/targeted_cycle/stage_5_report_ru.md",
+          "stage": "S1 temporal",
+          "status": "reviewed"
+        }
+      ],
+      "source_prediction": "experiments\\targeted_cycle\\stage_2_s2_fixes\\models\\physics_priors\\predictions_s2.csv",
+      "source_prediction_sha256": "c2aa262998449d1e5d0299ff32dbd0141fd2a5133120840238680f6967b910cb",
+      "std_prediction_mm": 4.440892098500626e-16
+    },
+    "s1a": {
+      "candidate_id": "s1a",
+      "canonical_prediction_sha256": "84f994045a10e480b8f83bbeb4a19ff3cf346be9826f15fa3a4891a831c3af82",
+      "case": "S1",
+      "code_sha256": {
+        "src\\ml\\next_common.py": "7b00b9320ad8608b0368a65548af88f812f86beaabfb7b94169613d808537e71",
+        "src\\ml\\targeted_s1.py": "a2d5794f5be940c0e50bee6649ec5a61b98e1e0ccfd7b6add1cd4c6a864aeed2",
+        "src\\ml\\targeted_s1_temporal.py": "89e06b85664b785eed223ba9ac5a74fbd57dc702728fa7be340a7486d34ced1f"
+      },
+      "created_utc": "2026-11-15T20:43:09+00:00",
+      "evidence_status": "S1 reference; block-CV baseline; lower-tail MAE best among block candidates",
+      "feature_contract": {
+        "baseline": "last eligible own prior VTD measurement (last_mm)",
+        "bounds": "[0, nominal_thickness_mm]",
+        "catboost": "fixed reference parameters; no search",
+        "core_features": [
+          "last_mm",
+          "age_last_vtd_years",
+          "prior_vtd_campaign_count",
+          "neighbor_prior_median_mm",
+          "neighbor_prior_count",
+          "neighbor_missing",
+          "slope_m_per_m",
+          "abs_slope_m_per_m",
+          "local_low_m",
+          "relative_position"
+        ],
+        "global_ridge": "fit on all eligible rows outside target block+buffer, including other simple sections",
+        "preprocessing": "NextPreprocessor train-only: median imputer, constant/duplicate/empty drop, StandardScaler",
+        "target": "target_delta_mm = next_mm - last_mm",
+        "target_ridge": "fit only on target-section rows outside held-out block+buffer"
+      },
+      "frozen_prediction": "C:\\Program Files\\PipeTwin\\experiments\\targeted_cycle\\frozen_candidates\\predictions\\S1\\s1a.csv",
+      "frozen_prediction_sha256": "525e5b691a17b72db6ef24ad99820816d50ecbf99f5ae3ccd071bbaa2e5887a7",
+      "input_sha256": {
+        "data_manifest": "eba9d43c1cf5da4b1148d89e34ad5d922eac4f8752c0c4a790bf9b0f93a4c72b",
+        "model": null,
+        "source_prediction": "84f994045a10e480b8f83bbeb4a19ff3cf346be9826f15fa3a4891a831c3af82"
+      },
+      "is_constant": false,
+      "model_metadata": null,
+      "model_path": null,
+      "model_sha256": null,
+      "nunique": 49,
+      "params": {
+        "rule": "h_last"
+      },
+      "prediction_sha256": "84f994045a10e480b8f83bbeb4a19ff3cf346be9826f15fa3a4891a831c3af82",
+      "rationale": "unchanged persistence baseline; no temporal assumption",
+      "roles": [
+        "level_reference",
+        "submission_candidate"
+      ],
+      "rows": 525,
+      "seen_evaluations": [
+        {
+          "path": "experiments/targeted_cycle/stage_2_report_ru.md",
+          "stage": "S2 fixes",
+          "status": "reviewed"
+        },
+        {
+          "path": "experiments/targeted_cycle/stage_3_report_ru.md",
+          "stage": "S1 100/20",
+          "status": "reviewed"
+        },
+        {
+          "path": "experiments/targeted_cycle/stage_4_report_ru.md",
+          "stage": "S1 robustness",
+          "status": "reviewed"
+        },
+        {
+          "path": "experiments/targeted_cycle/stage_5_report_ru.md",
+          "stage": "S1 temporal",
+          "status": "reviewed"
+        }
+      ],
+      "source_prediction": "experiments\\targeted_cycle\\stage_3_s1_100m_20m\\target_predictions\\s1a\\predictions_s1.csv",
+      "source_prediction_sha256": "84f994045a10e480b8f83bbeb4a19ff3cf346be9826f15fa3a4891a831c3af82",
+      "std_prediction_mm": 0.5547620663886986
+    },
+    "spatial_centered_corrected_temperature": {
+      "candidate_id": "spatial_centered_corrected_temperature",
+      "canonical_prediction_sha256": "abc72732c04d95455242f2b61d0e9300631edd9802fb159a9f65c86e8a243525",
+      "case": "S2",
+      "code_sha256": {
+        "src\\ml\\next_common.py": "7b00b9320ad8608b0368a65548af88f812f86beaabfb7b94169613d808537e71",
+        "src\\ml\\s2_next.py": "65441bd0ceabc0d83571997ae0dfcbcf4ea4d35efa3315a1c0f623d3ac3b56a6",
+        "src\\ml\\targeted_s2.py": "f05c2a6f003ea4c81c3d633905e88e62bd24338a2e9dcd9d0f1faeb9244acdbb"
+      },
+      "created_utc": "2026-11-15T20:43:09+00:00",
+      "evidence_status": "strict/post-cutoff metrics weaker than physics; retained as challenger only",
+      "feature_contract": {
+        "centering": "length-weighted full-grid mean of g",
+        "features": [
+          "z",
+          "slope",
+          "abs_slope",
+          "position",
+          "local_low",
+          "pool_depth",
+          "scenario_cooling_c"
+        ],
+        "lambda": 1.0,
+        "model_type": "Ridge",
+        "physics_metadata": {
+          "gap_policy": "own_mean",
+          "interpretation": "Effective segment-minimum thinning rate under declared environment priors; not an electrochemical CO2/H2S constant",
+          "name": "M1",
+          "priors": {
+            "age_exponent": 1.0,
+            "beta_W": 0.3,
+            "beta_v": 0.1,
+            "theta_K": 2500.0,
+            "velocity_offset_m_s": 0.1
+          },
+          "r_ref_mm_year": 0.10555247320293284,
+          "reference": {
+            "temperature_K": 285.6940825298223,
+            "velocity_m_s": 0.5707789385004212,
+            "water_fraction": 0.867897304128054
+          },
+          "training_groups": 1,
+          "training_rows": 372,
+          "weighting": "W0"
+        },
+        "preprocessing": {
+          "constant_columns": [],
+          "dropped_columns": {},
+          "duplicate_columns": {},
+          "empty_columns": [],
+          "feature_order": [
+            "z",
+            "slope",
+            "abs_slope",
+            "position",
+            "local_low",
+            "pool_depth",
+            "scenario_cooling_c"
+          ],
+          "imputer": "median",
+          "imputer_statistics": {
+            "abs_slope": -0.44923552528216465,
+            "local_low": 0.03987353589666821,
+            "pool_depth": -0.4561191788135494,
+            "position": -0.23401648525708696,
+            "scenario_cooling_c": 0.0011898778438617086,
+            "slope": -0.02304655387687253,
+            "z": 0.06337914076041866
+          },
+          "scaler": "StandardScaler",
+          "scaler_mean": {
+            "abs_slope": -0.07462613643461653,
+            "local_low": -0.011665241473470495,
+            "pool_depth": -0.15571808987257665,
+            "position": -0.17145651045226365,
+            "scenario_cooling_c": 0.0011653814953227052,
+            "slope": -0.038763229481698386,
+            "z": 0.1405633701184284
+          },
+          "scaler_scale": {
+            "abs_slope": 0.7617851488028493,
+            "local_low": 1.0327842659649233,
+            "pool_depth": 0.7886213479436135,
+            "position": 0.9635774092115081,
+            "scenario_cooling_c": 9.466361338576503e-05,
+            "slope": 0.7749841572840873,
+            "z": 0.8745879935439962
+          },
+          "used_features": [
+            "z",
+            "slope",
+            "abs_slope",
+            "position",
+            "local_low",
+            "pool_depth",
+            "scenario_cooling_c"
+          ]
+        },
+        "used_features": [
+          "z",
+          "slope",
+          "abs_slope",
+          "position",
+          "local_low",
+          "pool_depth",
+          "scenario_cooling_c"
+        ]
+      },
+      "frozen_prediction": "C:\\Program Files\\PipeTwin\\experiments\\targeted_cycle\\frozen_candidates\\predictions\\S2\\spatial_centered_corrected_temperature.csv",
+      "frozen_prediction_sha256": "726145923b7e64faca7e9152a5354b139b270e266899506bb1f4f39397018e8d",
+      "input_sha256": {
+        "data_manifest": "eba9d43c1cf5da4b1148d89e34ad5d922eac4f8752c0c4a790bf9b0f93a4c72b",
+        "model": "ff27ae41dfa637a39bfab99d5a45bf90efb653c7a6d8468b3417f82935ca25d3",
+        "source_prediction": "abc72732c04d95455242f2b61d0e9300631edd9802fb159a9f65c86e8a243525"
+      },
+      "is_constant": false,
+      "model_metadata": {
+        "alpha": 10.0,
+        "baseline_column": null,
+        "candidate": "spatial_centered_corrected_temperature",
+        "centered": true,
+        "centering": "length-weighted full-grid mean of g",
+        "centering_context": {
+          "context_sha256": "0aa5e7bd5c1d718645539a981178f9e7df9c4c2be00418b816f791250672fe4c",
+          "mean_arithmetic": -0.18654646440171485,
+          "mean_length_weighted": -0.18656619929483878,
+          "n": 1475,
+          "sum_length_m": 14745.1,
+          "target_date": "2022-07-01",
+          "target_id": 1250009583
+        },
+        "coefficient_by_feature": {
+          "abs_slope": -0.01776978870416579,
+          "local_low": -0.054568991168197724,
+          "pool_depth": 0.08610692242520325,
+          "position": -0.016105119022433362,
+          "scenario_cooling_c": -0.0023704679963066624,
+          "slope": -0.04859940844342887,
+          "z": 0.029580113278368268
+        },
+        "coefficients": [
+          0.029580113278368268,
+          -0.04859940844342887,
+          -0.01776978870416579,
+          -0.016105119022433362,
+          -0.054568991168197724,
+          0.08610692242520325,
+          -0.0023704679963066624
+        ],
+        "dropped_columns": {},
+        "features": [
+          "z",
+          "slope",
+          "abs_slope",
+          "position",
+          "local_low",
+          "pool_depth",
+          "scenario_cooling_c"
+        ],
+        "fit_intercept": true,
+        "intercept": -1.25254265377695e-17,
+        "lambda": 1.0,
+        "model_name": "s2_spatial_ridge",
+        "model_type": "Ridge",
+        "physics_metadata": {
+          "gap_policy": "own_mean",
+          "interpretation": "Effective segment-minimum thinning rate under declared environment priors; not an electrochemical CO2/H2S constant",
+          "name": "M1",
+          "priors": {
+            "age_exponent": 1.0,
+            "beta_W": 0.3,
+            "beta_v": 0.1,
+            "theta_K": 2500.0,
+            "velocity_offset_m_s": 0.1
+          },
+          "r_ref_mm_year": 0.10555247320293284,
+          "reference": {
+            "temperature_K": 285.6940825298223,
+            "velocity_m_s": 0.5707789385004212,
+            "water_fraction": 0.867897304128054
+          },
+          "training_groups": 1,
+          "training_rows": 372,
+          "weighting": "W0"
+        },
+        "prediction_policy": "delta",
+        "preprocessing": {
+          "constant_columns": [],
+          "dropped_columns": {},
+          "duplicate_columns": {},
+          "empty_columns": [],
+          "feature_order": [
+            "z",
+            "slope",
+            "abs_slope",
+            "position",
+            "local_low",
+            "pool_depth",
+            "scenario_cooling_c"
+          ],
+          "imputer": "median",
+          "imputer_statistics": {
+            "abs_slope": -0.44923552528216465,
+            "local_low": 0.03987353589666821,
+            "pool_depth": -0.4561191788135494,
+            "position": -0.23401648525708696,
+            "scenario_cooling_c": 0.0011898778438617086,
+            "slope": -0.02304655387687253,
+            "z": 0.06337914076041866
+          },
+          "scaler": "StandardScaler",
+          "scaler_mean": {
+            "abs_slope": -0.07462613643461653,
+            "local_low": -0.011665241473470495,
+            "pool_depth": -0.15571808987257665,
+            "position": -0.17145651045226365,
+            "scenario_cooling_c": 0.0011653814953227052,
+            "slope": -0.038763229481698386,
+            "z": 0.1405633701184284
+          },
+          "scaler_scale": {
+            "abs_slope": 0.7617851488028493,
+            "local_low": 1.0327842659649233,
+            "pool_depth": 0.7886213479436135,
+            "position": 0.9635774092115081,
+            "scenario_cooling_c": 9.466361338576503e-05,
+            "slope": 0.7749841572840873,
+            "z": 0.8745879935439962
+          },
+          "used_features": [
+            "z",
+            "slope",
+            "abs_slope",
+            "position",
+            "local_low",
+            "pool_depth",
+            "scenario_cooling_c"
+          ]
+        },
+        "residual_centering": "within training simple section",
+        "solver": "cholesky",
+        "target": "residual_centered_mm",
+        "target_mean": -1.850371707708594e-17,
+        "target_std": 0.5510921878606806,
+        "training_dates": [
+          "2018-09-23"
+        ],
+        "training_rows": 372,
+        "training_sections": [
+          1250009490,
+          1250011604,
+          1250022871
+        ],
+        "used_features": [
+          "z",
+          "slope",
+          "abs_slope",
+          "position",
+          "local_low",
+          "pool_depth",
+          "scenario_cooling_c"
+        ]
+      },
+      "model_path": "experiments\\targeted_cycle\\stage_2_s2_fixes\\models\\spatial_centered_corrected_temperature\\model_artifact.joblib",
+      "model_sha256": "ff27ae41dfa637a39bfab99d5a45bf90efb653c7a6d8468b3417f82935ca25d3",
+      "nunique": 1475,
+      "params": {
+        "centering": "full-grid length-weighted",
+        "lambda": 1.0,
+        "temperature": "full-grid local scenario_cooling_c"
+      },
+      "prediction_sha256": "abc72732c04d95455242f2b61d0e9300631edd9802fb159a9f65c86e8a243525",
+      "rationale": "centered spatial with corrected thermal feature",
+      "roles": [
+        "spatial_challenger"
+      ],
+      "rows": 1475,
+      "seen_evaluations": [
+        {
+          "path": "experiments/targeted_cycle/stage_2_report_ru.md",
+          "stage": "S2 fixes",
+          "status": "reviewed"
+        },
+        {
+          "path": "experiments/targeted_cycle/stage_3_report_ru.md",
+          "stage": "S1 100/20",
+          "status": "reviewed"
+        },
+        {
+          "path": "experiments/targeted_cycle/stage_4_report_ru.md",
+          "stage": "S1 robustness",
+          "status": "reviewed"
+        },
+        {
+          "path": "experiments/targeted_cycle/stage_5_report_ru.md",
+          "stage": "S1 temporal",
+          "status": "reviewed"
+        }
+      ],
+      "source_prediction": "experiments\\targeted_cycle\\stage_2_s2_fixes\\models\\spatial_centered_corrected_temperature\\predictions_s2.csv",
+      "source_prediction_sha256": "abc72732c04d95455242f2b61d0e9300631edd9802fb159a9f65c86e8a243525",
+      "std_prediction_mm": 0.11950132007873183
+    },
+    "spatial_no_temperature_centered": {
+      "candidate_id": "spatial_no_temperature_centered",
+      "canonical_prediction_sha256": "5c933e6c6c2d229b6923cc900f51ba147eb81b829dee3cb6c551645418f6c055",
+      "case": "S2",
+      "code_sha256": {
+        "src\\ml\\next_common.py": "7b00b9320ad8608b0368a65548af88f812f86beaabfb7b94169613d808537e71",
+        "src\\ml\\s2_next.py": "65441bd0ceabc0d83571997ae0dfcbcf4ea4d35efa3315a1c0f623d3ac3b56a6",
+        "src\\ml\\targeted_s2.py": "f05c2a6f003ea4c81c3d633905e88e62bd24338a2e9dcd9d0f1faeb9244acdbb"
+      },
+      "created_utc": "2026-11-15T20:43:09+00:00",
+      "evidence_status": "centering fixes level shift; strict/reference metrics do not establish target gain",
+      "feature_contract": {
+        "centering": "length-weighted full-grid mean of g",
+        "features": [
+          "z",
+          "slope",
+          "abs_slope",
+          "position",
+          "local_low",
+          "pool_depth"
+        ],
+        "lambda": 1.0,
+        "model_type": "Ridge",
+        "physics_metadata": {
+          "gap_policy": "own_mean",
+          "interpretation": "Effective segment-minimum thinning rate under declared environment priors; not an electrochemical CO2/H2S constant",
+          "name": "M1",
+          "priors": {
+            "age_exponent": 1.0,
+            "beta_W": 0.3,
+            "beta_v": 0.1,
+            "theta_K": 2500.0,
+            "velocity_offset_m_s": 0.1
+          },
+          "r_ref_mm_year": 0.10555247320293284,
+          "reference": {
+            "temperature_K": 285.6940825298223,
+            "velocity_m_s": 0.5707789385004212,
+            "water_fraction": 0.867897304128054
+          },
+          "training_groups": 1,
+          "training_rows": 372,
+          "weighting": "W0"
+        },
+        "preprocessing": {
+          "constant_columns": [],
+          "dropped_columns": {},
+          "duplicate_columns": {},
+          "empty_columns": [],
+          "feature_order": [
+            "z",
+            "slope",
+            "abs_slope",
+            "position",
+            "local_low",
+            "pool_depth"
+          ],
+          "imputer": "median",
+          "imputer_statistics": {
+            "abs_slope": -0.44923552528216465,
+            "local_low": 0.03987353589666821,
+            "pool_depth": -0.4561191788135494,
+            "position": -0.23401648525708696,
+            "slope": -0.02304655387687253,
+            "z": 0.06337914076041866
+          },
+          "scaler": "StandardScaler",
+          "scaler_mean": {
+            "abs_slope": -0.07462613643461653,
+            "local_low": -0.011665241473470495,
+            "pool_depth": -0.15571808987257665,
+            "position": -0.17145651045226365,
+            "slope": -0.038763229481698386,
+            "z": 0.1405633701184284
+          },
+          "scaler_scale": {
+            "abs_slope": 0.7617851488028493,
+            "local_low": 1.0327842659649233,
+            "pool_depth": 0.7886213479436135,
+            "position": 0.9635774092115081,
+            "slope": 0.7749841572840873,
+            "z": 0.8745879935439962
+          },
+          "used_features": [
+            "z",
+            "slope",
+            "abs_slope",
+            "position",
+            "local_low",
+            "pool_depth"
+          ]
+        },
+        "used_features": [
+          "z",
+          "slope",
+          "abs_slope",
+          "position",
+          "local_low",
+          "pool_depth"
+        ]
+      },
+      "frozen_prediction": "C:\\Program Files\\PipeTwin\\experiments\\targeted_cycle\\frozen_candidates\\predictions\\S2\\spatial_no_temperature_centered.csv",
+      "frozen_prediction_sha256": "2e0254b8e34d719caee8472ae79e9c473058ea166c36dff56ef81e098b93a159",
+      "input_sha256": {
+        "data_manifest": "eba9d43c1cf5da4b1148d89e34ad5d922eac4f8752c0c4a790bf9b0f93a4c72b",
+        "model": "4731aa5cda6ad931c67bec5fca9176920cc4d570bfbbc9b312b4def7c1620e83",
+        "source_prediction": "5c933e6c6c2d229b6923cc900f51ba147eb81b829dee3cb6c551645418f6c055"
+      },
+      "is_constant": false,
+      "model_metadata": {
+        "alpha": 10.0,
+        "baseline_column": null,
+        "candidate": "spatial_no_temperature_centered",
+        "centered": true,
+        "centering": "length-weighted full-grid mean of g",
+        "centering_context": {
+          "context_sha256": "0aa5e7bd5c1d718645539a981178f9e7df9c4c2be00418b816f791250672fe4c",
+          "mean_arithmetic": 0.004743557544858768,
+          "mean_length_weighted": 0.004782188212271277,
+          "n": 1475,
+          "sum_length_m": 14745.1,
+          "target_date": "2022-07-01",
+          "target_id": 1250009583
+        },
+        "coefficient_by_feature": {
+          "abs_slope": -0.017667507536957127,
+          "local_low": -0.05461999476164285,
+          "pool_depth": 0.08594768188807936,
+          "position": -0.015251520587215569,
+          "slope": -0.04853773825501767,
+          "z": 0.0294804038049897
+        },
+        "coefficients": [
+          0.0294804038049897,
+          -0.04853773825501767,
+          -0.017667507536957127,
+          -0.015251520587215569,
+          -0.05461999476164285,
+          0.08594768188807936
+        ],
+        "dropped_columns": {},
+        "features": [
+          "z",
+          "slope",
+          "abs_slope",
+          "position",
+          "local_low",
+          "pool_depth"
+        ],
+        "fit_intercept": true,
+        "intercept": -1.1523002500837628e-17,
+        "lambda": 1.0,
+        "model_name": "s2_spatial_ridge",
+        "model_type": "Ridge",
+        "physics_metadata": {
+          "gap_policy": "own_mean",
+          "interpretation": "Effective segment-minimum thinning rate under declared environment priors; not an electrochemical CO2/H2S constant",
+          "name": "M1",
+          "priors": {
+            "age_exponent": 1.0,
+            "beta_W": 0.3,
+            "beta_v": 0.1,
+            "theta_K": 2500.0,
+            "velocity_offset_m_s": 0.1
+          },
+          "r_ref_mm_year": 0.10555247320293284,
+          "reference": {
+            "temperature_K": 285.6940825298223,
+            "velocity_m_s": 0.5707789385004212,
+            "water_fraction": 0.867897304128054
+          },
+          "training_groups": 1,
+          "training_rows": 372,
+          "weighting": "W0"
+        },
+        "prediction_policy": "delta",
+        "preprocessing": {
+          "constant_columns": [],
+          "dropped_columns": {},
+          "duplicate_columns": {},
+          "empty_columns": [],
+          "feature_order": [
+            "z",
+            "slope",
+            "abs_slope",
+            "position",
+            "local_low",
+            "pool_depth"
+          ],
+          "imputer": "median",
+          "imputer_statistics": {
+            "abs_slope": -0.44923552528216465,
+            "local_low": 0.03987353589666821,
+            "pool_depth": -0.4561191788135494,
+            "position": -0.23401648525708696,
+            "slope": -0.02304655387687253,
+            "z": 0.06337914076041866
+          },
+          "scaler": "StandardScaler",
+          "scaler_mean": {
+            "abs_slope": -0.07462613643461653,
+            "local_low": -0.011665241473470495,
+            "pool_depth": -0.15571808987257665,
+            "position": -0.17145651045226365,
+            "slope": -0.038763229481698386,
+            "z": 0.1405633701184284
+          },
+          "scaler_scale": {
+            "abs_slope": 0.7617851488028493,
+            "local_low": 1.0327842659649233,
+            "pool_depth": 0.7886213479436135,
+            "position": 0.9635774092115081,
+            "slope": 0.7749841572840873,
+            "z": 0.8745879935439962
+          },
+          "used_features": [
+            "z",
+            "slope",
+            "abs_slope",
+            "position",
+            "local_low",
+            "pool_depth"
+          ]
+        },
+        "residual_centering": "within training simple section",
+        "solver": "cholesky",
+        "target": "residual_centered_mm",
+        "target_mean": -1.850371707708594e-17,
+        "target_std": 0.5510921878606806,
+        "training_dates": [
+          "2018-09-23"
+        ],
+        "training_rows": 372,
+        "training_sections": [
+          1250009490,
+          1250011604,
+          1250022871
+        ],
+        "used_features": [
+          "z",
+          "slope",
+          "abs_slope",
+          "position",
+          "local_low",
+          "pool_depth"
+        ]
+      },
+      "model_path": "experiments\\targeted_cycle\\stage_2_s2_fixes\\models\\spatial_no_temperature_centered\\model_artifact.joblib",
+      "model_sha256": "4731aa5cda6ad931c67bec5fca9176920cc4d570bfbbc9b312b4def7c1620e83",
+      "nunique": 1475,
+      "params": {
+        "centering": "full-grid length-weighted",
+        "lambda": 1.0
+      },
+      "prediction_sha256": "5c933e6c6c2d229b6923cc900f51ba147eb81b829dee3cb6c551645418f6c055",
+      "rationale": "contract-corrected full-grid spatial Ridge; no temperature feature",
+      "roles": [
+        "spatial_challenger"
+      ],
+      "rows": 1475,
+      "seen_evaluations": [
+        {
+          "path": "experiments/targeted_cycle/stage_2_report_ru.md",
+          "stage": "S2 fixes",
+          "status": "reviewed"
+        },
+        {
+          "path": "experiments/targeted_cycle/stage_3_report_ru.md",
+          "stage": "S1 100/20",
+          "status": "reviewed"
+        },
+        {
+          "path": "experiments/targeted_cycle/stage_4_report_ru.md",
+          "stage": "S1 robustness",
+          "status": "reviewed"
+        },
+        {
+          "path": "experiments/targeted_cycle/stage_5_report_ru.md",
+          "stage": "S1 temporal",
+          "status": "reviewed"
+        }
+      ],
+      "source_prediction": "experiments\\targeted_cycle\\stage_2_s2_fixes\\models\\spatial_no_temperature_centered\\predictions_s2.csv",
+      "source_prediction_sha256": "5c933e6c6c2d229b6923cc900f51ba147eb81b829dee3cb6c551645418f6c055",
+      "std_prediction_mm": 0.14609923307428913
+    }
+  },
+  "created_utc": "2026-11-15T20:43:24+00:00",
+  "data_manifest_sha256": "eba9d43c1cf5da4b1148d89e34ad5d922eac4f8752c0c4a790bf9b0f93a4c72b",
+  "data_root": "C:\\Users\\Администратор\\Documents\\PipeTwin_next\\experiments\\next_cycle\\data_generation",
+  "explicit_combinations": {
+    "explicit_only": true,
+    "no_automatic_cartesian_product": true,
+    "pairs": [
+      {
+        "constant_diagnostics": {
+          "S1": {
+            "is_constant": false,
+            "max": 7.2,
+            "min": 3.52,
+            "near_constant": false,
+            "nunique": 49,
+            "rows": 525,
+            "std_mm": 0.5547620663886986
+          },
+          "S2": {
+            "is_constant": true,
+            "max": 2.809539379,
+            "min": 2.809539379,
+            "near_constant": true,
+            "nunique": 1,
+            "rows": 1475,
+            "std_mm": 4.440892098500626e-16
+          }
+        },
+        "name": "s1a__physics_priors",
+        "prediction_sha256": "8b3dfec7207c6c08deab04810790ed4b1ca8edf4d86126c6225d586dfe2c84fe",
+        "result_path": "C:\\Program Files\\PipeTwin\\experiments\\targeted_cycle\\frozen_candidates\\combinations\\s1a__physics_priors\\result.csv",
+        "result_sha256": "4fd624c7b605c7bfab12b8855dbe6fad68decb0f3a46e5a732176f72fd5655b2",
+        "role": "reference_pair",
+        "rows": 2000,
+        "s1": "s1a",
+        "s1_max_abs_diff_vs_frozen": 0.0,
+        "s1_rows": 525,
+        "s2": "physics_priors",
+        "s2_max_abs_diff_vs_frozen": 0.0,
+        "s2_rows": 1475,
+        "unique_keys": true,
+        "validation": {
+          "bounded": true,
+          "finite_mm": true,
+          "rows": 2000,
+          "template": {
+            "available": false,
+            "key_set_compared": false,
+            "status": "no_template_supplied",
+            "validation_grid": "derived_target_grid"
+          },
+          "unique_keys": true,
+          "upper_bound_column": "upper_mm"
+        }
+      },
+      {
+        "constant_diagnostics": {
+          "S1": {
+            "is_constant": false,
+            "max": 7.0496058225,
+            "min": 4.7981285655,
+            "near_constant": false,
+            "nunique": 525,
+            "rows": 525,
+            "std_mm": 0.29644435217196485
+          },
+          "S2": {
+            "is_constant": true,
+            "max": 2.809539379,
+            "min": 2.809539379,
+            "near_constant": true,
+            "nunique": 1,
+            "rows": 1475,
+            "std_mm": 4.440892098500626e-16
+          }
+        },
+        "name": "global_ridge_geometry_correction__physics_priors",
+        "prediction_sha256": "c800adc815c3f95df2420572fd22e944c38f6aaa82422c2b62b9679943d0e5cb",
+        "result_path": "C:\\Program Files\\PipeTwin\\experiments\\targeted_cycle\\frozen_candidates\\combinations\\global_ridge_geometry_correction__physics_priors\\result.csv",
+        "result_sha256": "66e3909ae8e11729bce76684c51d132b7300fd76db8e62ef0b17c4a18029d8c9",
+        "role": "primary_s1_pair",
+        "rows": 2000,
+        "s1": "global_ridge_geometry_correction",
+        "s1_max_abs_diff_vs_frozen": 0.0,
+        "s1_rows": 525,
+        "s2": "physics_priors",
+        "s2_max_abs_diff_vs_frozen": 0.0,
+        "s2_rows": 1475,
+        "unique_keys": true,
+        "validation": {
+          "bounded": true,
+          "finite_mm": true,
+          "rows": 2000,
+          "template": {
+            "available": false,
+            "key_set_compared": false,
+            "status": "no_template_supplied",
+            "validation_grid": "derived_target_grid"
+          },
+          "unique_keys": true,
+          "upper_bound_column": "upper_mm"
+        }
+      },
+      {
+        "constant_diagnostics": {
+          "S1": {
+            "is_constant": false,
+            "max": 6.9094995989,
+            "min": 4.0657921744,
+            "near_constant": false,
+            "nunique": 525,
+            "rows": 525,
+            "std_mm": 0.44336988392753685
+          },
+          "S2": {
+            "is_constant": true,
+            "max": 2.809539379,
+            "min": 2.809539379,
+            "near_constant": true,
+            "nunique": 1,
+            "rows": 1475,
+            "std_mm": 4.440892098500626e-16
+          }
+        },
+        "name": "global_ridge_geometry_time_scaled__physics_priors",
+        "prediction_sha256": "ba7410126f9066fc26642ce3127642d924c7ab75e7ef2c670eacd847d09f7328",
+        "result_path": "C:\\Program Files\\PipeTwin\\experiments\\targeted_cycle\\frozen_candidates\\combinations\\global_ridge_geometry_time_scaled__physics_priors\\result.csv",
+        "result_sha256": "e6a5d757329ee8ca2acb90d0487969e07066ced30a26c3d7e86d79e4a7775354",
+        "role": "temporal_alt_pair",
+        "rows": 2000,
+        "s1": "global_ridge_geometry_time_scaled",
+        "s1_max_abs_diff_vs_frozen": 0.0,
+        "s1_rows": 525,
+        "s2": "physics_priors",
+        "s2_max_abs_diff_vs_frozen": 0.0,
+        "s2_rows": 1475,
+        "unique_keys": true,
+        "validation": {
+          "bounded": true,
+          "finite_mm": true,
+          "rows": 2000,
+          "template": {
+            "available": false,
+            "key_set_compared": false,
+            "status": "no_template_supplied",
+            "validation_grid": "derived_target_grid"
+          },
+          "unique_keys": true,
+          "upper_bound_column": "upper_mm"
+        }
+      },
+      {
+        "constant_diagnostics": {
+          "S1": {
+            "is_constant": false,
+            "max": 7.2,
+            "min": 3.52,
+            "near_constant": false,
+            "nunique": 49,
+            "rows": 525,
+            "std_mm": 0.5547620663886986
+          },
+          "S2": {
+            "is_constant": false,
+            "max": 3.788812353,
+            "min": 2.0037940036,
+            "near_constant": false,
+            "nunique": 1475,
+            "rows": 1475,
+            "std_mm": 0.14609923307428913
+          }
+        },
+        "name": "s1a__spatial_no_temperature_centered",
+        "prediction_sha256": "3c511e32077ab0f4a1680b77dea00c76778a080253674688f75e4020c93610c0",
+        "result_path": "C:\\Program Files\\PipeTwin\\experiments\\targeted_cycle\\frozen_candidates\\combinations\\s1a__spatial_no_temperature_centered\\result.csv",
+        "result_sha256": "59b22ddcef9543443f3a7fdd1d02a421f029e4e0e87f726fd13a8262f5086b5c",
+        "role": "s2_spatial_pair",
+        "rows": 2000,
+        "s1": "s1a",
+        "s1_max_abs_diff_vs_frozen": 0.0,
+        "s1_rows": 525,
+        "s2": "spatial_no_temperature_centered",
+        "s2_max_abs_diff_vs_frozen": 0.0,
+        "s2_rows": 1475,
+        "unique_keys": true,
+        "validation": {
+          "bounded": true,
+          "finite_mm": true,
+          "rows": 2000,
+          "template": {
+            "available": false,
+            "key_set_compared": false,
+            "status": "no_template_supplied",
+            "validation_grid": "derived_target_grid"
+          },
+          "unique_keys": true,
+          "upper_bound_column": "upper_mm"
+        }
+      },
+      {
+        "constant_diagnostics": {
+          "S1": {
+            "is_constant": false,
+            "max": 7.2,
+            "min": 3.52,
+            "near_constant": false,
+            "nunique": 49,
+            "rows": 525,
+            "std_mm": 0.5547620663886986
+          },
+          "S2": {
+            "is_constant": false,
+            "max": 3.7771051336,
+            "min": 1.9522236968,
+            "near_constant": false,
+            "nunique": 1475,
+            "rows": 1475,
+            "std_mm": 0.11950132007873183
+          }
+        },
+        "name": "s1a__spatial_centered_corrected_temperature",
+        "prediction_sha256": "c47bc86d8d8cb58c539bdc532c76b5582324f781642e506143c8b9c868af0219",
+        "result_path": "C:\\Program Files\\PipeTwin\\experiments\\targeted_cycle\\frozen_candidates\\combinations\\s1a__spatial_centered_corrected_temperature\\result.csv",
+        "result_sha256": "2327b9fe37bce72b865d902a4f44aaa967434d94258528e323a8bacb3add9634",
+        "role": "s2_temperature_pair",
+        "rows": 2000,
+        "s1": "s1a",
+        "s1_max_abs_diff_vs_frozen": 0.0,
+        "s1_rows": 525,
+        "s2": "spatial_centered_corrected_temperature",
+        "s2_max_abs_diff_vs_frozen": 0.0,
+        "s2_rows": 1475,
+        "unique_keys": true,
+        "validation": {
+          "bounded": true,
+          "finite_mm": true,
+          "rows": 2000,
+          "template": {
+            "available": false,
+            "key_set_compared": false,
+            "status": "no_template_supplied",
+            "validation_grid": "derived_target_grid"
+          },
+          "unique_keys": true,
+          "upper_bound_column": "upper_mm"
+        }
+      }
+    ]
+  },
+  "freeze_id": "targeted_2026-11-15T204324+0000",
+  "main_result_overwritten": false,
+  "not_a_winner": true,
+  "project_root": "C:\\Program Files\\PipeTwin",
+  "recheck": {
+    "full_partial_inference": "covered by tests/test_stage_2_s2_fixes.py and tests/test_stage_3_s1.py",
+    "max_abs_differences": {
+      "global_ridge_geometry_correction": 0.0,
+      "global_ridge_geometry_time_scaled": 0.0,
+      "physics_priors": 0.0,
+      "spatial_centered_corrected_temperature": 0.0,
+      "spatial_no_temperature_centered": 0.0
+    },
+    "new_process": true,
+    "no_fit": true
+  },
+  "stage5_proposal": {
+    "bounds": "[0, nominal_thickness_mm]",
+    "challengers": [
+      {
+        "base_model": "global_ridge_geometry",
+        "id": "global_ridge_geometry_correction",
+        "model_path": "C:\\Program Files\\PipeTwin\\experiments\\targeted_cycle\\stage_3_s1_100m_20m\\models\\global_ridge_geometry\\model_artifact.joblib",
+        "model_sha256": "4a6ed7b24404e0883b95ae4fb9e640269374c77284bf86129b300aa43af61d36",
+        "temporal_assumption": "h_last + g(X)"
+      },
+      {
+        "base_model": "global_ridge_geometry",
+        "id": "global_ridge_geometry_time_scaled",
+        "model_path": "C:\\Program Files\\PipeTwin\\experiments\\targeted_cycle\\stage_3_s1_100m_20m\\models\\global_ridge_geometry\\model_artifact.joblib",
+        "model_sha256": "4a6ed7b24404e0883b95ae4fb9e640269374c77284bf86129b300aa43af61d36",
+        "temporal_assumption": "h_last + (dt_target/dt_train)*g(X)"
+      }
+    ],
+    "no_unconditional_prediction_gt_last_ban": true,
+    "reference": "s1a",
+    "selection_basis": "Common train dt permits the time-scaled expression; OOF cannot distinguish correction from time-scaled because all historical dt equal. No temporal winner is declared.",
+    "sensitivity_not_frozen": [
+      "conservative_0_25 (fixed shrinkage; not selected by OOF)",
+      "target_ridge_geometry variants (local fit; no clear advantage in Stage 4)"
+    ],
+    "status": "awaiting_user_freeze_choice"
+  },
+  "status": "frozen_package_ready_for_external_choice"
+}
