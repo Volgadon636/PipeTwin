@@ -1,0 +1,115 @@
+{
+  "actions": 8,
+  "candidate_records": 713,
+  "decisions": 15,
+  "diff": {
+    "added": [],
+    "baseline_created": false,
+    "changed": [
+      {
+        "fields": [
+          "status"
+        ],
+        "id": "REQ-0001",
+        "new": {
+          "status": "verified"
+        },
+        "old": {
+          "status": "implemented"
+        }
+      },
+      {
+        "fields": [
+          "status"
+        ],
+        "id": "REQ-0002",
+        "new": {
+          "status": "verified"
+        },
+        "old": {
+          "status": "implemented"
+        }
+      },
+      {
+        "fields": [
+          "status"
+        ],
+        "id": "REQ-0003",
+        "new": {
+          "status": "verified"
+        },
+        "old": {
+          "status": "implemented"
+        }
+      },
+      {
+        "fields": [
+          "status"
+        ],
+        "id": "REQ-0004",
+        "new": {
+          "status": "verified"
+        },
+        "old": {
+          "status": "implemented"
+        }
+      },
+      {
+        "fields": [
+          "status"
+        ],
+        "id": "REQ-0005",
+        "new": {
+          "status": "verified"
+        },
+        "old": {
+          "status": "implemented"
+        }
+      },
+      {
+        "fields": [
+          "status"
+        ],
+        "id": "REQ-0006",
+        "new": {
+          "status": "verified"
+        },
+        "old": {
+          "status": "implemented"
+        }
+      },
+      {
+        "fields": [
+          "status"
+        ],
+        "id": "REQ-0007",
+        "new": {
+          "status": "verified"
+        },
+        "old": {
+          "status": "implemented"
+        }
+      },
+      {
+        "fields": [
+          "status"
+        ],
+        "id": "REQ-0008",
+        "new": {
+          "status": "verified"
+        },
+        "old": {
+          "status": "implemented"
+        }
+      }
+    ],
+    "removed": []
+  },
+  "open_questions": 13,
+  "requirements": 8,
+  "sent_messages": 0,
+  "source_count": 10,
+  "source_excerpts_not_found": 0,
+  "sources_with_text": 7,
+  "unknown_dates_or_participants": 10
+}

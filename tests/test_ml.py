@@ -119,6 +119,10 @@ class ArtifactTests(unittest.TestCase):
         for request in self.data.config['targets']:
             features, _ = make_snapshot(self.data, request)
             expected = published[published.id.eq(request['id'])].reset_index(drop=True)
+            # The archive-wide history flag was deliberately removed from model
+            # features because it can summarize records outside the cutoff.
+            expected = expected.drop(columns=['history_date_conflict_flag'], errors='ignore')
+            self.assertNotIn('history_date_conflict_flag', features.columns)
             pd.testing.assert_frame_equal(features[list(expected)].reset_index(drop=True), expected, check_dtype=False)
         self.assertEqual(len(published), 2000)
 

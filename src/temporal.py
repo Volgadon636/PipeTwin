@@ -74,9 +74,17 @@ def hydraulic_asof(tech, pipe_ids, cutoff, config):
     return df, audit
 
 
-def hydraulic_summary(df, pipe_ids):
-    """Daily medians then equal-weight daily statistics; do not extrapolate across gaps."""
+def hydraulic_summary(df, pipe_ids, cutoff=None, commissioning=None, window_start=None):
+    """Daily medians then equal-weight daily statistics; never extrapolate gaps.
+
+    ``hydraulic_coverage_fraction`` retains the legacy definition over the observed
+    archive span.  Additional fields expose the denominator from the requested
+    cutoff back to commissioning (or an explicit scenario start), so a high
+    observed-span fraction cannot hide years of missing history.
+    """
     results = []
+    cutoff = None if cutoff is None else pd.Timestamp(cutoff)
+    commissioning = None if commissioning is None else pd.Timestamp(commissioning)
     for pid in pipe_ids:
         group = df[df.id.eq(pid)].copy()
         group['day'] = group.date.dt.normalize()
@@ -87,6 +95,27 @@ def hydraulic_summary(df, pipe_ids):
         span = (daily.index.max()-daily.index.min()).days+1 if len(daily) else 0
         record['hydraulic_coverage_fraction'] = len(daily)/span if span else np.nan
         record['hydraulic_max_gap_days'] = daily.index.to_series().diff().dt.days.max()
+        record['hydraulic_observed_days'] = int(len(daily))
+        if cutoff is not None:
+            record['hydraulic_latest_age_days'] = (
+                (cutoff - group.date.max()).total_seconds() / 86400
+                if len(group) else np.nan)
+        else:
+            record['hydraulic_latest_age_days'] = np.nan
+        start_candidates = [x for x in (window_start, commissioning) if x is not None]
+        expected_start = pd.Timestamp(min(start_candidates)) if start_candidates else None
+        if cutoff is not None and expected_start is not None and cutoff > expected_start:
+            expected_days = int((cutoff - expected_start).days)
+            record['hydraulic_window_start'] = expected_start
+            record['hydraulic_expected_days'] = expected_days
+            record['hydraulic_coverage_since_start'] = (
+                len(daily) / expected_days if expected_days > 0 else np.nan)
+            record['hydraulic_unobserved_days_since_start'] = max(0, expected_days - len(daily))
+        else:
+            record['hydraulic_window_start'] = expected_start
+            record['hydraulic_expected_days'] = np.nan
+            record['hydraulic_coverage_since_start'] = np.nan
+            record['hydraulic_unobserved_days_since_start'] = np.nan
         for field in HYDRAULIC_FEATURES:
             values = daily[field + '_usable']
             record[field + '_mean'] = values.mean()

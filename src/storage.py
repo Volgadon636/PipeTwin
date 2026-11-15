@@ -1,7 +1,9 @@
 """Deterministic persistence and semantic CSV/Parquet round-trip checks."""
+import csv
 import hashlib
 import json
 import shutil
+import tempfile
 from pathlib import Path
 
 import numpy as np
@@ -25,8 +27,10 @@ def validate_roundtrip(expected, actual, name):
             if not np.array_equal(left.astype('datetime64[ns]').astype('int64'), parsed.astype('datetime64[ns]').astype('int64')):
                 raise ValueError(f'{name}: date values changed in {col}')
         elif pd.api.types.is_bool_dtype(left):
-            values = right.astype('string').str.lower().map({'true':True, 'false':False})
-            if not np.array_equal(left.to_numpy(), values.to_numpy()):
+            values = right.astype('string').str.lower().map({'true': True, 'false': False}).astype('boolean')
+            left_values = left.astype('boolean')
+            equal = (left_values == values) | (left_values.isna() & values.isna())
+            if not bool(equal.fillna(False).all()):
                 raise ValueError(f'{name}: boolean values changed in {col}')
         elif pd.api.types.is_numeric_dtype(left):
             a = left.to_numpy(dtype=float, na_value=np.nan)
@@ -63,6 +67,71 @@ def save_table(df, stem):
 
 def sha256(path):
     return hashlib.sha256(Path(path).read_bytes()).hexdigest()
+
+
+def publish_tree(stage, destination, manifest_relative='reports/run_manifest.json'):
+    """Publish a staged tree with rollback; the manifest is written last.
+
+    Individual file replacement alone can leave a mixed-version dataset.  This
+    function backs up every destination it will touch, publishes non-manifest
+    files, then the manifest.  Any failure restores the previous complete tree.
+    """
+    stage, destination = Path(stage), Path(destination)
+    manifest = stage / manifest_relative
+    files = sorted(path for path in stage.rglob('*') if path.is_file())
+    if not files:
+        raise ValueError('Nothing to publish')
+    ordered = [path for path in files if path != manifest]
+    if manifest.is_file():
+        ordered.append(manifest)
+    destination.mkdir(parents=True, exist_ok=True)
+    backup_root = Path(tempfile.mkdtemp(prefix='.publish-backup-', dir=destination))
+    backups = {}
+    touched = []
+    try:
+        for source in ordered:
+            relative = source.relative_to(stage)
+            dest = destination / relative
+            if not dest.resolve().is_relative_to(destination.resolve()):
+                raise ValueError(f'Output escapes destination root: {dest}')
+            dest.parent.mkdir(parents=True, exist_ok=True)
+            touched.append(dest)
+            if dest.exists():
+                backup = backup_root / relative
+                backup.parent.mkdir(parents=True, exist_ok=True)
+                shutil.copy2(dest, backup)
+                backups[dest] = backup
+            publish_file(source, dest)
+    except Exception:
+        for dest in reversed(touched):
+            try:
+                if dest in backups:
+                    dest.parent.mkdir(parents=True, exist_ok=True)
+                    shutil.copy2(backups[dest], dest)
+                elif dest.exists():
+                    dest.unlink()
+            except OSError:
+                # Preserve the original exception; the caller sees an actionable
+                # failure and the backup directory remains on disk for recovery.
+                pass
+        raise
+    finally:
+        shutil.rmtree(backup_root, ignore_errors=True)
+
+
+def write_spreadsheet_safe_csv(df, path, max_rows=None):
+    """Write a separate text-safe export; analytical CSV/Parquet are unchanged."""
+    from .parsing import display_safe_text
+    path = Path(path)
+    path.parent.mkdir(parents=True, exist_ok=True)
+    frame = df.head(max_rows) if max_rows is not None else df
+    with path.open('w', encoding='utf-8', newline='') as fh:
+        writer = csv.writer(fh, lineterminator='\n')
+        writer.writerow([display_safe_text(c) for c in frame.columns])
+        for row in frame.itertuples(index=False, name=None):
+            writer.writerow([display_safe_text(v) for v in row])
+    return {'rows': len(frame), 'sha256': sha256(path),
+            'note': 'Spreadsheet-safe text export; not an analytical source.'}
 
 
 def publish_file(source, destination):

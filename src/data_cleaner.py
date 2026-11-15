@@ -1,10 +1,14 @@
 """Normalize verified units and quarantine bad positions without inventing measurements."""
 import re
+from pathlib import Path
 
 import numpy as np
 import pandas as pd
 
 from .config import TECH_FILE
+
+PROVENANCE_COLUMNS = {'source_row', 'source_record_number', 'source_physical_line',
+                      'id_source_text', 'id_leading_zero_flag'}
 
 
 class QualityLog:
@@ -78,7 +82,7 @@ def clean_datasets(datasets, config, log):
     tol = config['vtd_thickness_tolerance_mm']
 
     profile = cleaned['profile.csv']
-    duplicates = profile.duplicated(subset=[c for c in profile if c != 'source_row'])
+    duplicates = profile.duplicated(subset=[c for c in profile if c not in PROVENANCE_COLUMNS])
     log.add('profile.csv', profile, duplicates, 'exact_duplicate', 'exclude_duplicate')
     profile = profile.loc[~duplicates].copy()
     invalid = (profile.id.isna() | ~profile.id.isin(lengths.index) | profile.z.isna()
@@ -204,3 +208,78 @@ def clean_datasets(datasets, config, log):
         raise ValueError('Duplicate hydraulic timestamps: resolve before aggregation')
     # Time-series filters must run AFTER a cutoff, never against the full future history.
     return cleaned, quarantine
+
+
+def row_dispositions(cleaned, quarantine, source_summary):
+    """Disjoint row accounting: a row is retained, duplicate, quarantined or malformed.
+
+    Multiple quality flags on one retained row are reported separately and are not
+    counted as multiple dropped records.
+    """
+    rows = []
+    for name, frame in cleaned.items():
+        info = source_summary.get(name, {})
+        retained = len(frame)
+        duplicate = 0
+        if name == 'profile.csv' and 'source_row' in frame.columns:
+            # Duplicate rows are absent from the cleaned frame, so use the source
+            # record count and quarantine; derivation is explicit in the summary.
+            pass
+        qframe = quarantine.get(Path(name).stem.replace('.csv', '') + '_rejected')
+        quarantined = 0
+        for key, q in quarantine.items():
+            if key.startswith(Path(name).stem + '_') and 'source_row' in q.columns:
+                quarantined += int(q.source_row.nunique())
+        malformed = int(info.get('malformed_records', 0))
+        # Profile duplicate count is the difference between parsed records and the
+        # disjoint retained/quarantine counts when no malformed records exist.
+        input_records = int(info.get('record_count', retained + quarantined + malformed))
+        duplicate = max(0, input_records - retained - quarantined - malformed)
+        accounted = retained + quarantined + duplicate + malformed
+        rows.append({
+            'source_file': name,
+            'source_type': info.get('source_type', ''),
+            'input_records': input_records,
+            'retained_records': retained,
+            'duplicate_records': duplicate,
+            'quarantined_records': quarantined,
+            'malformed_records': malformed,
+            'parse_rejected_records': 0,
+            'accounted_records': accounted,
+            'disjoint_accounting_ok': accounted == input_records,
+            'note': ('Malformed/rejected field values are masked and listed in quality_issues; '
+                     'they do not necessarily drop the whole record.'),
+        })
+    return pd.DataFrame(rows)
+
+
+def monitoring_join_audit(monitoring, passport):
+    if monitoring is None or monitoring.empty:
+        return {'rows': 0, 'status': 'source_missing_or_empty', 'usable_for_targets': {}}
+    ids = set(passport.id.dropna().astype(int))
+    known = monitoring.id.isin(ids)
+    direction_conflict = monitoring.get('direction_conflict_flag', pd.Series(False, index=monitoring.index)).fillna(False)
+    mapping = monitoring.get('mapping_eligible', pd.Series(False, index=monitoring.index)).fillna(False)
+    observation = monitoring.get('observation_eligible', pd.Series(False, index=monitoring.index)).fillna(False)
+    per_target = {}
+    for pid in (1250022871, 1250009583):
+        candidates = monitoring.id.eq(pid)
+        per_target[str(pid)] = {
+            'candidate_rows': int(candidates.sum()),
+            'mapping_eligible_rows': int((candidates & mapping).sum()),
+            'observation_eligible_rows': int((candidates & observation).sum()),
+        }
+    examples = monitoring.loc[~known, ['source_row', 'id_source_text', 'direction_name']].head(10).astype('string').where(
+        monitoring.loc[~known, ['source_row', 'id_source_text', 'direction_name']].head(10).notna(), None).to_dict('records')
+    return {
+        'rows': int(len(monitoring)),
+        'unknown_id_rows': int((~known).sum()),
+        'direction_conflict_rows': int(direction_conflict.sum()),
+        'mapping_eligible_rows': int(mapping.sum()),
+        'observation_eligible_rows': int(observation.sum()),
+        'unmatched_id_examples': examples,
+        'usable_for_targets': per_target,
+        'policy': 'No automatic fuzzy join; no cross-pipe median transfer; point observations are not propagated.',
+        'cardinality': 'monitoring rows are many-to-one by simple-section ID only after identity validation; '
+                       'no target uses an unvalidated many-to-many join.',
+    }

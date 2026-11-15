@@ -10,12 +10,18 @@ from .temporal import hydraulic_asof, hydraulic_summary
 def map_vtd_to_segments(vtd, grid):
     df = assign_segments(vtd, 'distance', grid)
     # Optional audit flags: older callers may not provide them.
-    for optional in ('above_nominal_flag', 'above_local_wall_flag', 'nominal_unresolved_flag'):
+    for optional in ('above_nominal_flag', 'above_local_wall_flag', 'nominal_unresolved_flag',
+                     'residual_invalid_flag'):
         if optional not in df:
             df[optional] = False
+    if 'angle' not in df:
+        df['angle'] = np.nan
+    if 'residual_wall_thickness' not in df:
+        df['residual_wall_thickness'] = df.get('residual_for_target_mm', np.nan)
     result = df.groupby(['id', 'date', 'segment_id'], as_index=False).agg(
         observation_count=('source_row','size'),
         thickness_measurement_count=('residual_for_target_mm','count'),
+        eligible_observation_count=('residual_for_target_mm','count'),
         min_residual_thickness_mm=('residual_for_target_mm','min'),
         max_defect_depth_pct=('defect_depth_pct','max'),
         before_commissioning_flag=('before_commissioning_flag','any'),
@@ -25,6 +31,10 @@ def map_vtd_to_segments(vtd, grid):
         above_local_wall_flag=('above_local_wall_flag','any'),
         nominal_unresolved_flag=('nominal_unresolved_flag','any'),
         heldout_or_future_flag=('heldout_or_future_flag','any'),
+        above_nominal_observation_count=('above_nominal_flag', lambda x: int(x.fillna(False).sum())),
+        missing_residual_observation_count=('residual_wall_thickness', lambda x: int(x.isna().sum())),
+        residual_invalid_observation_count=('residual_invalid_flag', lambda x: int(x.fillna(False).sum())),
+        angle_available_count=('angle', 'count'),
     )
     result['target_eligible'] = (result.thickness_measurement_count.gt(0)
         & ~result.before_commissioning_flag & ~result.commissioning_unknown_flag
@@ -42,6 +52,7 @@ def map_uzt_to_segments(uzt, grid):
         eligible_measurement_count=('eligible_thickness_mm','count'),
         eligible_min_thickness_mm=('eligible_thickness_mm','min'),
         above_nominal_flag=('above_nominal_flag','any'),
+        above_nominal_measurement_count=('above_nominal_flag', lambda x: int(x.fillna(False).sum())),
     )
 
 
@@ -100,16 +111,24 @@ def build_features_asof(cleaned, grid, profile, vtd_history, uzt_history, reques
         static = cleaned['passport.csv'][STATIC_FEATURES+['history_date_conflict_flag']]
         target = target.merge(static, on='id', validate='many_to_one')
         target['age_years'] = (cutoff-target.commissioning_date).dt.total_seconds()/(86400*365.25)
-        target.loc[target.age_years.lt(0) | target.history_date_conflict_flag, 'age_years'] = np.nan
+        target['age_days'] = (cutoff-target.commissioning_date).dt.total_seconds()/86400
+        target.loc[target.age_years.lt(0) | target.history_date_conflict_flag, ['age_years', 'age_days']] = np.nan
+        # Explicit geometry assumption: outer diameter minus two nominal walls.
+        # It is a derived scenario input, not a measured internal diameter.
+        target['d_inner_assumed_mm'] = target.diameter_mm - 2*target.nominal_thickness_mm
+        target['d_inner_assumed_flag'] = True
 
         tech, tech_log = hydraulic_asof(cleaned[TECH_FILE], [pid], cutoff, config)
-        stats = hydraulic_summary(tech, [pid])
+        stats = hydraulic_summary(tech, [pid], cutoff=cutoff,
+                                  commissioning=target.commissioning_date.iloc[0])
         reg = grid[grid.id.eq(pid)].merge(stats, on='id', validate='many_to_one')
         reg['prediction_date'] = cutoff
         regimes.append(reg)
         quality.append(tech_log)
         hydraulic_rows.append(tech)
         target = target.merge(stats, on='id', validate='many_to_one')
+        target['water_fraction_mean'] = target.watercut_pct_mean / 100.0
+        target['water_fraction_valid_days'] = target.watercut_pct_valid_days
 
         monitor = map_monitoring_asof(cleaned['regime.csv'], pid, cutoff)
         monitor['prediction_date'] = cutoff
@@ -121,6 +140,20 @@ def build_features_asof(cleaned, grid, profile, vtd_history, uzt_history, reques
         uh = uzt_history[uzt_history.id.eq(pid) & uzt_history.date.lt(cutoff) & uzt_history.eligible_measurement_count.gt(0)]
         if case == 'cold_start':
             vh, uh = vh.iloc[:0], uh.iloc[:0]
+        # Candidate starting-state rule discussed in meeting 2: minimum over all
+        # eligible prior campaigns, kept separate from the latest-prior baseline.
+        if len(vh):
+            all_vh = vh.sort_values(['segment_id', 'date'])
+            prior_stats = all_vh.groupby(['id','segment_id'], as_index=False).agg(
+                prior_vtd_campaign_count=('date', 'nunique'),
+                prior_vtd_min_thickness_mm=('min_residual_thickness_mm', 'min'))
+            min_rows = (all_vh.sort_values(['segment_id', 'min_residual_thickness_mm', 'date'])
+                        .drop_duplicates(['id','segment_id'], keep='first')[['id','segment_id', 'date']]
+                        .rename(columns={'date': 'prior_vtd_min_date'}))
+            prior_stats = prior_stats.merge(min_rows, on=['id','segment_id'], how='left', validate='one_to_one')
+        else:
+            prior_stats = pd.DataFrame(columns=['id','segment_id', 'prior_vtd_campaign_count',
+                                                'prior_vtd_min_thickness_mm', 'prior_vtd_min_date'])
         vh = vh.sort_values('date').drop_duplicates(['id','segment_id'], keep='last')
         vh = vh[['id','segment_id','date','min_residual_thickness_mm']].rename(columns={
             'date':'last_vtd_date', 'min_residual_thickness_mm':'last_vtd_thickness_mm'})
@@ -128,9 +161,20 @@ def build_features_asof(cleaned, grid, profile, vtd_history, uzt_history, reques
         uh = uh[['id','segment_id','date','eligible_min_thickness_mm']].rename(columns={
             'date':'last_uzt_date', 'eligible_min_thickness_mm':'last_uzt_thickness_mm'})
         target = target.merge(vh, on=['id','segment_id'], how='left', validate='one_to_one')
+        target = target.merge(prior_stats, on=['id','segment_id'], how='left', validate='many_to_one')
+        if 'prior_vtd_campaign_count' in target:
+            target['prior_vtd_campaign_count'] = pd.to_numeric(
+                target['prior_vtd_campaign_count'], errors='coerce').astype('Int64')
+            target['prior_vtd_min_thickness_mm'] = pd.to_numeric(
+                target['prior_vtd_min_thickness_mm'], errors='coerce').astype('float64')
+            target['prior_vtd_min_date'] = pd.to_datetime(
+                target['prior_vtd_min_date'], errors='coerce').astype('datetime64[ns]')
         target = target.merge(uh, on=['id','segment_id'], how='left', validate='one_to_one')
         target['has_previous_vtd'] = target.last_vtd_thickness_mm.notna()
         target['years_since_vtd'] = (cutoff-target.last_vtd_date).dt.total_seconds()/(86400*365.25)
+        # This archive-wide diagnostic was used only to mask age; it is not a model
+        # feature because it can summarize records outside the cutoff.
+        target = target.drop(columns=['history_date_conflict_flag'], errors='ignore')
         # Missing past measurements stay missing; nominal thickness is already a separate feature.
         features.append(target)
     if not features:

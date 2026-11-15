@@ -1,0 +1,115 @@
+{
+  "version": "mentor-source-registry-v1",
+  "sources": [
+    {
+      "source_id": "SRC-M1-TRANSCRIPT",
+      "path": "docs/mentor/sources/SRC-M1-TRANSCRIPT.txt",
+      "doc_type": "meeting transcript/notes with speaker labels and timestamps",
+      "meeting_label": "mentor meeting 1",
+      "stated_meeting_date": null,
+      "participants": null,
+      "coverage": "partial transcript excerpt; speaker labels A-E; no explicit date or participant identities",
+      "limitations": "Date and participant list are not stated. The file is a transcript, not a verbatim complete recording verification. Speaker identities are unknown.",
+      "authority": "mentor discussion"
+    },
+    {
+      "source_id": "SRC-M1-SUMMARY",
+      "path": "docs/mentor/sources/SRC-M1-SUMMARY.md",
+      "doc_type": "team summary of meeting 1",
+      "meeting_label": "mentor meeting 1",
+      "stated_meeting_date": null,
+      "participants": null,
+      "coverage": "structured summary covering targets, metrics, cleaning, factors and follow-up",
+      "limitations": "Secondary evidence; date and participants not stated; later team/Telegram clarifications are mixed into the summary.",
+      "authority": "team summary with mentor statements"
+    },
+    {
+      "source_id": "SRC-M2-TRANSCRIPT",
+      "path": "docs/mentor/sources/SRC-M2-TRANSCRIPT.txt",
+      "doc_type": "meeting transcript/notes",
+      "meeting_label": "mentor meeting 2",
+      "stated_meeting_date": null,
+      "participants": null,
+      "coverage": "partial transcript covering temperature, inspection increases, simple sections, parser hypothesis and validation",
+      "limitations": "No date, participant list, speaker labels or timestamps. Speaker attribution is not explicit in the text.",
+      "authority": "mentor discussion"
+    },
+    {
+      "source_id": "SRC-M2-SUMMARY",
+      "path": "docs/mentor/sources/SRC-M2-SUMMARY.md",
+      "doc_type": "team summary of meeting 2",
+      "meeting_label": "mentor meeting 2",
+      "stated_meeting_date": null,
+      "participants": null,
+      "coverage": "structured summary of temperature, inspection-pair, simple-section and parsing discussions",
+      "limitations": "Secondary evidence; date and participants not stated. The summary references a recording that may be partial.",
+      "authority": "team summary with mentor statements"
+    },
+    {
+      "source_id": "SRC-M2-STRICT-REVIEW",
+      "path": "docs/mentor/sources/SRC-M2-STRICT-REVIEW.md",
+      "doc_type": "team strict review / working decision note",
+      "meeting_label": "mentor meeting 2 follow-up",
+      "stated_meeting_date": null,
+      "participants": null,
+      "coverage": "selected minimum-of-inspections rule, nominal-wall filter, heat-loss equation and implementation questions",
+      "limitations": "Team-authored interpretation; the screenshot with the heat-loss equation is not included. It is not a verbatim mentor transcript.",
+      "authority": "team implementation note grounded in meeting 2"
+    },
+    {
+      "source_id": "SRC-CLEANING-RULES",
+      "path": "docs/mentor/sources/SRC-CLEANING-RULES.md",
+      "doc_type": "team cleaning-rule document",
+      "meeting_label": "implementation follow-up",
+      "stated_meeting_date": null,
+      "participants": null,
+      "coverage": "implemented cleaning decisions, flags and unresolved questions",
+      "limitations": "Internal implementation document, secondary evidence. A reference to a second meeting is not proof that a complete transcript exists.",
+      "authority": "team implementation policy"
+    },
+    {
+      "source_id": "SRC-TECH-SPEC",
+      "path": "agent/PipeTwin_ML_Technical_Specification_EN.md",
+      "doc_type": "technical specification",
+      "meeting_label": "formal technical handoff",
+      "stated_meeting_date": null,
+      "participants": null,
+      "coverage": "formal target, scenarios, validation, metric and export contract",
+      "limitations": "Specification is not the organizer's hidden test contract; it records the reviewed repository and formal case requirements.",
+      "authority": "formal technical specification"
+    },
+    {
+      "source_id": "SRC-CASE-PDF",
+      "path": "pdfs/Кейс_хакатона_прогноз_деградации_трубопроводов_на_согл.pdf",
+      "doc_type": "case description PDF",
+      "meeting_label": "organizer case",
+      "stated_meeting_date": null,
+      "participants": null,
+      "coverage": "case statement and submission requirements",
+      "limitations": "Text extraction from the supplied PDF lost glyphs in this environment; the formal contract is cross-checked against the technical specification and team summary. PDF hash is retained.",
+      "authority": "organizer formal case"
+    },
+    {
+      "source_id": "SRC-CRITERIA-PDF",
+      "path": "pdfs/Критерии оценивания Nedra Digital PipeTwin.pdf",
+      "doc_type": "evaluation criteria PDF",
+      "meeting_label": "organizer evaluation",
+      "stated_meeting_date": null,
+      "participants": null,
+      "coverage": "evaluation criteria and bonus materials",
+      "limitations": "Text extraction lost glyphs; criteria are represented through the technical specification and summary. PDF hash is retained.",
+      "authority": "organizer formal criteria"
+    },
+    {
+      "source_id": "SRC-PAOT-PDF",
+      "path": "pdfs/ПАОТ для понимания.pdf",
+      "doc_type": "domain reference PDF",
+      "meeting_label": "domain reference",
+      "stated_meeting_date": null,
+      "participants": null,
+      "coverage": "candidate corrosion factors and data sources",
+      "limitations": "Candidate list only; it does not prove that each field exists or is usable in the supplied archive.",
+      "authority": "domain reference"
+    }
+  ]
+}

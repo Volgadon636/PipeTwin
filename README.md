@@ -66,6 +66,53 @@ validated hidden-test score, calibrated intervals, or a proven spatial ranking.
 The document lists the open mentor questions, including whether the dense
 2022→2023 campaign may be used for S1 calibration.
 
+## Ingestion v2: evidence, adapters and audits
+
+The parser/ingestion layer was extended without changing the scientific model or
+the public `build_features_asof` interface.  The target remains the measured
+minimum residual wall thickness in mm per 10 m segment; `result.csv` remains the
+exact three-column export.
+
+```bash
+python -m src.data_prep --inspect-only
+python -m src.data_prep --output-root scratch/verified_run
+python -m src.mentor_ingest --output docs/mentor
+python scripts/calculate_segment_temperature.py \
+  --features scratch/verified_run/processed/target_features.csv \
+  --output-root scratch/temperature_scenario --sensitivity
+```
+
+Key additions:
+
+- Semantic source IDs (`passport`, `profile`, `vtd`, `uzt`, `hydraulic_regime`,
+  `corrosion_monitoring`, `submission_template`) selected by schema fingerprints,
+  not filenames.  The legacy key `regime.csv` still means **corrosion monitoring**;
+  Techmod is a separate `hydraulic_regime` source.  Conflicting copies fail and
+  require an explicit `source_overrides` entry.
+- Loss-aware parsing: UTF-8/BOM and Windows-1251, scored delimiter detection,
+  duplicate header detection, exact integer IDs, per-value date parsing,
+  ambiguous slash-date quarantine, decimal comma / thousands / NBSP policy,
+  censored values such as `<0.1` (never coerced to zero) and malformed-record
+  quarantine with logical record references.
+- `reports/source_inventory.json`, `reports/schema_mapping.json`,
+  `reports/feature_inventory.csv` (every supplied field), `reports/row_reconciliation.json`,
+  `reports/join_audit.json`, `reports/leakage_audit.json`, `reports/lineage.json`,
+  `reports/template_validation.json` and `reports/run_manifest.json`.
+- `processed/rejected_records.*`, `processed/lineage_keys.*`, and a separate
+  spreadsheet-safe quality export.  Raw source bytes remain immutable.
+- A separate `temperature_scenarios.*` artifact; the verified grid is never
+  mutated with scenario `delta_t_c`.
+- Mentor ingestion stores source hashes/revisions, verbatim locators, accepted
+  decisions/requirements/questions/actions and generated follow-up drafts.  It
+  does not send messages or assume unsupplied recordings.
+- Evaluation now reports signed Pearson r, Pearson squared, separate R2, MAE,
+  RMSE, bias, MAPE with the existing near-zero suppression policy, an explicitly
+  labelled eligible-subset MAPE, and top-fraction overlap with tie disclosure.
+
+If no authoritative `sample_result.csv` exists, validation explicitly uses the
+**derived target grid**.  A file named `sample_result.csv` is not treated as a
+template unless its contents are exactly `id,segment_id,thickness_pred`.
+
 ## Запуск
 
 Проверено на Python 3.13. Точные версии зависимостей записаны в `requirements.txt`. Случайных операций в подготовке нет.
@@ -156,9 +203,19 @@ python -m src.data_prep --as-of 2022-07-06 --ids 1250022871 --case between_vtd -
 | processed/quality_issues.* | Строки источников, правила и действия при нормализации |
 | processed/*_rejected.* | Карантин позиций/ключей без потери исходной записи |
 | processed/pipes_summary.* | Фактическое покрытие по ID |
+| processed/rejected_records.* | Единый аудит карантина/malformed/дублей с исходной ссылкой |
+| processed/lineage_keys.* | Source-row ranges и lineage ID для каждой целевой строки |
+| reports/source_inventory.json | Роль, путь, SHA-256, схема и ограничения источника |
+| reports/schema_mapping.json | Сырые→канонические поля, версии адаптеров и drift |
+| reports/feature_inventory.csv | Статус каждого исходного и производного поля |
+| reports/leakage_audit.json | Cutoff, cold start, диагностические поля и мониторинг |
+| reports/template_validation.json | Проверка шаблона или явная проверка по производной сетке |
+| reports/lineage.json | Агрегаты, правила и source references |
 | reports/data_quality.md | Читаемый отчёт, предупреждения и покрытие |
 | reports/validation.json | Выполненные проверки |
-| reports/run_manifest.json | Входные хэши, конфигурация, версии, схемы, хэши результатов |
+| reports/run_manifest.json | Входные хэши, конфигурация, версии, схемы, runtime, хэши результатов |
+| docs/mentor/* | Решения, вопросы, действия и follow-up drafts |
+| docs/ingestion_v2_verification.md | Наблюдаемые результаты проверки v2 |
 
 Каждая таблица сохраняется в CSV и Parquet. CSV использует точку, UTF-8 и пустое поле для пропуска. Все пары проверяются после сохранения. Служебные журналы не являются признаками модели.
 
@@ -166,16 +223,28 @@ python -m src.data_prep --as-of 2022-07-06 --ids 1250022871 --case between_vtd -
 
 ```text
 configs/preprocessing.json   целевые ID/T и явные параметры качества
-src/config.py                схемы, имена источников и белый список признаков
-src/format_detector.py       чтение, типизация, происхождение строк
-src/data_cleaner.py          нормализация, флаги, карантин
+src/config.py                legacy-схемы, имена источников и белый список признаков
+src/source_registry.py       семантические типы, fingerprint-классификация, конфликты копий
+src/schema_registry.py       версии схем и полный инвентарь полей/признаков
+src/parsing.py               loss-aware чтение, ID/даты/числа и карантин
+src/format_detector.py       адаптеры, совместимое чтение и происхождение строк
+src/data_cleaner.py          нормализация, флаги, карантин и row dispositions
+src/units.py                 явные правила единиц и неразрешённые единицы
 src/grid_builder.py          сетка и пограничные координаты
-src/temporal.py              отсечение, три календарных дня, суточные агрегаты
-src/segment_mapper.py        измеренные минимумы и признаки на дату
-src/storage.py               CSV/Parquet и проверка сохранения
+src/temporal.py              отсечение, три календарных дня, покрытие окон
+src/segment_mapper.py        измеренные минимумы, prior-inspection min и признаки на дату
+src/quality.py               schema drift, row reconciliation, join/coverage отчёты
+src/leakage.py               аудит cutoff, cold start и диагностических полей
+src/lineage.py               feature/source lineage без копирования строк
+src/cache.py                 content-addressed cache keys
+src/fluid.py                 Reynolds только при явной вязкости
+src/heat_transfer.py         изолированный steady-state тепловой сценарий
+src/mentor_ingest.py         решения/вопросы/действия и follow-up drafts
+src/storage.py               CSV/Parquet, rollback-safe publish_tree
 src/validator.py             проверки содержимого и покрытия
 src/data_prep.py             общий запуск и публикация проверенных файлов
 tests/test_preprocessing.py  регрессионные и интеграционные тесты
+tests/test_ingestion.py      новые контракты ingestion/mentor/metrics/export
 ```
 
 Для воспроизводимости повторный запуск с одинаковыми входами, конфигурацией и версиями должен давать те же CSV/Parquet. Изменение даты T требует нового расчёта признаков, а не фильтра уже усреднённой таблицы.

@@ -1,0 +1,226 @@
+{
+  "sources": [
+    {
+      "authority": "mentor discussion",
+      "coverage": "partial transcript excerpt; speaker labels A-E; no explicit date or participant identities",
+      "doc_type": "meeting transcript/notes with speaker labels and timestamps",
+      "exists": true,
+      "limitations": "Date and participant list are not stated. The file is a transcript, not a verbatim complete recording verification. Speaker identities are unknown.",
+      "meeting_label": "mentor meeting 1",
+      "participants": null,
+      "path": "C:\\Users\\Honor\\Desktop\\PipeTwin\\docs\\mentor\\sources\\SRC-M1-TRANSCRIPT.txt",
+      "revision_paths": [
+        "docs\\mentor\\revisions\\SRC-M1-TRANSCRIPT\\16e5e32acda7b133.txt"
+      ],
+      "sha256": "16e5e32acda7b133fffd13ef3bf5f29cf41b231ad83967e375042b7e70aab6ae",
+      "size_bytes": 49402,
+      "source_id": "SRC-M1-TRANSCRIPT",
+      "stated_meeting_date": null,
+      "text_available": true,
+      "unknown_metadata": [
+        "stated_meeting_date",
+        "participants"
+      ]
+    },
+    {
+      "authority": "team summary with mentor statements",
+      "coverage": "structured summary covering targets, metrics, cleaning, factors and follow-up",
+      "doc_type": "team summary of meeting 1",
+      "exists": true,
+      "limitations": "Secondary evidence; date and participants not stated; later team/Telegram clarifications are mixed into the summary.",
+      "meeting_label": "mentor meeting 1",
+      "participants": null,
+      "path": "C:\\Users\\Honor\\Desktop\\PipeTwin\\docs\\mentor\\sources\\SRC-M1-SUMMARY.md",
+      "revision_paths": [
+        "docs\\mentor\\revisions\\SRC-M1-SUMMARY\\d2aa099c3369fec7.md"
+      ],
+      "sha256": "d2aa099c3369fec7572ac90b7c7fca268cef2b13c6bf7ee18f5c7c39a9691f46",
+      "size_bytes": 21791,
+      "source_id": "SRC-M1-SUMMARY",
+      "stated_meeting_date": null,
+      "text_available": true,
+      "unknown_metadata": [
+        "stated_meeting_date",
+        "participants"
+      ]
+    },
+    {
+      "authority": "mentor discussion",
+      "coverage": "partial transcript covering temperature, inspection increases, simple sections, parser hypothesis and validation",
+      "doc_type": "meeting transcript/notes",
+      "exists": true,
+      "limitations": "No date, participant list, speaker labels or timestamps. Speaker attribution is not explicit in the text.",
+      "meeting_label": "mentor meeting 2",
+      "participants": null,
+      "path": "C:\\Users\\Honor\\Desktop\\PipeTwin\\docs\\mentor\\sources\\SRC-M2-TRANSCRIPT.txt",
+      "revision_paths": [
+        "docs\\mentor\\revisions\\SRC-M2-TRANSCRIPT\\7c2451b72f4b06b4.txt"
+      ],
+      "sha256": "7c2451b72f4b06b449a6332c792e3ce8505478616f5b06d4c3abbc8d6777f692",
+      "size_bytes": 12592,
+      "source_id": "SRC-M2-TRANSCRIPT",
+      "stated_meeting_date": null,
+      "text_available": true,
+      "unknown_metadata": [
+        "stated_meeting_date",
+        "participants"
+      ]
+    },
+    {
+      "authority": "team summary with mentor statements",
+      "coverage": "structured summary of temperature, inspection-pair, simple-section and parsing discussions",
+      "doc_type": "team summary of meeting 2",
+      "exists": true,
+      "limitations": "Secondary evidence; date and participants not stated. The summary references a recording that may be partial.",
+      "meeting_label": "mentor meeting 2",
+      "participants": null,
+      "path": "C:\\Users\\Honor\\Desktop\\PipeTwin\\docs\\mentor\\sources\\SRC-M2-SUMMARY.md",
+      "revision_paths": [
+        "docs\\mentor\\revisions\\SRC-M2-SUMMARY\\2c53da092786a084.md"
+      ],
+      "sha256": "2c53da092786a084f1ed096cf5057c844802604ac42cfc6c58494303f6feae8d",
+      "size_bytes": 14177,
+      "source_id": "SRC-M2-SUMMARY",
+      "stated_meeting_date": null,
+      "text_available": true,
+      "unknown_metadata": [
+        "stated_meeting_date",
+        "participants"
+      ]
+    },
+    {
+      "authority": "team implementation note grounded in meeting 2",
+      "coverage": "selected minimum-of-inspections rule, nominal-wall filter, heat-loss equation and implementation questions",
+      "doc_type": "team strict review / working decision note",
+      "exists": true,
+      "limitations": "Team-authored interpretation; the screenshot with the heat-loss equation is not included. It is not a verbatim mentor transcript.",
+      "meeting_label": "mentor meeting 2 follow-up",
+      "participants": null,
+      "path": "C:\\Users\\Honor\\Desktop\\PipeTwin\\docs\\mentor\\sources\\SRC-M2-STRICT-REVIEW.md",
+      "revision_paths": [
+        "docs\\mentor\\revisions\\SRC-M2-STRICT-REVIEW\\cd712c9aac208cf2.md"
+      ],
+      "sha256": "cd712c9aac208cf2d0044fd39ad3c5bcb041198473a7cd6cf4b5a1d429d4077c",
+      "size_bytes": 5368,
+      "source_id": "SRC-M2-STRICT-REVIEW",
+      "stated_meeting_date": null,
+      "text_available": true,
+      "unknown_metadata": [
+        "stated_meeting_date",
+        "participants"
+      ]
+    },
+    {
+      "authority": "team implementation policy",
+      "coverage": "implemented cleaning decisions, flags and unresolved questions",
+      "doc_type": "team cleaning-rule document",
+      "exists": true,
+      "limitations": "Internal implementation document, secondary evidence. A reference to a second meeting is not proof that a complete transcript exists.",
+      "meeting_label": "implementation follow-up",
+      "participants": null,
+      "path": "C:\\Users\\Honor\\Desktop\\PipeTwin\\docs\\mentor\\sources\\SRC-CLEANING-RULES.md",
+      "revision_paths": [
+        "docs\\mentor\\revisions\\SRC-CLEANING-RULES\\b95d962eadd37dc7.md"
+      ],
+      "sha256": "b95d962eadd37dc705069f8d4f34d0115e3f97cd14d46f9b4d862dda384c6b6b",
+      "size_bytes": 9718,
+      "source_id": "SRC-CLEANING-RULES",
+      "stated_meeting_date": null,
+      "text_available": true,
+      "unknown_metadata": [
+        "stated_meeting_date",
+        "participants"
+      ]
+    },
+    {
+      "authority": "formal technical specification",
+      "coverage": "formal target, scenarios, validation, metric and export contract",
+      "doc_type": "technical specification",
+      "exists": true,
+      "limitations": "Specification is not the organizer's hidden test contract; it records the reviewed repository and formal case requirements.",
+      "meeting_label": "formal technical handoff",
+      "participants": null,
+      "path": "C:\\Users\\Honor\\Desktop\\PipeTwin\\agent\\PipeTwin_ML_Technical_Specification_EN.md",
+      "revision_paths": [
+        "docs\\mentor\\revisions\\SRC-TECH-SPEC\\bb88e6101a1ea291.md"
+      ],
+      "sha256": "bb88e6101a1ea2918998f6f5afdaa464abb8ecc30ecf9f0d319de1853449eec4",
+      "size_bytes": 54228,
+      "source_id": "SRC-TECH-SPEC",
+      "stated_meeting_date": null,
+      "text_available": true,
+      "unknown_metadata": [
+        "stated_meeting_date",
+        "participants"
+      ]
+    },
+    {
+      "authority": "organizer formal case",
+      "coverage": "case statement and submission requirements",
+      "doc_type": "case description PDF",
+      "exists": true,
+      "limitations": "Text extraction from the supplied PDF lost glyphs in this environment; the formal contract is cross-checked against the technical specification and team summary. PDF hash is retained.",
+      "meeting_label": "organizer case",
+      "participants": null,
+      "path": "C:\\Users\\Honor\\Desktop\\PipeTwin\\pdfs\\Кейс_хакатона_прогноз_деградации_трубопроводов_на_согл.pdf",
+      "revision_paths": [
+        null
+      ],
+      "sha256": "502fddd7c2c705a880cb3ef2f5636cd1ca985326a79d165df481d2cc815fe1c1",
+      "size_bytes": 185569,
+      "source_id": "SRC-CASE-PDF",
+      "stated_meeting_date": null,
+      "text_available": false,
+      "unknown_metadata": [
+        "stated_meeting_date",
+        "participants"
+      ]
+    },
+    {
+      "authority": "organizer formal criteria",
+      "coverage": "evaluation criteria and bonus materials",
+      "doc_type": "evaluation criteria PDF",
+      "exists": true,
+      "limitations": "Text extraction lost glyphs; criteria are represented through the technical specification and summary. PDF hash is retained.",
+      "meeting_label": "organizer evaluation",
+      "participants": null,
+      "path": "C:\\Users\\Honor\\Desktop\\PipeTwin\\pdfs\\Критерии оценивания Nedra Digital PipeTwin.pdf",
+      "revision_paths": [
+        null
+      ],
+      "sha256": "2e8a5614597d12de5e4fecfe1f0e6d6281598bf6319416479cdc8faef6d2716f",
+      "size_bytes": 187029,
+      "source_id": "SRC-CRITERIA-PDF",
+      "stated_meeting_date": null,
+      "text_available": false,
+      "unknown_metadata": [
+        "stated_meeting_date",
+        "participants"
+      ]
+    },
+    {
+      "authority": "domain reference",
+      "coverage": "candidate corrosion factors and data sources",
+      "doc_type": "domain reference PDF",
+      "exists": true,
+      "limitations": "Candidate list only; it does not prove that each field exists or is usable in the supplied archive.",
+      "meeting_label": "domain reference",
+      "participants": null,
+      "path": "C:\\Users\\Honor\\Desktop\\PipeTwin\\pdfs\\ПАОТ для понимания.pdf",
+      "revision_paths": [
+        null
+      ],
+      "sha256": "f8e0c0202728c36989577c96f4e3774c6b1c5f6e3479f1cb4e2f27f47127adee",
+      "size_bytes": 496887,
+      "source_id": "SRC-PAOT-PDF",
+      "stated_meeting_date": null,
+      "text_available": false,
+      "unknown_metadata": [
+        "stated_meeting_date",
+        "participants"
+      ]
+    }
+  ],
+  "unknown_metadata_policy": "Meeting dates and participant lists stay null when the source does not state them.",
+  "version": "mentor-source-inventory-v1"
+}

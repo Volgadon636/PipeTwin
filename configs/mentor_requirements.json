@@ -1,0 +1,630 @@
+{
+  "version": "mentor-requirements-v1",
+  "decisions": [
+    {
+      "id": "DEC-0001",
+      "source_id": "SRC-M1-SUMMARY",
+      "excerpt": "Цель работы — построить прогноз **минимальной остаточной толщины стенки трубопровода**",
+      "statement": "The scientific target is minimum residual wall thickness in millimetres per 10 m segment; defect depth or nominal thickness is not the target.",
+      "topic": "target",
+      "evidence_type": "team summary of mentor meeting 1",
+      "authority": "organizer/mentor",
+      "status": "verified",
+      "affected_component": "target definition; segment_mapper; evaluation",
+      "implementation_reference": "src/data_cleaner.py::residual_validity; src/segment_mapper.py::map_vtd_to_segments",
+      "test_reference": "tests/test_preprocessing.py::test_original_measured_minimum; tests/test_preprocessing.py::test_target_is_measured_residual_not_nominal_formula",
+      "unresolved_question_ids": [
+        "Q-0001"
+      ],
+      "supersedes_id": null
+    },
+    {
+      "id": "DEC-0002",
+      "source_id": "SRC-M1-SUMMARY",
+      "excerpt": "Использовать поле **Distance**; **Distance Raw** не использовать.",
+      "statement": "Use VTD Distance for spatial alignment; Distance_raw is retained but not substituted.",
+      "topic": "spatial alignment",
+      "evidence_type": "mentor summary",
+      "authority": "mentor",
+      "status": "verified",
+      "affected_component": "VTD adapter; segment mapping",
+      "implementation_reference": "src/config.py::CANONICAL_COL_MAPPINGS; src/segment_mapper.py::map_vtd_to_segments",
+      "test_reference": "tests/test_preprocessing.py::test_bad_coordinates_quarantined_not_clipped",
+      "unresolved_question_ids": [
+        "Q-0011"
+      ],
+      "supersedes_id": null
+    },
+    {
+      "id": "DEC-0003",
+      "source_id": "SRC-M1-SUMMARY",
+      "excerpt": "Если аномальное значение сохраняется **3 дня**, его оставляют.",
+      "statement": "A persistent soft anomaly may be retained only after at least three distinct consecutive observed calendar days before cutoff; physical impossibility is never rescued by persistence.",
+      "topic": "temporal quality",
+      "evidence_type": "mentor summary",
+      "authority": "mentor",
+      "status": "verified",
+      "affected_component": "hydraulic temporal filters",
+      "implementation_reference": "src/temporal.py::persistent_calendar_days; src/temporal.py::hydraulic_asof",
+      "test_reference": "tests/test_preprocessing.py::test_three_calendar_days_not_three_rows; tests/test_preprocessing.py::test_impossible_quantities_not_rescued_by_persistence",
+      "unresolved_question_ids": [],
+      "supersedes_id": null
+    },
+    {
+      "id": "DEC-0004",
+      "source_id": "SRC-M1-SUMMARY",
+      "excerpt": "**Techmod** — технологический режим. **Rep core / Ripcore** — физико-химические свойства",
+      "statement": "Techmod/hydraulic regime and RepCorr/corrosion monitoring are distinct semantic sources; the legacy filename regime.csv means monitoring, not Techmod.",
+      "topic": "source identity",
+      "evidence_type": "mentor summary plus repository code",
+      "authority": "mentor/repository contract",
+      "status": "verified",
+      "affected_component": "source registry; adapters; config",
+      "implementation_reference": "src/source_registry.py::discover_sources; src/source_registry.py::classify_headers",
+      "test_reference": "tests/test_ingestion.py::SourceClassificationTests",
+      "unresolved_question_ids": [
+        "Q-0003"
+      ],
+      "supersedes_id": null
+    },
+    {
+      "id": "DEC-0005",
+      "source_id": "SRC-M1-SUMMARY",
+      "excerpt": "Полные ID и даты с учетом последнего уточнения команды: **1250022871 — 01.12.2023**, **1250009583 — 01.07.2022**",
+      "statement": "Production requests are pipe 1250022871 at 2023-12-01 (between VTD) and pipe 1250009583 at 2022-07-01 (cold start), subject to verification.",
+      "topic": "requests",
+      "evidence_type": "team summary with later team clarification",
+      "authority": "organizer/team",
+      "status": "verified",
+      "affected_component": "configs/preprocessing.json; target grid",
+      "implementation_reference": "configs/preprocessing.json::targets",
+      "test_reference": "tests/test_preprocessing.py::test_target_grid_exact_keys",
+      "unresolved_question_ids": [
+        "Q-0008",
+        "Q-0009"
+      ],
+      "supersedes_id": null
+    },
+    {
+      "id": "DEC-0006",
+      "source_id": "SRC-M1-SUMMARY",
+      "excerpt": "Это не обязательно то же самое, что коэффициент детерминации R²: рассчитывать и обозначать их раздельно.",
+      "statement": "Pearson squared (correlation squared) and R2 are distinct metrics; report signed Pearson r and explain inverse rankings. MAE/RMSE/MAPE are separate.",
+      "topic": "metrics",
+      "evidence_type": "mentor summary and organizer case",
+      "authority": "organizer",
+      "status": "verified",
+      "affected_component": "evaluation",
+      "implementation_reference": "src/ml/evaluation.py::metrics",
+      "test_reference": "tests/test_ml.py::test_pearson_square_is_not_r2; tests/test_ingestion.py::MetricTests",
+      "unresolved_question_ids": [],
+      "supersedes_id": null
+    },
+    {
+      "id": "DEC-0007",
+      "source_id": "SRC-M1-SUMMARY",
+      "excerpt": "Осадок можно не учитывать.",
+      "statement": "Do not add a speculative sediment-protection model; retain supplied sediment-related observations archivally if present.",
+      "topic": "scope",
+      "evidence_type": "mentor summary",
+      "authority": "mentor",
+      "status": "confirmed",
+      "affected_component": "feature scope",
+      "implementation_reference": "docs/cleaning_rules.md; reports/feature_inventory.csv",
+      "test_reference": "tests/test_ingestion.py::FeatureInventoryTests",
+      "unresolved_question_ids": [],
+      "supersedes_id": null
+    },
+    {
+      "id": "DEC-0008",
+      "source_id": "SRC-M1-SUMMARY",
+      "excerpt": "Для трубы **1250022871** оценить состояние на **01.12.2023**, для **1250009583** — на **01.07.2022**.",
+      "statement": "Produce a separate UZT inspection-priority table for both pipes; it is not part of the three-column submission.",
+      "topic": "output",
+      "evidence_type": "mentor summary and organizer criteria",
+      "authority": "organizer/team",
+      "status": "verified",
+      "affected_component": "submission/priority export",
+      "implementation_reference": "src/ml/submission.py::risk_ranking; src/ml/submission.py::uzt_priority_table",
+      "test_reference": "tests/test_ml.py::test_cold_constant_ranking_discloses_ties; tests/test_ingestion.py::ExportTests",
+      "unresolved_question_ids": [
+        "Q-0006"
+      ],
+      "supersedes_id": null
+    },
+    {
+      "id": "DEC-0009",
+      "source_id": "SRC-M2-STRICT-REVIEW",
+      "excerpt": "Exclude a candidate from the segment-minimum calculation if its residual thickness is greater than that nominal value.",
+      "statement": "Apply the passport-nominal ceiling to each VTD observation before segment minima; keep excluded records for audit. The current tolerance is 0.02 mm, a repository policy not a universal instrument specification.",
+      "topic": "measurement eligibility",
+      "evidence_type": "team working filter documented after meeting 2",
+      "authority": "team policy grounded in mentor discussion",
+      "status": "verified",
+      "affected_component": "VTD cleaning; labels",
+      "implementation_reference": "src/data_cleaner.py::residual_validity; configs/preprocessing.json::vtd_thickness_tolerance_mm",
+      "test_reference": "tests/test_preprocessing.py::test_residual_above_passport_nominal_is_not_a_candidate; tests/test_preprocessing.py::test_segment_with_only_above_nominal_observations_is_missing",
+      "unresolved_question_ids": [
+        "Q-0005",
+        "Q-0006"
+      ],
+      "supersedes_id": null
+    },
+    {
+      "id": "DEC-0010",
+      "source_id": "SRC-M2-TRANSCRIPT",
+      "excerpt": "Есть сущности простые участки, с ними и работайте.",
+      "statement": "Build and forecast by simple-section IDs; do not make parent pipeline or direction mandatory predictors solely because of passport hierarchy.",
+      "topic": "scope/grouping",
+      "evidence_type": "mentor transcript",
+      "authority": "mentor",
+      "status": "confirmed",
+      "affected_component": "features; validation grouping",
+      "implementation_reference": "src/segment_mapper.py::build_features_asof; src/schema_registry.py",
+      "test_reference": "tests/test_ingestion.py::FeatureInventoryTests",
+      "unresolved_question_ids": [
+        "Q-0009"
+      ],
+      "supersedes_id": null
+    },
+    {
+      "id": "DEC-0011",
+      "source_id": "SRC-M2-TRANSCRIPT",
+      "excerpt": "То есть углы не трогаем, короче",
+      "statement": "Do not use circumferential angle to match, filter or model defects in the current solution.",
+      "topic": "feature eligibility",
+      "evidence_type": "mentor transcript",
+      "authority": "mentor",
+      "status": "confirmed",
+      "affected_component": "feature inventory; VTD/UZT",
+      "implementation_reference": "src/schema_registry.py (angle status); src/segment_mapper.py",
+      "test_reference": "tests/test_ingestion.py::FeatureInventoryTests",
+      "unresolved_question_ids": [
+        "Q-0012"
+      ],
+      "supersedes_id": null
+    },
+    {
+      "id": "DEC-0012",
+      "source_id": "SRC-M2-STRICT-REVIEW",
+      "excerpt": "For each 10 m segment, use the smallest residual wall thickness from the 2018 and 2022 inspections of that same segment",
+      "statement": "Offer a prior-inspection minimum starting-state feature (over eligible prior campaigns) as a candidate; compare it with the latest-available-inspection baseline and do not let a future inspection enter an earlier cutoff.",
+      "topic": "initial condition",
+      "evidence_type": "team-selected approach after mentor discussion",
+      "authority": "team implementation choice",
+      "status": "verified",
+      "affected_component": "as-of features; model baseline",
+      "implementation_reference": "src/segment_mapper.py::build_features_asof (prior_vtd_min_thickness_mm)",
+      "test_reference": "tests/test_ingestion.py::AsOfTests::test_prior_inspection_min_available_before_cutoff",
+      "unresolved_question_ids": [
+        "Q-0013"
+      ],
+      "supersedes_id": null
+    },
+    {
+      "id": "DEC-0013",
+      "source_id": "SRC-M2-STRICT-REVIEW",
+      "excerpt": "T(x) = T_ground + (T_in - T_ground) * exp[-π * U * (d - 2ε) * x / (ṁ * c_p)]",
+      "statement": "A steady-state heat-loss scenario may be built with the supplied equation structure, but parameter values, ground temperature, flow basis and area basis must be declared; it is not a calibrated measurement.",
+      "topic": "thermal scenario",
+      "evidence_type": "strict review quoting a mentor screenshot",
+      "authority": "mentor formula, team assumptions",
+      "status": "blocked",
+      "affected_component": "scenario artifact; features",
+      "implementation_reference": "src/heat_transfer.py; scripts/calculate_segment_temperature.py",
+      "test_reference": "tests/test_ingestion.py::PhysicsTests",
+      "unresolved_question_ids": [
+        "Q-0002",
+        "Q-0010"
+      ],
+      "supersedes_id": null
+    },
+    {
+      "id": "DEC-0014",
+      "source_id": "SRC-M2-TRANSCRIPT",
+      "excerpt": "Попробуй оставить",
+      "statement": "The suggestion to try zero activation energy is an experiment, not confirmation that zero is physically correct or optimal.",
+      "topic": "model experiment",
+      "evidence_type": "mentor transcript",
+      "authority": "mentor",
+      "status": "proposed",
+      "affected_component": "model experiments",
+      "implementation_reference": "not implemented as a scientific truth; model v2 keeps explicit priors",
+      "test_reference": "docs/model_v2.md",
+      "unresolved_question_ids": [
+        "Q-0010"
+      ],
+      "supersedes_id": null
+    },
+    {
+      "id": "DEC-0015",
+      "source_id": "SRC-M2-STRICT-REVIEW",
+      "excerpt": "**We do not use circumferential angle** to match, filter or model defects.",
+      "statement": "Do not establish defect identity by angle before choosing a starting-state rule; retain 177 observed increases in underlying records.",
+      "topic": "inspection differences",
+      "evidence_type": "team strict review",
+      "authority": "team policy grounded in mentor discussion",
+      "status": "confirmed",
+      "affected_component": "VTD audit; features",
+      "implementation_reference": "reports/vtd_pair_full_analysis; src/schema_registry.py",
+      "test_reference": "tests/test_ingestion.py::FeatureInventoryTests",
+      "unresolved_question_ids": [
+        "Q-0011",
+        "Q-0012"
+      ],
+      "supersedes_id": null
+    }
+  ],
+  "requirements": [
+    {
+      "id": "REQ-0001",
+      "statement": "Write exactly id,segment_id,thickness_pred; one unique finite numeric mm prediction per requested segment; no extra index or diagnostic columns.",
+      "status": "verified",
+      "source_id": "SRC-TECH-SPEC",
+      "excerpt": "Use UTF-8, comma delimiters, decimal point, finite values, no duplicates, no NaN",
+      "evidence_type": "technical specification",
+      "affected_component": "submission export",
+      "implementation_reference": "src/ml/submission.py::validate_submission; src/ml/submission.py::export_result",
+      "test_reference": "tests/test_ml.py::test_submission_rejects_duplicate_extra_missing_and_nonfinite; tests/test_ingestion.py::ExportTests",
+      "unresolved_question_ids": [
+        "Q-0001"
+      ],
+      "supersedes_id": null,
+      "decision_id": "DEC-0008"
+    },
+    {
+      "id": "REQ-0002",
+      "statement": "The forecast target is minimum residual wall thickness in millimetres, not defect depth, nominal wall, corrosion rate or a unitless score.",
+      "status": "verified",
+      "source_id": "SRC-TECH-SPEC",
+      "excerpt": "Forecast **minimum remaining wall thickness in millimeters**",
+      "evidence_type": "technical specification",
+      "affected_component": "target definition",
+      "implementation_reference": "src/segment_mapper.py::map_vtd_to_segments",
+      "test_reference": "tests/test_preprocessing.py::test_original_measured_minimum",
+      "unresolved_question_ids": [
+        "Q-0001"
+      ],
+      "supersedes_id": null,
+      "decision_id": "DEC-0001"
+    },
+    {
+      "id": "REQ-0003",
+      "statement": "Keep the UZT inspection-priority table separate from result.csv.",
+      "status": "verified",
+      "source_id": "SRC-TECH-SPEC",
+      "excerpt": "A supplementary risk report may rank the thinnest segments for ultrasonic follow-up, but must be separate.",
+      "evidence_type": "technical specification",
+      "affected_component": "priority export",
+      "implementation_reference": "src/ml/submission.py::uzt_priority_table",
+      "test_reference": "tests/test_ingestion.py::ExportTests",
+      "unresolved_question_ids": [
+        "Q-0006"
+      ],
+      "supersedes_id": null,
+      "decision_id": "DEC-0008"
+    },
+    {
+      "id": "REQ-0004",
+      "statement": "Report Pearson correlation squared, signed Pearson r, separate R2, MAE, RMSE, bias and MAPE with explicit undefined/near-zero policy.",
+      "status": "verified",
+      "source_id": "SRC-TECH-SPEC",
+      "excerpt": "Additional required/recommended metrics: `MAE_mm`, `RMSE_mm`, signed bias",
+      "evidence_type": "technical specification",
+      "affected_component": "evaluation",
+      "implementation_reference": "src/ml/evaluation.py::metrics",
+      "test_reference": "tests/test_ingestion.py::MetricTests",
+      "unresolved_question_ids": [],
+      "supersedes_id": null,
+      "decision_id": "DEC-0006"
+    },
+    {
+      "id": "REQ-0005",
+      "statement": "Apply time eligibility before persistence, aggregation, imputation or feature selection; timestamp < prediction date at 00:00.",
+      "status": "verified",
+      "source_id": "SRC-CLEANING-RULES",
+      "excerpt": "Фильтр до T выполняется до временной очистки и агрегации",
+      "evidence_type": "team cleaning document",
+      "affected_component": "temporal features",
+      "implementation_reference": "src/temporal.py::hydraulic_asof; src/segment_mapper.py::build_features_asof",
+      "test_reference": "tests/test_preprocessing.py::test_future_injection_cannot_change_features; tests/test_preprocessing.py::test_third_future_day_does_not_validate_two_day_anomaly",
+      "unresolved_question_ids": [
+        "Q-0008"
+      ],
+      "supersedes_id": null,
+      "decision_id": "DEC-0003"
+    },
+    {
+      "id": "REQ-0006",
+      "statement": "Cold start excludes target-pipe VTD/UZT-derived inputs even if present in the archive.",
+      "status": "verified",
+      "source_id": "SRC-CLEANING-RULES",
+      "excerpt": "Холодный старт исключает историю ВТД и УЗТ независимо от того, присутствует ли она в архиве.",
+      "evidence_type": "team cleaning document",
+      "affected_component": "as-of features",
+      "implementation_reference": "src/segment_mapper.py::build_features_asof",
+      "test_reference": "tests/test_preprocessing.py::test_cold_start_excludes_diagnostic_history",
+      "unresolved_question_ids": [
+        "Q-0009"
+      ],
+      "supersedes_id": null,
+      "decision_id": "DEC-0005"
+    },
+    {
+      "id": "REQ-0007",
+      "statement": "Preserve source bytes and publish only after checks; source changes during a run fail the run.",
+      "status": "verified",
+      "source_id": "SRC-TECH-SPEC",
+      "excerpt": "No user data appears in the header example intentionally",
+      "evidence_type": "technical specification",
+      "affected_component": "storage/manifest",
+      "implementation_reference": "src/data_prep.py; src/storage.py::publish_tree",
+      "test_reference": "tests/test_ingestion.py::PublicationTests",
+      "unresolved_question_ids": [],
+      "supersedes_id": null,
+      "decision_id": null
+    },
+    {
+      "id": "REQ-0008",
+      "statement": "Account explicitly for every supplied field and every rejected/masked value; preserve unknown archival columns.",
+      "status": "verified",
+      "source_id": "SRC-TECH-SPEC",
+      "excerpt": "Raw-to-canonical name warning",
+      "evidence_type": "technical specification",
+      "affected_component": "schema registry; quality reports",
+      "implementation_reference": "src/schema_registry.py::build_feature_inventory; src/quality.py",
+      "test_reference": "tests/test_ingestion.py::FeatureInventoryTests",
+      "unresolved_question_ids": [],
+      "supersedes_id": null,
+      "decision_id": null
+    }
+  ],
+  "open_questions": [
+    {
+      "id": "Q-0001",
+      "question": "Is an authoritative submission grid/template available, and what is the endpoint rule for the final incomplete segment?",
+      "status": "open",
+      "source_id": "SRC-M1-SUMMARY",
+      "excerpt": "Как обрабатывать последнюю неполную секцию трубы и измерения точно на конечной границе",
+      "evidence_type": "summary open question",
+      "affected_component": "target grid; template validation",
+      "needed_evidence": "Organizer-provided sample_result/template or written endpoint rule",
+      "decision_unlocked": "DEC-0005 / REQ-0001",
+      "priority": "correctness"
+    },
+    {
+      "id": "Q-0002",
+      "question": "What are the exact units and physical basis of pressure, viscosity, q/q_oil/q_gas, d_mm, t_mix, CO2 and inhibitor measurements?",
+      "status": "open",
+      "source_id": "SRC-M1-SUMMARY",
+      "excerpt": "Какое точное имя поля остаточной толщины в выгрузке и как трактовать неоднозначные процентные значения?",
+      "evidence_type": "summary open question plus observed data scales",
+      "affected_component": "units; derived physics",
+      "needed_evidence": "Field dictionary or instrument/export documentation with units and reference conditions",
+      "decision_unlocked": "DEC-0013; Reynolds/thermal eligibility",
+      "priority": "correctness"
+    },
+    {
+      "id": "Q-0003",
+      "question": "Are CO2, КВЧ/mechanical impurities and inhibitor fields concentrations, fractions, doses or scores, and at what timestamp/reference condition?",
+      "status": "open",
+      "source_id": "SRC-M1-TRANSCRIPT",
+      "excerpt": "В Ripcore упоминались **CO₂, минерализация и ПАЖ**",
+      "evidence_type": "mentor summary",
+      "affected_component": "monitoring/chemistry features",
+      "needed_evidence": "Measurement method, units, sampling point and availability time",
+      "decision_unlocked": "chemistry feature use",
+      "priority": "correctness"
+    },
+    {
+      "id": "Q-0004",
+      "question": "Can you provide the historical RepCorr ID/direction crosswalk with effective dates? The current join rejects 412 unknown IDs and 83 direction conflicts and has zero usable target records.",
+      "status": "open",
+      "source_id": "SRC-CLEANING-RULES",
+      "excerpt": "Мониторинг с конфликтом ID/направления",
+      "evidence_type": "team cleaning document with freshly recomputed counts",
+      "affected_component": "monitoring join",
+      "needed_evidence": "Authoritative ID/direction mapping with validity intervals; approved spatial/temporal transfer policy",
+      "decision_unlocked": "monitoring integration",
+      "priority": "correctness"
+    },
+    {
+      "id": "Q-0005",
+      "question": "Why are UZT thicknesses above passport nominal, and are they measured on a different wall reference or method?",
+      "status": "open",
+      "source_id": "SRC-M1-TRANSCRIPT",
+      "excerpt": "В УЗД тоже есть какие-то изменения, где написано просто, что там паспортная толщина стенок трубы от 5 до 8, а там 11 написано.",
+      "evidence_type": "mentor transcript",
+      "affected_component": "UZT eligibility",
+      "needed_evidence": "UZT method, calibration block, measurement location and wall reference",
+      "decision_unlocked": "UZT feature/label policy",
+      "priority": "correctness"
+    },
+    {
+      "id": "Q-0006",
+      "question": "What critical/rejection thickness and ranking policy applies at the forecast date?",
+      "status": "open",
+      "source_id": "SRC-M1-SUMMARY",
+      "excerpt": "Какой критерий критичности использовать для отбора участков на УЗТ",
+      "evidence_type": "summary open question",
+      "affected_component": "UZT priority; threshold",
+      "needed_evidence": "Approved critical thickness formula or explicit statement that none is provided",
+      "decision_unlocked": "priority reason/threshold",
+      "priority": "evaluation"
+    },
+    {
+      "id": "Q-0007",
+      "question": "Is there repair/replacement history, and how does it reset segment history?",
+      "status": "open",
+      "source_id": "SRC-M1-SUMMARY",
+      "excerpt": "Ремонты могут менять историю деградации участка.",
+      "evidence_type": "mentor transcript",
+      "affected_component": "passport/VTD history; labels",
+      "needed_evidence": "Dated repair/replacement records with intervals",
+      "decision_unlocked": "history reset/segmentation",
+      "priority": "correctness"
+    },
+    {
+      "id": "Q-0008",
+      "question": "Are same-day 2023-12-01 diagnostics allowed? The current conservative cutoff excludes the entire day.",
+      "status": "open",
+      "source_id": "SRC-CLEANING-RULES",
+      "excerpt": "Время ВТД внутри дня, поэтому день T исключён целиком",
+      "evidence_type": "team cleaning policy",
+      "affected_component": "cutoff",
+      "needed_evidence": "Observation time and organizer rule for same-day measurements",
+      "decision_unlocked": "cutoff change only after review",
+      "priority": "correctness"
+    },
+    {
+      "id": "Q-0009",
+      "question": "What is the train/test role of 1250009583, and which cold-start calibration evidence is permitted?",
+      "status": "open",
+      "source_id": "SRC-M1-SUMMARY",
+      "excerpt": "В разговоре неоднозначно обсуждалась принадлежность объекта **1250009583** к train/test",
+      "evidence_type": "summary open question",
+      "affected_component": "validation; cold start",
+      "needed_evidence": "Organizer split file or explicit statement",
+      "decision_unlocked": "cold-start training policy",
+      "priority": "evaluation"
+    },
+    {
+      "id": "Q-0010",
+      "question": "What measured ground temperature/thermal properties and flow basis should be used, or is a temperature scenario desired at all?",
+      "status": "open",
+      "source_id": "SRC-M2-STRICT-REVIEW",
+      "excerpt": "Numerical values and units for roughness, heat capacity and the heat-transfer coefficient, and whether 5 °C is the intended ground-temperature assumption.",
+      "evidence_type": "strict review implementation questions",
+      "affected_component": "thermal scenario",
+      "needed_evidence": "Measured/declared parameters and applicability range",
+      "decision_unlocked": "DEC-0013",
+      "priority": "improvement"
+    },
+    {
+      "id": "Q-0011",
+      "question": "Are campaign detection and apparent thickening complete, or are there missing/extra observations and repairs?",
+      "status": "open",
+      "source_id": "SRC-M2-SUMMARY",
+      "excerpt": "Ментор отметил, что стенка сама по себе не срастается",
+      "evidence_type": "mentor transcript",
+      "affected_component": "VTD labels; campaign comparability",
+      "needed_evidence": "Campaign coverage, tool calibration and repair records",
+      "decision_unlocked": "thickening interpretation",
+      "priority": "evaluation"
+    },
+    {
+      "id": "Q-0012",
+      "question": "How should defect coordinates/identities be matched across VTD campaigns, if at all?",
+      "status": "open",
+      "source_id": "SRC-M2-TRANSCRIPT",
+      "excerpt": "это же другой участок, то есть 18-й год это угол 67 градусов, 22-й год 181 градус",
+      "evidence_type": "mentor transcript",
+      "affected_component": "VTD features",
+      "needed_evidence": "Defect start/centre convention, tool orientation and matching tolerance",
+      "decision_unlocked": "defect-level features",
+      "priority": "improvement"
+    },
+    {
+      "id": "Q-0013",
+      "question": "Should the starting state use the minimum of the 2018 and 2022 inspections or the latest available inspection? The team selected minimum; prove it on identical splits.",
+      "status": "open",
+      "source_id": "SRC-M2-STRICT-REVIEW",
+      "excerpt": "Compare it against the latest-available-inspection baseline on appropriate historical tests.",
+      "evidence_type": "team strict review",
+      "affected_component": "baseline; model comparison",
+      "needed_evidence": "Paired forward-time comparison with pre-cutoff features",
+      "decision_unlocked": "DEC-0012",
+      "priority": "evaluation"
+    }
+  ],
+  "actions": [
+    {
+      "id": "ACT-0001",
+      "statement": "Recompute source and target counts from verified lengths and segmentation rules; do not force 2,000 rows.",
+      "status": "implemented",
+      "source_id": "SRC-TECH-SPEC",
+      "excerpt": "Expected present configuration: 525 + 1,475 = **2,000 lines of data**",
+      "owner": null,
+      "due_date": null,
+      "dependency": null,
+      "implementation_reference": "src/grid_builder.py; src/data_prep.py"
+    },
+    {
+      "id": "ACT-0002",
+      "statement": "Re-run source parsing comparison on concrete raw rows and record real parser defects separately from ambiguous measurements.",
+      "status": "implemented",
+      "source_id": "SRC-M2-TRANSCRIPT",
+      "excerpt": "надо, конечно, сделать заново парсинг с нормальной версией парсера",
+      "owner": null,
+      "due_date": null,
+      "dependency": null,
+      "implementation_reference": "reports/source_inventory.json; reports/schema_mapping.json; tests/test_ingestion.py"
+    },
+    {
+      "id": "ACT-0003",
+      "statement": "Compare minimum-of-prior-inspections and latest-prior-inspection baselines on the same forward-time splits.",
+      "status": "blocked",
+      "source_id": "SRC-M2-STRICT-REVIEW",
+      "excerpt": "Compare it against the latest-available-inspection baseline",
+      "owner": null,
+      "due_date": null,
+      "dependency": "Q-0013; eligible independent folds",
+      "implementation_reference": "src/ml/windows.py; future experiment"
+    },
+    {
+      "id": "ACT-0004",
+      "statement": "Request the heat-loss formula parameters/units and the ground-temperature evidence.",
+      "status": "open",
+      "source_id": "SRC-M2-STRICT-REVIEW",
+      "excerpt": "Numerical values and units for roughness, heat capacity and the heat-transfer coefficient",
+      "owner": null,
+      "due_date": null,
+      "dependency": "Q-0010",
+      "implementation_reference": "docs/mentor/follow_up.md"
+    },
+    {
+      "id": "ACT-0005",
+      "statement": "Request the RepCorr ID/direction crosswalk and approved transfer policy.",
+      "status": "open",
+      "source_id": "SRC-CLEANING-RULES",
+      "excerpt": "Нужна подтверждённая таблица соответствий",
+      "owner": null,
+      "due_date": null,
+      "dependency": "Q-0004",
+      "implementation_reference": "docs/mentor/follow_up.md"
+    },
+    {
+      "id": "ACT-0006",
+      "statement": "Publish a separate UZT priority table and keep result.csv to three columns.",
+      "status": "implemented",
+      "source_id": "SRC-M1-SUMMARY",
+      "excerpt": "Полный `result.csv` по-прежнему содержит **все сегменты обеих труб** и только три обязательные колонки.",
+      "owner": null,
+      "due_date": null,
+      "dependency": null,
+      "implementation_reference": "src/ml/submission.py"
+    },
+    {
+      "id": "ACT-0007",
+      "statement": "Do not fit or select on the final validation labels; compare the baseline, baseline plus temperature scenario, and additional agreed features on identical splits.",
+      "status": "blocked",
+      "source_id": "SRC-M2-STRICT-REVIEW",
+      "excerpt": "Build features at the simple-section and 10 m segment level. Do not add angle features or defect matching.",
+      "owner": null,
+      "due_date": null,
+      "dependency": "Q-0009; Q-0010",
+      "implementation_reference": "src/ml/experiment_v2.py"
+    },
+    {
+      "id": "ACT-0008",
+      "statement": "Generate follow-up drafts locally; do not send messages or schedule calls without explicit authorization.",
+      "status": "implemented",
+      "source_id": "SRC-M2-STRICT-REVIEW",
+      "excerpt": "The team can continue preparing data and validation while these values are clarified.",
+      "owner": null,
+      "due_date": null,
+      "dependency": null,
+      "implementation_reference": "src/mentor_ingest.py"
+    }
+  ]
+}
