@@ -90,6 +90,26 @@ pipe-out spatial transfer, not a forward-time forecast. It lowers MAE but also
 lowers Pearson r²; this is saved as a negative/limited result, not promoted as
 a proven improvement. S2 stays unchanged from the explicit v2 `result.csv`.
 
+## Next cycle: S1 diagnostics and strict S2 candidates
+
+The next cycle adds a consistent regenerated preprocessing tree, a limited S1
+diagnostic set (last-baseline Ridge, rate, CatBoost, weight/block ablations) and
+strict-as-of S2 cold-start candidates (constant, physics priors, spatial,
+temperature-scenario and CatBoost). It deliberately keeps S1A as the S1 default
+and physics priors as the S2 default because no candidate improves both level
+and spatial signal. See [docs/next_cycle.md](docs/next_cycle.md).
+
+```bash
+python -m src.data_prep --output-root experiments/next_cycle/data_generation
+python -m src.ml.next_s1 train --root . --data-root experiments/next_cycle/data_generation --output-root experiments/next_cycle/s1
+python -m src.ml.next_s2 train --root . --data-root experiments/next_cycle/data_generation --output-root experiments/next_cycle/s2
+python -m src.ml.next_compare --root . --output-root experiments/next_cycle --s1-candidate s1a --s2-candidate physics_priors
+```
+
+Artifacts: `experiments/next_cycle/` (OOF, folds, metrics, artifacts, figures,
+explicit assembly). The old production result is not overwritten and nothing is
+pushed.
+
 ## Ingestion v2: evidence, adapters and audits
 
 The parser/ingestion layer was extended without changing the scientific model or
