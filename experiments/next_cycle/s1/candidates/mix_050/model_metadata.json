@@ -1,0 +1,8 @@
+{
+  "lambda": 0.5,
+  "model_type": "posthoc_mixture",
+  "note": "Not a separately trained model; lambda applied to ridge_geometry OOF/full delta.",
+  "source_artifact": "C:\\Users\\Администратор\\Documents\\PipeTwin_next\\experiments\\next_cycle\\s1\\candidates\\ridge_geometry\\model_artifact.joblib",
+  "source_artifact_sha256": "26f27ff81c88e73b44d8f43bd2a817ebd9fa538d8456fa93f010c9fc0e0b55da",
+  "source_model": "ridge_geometry"
+}

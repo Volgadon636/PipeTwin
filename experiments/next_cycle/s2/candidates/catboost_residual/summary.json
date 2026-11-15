@@ -1,0 +1,28 @@
+{
+  "artifact_path": "C:\\Users\\Администратор\\Documents\\PipeTwin_next\\experiments\\next_cycle\\s2\\candidates\\catboost_residual\\model_artifact.joblib",
+  "artifact_sha256": "af1307335025478b9a1c4170e5a9c6ce4ebd1832ddcedf852b404d5a92f5c23a",
+  "candidate": "catboost_residual",
+  "finite": true,
+  "max_mm": 3.038614809915905,
+  "mean_mm": 2.82680550947846,
+  "min_mm": 2.649096330359519,
+  "model_type": "S2_physics_spatial",
+  "rows": 1475,
+  "s1_max_abs_diff": 0.0,
+  "s1_reference": "S1B from repro_s1abc/s1b",
+  "std_mm": 0.07330566034807008,
+  "validation": {
+    "bounded": true,
+    "finite_mm": true,
+    "rows": 2000,
+    "template": {
+      "available": false,
+      "key_set_compared": false,
+      "status": "no_template_supplied",
+      "validation_grid": "derived_target_grid"
+    },
+    "unique_keys": true,
+    "upper_bound_column": "upper_mm"
+  },
+  "within_bounds": true
+}

@@ -1,0 +1,244 @@
+{
+  "policy": "Schema fingerprint decides meaning; filenames are hints. Conflicting copies fail closed.",
+  "sources": [
+    {
+      "adapter_version": "adapter-passport-1",
+      "delimiter": ",",
+      "display_name": "passport",
+      "encoding": "utf-8",
+      "filename_hints": [
+        "passport.csv"
+      ],
+      "filename_schema_conflict": false,
+      "limitations": [],
+      "optional_fields": [
+        "steel_grade",
+        "internal_coating",
+        "commissioning_date",
+        "main_pipeline_id",
+        "direction_id",
+        "direction_name",
+        "pipeline_name",
+        "length_accounting_m",
+        "scrap_wall_thickness_mm"
+      ],
+      "path": "C:\\Users\\Администратор\\Documents\\PipeTwin_next\\data\\passport.csv",
+      "record_count": 16,
+      "record_count_summary": 16,
+      "required_fields": [
+        "id",
+        "length_km",
+        "diameter_mm",
+        "nominal_thickness_mm"
+      ],
+      "role": "input",
+      "schema_fingerprint": "3c23361b75656e2c6a7a31d8f57d6f10373c59f1f06ebfb5709810f5a3e24592",
+      "schema_version": "passport-v1",
+      "selected": true,
+      "sha256": "c613a97a4e3d8b33e3ef2357caa98dd5fd6dbedefc8f52c8fa28a80ea29bf9e8",
+      "size_bytes": 88948,
+      "source_type": "passport"
+    },
+    {
+      "adapter_version": "adapter-profile-1",
+      "delimiter": ",",
+      "display_name": "route profile",
+      "encoding": "utf-8",
+      "filename_hints": [
+        "profile.csv"
+      ],
+      "filename_schema_conflict": false,
+      "limitations": [],
+      "optional_fields": [
+        "lon",
+        "lat"
+      ],
+      "path": "C:\\Users\\Администратор\\Documents\\PipeTwin_next\\data\\profile.csv",
+      "record_count": 20218,
+      "record_count_summary": 20218,
+      "required_fields": [
+        "id",
+        "total_distance",
+        "z"
+      ],
+      "role": "input",
+      "schema_fingerprint": "78c9989d4901c84676e07a54c4b18fdb6edb0c7b54e59f2797fa970a86bc2991",
+      "schema_version": "profile-v1",
+      "selected": true,
+      "sha256": "2b3f5d05d34fff4ff066e9c3da9d47ad5bed0323de08be94b4ab4c06f967947c",
+      "size_bytes": 1196159,
+      "source_type": "profile"
+    },
+    {
+      "adapter_version": "adapter-vtd-1",
+      "delimiter": ",",
+      "display_name": "VTD in-line inspection",
+      "encoding": "utf-8",
+      "filename_hints": [
+        "vtd.csv"
+      ],
+      "filename_schema_conflict": false,
+      "limitations": [],
+      "optional_fields": [
+        "row_id",
+        "distance_raw",
+        "wall_thickness",
+        "defect_depth_pct",
+        "defect_depth",
+        "angle",
+        "defect_length",
+        "defect_width",
+        "defect_type",
+        "section_number",
+        "feature_number"
+      ],
+      "path": "C:\\Users\\Администратор\\Documents\\PipeTwin_next\\data\\vtd.csv",
+      "record_count": 48291,
+      "record_count_summary": 48291,
+      "required_fields": [
+        "id",
+        "date",
+        "distance",
+        "residual_wall_thickness"
+      ],
+      "role": "input",
+      "schema_fingerprint": "165d6f7e8f7fd3e5d4e6e4be7c7222b3887260d196c4925cedfb6fb78d7e1b73",
+      "schema_version": "vtd-v1",
+      "selected": true,
+      "sha256": "e4cae76524ea06e44bf5e315f99786f655cebc5fe8206871da4fb70ef8f687b2",
+      "size_bytes": 21268674,
+      "source_type": "vtd"
+    },
+    {
+      "adapter_version": "adapter-uzt-1",
+      "delimiter": ",",
+      "display_name": "UZT ultrasonic measurements",
+      "encoding": "utf-8",
+      "filename_hints": [
+        "uzt.csv"
+      ],
+      "filename_schema_conflict": false,
+      "limitations": [],
+      "optional_fields": [
+        "control_section_num",
+        "start_distance",
+        "control_point_id",
+        "point_num",
+        "measurement_id",
+        "angle"
+      ],
+      "path": "C:\\Users\\Администратор\\Documents\\PipeTwin_next\\data\\uzt.csv",
+      "record_count": 67,
+      "record_count_summary": 67,
+      "required_fields": [
+        "id",
+        "date",
+        "distance",
+        "residual_wall_thickness"
+      ],
+      "role": "input",
+      "schema_fingerprint": "6574dbfc018e0292067362ca52cf930b2073cde47bb9fb88508c1c61fda7271a",
+      "schema_version": "uzt-v1",
+      "selected": true,
+      "sha256": "25187e44c134a2bbf157471e03f0c8d37178796d062af4e613dd6a0f4e9a42b9",
+      "size_bytes": 4411,
+      "source_type": "uzt"
+    },
+    {
+      "adapter_version": "adapter-hydraulic-1",
+      "delimiter": ",",
+      "display_name": "technology/hydraulic regime (Techmod)",
+      "encoding": "utf-8",
+      "filename_hints": [
+        "tech_mode_for_embedings_with_length_with_temperatures_ids16.csv"
+      ],
+      "filename_schema_conflict": false,
+      "limitations": [],
+      "optional_fields": [
+        "p_start_fact",
+        "p_end_fact",
+        "p_start",
+        "p_end",
+        "q_oil",
+        "q_gas",
+        "gas_content_rate",
+        "v_liquid_true",
+        "v_mix",
+        "flow_regime",
+        "fill_coefficient",
+        "density_liquid_work",
+        "density_oil",
+        "viscosity_liquid_work",
+        "pit_corrosion_intensity",
+        "length",
+        "diameter_mm",
+        "t_start",
+        "t_end",
+        "t_mix"
+      ],
+      "path": "C:\\Users\\Администратор\\Documents\\PipeTwin_next\\data\\tech_mode_for_embedings_with_length_with_temperatures_ids16.csv",
+      "record_count": 39052,
+      "record_count_summary": 39052,
+      "required_fields": [
+        "id",
+        "date",
+        "q_liquid",
+        "watercut_pct"
+      ],
+      "role": "input",
+      "schema_fingerprint": "bca9fa6dbab574c72b0393f7693db95487fd19956d9fe06ecc2d0448243302b5",
+      "schema_version": "hydraulic-v1",
+      "selected": true,
+      "sha256": "560ba4c56429ae07969385a161e9d1b9665399af728e6d29f66d6e26cb227134",
+      "size_bytes": 6837673,
+      "source_type": "hydraulic_regime"
+    },
+    {
+      "adapter_version": "adapter-monitoring-1",
+      "delimiter": ",",
+      "display_name": "corrosion/chemistry monitoring (RepCorr)",
+      "encoding": "utf-8",
+      "filename_hints": [
+        "regime.csv"
+      ],
+      "filename_schema_conflict": true,
+      "limitations": [],
+      "optional_fields": [
+        "year",
+        "sample_installation_date",
+        "sample_removal_date",
+        "ukk_number",
+        "ukk_distance",
+        "length",
+        "diameter",
+        "wall_thickness",
+        "flow_liquid",
+        "watercut_pct",
+        "exposure_days",
+        "direction_name",
+        "fluid_density",
+        "protective_effect_pct",
+        "ph",
+        "co2_water",
+        "total_mineralization"
+      ],
+      "path": "C:\\Users\\Администратор\\Documents\\PipeTwin_next\\data\\regime.csv",
+      "record_count": 495,
+      "record_count_summary": 495,
+      "required_fields": [
+        "id"
+      ],
+      "role": "input",
+      "schema_fingerprint": "263e8242574baa1ddae2adbfec6752381b9db9157fec9112c2f1e24bbf4f511f",
+      "schema_version": "monitoring-v1",
+      "selected": true,
+      "sha256": "1c17535b437b0ea036330db1996d04f7e0a4792b555b249b02d57f4e593f2dbf",
+      "size_bytes": 218509,
+      "source_type": "corrosion_monitoring"
+    }
+  ],
+  "version": "source-inventory-v2",
+  "warnings": [
+    "filename/schema conflict: regime.csv looks like corrosion_monitoring by contents; filename also appears in another source's alias list"
+  ]
+}

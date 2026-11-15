@@ -1,0 +1,28 @@
+{
+  "artifact_path": "C:\\Users\\Администратор\\Documents\\PipeTwin_next\\experiments\\next_cycle\\s2\\candidates\\physics_spatial\\model_artifact.joblib",
+  "artifact_sha256": "e37d518aaf74204afcba697e6be0f6fc90210fe2e79954b520961cc6842bb2cd",
+  "candidate": "physics_spatial",
+  "finite": true,
+  "max_mm": 3.7935945412477783,
+  "mean_mm": 2.8142829365845707,
+  "min_mm": 2.008576191832326,
+  "model_type": "S2_physics_spatial",
+  "rows": 1475,
+  "s1_max_abs_diff": 0.0,
+  "s1_reference": "S1B from repro_s1abc/s1b",
+  "std_mm": 0.14609923307451528,
+  "validation": {
+    "bounded": true,
+    "finite_mm": true,
+    "rows": 2000,
+    "template": {
+      "available": false,
+      "key_set_compared": false,
+      "status": "no_template_supplied",
+      "validation_grid": "derived_target_grid"
+    },
+    "unique_keys": true,
+    "upper_bound_column": "upper_mm"
+  },
+  "within_bounds": true
+}

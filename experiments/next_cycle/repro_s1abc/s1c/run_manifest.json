@@ -1,0 +1,406 @@
+{
+  "artifact_version": "s1c-ridge-v1",
+  "code_sha256": {},
+  "contract_version": "s1abc-v1",
+  "finished_utc": "2026-11-15T17:15:48+00:00",
+  "git": {
+    "branch": "next-cycle",
+    "commit": "855da1853cc2e4e2017d2d6401ccada28ae48d9f",
+    "dirty": true,
+    "status_porcelain": [
+      "M src/ml/s1_stages.py",
+      "?? experiments/next_cycle/"
+    ],
+    "status_porcelain_tracked": [
+      "M src/ml/s1_stages.py"
+    ],
+    "tracked_dirty": true
+  },
+  "input_sha256": {
+    "C:\\Users\\Администратор\\Documents\\PipeTwin_next\\experiments\\ml_v2\\result.csv": "79ba544232d4d34ed33609ef2fc352d9c39edb49b6a118470f63f11fb0e25f05",
+    "C:\\Users\\Администратор\\Documents\\PipeTwin_next\\experiments\\next_cycle\\repro_s1abc\\s1c\\model_artifact.joblib": "e998606bc75b97ff9b88360b0d6a11a10dfefa466090abfa7ca3afbe61ae83cf",
+    "configs/preprocessing.json": "64669ba69e237bf00a38af5148ad6f801c89b31f12377d37ac0e00b6e6bdbb0c",
+    "data/cleaned/passport.csv": "4d5245d8a7702cba3f739538726325972db1afc44e36df956200725b879a01ab",
+    "data/cleaned/regime.csv": "65e53ebe1a154c5a7a3b6fa5806f1d8e83122c985e1049f38162e316eb95cb79",
+    "data/cleaned/tech_mode_for_embedings_with_length_with_temperatures_ids16.csv": "a0e58cf2deb665f5c99efc71416edeed68c33334d865ceee1f566a8df031ebfd",
+    "processed/profile_by_segment.csv": "3e4b4994a3f3da4fa04c403dcac85bf4484ca9feca68103665db6cc39f2d04ca",
+    "processed/segments_grid.csv": "55cce38f655fc47eaabf2255d4e74e31e6d81f774f95df40f47f23adcfeb48a3",
+    "processed/target_features.csv": "1ff33a4842b63f9b255afb189bb36676d202b5ebaacca9c925d18885abbac767",
+    "processed/uzt_by_segment.csv": "aed45ba93f914f2f4d66f02c31d4b144cd865d69bfc6113a94f1fb1689e364ef",
+    "processed/vtd_by_segment.csv": "ab6e17e9f5f286b884b5a3f47ef9109061ccf55c880f961f2cc5c149fd7ccc5e",
+    "reports/run_manifest.json": "eba9d43c1cf5da4b1148d89e34ad5d922eac4f8752c0c4a790bf9b0f93a4c72b"
+  },
+  "metrics_summary_md_sha256": "dc60f9b7e542064ae69bb28c50a1fb98826727898eaac6fd8987d1bf88387d01",
+  "metrics_summary_path": "C:\\Users\\Администратор\\Documents\\PipeTwin_next\\experiments\\next_cycle\\repro_s1abc\\s1c\\metrics_summary.csv",
+  "metrics_summary_sha256": "396e617378f520955fb0e2112bf1b9c94ff534dba2f7358e9ad8388c034fc018",
+  "output_root": "C:\\Users\\Администратор\\Documents\\PipeTwin_next\\experiments\\next_cycle\\repro_s1abc\\s1c",
+  "outputs_sha256": {
+    "comparison_production.csv": "94d8d1993204e45229a1913ed0778d0d2112fa8644017c877e7b2d6772ab1b11",
+    "coverage.json": "685e980018b4bc04998155097e96bcf517efbd6afed9807949d3bccc811c0985",
+    "exclusion_counts.json": "1a659483c6a5a8f32f55912c0832dba3997bc698a4bb73b67959c27ee72a4c46",
+    "fallback_metrics.json": "a3b02a6eaa4b1c428b96d3b3544f3717cb8aca2c6c4f58d4cfdca6207f9009e3",
+    "fallback_predictions.csv": "ed209a5683acf6184ad90bc10d7b7e7b8252c5df3d7dcd0264b17f78005b6656",
+    "feature_contract.json": "17c6d41a16387128da47ef3ac81ef2410123c5bee67c373e3f49d0277e701891",
+    "fit_table.csv": "11292217837759d006771da3878a32eab55faca4565ba0519feeca444dfb1c99",
+    "fold_assignments.csv": "87e6d189edae0ee44298c72f17f1ebd3f063a1388600c538ab2381cc2bd4a5b2",
+    "metrics_per_fold.csv": "19a6e5f2b51529d10bd332f15df4e7a4bd943905954418a759e01edf61b1181d",
+    "metrics_pooled.json": "7f34943835458d4656ac9a3de90aafedde498dc5b87acdf042531c2266933fc9",
+    "metrics_summary.csv": "396e617378f520955fb0e2112bf1b9c94ff534dba2f7358e9ad8388c034fc018",
+    "metrics_summary.md": "dc60f9b7e542064ae69bb28c50a1fb98826727898eaac6fd8987d1bf88387d01",
+    "model_artifact.joblib": "e998606bc75b97ff9b88360b0d6a11a10dfefa466090abfa7ca3afbe61ae83cf",
+    "model_equivalence.json": "bad10045d0d5faf286a3b72b7f934c412551692baff30e71b934ae2c2a23938d",
+    "model_metadata.json": "7a85980b3f03e813518883e55c821834eeb4744915f4ea83c4dcda736aaa7789",
+    "oof_fit_rows.csv": "9ab4a65a0d13282e2538ff22e657ee0beb96e7fef59c412a7b9862e3ec8ee067",
+    "oof_predictions.csv": "f0302284b0d1d0f146b8acf5ee45340b5527a0e68df9d7b0cce254c9c00c3fab",
+    "prediction_diagnostics.csv": "6c168340310ccbcfe10fdc4ce787f14e7ff5527a4ff8bd1c57a8eecb18503429",
+    "predictions_s1.csv": "b1da9f2effb676d2cb7158da6f0fad1bb7be6d708664eaf6e60f088b35eae530",
+    "report_ru.md": "ab73552a1836b97b8df0d4fb63c9c3876890fe1f68a92758b2f7b295cd2ca708",
+    "report_training_ru.md": "145eb72a15978c95b94a7b812140c40c95810a42f7172e554d43d410d56b2ec0",
+    "result.csv": "9b79ae3edf686e1bcdcee793566b81c7a3f523bcdb94925517b3346323efbad0",
+    "run_manifest_train.json": "f111973afad19e9b6ce9b801562e46fe1563f5b758a0043a39636dbd12f7347f",
+    "summary.json": "7a2dc1625a151b0ad1274e157afc02a6cc79742df1bcbae01c2202d124f1424c",
+    "summary_train.json": "cd950565509a3468743dae51c4637201f88945ba6e1d1aece2a67842becae0ea",
+    "training_table.csv": "8f81a5e03433557dff6936c74b4fcb6405805c9cbc3f6dfc7ab2fa370932f8fe"
+  },
+  "rejected_artifacts": [],
+  "reproduce_command": "python -m src.ml.s1c predict --root . --output-root experiments/s1abc/s1c",
+  "root": "C:\\Users\\Администратор\\Documents\\PipeTwin_next\\experiments\\next_cycle\\data_generation",
+  "stage": "S1C_predict",
+  "started_utc": "2026-11-15T17:15:48+00:00",
+  "summary": {
+    "above_h0_rows": 149,
+    "artifact_path": "C:\\Users\\Администратор\\Documents\\PipeTwin_next\\experiments\\next_cycle\\repro_s1abc\\s1c\\model_artifact.joblib",
+    "artifact_sha256": "e998606bc75b97ff9b88360b0d6a11a10dfefa466090abfa7ca3afbe61ae83cf",
+    "artifact_version": "s1c-ridge-v1",
+    "bounds_policy": {
+      "lower_mm": 0.0,
+      "upper_column": "nominal_thickness_mm",
+      "upper_is_not_baseline": true
+    },
+    "clipped_rows": 0,
+    "contract_version": "s1abc-v1",
+    "fallback_policy": "rows without own prior measurement keep S1B and do not enter Ridge",
+    "fallback_rows": 4,
+    "fallback_segments": [
+      {
+        "fallback_distance_m": 10.0,
+        "fallback_measurement_date": "2018-09-23",
+        "fallback_segment_id": 16,
+        "fallback_source": "nearest_prior_vtd_assumption",
+        "s1a_prediction_mm": 6.12,
+        "s1b_prediction_mm": 6.12,
+        "segment_id": 17
+      },
+      {
+        "fallback_distance_m": 10.0,
+        "fallback_measurement_date": "2022-07-06",
+        "fallback_segment_id": 246,
+        "fallback_source": "nearest_prior_vtd_assumption",
+        "s1a_prediction_mm": 6.8,
+        "s1b_prediction_mm": 6.8,
+        "segment_id": 247
+      },
+      {
+        "fallback_distance_m": 10.0,
+        "fallback_measurement_date": "2022-07-06",
+        "fallback_segment_id": 400,
+        "fallback_source": "nearest_prior_vtd_assumption",
+        "s1a_prediction_mm": 6.48,
+        "s1b_prediction_mm": 6.48,
+        "segment_id": 401
+      },
+      {
+        "fallback_distance_m": 10.0,
+        "fallback_measurement_date": "2022-07-06",
+        "fallback_segment_id": 454,
+        "fallback_source": "nearest_prior_vtd_assumption",
+        "s1a_prediction_mm": 6.72,
+        "s1b_prediction_mm": 6.72,
+        "segment_id": 455
+      }
+    ],
+    "feature_count": 9,
+    "input_note": "Predict reads no training_targets and calls no fit; all features use VTD rows strictly before 2023-12-01.",
+    "negative_vs_s1b_rows": 322,
+    "positive_vs_s1b_rows": 199,
+    "prediction_mode": "loaded_saved_artifact_no_fit",
+    "ridge_applied_rows": 521,
+    "rows": 525,
+    "s1c_vs_s1a_stats_mm": {
+      "count": 525,
+      "max": 1.608054692236537,
+      "mean": -0.19893372427170217,
+      "median": -0.23578161284184596,
+      "min": -1.7585201889373634,
+      "q05": -0.8838740042377315,
+      "q25": -0.4520112280427844,
+      "q75": 0.030916013207548332,
+      "q95": 0.5298040958959029,
+      "std": 0.45012668094892894
+    },
+    "s1c_vs_s1b_stats_mm": {
+      "count": 525,
+      "max": 1.608054692236537,
+      "mean": -0.06331467665265454,
+      "median": -0.10024684563402708,
+      "min": -0.7131653150702624,
+      "q05": -0.5372081373443939,
+      "q25": -0.3230277730608808,
+      "q75": 0.1305857508497743,
+      "q95": 0.5834906433061459,
+      "std": 0.3583026215298835
+    },
+    "s2": {
+      "keys": [
+        1250009583,
+        1475
+      ],
+      "policy": "copied by exact keys from the explicitly selected result.csv; never retrained",
+      "rows": 1475,
+      "source_path": "C:\\Users\\Администратор\\Documents\\PipeTwin_next\\experiments\\ml_v2\\result.csv",
+      "source_sha256": "79ba544232d4d34ed33609ef2fc352d9c39edb49b6a118470f63f11fb0e25f05",
+      "unchanged": true,
+      "written_vs_source": {
+        "exact_numeric_match": true,
+        "max_abs_difference": 0.0,
+        "rows": 1475,
+        "source_rows": 1475
+      }
+    },
+    "stage": "S1C_predict",
+    "thickness_stats_mm": {
+      "count": 525,
+      "max": 7.066365743348191,
+      "mean": 6.026103386265872,
+      "median": 6.05511700682733,
+      "min": 4.498089697331068,
+      "q05": 5.505636992016865,
+      "q25": 5.8765263557290925,
+      "q75": 6.224356808525339,
+      "q95": 6.37641474157465,
+      "std": 0.28152460222366066
+    },
+    "training_completed": true,
+    "training_dates": [
+      "2022-07-06"
+    ],
+    "training_required": true,
+    "training_rows": 357,
+    "training_simple_sections": [
+      1250009490,
+      1250011604,
+      1250022871
+    ],
+    "validation": {
+      "bounded": true,
+      "finite_mm": true,
+      "revalidated_after_write": {
+        "bounded": true,
+        "finite_mm": true,
+        "rows": 2000,
+        "template": {
+          "available": false,
+          "key_set_compared": false,
+          "status": "no_template_supplied",
+          "validation_grid": "derived_target_grid"
+        },
+        "unique_keys": true,
+        "upper_bound_column": "upper_mm"
+      },
+      "rows": 2000,
+      "s1_upper_column": "nominal_thickness_mm",
+      "template": {
+        "available": false,
+        "key_set_compared": false,
+        "status": "no_template_supplied",
+        "validation_grid": "derived_target_grid"
+      },
+      "unique_keys": true,
+      "upper_bound_column": "upper_mm"
+    }
+  },
+  "training_completed": true,
+  "training_metadata": {
+    "alpha": 10.0,
+    "artifact_version": "s1c-ridge-v1",
+    "baseline_column": "s1b_prediction",
+    "bounds_policy": {
+      "lower_mm": 0.0,
+      "upper_column": "nominal_thickness_mm",
+      "upper_is_not_baseline": true
+    },
+    "coefficient_by_declared_feature": {
+      "abs_slope_m_per_m": 0.050347570974280956,
+      "age_last_vtd_years": null,
+      "age_min_vtd_years": null,
+      "last_minus_min_mm": null,
+      "last_vtd_thickness_mm": -0.18317281549962375,
+      "local_low_m": 0.018130328495469226,
+      "neighbor_missing": 0.020518743314178276,
+      "neighbor_prior_count": -0.008645174441220208,
+      "neighbor_prior_median_mm": -0.003331588906259681,
+      "prior_vtd_campaign_count": null,
+      "relative_position": 0.04740458754320794,
+      "s1b_prediction": -0.18317281549962347,
+      "slope_m_per_m": 0.025212760006810477
+    },
+    "coefficients": [
+      -0.18317281549962347,
+      -0.18317281549962375,
+      -0.003331588906259681,
+      -0.008645174441220208,
+      0.020518743314178276,
+      0.025212760006810477,
+      0.050347570974280956,
+      0.04740458754320794,
+      0.018130328495469226
+    ],
+    "contract_version": "s1abc-v1",
+    "dropped_columns": {
+      "age_last_vtd_years": "constant_on_training_fold",
+      "age_min_vtd_years": "constant_on_training_fold",
+      "last_minus_min_mm": "constant_on_training_fold",
+      "prior_vtd_campaign_count": "constant_on_training_fold"
+    },
+    "fallback_policy": "rows without own prior measurement keep S1B and do not enter Ridge",
+    "feature_order": [
+      "s1b_prediction",
+      "last_vtd_thickness_mm",
+      "age_last_vtd_years",
+      "age_min_vtd_years",
+      "prior_vtd_campaign_count",
+      "last_minus_min_mm",
+      "neighbor_prior_median_mm",
+      "neighbor_prior_count",
+      "neighbor_missing",
+      "slope_m_per_m",
+      "abs_slope_m_per_m",
+      "relative_position",
+      "local_low_m"
+    ],
+    "fit_intercept": true,
+    "intercept": -0.04526097095971396,
+    "interpretation": "Learned effective correction to a conservative past minimum; not a physical corrosion rate. Both signs are allowed.",
+    "model_name": "S1C_ridge",
+    "prediction_rule": "clip(baseline + ridge_delta, 0, nominal_thickness_mm)",
+    "preprocessing": {
+      "constant_columns": [
+        "age_last_vtd_years",
+        "age_min_vtd_years",
+        "prior_vtd_campaign_count",
+        "last_minus_min_mm"
+      ],
+      "dropped_columns": {
+        "age_last_vtd_years": "constant_on_training_fold",
+        "age_min_vtd_years": "constant_on_training_fold",
+        "last_minus_min_mm": "constant_on_training_fold",
+        "prior_vtd_campaign_count": "constant_on_training_fold"
+      },
+      "empty_columns": [],
+      "feature_order": [
+        "s1b_prediction",
+        "last_vtd_thickness_mm",
+        "age_last_vtd_years",
+        "age_min_vtd_years",
+        "prior_vtd_campaign_count",
+        "last_minus_min_mm",
+        "neighbor_prior_median_mm",
+        "neighbor_prior_count",
+        "neighbor_missing",
+        "slope_m_per_m",
+        "abs_slope_m_per_m",
+        "relative_position",
+        "local_low_m"
+      ],
+      "imputer": "SimpleImputer(strategy=median)",
+      "imputer_statistics": {
+        "abs_slope_m_per_m": 0.0,
+        "last_vtd_thickness_mm": 6.11,
+        "local_low_m": 0.0,
+        "neighbor_missing": 0.0,
+        "neighbor_prior_count": 3.0,
+        "neighbor_prior_median_mm": 6.1,
+        "relative_position": 0.438228793537078,
+        "s1b_prediction": 6.11,
+        "slope_m_per_m": 0.0
+      },
+      "scaler": "StandardScaler",
+      "scaler_mean": {
+        "abs_slope_m_per_m": 0.005058970038990697,
+        "last_vtd_thickness_mm": 6.130504201680672,
+        "local_low_m": -0.004764359930490752,
+        "neighbor_missing": 0.0392156862745098,
+        "neighbor_prior_count": 2.764705882352941,
+        "neighbor_prior_median_mm": 6.113893557422969,
+        "relative_position": 0.45956816385026394,
+        "s1b_prediction": 6.130504201680672,
+        "slope_m_per_m": -0.0011917096449217588
+      },
+      "scaler_scale": {
+        "abs_slope_m_per_m": 0.010132041994656983,
+        "last_vtd_thickness_mm": 0.5507186780083602,
+        "local_low_m": 0.12023276779833235,
+        "neighbor_missing": 0.1941077438551307,
+        "neighbor_prior_count": 1.1155073133583098,
+        "neighbor_prior_median_mm": 0.40449050829782274,
+        "relative_position": 0.27458872294749737,
+        "s1b_prediction": 0.5507186780083602,
+        "slope_m_per_m": 0.011261939484791181
+      },
+      "used_features": [
+        "s1b_prediction",
+        "last_vtd_thickness_mm",
+        "neighbor_prior_median_mm",
+        "neighbor_prior_count",
+        "neighbor_missing",
+        "slope_m_per_m",
+        "abs_slope_m_per_m",
+        "relative_position",
+        "local_low_m"
+      ]
+    },
+    "solver": "cholesky",
+    "target": "target_delta_mm",
+    "target_delta_mean_mm": -0.04931517357919729,
+    "target_delta_std_mm": 0.6503883416768479,
+    "training_date_max": "2022-07-06",
+    "training_dates": [
+      "2022-07-06"
+    ],
+    "training_parents": [
+      "MAIN-2"
+    ],
+    "training_rows": 357,
+    "training_simple_sections": [
+      1250009490,
+      1250011604,
+      1250022871
+    ],
+    "used_features": [
+      "s1b_prediction",
+      "last_vtd_thickness_mm",
+      "neighbor_prior_median_mm",
+      "neighbor_prior_count",
+      "neighbor_missing",
+      "slope_m_per_m",
+      "abs_slope_m_per_m",
+      "relative_position",
+      "local_low_m"
+    ],
+    "weighting": "equal_total_per_simple_pipe_id_normalized_mean_1",
+    "weighting_detail": "each simple section has equal total weight; weights normalized to mean 1",
+    "weights_max": 29.75,
+    "weights_min": 0.3707165109034268
+  },
+  "training_required": true,
+  "versions": {
+    "executable": "C:\\Users\\Администратор\\Documents\\PipeTwin_s1abc_env\\Scripts\\python.exe",
+    "joblib": "1.5.3",
+    "numpy": "2.3.5",
+    "pandas": "2.2.3",
+    "platform": "Windows-11-10.0.26300-SP0",
+    "python": "3.12.8",
+    "scikit-learn": "1.7.2",
+    "scipy": "1.18.1"
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "above_last_rows": 147,
+  "above_s1b_rows": 253,
+  "artifact": null,
+  "bounds_policy": "[0, nominal]",
+  "candidate": "mix_050",
+  "fallback_rows": 4,
+  "max_mm": 6.884802911263305,
+  "mean_mm": 6.1426982403890555,
+  "min_mm": 4.239064282765454,
+  "model_label": "ridge_geometry lambda=0.50",
+  "rows": 525,
+  "s2": {
+    "max_abs_diff": 0.0,
+    "rows": 1475,
+    "source": "C:\\Users\\Администратор\\Documents\\PipeTwin_next\\experiments\\ml_v2\\result.csv"
+  },
+  "segment_135": {
+    "delta_vs_s1a_mm": 0.7351703557685787,
+    "delta_vs_s1b_mm": 0.7351703557685787,
+    "fallback": false,
+    "prediction_mm": 4.255170355768579,
+    "s1a_mm": 3.52,
+    "s1b_mm": 3.52
+  },
+  "std_mm": 0.4108544243457724,
+  "top33_overlap_with_s1a": 31,
+  "training_completed": true,
+  "training_required": true,
+  "validation": {
+    "bounded": true,
+    "finite_mm": true,
+    "rows": 2000,
+    "template": {
+      "available": false,
+      "key_set_compared": false,
+      "status": "no_template_supplied",
+      "validation_grid": "derived_target_grid"
+    },
+    "unique_keys": true,
+    "upper_bound_column": "upper_mm"
+  }
+}

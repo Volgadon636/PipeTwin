@@ -1,0 +1,28 @@
+{
+  "artifact_path": "C:\\Users\\Администратор\\Documents\\PipeTwin_next\\experiments\\next_cycle\\s2\\candidates\\physics_spatial_temperature\\model_artifact.joblib",
+  "artifact_sha256": "98f4f31a5bc4cbef99917088d42dc4123434cf171931ef089af12467bea253b5",
+  "candidate": "physics_spatial_temperature",
+  "finite": true,
+  "max_mm": 3.5565131444467544,
+  "mean_mm": 2.5906871874169943,
+  "min_mm": 1.724668375298728,
+  "model_type": "S2_physics_spatial",
+  "rows": 1475,
+  "s1_max_abs_diff": 0.0,
+  "s1_reference": "S1B from repro_s1abc/s1b",
+  "std_mm": 0.1235601994826132,
+  "validation": {
+    "bounded": true,
+    "finite_mm": true,
+    "rows": 2000,
+    "template": {
+      "available": false,
+      "key_set_compared": false,
+      "status": "no_template_supplied",
+      "validation_grid": "derived_target_grid"
+    },
+    "unique_keys": true,
+    "upper_bound_column": "upper_mm"
+  },
+  "within_bounds": true
+}

@@ -1,0 +1,5 @@
+{
+  "policy": "explicit IDs only; no automatic winner",
+  "s1": "s1a",
+  "s2": "physics_priors"
+}

@@ -1,0 +1,32 @@
+{
+  "note": "Fallback rows have no own prior baseline and are not Ridge-fit or Ridge-predicted.",
+  "rows": 204,
+  "s1a": {
+    "bias_mm": -0.274313725490196,
+    "coverage": 204,
+    "mae_mm": 0.5868627450980393,
+    "n": 204,
+    "pearson_r": -0.03531207595007256,
+    "pearson_reason": "",
+    "pearson_squared": 0.001246942707903693,
+    "pearson_status": "defined",
+    "r2": -3.9834255703636794,
+    "r2_reason": "",
+    "r2_status": "defined",
+    "rmse_mm": 0.7204839060128473
+  },
+  "s1b": {
+    "bias_mm": -0.274313725490196,
+    "coverage": 204,
+    "mae_mm": 0.5868627450980393,
+    "n": 204,
+    "pearson_r": -0.03531207595007256,
+    "pearson_reason": "",
+    "pearson_squared": 0.001246942707903693,
+    "pearson_status": "defined",
+    "r2": -3.9834255703636794,
+    "r2_reason": "",
+    "r2_status": "defined",
+    "rmse_mm": 0.7204839060128473
+  }
+}

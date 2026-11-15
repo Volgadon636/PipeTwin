@@ -1,0 +1,158 @@
+{
+  "code_sha256": {
+    "src\\ml\\next_all.py": "736e6b22cbb42b403f08d232860fdf213cd844ecc3d4c5afe8ee419d1f078568",
+    "src\\ml\\next_audit.py": "b73c3e4c1193801096a43d58d7b24de4c0fdea7ab4fdb65219d1c98227622ed0",
+    "src\\ml\\next_common.py": "b00e4b7c425716904e50e67cf946b3c7eeef03a7b7ee29841e6f20ced321a258",
+    "src\\ml\\next_compare.py": "bb7032dfa73dab9b2566ccbe5f8d05bbc74e5b58a46f88b16481057838549137",
+    "src\\ml\\next_s1.py": "33bcd911907baff51bc821456fcc442ec3b7a649f00bd8f5be3db1fe403cfdc0",
+    "src\\ml\\next_s2.py": "2e8c3c075a0fe2477ef7b89f9beafe3df450eb98918d47997ba359cb223468de",
+    "src\\ml\\s1_all.py": "ba3a9bc3964739f661c14542c7a97b9385678ad57dacb2fcf29ad29d1adcfe4c",
+    "src\\ml\\s1_contract.py": "507d543aaff2e0ea70e57231ca0aad6d51f2dc002601983dc7b9e201b3407815",
+    "src\\ml\\s1_metrics.py": "018977417d74f60c32726d5d906ec911ad57db6053b42df3fb74e9133220b8c7",
+    "src\\ml\\s1_model.py": "6abfd5ab1540caa7c0ee3d3c2718ebf7d9f35396c811f92d63d0aa1f464e8b2c",
+    "src\\ml\\s1_next.py": "abb866d3ddbb465c4a95dbff80f8409769169128dbf7700f7c6f0bfad19aaff5",
+    "src\\ml\\s1_stages.py": "67fa32fab8587c14dc9b2338d636fd0be152eee2a3dd72675e6d360b3e1f593a",
+    "src\\ml\\s2_next.py": "0ec96875757ba5ca3caff5b28a188fcbd93a912bbc418c743cc035e8753a8733",
+    "src\\ml\\submission.py": "280d4da72f6ed1dabceb8fcc188d125e1b9a77fa04643fa2280be062026bdddc"
+  },
+  "data_root": "C:\\Users\\Администратор\\Documents\\PipeTwin_next\\experiments\\next_cycle\\data_generation",
+  "figures": [
+    "C:\\Users\\Администратор\\Documents\\PipeTwin_next\\experiments\\next_cycle\\s1\\figures\\oof_actual_vs_predicted.png",
+    "C:\\Users\\Администратор\\Documents\\PipeTwin_next\\experiments\\next_cycle\\s1\\figures\\correction_distributions.png",
+    "C:\\Users\\Администратор\\Documents\\PipeTwin_next\\experiments\\next_cycle\\s1\\figures\\production_profiles.png"
+  ],
+  "finished_utc": "2026-11-15T17:34:48+00:00",
+  "forward_fold_audit": {
+    "cutoff": "2023-12-01",
+    "eligible_rows": 561,
+    "max_prior_campaigns": 1,
+    "reason": "Every eligible S1 label has one prior campaign; 2023-12-01 labels are on the cutoff and excluded.",
+    "rows_with_two_prior_campaigns": 0,
+    "strict_forward_folds_available": false
+  },
+  "git": {
+    "branch": "next-cycle",
+    "commit": "6aaa8f64597923cd69f09825958441ad3f40793c",
+    "dirty": true,
+    "status": [
+      "?? experiments/next_cycle/"
+    ],
+    "tracked_dirty": false
+  },
+  "input_sha256": {
+    "C:\\Users\\Администратор\\Documents\\PipeTwin_next\\experiments\\ml_v2\\result.csv": "79ba544232d4d34ed33609ef2fc352d9c39edb49b6a118470f63f11fb0e25f05",
+    "configs/preprocessing.json": "64669ba69e237bf00a38af5148ad6f801c89b31f12377d37ac0e00b6e6bdbb0c",
+    "data/cleaned/passport.csv": "4d5245d8a7702cba3f739538726325972db1afc44e36df956200725b879a01ab",
+    "data/cleaned/regime.csv": "65e53ebe1a154c5a7a3b6fa5806f1d8e83122c985e1049f38162e316eb95cb79",
+    "data/cleaned/tech_mode_for_embedings_with_length_with_temperatures_ids16.csv": "a0e58cf2deb665f5c99efc71416edeed68c33334d865ceee1f566a8df031ebfd",
+    "processed/profile_by_segment.csv": "3e4b4994a3f3da4fa04c403dcac85bf4484ca9feca68103665db6cc39f2d04ca",
+    "processed/segments_grid.csv": "55cce38f655fc47eaabf2255d4e74e31e6d81f774f95df40f47f23adcfeb48a3",
+    "processed/target_features.csv": "1ff33a4842b63f9b255afb189bb36676d202b5ebaacca9c925d18885abbac767",
+    "processed/target_segments_grid.csv": "89ee38ef86368798426a5d91daeb4e849518cb40b2185e1c632dd9f3953db936",
+    "processed/training_targets.csv": "8f32b9c374533183abf02e25a6a990988d0e7a661b48f34252667708800cdd18",
+    "processed/uzt_by_segment.csv": "aed45ba93f914f2f4d66f02c31d4b144cd865d69bfc6113a94f1fb1689e364ef",
+    "processed/vtd_by_segment.csv": "ab6e17e9f5f286b884b5a3f47ef9109061ccf55c880f961f2cc5c149fd7ccc5e",
+    "reports/run_manifest.json": "eba9d43c1cf5da4b1148d89e34ad5d922eac4f8752c0c4a790bf9b0f93a4c72b"
+  },
+  "output_root": "C:\\Users\\Администратор\\Documents\\PipeTwin_next\\experiments\\next_cycle\\s1",
+  "outputs_sha256": {
+    "fit_table.csv": "25c6d4350718c802c9001545ec3948b0030a6c98c9e3788d1e75355f585ccfb1",
+    "fold_assignments.csv": "231a76369d6c91440064906e2466288145d39d8d7f888c4b98edf1091288834b",
+    "forward_fold_audit.json": "2d62d649fe2131878332ff3ad7e2248eb30858d12b5c42166610921edf072eec",
+    "metrics_per_fold.csv": "bb1852a4bca0d30f3ac307fa38dfd95eda669645ef791d930d8c57abc06bddb6",
+    "metrics_pooled.json": "ee7edf9d098aa6f5f28f27a94f82fb7fd027bb4e823036633be003b8a021e27d",
+    "oof_all_pipeline.csv": "b08fd01e3f14b5e3e708ea77c900238a27a23d617fac8b25cf54a06a2f4e170c",
+    "oof_fit_predictions.csv": "7cd48ba0a5b4c8e53e7b618caea7fc500f8aad30311cdc2515d05b4510df5c7e",
+    "report_ru.md": "5e7c0b1a8e6feb24e1b43eca8cabac06273a6931166f40a1bf4e90f0c137fb83",
+    "selected_candidates.json": "2c73252d952a1b76fe49a2594f3deabe9a5605c91ccedbdf61d49fb83318a117",
+    "training_table.csv": "8084bb1903fb164a1bfa311b3568f2f00d591d6e50967e9ad87531341842a697",
+    "weight_ablation.csv": "26f6d680be9df7926deb6e19909032138c7d9ee6cae3d31fd26b44cd4e96b320"
+  },
+  "report": "C:\\Users\\Администратор\\Documents\\PipeTwin_next\\experiments\\next_cycle\\s1\\report_ru.md",
+  "root": "C:\\Users\\Администратор\\Documents\\PipeTwin_next",
+  "selection": {
+    "baseline": {
+      "mae_mm": 0.49822273660440736,
+      "within_section_pearson_squared": 0.11325940806478454
+    },
+    "best_mae": "mix_050",
+    "best_spatial": "mix_025",
+    "candidates": {
+      "catboost": {
+        "mae_mm": 0.4449189254704986,
+        "pooled_pearson_squared": 0.033815274101382846,
+        "topk_recall": 0.18421052631578946,
+        "within_section_pearson_r": 0.1883225350451305,
+        "within_section_pearson_squared": 0.035465377205824405
+      },
+      "mix_025": {
+        "mae_mm": 0.465837169878955,
+        "pooled_pearson_squared": 0.10103589391906412,
+        "topk_recall": 0.2894736842105263,
+        "within_section_pearson_r": 0.31934063010093894,
+        "within_section_pearson_squared": 0.10197843803326472
+      },
+      "mix_050": {
+        "mae_mm": 0.4426065646328596,
+        "pooled_pearson_squared": 0.08172276915096621,
+        "topk_recall": 0.2631578947368421,
+        "within_section_pearson_r": 0.2880483911420274,
+        "within_section_pearson_squared": 0.08297187563951042
+      },
+      "mix_100": {
+        "mae_mm": 0.45114796978292915,
+        "pooled_pearson_squared": 0.010865521401666753,
+        "topk_recall": 0.07894736842105263,
+        "within_section_pearson_r": 0.10914739977900685,
+        "within_section_pearson_squared": 0.011913154878518345
+      },
+      "rate_nonnegative": {
+        "mae_mm": 0.45801203015201114,
+        "pooled_pearson_squared": 0.10182947981976594,
+        "topk_recall": 0.2894736842105263,
+        "within_section_pearson_r": 0.3187808414878316,
+        "within_section_pearson_squared": 0.10162122489969001
+      },
+      "rate_signed": {
+        "mae_mm": 0.4511479697829292,
+        "pooled_pearson_squared": 0.010865521401666748,
+        "topk_recall": 0.07894736842105263,
+        "within_section_pearson_r": 0.10914739977900678,
+        "within_section_pearson_squared": 0.01191315487851833
+      },
+      "ridge_geometry": {
+        "mae_mm": 0.45114796978292915,
+        "pooled_pearson_squared": 0.010865521401666753,
+        "topk_recall": 0.07894736842105263,
+        "within_section_pearson_r": 0.10914739977900685,
+        "within_section_pearson_squared": 0.011913154878518345
+      },
+      "ridge_history": {
+        "mae_mm": 0.445390382460616,
+        "pooled_pearson_squared": 0.019102256334683723,
+        "topk_recall": 0.13157894736842105,
+        "within_section_pearson_r": 0.14094458313053398,
+        "within_section_pearson_squared": 0.019865375513840006
+      }
+    },
+    "caveat": "LOPO on three sections of one parent is exploratory spatial transfer, not a fresh independent holdout. No hidden-test accuracy is claimed.",
+    "default": "s1a",
+    "default_reason": "no candidate improved both within-section spatial signal and MAE; S1A remains default",
+    "no_proven_winner": true,
+    "qualifying_candidates": []
+  },
+  "stage": "S1_next",
+  "started_utc": "2026-11-15T17:34:35+00:00",
+  "versions": {
+    "catboost": "1.2.10",
+    "executable": "C:\\Users\\Администратор\\Documents\\PipeTwin_s1abc_env\\Scripts\\python.exe",
+    "joblib": "1.5.3",
+    "matplotlib": "3.10.8",
+    "numpy": "2.3.5",
+    "pandas": "2.2.3",
+    "platform": "Windows-11-10.0.26300-SP0",
+    "pyarrow": "21.0.0",
+    "python": "3.12.8",
+    "scikit-learn": "1.7.2"
+  }
+}

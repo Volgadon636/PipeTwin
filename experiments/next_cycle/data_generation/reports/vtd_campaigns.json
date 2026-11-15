@@ -1,0 +1,225 @@
+{
+  "campaigns": [
+    {
+      "above_nominal_observations": 0,
+      "date": "2018-09-23 00:00:00",
+      "id": 1250009490,
+      "min_residual_mm": 5.53,
+      "missing_residual_observations": 3,
+      "observations": 16,
+      "precommissioning_observations": 0,
+      "segments_with_eligible_measurement": 4,
+      "segments_with_observation": 5
+    },
+    {
+      "above_nominal_observations": 0,
+      "date": "2022-07-06 00:00:00",
+      "id": 1250009490,
+      "min_residual_mm": 5.36,
+      "missing_residual_observations": 4,
+      "observations": 223,
+      "precommissioning_observations": 0,
+      "segments_with_eligible_measurement": 5,
+      "segments_with_observation": 5
+    },
+    {
+      "above_nominal_observations": 0,
+      "date": "2023-12-01 00:00:00",
+      "id": 1250009490,
+      "min_residual_mm": 4.95,
+      "missing_residual_observations": 26,
+      "observations": 369,
+      "precommissioning_observations": 0,
+      "segments_with_eligible_measurement": 5,
+      "segments_with_observation": 5
+    },
+    {
+      "above_nominal_observations": 0,
+      "date": "2023-08-12 00:00:00",
+      "id": 1250009584,
+      "min_residual_mm": 3.9,
+      "missing_residual_observations": 24,
+      "observations": 51,
+      "precommissioning_observations": 0,
+      "segments_with_eligible_measurement": 19,
+      "segments_with_observation": 39
+    },
+    {
+      "above_nominal_observations": 0,
+      "date": "2023-08-12 00:00:00",
+      "id": 1250009587,
+      "min_residual_mm": 4.91,
+      "missing_residual_observations": 0,
+      "observations": 3,
+      "precommissioning_observations": 0,
+      "segments_with_eligible_measurement": 3,
+      "segments_with_observation": 3
+    },
+    {
+      "above_nominal_observations": 0,
+      "date": "2018-09-23 00:00:00",
+      "id": 1250011604,
+      "min_residual_mm": 4.77,
+      "missing_residual_observations": 6,
+      "observations": 200,
+      "precommissioning_observations": 0,
+      "segments_with_eligible_measurement": 34,
+      "segments_with_observation": 37
+    },
+    {
+      "above_nominal_observations": 0,
+      "date": "2022-07-06 00:00:00",
+      "id": 1250011604,
+      "min_residual_mm": 5.28,
+      "missing_residual_observations": 16,
+      "observations": 2331,
+      "precommissioning_observations": 0,
+      "segments_with_eligible_measurement": 48,
+      "segments_with_observation": 49
+    },
+    {
+      "above_nominal_observations": 0,
+      "date": "2023-12-01 00:00:00",
+      "id": 1250011604,
+      "min_residual_mm": 4.62,
+      "missing_residual_observations": 59,
+      "observations": 2825,
+      "precommissioning_observations": 0,
+      "segments_with_eligible_measurement": 48,
+      "segments_with_observation": 50
+    },
+    {
+      "above_nominal_observations": 3,
+      "date": "2014-12-28 00:00:00",
+      "id": 1250013653,
+      "min_residual_mm": 1.81,
+      "missing_residual_observations": 5,
+      "observations": 4490,
+      "precommissioning_observations": 4490,
+      "segments_with_eligible_measurement": 64,
+      "segments_with_observation": 64
+    },
+    {
+      "above_nominal_observations": 0,
+      "date": "2014-12-28 00:00:00",
+      "id": 1250013655,
+      "min_residual_mm": 1.8,
+      "missing_residual_observations": 3,
+      "observations": 3133,
+      "precommissioning_observations": 3133,
+      "segments_with_eligible_measurement": 55,
+      "segments_with_observation": 55
+    },
+    {
+      "above_nominal_observations": 0,
+      "date": "2014-12-28 00:00:00",
+      "id": 1250013657,
+      "min_residual_mm": 2.17,
+      "missing_residual_observations": 7,
+      "observations": 1386,
+      "precommissioning_observations": 1386,
+      "segments_with_eligible_measurement": 132,
+      "segments_with_observation": 133
+    },
+    {
+      "above_nominal_observations": 21,
+      "date": "2018-09-23 00:00:00",
+      "id": 1250022871,
+      "min_residual_mm": 3.76,
+      "missing_residual_observations": 23,
+      "observations": 2280,
+      "precommissioning_observations": 0,
+      "segments_with_eligible_measurement": 334,
+      "segments_with_observation": 340
+    },
+    {
+      "above_nominal_observations": 0,
+      "date": "2022-07-06 00:00:00",
+      "id": 1250022871,
+      "min_residual_mm": 3.52,
+      "missing_residual_observations": 121,
+      "observations": 26110,
+      "precommissioning_observations": 0,
+      "segments_with_eligible_measurement": 508,
+      "segments_with_observation": 509
+    },
+    {
+      "above_nominal_observations": 0,
+      "date": "2014-12-28 00:00:00",
+      "id": 1250022875,
+      "min_residual_mm": 1.67,
+      "missing_residual_observations": 3,
+      "observations": 3440,
+      "precommissioning_observations": 3440,
+      "segments_with_eligible_measurement": 95,
+      "segments_with_observation": 95
+    },
+    {
+      "above_nominal_observations": 0,
+      "date": "2014-12-28 00:00:00",
+      "id": 1250022876,
+      "min_residual_mm": 2.34,
+      "missing_residual_observations": 2,
+      "observations": 1036,
+      "precommissioning_observations": 1036,
+      "segments_with_eligible_measurement": 51,
+      "segments_with_observation": 51
+    },
+    {
+      "above_nominal_observations": 0,
+      "date": "2023-08-12 00:00:00",
+      "id": 1250028931,
+      "min_residual_mm": 4.32,
+      "missing_residual_observations": 6,
+      "observations": 20,
+      "precommissioning_observations": 0,
+      "segments_with_eligible_measurement": 4,
+      "segments_with_observation": 7
+    },
+    {
+      "above_nominal_observations": 0,
+      "date": "2023-08-12 00:00:00",
+      "id": 1250028932,
+      "min_residual_mm": 4.38,
+      "missing_residual_observations": 5,
+      "observations": 19,
+      "precommissioning_observations": 0,
+      "segments_with_eligible_measurement": 9,
+      "segments_with_observation": 14
+    },
+    {
+      "above_nominal_observations": 0,
+      "date": "2023-08-12 00:00:00",
+      "id": 1250028933,
+      "min_residual_mm": 4.93,
+      "missing_residual_observations": 1,
+      "observations": 2,
+      "precommissioning_observations": 0,
+      "segments_with_eligible_measurement": 1,
+      "segments_with_observation": 2
+    },
+    {
+      "above_nominal_observations": 0,
+      "date": "2023-08-12 00:00:00",
+      "id": 1250028934,
+      "min_residual_mm": 3.25,
+      "missing_residual_observations": 17,
+      "observations": 58,
+      "precommissioning_observations": 0,
+      "segments_with_eligible_measurement": 31,
+      "segments_with_observation": 42
+    },
+    {
+      "above_nominal_observations": 0,
+      "date": "2023-08-12 00:00:00",
+      "id": 1250028935,
+      "min_residual_mm": 4.81,
+      "missing_residual_observations": 13,
+      "observations": 48,
+      "precommissioning_observations": 0,
+      "segments_with_eligible_measurement": 27,
+      "segments_with_observation": 38
+    }
+  ],
+  "note": "Sparse campaigns have different ascertainment; observation counts are not independent defect counts."
+}

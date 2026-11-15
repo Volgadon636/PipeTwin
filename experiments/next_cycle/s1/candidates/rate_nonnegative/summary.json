@@ -1,0 +1,47 @@
+{
+  "above_last_rows": 0,
+  "above_s1b_rows": 143,
+  "artifact": {
+    "artifact_path": "C:\\Users\\Администратор\\Documents\\PipeTwin_next\\experiments\\next_cycle\\s1\\candidates\\rate_nonnegative\\model_artifact.joblib",
+    "artifact_sha256": "9c6af17f70245321f6546b9b0ded33eb744386cec55c7e0e00274fee89950df3",
+    "metadata_path": "C:\\Users\\Администратор\\Documents\\PipeTwin_next\\experiments\\next_cycle\\s1\\candidates\\rate_nonnegative\\model_metadata.json"
+  },
+  "bounds_policy": "[0, nominal]",
+  "candidate": "rate_nonnegative",
+  "fallback_rows": 4,
+  "max_mm": 6.909499598931282,
+  "mean_mm": 6.132009800716433,
+  "min_mm": 3.52,
+  "model_label": "Ridge nonnegative rate",
+  "rows": 525,
+  "s2": {
+    "max_abs_diff": 0.0,
+    "rows": 1475,
+    "source": "C:\\Users\\Администратор\\Documents\\PipeTwin_next\\experiments\\ml_v2\\result.csv"
+  },
+  "segment_135": {
+    "delta_vs_s1a_mm": 0.0,
+    "delta_vs_s1b_mm": 0.0,
+    "fallback": false,
+    "prediction_mm": 3.52,
+    "s1a_mm": 3.52,
+    "s1b_mm": 3.52
+  },
+  "std_mm": 0.49936219976931173,
+  "top33_overlap_with_s1a": 33,
+  "training_completed": true,
+  "training_required": true,
+  "validation": {
+    "bounded": true,
+    "finite_mm": true,
+    "rows": 2000,
+    "template": {
+      "available": false,
+      "key_set_compared": false,
+      "status": "no_template_supplied",
+      "validation_grid": "derived_target_grid"
+    },
+    "unique_keys": true,
+    "upper_bound_column": "upper_mm"
+  }
+}

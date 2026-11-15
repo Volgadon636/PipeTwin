@@ -1,0 +1,28 @@
+{
+  "artifact_path": "C:\\Users\\Администратор\\Documents\\PipeTwin_next\\experiments\\next_cycle\\s2\\candidates\\constant_effective_rate\\model_artifact.joblib",
+  "artifact_sha256": "b5dc79677d37f16a2ba3477de6307e42fce58254719c2840b08dbe04cf3639fd",
+  "candidate": "constant_effective_rate",
+  "finite": true,
+  "max_mm": 1.5395840525232374,
+  "mean_mm": 1.5395840525232372,
+  "min_mm": 1.5395840525232374,
+  "model_type": "ConstantRate",
+  "rows": 1475,
+  "s1_max_abs_diff": 0.0,
+  "s1_reference": "S1B from repro_s1abc/s1b",
+  "std_mm": 2.220446049250313e-16,
+  "validation": {
+    "bounded": true,
+    "finite_mm": true,
+    "rows": 2000,
+    "template": {
+      "available": false,
+      "key_set_compared": false,
+      "status": "no_template_supplied",
+      "validation_grid": "derived_target_grid"
+    },
+    "unique_keys": true,
+    "upper_bound_column": "upper_mm"
+  },
+  "within_bounds": true
+}

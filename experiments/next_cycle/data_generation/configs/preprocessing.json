@@ -1,0 +1,31 @@
+{
+  "targets": [
+    {
+      "id": 1250022871,
+      "prediction_date": "2023-12-01",
+      "case": "between_vtd"
+    },
+    {
+      "id": 1250009583,
+      "prediction_date": "2022-07-01",
+      "case": "cold_start"
+    }
+  ],
+  "cutoff_policy": "strictly_before_prediction_date",
+  "persistent_days": 3,
+  "soft_limits": {
+    "pressure_high": 100.0,
+    "liquid_flow_high": 10000.0,
+    "velocity_high": 10.0,
+    "temperature_low": -50.0,
+    "temperature_high": 150.0,
+    "density_low": 100.0,
+    "density_high": 1500.0
+  },
+  "profile_endpoint_tolerance_m": 0.05,
+  "vtd_fraction_dates": [
+    "2018-09-23"
+  ],
+  "vtd_thickness_tolerance_mm": 0.02,
+  "vtd_apply_passport_nominal_ceiling": true
+}

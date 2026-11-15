@@ -1,0 +1,6 @@
+{
+  "artifact_vs_manual_max_abs_difference_mm": 0.0,
+  "artifact_vs_reloaded_max_abs_difference_mm": 0.0,
+  "note": "Numerical serialization/equivalence check, not a validation score.",
+  "rows": 357
+}

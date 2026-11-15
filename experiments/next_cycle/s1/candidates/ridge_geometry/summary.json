@@ -1,0 +1,47 @@
+{
+  "above_last_rows": 147,
+  "above_s1b_rows": 220,
+  "artifact": {
+    "artifact_path": "C:\\Users\\Администратор\\Documents\\PipeTwin_next\\experiments\\next_cycle\\s1\\candidates\\ridge_geometry\\model_artifact.joblib",
+    "artifact_sha256": "26f27ff81c88e73b44d8f43bd2a817ebd9fa538d8456fa93f010c9fc0e0b55da",
+    "metadata_path": "C:\\Users\\Администратор\\Documents\\PipeTwin_next\\experiments\\next_cycle\\s1\\candidates\\ridge_geometry\\model_metadata.json"
+  },
+  "bounds_policy": "[0, nominal]",
+  "candidate": "ridge_geometry",
+  "fallback_rows": 4,
+  "max_mm": 7.049605822526611,
+  "mean_mm": 6.060359370240536,
+  "min_mm": 4.798128565530908,
+  "model_label": "Ridge last + history + geometry",
+  "rows": 525,
+  "s2": {
+    "max_abs_diff": 0.0,
+    "rows": 1475,
+    "source": "C:\\Users\\Администратор\\Documents\\PipeTwin_next\\experiments\\ml_v2\\result.csv"
+  },
+  "segment_135": {
+    "delta_vs_s1a_mm": 1.470340711537157,
+    "delta_vs_s1b_mm": 1.470340711537157,
+    "fallback": false,
+    "prediction_mm": 4.990340711537157,
+    "s1a_mm": 3.52,
+    "s1b_mm": 3.52
+  },
+  "std_mm": 0.29644435217214044,
+  "top33_overlap_with_s1a": 27,
+  "training_completed": true,
+  "training_required": true,
+  "validation": {
+    "bounded": true,
+    "finite_mm": true,
+    "rows": 2000,
+    "template": {
+      "available": false,
+      "key_set_compared": false,
+      "status": "no_template_supplied",
+      "validation_grid": "derived_target_grid"
+    },
+    "unique_keys": true,
+    "upper_bound_column": "upper_mm"
+  }
+}

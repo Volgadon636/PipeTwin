@@ -1,0 +1,8 @@
+{
+  "cutoff": "2023-12-01",
+  "eligible_rows": 561,
+  "max_prior_campaigns": 1,
+  "reason": "Every eligible S1 label has one prior campaign; 2023-12-01 labels are on the cutoff and excluded.",
+  "rows_with_two_prior_campaigns": 0,
+  "strict_forward_folds_available": false
+}

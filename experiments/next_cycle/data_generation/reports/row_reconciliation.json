@@ -1,0 +1,82 @@
+{
+  "sources": [
+    {
+      "accounted_records": 16,
+      "disjoint_accounting_ok": true,
+      "duplicate_records": 0,
+      "input_records": 16,
+      "malformed_records": 0,
+      "note": "Malformed/rejected field values are masked and listed in quality_issues; they do not necessarily drop the whole record.",
+      "parse_rejected_records": 0,
+      "quarantined_records": 0,
+      "retained_records": 16,
+      "source_file": "passport.csv",
+      "source_type": "passport"
+    },
+    {
+      "accounted_records": 20218,
+      "disjoint_accounting_ok": true,
+      "duplicate_records": 38,
+      "input_records": 20218,
+      "malformed_records": 0,
+      "note": "Malformed/rejected field values are masked and listed in quality_issues; they do not necessarily drop the whole record.",
+      "parse_rejected_records": 0,
+      "quarantined_records": 0,
+      "retained_records": 20180,
+      "source_file": "profile.csv",
+      "source_type": "profile"
+    },
+    {
+      "accounted_records": 67,
+      "disjoint_accounting_ok": true,
+      "duplicate_records": 0,
+      "input_records": 67,
+      "malformed_records": 0,
+      "note": "Malformed/rejected field values are masked and listed in quality_issues; they do not necessarily drop the whole record.",
+      "parse_rejected_records": 0,
+      "quarantined_records": 0,
+      "retained_records": 67,
+      "source_file": "uzt.csv",
+      "source_type": "uzt"
+    },
+    {
+      "accounted_records": 48291,
+      "disjoint_accounting_ok": true,
+      "duplicate_records": 0,
+      "input_records": 48291,
+      "malformed_records": 0,
+      "note": "Malformed/rejected field values are masked and listed in quality_issues; they do not necessarily drop the whole record.",
+      "parse_rejected_records": 0,
+      "quarantined_records": 251,
+      "retained_records": 48040,
+      "source_file": "vtd.csv",
+      "source_type": "vtd"
+    },
+    {
+      "accounted_records": 495,
+      "disjoint_accounting_ok": true,
+      "duplicate_records": 0,
+      "input_records": 495,
+      "malformed_records": 0,
+      "note": "Malformed/rejected field values are masked and listed in quality_issues; they do not necessarily drop the whole record.",
+      "parse_rejected_records": 0,
+      "quarantined_records": 0,
+      "retained_records": 495,
+      "source_file": "regime.csv",
+      "source_type": "corrosion_monitoring"
+    },
+    {
+      "accounted_records": 39052,
+      "disjoint_accounting_ok": true,
+      "duplicate_records": 0,
+      "input_records": 39052,
+      "malformed_records": 0,
+      "note": "Malformed/rejected field values are masked and listed in quality_issues; they do not necessarily drop the whole record.",
+      "parse_rejected_records": 0,
+      "quarantined_records": 0,
+      "retained_records": 39052,
+      "source_file": "tech_mode_for_embedings_with_length_with_temperatures_ids16.csv",
+      "source_type": "hydraulic_regime"
+    }
+  ]
+}

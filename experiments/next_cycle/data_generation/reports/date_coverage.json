@@ -1,0 +1,56 @@
+{
+  "passport.csv:commissioning_date": {
+    "date_only_rows": 16,
+    "declared_timezone_values": [],
+    "max": "2016-03-16 00:00:00",
+    "min": "1993-06-20 00:00:00",
+    "missing_or_invalid": 0,
+    "rows": 16,
+    "valid_dates": 16
+  },
+  "regime.csv:sample_installation_date": {
+    "date_only_rows": 457,
+    "declared_timezone_values": [],
+    "max": "2024-01-18 00:00:00",
+    "min": "2012-05-30 00:00:00",
+    "missing_or_invalid": 38,
+    "rows": 495,
+    "valid_dates": 457
+  },
+  "regime.csv:sample_removal_date": {
+    "date_only_rows": 495,
+    "declared_timezone_values": [],
+    "max": "2024-02-14 00:00:00",
+    "min": "2012-01-23 00:00:00",
+    "missing_or_invalid": 0,
+    "rows": 495,
+    "valid_dates": 495
+  },
+  "tech_mode_for_embedings_with_length_with_temperatures_ids16.csv:date": {
+    "date_only_rows": 0,
+    "declared_timezone_values": [],
+    "max": "2024-11-24 07:09:55",
+    "min": "2012-12-12 11:42:29",
+    "missing_or_invalid": 0,
+    "rows": 39052,
+    "valid_dates": 39052
+  },
+  "uzt.csv:date": {
+    "date_only_rows": 67,
+    "declared_timezone_values": [],
+    "max": "2020-01-24 00:00:00",
+    "min": "2013-12-18 00:00:00",
+    "missing_or_invalid": 0,
+    "rows": 67,
+    "valid_dates": 67
+  },
+  "vtd.csv:date": {
+    "date_only_rows": 48040,
+    "declared_timezone_values": [],
+    "max": "2023-12-01 00:00:00",
+    "min": "2014-12-28 00:00:00",
+    "missing_or_invalid": 0,
+    "rows": 48040,
+    "valid_dates": 48040
+  }
+}
