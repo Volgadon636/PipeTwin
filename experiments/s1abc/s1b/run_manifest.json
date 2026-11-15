@@ -1,0 +1,270 @@
+{
+  "artifact_version": "s1c-ridge-v1",
+  "code_sha256": {
+    "src\\ml\\s1_all.py": "ba3a9bc3964739f661c14542c7a97b9385678ad57dacb2fcf29ad29d1adcfe4c",
+    "src\\ml\\s1_contract.py": "507d543aaff2e0ea70e57231ca0aad6d51f2dc002601983dc7b9e201b3407815",
+    "src\\ml\\s1_metrics.py": "018977417d74f60c32726d5d906ec911ad57db6053b42df3fb74e9133220b8c7",
+    "src\\ml\\s1_model.py": "6abfd5ab1540caa7c0ee3d3c2718ebf7d9f35396c811f92d63d0aa1f464e8b2c",
+    "src\\ml\\s1_stages.py": "6437ed7b26d9e0d7c2563727ce24d92bb23d3f80450ab4192247daf8f1956514",
+    "src\\ml\\s1a.py": "70d9e3f6627afafd978342bfa9300692cb3b3c32cf1b54297a15d32cc9e46cae",
+    "src\\ml\\s1b.py": "1b553595e16339299004614b1fc73d472a1490cf77b0cf8c95627458d4cefaea",
+    "src\\ml\\s1c.py": "9b80acba61d6d52054a43be09d98277cdd4347b79666254d8f4db5aebe96241f",
+    "src\\ml\\submission.py": "280d4da72f6ed1dabceb8fcc188d125e1b9a77fa04643fa2280be062026bdddc"
+  },
+  "contract_version": "s1abc-v1",
+  "finished_utc": "2026-11-15T14:53:39+00:00",
+  "git": {
+    "branch": "s1abc-ridge",
+    "commit": "c62279be3b689a81b28e9572d76929070b8b465e",
+    "dirty": true,
+    "status_porcelain": [
+      "?? experiments/s1abc/"
+    ],
+    "status_porcelain_tracked": [],
+    "tracked_dirty": false
+  },
+  "input_sha256": {
+    "C:\\Users\\Администратор\\Documents\\PipeTwin_s1abc\\experiments\\ml_v2\\result.csv": "79ba544232d4d34ed33609ef2fc352d9c39edb49b6a118470f63f11fb0e25f05",
+    "configs/preprocessing.json": "d76747beb0a08b86614cea4dc1fd1801eff577c4db296c725c6a5a2321b6048d",
+    "data/cleaned/passport.csv": "4f3474ae8719c86774290861777a58f5b04528c8188d33df9deb98018b5a8b0d",
+    "data/cleaned/regime.csv": "8a13cabe853a74def23c9917dd4d1f5534832d5f95d763348bf2cb844ed06590",
+    "data/cleaned/tech_mode_for_embedings_with_length_with_temperatures_ids16.csv": "c6ea4562e46d2241a220422fe15553fc7a7868b234448c0e5cfbb8706e2323f1",
+    "processed/profile_by_segment.csv": "b67848066b70ff44234df8a7a97e4726b5f2a7c167885356b34380115d0906c7",
+    "processed/segments_grid.csv": "55cce38f655fc47eaabf2255d4e74e31e6d81f774f95df40f47f23adcfeb48a3",
+    "processed/target_features.csv": "4bc0ee1b96ce430bbe85a5b737c4879ed102dfc38fb4f051de820f4cfbc5f715",
+    "processed/uzt_by_segment.csv": "e02975b895559903a6caa471a6b5ff28042213531258c31fa1d29cbc756e760e",
+    "processed/vtd_by_segment.csv": "19373e54466f43ed020c5ae5dec1501a92c98fd8590d068620df5c0e6fa260b9",
+    "reports/run_manifest.json": "4d63b4640bf5d5a50e724c2df56ce276e7b2e928e4135cacb8d882fe73206a4f"
+  },
+  "metrics_summary_md_sha256": "6142b03950eea47576e0a509100ba8a0cc966b6164bf2534af3c959095ad1257",
+  "metrics_summary_path": "C:\\Users\\Администратор\\Documents\\PipeTwin_s1abc\\experiments\\s1abc\\s1b\\metrics_summary.csv",
+  "metrics_summary_sha256": "74499b03777f6712db0e7c0599a32f23f74d158876c022a1fac2eab6ce1b4f3c",
+  "output_root": "C:\\Users\\Администратор\\Documents\\PipeTwin_s1abc\\experiments\\s1abc\\s1b",
+  "outputs_sha256": {
+    "metrics_summary.csv": "74499b03777f6712db0e7c0599a32f23f74d158876c022a1fac2eab6ce1b4f3c",
+    "metrics_summary.md": "6142b03950eea47576e0a509100ba8a0cc966b6164bf2534af3c959095ad1257",
+    "prediction_diagnostics.csv": "da395e8d28b1f48370722f85d98eeea09951dbeb772a1185c8c8c7f6cd21fca1",
+    "predictions_s1.csv": "208f0a18d375fff5429208763ed7ea0e3ec20aed112150cbf4800fa415374c28",
+    "report_ru.md": "b50c3eb910fd6c5df328e9af4349b4fcc9d2da863c9edc1b064842e566d3c56e",
+    "result.csv": "208dbb165e27f1cfee1d55728ffd020e2c8bd6bde92805cde94f31b1b0248890",
+    "s1b_vs_s1a.csv": "b7497ff6e3a3262408a0e9b346d865770cda9e0c7b3efe2479608005d6babebd",
+    "summary.json": "48124bffa277f0ac1fbc9da59b86036773024e18149c80546a4e39fea4d89078"
+  },
+  "rejected_artifacts": [
+    {
+      "actual_csv_sha256": "db7938a639d9e14d8f603484e0147f3da75c15d793faf4285abbbc85843b39d8",
+      "expected_csv_sha256": "89ee38ef86368798426a5d91daeb4e849518cb40b2185e1c632dd9f3953db936",
+      "path": "C:\\Users\\Администратор\\Documents\\PipeTwin_s1abc\\processed\\target_segments_grid.csv",
+      "reason": "manifest checksum mismatch even after LF normalisation; target keys were derived from verified segments_grid and cross-checked against target_features",
+      "used": false
+    }
+  ],
+  "reproduce_command": "python -m src.ml.s1b --root . --output-root experiments/s1abc/s1b",
+  "root": "C:\\Users\\Администратор\\Documents\\PipeTwin_s1abc",
+  "stage": "S1B",
+  "started_utc": "2026-11-15T14:53:38+00:00",
+  "summary": {
+    "bounds_policy": {
+      "lower_mm": 0.0,
+      "note": "S1B is a past minimum and cannot exceed h0",
+      "upper_column": "h0_mm"
+    },
+    "changed_segments": 157,
+    "contract_version": "s1abc-v1",
+    "delta_stats_mm": {
+      "count": 525,
+      "max": 0.0,
+      "mean": -0.13561904761904764,
+      "median": 0.0,
+      "min": -2.4000000000000004,
+      "q05": -0.748,
+      "q25": -0.08999999999999986,
+      "q75": 0.0,
+      "q95": 0.0,
+      "std": 0.31048141976314875
+    },
+    "examples": [
+      {
+        "delta_mm": -2.4000000000000004,
+        "fallback_segment_id": null,
+        "last_date": "2022-07-06",
+        "min_date": "2018-09-23",
+        "min_source": "own_prior_vtd_min",
+        "s1a_mm": 6.16,
+        "s1b_mm": 3.76,
+        "segment_id": 214
+      },
+      {
+        "delta_mm": -1.8599999999999994,
+        "fallback_segment_id": null,
+        "last_date": "2022-07-06",
+        "min_date": "2018-09-23",
+        "min_source": "own_prior_vtd_min",
+        "s1a_mm": 6.72,
+        "s1b_mm": 4.86,
+        "segment_id": 395
+      },
+      {
+        "delta_mm": -1.8499999999999996,
+        "fallback_segment_id": null,
+        "last_date": "2022-07-06",
+        "min_date": "2018-09-23",
+        "min_source": "own_prior_vtd_min",
+        "s1a_mm": 6.56,
+        "s1b_mm": 4.71,
+        "segment_id": 495
+      },
+      {
+        "delta_mm": -1.7400000000000002,
+        "fallback_segment_id": null,
+        "last_date": "2022-07-06",
+        "min_date": "2018-09-23",
+        "min_source": "own_prior_vtd_min",
+        "s1a_mm": 6.8,
+        "s1b_mm": 5.06,
+        "segment_id": 25
+      },
+      {
+        "delta_mm": -1.63,
+        "fallback_segment_id": null,
+        "last_date": "2022-07-06",
+        "min_date": "2018-09-23",
+        "min_source": "own_prior_vtd_min",
+        "s1a_mm": 6.88,
+        "s1b_mm": 5.25,
+        "segment_id": 517
+      }
+    ],
+    "fallback_rows": 4,
+    "fallback_segments": [
+      {
+        "fallback_distance_m": 10.0,
+        "fallback_measurement_date": "2018-09-23",
+        "fallback_segment_id": 16,
+        "fallback_source": "nearest_prior_vtd_assumption",
+        "s1a_prediction_mm": 6.12,
+        "s1b_prediction_mm": 6.12,
+        "segment_id": 17
+      },
+      {
+        "fallback_distance_m": 10.0,
+        "fallback_measurement_date": "2022-07-06",
+        "fallback_segment_id": 246,
+        "fallback_source": "nearest_prior_vtd_assumption",
+        "s1a_prediction_mm": 6.8,
+        "s1b_prediction_mm": 6.8,
+        "segment_id": 247
+      },
+      {
+        "fallback_distance_m": 10.0,
+        "fallback_measurement_date": "2022-07-06",
+        "fallback_segment_id": 400,
+        "fallback_source": "nearest_prior_vtd_assumption",
+        "s1a_prediction_mm": 6.48,
+        "s1b_prediction_mm": 6.48,
+        "segment_id": 401
+      },
+      {
+        "fallback_distance_m": 10.0,
+        "fallback_measurement_date": "2022-07-06",
+        "fallback_segment_id": 454,
+        "fallback_source": "nearest_prior_vtd_assumption",
+        "s1a_prediction_mm": 6.72,
+        "s1b_prediction_mm": 6.72,
+        "segment_id": 455
+      }
+    ],
+    "historical_single_prior_pairs": {
+      "campaign_count_by_pipe": {
+        "1250009490": 2,
+        "1250009584": 1,
+        "1250009587": 1,
+        "1250011604": 2,
+        "1250022871": 2,
+        "1250028931": 1,
+        "1250028932": 1,
+        "1250028933": 1,
+        "1250028934": 1,
+        "1250028935": 1
+      },
+      "cutoff": "2023-12-01",
+      "max_prior_campaigns_per_pipe_before_cutoff": 2,
+      "note": "Only campaigns strictly before the cutoff are counted. A two-prior -> third-answer test needs at least three eligible campaigns for the same pipe; it is not available.",
+      "two_campaign_pair_counts": {
+        "1250009490": 4,
+        "1250011604": 32,
+        "1250022871": 321
+      },
+      "two_prior_campaign_test_available": false
+    },
+    "input_note": "All features use eligible VTD rows strictly before 2023-12-01; no S1 target label is read.",
+    "largest_decrease_mm": -2.4000000000000004,
+    "largest_increase_mm": 0.0,
+    "own_prior_rows": 521,
+    "quality_status": "not_verified_in_two_prior_campaign_regime; only one prior campaign exists for every pre-cutoff S1 label",
+    "rows": 525,
+    "rule": "minimum eligible own prior VTD thickness; earliest source date on exact minimum tie; S1A fallback reused only when no own prior",
+    "s1b_le_s1a_on_own_prior": true,
+    "s2": {
+      "keys": [
+        1250009583,
+        1475
+      ],
+      "policy": "copied by exact keys from the explicitly selected result.csv; never retrained",
+      "rows": 1475,
+      "source_path": "C:\\Users\\Администратор\\Documents\\PipeTwin_s1abc\\experiments\\ml_v2\\result.csv",
+      "source_sha256": "79ba544232d4d34ed33609ef2fc352d9c39edb49b6a118470f63f11fb0e25f05",
+      "unchanged": true,
+      "written_vs_source": {
+        "exact_numeric_match": true,
+        "max_abs_difference": 0.0,
+        "rows": 1475,
+        "source_rows": 1475
+      }
+    },
+    "stage": "S1B",
+    "tie_policy": "earliest source date on exact minimum tie",
+    "training_completed": false,
+    "training_required": false,
+    "unchanged_segments": 368,
+    "validation": {
+      "bounded": true,
+      "finite_mm": true,
+      "revalidated_after_write": {
+        "bounded": true,
+        "finite_mm": true,
+        "rows": 2000,
+        "template": {
+          "available": false,
+          "key_set_compared": false,
+          "status": "no_template_supplied",
+          "validation_grid": "derived_target_grid"
+        },
+        "unique_keys": true,
+        "upper_bound_column": "upper_mm"
+      },
+      "rows": 2000,
+      "s1_upper_column": "h0_mm",
+      "template": {
+        "available": false,
+        "key_set_compared": false,
+        "status": "no_template_supplied",
+        "validation_grid": "derived_target_grid"
+      },
+      "unique_keys": true,
+      "upper_bound_column": "upper_mm"
+    }
+  },
+  "training_completed": false,
+  "training_required": false,
+  "versions": {
+    "executable": "C:\\Users\\Администратор\\Documents\\PipeTwin_s1abc_env\\Scripts\\python.exe",
+    "joblib": "1.5.3",
+    "numpy": "2.3.5",
+    "pandas": "2.2.3",
+    "platform": "Windows-11-10.0.26300-SP0",
+    "python": "3.12.8",
+    "scikit-learn": "1.7.2",
+    "scipy": "1.18.1"
+  }
+}

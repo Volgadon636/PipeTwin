@@ -1,0 +1,43 @@
+{
+  "by_simple_section": [
+    {
+      "campaign_dates": [
+        "2022-07-06"
+      ],
+      "fallback_rows": 1,
+      "fit_coverage_fraction": 0.8,
+      "fit_rows": 4,
+      "id": 1250009490,
+      "total_rows": 5
+    },
+    {
+      "campaign_dates": [
+        "2022-07-06"
+      ],
+      "fallback_rows": 16,
+      "fit_coverage_fraction": 0.6666666666666666,
+      "fit_rows": 32,
+      "id": 1250011604,
+      "total_rows": 48
+    },
+    {
+      "campaign_dates": [
+        "2022-07-06"
+      ],
+      "fallback_rows": 187,
+      "fit_coverage_fraction": 0.6318897637795275,
+      "fit_rows": 321,
+      "id": 1250022871,
+      "total_rows": 508
+    }
+  ],
+  "historical_fallback_rows": 204,
+  "historical_fit_coverage_fraction": 0.6363636363636364,
+  "historical_fit_rows": 357,
+  "historical_s1_rows": 561,
+  "policy": "Ridge is applied only to rows with an own measured prior baseline; fallback rows keep S1B and are shown separately.",
+  "production_fallback_rows": 4,
+  "production_ridge_applicable_rows": 521,
+  "production_ridge_coverage_fraction": 0.9923809523809524,
+  "production_s1_rows": 525
+}
