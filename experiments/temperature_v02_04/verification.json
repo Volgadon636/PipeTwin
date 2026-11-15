@@ -1,0 +1,76 @@
+{
+  "protected_files_checked": 245,
+  "changed_protected_files": [],
+  "input_files_checked": 9,
+  "input_mismatches": [],
+  "protocol_unchanged": true,
+  "tests": [
+    {
+      "log": "tests_stage04.txt",
+      "command": [
+        "C:\\codes\\nedra\\pipetwins\\.venv\\Scripts\\python.exe",
+        "-X",
+        "utf8",
+        "-B",
+        "-m",
+        "unittest",
+        "experiments.temperature_v02_04.test_model",
+        "-v"
+      ],
+      "exit_code": 0,
+      "summary": [
+        "Ran 17 tests in 1.225s",
+        "OK"
+      ],
+      "reused_existing_run": false
+    },
+    {
+      "log": "tests_ml.txt",
+      "command": [
+        "C:\\codes\\nedra\\pipetwins\\.venv\\Scripts\\python.exe",
+        "-X",
+        "utf8",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_ml.py",
+        "-v"
+      ],
+      "exit_code": 0,
+      "summary": [
+        "Ran 17 tests in 10.261s",
+        "OK"
+      ],
+      "reused_existing_run": false
+    },
+    {
+      "log": "tests_temperature_regression.txt",
+      "command": [
+        "C:\\codes\\nedra\\pipetwins\\.venv\\Scripts\\python.exe",
+        "-X",
+        "utf8",
+        "-B",
+        "-m",
+        "unittest",
+        "experiments.temperature_v02_02.test_temperature",
+        "experiments.temperature_v02_03.test_candidates",
+        "experiments.temperature_v02_03_1.test_experiment",
+        "-v"
+      ],
+      "exit_code": 1,
+      "summary": [
+        "FAIL: test_legacy_factor_and_baseline_files_unchanged (experiments.temperature_v02_02.test_temperature.TemperatureTests.test_legacy_factor_and_baseline_files_unchanged)",
+        "Ran 43 tests in 16.507s",
+        "FAILED (failures=1)"
+      ],
+      "reused_existing_run": false
+    }
+  ],
+  "stage04_checks_passed": true,
+  "full_requested_regressions_passed": false,
+  "baseline_byte_copy_identical": true
+}

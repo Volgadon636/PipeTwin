@@ -1,0 +1,7 @@
+C:\codes\nedra\pipetwins\experiments\temperature_v02_04\run.py:108: Pandas4Warning: The 'float_precision' argument is deprecated. Use the default float precision instead.
+  baseline=pd.read_csv(baseline_path,float_precision='round_trip')
+between_vtd: 357 eligible training rows, 525 target segments, 0 independent folds
+cold_start: 372 eligible training rows, 1475 target segments, 0 independent folds
+C:\codes\nedra\pipetwins\experiments\temperature_v02_04\run.py:269: Pandas4Warning: The 'float_precision' argument is deprecated. Use the default float precision instead.
+  previous=pd.read_csv(ROOT/'experiments/temperature_v02_03_1/candidate_fits.csv',float_precision='round_trip')
+Completed 60 rate fits, 30 candidate exports, EA40 primary export; all protected files unchanged.

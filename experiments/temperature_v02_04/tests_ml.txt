@@ -1,0 +1,22 @@
+test_all_historical_features_precede_their_own_label_dates (test_ml.ArtifactTests.test_all_historical_features_precede_their_own_label_dates) ... ok
+test_checksum_failure_is_not_silently_accepted (test_ml.ArtifactTests.test_checksum_failure_is_not_silently_accepted) ... ok
+test_cold_training_stops_before_july_2022_inspection (test_ml.ArtifactTests.test_cold_training_stops_before_july_2022_inspection) ... ok
+test_current_data_has_no_independent_forward_fit_before_targets (test_ml.ArtifactTests.test_current_data_has_no_independent_forward_fit_before_targets) ... ok
+test_future_hydraulics_and_diagnostics_cannot_change_snapshot (test_ml.ArtifactTests.test_future_hydraulics_and_diagnostics_cannot_change_snapshot) ... ok
+test_future_labels_cannot_change_production_fitted_rate (test_ml.ArtifactTests.test_future_labels_cannot_change_production_fitted_rate) ... ok
+test_missing_prior_fallback_is_explicit_and_uses_prior_timestamp (test_ml.ArtifactTests.test_missing_prior_fallback_is_explicit_and_uses_prior_timestamp) ... ok
+test_published_grid_and_features_reused_exactly (test_ml.ArtifactTests.test_published_grid_and_features_reused_exactly) ... ok
+test_cold_constant_ranking_discloses_ties (test_ml.ModelTests.test_cold_constant_ranking_discloses_ties) ... ok
+test_constant_rate_units_and_no_label_clipping (test_ml.ModelTests.test_constant_rate_units_and_no_label_clipping) ... ok
+test_exposure_holds_exact_duration_and_preserves_gap (test_ml.ModelTests.test_exposure_holds_exact_duration_and_preserves_gap) ... ok
+test_invalid_row_stops_prior_interval (test_ml.ModelTests.test_invalid_row_stops_prior_interval) ... ok
+test_missing_exposure_is_unknown_not_zero_measurement (test_ml.ModelTests.test_missing_exposure_is_unknown_not_zero_measurement) ... ok
+test_parent_balance_not_simple_section_balance (test_ml.ModelTests.test_parent_balance_not_simple_section_balance) ... ok
+test_pearson_square_is_not_r2 (test_ml.ModelTests.test_pearson_square_is_not_r2) ... ok
+test_physics_fit_recovers_constant_synthetic_rate_and_gates_groups (test_ml.ModelTests.test_physics_fit_recovers_constant_synthetic_rate_and_gates_groups) ... ok
+test_submission_rejects_duplicate_extra_missing_and_nonfinite (test_ml.ModelTests.test_submission_rejects_duplicate_extra_missing_and_nonfinite) ... ok
+
+----------------------------------------------------------------------
+Ran 17 tests in 10.261s
+
+OK

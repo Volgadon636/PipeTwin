@@ -1,0 +1,7 @@
+{
+  "comparisons": 60,
+  "all_rates_match": true,
+  "max_abs_rate_difference_mm_year": 0.0,
+  "prior_decision": "candidate_set_retained; no scientific Ea selection",
+  "user_development_ea_kJ_mol": 40.0
+}

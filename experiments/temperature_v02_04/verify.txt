@@ -1,0 +1,4 @@
+tests_stage04.txt 0 ['Ran 17 tests in 1.225s', 'OK']
+tests_ml.txt 0 ['Ran 17 tests in 10.261s', 'OK']
+tests_temperature_regression.txt 1 ['FAIL: test_legacy_factor_and_baseline_files_unchanged (experiments.temperature_v02_02.test_temperature.TemperatureTests.test_legacy_factor_and_baseline_files_unchanged)', 'Ran 43 tests in 16.507s', 'FAILED (failures=1)']
+QA has failures; see verification.json and saved test logs

@@ -1,0 +1,79 @@
+{
+  "protected_files_checked": 201,
+  "changed_protected_files": [
+    ".gitignore"
+  ],
+  "changed_scientific_protected_files": [],
+  "concurrent_ancillary_changes": [
+    ".gitignore"
+  ],
+  "input_files_checked": 8,
+  "changed_inputs": [],
+  "preregistration_unchanged": true,
+  "input_hash_algorithm": "src.storage.sha256; CRLF normalized to LF for published text artifacts",
+  "preservation_hash_algorithm": "Exact raw-byte SHA256",
+  "baseline_hash_evidence": [
+    {
+      "path": "experiments/ml_baseline/result.csv",
+      "raw_sha256": "3bb78baa0a2dbc637c90f4538d75abb0922c90e922232781a41d5384453f1439",
+      "unchanged_since_before_experiment": true,
+      "normalized_sha256": "ef1c4e4e33217a5c821a94739f43288942f99e351c05ee454305eae9e3644394",
+      "test_expected_sha256": "ef1c4e4e33217a5c821a94739f43288942f99e351c05ee454305eae9e3644394",
+      "normalized_matches_legacy_test": true
+    },
+    {
+      "path": "experiments/m0_baseline_reference/result.csv",
+      "raw_sha256": "3bb78baa0a2dbc637c90f4538d75abb0922c90e922232781a41d5384453f1439",
+      "unchanged_since_before_experiment": true,
+      "normalized_sha256": "ef1c4e4e33217a5c821a94739f43288942f99e351c05ee454305eae9e3644394",
+      "test_expected_sha256": "ef1c4e4e33217a5c821a94739f43288942f99e351c05ee454305eae9e3644394",
+      "normalized_matches_legacy_test": true
+    }
+  ],
+  "actual_test_runs": [
+    {
+      "command": [
+        "C:\\codes\\nedra\\pipetwins\\.venv\\Scripts\\python.exe",
+        "-X",
+        "utf8",
+        "-B",
+        "-m",
+        "unittest",
+        "experiments.temperature_v02_03_1.test_experiment",
+        "-v"
+      ],
+      "exit_code": 0,
+      "log": "tests_stage03_1.txt",
+      "summary": [
+        "Ran 18 tests in 3.023s",
+        "OK"
+      ],
+      "reused_existing_run": true
+    },
+    {
+      "command": [
+        "C:\\codes\\nedra\\pipetwins\\.venv\\Scripts\\python.exe",
+        "-X",
+        "utf8",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ],
+      "exit_code": 1,
+      "log": "tests_regression.txt",
+      "summary": [
+        "ERROR: setUpClass (test_preprocessing.DatasetTests)",
+        "FAIL: test_legacy_factor_and_baseline_files_unchanged (experiments.temperature_v02_02.test_temperature.TemperatureTests.test_legacy_factor_and_baseline_files_unchanged)",
+        "Ran 58 tests in 37.973s",
+        "FAILED (failures=1, errors=1)"
+      ],
+      "reused_existing_run": true
+    }
+  ],
+  "stage03_1_checks_passed": true,
+  "passed": false
+}

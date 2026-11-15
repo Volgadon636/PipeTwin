@@ -1,0 +1,41 @@
+{
+  "version": "stage03_1_v1",
+  "frozen_before_candidate_fits": true,
+  "candidates_kJ_mol": {"EA00_null": 0.0, "EA25_low": 25.0, "EA40_mid": 40.0, "EA55_elevated": 55.0, "EA70_high": 70.0},
+  "R_J_mol_K": 8.314462618,
+  "reference_temperature_K": 293.15,
+  "holds_days": [1.0, 0.5, 0.25],
+  "primary_hold_days": 1.0,
+  "gap_policies": ["observed_only", "reference"],
+  "targets": [
+    {"id": 1250022871, "prediction_date": "2023-12-01", "case": "between_vtd"},
+    {"id": 1250009583, "prediction_date": "2022-07-01", "case": "cold_start"}
+  ],
+  "eligibility": "RepositoryData checksum validation; build_training_windows once; eligible_training per target; strict label cutoff; exclude entire cold-start target parent; exclude missing between-VTD baselines per API; no further candidate-specific exclusions; fail on nonfinite required fitting values",
+  "history": "Each historical window uses its own cutoff-specific hydraulic QA; T-only intervals frozen once per section/window/hold; no W/v gate, spatial temperatures, fallback or extrapolation; empty history retains zero exposure and residual",
+  "rate_fit": "One nonnegative reference rate per case/hold/policy/candidate: max(0,sum(w*E*loss)/sum(w*E^2)); unavailable for zero denominator; negative observed loss retained",
+  "weighting": "Existing sample_weights W1, recomputed for every calibration set; no section-specific primary rates",
+  "metrics": "Unclipped W1 SSE and sqrt(SSE/sum(w)); separate clipped-thickness MAE/RMSE/bias and Pearson squared only for nonconstant vectors; relative SSE change versus EA00 and minimum; zero comparator: zero if equal, otherwise null with explicit status",
+  "folds": "First audit strict forward-time held-parent folds on target-specific permitted windows. If absent, leave one simple-section id out within each parent/campaign having >=3 sections, hold all its segments/windows together, recompute W1. Identical timestamp/duration/temperature trajectories across calibration/test invalidate grouped fold. Shared calendar/operating histories reported. No random split or bootstrap.",
+  "grouped_metric": "Equal contribution of held-out sections, using paired clipped-thickness MAE; publish per-section metrics and ranks. Scores are selection diagnostics, never unbiased final estimates.",
+  "fit_tie_relative_sse": 0.01,
+  "zero_sse_absolute_tolerance": 1e-12,
+  "mae_tie_absolute_mm": 0.01,
+  "mae_tie_relative": 0.01,
+  "shape_proportionality_residual_threshold": 1e-6,
+  "sensitivity_effective_rank_relative_threshold": 1e-6,
+  "sensitivity": "Columns sqrt(w)*r*E [mm per log(rate)] and sqrt(w)*r*dE/dEa [mm per kJ/mol]. Report raw SVD and conventional machine-epsilon rank, plus unit-column SVD/rank at 1e-6. Zero rate/column is degenerate. dE/dEa=sum(dt*F*1000/R*(1/Tref-1/T)); reference gap derivative zero.",
+  "decision_rules": [
+    "Training SSE alone cannot choose. Candidates within 1% of minimum SSE are fit ties, explicitly handle zero minimum.",
+    "Unique primary best equal-section held-out MAE under BOTH gap policies; >=3 usable section holdouts required for internal provisional choice. Differences below max(0.01mm,1% comparator MAE) tie.",
+    "No meaningful shorter-hold reversal under either policy; candidate must beat EA00 beyond same tolerance and have distinguishable exposure shape.",
+    "Withhold unique choice if rank deficient, effectively proportional, gap-dependent, or dependent on one held-out section. Delete-one-section aggregate perturbations must preserve the unique candidate.",
+    "If EA00 ties, retain it. No usable transfer or no distinguishable shape => indeterminate; otherwise unresolved practical ties/sensitivity => candidate_set_retained. Conservatively retain full fixed grid whenever no unique choice is supported.",
+    "Shared recommendation requires same supported choice in both cases. Never pool cases or policies. EA40 continuity is software-only and not experiment selection."
+  ],
+  "associations": "Per-window and deduplicated per-case eligible contributing timestamps: pairwise finite T, elapsed years from window start, watercut_pct_usable, v_liquid_true_usable. Publish pair counts, missingness and Pearson association, descriptive only.",
+  "uncertainty": "No population confidence intervals from one parent/campaign; overlapping trajectories and leave-section perturbations are not independent replication.",
+  "excluded": "Legacy theta=2500K, continuous optimization, extra grid values, chemistry coefficients, production forecasts and target-based selection",
+  "provenance": "Focused clean-chat preamble supersedes broad initial reading; no new full-spec reading or external literature. Prior Russian v1.1 substitution is handoff context, not a claim of rereading.",
+  "output_scope": "experiments/temperature_v02_03_1 only"
+}

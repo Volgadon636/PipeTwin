@@ -51,5 +51,6 @@ step1_summary.json
 # Internal prompts / challenge instructions
 /promts
 .agent
+.github
 # Added by code-review-graph
 .code-review-graph/

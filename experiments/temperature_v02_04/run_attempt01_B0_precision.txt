@@ -1,0 +1,11 @@
+C:\codes\nedra\pipetwins\experiments\temperature_v02_04\run.py:108: Pandas4Warning: The 'float_precision' argument is deprecated. Use the default float precision instead.
+  baseline=pd.read_csv(baseline_path,float_precision='round_trip')
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\codes\nedra\pipetwins\experiments\temperature_v02_04\run.py", line 325, in <module>
+    generate()
+  File "C:\codes\nedra\pipetwins\experiments\temperature_v02_04\run.py", line 139, in generate
+    if maxdelta>1e-12: raise ValueError('Reconstructed M0 differs from immutable B0; investigate before proceeding')
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: Reconstructed M0 differs from immutable B0; investigate before proceeding

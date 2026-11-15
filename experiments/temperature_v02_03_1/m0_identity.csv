@@ -1,0 +1,7 @@
+case,target_id,production_cutoff,hold_days,gap_policy,candidate_id,ea_kJ_mol,rate_equal,exposure_equal,predictions_equal,m0_rate_mm_year
+between_vtd,1250022871,2023-12-01,1,reference,EA00_null,0,True,True,True,0.013033550759625047
+between_vtd,1250022871,2023-12-01,0.5,reference,EA00_null,0,True,True,True,0.013033550759625047
+between_vtd,1250022871,2023-12-01,0.25,reference,EA00_null,0,True,True,True,0.013033550759625047
+cold_start,1250009583,2022-07-01,1,reference,EA00_null,0,True,True,True,0.10197980994208126
+cold_start,1250009583,2022-07-01,0.5,reference,EA00_null,0,True,True,True,0.10197980994208126
+cold_start,1250009583,2022-07-01,0.25,reference,EA00_null,0,True,True,True,0.10197980994208126

@@ -1,0 +1,3 @@
+tests_stage03_1.txt 0 ['Ran 18 tests in 3.023s', 'OK']
+tests_regression.txt 1 ['ERROR: setUpClass (test_preprocessing.DatasetTests)', 'FAIL: test_legacy_factor_and_baseline_files_unchanged (experiments.temperature_v02_02.test_temperature.TemperatureTests.test_legacy_factor_and_baseline_files_unchanged)', 'Ran 58 tests in 37.973s', 'FAILED (failures=1, errors=1)']
+Verification failed; inspect saved logs and mismatch lists

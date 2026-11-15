@@ -1,0 +1,13 @@
+case,gap_policy,hold_days,r_ref_mm_year,mean_prediction_mm,mean_delta_vs_primary_hold_mm,max_abs_delta_vs_primary_hold_mm,interpretation
+between_vtd,observed_only,0.25,0.036309339877163352,6.195828948277744,-0.00019276234685659485,0.00019278732715566349,"Assumption sensitivity, not confidence bounds"
+between_vtd,observed_only,0.5,0.018154669938581676,6.1959089480944174,-0.000112762530183202,0.00011278751048227065,"Assumption sensitivity, not confidence bounds"
+between_vtd,observed_only,1,0.0090886144323737428,6.1960217106246001,0,0,"Assumption sensitivity, not confidence bounds"
+between_vtd,reference_gap,0.25,0.011252083275328683,6.2029135261245667,0.0044847532606121414,0.0044861826317643683,"Assumption sensitivity, not confidence bounds"
+between_vtd,reference_gap,0.5,0.0098989839634975162,6.2010394347917952,0.0026106619278396283,0.0026115050520756355,"Assumption sensitivity, not confidence bounds"
+between_vtd,reference_gap,1,0.0079830259541830012,6.1984287728639558,0,0,"Assumption sensitivity, not confidence bounds"
+cold_start,observed_only,0.25,3.4084477327334595,3.0005932134248359,0.0040166781585377898,0.0040166781585377898,"Assumption sensitivity, not confidence bounds"
+cold_start,observed_only,0.5,1.7052908143251861,2.9997016577007907,0.0031251224344917006,0.0031251224344917006,"Assumption sensitivity, not confidence bounds"
+cold_start,observed_only,1,0.85632946006203337,2.9965765352662994,0,0,"Assumption sensitivity, not confidence bounds"
+cold_start,reference_gap,0.25,0.10343583666877761,1.5519262137223697,-0.038964806258333429,0.038964806258333429,"Assumption sensitivity, not confidence bounds"
+cold_start,reference_gap,0.5,0.10493322623771016,1.5646477881462137,-0.0262432318344894,0.0262432318344894,"Assumption sensitivity, not confidence bounds"
+cold_start,reference_gap,1,0.10805820515636037,1.5908910199807029,0,0,"Assumption sensitivity, not confidence bounds"

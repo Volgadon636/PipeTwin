@@ -1,0 +1,167 @@
+{
+  "cases": {
+    "between_vtd": {
+      "outcome": "candidate_set_retained",
+      "selected_candidate": null,
+      "selected_ea_kJ_mol": null,
+      "retained_candidates": [
+        "EA00_null",
+        "EA25_low",
+        "EA40_mid",
+        "EA55_elevated",
+        "EA70_high"
+      ],
+      "rule_results": {
+        "grouped_transfer_available": true,
+        "unique_primary_best_both_policies": false,
+        "beats_null_beyond_tolerance": null,
+        "no_short_hold_reversal": null,
+        "distinguishable_shape": null,
+        "full_effective_sensitivity_rank": null,
+        "survives_delete_one_section": null
+      },
+      "failed_rules": [
+        "unique_primary_best_both_policies"
+      ],
+      "not_assessed_without_unique_proposal": [
+        "beats_null_beyond_tolerance",
+        "no_short_hold_reversal",
+        "distinguishable_shape",
+        "full_effective_sensitivity_rank",
+        "survives_delete_one_section"
+      ],
+      "any_numerically_distinguishable_shape": true,
+      "primary_fit_ties": {
+        "observed_only": [
+          "EA00_null",
+          "EA25_low",
+          "EA40_mid",
+          "EA55_elevated",
+          "EA70_high"
+        ],
+        "reference": [
+          "EA00_null",
+          "EA25_low",
+          "EA40_mid",
+          "EA55_elevated",
+          "EA70_high"
+        ]
+      },
+      "interpretation": "Internal selection evidence only; no physical or independent validation.",
+      "primary_transfer_ties": {
+        "observed_only": [
+          "EA00_null",
+          "EA25_low",
+          "EA40_mid",
+          "EA55_elevated",
+          "EA70_high"
+        ],
+        "reference": [
+          "EA00_null",
+          "EA25_low",
+          "EA40_mid",
+          "EA55_elevated",
+          "EA70_high"
+        ]
+      },
+      "primary_numerical_mae_winner": {
+        "observed_only": "EA00_null",
+        "reference": "EA00_null"
+      },
+      "all_fits_effective_sensitivity_rank_range": [
+        2,
+        2
+      ],
+      "reason": "Practical held-out ties prevent a common unique primary winner across both gap assumptions. EA00 is retained; extra thermal sensitivity is unsupported by these selection diagnostics."
+    },
+    "cold_start": {
+      "outcome": "candidate_set_retained",
+      "selected_candidate": null,
+      "selected_ea_kJ_mol": null,
+      "retained_candidates": [
+        "EA00_null",
+        "EA25_low",
+        "EA40_mid",
+        "EA55_elevated",
+        "EA70_high"
+      ],
+      "rule_results": {
+        "grouped_transfer_available": true,
+        "unique_primary_best_both_policies": false,
+        "beats_null_beyond_tolerance": null,
+        "no_short_hold_reversal": null,
+        "distinguishable_shape": null,
+        "full_effective_sensitivity_rank": null,
+        "survives_delete_one_section": null
+      },
+      "failed_rules": [
+        "unique_primary_best_both_policies"
+      ],
+      "not_assessed_without_unique_proposal": [
+        "beats_null_beyond_tolerance",
+        "no_short_hold_reversal",
+        "distinguishable_shape",
+        "full_effective_sensitivity_rank",
+        "survives_delete_one_section"
+      ],
+      "any_numerically_distinguishable_shape": true,
+      "primary_fit_ties": {
+        "observed_only": [
+          "EA00_null",
+          "EA25_low"
+        ],
+        "reference": [
+          "EA00_null",
+          "EA25_low",
+          "EA40_mid",
+          "EA55_elevated",
+          "EA70_high"
+        ]
+      },
+      "interpretation": "Internal selection evidence only; no physical or independent validation.",
+      "primary_transfer_ties": {
+        "observed_only": [
+          "EA00_null"
+        ],
+        "reference": [
+          "EA00_null",
+          "EA25_low",
+          "EA40_mid",
+          "EA55_elevated",
+          "EA70_high"
+        ]
+      },
+      "primary_numerical_mae_winner": {
+        "observed_only": "EA00_null",
+        "reference": "EA00_null"
+      },
+      "all_fits_effective_sensitivity_rank_range": [
+        2,
+        2
+      ],
+      "reason": "Practical held-out ties prevent a common unique primary winner across both gap assumptions. EA00 is retained; extra thermal sensitivity is unsupported by these selection diagnostics."
+    }
+  },
+  "shared_recommendation": null,
+  "shared_ea_kJ_mol": null,
+  "shared_retained_candidates": [
+    "EA00_null",
+    "EA25_low",
+    "EA40_mid",
+    "EA55_elevated",
+    "EA70_high"
+  ],
+  "limitations": [
+    "One permitted parent/campaign per case in this checkout; sections are dependent.",
+    "No independent forward-time held-parent validation; no population confidence intervals.",
+    "Observed-only descriptors omit unknown corrosion exposure; reference filling assumes F=1.",
+    "Negative thinning is retained; contradictory readings and baseline uncertainty can dominate fit.",
+    "No effective physical activation energy established."
+  ],
+  "stage04_handoff": {
+    "go": "Isolated development and prospective validation design",
+    "no_go": "Unique scientifically selected Ea, production promotion, or physical validation claim",
+    "continuity_setting": "EA40 only if labelled unselected software continuity",
+    "missing_evidence": "Independent earlier calibration and later held-parent campaigns; timestamped T histories with much denser support and varied thermal trajectories, paired W/v, repeated reliable thickness/baseline measurements."
+  }
+}

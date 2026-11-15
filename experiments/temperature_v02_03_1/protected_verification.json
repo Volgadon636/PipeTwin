@@ -1,0 +1,11 @@
+{
+  "phase": "final_after_tests",
+  "protected_files_checked": 201,
+  "changed": [
+    ".gitignore"
+  ],
+  "changed_scientific_protected_files": [],
+  "concurrent_ancillary_changes": [
+    ".gitignore"
+  ]
+}

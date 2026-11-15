@@ -1,0 +1,51 @@
+[
+  {
+    "case": "between_vtd",
+    "target_id": 1250022871,
+    "cutoff": "2023-12-01 00:00:00",
+    "rows": 357,
+    "parents": [
+      "MAIN-2"
+    ],
+    "campaigns": [
+      "MAIN-2:2022-07-06"
+    ],
+    "sections": 3,
+    "history_windows": 3,
+    "latest_label": "2022-07-06 00:00:00",
+    "negative_observed_loss_rows": 177,
+    "baseline_sources": {
+      "measured_prior_vtd": 357
+    },
+    "exclusion_counts": {
+      "different_case": 466,
+      "included": 357,
+      "missing_prior_baseline": 204,
+      "label_not_before_target_cutoff": 53
+    }
+  },
+  {
+    "case": "cold_start",
+    "target_id": 1250009583,
+    "cutoff": "2022-07-01 00:00:00",
+    "rows": 372,
+    "parents": [
+      "MAIN-2"
+    ],
+    "campaigns": [
+      "MAIN-2:2018-09-23"
+    ],
+    "sections": 3,
+    "history_windows": 3,
+    "latest_label": "2018-09-23 00:00:00",
+    "negative_observed_loss_rows": 0,
+    "baseline_sources": {
+      "nominal_at_commissioning": 372
+    },
+    "exclusion_counts": {
+      "different_case": 614,
+      "included": 372,
+      "label_not_before_target_cutoff": 94
+    }
+  }
+]

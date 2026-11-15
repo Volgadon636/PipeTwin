@@ -1,0 +1,18 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\codes\nedra\pipetwins\experiments\temperature_v02_03_1\run.py", line 586, in <module>
+    generate()
+  File "C:\codes\nedra\pipetwins\experiments\temperature_v02_03_1\run.py", line 269, in generate
+    data = RepositoryData(ROOT)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\codes\nedra\pipetwins\src\ml\data.py", line 15, in __init__
+    self.manifest = json.loads((self.root / 'reports/run_manifest.json').read_text())
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\prvel\AppData\Local\Python\pythoncore-3.12-64\Lib\pathlib.py", line 1028, in read_text
+    return f.read()
+           ^^^^^^^^
+  File "C:\Users\prvel\AppData\Local\Python\pythoncore-3.12-64\Lib\encodings\cp1252.py", line 23, in decode
+    return codecs.charmap_decode(input,self.errors,decoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeDecodeError: 'charmap' codec can't decode byte 0x8f in position 1874: character maps to <undefined>

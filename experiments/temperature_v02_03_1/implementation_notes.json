@@ -1,0 +1,10 @@
+{
+  "protocol_amended": false,
+  "fixes": [
+    "Use Python UTF-8 mode for existing Windows loader.",
+    "Synthetic mixed-date test fixture explicitly uses pandas format=mixed.",
+    "Report proposal-dependent gates as null when no unique proposal exists; actual sensitivity ranks remain published.",
+    "Publish all delete-one-section aggregate perturbations and cross-hold shape diagnostics from saved fits."
+  ],
+  "scope": "Numerical fits and frozen decision tolerances unchanged; reporting-only finalization avoids rebuilding historical windows."
+}

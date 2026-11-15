@@ -1,0 +1,28 @@
+{
+  "version": "stage04_v1_user_fixed_ea40",
+  "development_ea_kJ_mol": 40.0,
+  "parameter_provenance": "Explicit user instruction: Proceed on to stage 4 retaining the value of EA as 40",
+  "scientific_selection": "None; Stage 03.1 retained all five candidates. EA40 is a user-fixed development hypothesis, not a validated winner.",
+  "comparators_kJ_mol": {"EA00_null": 0.0, "EA25_low": 25.0, "EA40_mid": 40.0, "EA55_elevated": 55.0, "EA70_high": 70.0},
+  "baseline": "B0 is the saved experiments/m0_baseline_reference/result.csv; additionally reconstruct original W1 M0 on identical eligible rows and verify equivalence, without replacing B0.",
+  "R_J_mol_K": 8.314462618,
+  "reference_temperature_K": 293.15,
+  "holds_days": [1.0, 0.5, 0.25],
+  "primary_hold_days": 1.0,
+  "gap_policies": ["observed_only", "reference_gap"],
+  "stage02_policy_alias": {"reference_gap": "reference", "observed_only": "observed_only"},
+  "primary_export": "result.csv: EA40, one-day bounded hold, reference_gap assumption; experimental full-horizon candidate only",
+  "observed_only_export": "Incomplete-history descriptor, not a physical full-history forecast",
+  "targets": [
+    {"id": 1250022871, "prediction_date": "2023-12-01", "case": "between_vtd"},
+    {"id": 1250009583, "prediction_date": "2022-07-01", "case": "cold_start"}
+  ],
+  "eligibility": "RepositoryData checksum contract, build_training_windows once, eligible_training per target; labels strictly earlier than target cutoff, cold-start target entire parent excluded. History QA at each window's own cutoff. Keep negative measured loss; exclude missing between-VTD baselines exactly as existing API.",
+  "fit": "r=max(0,sum(W1*E*(h0-h_obs))/sum(W1*E^2)); denominator must be positive and all fitting sums finite. Separate rate per case/candidate/hold/policy. Fit objective before thickness clipping. No temperature double counting.",
+  "prediction": "clip(h0-r*E,0,h0); zero observed exposure retained with missingness and descriptor warning; all-zero fit denominator is unavailable, no silent fallback",
+  "intervals": "Use Stage 02 T-only API; freeze once per section/start/cutoff/hold, reuse across all candidates. No W/v requirement, interpolation, backward fill, spatial or 20C/4C temperature substitutions.",
+  "evaluation": "Audit strict forward-time held-parent folds; fit only permissible earlier training if available. Within-parent section diagnostics are not independent validation. Production targets have no evaluation labels or metrics. Report fit diagnostics and sensitivity without selecting Ea.",
+  "robustness": "All three holds and both gap policies; quantify prediction deltas versus immutable B0 and primary EA40, no averaging of assumptions or confidence intervals.",
+  "schema": "Each candidate export id,segment_id,thickness_pred; exactly 525+1475 rows; additional provenance and quality flags in prediction_diagnostics.csv",
+  "preservation": "All new artifacts only in experiments/temperature_v02_04; no edits to source, existing tests, prior stages, original data, processed artifacts, config, or official predictions. No push or promotion."
+}

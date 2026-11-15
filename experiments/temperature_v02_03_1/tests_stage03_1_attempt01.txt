@@ -1,0 +1,49 @@
+test_all_sixty_comparisons_and_interval_identity (experiments.temperature_v02_03_1.test_experiment.ArtifactTests.test_all_sixty_comparisons_and_interval_identity) ... ok
+test_null_control_retained_unless_all_selection_gates_pass (experiments.temperature_v02_03_1.test_experiment.ArtifactTests.test_null_control_retained_unless_all_selection_gates_pass) ... ok
+test_predictions_only_eligible_historical_rows_and_split_provenance (experiments.temperature_v02_03_1.test_experiment.ArtifactTests.test_predictions_only_eligible_historical_rows_and_split_provenance) ... ok
+test_saved_fit_losses_and_grouped_calibration_recompute (experiments.temperature_v02_03_1.test_experiment.ArtifactTests.test_saved_fit_losses_and_grouped_calibration_recompute) ... ok
+test_analytic_derivative_against_central_difference_both_policies (experiments.temperature_v02_03_1.test_experiment.NumericalTests.test_analytic_derivative_against_central_difference_both_policies) ... ok
+test_constant_rate_recovery_and_negative_losses_remain (experiments.temperature_v02_03_1.test_experiment.NumericalTests.test_constant_rate_recovery_and_negative_losses_remain) ... ok
+test_decision_refuses_training_winner_without_transfer_or_when_tied (experiments.temperature_v02_03_1.test_experiment.NumericalTests.test_decision_refuses_training_winner_without_transfer_or_when_tied) ... ok
+test_ea00_reference_exact_m0_identity (experiments.temperature_v02_03_1.test_experiment.NumericalTests.test_ea00_reference_exact_m0_identity) ... ok
+test_fixed_intervals_match_existing_api_without_wv_gate (experiments.temperature_v02_03_1.test_experiment.NumericalTests.test_fixed_intervals_match_existing_api_without_wv_gate) ... ERROR
+test_heterogeneous_synthetic_histories_recover_fixed_ea (experiments.temperature_v02_03_1.test_experiment.NumericalTests.test_heterogeneous_synthetic_histories_recover_fixed_ea) ... ok
+test_independent_fold_requires_earlier_date_and_different_parent (experiments.temperature_v02_03_1.test_experiment.NumericalTests.test_independent_fold_requires_earlier_date_and_different_parent) ... ok
+test_nonfinite_or_negative_exposure_rejected (experiments.temperature_v02_03_1.test_experiment.NumericalTests.test_nonfinite_or_negative_exposure_rejected) ... ok
+test_practical_ties_and_zero_objective (experiments.temperature_v02_03_1.test_experiment.NumericalTests.test_practical_ties_and_zero_objective) ... ok
+test_proportional_exposure_is_unidentifiable (experiments.temperature_v02_03_1.test_experiment.NumericalTests.test_proportional_exposure_is_unidentifiable) ... ok
+test_section_splits_isolate_all_segments_and_reject_identical_trajectories (experiments.temperature_v02_03_1.test_experiment.NumericalTests.test_section_splits_isolate_all_segments_and_reject_identical_trajectories) ... ok
+test_strict_cutoff_and_target_parent_exclusion (experiments.temperature_v02_03_1.test_experiment.NumericalTests.test_strict_cutoff_and_target_parent_exclusion) ... ok
+test_zero_exposure_retains_residual_zero_denominator_unavailable (experiments.temperature_v02_03_1.test_experiment.NumericalTests.test_zero_exposure_retains_residual_zero_denominator_unavailable) ... ok
+
+======================================================================
+ERROR: test_fixed_intervals_match_existing_api_without_wv_gate (experiments.temperature_v02_03_1.test_experiment.NumericalTests.test_fixed_intervals_match_existing_api_without_wv_gate)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\codes\nedra\pipetwins\experiments\temperature_v02_03_1\test_experiment.py", line 41, in test_fixed_intervals_match_existing_api_without_wv_gate
+    rows=history([40.,np.nan,0.,60.],['2019-12-31 18:00','2020-01-01 06:00','2020-01-02','2020-01-03'])
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\codes\nedra\pipetwins\experiments\temperature_v02_03_1\test_experiment.py", line 18, in history
+    date=pd.to_datetime(dates if dates is not None else pd.date_range('2020-01-01',periods=len(temperatures))),
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\codes\nedra\pipetwins\.venv\Lib\site-packages\pandas\core\tools\datetimes.py", line 1271, in to_datetime
+    result = convert_listlike(argc, format)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\codes\nedra\pipetwins\.venv\Lib\site-packages\pandas\core\tools\datetimes.py", line 484, in _convert_listlike_datetimes
+    return _array_strptime_with_fallback(arg, name, utc, format, exact, errors)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\codes\nedra\pipetwins\.venv\Lib\site-packages\pandas\core\tools\datetimes.py", line 518, in _array_strptime_with_fallback
+    result, tz_out = array_strptime(arg, fmt, exact=exact, errors=errors, utc=utc)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "pandas/_libs/tslibs/strptime.pyx", line 644, in pandas._libs.tslibs.strptime.array_strptime
+  File "pandas/_libs/tslibs/strptime.pyx", line 561, in pandas._libs.tslibs.strptime.array_strptime
+  File "pandas/_libs/tslibs/strptime.pyx", line 701, in pandas._libs.tslibs.strptime._parse_with_format
+ValueError: time data "2020-01-02" doesn't match format "%Y-%m-%d %H:%M". You might want to try:
+    - passing `format` if your strings have a consistent format;
+    - passing `format='ISO8601'` if your strings are all ISO8601 but not necessarily in exactly the same format;
+    - passing `format='mixed'`, and the format will be inferred for each element individually. You might want to use `dayfirst` alongside this.
+
+----------------------------------------------------------------------
+Ran 17 tests in 2.104s
+
+FAILED (errors=1)

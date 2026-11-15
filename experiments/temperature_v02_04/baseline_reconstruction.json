@@ -1,0 +1,34 @@
+[
+  {
+    "case": "between_vtd",
+    "r_ref_mm_year": 0.013033550759625047,
+    "training_rows": 357,
+    "saved_rate_mm_year": 0.013033550759625047,
+    "max_abs_prediction_difference_mm": 2.6865620839089388e-11,
+    "saved_export_decimal_places": 10,
+    "exact_saved_precision_identity": true,
+    "evidence_status": "diagnostic_only",
+    "n": 357,
+    "mae_mm": 0.4998872996081092,
+    "rmse_mm": 0.6503883416768479,
+    "bias_mm": 5.970947359328573e-17,
+    "pearson_squared": 0.11252743031390725,
+    "pearson_status": "defined"
+  },
+  {
+    "case": "cold_start",
+    "r_ref_mm_year": 0.10197980994208126,
+    "training_rows": 372,
+    "saved_rate_mm_year": 0.10197980994208126,
+    "max_abs_prediction_difference_mm": 2.3236967905404526e-11,
+    "saved_export_decimal_places": 10,
+    "exact_saved_precision_identity": true,
+    "evidence_status": "diagnostic_only",
+    "n": 372,
+    "mae_mm": 0.4382206035379812,
+    "rmse_mm": 0.5515582934254218,
+    "bias_mm": -3.6291161235058883e-16,
+    "pearson_squared": null,
+    "pearson_status": "undefined_constant_vector"
+  }
+]

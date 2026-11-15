@@ -1,0 +1,189 @@
+{
+  "branch": "model_v02",
+  "head": "d0ee12c25cc5a1d27b00f77b2cb7ee4fbc4b85b2",
+  "initial_status_short": " M .mcp.json\n?? .github/\n",
+  "command": ".venv/Scripts/python.exe -X utf8 -B -m experiments.temperature_v02_03_1.run",
+  "python": "3.12.10",
+  "numpy": "2.5.4",
+  "pandas": "3.1.1",
+  "preregistration_sha256": "c6d3697bf7de8ee4ed63ffb94af321ffbd04b3079e4b7a9fdea774b432c1b0f0",
+  "input_sha256": {
+    "processed/training_targets.csv": "d15dc17a4ee61e428163447945967d174a0ecb55272d5724cdce0c5855ff22f2",
+    "data/cleaned/passport.csv": "4f3474ae8719c86774290861777a58f5b04528c8188d33df9deb98018b5a8b0d",
+    "data/cleaned/regime.csv": "8a13cabe853a74def23c9917dd4d1f5534832d5f95d763348bf2cb844ed06590",
+    "data/cleaned/tech_mode_for_embedings_with_length_with_temperatures_ids16.csv": "c6ea4562e46d2241a220422fe15553fc7a7868b234448c0e5cfbb8706e2323f1",
+    "processed/vtd_by_segment.csv": "085a2aeb930d1b01112bbc379d156f87a67db4180121d80f922962c5f1ef3158",
+    "processed/uzt_by_segment.csv": "e02975b895559903a6caa471a6b5ff28042213531258c31fa1d29cbc756e760e",
+    "processed/segments_grid.csv": "55cce38f655fc47eaabf2255d4e74e31e6d81f774f95df40f47f23adcfeb48a3",
+    "processed/profile_by_segment.csv": "b67848066b70ff44234df8a7a97e4726b5f2a7c167885356b34380115d0906c7"
+  },
+  "source_sha256": {
+    "src/__init__.py": "12eb4e6a222cd629a0b3cd1ca4c511291094d28ecf18fde8235dd633a359b840",
+    "src/config.py": "a8c5f490b84a8b77a14f63e6cd100aeccb2e51269361e803d11bb564834eaf82",
+    "src/data_cleaner.py": "30741ef1940a8dcb98987e34ca5d905a5ad9495483ff2ecf9e1d445b03861dd5",
+    "src/data_prep.py": "e4701cd589e879960a77810f33db39629f7dd8567df9414ea73297cae45cbbf9",
+    "src/format_detector.py": "e0fe54fa2857043c585e3fa07710fe8ebea59815ed6b7890b55b47fbb0b5bbbd",
+    "src/grid_builder.py": "5c942f17e51c95cbdc13e04f48a4bd8662dff2f5d1cfbef9e17ff934d5d292f6",
+    "src/ml/__init__.py": "c8080173a7916d41892ea671a60f69dce94d194a8149788d177b95d36df21990",
+    "src/ml/audit.py": "6861779d82c377166236713de01772afa7e84640a85e9782689658afe535fb09",
+    "src/ml/comparison.py": "4bea393ef2269dcab67998968e0be9875e891864e0fea1a6dbb5d5e799cadecc",
+    "src/ml/data.py": "43698ae50f901b000d740acf1486a9a56f8426d14ea0cc08daf17a71ae2dd0de",
+    "src/ml/evaluation.py": "1e1bc9d8ccd183556a47c2d644f1f1f8a28782d72c5e2ed9a60385457d46e45d",
+    "src/ml/experiment.py": "af763d4950f668df1c22f9665b94cb2626210196f4ec7e8726f7226cf9009dfa",
+    "src/ml/exposure.py": "fed8a7128d0ab6a413a968f1023df10e1ced8c0a0c8a8fc33c11038e448e87a9",
+    "src/ml/features.py": "fe528c6e3cd7341ea3282b918021042dc7865c562615f4cc83511c7c7f7a6988",
+    "src/ml/models.py": "c3dd8ebce1a809cb9a6a30e54c8c5b3bb84f7957578a56179d607ae9d551f180",
+    "src/ml/submission.py": "bb83508c6e8dec098127c0dc1d45828e4df1964b521dcf1db51026e2402569b2",
+    "src/ml/temperature.py": "16a76b82fa9fe8ecf34101e47969cf6495876e152261a711608eed6865fd986c",
+    "src/ml/windows.py": "03aad916b783015b10e30e1300dedec08fd9bdd8129f0abf17e14626983f05fd",
+    "src/segment_mapper.py": "13688c0c8b70c134db4bd4089cbe07bab91ac5520f244994e9a8e53901969199",
+    "src/storage.py": "ec365011f42b9c9494ee702f49d6ef65c6d8243d239219a20bbcbdd58b4552e7",
+    "src/temporal.py": "048d80d3a01b81d4fe2102bdd8bfb749be04ddfd479755d0f5378da01b3d8601",
+    "src/validator.py": "76b255bdd10973c87887295c93bb03372220a73038a60f95e77a608925714d81"
+  },
+  "output_scope": "C:\\codes\\nedra\\pipetwins\\experiments\\temperature_v02_03_1",
+  "spec_reading": "Focused preamble applied; prior Russian v1.1 use recorded as handoff only",
+  "runtime_scope": "Historical windows once; no production snapshot reconstruction or forecast generation",
+  "completed_utc": "2026-11-14T23:54:15.399462+00:00",
+  "verification_command": ".venv/Scripts/python.exe -X utf8 -B -m experiments.temperature_v02_03_1.verify",
+  "verification": {
+    "protected_files_checked": 201,
+    "changed_protected_files": [
+      ".gitignore"
+    ],
+    "changed_scientific_protected_files": [],
+    "concurrent_ancillary_changes": [
+      ".gitignore"
+    ],
+    "input_files_checked": 8,
+    "changed_inputs": [],
+    "preregistration_unchanged": true,
+    "input_hash_algorithm": "src.storage.sha256; CRLF normalized to LF for published text artifacts",
+    "preservation_hash_algorithm": "Exact raw-byte SHA256",
+    "baseline_hash_evidence": [
+      {
+        "path": "experiments/ml_baseline/result.csv",
+        "raw_sha256": "3bb78baa0a2dbc637c90f4538d75abb0922c90e922232781a41d5384453f1439",
+        "unchanged_since_before_experiment": true,
+        "normalized_sha256": "ef1c4e4e33217a5c821a94739f43288942f99e351c05ee454305eae9e3644394",
+        "test_expected_sha256": "ef1c4e4e33217a5c821a94739f43288942f99e351c05ee454305eae9e3644394",
+        "normalized_matches_legacy_test": true
+      },
+      {
+        "path": "experiments/m0_baseline_reference/result.csv",
+        "raw_sha256": "3bb78baa0a2dbc637c90f4538d75abb0922c90e922232781a41d5384453f1439",
+        "unchanged_since_before_experiment": true,
+        "normalized_sha256": "ef1c4e4e33217a5c821a94739f43288942f99e351c05ee454305eae9e3644394",
+        "test_expected_sha256": "ef1c4e4e33217a5c821a94739f43288942f99e351c05ee454305eae9e3644394",
+        "normalized_matches_legacy_test": true
+      }
+    ],
+    "actual_test_runs": [
+      {
+        "command": [
+          "C:\\codes\\nedra\\pipetwins\\.venv\\Scripts\\python.exe",
+          "-X",
+          "utf8",
+          "-B",
+          "-m",
+          "unittest",
+          "experiments.temperature_v02_03_1.test_experiment",
+          "-v"
+        ],
+        "exit_code": 0,
+        "log": "tests_stage03_1.txt",
+        "summary": [
+          "Ran 18 tests in 3.023s",
+          "OK"
+        ],
+        "reused_existing_run": true
+      },
+      {
+        "command": [
+          "C:\\codes\\nedra\\pipetwins\\.venv\\Scripts\\python.exe",
+          "-X",
+          "utf8",
+          "-B",
+          "-m",
+          "unittest",
+          "discover",
+          "-s",
+          "tests",
+          "-v"
+        ],
+        "exit_code": 1,
+        "log": "tests_regression.txt",
+        "summary": [
+          "ERROR: setUpClass (test_preprocessing.DatasetTests)",
+          "FAIL: test_legacy_factor_and_baseline_files_unchanged (experiments.temperature_v02_02.test_temperature.TemperatureTests.test_legacy_factor_and_baseline_files_unchanged)",
+          "Ran 58 tests in 37.973s",
+          "FAILED (failures=1, errors=1)"
+        ],
+        "reused_existing_run": true
+      }
+    ],
+    "stage03_1_checks_passed": true,
+    "passed": false
+  },
+  "stage_source_sha256": {
+    "run.py": "40f5a0a76b0a66fcefb67bd81892f6f4aea13d8d6eedff9e13198c851b6e8134",
+    "test_experiment.py": "87b489e8649f2b65832bfb29ac3660e8d18ee9f994b0034d4913e493835ce8e9",
+    "verify.py": "2d0e7cda705d6a3138fe36c54d6d0c71bc8bdbc5c36144de19fba42860fdda37"
+  },
+  "outputs_sha256": {
+    "candidate_exposures.csv": "6c76b0fe1de1f87762272f48e65b989c82ac9706d59af4f7af6d41dc477e34a3",
+    "candidate_fits.csv": "842cb7bc03672a2cb0642e4d00c9369b3b17e237c51192b7bf7b6116ffc84780",
+    "cohort_audit.csv": "4887b2bf044e3bd34f777c9ef2a35f128d46e19c9a337491ae798d37b00ef5bf",
+    "cohort_summary.json": "f116c65525f6e82ff2a32eb9a37beb337135de5bac974420cbf0f4410f3da95b",
+    "decision.json": "638f686866a84785a1f74da29fe24e54fd0a716fb0b46843b722bda2caea9551",
+    "diagnostic_predictions.csv": "c55e1d4affb0e36b8cfb92351fcceee8a928b5619dd29bd6c43ea812d61f7314",
+    "exposure_shape_diagnostics.csv": "6ff72f455731d254f829d01f26a5855be17fdc7c622932b5b736b76a73a6a7ac",
+    "findings.md": "efd1024b118bf877bc0fe5e0a2771680b064565b94ed30998df23886173a377e",
+    "fold_audit.csv": "2b06f33e54dc03247cc146df27d85ca7e2bd13d0f2caa1d922834c695b94254f",
+    "grouped_transfer_metrics.csv": "3959840c27c6e47f9711d114bb2641541a17ceab30288fbf68a2b6f2ca26d48f",
+    "hold_shape_diagnostics.csv": "1b73033ec32686fa81ed830c637e9b343b258c8f04ba31d42bf83a99362c5dc5",
+    "implementation_notes.json": "b56e345af6eec3b6f0a1f054e3cbe2d0a23b0438568e4b87fbc25530f28e1616",
+    "interval_audit.csv": "9906486831aa79eb95688248a938716cf52f1d4e278efc9f9ddbf2a435e3c85d",
+    "intervals.csv": "dc67a254d1f0cf1bf9af913f0a52d934ce2da12324cae036ef855f3980346d61",
+    "m0_identity.csv": "42e73ec0dfafa1c2524cab3653194c479dd751912e7f11ac27a0bca46f978d85",
+    "methods.md": "fc033f0651f2f9261e67ed839fc325a224307341fb79d61852f951dbe92a0900",
+    "objective_rate_compensation.png": "dccb5d5e19ad489ea74ee3f9683f71b773d2a0e401ad9bd3f163530c0e2e50d6",
+    "objective_rate_compensation.svg": "e099364f3d6c91482e2d3112bb53d2026225006d05f708051b937258ba367896",
+    "preregistration.json": "c6d3697bf7de8ee4ed63ffb94af321ffbd04b3079e4b7a9fdea774b432c1b0f0",
+    "profile_objective.csv": "f1fc3546d05479446c76f50d22fe6dab72f2faf2084be25a2e522535bc479fa8",
+    "protected_before.json": "213b6f2f9dcada709e20f10e360be052dd8daeb37d0c209e279591537622178d",
+    "protected_verification.json": "74adb5ed5dd6b01ee132a88c1ad25f16f0f9e749c78c5e18ea6849e22969b362",
+    "qa_report.md": "eaa46a7b8349265185a18cab471fb2a04ea5bb315c8c2db62ce598d1c4e447b7",
+    "reference_gap_attenuation.csv": "35b6aeae979038737028ba06e76e8c021a871f39b82a5d8d306cd717d2adc6c9",
+    "robustness_summary.csv": "b09c360879dfc557d083685ae1c860b27b816240d9ae48d04828dfd1b3b66c6e",
+    "run.py": "40f5a0a76b0a66fcefb67bd81892f6f4aea13d8d6eedff9e13198c851b6e8134",
+    "run.txt": "d42eeb10178de574fb23bf6941deaed35c771262c9c3efdf0d802fd492c0853b",
+    "run_attempt_01_encoding_failure.txt": "95bf5429741e03fb3a89467b83a0b4673e0b712a3c1a746f5c366c678e827b47",
+    "section_perturbations.csv": "c07e36882ef7329c5c5c82be2a49903a71ab97cef7cd24ba1c7e7e7751d2becd",
+    "sensitivity_matrix_diagnostics.csv": "becea94cf88c1de442d43070c853bb28e68439f0653a30709cbb574c49d3d8b2",
+    "stability_table.md": "906e44b4385674dca1ba5346991900d206480b43e4d4af84c4a7d6f51ac0700f",
+    "summarize.txt": "b88235ecc3f9145bb046310e7b9762b92fa9e09c0178199e2356d8fb63a62fb8",
+    "temperature_associations.csv": "b83dc346e83ff66b9562a095fe92e848c2386f342f6b54c943441649e11b77bb",
+    "test_experiment.py": "87b489e8649f2b65832bfb29ac3660e8d18ee9f994b0034d4913e493835ce8e9",
+    "tests_regression.txt": "f6905d0398b3d9acf939f465efa3a834bd1e56c238399e84f6353e3817527666",
+    "tests_stage03_1.txt": "0be33f7538ccdaff5a253de1c0bfbd927a4b1e5205850b8673aef8649bc04c9c",
+    "tests_stage03_1_attempt01.txt": "a456c518bd493d43f7335209771ec6ee4334bc007e3c456987030b5b4aa3bea9",
+    "trajectory_overlap.csv": "63063a444264b36fdd648c8a7ad5deaec395c7d2b9b97f5d487928e07503e567",
+    "trajectory_summary.csv": "645ee565fca1c2c462514dd52fc8c35654458d0727ecb29cd02f890c28b26034",
+    "verification.json": "b52baf9f7909a68056cae01a74148c22d50923aee22e3a2c7e227e64f99c38ef",
+    "verification_attempt01.json": "d9523401eee4b593e3c7febbf61610ccaf669064b0d4f326acc03eb49e987a3a",
+    "verify.py": "2d0e7cda705d6a3138fe36c54d6d0c71bc8bdbc5c36144de19fba42860fdda37"
+  },
+  "hash_inventory_note": "Manifest excludes itself and live verify.txt to avoid recursive/unstable hashes; test logs, run log, source, preregistration and all scientific artifacts included.",
+  "input_raw_bytes_sha256": {
+    "processed/training_targets.csv": "8897e3092d204ae8f99ae0e16d8332226bfa1a4f2a17622c3050b062ca105ab5",
+    "data/cleaned/passport.csv": "8afedbd1495cae47e0a57ed9623f3785e51a3ffb9162105ea4250ed7a59ceaef",
+    "data/cleaned/regime.csv": "5f9c349167af3fd9f607f7d7a255b78d605b0e96831a5a4c3e209324287669d1",
+    "data/cleaned/tech_mode_for_embedings_with_length_with_temperatures_ids16.csv": "2180c2d81b885d24cdce44a6f01e4a7b0462949d37ade8fe9ad3dbbbae213767",
+    "processed/vtd_by_segment.csv": "a0ab8485989296aaea36dbc7c85e36f49fda6e1f771d8ef495c0bf6dbff08929",
+    "processed/uzt_by_segment.csv": "011d42397a84e473a86788fc914a092db70240b6365c3726a8e4832ba2fb109f",
+    "processed/segments_grid.csv": "3c2b2e8b66a1a3985d252f5c5169209959a294016abbd626bd91b50bc200a291",
+    "processed/profile_by_segment.csv": "727141e3a90f2b832011078271c394dfb1733876cef4b51f1b4019c447bacd5e"
+  },
+  "reporting_command": ".venv/Scripts/python.exe -X utf8 -B -m experiments.temperature_v02_03_1.run --summarize-only"
+}

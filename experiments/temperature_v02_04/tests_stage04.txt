@@ -1,0 +1,90 @@
+C:\codes\nedra\pipetwins\experiments\temperature_v02_04\test_model.py:154: Pandas4Warning: The 'float_precision' argument is deprecated. Use the default float precision instead.
+  cls.pred=pd.read_csv(OUT/'prediction_diagnostics.csv',float_precision='round_trip')
+C:\codes\nedra\pipetwins\experiments\temperature_v02_04\test_model.py:155: Pandas4Warning: The 'float_precision' argument is deprecated. Use the default float precision instead.
+  cls.fits=pd.read_csv(OUT/'candidate_fits.csv',float_precision='round_trip')
+test_all_exports_have_exact_contract_and_ea40_primary (experiments.temperature_v02_04.test_model.ArtifactTests.test_all_exports_have_exact_contract_and_ea40_primary) ... C:\codes\nedra\pipetwins\experiments\temperature_v02_04\test_model.py:160: Pandas4Warning: The 'float_precision' argument is deprecated. Use the default float precision instead.
+  primary=pd.read_csv(OUT/'result.csv',float_precision='round_trip')
+C:\codes\nedra\pipetwins\experiments\temperature_v02_04\test_model.py:162: Pandas4Warning: The 'float_precision' argument is deprecated. Use the default float precision instead.
+  data=pd.read_csv(OUT/record.candidate_path,float_precision='round_trip')
+C:\codes\nedra\pipetwins\experiments\temperature_v02_04\test_model.py:162: Pandas4Warning: The 'float_precision' argument is deprecated. Use the default float precision instead.
+  data=pd.read_csv(OUT/record.candidate_path,float_precision='round_trip')
+C:\codes\nedra\pipetwins\experiments\temperature_v02_04\test_model.py:162: Pandas4Warning: The 'float_precision' argument is deprecated. Use the default float precision instead.
+  data=pd.read_csv(OUT/record.candidate_path,float_precision='round_trip')
+C:\codes\nedra\pipetwins\experiments\temperature_v02_04\test_model.py:162: Pandas4Warning: The 'float_precision' argument is deprecated. Use the default float precision instead.
+  data=pd.read_csv(OUT/record.candidate_path,float_precision='round_trip')
+C:\codes\nedra\pipetwins\experiments\temperature_v02_04\test_model.py:162: Pandas4Warning: The 'float_precision' argument is deprecated. Use the default float precision instead.
+  data=pd.read_csv(OUT/record.candidate_path,float_precision='round_trip')
+C:\codes\nedra\pipetwins\experiments\temperature_v02_04\test_model.py:162: Pandas4Warning: The 'float_precision' argument is deprecated. Use the default float precision instead.
+  data=pd.read_csv(OUT/record.candidate_path,float_precision='round_trip')
+C:\codes\nedra\pipetwins\experiments\temperature_v02_04\test_model.py:162: Pandas4Warning: The 'float_precision' argument is deprecated. Use the default float precision instead.
+  data=pd.read_csv(OUT/record.candidate_path,float_precision='round_trip')
+C:\codes\nedra\pipetwins\experiments\temperature_v02_04\test_model.py:162: Pandas4Warning: The 'float_precision' argument is deprecated. Use the default float precision instead.
+  data=pd.read_csv(OUT/record.candidate_path,float_precision='round_trip')
+C:\codes\nedra\pipetwins\experiments\temperature_v02_04\test_model.py:162: Pandas4Warning: The 'float_precision' argument is deprecated. Use the default float precision instead.
+  data=pd.read_csv(OUT/record.candidate_path,float_precision='round_trip')
+C:\codes\nedra\pipetwins\experiments\temperature_v02_04\test_model.py:162: Pandas4Warning: The 'float_precision' argument is deprecated. Use the default float precision instead.
+  data=pd.read_csv(OUT/record.candidate_path,float_precision='round_trip')
+C:\codes\nedra\pipetwins\experiments\temperature_v02_04\test_model.py:162: Pandas4Warning: The 'float_precision' argument is deprecated. Use the default float precision instead.
+  data=pd.read_csv(OUT/record.candidate_path,float_precision='round_trip')
+C:\codes\nedra\pipetwins\experiments\temperature_v02_04\test_model.py:162: Pandas4Warning: The 'float_precision' argument is deprecated. Use the default float precision instead.
+  data=pd.read_csv(OUT/record.candidate_path,float_precision='round_trip')
+C:\codes\nedra\pipetwins\experiments\temperature_v02_04\test_model.py:162: Pandas4Warning: The 'float_precision' argument is deprecated. Use the default float precision instead.
+  data=pd.read_csv(OUT/record.candidate_path,float_precision='round_trip')
+C:\codes\nedra\pipetwins\experiments\temperature_v02_04\test_model.py:162: Pandas4Warning: The 'float_precision' argument is deprecated. Use the default float precision instead.
+  data=pd.read_csv(OUT/record.candidate_path,float_precision='round_trip')
+C:\codes\nedra\pipetwins\experiments\temperature_v02_04\test_model.py:162: Pandas4Warning: The 'float_precision' argument is deprecated. Use the default float precision instead.
+  data=pd.read_csv(OUT/record.candidate_path,float_precision='round_trip')
+C:\codes\nedra\pipetwins\experiments\temperature_v02_04\test_model.py:162: Pandas4Warning: The 'float_precision' argument is deprecated. Use the default float precision instead.
+  data=pd.read_csv(OUT/record.candidate_path,float_precision='round_trip')
+C:\codes\nedra\pipetwins\experiments\temperature_v02_04\test_model.py:162: Pandas4Warning: The 'float_precision' argument is deprecated. Use the default float precision instead.
+  data=pd.read_csv(OUT/record.candidate_path,float_precision='round_trip')
+C:\codes\nedra\pipetwins\experiments\temperature_v02_04\test_model.py:162: Pandas4Warning: The 'float_precision' argument is deprecated. Use the default float precision instead.
+  data=pd.read_csv(OUT/record.candidate_path,float_precision='round_trip')
+C:\codes\nedra\pipetwins\experiments\temperature_v02_04\test_model.py:162: Pandas4Warning: The 'float_precision' argument is deprecated. Use the default float precision instead.
+  data=pd.read_csv(OUT/record.candidate_path,float_precision='round_trip')
+C:\codes\nedra\pipetwins\experiments\temperature_v02_04\test_model.py:162: Pandas4Warning: The 'float_precision' argument is deprecated. Use the default float precision instead.
+  data=pd.read_csv(OUT/record.candidate_path,float_precision='round_trip')
+C:\codes\nedra\pipetwins\experiments\temperature_v02_04\test_model.py:162: Pandas4Warning: The 'float_precision' argument is deprecated. Use the default float precision instead.
+  data=pd.read_csv(OUT/record.candidate_path,float_precision='round_trip')
+C:\codes\nedra\pipetwins\experiments\temperature_v02_04\test_model.py:162: Pandas4Warning: The 'float_precision' argument is deprecated. Use the default float precision instead.
+  data=pd.read_csv(OUT/record.candidate_path,float_precision='round_trip')
+C:\codes\nedra\pipetwins\experiments\temperature_v02_04\test_model.py:162: Pandas4Warning: The 'float_precision' argument is deprecated. Use the default float precision instead.
+  data=pd.read_csv(OUT/record.candidate_path,float_precision='round_trip')
+C:\codes\nedra\pipetwins\experiments\temperature_v02_04\test_model.py:162: Pandas4Warning: The 'float_precision' argument is deprecated. Use the default float precision instead.
+  data=pd.read_csv(OUT/record.candidate_path,float_precision='round_trip')
+C:\codes\nedra\pipetwins\experiments\temperature_v02_04\test_model.py:162: Pandas4Warning: The 'float_precision' argument is deprecated. Use the default float precision instead.
+  data=pd.read_csv(OUT/record.candidate_path,float_precision='round_trip')
+C:\codes\nedra\pipetwins\experiments\temperature_v02_04\test_model.py:162: Pandas4Warning: The 'float_precision' argument is deprecated. Use the default float precision instead.
+  data=pd.read_csv(OUT/record.candidate_path,float_precision='round_trip')
+C:\codes\nedra\pipetwins\experiments\temperature_v02_04\test_model.py:162: Pandas4Warning: The 'float_precision' argument is deprecated. Use the default float precision instead.
+  data=pd.read_csv(OUT/record.candidate_path,float_precision='round_trip')
+C:\codes\nedra\pipetwins\experiments\temperature_v02_04\test_model.py:162: Pandas4Warning: The 'float_precision' argument is deprecated. Use the default float precision instead.
+  data=pd.read_csv(OUT/record.candidate_path,float_precision='round_trip')
+C:\codes\nedra\pipetwins\experiments\temperature_v02_04\test_model.py:162: Pandas4Warning: The 'float_precision' argument is deprecated. Use the default float precision instead.
+  data=pd.read_csv(OUT/record.candidate_path,float_precision='round_trip')
+C:\codes\nedra\pipetwins\experiments\temperature_v02_04\test_model.py:162: Pandas4Warning: The 'float_precision' argument is deprecated. Use the default float precision instead.
+  data=pd.read_csv(OUT/record.candidate_path,float_precision='round_trip')
+ok
+test_all_rates_match_previous_experiment_and_negative_losses_kept (experiments.temperature_v02_04.test_model.ArtifactTests.test_all_rates_match_previous_experiment_and_negative_losses_kept) ... ok
+test_forecasts_have_bounds_honest_status_and_no_target_labels (experiments.temperature_v02_04.test_model.ArtifactTests.test_forecasts_have_bounds_honest_status_and_no_target_labels) ... ok
+test_m0_comparator_preserved_and_null_identity_for_targets (experiments.temperature_v02_04.test_model.ArtifactTests.test_m0_comparator_preserved_and_null_identity_for_targets) ... C:\codes\nedra\pipetwins\experiments\temperature_v02_04\test_model.py:182: Pandas4Warning: The 'float_precision' argument is deprecated. Use the default float precision instead.
+  baseline=pd.read_csv(OUT/'B0_original_M0.csv',float_precision='round_trip')
+ok
+test_same_support_across_candidates_and_independent_metrics_unavailable (experiments.temperature_v02_04.test_model.ArtifactTests.test_same_support_across_candidates_and_independent_metrics_unavailable) ... ok
+test_ea00_reference_identity_and_physical_clipping (experiments.temperature_v02_04.test_model.ModelTests.test_ea00_reference_identity_and_physical_clipping) ... ok
+test_ea40_defaults_and_synthetic_recovery (experiments.temperature_v02_04.test_model.ModelTests.test_ea40_defaults_and_synthetic_recovery) ... ok
+test_future_and_cold_target_parent_labels_cannot_change_fit (experiments.temperature_v02_04.test_model.ModelTests.test_future_and_cold_target_parent_labels_cannot_change_fit) ... ok
+test_history_cutoff_identity_and_window_horizon (experiments.temperature_v02_04.test_model.ModelTests.test_history_cutoff_identity_and_window_horizon) ... ok
+test_independent_folds_exclude_same_parent_and_same_day (experiments.temperature_v02_04.test_model.ModelTests.test_independent_folds_exclude_same_parent_and_same_day) ... ok
+test_interval_cache_shared_by_all_candidates_and_policies (experiments.temperature_v02_04.test_model.ModelTests.test_interval_cache_shared_by_all_candidates_and_policies) ... ok
+test_negative_measured_loss_is_retained_and_rate_nonnegative (experiments.temperature_v02_04.test_model.ModelTests.test_negative_measured_loss_is_retained_and_rate_nonnegative) ... ok
+test_parameters_and_prediction_metadata_fail_closed (experiments.temperature_v02_04.test_model.ModelTests.test_parameters_and_prediction_metadata_fail_closed) ... ok
+test_stage02_feature_contract_and_no_wv_requirement (experiments.temperature_v02_04.test_model.ModelTests.test_stage02_feature_contract_and_no_wv_requirement) ... ok
+test_w1_parent_weighting_is_used (experiments.temperature_v02_04.test_model.ModelTests.test_w1_parent_weighting_is_used) ... ok
+test_zero_exposure_is_unavailable_and_not_silently_filled (experiments.temperature_v02_04.test_model.ModelTests.test_zero_exposure_is_unavailable_and_not_silently_filled) ... ok
+test_zero_exposure_row_keeps_its_residual (experiments.temperature_v02_04.test_model.ModelTests.test_zero_exposure_row_keeps_its_residual) ... ok
+
+----------------------------------------------------------------------
+Ran 17 tests in 1.225s
+
+OK

@@ -1,0 +1,60 @@
+{
+  "protected_files_checked": 201,
+  "changed_protected_files": [],
+  "input_files_checked": 8,
+  "changed_inputs": [
+    "processed/training_targets.csv",
+    "data/cleaned/passport.csv",
+    "data/cleaned/regime.csv",
+    "data/cleaned/tech_mode_for_embedings_with_length_with_temperatures_ids16.csv",
+    "processed/vtd_by_segment.csv",
+    "processed/uzt_by_segment.csv",
+    "processed/segments_grid.csv",
+    "processed/profile_by_segment.csv"
+  ],
+  "preregistration_unchanged": true,
+  "actual_test_runs": [
+    {
+      "command": [
+        "C:\\codes\\nedra\\pipetwins\\.venv\\Scripts\\python.exe",
+        "-X",
+        "utf8",
+        "-B",
+        "-m",
+        "unittest",
+        "experiments.temperature_v02_03_1.test_experiment",
+        "-v"
+      ],
+      "exit_code": 1,
+      "log": "tests_stage03_1.txt",
+      "summary": [
+        "ERROR: test_fixed_intervals_match_existing_api_without_wv_gate (experiments.temperature_v02_03_1.test_experiment.NumericalTests.test_fixed_intervals_match_existing_api_without_wv_gate)",
+        "Ran 17 tests in 2.104s",
+        "FAILED (errors=1)"
+      ]
+    },
+    {
+      "command": [
+        "C:\\codes\\nedra\\pipetwins\\.venv\\Scripts\\python.exe",
+        "-X",
+        "utf8",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ],
+      "exit_code": 1,
+      "log": "tests_regression.txt",
+      "summary": [
+        "ERROR: setUpClass (test_preprocessing.DatasetTests)",
+        "FAIL: test_legacy_factor_and_baseline_files_unchanged (experiments.temperature_v02_02.test_temperature.TemperatureTests.test_legacy_factor_and_baseline_files_unchanged)",
+        "Ran 58 tests in 37.973s",
+        "FAILED (failures=1, errors=1)"
+      ]
+    }
+  ],
+  "passed": false
+}
