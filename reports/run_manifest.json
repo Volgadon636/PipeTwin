@@ -2,11 +2,11 @@
   "code_sha256": {
     "__init__.py": "efb1820d15c1d8368b8d420fb4d5686e6058f9a5e4666d1c437f4b9a747b12e5",
     "config.py": "a8c5f490b84a8b77a14f63e6cd100aeccb2e51269361e803d11bb564834eaf82",
-    "data_cleaner.py": "4a9b07b04811e12bbebc34671c689e21171b104e3ffbeb56674bd8695f5335da",
+    "data_cleaner.py": "5c56f18f4bf3dab37c08ccee7583f237f97da57d850fa61123cc941fadbb36ac",
     "data_prep.py": "fa7064ec912ad104f8b18d6dab1722e438e6f5e9b43aa09826d6720d30b1fc55",
     "format_detector.py": "2a9a1418f3c2feeb8f058206ebcf417f64bf27d0d0dce71ee918fc23e6f95acb",
     "grid_builder.py": "6e68a6eb054b02be0635ea4dda30bc571e3522222553b5e4ba42a0f7c7311f72",
-    "segment_mapper.py": "99c97bf2344c0e55f21e361f708a7408a54945552da8e5a898826c70613194a9",
+    "segment_mapper.py": "5e244e300dd4bfa4739f482c8b797cfe65a70d3cb3e31fea6dca89ccca04b2db",
     "storage.py": "919025af5a9e64f84f37b18f0e9e3c3c32ff2867ce0a3eb7e4bc469dd81c5726",
     "temporal.py": "b11e03c7c7948a5602265cc389fb0823b6c087823be2c64a85385e1ba7972118",
     "validator.py": "b666b14847c31258b0acf8293d08c29cdccd66419aaf17e0aa386cb8bd2cdac5"
@@ -36,6 +36,7 @@
         "prediction_date": "2022-07-01"
       }
     ],
+    "vtd_apply_passport_nominal_ceiling": true,
     "vtd_fraction_dates": [
       "2018-09-23"
     ],
@@ -1428,10 +1429,12 @@
       "rows": 67
     },
     "data/cleaned/vtd": {
-      "columns": 55,
+      "columns": 58,
       "csv_parquet_verified": true,
-      "csv_sha256": "a1b73881c40d961201860211db9a7967a236a29857f6f8d2fb29aa8e78badf0c",
+      "csv_sha256": "bfff48e09e582d71097d6ce5e9933a66901a56ac0149ec4a15b658a7678593e9",
       "dtypes": {
+        "above_local_wall_flag": "bool",
+        "above_nominal_flag": "bool",
         "accumulated_value": "string",
         "angle": "float64",
         "before_commissioning_flag": "bool",
@@ -1464,6 +1467,7 @@
         "latitude": "string",
         "longitude": "string",
         "nominal_thickness_mm": "float64",
+        "nominal_unresolved_flag": "bool",
         "pipe_length": "string",
         "prerepair_classification": "string",
         "psafe": "string",
@@ -1488,7 +1492,7 @@
         "wall_nominal_mismatch_flag": "bool",
         "wall_thickness": "float64"
       },
-      "parquet_sha256": "76f139d076c41dc4420ba69513f9c810576a70c0b672ca8040d3d0b78371dc74",
+      "parquet_sha256": "45a35eebbbb108171b5cdc853953c8351d5475d08f1c8571b85782c2ab17e9e1",
       "rows": 48040
     },
     "processed/hydraulic_asof": {
@@ -1639,7 +1643,7 @@
     "processed/quality_issues": {
       "columns": 7,
       "csv_parquet_verified": true,
-      "csv_sha256": "ecb1bb8d4a90e93cba55965a276fdba26401c43b517c8a54b6b11772718755a5",
+      "csv_sha256": "fa37c0ea3ddfe1ce9140b52ccf8fac809a68e84da50a784dc4c704d61f890b3d",
       "dtypes": {
         "action": "str",
         "field": "str",
@@ -1649,8 +1653,8 @@
         "rule": "str",
         "source_row": "int64"
       },
-      "parquet_sha256": "22020bd5bb194e17d395e13ff7892e57d773f6c0a9db00fcaa57e0a9c175d898",
-      "rows": 70668
+      "parquet_sha256": "6409e55fdea6aefe74dd05902bd7af76a66f3a5f04ee1c09b6cfc832582186ed",
+      "rows": 70716
     },
     "processed/regime_mapped": {
       "columns": 48,
@@ -1825,10 +1829,12 @@
       "rows": 2000
     },
     "processed/training_targets": {
-      "columns": 12,
+      "columns": 15,
       "csv_parquet_verified": true,
-      "csv_sha256": "d15dc17a4ee61e428163447945967d174a0ecb55272d5724cdce0c5855ff22f2",
+      "csv_sha256": "f53e3e2c2cb36783b25a6750e68cad9e09cc08823876f8d1ca8bf32d5fa19425",
       "dtypes": {
+        "above_local_wall_flag": "bool",
+        "above_nominal_flag": "bool",
         "before_commissioning_flag": "bool",
         "commissioning_unknown_flag": "bool",
         "date": "datetime64[ns]",
@@ -1836,13 +1842,14 @@
         "id": "Int64",
         "max_defect_depth_pct": "float64",
         "min_residual_thickness_mm": "float64",
+        "nominal_unresolved_flag": "bool",
         "observation_count": "int64",
         "segment_id": "int64",
         "target_eligible": "bool",
         "thickness_measurement_count": "int64",
         "wall_nominal_mismatch_flag": "bool"
       },
-      "parquet_sha256": "abc56c5353d494817717986b72c69c057259d1af739fc82a084d4eff1d5e3015",
+      "parquet_sha256": "c4ab273462458b2d81b9d4ce509c379d38ac0c610630777fc885078d29050dfc",
       "rows": 1080
     },
     "processed/uzt_by_segment": {
@@ -1888,10 +1895,12 @@
       "rows": 0
     },
     "processed/vtd_by_segment": {
-      "columns": 12,
+      "columns": 15,
       "csv_parquet_verified": true,
-      "csv_sha256": "085a2aeb930d1b01112bbc379d156f87a67db4180121d80f922962c5f1ef3158",
+      "csv_sha256": "19373e54466f43ed020c5ae5dec1501a92c98fd8590d068620df5c0e6fa260b9",
       "dtypes": {
+        "above_local_wall_flag": "bool",
+        "above_nominal_flag": "bool",
         "before_commissioning_flag": "bool",
         "commissioning_unknown_flag": "bool",
         "date": "datetime64[ns]",
@@ -1899,20 +1908,23 @@
         "id": "Int64",
         "max_defect_depth_pct": "float64",
         "min_residual_thickness_mm": "float64",
+        "nominal_unresolved_flag": "bool",
         "observation_count": "int64",
         "segment_id": "int64",
         "target_eligible": "bool",
         "thickness_measurement_count": "int64",
         "wall_nominal_mismatch_flag": "bool"
       },
-      "parquet_sha256": "c0638899ddb97471135a2f92401803b2f00c6bcbcaed4fe2626e5b88a1d80398",
+      "parquet_sha256": "4dcb3f464c71db5fd31c19912059dbacd027a4d10f4f03a45131db41e0ea133f",
       "rows": 1543
     },
     "processed/vtd_rejected": {
-      "columns": 55,
+      "columns": 58,
       "csv_parquet_verified": true,
-      "csv_sha256": "3d168f8949f9318dfe6d8556ffa8232c4051d741412900512ba3ec961e7b3b51",
+      "csv_sha256": "e87c33ef1f87f30d6c7abf16333c5fc903814a04f61ee54f4dcca3ebc1da46fa",
       "dtypes": {
+        "above_local_wall_flag": "bool",
+        "above_nominal_flag": "bool",
         "accumulated_value": "string",
         "angle": "float64",
         "before_commissioning_flag": "bool",
@@ -1945,6 +1957,7 @@
         "latitude": "string",
         "longitude": "string",
         "nominal_thickness_mm": "float64",
+        "nominal_unresolved_flag": "bool",
         "pipe_length": "string",
         "prerepair_classification": "string",
         "psafe": "string",
@@ -1969,7 +1982,7 @@
         "wall_nominal_mismatch_flag": "bool",
         "wall_thickness": "float64"
       },
-      "parquet_sha256": "6b89c13bc1e40e9c1a00dc2e5697457cd07f9bce06965684d93ddfbfabb0d593",
+      "parquet_sha256": "13095c38bc692b8dab30f95d047cb287d3077b1b472366a047b3046e45ca8ec3",
       "rows": 251
     }
   },

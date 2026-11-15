@@ -1,6 +1,6 @@
 # PipeTwin ML v2: environment-aware physics and gated spatial term
 
-Checked branch `model_v2`, commit `0c7f143536a00591ff315b32d1b73312a92d23b5`.
+Checked branch `model_v2`, commit `d22ddb866d213049e09ae1068691d274744844f4`.
 
 ## What changed against v1
 

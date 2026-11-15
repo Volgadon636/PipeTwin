@@ -16,5 +16,6 @@
   },
   "profile_endpoint_tolerance_m": 0.05,
   "vtd_fraction_dates": ["2018-09-23"],
-  "vtd_thickness_tolerance_mm": 0.02
+  "vtd_thickness_tolerance_mm": 0.02,
+  "vtd_apply_passport_nominal_ceiling": true
 }

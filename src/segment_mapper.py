@@ -9,6 +9,10 @@ from .temporal import hydraulic_asof, hydraulic_summary
 
 def map_vtd_to_segments(vtd, grid):
     df = assign_segments(vtd, 'distance', grid)
+    # Optional audit flags: older callers may not provide them.
+    for optional in ('above_nominal_flag', 'above_local_wall_flag', 'nominal_unresolved_flag'):
+        if optional not in df:
+            df[optional] = False
     result = df.groupby(['id', 'date', 'segment_id'], as_index=False).agg(
         observation_count=('source_row','size'),
         thickness_measurement_count=('residual_for_target_mm','count'),
@@ -17,10 +21,14 @@ def map_vtd_to_segments(vtd, grid):
         before_commissioning_flag=('before_commissioning_flag','any'),
         commissioning_unknown_flag=('commissioning_unknown_flag','any'),
         wall_nominal_mismatch_flag=('wall_nominal_mismatch_flag','any'),
+        above_nominal_flag=('above_nominal_flag','any'),
+        above_local_wall_flag=('above_local_wall_flag','any'),
+        nominal_unresolved_flag=('nominal_unresolved_flag','any'),
         heldout_or_future_flag=('heldout_or_future_flag','any'),
     )
     result['target_eligible'] = (result.thickness_measurement_count.gt(0)
-        & ~result.before_commissioning_flag & ~result.commissioning_unknown_flag & ~result.heldout_or_future_flag)
+        & ~result.before_commissioning_flag & ~result.commissioning_unknown_flag
+        & ~result.nominal_unresolved_flag & ~result.heldout_or_future_flag)
     return result
 
 

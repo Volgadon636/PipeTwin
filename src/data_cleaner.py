@@ -33,6 +33,35 @@ def _direction(value):
     return re.sub(r'[^\w]', '', str(value).lower())
 
 
+def residual_validity(vtd, tolerance, apply_nominal_ceiling=True):
+    """Observation-level candidate filter for measured residual thickness.
+
+    Agreed mentor rule (meeting 2): a candidate is not used when its residual
+    thickness is greater than the **passport nominal wall thickness of the same
+    simple section**. It is a wall-thickness comparison, independent of defect
+    length/width. The local ``wall_thickness`` recorded inside the VTD row is
+    kept as a separate informational consistency flag: it is not a second
+    ceiling, so it never overrides the agreed passport comparison. A missing
+    passport nominal is flagged as unresolved instead of being silently
+    accepted or excluded.
+
+    Returns flags only; the caller keeps every source row for audit.
+    """
+    residual = vtd.residual_wall_thickness
+    nominal = vtd.nominal_thickness_mm
+    wall = vtd.wall_thickness
+    above_nominal = (residual.notna() & nominal.notna() & apply_nominal_ceiling
+                     & residual.gt(nominal + tolerance))
+    nominal_unresolved = nominal.isna()
+    above_local_wall = residual.notna() & wall.notna() & residual.gt(wall + tolerance)
+    invalid = (residual.notna()
+               & (residual.le(0) | above_nominal | nominal_unresolved))
+    return pd.DataFrame({'above_nominal_flag': above_nominal,
+                         'above_local_wall_flag': above_local_wall,
+                         'nominal_unresolved_flag': nominal_unresolved,
+                         'residual_invalid_flag': invalid}, index=vtd.index)
+
+
 def clean_datasets(datasets, config, log):
     cleaned = {name: df.copy() for name, df in datasets.items()}
     quarantine = {}
@@ -87,23 +116,35 @@ def clean_datasets(datasets, config, log):
         log.add('vtd.csv', vtd, cohort, 'depth_fraction_to_percent', 'multiply_by_100', 'defect_depth_pct')
         vtd.loc[cohort, 'defect_depth_pct'] *= 100
         vtd.loc[cohort, 'depth_fraction_normalized'] = True
-    vtd['residual_invalid_flag'] = (vtd.residual_wall_thickness.notna() & (
-        vtd.residual_wall_thickness.le(0) |
-        (vtd.wall_thickness.notna() & (vtd.residual_wall_thickness > vtd.wall_thickness + tol))))
+    validity = residual_validity(vtd, tol, bool(config['vtd_apply_passport_nominal_ceiling']))
+    for column in validity:
+        vtd[column] = validity[column]
     vtd['residual_for_target_mm'] = vtd.residual_wall_thickness.mask(vtd.residual_invalid_flag)
     vtd['residual_missing_flag'] = vtd.residual_wall_thickness.isna()
     vtd['depth_residual_mismatch_flag'] = (
         vtd.residual_wall_thickness - vtd.wall_thickness * (1-vtd.defect_depth_pct/100)).abs() > tol
     vtd['target_eligible'] = (vtd.residual_for_target_mm.notna() & ~vtd.before_commissioning_flag
-                              & ~vtd.commissioning_unknown_flag)
+                              & ~vtd.commissioning_unknown_flag & ~vtd.nominal_unresolved_flag)
     vtd['heldout_or_future_flag'] = False
     for target in config['targets']:
         hidden = vtd.id.eq(target['id']) & vtd.date.ge(pd.Timestamp(target['prediction_date']))
         vtd.loc[hidden, 'heldout_or_future_flag'] = True
     vtd.loc[vtd.heldout_or_future_flag, 'target_eligible'] = False
-    for col in ('before_commissioning_flag', 'wall_nominal_mismatch_flag', 'residual_invalid_flag',
-                'residual_missing_flag', 'depth_residual_mismatch_flag', 'heldout_or_future_flag'):
-        log.add('vtd.csv', vtd, vtd[col], col, field='residual_wall_thickness')
+    # Every exclusion is kept in the source table and in the issue log with an
+    # explicit reason; no source value is overwritten or dropped.
+    audit_flags = {
+        'before_commissioning_flag': ('exclude_from_target_keep_record', 'date'),
+        'wall_nominal_mismatch_flag': ('flag_only', 'wall_thickness'),
+        'above_nominal_flag': ('exclude_from_target_keep_record', 'residual_wall_thickness'),
+        'above_local_wall_flag': ('flag_only', 'wall_thickness'),
+        'nominal_unresolved_flag': ('unresolved_keep_record', 'nominal_thickness_mm'),
+        'residual_invalid_flag': ('exclude_from_target_keep_record', 'residual_wall_thickness'),
+        'residual_missing_flag': ('keep_missing', 'residual_wall_thickness'),
+        'depth_residual_mismatch_flag': ('flag_only', 'defect_depth_pct'),
+        'heldout_or_future_flag': ('exclude_from_target_keep_record', 'date'),
+    }
+    for column, (action, field) in audit_flags.items():
+        log.add('vtd.csv', vtd, vtd[column], column, action, field)
     # Distance is local to the supplied ID. No zero-clipping or inferred offsets.
     invalid = (vtd.id.isna() | ~vtd.id.isin(lengths.index) | vtd.date.isna() | vtd.distance.isna()
                | vtd.distance.lt(0) | (vtd.distance > vtd.id.map(lengths)))

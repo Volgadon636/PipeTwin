@@ -44,6 +44,7 @@
 
 | Правило | Строк |
 |---|---:|
+| above_nominal_flag | 24 |
 | before_commissioning_flag | 13511 |
 | density_suspect_flag | 3 |
 | depth_fraction_to_percent | 2473 |
@@ -55,6 +56,7 @@
 | exposure_mismatch_flag | 92 |
 | negative_protective_effect_flag | 2 |
 | outside_pipe_or_missing_key | 251 |
+| residual_invalid_flag | 24 |
 | residual_missing_flag | 347 |
 | steep_profile_step | 61 |
 | unmapped_id | 412 |

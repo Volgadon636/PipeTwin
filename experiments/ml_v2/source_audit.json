@@ -1253,7 +1253,7 @@
         "field": 221,
         "file": 0,
         "id": 107,
-        "original_value": 695,
+        "original_value": 650,
         "rule": 0,
         "source_row": 0
       },
@@ -1277,7 +1277,7 @@
           "source_row": "1262"
         }
       ],
-      "rows": 70668
+      "rows": 70716
     },
     "processed/regime_mapped.csv": {
       "columns": [
@@ -2061,6 +2061,9 @@
         "before_commissioning_flag",
         "commissioning_unknown_flag",
         "wall_nominal_mismatch_flag",
+        "above_nominal_flag",
+        "above_local_wall_flag",
+        "nominal_unresolved_flag",
         "heldout_or_future_flag",
         "target_eligible"
       ],
@@ -2071,6 +2074,8 @@
         }
       },
       "dtypes": {
+        "above_local_wall_flag": "bool",
+        "above_nominal_flag": "bool",
         "before_commissioning_flag": "bool",
         "commissioning_unknown_flag": "bool",
         "date": "datetime64[us]",
@@ -2078,6 +2083,7 @@
         "id": "Int64",
         "max_defect_depth_pct": "float64",
         "min_residual_thickness_mm": "float64",
+        "nominal_unresolved_flag": "bool",
         "observation_count": "int64",
         "segment_id": "int64",
         "target_eligible": "bool",
@@ -2091,6 +2097,8 @@
         "segment_id"
       ],
       "missing_by_column": {
+        "above_local_wall_flag": 0,
+        "above_nominal_flag": 0,
         "before_commissioning_flag": 0,
         "commissioning_unknown_flag": 0,
         "date": 0,
@@ -2098,6 +2106,7 @@
         "id": 0,
         "max_defect_depth_pct": 0,
         "min_residual_thickness_mm": 0,
+        "nominal_unresolved_flag": 0,
         "observation_count": 0,
         "segment_id": 0,
         "target_eligible": 0,
@@ -2106,6 +2115,8 @@
       },
       "representative_rows": [
         {
+          "above_local_wall_flag": "False",
+          "above_nominal_flag": "False",
           "before_commissioning_flag": "False",
           "commissioning_unknown_flag": "False",
           "date": "2018-09-23",
@@ -2113,6 +2124,7 @@
           "id": "1250009490",
           "max_defect_depth_pct": "30.9",
           "min_residual_thickness_mm": "5.53",
+          "nominal_unresolved_flag": "False",
           "observation_count": "6",
           "segment_id": "0",
           "target_eligible": "True",
@@ -2120,6 +2132,8 @@
           "wall_nominal_mismatch_flag": "False"
         },
         {
+          "above_local_wall_flag": "False",
+          "above_nominal_flag": "False",
           "before_commissioning_flag": "False",
           "commissioning_unknown_flag": "False",
           "date": "2018-09-23",
@@ -2127,6 +2141,7 @@
           "id": "1250009490",
           "max_defect_depth_pct": "27.4",
           "min_residual_thickness_mm": "5.81",
+          "nominal_unresolved_flag": "False",
           "observation_count": "3",
           "segment_id": "1",
           "target_eligible": "True",
@@ -2148,6 +2163,9 @@
         "before_commissioning_flag",
         "commissioning_unknown_flag",
         "wall_nominal_mismatch_flag",
+        "above_nominal_flag",
+        "above_local_wall_flag",
+        "nominal_unresolved_flag",
         "heldout_or_future_flag",
         "target_eligible"
       ],
@@ -2158,6 +2176,8 @@
         }
       },
       "dtypes": {
+        "above_local_wall_flag": "bool",
+        "above_nominal_flag": "bool",
         "before_commissioning_flag": "bool",
         "commissioning_unknown_flag": "bool",
         "date": "datetime64[us]",
@@ -2165,6 +2185,7 @@
         "id": "Int64",
         "max_defect_depth_pct": "float64",
         "min_residual_thickness_mm": "float64",
+        "nominal_unresolved_flag": "bool",
         "observation_count": "int64",
         "segment_id": "int64",
         "target_eligible": "bool",
@@ -2178,6 +2199,8 @@
         "segment_id"
       ],
       "missing_by_column": {
+        "above_local_wall_flag": 0,
+        "above_nominal_flag": 0,
         "before_commissioning_flag": 0,
         "commissioning_unknown_flag": 0,
         "date": 0,
@@ -2185,6 +2208,7 @@
         "id": 0,
         "max_defect_depth_pct": 60,
         "min_residual_thickness_mm": 66,
+        "nominal_unresolved_flag": 0,
         "observation_count": 0,
         "segment_id": 0,
         "target_eligible": 0,
@@ -2193,6 +2217,8 @@
       },
       "representative_rows": [
         {
+          "above_local_wall_flag": "False",
+          "above_nominal_flag": "False",
           "before_commissioning_flag": "False",
           "commissioning_unknown_flag": "False",
           "date": "2018-09-23",
@@ -2200,6 +2226,7 @@
           "id": "1250009490",
           "max_defect_depth_pct": "30.9",
           "min_residual_thickness_mm": "5.53",
+          "nominal_unresolved_flag": "False",
           "observation_count": "6",
           "segment_id": "0",
           "target_eligible": "True",
@@ -2207,6 +2234,8 @@
           "wall_nominal_mismatch_flag": "False"
         },
         {
+          "above_local_wall_flag": "False",
+          "above_nominal_flag": "False",
           "before_commissioning_flag": "False",
           "commissioning_unknown_flag": "False",
           "date": "2018-09-23",
@@ -2214,6 +2243,7 @@
           "id": "1250009490",
           "max_defect_depth_pct": "27.4",
           "min_residual_thickness_mm": "5.81",
+          "nominal_unresolved_flag": "False",
           "observation_count": "3",
           "segment_id": "1",
           "target_eligible": "True",
