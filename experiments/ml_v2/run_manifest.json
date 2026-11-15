@@ -1,0 +1,73 @@
+{
+  "branch": "model_v2",
+  "git_sha": "0c7f143536a00591ff315b32d1b73312a92d23b5",
+  "input_sha256": {
+    "data/cleaned/passport.csv": "4f3474ae8719c86774290861777a58f5b04528c8188d33df9deb98018b5a8b0d",
+    "data/cleaned/regime.csv": "8a13cabe853a74def23c9917dd4d1f5534832d5f95d763348bf2cb844ed06590",
+    "data/cleaned/tech_mode_for_embedings_with_length_with_temperatures_ids16.csv": "c6ea4562e46d2241a220422fe15553fc7a7868b234448c0e5cfbb8706e2323f1",
+    "processed/hydraulic_asof.csv": "6d426035ed8487a34a5532ed3edebc53aea0744aa8ddee28aeb45b3656e712a6",
+    "processed/hydraulic_quality.csv": "b3838662af9e71718113715c4082a17b7724273c7c94f9cb6cc8e8c264611f39",
+    "processed/monitoring_mapped.csv": "f6e51a342bb9f91565f5b5bcc5994c46c64c42c5c901f377e3f0999f5eb5e248",
+    "processed/profile_by_segment.csv": "b67848066b70ff44234df8a7a97e4726b5f2a7c167885356b34380115d0906c7",
+    "processed/quality_issues.csv": "ecb1bb8d4a90e93cba55965a276fdba26401c43b517c8a54b6b11772718755a5",
+    "processed/regime_mapped.csv": "c0be9676b6d9c5d8d6090fe4aa94ee6cdc796a61393293adec5c3934cfc6b041",
+    "processed/segments_grid.csv": "55cce38f655fc47eaabf2255d4e74e31e6d81f774f95df40f47f23adcfeb48a3",
+    "processed/target_features.csv": "4bc0ee1b96ce430bbe85a5b737c4879ed102dfc38fb4f051de820f4cfbc5f715",
+    "processed/target_segments_grid.csv": "89ee38ef86368798426a5d91daeb4e849518cb40b2185e1c632dd9f3953db936",
+    "processed/training_targets.csv": "d15dc17a4ee61e428163447945967d174a0ecb55272d5724cdce0c5855ff22f2",
+    "processed/uzt_by_segment.csv": "e02975b895559903a6caa471a6b5ff28042213531258c31fa1d29cbc756e760e",
+    "processed/vtd_by_segment.csv": "085a2aeb930d1b01112bbc379d156f87a67db4180121d80f922962c5f1ef3158"
+  },
+  "ml_code_sha256": {
+    "__init__.py": "c8080173a7916d41892ea671a60f69dce94d194a8149788d177b95d36df21990",
+    "audit.py": "6861779d82c377166236713de01772afa7e84640a85e9782689658afe535fb09",
+    "data.py": "a01b5569f712c387f2730c9b19d2c18a2b1da7cf2ed85afc13b26deb780c6f3d",
+    "evaluation.py": "57554d1912cc8c843b4ecf326df7341c6200e5596e5d5270b4c77d2f4a31cdcd",
+    "experiment.py": "24cfd929f84133d942a2c09394596a0c1d2b08adf6316d032abbbacccd4a5dcc",
+    "experiment_v2.py": "99ca4cd05eab66befa8262cf48499df11c2008a3be128cb3dbb7c840902fe991",
+    "exposure.py": "fed8a7128d0ab6a413a968f1023df10e1ced8c0a0c8a8fc33c11038e448e87a9",
+    "models.py": "27ce924c9545785ff9dd2eacddad379a6cc09032f24f4369e9dc96a3ced78f12",
+    "physics.py": "6e77f1a5340096fc82a5bcf84e9f2017d4e40a235d1c53e4871082b8086bb351",
+    "spatial.py": "7b66136aeaf122e500a0ee036378b5e32137b07cf22073aa58dcd648bb8dbb2c",
+    "submission.py": "bb83508c6e8dec098127c0dc1d45828e4df1964b521dcf1db51026e2402569b2",
+    "windows.py": "03aad916b783015b10e30e1300dedec08fd9bdd8129f0abf17e14626983f05fd"
+  },
+  "preprocessing_versions": {
+    "numpy": "2.5.4",
+    "pandas": "3.0.6",
+    "pyarrow": "26.0.1",
+    "python": "3.13.11"
+  },
+  "result_sha256": "b9672908d81203a52b03940f6b71734ac14e88fb86fbddc053462fc722a70147",
+  "seed": 0,
+  "settings": {
+    "cold_gap_policy": "own_mean",
+    "cold_weighting": "W1",
+    "dense_ratio": [
+      0.75,
+      1.33
+    ],
+    "priors": {
+      "age_exponent": 1.0,
+      "beta_W": 0.3,
+      "beta_v": 0.1,
+      "theta_K": 2500.0,
+      "velocity_offset_m_s": 0.1
+    },
+    "spatial_amplitude": 0.5,
+    "spatial_ridge_lambda": 10.0
+  },
+  "stochastic_operations": false,
+  "submission": {
+    "bounded": true,
+    "finite_mm": true,
+    "rows": 2000,
+    "unique_keys": true
+  },
+  "tested_environment_is_original_lock": false,
+  "versions": {
+    "numpy": "2.5.4",
+    "pandas": "3.0.6",
+    "python": "3.13.11"
+  }
+}

@@ -37,6 +37,35 @@ The nonlinear physical model is implemented and synthetically tested, but gated
 off because independent training/validation evidence is insufficient. No hybrid
 accuracy or calibrated confidence intervals are claimed.
 
+## ML v2: environment-aware cold start (branch `model_v2`)
+
+v2 addresses the main defect of the v1 baseline: it transferred a warm, wet
+MAIN-2 thinning rate to the cold, dry, slow cold-start pipe and produced one
+constant value (1.540 mm) for all 1,475 segments. v2 keeps the specification's
+multiplicative environment structure, fits only the reference rate, declares the
+remaining exponents as explicit priors, and reports a 243-point sensitivity grid.
+It also adds a within-pipe profile term that is gated by leave-one-campaign-out
+correlation, and separates comparable from non-comparable inspection pairs in
+the between-VTD rate calibration.
+
+```bash
+python -m src.ml.experiment_v2 --output-root experiments/ml_v2
+python -m unittest tests.test_ml_v2 -v
+```
+
+Headline results (see `experiments/ml_v2/report.md` and
+[docs/model_v2.md](docs/model_v2.md)):
+
+| Case | v1 | v2 | Evidence status |
+|---|---|---|---|
+| `1250009583` cold start @ 2022-07-01 | 1.540 mm constant | 2.810 mm mean, sd 0.07 mm | cross-environment LOO; hidden test not available |
+| `1250022871` between VTD @ 2023-12-01 | rate 0.013 mm/yr | rate 0.0 (no comparable pre-cutoff pair) | 3-pipe LOO pair check, Pearson² 0.113 (optimistic) |
+
+v2 is still a provisional, physics-informed forecast. It does **not** claim a
+validated hidden-test score, calibrated intervals, or a proven spatial ranking.
+The document lists the open mentor questions, including whether the dense
+2022→2023 campaign may be used for S1 calibration.
+
 ## Запуск
 
 Проверено на Python 3.13. Точные версии зависимостей записаны в `requirements.txt`. Случайных операций в подготовке нет.

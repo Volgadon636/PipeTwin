@@ -1,0 +1,94 @@
+{
+  "between_vtd": {
+    "baseline_missing_count": 4,
+    "fallback": "nearest prior measured segment (unchanged from v1)",
+    "feature_columns": [
+      "h0_mm",
+      "horizon_years"
+    ],
+    "interpretation": "Constant segment-minimum thinning with evidence-based rate basis.",
+    "name": "M1-S1-comparable",
+    "rate": {
+      "basis": "all_pre_cutoff_pairs_no_comparable_basis",
+      "comparable_pre_cutoff_pairs": 0,
+      "policy": "Post-cutoff pairs are reported, never used for the production rate.",
+      "post_cutoff_diagnostic": {
+        "dt_years": [
+          1.405
+        ],
+        "mean_change_mm": -0.32000000000000006,
+        "pairs": 47,
+        "pipes": [
+          1250011604
+        ],
+        "prior_persistence_pearson_squared": 0.006984869858758343,
+        "rate_mm_year": 0.2278362573099415
+      },
+      "rate_mm_year": 0.0,
+      "used_pairs": 357,
+      "used_pipes": [
+        1250009490,
+        1250011604,
+        1250022871
+      ]
+    },
+    "target": {
+      "case": "between_vtd",
+      "id": 1250022871,
+      "prediction_date": "2023-12-01"
+    },
+    "v1_constant_rate_mm_year": 0.013033550759625047
+  },
+  "cold_start": {
+    "archive_training_r_ref_mm_year": 0.11018534656487847,
+    "archive_training_thickness_mean_mm": 2.7353422546842454,
+    "gap_policy": "own_mean",
+    "interpretation": "Declared environment priors; reference rate fitted, not identified chemistry.",
+    "mean_environment_factor": 0.5491452376554949,
+    "mean_exposure_years": 16.015357761539576,
+    "name": "M1S",
+    "priors": {
+      "age_exponent": 1.0,
+      "beta_W": 0.3,
+      "beta_v": 0.1,
+      "theta_K": 2500.0,
+      "velocity_offset_m_s": 0.1
+    },
+    "r_ref_mm_year": 0.10555247320293284,
+    "reference": {
+      "temperature_K": 285.6940825298223,
+      "velocity_m_s": 0.5707789385004212,
+      "water_fraction": 0.867897304128054
+    },
+    "scenario_band": {
+      "note": "Model-scenario range from declared priors; not a calibrated confidence interval.",
+      "r_ref_p10_mm_year": 0.049510450476126275,
+      "r_ref_p90_mm_year": 1.1506393447720418,
+      "scenarios": 243,
+      "thickness_median_mm": 2.6607198661683147,
+      "thickness_p10_mm": 1.4369980740221282,
+      "thickness_p90_mm": 3.468742407830294
+    },
+    "spatial_amplitude": 0.5,
+    "spatial_gate": {
+      "pooled_pearson": 0.12630352253952526,
+      "reason": "positive out-of-sample correlation",
+      "usable": true
+    },
+    "target": {
+      "case": "cold_start",
+      "id": 1250009583,
+      "prediction_date": "2022-07-01"
+    },
+    "training_campaigns": [
+      "2018-09-23"
+    ],
+    "training_pipes": [
+      1250009490,
+      1250011604,
+      1250022871
+    ],
+    "training_rows": 372,
+    "weighting": "W1"
+  }
+}
