@@ -61,6 +61,7 @@ def hydraulic_asof(tech, pipe_ids, cutoff, config):
     for field in ('v_liquid_true', 'v_mix'):
         apply_rule(field, df[field].gt(limits['velocity_high']), 'high_velocity_review_threshold')
     for field in ('t_mix', 't_start', 't_end'):
+        apply_rule(field, df[field].le(-273.15), 'nonpositive_kelvin', hard=True)
         apply_rule(field, flow & df[field].eq(0), 'zero_temperature_during_flow')
         apply_rule(field, df[field].lt(limits['temperature_low']), 'low_temperature_review_threshold')
         apply_rule(field, df[field].gt(limits['temperature_high']), 'high_temperature_review_threshold')

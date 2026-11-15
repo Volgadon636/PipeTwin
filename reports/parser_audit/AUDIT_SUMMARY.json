@@ -1,0 +1,26 @@
+{
+  "checks": 18743,
+  "failed": [],
+  "raw_rows": {
+    "passport.csv": 16,
+    "profile.csv": 20218,
+    "regime.csv": 495,
+    "tech_mode_for_embedings_with_length_with_temperatures_ids16.csv": 39052,
+    "uzt.csv": 67,
+    "vtd.csv": 48291
+  },
+  "tables": 22,
+  "modified_cells": 38,
+  "published_code_match": {
+    "__init__.py": true,
+    "config.py": false,
+    "data_cleaner.py": true,
+    "data_prep.py": true,
+    "format_detector.py": true,
+    "grid_builder.py": true,
+    "segment_mapper.py": true,
+    "storage.py": false,
+    "temporal.py": true,
+    "validator.py": true
+  }
+}

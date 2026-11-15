@@ -1,0 +1,12 @@
+source,flag,count,example_source_rows,ids,interpretation
+vtd.csv,before_commissioning_flag,13485,34782;34783;34784;34785;34786,1250013653;1250013655;1250022875;1250022876;1250013657,Source anomaly / unresolved measurement interpretation; not automatically a parser defect
+vtd.csv,wall_nominal_mismatch_flag,14239,32303;32304;32305;32306;32307,1250022871;1250028932;1250013653;1250013655;1250022875;1250022876;1250013657,Source anomaly / unresolved measurement interpretation; not automatically a parser defect
+vtd.csv,depth_residual_mismatch_flag,6,11821;11828;11841;14088;21414,1250022871,Source anomaly / unresolved measurement interpretation; not automatically a parser defect
+vtd.csv,residual_missing_flag,344,2;3;4;5;6,1250009490;1250011604;1250022871;1250009584;1250028931;1250028932;1250028933;1250028934;1250028935;1250013653;1250013655;1250022875;1250022876;1250013657,Source anomaly / unresolved measurement interpretation; not automatically a parser defect
+uzt.csv,above_nominal_flag,67,2;3;4;5;6,1250009583;1250011604;1250022871,Source anomaly / unresolved measurement interpretation; not automatically a parser defect
+profile.csv,steep_step_flag,61,40;1262;5677;5720;5768,1250009490;1250009583;1250009587;1250013655;1250013657;1250022875;1250028931;1250028932;1250028933;1250028934;1250028935,Source anomaly / unresolved measurement interpretation; not automatically a parser defect
+regime.csv,direction_conflict_flag,83,16;34;35;43;59,1250011604,Source anomaly / unresolved measurement interpretation; not automatically a parser defect
+regime.csv,exposure_invalid_flag,41,2;17;18;19;22,1250009466;1250012535;1250012534;1250009471;1250009462;1250009461;1250009497;1250011604,Source anomaly / unresolved measurement interpretation; not automatically a parser defect
+regime.csv,exposure_mismatch_flag,92,51;60;68;248;249,1250009466;1250011604;1250012534;1250012535;1250009462;1250009497;1250009471;1250009461;1250009481,Source anomaly / unresolved measurement interpretation; not automatically a parser defect
+regime.csv,density_suspect_flag,3,405;406;407,1250011604;1250009497;1250009462,Source anomaly / unresolved measurement interpretation; not automatically a parser defect
+regime.csv,negative_protective_effect_flag,2,471;472,,Source anomaly / unresolved measurement interpretation; not automatically a parser defect

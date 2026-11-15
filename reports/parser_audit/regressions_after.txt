@@ -1,0 +1,13 @@
+test_absolute_zero_not_rescued_by_persistence (test_parser_audit.AuditRegressions.test_absolute_zero_not_rescued_by_persistence) ... ok
+test_cold_age_ignores_archival_diagnostic_flag (test_parser_audit.AuditRegressions.test_cold_age_ignores_archival_diagnostic_flag) ... ok
+test_duplicate_header_rejected (test_parser_audit.AuditRegressions.test_duplicate_header_rejected) ... ok
+test_large_integer_id_is_exact (test_parser_audit.AuditRegressions.test_large_integer_id_is_exact) ... ok
+test_malformed_width_rejected (test_parser_audit.AuditRegressions.test_malformed_width_rejected) ... ok
+test_missing_installation_cannot_enable_monitoring (test_parser_audit.AuditRegressions.test_missing_installation_cannot_enable_monitoring) ... ok
+test_nanosecond_timestamp_roundtrip (test_parser_audit.AuditRegressions.test_nanosecond_timestamp_roundtrip) ... ok
+test_roundtrip_detects_one_unit_large_integer_change (test_parser_audit.AuditRegressions.test_roundtrip_detects_one_unit_large_integer_change) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 5.086s
+
+OK

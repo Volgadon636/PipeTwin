@@ -91,6 +91,10 @@ def build_features_asof(cleaned, grid, profile, vtd_history, uzt_history, reques
         # Only explicit static fields. Current diagnostic summaries are never model features.
         static = cleaned['passport.csv'][STATIC_FEATURES+['history_date_conflict_flag']]
         target = target.merge(static, on='id', validate='many_to_one')
+        # The archive-wide passport flag may contain future or prohibited diagnostics.
+        conflict = (case != 'cold_start' and bool((vtd_history.id.eq(pid)
+                    & vtd_history.date.lt(cutoff) & vtd_history.before_commissioning_flag).any()))
+        target['history_date_conflict_flag'] = pd.Series(conflict, index=target.index, dtype='boolean')
         target['age_years'] = (cutoff-target.commissioning_date).dt.total_seconds()/(86400*365.25)
         target.loc[target.age_years.lt(0) | target.history_date_conflict_flag, 'age_years'] = np.nan
 

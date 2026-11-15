@@ -133,7 +133,8 @@ def clean_datasets(datasets, config, log):
         monitoring.direction_name.map(_direction).ne(monitoring.id.map(directions)))
     monitoring['exposure_days_from_dates'] = (
         monitoring.sample_removal_date-monitoring.sample_installation_date).dt.total_seconds()/86400
-    monitoring['exposure_invalid_flag'] = monitoring.exposure_days_from_dates.le(0)
+    monitoring['exposure_invalid_flag'] = (monitoring.exposure_days_from_dates.isna()
+                                            | monitoring.exposure_days_from_dates.le(0))
     monitoring['exposure_mismatch_flag'] = (monitoring.exposure_days_from_dates-monitoring.exposure_days).abs() > 1
     monitoring['density_suspect_flag'] = monitoring.fluid_density.notna() & ~monitoring.fluid_density.between(0.5, 2)
     monitoring['negative_protective_effect_flag'] = monitoring.protective_effect_pct.lt(0)

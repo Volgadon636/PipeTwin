@@ -2,6 +2,7 @@
 import csv
 import hashlib
 import re
+from decimal import Decimal, InvalidOperation
 from pathlib import Path
 
 import numpy as np
@@ -65,6 +66,27 @@ def parse_numeric(series):
     return pd.to_numeric(s, errors='coerce').astype(float).replace([np.inf, -np.inf], np.nan)
 
 
+def parse_identifiers(series):
+    """Parse identifiers without an intermediate binary float."""
+    values = []
+    for value in series:
+        if pd.isna(value):
+            values.append(pd.NA)
+            continue
+        try:
+            number = Decimal(str(value).strip().replace('\u00a0', '').replace(',', '.'))
+        except InvalidOperation:
+            values.append(pd.NA)
+            continue
+        if not number.is_finite():
+            values.append(pd.NA)
+            continue
+        if number != number.to_integral_value() or not 0 < number <= 9223372036854775807:
+            raise ValueError('Identifier must be a positive signed 64-bit integer')
+        values.append(int(number))
+    return pd.Series(values, index=series.index, dtype='Int64')
+
+
 def resolve_sources(data_dir):
     resolved = {}
     for name, aliases in FILE_ALIASES.items():
@@ -83,6 +105,17 @@ def read_and_standardize_all(data_dir):
     datasets, summary, issues = {}, {}, []
     for name, path in resolve_sources(data_dir).items():
         encoding, sep = detect_file_format(path)
+        # Pandas can mangle duplicate headers or infer an index from extra fields.
+        # Validate logical records first, including quoted multiline fields.
+        with path.open(encoding=encoding, newline='') as handle:
+            reader = csv.reader(handle, delimiter=sep, strict=True)
+            header = next(reader)
+            if len(header) != len(set(header)) or any(not c.strip() for c in header):
+                raise ValueError(f'{path.name}: duplicate or empty header')
+            for record, fields in enumerate(reader, 2):
+                if len(fields) != len(header):
+                    raise ValueError(f'{path.name}: record {record}, line {reader.line_num}: '
+                                     f'expected {len(header)} fields, got {len(fields)}')
         raw = pd.read_csv(path, encoding=encoding, sep=sep, dtype='string',
                           keep_default_na=False)
         mapping = build_column_mapping(name, raw.columns)
@@ -95,7 +128,8 @@ def read_and_standardize_all(data_dir):
         df.insert(0, 'source_row', np.arange(2, len(df) + 2))
         for col in NUMERIC_COLUMNS[name] + DATE_COLUMNS[name]:
             before = df[col].copy()
-            parsed = robust_parse_dates(before) if col in DATE_COLUMNS[name] else parse_numeric(before)
+            parsed = (robust_parse_dates(before) if col in DATE_COLUMNS[name] else
+                      parse_identifiers(before) if col == 'id' else parse_numeric(before))
             bad = before.notna() & parsed.isna()
             if bad.any():
                 df[col + '_source_text'] = before

@@ -28,6 +28,13 @@ def validate_roundtrip(expected, actual, name):
             values = right.astype('string').str.lower().map({'true':True, 'false':False})
             if not np.array_equal(left.to_numpy(), values.to_numpy()):
                 raise ValueError(f'{name}: boolean values changed in {col}')
+        elif pd.api.types.is_integer_dtype(left):
+            from decimal import Decimal
+            for a, b in zip(left, right):
+                if pd.isna(a) and (pd.isna(b) or b == ''):
+                    continue
+                if pd.isna(a) or pd.isna(b) or Decimal(str(a)) != Decimal(str(b)):
+                    raise ValueError(f'{name}: integer values changed in {col}')
         elif pd.api.types.is_numeric_dtype(left):
             a = left.to_numpy(dtype=float, na_value=np.nan)
             b = pd.to_numeric(right, errors='raise').to_numpy(dtype=float, na_value=np.nan)
@@ -49,7 +56,7 @@ def save_table(df, stem):
             df[col] = df[col].astype('datetime64[ns]')
     csv_path, parquet_path = stem.with_suffix('.csv'), stem.with_suffix('.parquet')
     df.to_csv(csv_path, index=False, encoding='utf-8', lineterminator='\n',
-              float_format='%.15g', date_format='%Y-%m-%dT%H:%M:%S')
+              float_format='%.15g')
     df.to_parquet(parquet_path, index=False)
     # Explicit string read preserves archival categories such as 'NA' or '001'.
     csv_copy = pd.read_csv(csv_path, dtype='string', keep_default_na=False, na_values=[''])

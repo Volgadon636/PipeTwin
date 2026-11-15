@@ -1,0 +1,4 @@
+# Large isolated builds remain available locally and are reproducible from the scripts.
+/baseline/
+/corrected/
+/repeated/

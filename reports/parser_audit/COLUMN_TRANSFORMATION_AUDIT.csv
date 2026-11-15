@@ -1,0 +1,427 @@
+source_file,original_column,normalized_column,source_dtype,target_dtype,transformation,status
+passport.csv,Внутреннее покрытие_Завод изготовитель внутреннего покрытия,vnutrennee_pokrytie_zavod_izgotovitel_vnutrennego_pokrytiya,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,Внутреннее покрытие_Конструкция внутреннего покрытия спр,vnutrennee_pokrytie_konstruktsiya_vnutrennego_pokrytiya_spr,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,"Внутреннее покрытие_ТУ, ГОСТ внутреннего покрытия",vnutrennee_pokrytie_tu_gost_vnutrennego_pokrytiya,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,Внутреннее покрытие_Тип внутреннего покрытия,internal_coating,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,Внутреннее покрытие_Условия нанесения внутреннего покрытия,vnutrennee_pokrytie_usloviya_naneseniya_vnutrennego_pokrytiya,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,Внутренняя защита сварного шва_Вид защиты сварного стыка,vnutrennyaya_zashchita_svarnogo_shva_vid_zashchity_svarnogo_styka,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,Внутренняя защита сварного шва_ГОСТ на защиту сварного шва,vnutrennyaya_zashchita_svarnogo_shva_gost_na_zashchitu_svarnogo_shva,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,Внутренняя защита сварного шва_Завод изготовитель защиты шва,vnutrennyaya_zashchita_svarnogo_shva_zavod_izgotovitel_zashchity_shva,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,"Водные и подводные переходы_Адрес от начала основного участка, м",vodnye_i_podvodnye_perekhody_adres_ot_nachala_osnovnogo_uchastka_m,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,Водные и подводные переходы_Дата ввода дюкерного перехода,vodnye_i_podvodnye_perekhody_data_vvoda_dyukernogo_perekhoda,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,Водные и подводные переходы_Дата последнего  обследования,vodnye_i_podvodnye_perekhody_data_poslednego_obsledovaniya,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,Водные и подводные переходы_Дата следующего обследования,vodnye_i_podvodnye_perekhody_data_sleduyushchego_obsledovaniya,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,"Водные и подводные переходы_Диаметр, мм",vodnye_i_podvodnye_perekhody_diametr_mm,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,Водные и подводные переходы_Метод прокладки,vodnye_i_podvodnye_perekhody_metod_prokladki,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,"Водные и подводные переходы_Минимальная толщина стенки, мм",vodnye_i_podvodnye_perekhody_minimalnaya_tolshchina_stenki_mm,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,Водные и подводные переходы_Наименов. вод. объекта,vodnye_i_podvodnye_perekhody_naimenov_vod_obekta,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,Водные и подводные переходы_Наименование дюкерного перехода,vodnye_i_podvodnye_perekhody_naimenovanie_dyukernogo_perekhoda,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,Водные и подводные переходы_Наличие резервных линий (байпас),vodnye_i_podvodnye_perekhody_nalichie_rezervnykh_liniy_baypas,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,"Водные и подводные переходы_Организация, проводившая обследования",vodnye_i_podvodnye_perekhody_organizatsiya_provodivshaya_obsledovaniya,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,Водные и подводные переходы_Остаточный ресурс,vodnye_i_podvodnye_perekhody_ostatochnyy_resurs,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,"Водные и подводные переходы_Протяженность дюкера, м",vodnye_i_podvodnye_perekhody_protyazhennost_dyukera_m,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,Водные и подводные переходы_Результат обследования,vodnye_i_podvodnye_perekhody_rezultat_obsledovaniya,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,Водные и подводные переходы_Скорость течения,vodnye_i_podvodnye_perekhody_skorost_techeniya,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,Водные и подводные переходы_Судоходность,vodnye_i_podvodnye_perekhody_sudokhodnost,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,"Водные и подводные переходы_Толщина стенки, мм",vodnye_i_podvodnye_perekhody_tolshchina_stenki_mm,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,Водные и подводные переходы_Ширина зеркала воды,vodnye_i_podvodnye_perekhody_shirina_zerkala_vody,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,Данные о монтаже_Вид соединения,dannye_o_montazhe_vid_soedineniya,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,Данные о монтаже_Высота трубопровода от земли,dannye_o_montazhe_vysota_truboprovoda_ot_zemli,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,"Данные о монтаже_Глуб. залож., м",dannye_o_montazhe_glub_zalozh_m,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,Данные о монтаже_Дата запуска для гос органов,dannye_o_montazhe_data_zapuska_dlya_gos_organov,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,Данные о монтаже_Конструкция опор,dannye_o_montazhe_konstruktsiya_opor,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,"Данные о монтаже_Контроль сварных швов, %",dannye_o_montazhe_kontrol_svarnykh_shvov_pct,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,Данные о монтаже_Место хранения исп.документ,dannye_o_montazhe_mesto_khraneniya_isp_dokument,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,Данные о монтаже_Наличие исполнит. документации,dannye_o_montazhe_nalichie_ispolnit_dokumentatsii,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,Данные о монтаже_Номер исполнительной док,dannye_o_montazhe_nomer_ispolnitelnoy_dok,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,"Данные о монтаже_Расстояние между опорами, м",dannye_o_montazhe_rasstoyanie_mezhdu_oporami_m,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,Данные о монтаже_Способ прокладки,dannye_o_montazhe_sposob_prokladki,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,Данные о монтаже_Строительная организация,dannye_o_montazhe_stroitelnaya_organizatsiya,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,Данные о монтаже_Тип грунта,dannye_o_montazhe_tip_grunta,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,Данные о состоянии по простым участкам_Важность простого участка,dannye_o_sostoyanii_po_prostym_uchastkam_vazhnost_prostogo_uchastka,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,Данные о состоянии по простым участкам_Вид работ по вытеснению нефти спр,dannye_o_sostoyanii_po_prostym_uchastkam_vid_rabot_po_vytesneniyu_nefti_spr,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,Данные о состоянии по простым участкам_Газовая линия,dannye_o_sostoyanii_po_prostym_uchastkam_gazovaya_liniya,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,Данные о состоянии по простым участкам_Год вывода в бездействие,dannye_o_sostoyanii_po_prostym_uchastkam_god_vyvoda_v_bezdeystvie,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,Данные о состоянии по простым участкам_Дата изменения состояния,dannye_o_sostoyanii_po_prostym_uchastkam_data_izmeneniya_sostoyaniya,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,Данные о состоянии по простым участкам_Мероприятие,dannye_o_sostoyanii_po_prostym_uchastkam_meropriyatie,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,"Данные о состоянии по простым участкам_Обводненность при переводе в бездействиe, %",dannye_o_sostoyanii_po_prostym_uchastkam_obvodnennost_pri_perevode_v_bezdeystvie_pct,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,"Данные о состоянии по простым участкам_Передавать ""Поправочный коэффициент трения""",dannye_o_sostoyanii_po_prostym_uchastkam_peredavat_popravochnyy_koeffitsient_treniya,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,Данные о состоянии по простым участкам_Перемычка,dannye_o_sostoyanii_po_prostym_uchastkam_peremychka,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,"Данные о состоянии по простым участкам_Плотность нефти при переводе в бездействиe, кг/м3",dannye_o_sostoyanii_po_prostym_uchastkam_plotnost_nefti_pri_perevode_v_bezdeystvie_kg_m3,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,Данные о состоянии по простым участкам_Поправочный коэффициент трения (присадки),dannye_o_sostoyanii_po_prostym_uchastkam_popravochnyy_koeffitsient_treniya_prisadki,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,Данные о состоянии по простым участкам_Приказ,dannye_o_sostoyanii_po_prostym_uchastkam_prikaz,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,Данные о состоянии по простым участкам_Примечание,dannye_o_sostoyanii_po_prostym_uchastkam_primechanie,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,Данные о состоянии по простым участкам_Расшифровка  бездействующего состояния,dannye_o_sostoyanii_po_prostym_uchastkam_rasshifrovka_bezdeystvuyushchego_sostoyaniya,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,Данные о состоянии по простым участкам_Состояние эксплуатации простого участка,dannye_o_sostoyanii_po_prostym_uchastkam_sostoyanie_ekspluatatsii_prostogo_uchastka,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,"Данные о состоянии по строительным участкам_L действующего основого участка, км",dannye_o_sostoyanii_po_stroitelnym_uchastkam_l_deystvuyushchego_osnovogo_uchastka_km,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,Данные о состоянии по строительным участкам_Вид консерванта,dannye_o_sostoyanii_po_stroitelnym_uchastkam_vid_konservanta,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,Данные о состоянии по строительным участкам_Вид работ по консервации,dannye_o_sostoyanii_po_stroitelnym_uchastkam_vid_rabot_po_konservatsii,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,Данные о состоянии по строительным участкам_Год вывода в бездействие,dannye_o_sostoyanii_po_stroitelnym_uchastkam_god_vyvoda_v_bezdeystvie,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,Данные о состоянии по строительным участкам_Дата изменения состояния,dannye_o_sostoyanii_po_stroitelnym_uchastkam_data_izmeneniya_sostoyaniya,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,Данные о состоянии по строительным участкам_Дата окончания нормативного срока службы участка трубопровода,dannye_o_sostoyanii_po_stroitelnym_uchastkam_data_okonchaniya_normativnogo_sroka_sluzhby_uchastka_truboprovoda,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,Данные о состоянии по строительным участкам_Дата окончания срока службы участка трубопровода,dannye_o_sostoyanii_po_stroitelnym_uchastkam_data_okonchaniya_sroka_sluzhby_uchastka_truboprovoda,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,"Данные о состоянии по строительным участкам_Допустимое рабочее давление, атм",dannye_o_sostoyanii_po_stroitelnym_uchastkam_dopustimoe_rabochee_davlenie_atm,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,Данные о состоянии по строительным участкам_Мероприятие,dannye_o_sostoyanii_po_stroitelnym_uchastkam_meropriyatie,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,Данные о состоянии по строительным участкам_Отбраковка,dannye_o_sostoyanii_po_stroitelnym_uchastkam_otbrakovka,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,Данные о состоянии по строительным участкам_Приказ,dannye_o_sostoyanii_po_stroitelnym_uchastkam_prikaz,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,Данные о состоянии по строительным участкам_Примечание,dannye_o_sostoyanii_po_stroitelnym_uchastkam_primechanie,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,Данные о состоянии по строительным участкам_Проверен,dannye_o_sostoyanii_po_stroitelnym_uchastkam_proveren,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,Данные о состоянии по строительным участкам_Расшифровка  бездействующего состояния,dannye_o_sostoyanii_po_stroitelnym_uchastkam_rasshifrovka_bezdeystvuyushchego_sostoyaniya,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,Данные о состоянии по строительным участкам_Состояние эксплуатации участка,dannye_o_sostoyanii_po_stroitelnym_uchastkam_sostoyanie_ekspluatatsii_uchastka,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,Данные по очистке_Возможность очистки,dannye_po_ochistke_vozmozhnost_ochistki,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,Данные по очистке_Дата предыдущей очистки,dannye_po_ochistke_data_predydushchey_ochistki,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,Данные по очистке_Дата следующей очистки,dannye_po_ochistke_data_sleduyushchey_ochistki,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,Данные по очистке_Наименование сегмента очистки,dannye_po_ochistke_naimenovanie_segmenta_ochistki,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,Данные по очистке_Наличие камер пуска/ приема ОУ,dannye_po_ochistke_nalichie_kamer_puska_priema_ou,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,Данные по очистке_Состояние сегмента очистки,dannye_po_ochistke_sostoyanie_segmenta_ochistki,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,Данные по протяжённости в структуре сети OISPIPE Паспортизация_ID направления трубопровода,direction_id,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,Данные по протяжённости в структуре сети OISPIPE Паспортизация_ID основного участка трубопровода,main_pipeline_id,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,Данные по протяжённости в структуре сети OISPIPE Паспортизация_ID простого участка трубопровода,id,CSV text,Int64,numeric,preserved or typed; exclusions in row reconciliation
+passport.csv,"Данные по протяжённости в структуре сети OISPIPE Паспортизация_L направления трубопровода, км",dannye_po_protyazhyonnosti_v_strukture_seti_oispipe_pasportizatsiya_l_napravleniya_truboprovoda_km,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,"Данные по протяжённости в структуре сети OISPIPE Паспортизация_L основного участка, км",dannye_po_protyazhyonnosti_v_strukture_seti_oispipe_pasportizatsiya_l_osnovnogo_uchastka_km,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,"Данные по протяжённости в структуре сети OISPIPE Паспортизация_L простого участка, км",length_km,CSV text,float64,numeric,preserved or typed; exclusions in row reconciliation
+passport.csv,Данные по протяжённости в структуре сети OISPIPE Паспортизация_Наименование направления трубопровода,direction_name,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,Данные по протяжённости в структуре сети OISPIPE Паспортизация_Наименование основного участка трубопровода,dannye_po_protyazhyonnosti_v_strukture_seti_oispipe_pasportizatsiya_naimenovanie_osnovnogo_uchastka_truboprovoda,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,Данные по протяжённости в структуре сети OISPIPE Паспортизация_Наименование простого участка трубопровода,dannye_po_protyazhyonnosti_v_strukture_seti_oispipe_pasportizatsiya_naimenovanie_prostogo_uchastka_truboprovoda,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,Данные по техническому обследованию_Дата проведения последнего технического диагностирования,dannye_po_tekhnicheskomu_obsledovaniyu_data_provedeniya_poslednego_tekhnicheskogo_diagnostirovaniya,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,Данные по техническому обследованию_Дата проведения следующего технического диагностирования,dannye_po_tekhnicheskomu_obsledovaniyu_data_provedeniya_sleduyushchego_tekhnicheskogo_diagnostirovaniya,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,Данные по техническому обследованию_Заключение,dannye_po_tekhnicheskomu_obsledovaniyu_zaklyuchenie,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,Данные по техническому обследованию_Количество неустраненных дефектов по результатам технического диагностирования,dannye_po_tekhnicheskomu_obsledovaniyu_kolichestvo_neustranennykh_defektov_po_rezultatam_tekhnicheskogo_diagnostirovaniya,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,"Данные по техническому обследованию_Макс. глубина проникновения, %",dannye_po_tekhnicheskomu_obsledovaniyu_maks_glubina_proniknoveniya_pct,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,"Данные по техническому обследованию_Минимальная толщина стенки, мм",dannye_po_tekhnicheskomu_obsledovaniyu_minimalnaya_tolshchina_stenki_mm,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,"Данные по техническому обследованию_Организация, проводившая последнюю диагностику",dannye_po_tekhnicheskomu_obsledovaniyu_organizatsiya_provodivshaya_poslednyuyu_diagnostiku,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,"Данные по техническому обследованию_Рассчитанный остаточный ресурс, лет",dannye_po_tekhnicheskomu_obsledovaniyu_rasschitannyy_ostatochnyy_resurs_let,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,Данные по техническому обследованию_Способ диагностики,dannye_po_tekhnicheskomu_obsledovaniyu_sposob_diagnostiki,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,"Данные по техническому обследованию_Срок безопасной эксплуатации продлено на срок, лет",dannye_po_tekhnicheskomu_obsledovaniyu_srok_bezopasnoy_ekspluatatsii_prodleno_na_srok_let,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,Данные по экспертизе промышленной безопасности_Дата проведения последней ЭПБ,dannye_po_ekspertize_promyshlennoy_bezopasnosti_data_provedeniya_posledney_epb,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,Данные по экспертизе промышленной безопасности_Дата проведения следующей ЭПБ,dannye_po_ekspertize_promyshlennoy_bezopasnosti_data_provedeniya_sleduyushchey_epb,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,Данные по экспертизе промышленной безопасности_Заключение,dannye_po_ekspertize_promyshlennoy_bezopasnosti_zaklyuchenie,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,"Данные по экспертизе промышленной безопасности_Макс. глубина проникновения, %",dannye_po_ekspertize_promyshlennoy_bezopasnosti_maks_glubina_proniknoveniya_pct,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,"Данные по экспертизе промышленной безопасности_Минимальная толщина стенки, мм",dannye_po_ekspertize_promyshlennoy_bezopasnosti_minimalnaya_tolshchina_stenki_mm,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,"Данные по экспертизе промышленной безопасности_Организация, проводившая последнюю ЭПБ",dannye_po_ekspertize_promyshlennoy_bezopasnosti_organizatsiya_provodivshaya_poslednyuyu_epb,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,"Данные по экспертизе промышленной безопасности_Рассчитанный остаточный ресурс, лет",dannye_po_ekspertize_promyshlennoy_bezopasnosti_rasschitannyy_ostatochnyy_resurs_let,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,Данные по экспертизе промышленной безопасности_Способ диагностики,dannye_po_ekspertize_promyshlennoy_bezopasnosti_sposob_diagnostiki,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,"Данные по экспертизе промышленной безопасности_Срок безопасной эксплуатации продлено на срок, лет",dannye_po_ekspertize_promyshlennoy_bezopasnosti_srok_bezopasnoy_ekspluatatsii_prodleno_na_srok_let,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,Данные по экспертизе промышленной безопасности_Срок службы продлен до,dannye_po_ekspertize_promyshlennoy_bezopasnosti_srok_sluzhby_prodlen_do,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,Ингибирование_Дата начала ингибиторной защиты,ingibirovanie_data_nachala_ingibitornoy_zashchity,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,Ингибирование_Защищается,ingibirovanie_zashchishchaetsya,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,Ингибирование_Название защищаемого направления,ingibirovanie_nazvanie_zashchishchaemogo_napravleniya,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,Ингибирование_Наименование сегмента защиты,ingibirovanie_naimenovanie_segmenta_zashchity,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,Ингибирование_Наименование хим.реагента,ingibirovanie_naimenovanie_khim_reagenta,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,Ингибирование_Расположение установки дозирования,ingibirovanie_raspolozhenie_ustanovki_dozirovaniya,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,Ингибирование_Тип установки дозирования,ingibirovanie_tip_ustanovki_dozirovaniya,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,Испытание_Дата факт. испыт.,ispytanie_data_fakt_ispyt,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,Испытание_Срок след. испыт.,ispytanie_srok_sled_ispyt,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,Количество дефектов первоочередного ремонта,kolichestvo_defektov_pervoocherednogo_remonta,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,Количество отказов за период_За последние 12 месяцев,kolichestvo_otkazov_za_period_za_poslednie_12_mesyatsev,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,Количество отказов за период_За последние 120 месяцев,kolichestvo_otkazov_za_period_za_poslednie_120_mesyatsev,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,Количество отказов за период_За последние 180 месяцев,kolichestvo_otkazov_za_period_za_poslednie_180_mesyatsev,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,Количество отказов за период_За последние 24 месяца,kolichestvo_otkazov_za_period_za_poslednie_24_mesyatsa,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,Количество отказов за период_За последние 36 месяцев,kolichestvo_otkazov_za_period_za_poslednie_36_mesyatsev,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,Количество отказов за период_За последние 48 месяцев,kolichestvo_otkazov_za_period_za_poslednie_48_mesyatsev,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,Количество отказов за период_За последние 60 месяцев,kolichestvo_otkazov_za_period_za_poslednie_60_mesyatsev,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,Количество отказов по календарным годам_0-2 лет,kolichestvo_otkazov_po_kalendarnym_godam_0_2_let,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,Количество отказов по календарным годам_10-15 лет,kolichestvo_otkazov_po_kalendarnym_godam_10_15_let,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,Количество отказов по календарным годам_2-3 лет,kolichestvo_otkazov_po_kalendarnym_godam_2_3_let,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,Количество отказов по календарным годам_3-4 лет,kolichestvo_otkazov_po_kalendarnym_godam_3_4_let,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,Количество отказов по календарным годам_4-5 лет,kolichestvo_otkazov_po_kalendarnym_godam_4_5_let,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,Количество отказов по календарным годам_5-10 лет,kolichestvo_otkazov_po_kalendarnym_godam_5_10_let,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,Количество отказов по календарным годам_За весь срок эксплуатации,kolichestvo_otkazov_po_kalendarnym_godam_za_ves_srok_ekspluatatsii,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,Количество отказов по календарным годам_За текущий год,kolichestvo_otkazov_po_kalendarnym_godam_za_tekushchiy_god,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,"Материал_KCV ударная вязкость при +20 градусах Цельсия, Дж/см2",material_kcv_udarnaya_vyazkost_pri_20_gradusakh_tselsiya_dzh_sm2,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,"Материал_KCV ударная вязкость при -10 градусах Цельсия, Дж/см2",material_kcv_udarnaya_vyazkost_pri_10_gradusakh_tselsiya_dzh_sm2,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,"Материал_KCV ударная вязкость при -20 градусах Цельсия, Дж/см2",material_kcv_udarnaya_vyazkost_pri_20_gradusakh_tselsiya_dzh_sm2_fbd97b39,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,"Материал_KCV ударная вязкость при -40 градусах Цельсия, Дж/см2",material_kcv_udarnaya_vyazkost_pri_40_gradusakh_tselsiya_dzh_sm2,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,"Материал_KCV ударная вязкость при -5 градусах Цельсия, Дж/см2",material_kcv_udarnaya_vyazkost_pri_5_gradusakh_tselsiya_dzh_sm2,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,"Материал_KCV ударная вязкость при -50 градусах Цельсия, Дж/см2",material_kcv_udarnaya_vyazkost_pri_50_gradusakh_tselsiya_dzh_sm2,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,"Материал_KCV ударная вязкость при -60 градусах Цельсия, Дж/см2",material_kcv_udarnaya_vyazkost_pri_60_gradusakh_tselsiya_dzh_sm2,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,"Материал_KCV ударная вязкость при 0 градусах Цельсия, Дж/см2",material_kcv_udarnaya_vyazkost_pri_0_gradusakh_tselsiya_dzh_sm2,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,"Материал_Временное сопротивление разрыву (предел прочности), Н/мм2",material_vremennoe_soprotivlenie_razryvu_predel_prochnosti_n_mm2,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,Материал_ГОСТили ТУ на материал,material_gostili_tu_na_material,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,Материал_Группа исполнения согласно ТТК,material_gruppa_ispolneniya_soglasno_ttk,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,Материал_Группа прочности,material_gruppa_prochnosti,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,Материал_Группы изготовления (для показателя из ГОСТ),material_gruppy_izgotovleniya_dlya_pokazatelya_iz_gost,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,"Материал_Давление при испытаниях, Мпа",material_davlenie_pri_ispytaniyakh_mpa,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,"Материал_Жесткость при изгибе, кН*м2",material_zhestkost_pri_izgibe_kn_m2,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,Материал_Завод изготовитель трубы,material_zavod_izgotovitel_truby,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,"Материал_Максимальная длина одного отрезка трубы, м",material_maksimalnaya_dlina_odnogo_otrezka_truby_m,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,"Материал_Максимальная температура окружающей среды при эксплуатации, градусов Цельсия",material_maksimalnaya_temperatura_okruzhayushchey_sredy_pri_ekspluatatsii_gradusov_tselsiya,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,"Материал_Максимальная температура транспортируемого продукта при эксплуатации, градусов Цельсия",material_maksimalnaya_temperatura_transportiruemogo_produkta_pri_ekspluatatsii_gradusov_tselsiya,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,"Материал_Максимальное давление, Мпа",material_maksimalnoe_davlenie_mpa,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,"Материал_Максимальное допустимое усилие при намотке, кН",material_maksimalnoe_dopustimoe_usilie_pri_namotke_kn,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,"Материал_Максимальное допустимое усилие при растяжении, кН",material_maksimalnoe_dopustimoe_usilie_pri_rastyazhenii_kn,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,"Материал_Максимальный диаметр, мм",material_maksimalnyy_diametr_mm,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,Материал_Метод соединения,material_metod_soedineniya,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,"Материал_Минимальная температура окружающей среды при эксплуатации, градусов Цельсия",material_minimalnaya_temperatura_okruzhayushchey_sredy_pri_ekspluatatsii_gradusov_tselsiya,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,"Материал_Минимальная температура транспортируемого продукта при эксплуатации, градусов Цельсия",material_minimalnaya_temperatura_transportiruemogo_produkta_pri_ekspluatatsii_gradusov_tselsiya,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,"Материал_Минимальный диаметр, мм",material_minimalnyy_diametr_mm,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,"Материал_Модуль упругости при растяжении, МПА, не менее",material_modul_uprugosti_pri_rastyazhenii_mpa_ne_menee,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,Материал_Наименование материала,steel_grade,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,"Материал_Парциальное давление сероводорода, МПа",material_partsialnoe_davlenie_serovodoroda_mpa,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,"Материал_Предел прочности при растяжении, Мпа, не менее",material_predel_prochnosti_pri_rastyazhenii_mpa_ne_menee,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,"Материал_Предел текучести при растяжении, Мпа, не менее",material_predel_tekuchesti_pri_rastyazhenii_mpa_ne_menee,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,"Материал_Предел текучести, Н/мм2",material_predel_tekuchesti_n_mm2,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,"Материал_Радиус изгиба при хранении, мм, не менее",material_radius_izgiba_pri_khranenii_mm_ne_menee,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,"Материал_Разрушающее давление, Мпа",material_razrushayushchee_davlenie_mpa,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,"Материал_Разрушающее усилие при растяжении, кН",material_razrushayushchee_usilie_pri_rastyazhenii_kn,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,"Материал_Разрушающее усилие при смятии, кН",material_razrushayushchee_usilie_pri_smyatii_kn,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,"Материал_Стойкость к истиранию, мм³/м, не более",material_stoykost_k_istiraniyu_mm³_m_ne_bolee,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,"Материал_Температура плавления, °С, не менее",material_temperatura_plavleniya_s_ne_menee,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,"Материал_Толщина  стенки отбраковочная, мм",scrap_wall_thickness_mm,CSV text,float64,numeric,preserved or typed; exclusions in row reconciliation
+passport.csv,"Материал_Ударная вязкость по Шарпи ( при 23°С), кДж/м²",material_udarnaya_vyazkost_po_sharpi_pri_23_s_kdzh_m²,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,Материал_Эквивалентная шероховатость,material_ekvivalentnaya_sherokhovatost,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,Местонахождение_Бригада,mestonakhozhdenie_brigada,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,Местонахождение_Дочернее общество,mestonakhozhdenie_dochernee_obshchestvo,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,Местонахождение_Категория земель,mestonakhozhdenie_kategoriya_zemel,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,Местонахождение_Месторождение,mestonakhozhdenie_mestorozhdenie,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,Местонахождение_Область,mestonakhozhdenie_oblast,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,Местонахождение_Предприятие,mestonakhozhdenie_predpriyatie,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,Местонахождение_Принадлежность к объекту (площадка),mestonakhozhdenie_prinadlezhnost_k_obektu_ploshchadka,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,Местонахождение_Район,mestonakhozhdenie_rayon,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,Местонахождение_Цех,mestonakhozhdenie_tsekh,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,Местонахождение_№ ЦТОРТ,mestonakhozhdenie_no_tstort,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,Мониторинг скорости коррозии_Дата проведения замера,monitoring_skorosti_korrozii_data_provedeniya_zamera,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,Мониторинг скорости коррозии_Дата проведения следующего замера,monitoring_skorosti_korrozii_data_provedeniya_sleduyushchego_zamera,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,Мониторинг скорости коррозии_Количество ОПЗ в текущем месяце,monitoring_skorosti_korrozii_kolichestvo_opz_v_tekushchem_mesyatse,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,"Мониторинг скорости коррозии_Максимальная скорость коррозии, мм/год",monitoring_skorosti_korrozii_maksimalnaya_skorost_korrozii_mm_god,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,Мониторинг скорости коррозии_Метод замера,monitoring_skorosti_korrozii_metod_zamera,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,Мониторинг скорости коррозии_Название УКК,monitoring_skorosti_korrozii_nazvanie_ukk,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,"Мониторинг скорости коррозии_Средняя скорость коррозии, мм/год",monitoring_skorosti_korrozii_srednyaya_skorost_korrozii_mm_god,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,Мониторинг скорости коррозии_Техническое состояние УКК,monitoring_skorosti_korrozii_tekhnicheskoe_sostoyanie_ukk,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,Мониторинг скорости коррозии_№ УКК,monitoring_skorosti_korrozii_no_ukk,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,Наличие и состояние ЭХЗ,nalichie_i_sostoyanie_ekhz,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,Наружное покрытие_Завод изготовитель наружного покрытия,naruzhnoe_pokrytie_zavod_izgotovitel_naruzhnogo_pokrytiya,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,Наружное покрытие_Конструкция внешнего покрытия спр,naruzhnoe_pokrytie_konstruktsiya_vneshnego_pokrytiya_spr,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,"Наружное покрытие_ТУ, ГОСТ наружного покрытия",naruzhnoe_pokrytie_tu_gost_naruzhnogo_pokrytiya,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,Наружное покрытие_Тип наружного покрытия,naruzhnoe_pokrytie_tip_naruzhnogo_pokrytiya,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,Наружное покрытие_Условия нанесения наружного покрытия,naruzhnoe_pokrytie_usloviya_naneseniya_naruzhnogo_pokrytiya,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,"Общие данные_D, мм",diameter_mm,CSV text,float64,numeric,preserved or typed; exclusions in row reconciliation
+passport.csv,Общие данные_Балансовая стоимость,obshchie_dannye_balansovaya_stoimost,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,"Общие данные_Возраст официальный, лет",obshchie_dannye_vozrast_ofitsialnyy_let,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,"Общие данные_Возраст фактический, лет",obshchie_dannye_vozrast_fakticheskiy_let,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,Общие данные_ГОСТ трубы,obshchie_dannye_gost_truby,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,Общие данные_Год ввода,obshchie_dannye_god_vvoda,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,Общие данные_Год строительства,obshchie_dannye_god_stroitelstva,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,Общие данные_Группа риска,obshchie_dannye_gruppa_riska,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,Общие данные_Дата ввода,commissioning_date,CSV text,datetime64[ns],date,preserved or typed; exclusions in row reconciliation
+passport.csv,Общие данные_Дата запуска для гос. органов,obshchie_dannye_data_zapuska_dlya_gos_organov,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,Общие данные_Дата инвентаризации,obshchie_dannye_data_inventarizatsii,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,"Общие данные_Длина по бух.учету, м",length_accounting_m,CSV text,float64,numeric,preserved or typed; exclusions in row reconciliation
+passport.csv,"Общие данные_Длина по верификации, м",obshchie_dannye_dlina_po_verifikatsii_m,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,Общие данные_Инвентарный номер,obshchie_dannye_inventarnyy_nomer,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,Общие данные_Коррозионная активность грунта,obshchie_dannye_korrozionnaya_aktivnost_grunta,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,Общие данные_Название участка по эксплуатационному паспорту,pipeline_name,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,Общие данные_Наименование ОС по бух.учету,obshchie_dannye_naimenovanie_os_po_bukh_uchetu,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,Общие данные_Нитка,obshchie_dannye_nitka,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,"Общие данные_Норма амортизации, %",obshchie_dannye_norma_amortizatsii_pct,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,"Общие данные_Первоначальная балансовая стоимость, руб.",obshchie_dannye_pervonachalnaya_balansovaya_stoimost_rub,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,Общие данные_Порядок,obshchie_dannye_poryadok,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,Общие данные_Рег. № паспорта,obshchie_dannye_reg_no_pasporta,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,Общие данные_Регистрационный номер,obshchie_dannye_registratsionnyy_nomer,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,Общие данные_Регистрирующее лицо,obshchie_dannye_registriruyushchee_litso,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,"Общие данные_Срок эксплуатации с начала отчетного года, дней",obshchie_dannye_srok_ekspluatatsii_s_nachala_otchetnogo_goda_dney,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,Общие данные_Тип трубы,obshchie_dannye_tip_truby,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,"Общие данные_Толщина  стенки по исполнительной доку-ии, мм",nominal_thickness_mm,CSV text,float64,numeric,preserved or typed; exclusions in row reconciliation
+passport.csv,Отказы трубопроводов_Дата отказа,otkazy_truboprovodov_data_otkaza,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,Отказы трубопроводов_Дата первого отказа,otkazy_truboprovodov_data_pervogo_otkaza,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,Отказы трубопроводов_Категория района,otkazy_truboprovodov_kategoriya_rayona,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,Отказы трубопроводов_Количество не устраненных ВГУ,otkazy_truboprovodov_kolichestvo_ne_ustranennykh_vgu,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,Отказы трубопроводов_Количество отказов с начала эксплуатации,otkazy_truboprovodov_kolichestvo_otkazov_s_nachala_ekspluatatsii,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,Отказы трубопроводов_Причина отказа,otkazy_truboprovodov_prichina_otkaza,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,"Отказы трубопроводов_Срок эксплуатации до первого отказа, дн",otkazy_truboprovodov_srok_ekspluatatsii_do_pervogo_otkaza_dn,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,Отказы трубопроводов_Факторы территориального расположения,otkazy_truboprovodov_faktory_territorialnogo_raspolozheniya,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,"Отказы трубопроводов_Факторы, связанные с органами государственной власти",otkazy_truboprovodov_faktory_svyazannye_s_organami_gosudarstvennoy_vlasti,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,"Отказы, которые участвуют в расчете тех приоритизации_Общее число отказов, шт",otkazy_kotorye_uchastvuyut_v_raschete_tekh_prioritizatsii_obshchee_chislo_otkazov_sht,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,"Отказы, которые участвуют в расчете тех приоритизации_Общий удельный показатель аварийности, шт/км",otkazy_kotorye_uchastvuyut_v_raschete_tekh_prioritizatsii_obshchiy_udelnyy_pokazatel_avariynosti_sht_km,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,"Отказы, которые участвуют в расчете тех приоритизации_Удельный показатель аварийности по оборудованию, шт/км",otkazy_kotorye_uchastvuyut_v_raschete_tekh_prioritizatsii_udelnyy_pokazatel_avariynosti_po_oborudovaniyu_sht_km,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,"Отказы, которые участвуют в расчете тех приоритизации_Удельный показатель аварийности по трубе, шт/км",otkazy_kotorye_uchastvuyut_v_raschete_tekh_prioritizatsii_udelnyy_pokazatel_avariynosti_po_trube_sht_km,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,"Отказы, которые участвуют в расчете тех приоритизации_Число отказов по оборудованию, шт",otkazy_kotorye_uchastvuyut_v_raschete_tekh_prioritizatsii_chislo_otkazov_po_oborudovaniyu_sht,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,"Отказы, которые участвуют в расчете тех приоритизации_Число отказов по трубе, шт",otkazy_kotorye_uchastvuyut_v_raschete_tekh_prioritizatsii_chislo_otkazov_po_trube_sht,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,Параметры перекачки_% обвод. / тип перекач.среды,parametry_perekachki_pct_obvod_tip_perekach_sredy,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,"Параметры перекачки_Qж.,газа (тыс.) м3/сут",parametry_perekachki_qzh_gaza_tys_m3_sut,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,Параметры перекачки_Qн. т/сут,parametry_perekachki_qn_t_sut,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,Параметры перекачки_Концентрация ИСО,parametry_perekachki_kontsentratsiya_iso,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,"Параметры перекачки_Наличие нефти в трубопроводе (расч), тн",parametry_perekachki_nalichie_nefti_v_truboprovode_rasch_tn,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,"Параметры перекачки_Наличие нефти в трубопроводе, тн",parametry_perekachki_nalichie_nefti_v_truboprovode_tn,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,"Параметры перекачки_Рmax раб., атм (Pиспыт. на плотность)",parametry_perekachki_rmax_rab_atm_pispyt_na_plotnost,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,"Параметры перекачки_Ркон., атм",parametry_perekachki_rkon_atm,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,"Параметры перекачки_Рнач., атм",parametry_perekachki_rnach_atm,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,"Параметры перекачки_Скорость коррозии, мм/год",parametry_perekachki_skorost_korrozii_mm_god,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,"Параметры перекачки_Удельные потери P, атм",parametry_perekachki_udelnye_poteri_p_atm,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,Проект_Литера категории,proekt_litera_kategorii,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,Проект_Наименование проектной организации,proekt_naimenovanie_proektnoy_organizatsii,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,Проект_Наличие блуждающих токов,proekt_nalichie_bluzhdayushchikh_tokov,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,"Проект_Производительность по газу, м3/сут",proekt_proizvoditelnost_po_gazu_m3_sut,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,"Проект_Производительность по нефти, т/сут",proekt_proizvoditelnost_po_nefti_t_sut,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,"Проект_Пропускная способность, м3/сут",proekt_propusknaya_sposobnost_m3_sut,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,Проект_Рабочие чертежи,proekt_rabochie_chertezhi,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,"Проект_Рраб. в конце участка, атм",proekt_rrab_v_kontse_uchastka_atm,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,"Проект_Рраб. в начале участка, атм",proekt_rrab_v_nachale_uchastka_atm,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,"Проект_Рраб., атм",proekt_rrab_atm,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,"Проект_Температура среды в конце участка, С",proekt_temperatura_sredy_v_kontse_uchastka_s,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,"Проект_Температура среды в начале участка, С",proekt_temperatura_sredy_v_nachale_uchastka_s,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,Проект_Шифр проекта,proekt_shifr_proekta,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,Ревизия_Дата факт. рев.,reviziya_data_fakt_rev,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,Ревизия_Заключение,reviziya_zaklyuchenie,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,Ревизия_Периодич. проведения ревизии,reviziya_periodich_provedeniya_revizii,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,Ревизия_Срок след. рев.,reviziya_srok_sled_rev,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,Сварка_ГОСТ на присадочный материал,svarka_gost_na_prisadochnyy_material,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,Сварка_Завод-изготовитель наружной защиты шва спр,svarka_zavod_izgotovitel_naruzhnoy_zashchity_shva_spr,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,Сварка_Наружная защита шва,svarka_naruzhnaya_zashchita_shva,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,Сварка_Примечание по сварке,svarka_primechanie_po_svarke,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,Сварка_Присадочные материалы,svarka_prisadochnye_materialy,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,Сварка_Тип сварки,svarka_tip_svarki,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,Теплоизоляция_Тип теплоизоляционного покрытия,teploizolyatsiya_tip_teploizolyatsionnogo_pokrytiya,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,Теплоизоляция_Толщина изоляции,teploizolyatsiya_tolshchina_izolyatsii,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,Теплоизоляция_Толщина оцинкованного листа,teploizolyatsiya_tolshchina_otsinkovannogo_lista,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,Тип_Назначение трубопровода,tip_naznachenie_truboprovoda,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,Тип_Рабочая среда,tip_rabochaya_sreda,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,Тип_Тип трубопровода,tip_tip_truboprovoda,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,Тип_Тип трубопроводной сети,tip_tip_truboprovodnoy_seti,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,УЗТ (силами ЛНК УЭТ)_Дата проведения последней толщинометрии,uzt_silami_lnk_uet_data_provedeniya_posledney_tolshchinometrii,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,УЗТ (силами ЛНК УЭТ)_Дата проведения следующей толщинометрии,uzt_silami_lnk_uet_data_provedeniya_sleduyushchey_tolshchinometrii,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,"УЗТ (силами ЛНК УЭТ)_Минимальная толщина стенки, мм",uzt_silami_lnk_uet_minimalnaya_tolshchina_stenki_mm,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,УЗТ (силами ЛНК УЭТ)_Остаточный ресурс (рассчитанный условный остаточный ресурс из OISPIPE),uzt_silami_lnk_uet_ostatochnyy_resurs_rasschitannyy_uslovnyy_ostatochnyy_resurs_iz_oispipe,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,"Химизация процесса транспортировки (закачка реагентов против АСПО, противотурбулентная присадка, солеотложения, гидратообразования)_Наименование хим.реагента",khimizatsiya_protsessa_transportirovki_zakachka_reagentov_protiv_aspo_protivoturbulentnaya_prisadka_soleotlozheniya_gidratoobrazovaniya_naimenovanie_khim_reagenta,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,"Химизация процесса транспортировки (закачка реагентов против АСПО, противотурбулентная присадка, солеотложения, гидратообразования)_Расположение установки дозирования",khimizatsiya_protsessa_transportirovki_zakachka_reagentov_protiv_aspo_protivoturbulentnaya_prisadka_soleotlozheniya_gidratoobrazovaniya_raspolozhenie_ustanovki_dozirovaniya,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+passport.csv,"Химизация процесса транспортировки (закачка реагентов против АСПО, противотурбулентная присадка, солеотложения, гидратообразования)_Тип установки дозирования",khimizatsiya_protsessa_transportirovki_zakachka_reagentov_protiv_aspo_protivoturbulentnaya_prisadka_soleotlozheniya_gidratoobrazovaniya_tip_ustanovki_dozirovaniya,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+profile.csv,id,id,CSV text,Int64,numeric,preserved or typed; exclusions in row reconciliation
+profile.csv,lat,lat,CSV text,float64,numeric,preserved or typed; exclusions in row reconciliation
+profile.csv,lon,lon,CSV text,float64,numeric,preserved or typed; exclusions in row reconciliation
+profile.csv,total_distance,total_distance,CSV text,float64,numeric,preserved or typed; exclusions in row reconciliation
+profile.csv,z,z,CSV text,float64,numeric,preserved or typed; exclusions in row reconciliation
+regime.csv,Average Corrosion Rate by Gravimetry,average_corrosion_rate_by_gravimetry,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+regime.csv,CO2 in Water Phase,co2_water,CSV text,float64,numeric,preserved or typed; exclusions in row reconciliation
+regime.csv,Ca2+,ca2,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+regime.csv,Cl-,cl,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+regime.csv,Corrosion Inhibitor Grade,corrosion_inhibitor_grade,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+regime.csv,D,diameter,CSV text,float64,numeric,preserved or typed; exclusions in row reconciliation
+regime.csv,Det. of Average Corrosion Rate by ER,det_of_average_corrosion_rate_by_er,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+regime.csv,Enterprise,enterprise,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+regime.csv,"Exposure Time, days",exposure_days,CSV text,float64,numeric,preserved or typed; exclusions in row reconciliation
+regime.csv,Field,field,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+regime.csv,File name,file_name,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+regime.csv,Flow Phase State,flow_phase_state,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+regime.csv,Fluid Density,fluid_density,CSV text,float64,numeric,preserved or typed; exclusions in row reconciliation
+regime.csv,H2O,watercut_pct,CSV text,float64,numeric,preserved or typed; exclusions in row reconciliation
+regime.csv,H2S,h2s,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+regime.csv,HCO3-,hco3,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+regime.csv,Hardness,hardness,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+regime.csv,Length,length,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+regime.csv,Maximum Corrosion Rate by Gravimetry,maximum_corrosion_rate_by_gravimetry,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+regime.csv,Measurement Method,measurement_method,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+regime.csv,Mechanical Impurities,mechanical_impurities,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+regime.csv,Mg2+,mg2,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+regime.csv,N p/p,n_p_p,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+regime.csv,O2,o2,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+regime.csv,OSI in Water Phase,osi_in_water_phase,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+regime.csv,Pipeline Purpose,pipeline_purpose,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+regime.csv,Protected Segment Name,protected_segment_name,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+regime.csv,Protected Simple Section Name,protected_simple_section_name,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+regime.csv,Protection Direction,direction_name,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+regime.csv,Protective Effect,protective_effect_pct,CSV text,float64,numeric,preserved or typed; exclusions in row reconciliation
+regime.csv,Qzh,flow_liquid,CSV text,float64,numeric,preserved or typed; exclusions in row reconciliation
+regime.csv,SO4-,so4,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+regime.csv,SVB Cell Content,svb_cell_content,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+regime.csv,Sample Installation Date,sample_installation_date,CSV text,datetime64[ns],date,preserved or typed; exclusions in row reconciliation
+regime.csv,Sample Metal Grade,sample_metal_grade,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+regime.csv,Sample Removal Date,sample_removal_date,CSV text,datetime64[ns],date,preserved or typed; exclusions in row reconciliation
+regime.csv,Sample Type,sample_type,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+regime.csv,Simple Section ID,id,CSV text,Int64,numeric,preserved or typed; exclusions in row reconciliation
+regime.csv,Site,site,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+regime.csv,State 0,state_0,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+regime.csv,State 100,state_100,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+regime.csv,State 150,state_150,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+regime.csv,State 200,state_200,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+regime.csv,State 50,state_50,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+regime.csv,Subsidiary Company,subsidiary_company,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+regime.csv,Total Fe,total_fe,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+regime.csv,Total Mineralization,total_mineralization,CSV text,float64,numeric,preserved or typed; exclusions in row reconciliation
+regime.csv,UKK Address from the start of the simple section,ukk_distance,CSV text,float64,numeric,preserved or typed; exclusions in row reconciliation
+regime.csv,UKK Name,ukk_name,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+regime.csv,UKK Number,ukk_number,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+regime.csv,Wall Thickness,wall_thickness,CSV text,float64,numeric,preserved or typed; exclusions in row reconciliation
+regime.csv,Water Content 0,water_content_0,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+regime.csv,Water Content 100,water_content_100,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+regime.csv,Water Content 150,water_content_150,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+regime.csv,Water Content 200,water_content_200,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+regime.csv,Water Content 50,water_content_50,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+regime.csv,Workshop,workshop,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+regime.csv,Year,year,CSV text,float64,numeric,preserved or typed; exclusions in row reconciliation
+regime.csv,pH,ph,CSV text,float64,numeric,preserved or typed; exclusions in row reconciliation
+tech_mode_for_embedings_with_length_with_temperatures_ids16.csv,calc_date,date,CSV text,datetime64[ns],date,preserved or typed; exclusions in row reconciliation
+tech_mode_for_embedings_with_length_with_temperatures_ids16.csv,d_mm,diameter_mm,CSV text,float64,numeric,preserved or typed; exclusions in row reconciliation
+tech_mode_for_embedings_with_length_with_temperatures_ids16.csv,density_liquid_work,density_liquid_work,CSV text,float64,numeric,preserved or typed; exclusions in row reconciliation
+tech_mode_for_embedings_with_length_with_temperatures_ids16.csv,density_oil,density_oil,CSV text,float64,numeric,preserved or typed; exclusions in row reconciliation
+tech_mode_for_embedings_with_length_with_temperatures_ids16.csv,fill_coefficient,fill_coefficient,CSV text,float64,numeric,preserved or typed; exclusions in row reconciliation
+tech_mode_for_embedings_with_length_with_temperatures_ids16.csv,flow_regime_real,flow_regime,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+tech_mode_for_embedings_with_length_with_temperatures_ids16.csv,gas_content_rate,gas_content_rate,CSV text,float64,numeric,preserved or typed; exclusions in row reconciliation
+tech_mode_for_embedings_with_length_with_temperatures_ids16.csv,length,length,CSV text,float64,numeric,preserved or typed; exclusions in row reconciliation
+tech_mode_for_embedings_with_length_with_temperatures_ids16.csv,p_end,p_end,CSV text,float64,numeric,preserved or typed; exclusions in row reconciliation
+tech_mode_for_embedings_with_length_with_temperatures_ids16.csv,p_end_fact,p_end_fact,CSV text,float64,numeric,preserved or typed; exclusions in row reconciliation
+tech_mode_for_embedings_with_length_with_temperatures_ids16.csv,p_start,p_start,CSV text,float64,numeric,preserved or typed; exclusions in row reconciliation
+tech_mode_for_embedings_with_length_with_temperatures_ids16.csv,p_start_fact,p_start_fact,CSV text,float64,numeric,preserved or typed; exclusions in row reconciliation
+tech_mode_for_embedings_with_length_with_temperatures_ids16.csv,pit_corrosion_intensity,pit_corrosion_intensity,CSV text,float64,numeric,preserved or typed; exclusions in row reconciliation
+tech_mode_for_embedings_with_length_with_temperatures_ids16.csv,q,q_liquid,CSV text,float64,numeric,preserved or typed; exclusions in row reconciliation
+tech_mode_for_embedings_with_length_with_temperatures_ids16.csv,q_gas,q_gas,CSV text,float64,numeric,preserved or typed; exclusions in row reconciliation
+tech_mode_for_embedings_with_length_with_temperatures_ids16.csv,q_oil,q_oil,CSV text,float64,numeric,preserved or typed; exclusions in row reconciliation
+tech_mode_for_embedings_with_length_with_temperatures_ids16.csv,simple_section_id,id,CSV text,Int64,numeric,preserved or typed; exclusions in row reconciliation
+tech_mode_for_embedings_with_length_with_temperatures_ids16.csv,t_end,t_end,CSV text,float64,numeric,preserved or typed; exclusions in row reconciliation
+tech_mode_for_embedings_with_length_with_temperatures_ids16.csv,t_mix,t_mix,CSV text,float64,numeric,preserved or typed; exclusions in row reconciliation
+tech_mode_for_embedings_with_length_with_temperatures_ids16.csv,t_start,t_start,CSV text,float64,numeric,preserved or typed; exclusions in row reconciliation
+tech_mode_for_embedings_with_length_with_temperatures_ids16.csv,v_liquid_true,v_liquid_true,CSV text,float64,numeric,preserved or typed; exclusions in row reconciliation
+tech_mode_for_embedings_with_length_with_temperatures_ids16.csv,v_mix,v_mix,CSV text,float64,numeric,preserved or typed; exclusions in row reconciliation
+tech_mode_for_embedings_with_length_with_temperatures_ids16.csv,viscosity_liquid_work,viscosity_liquid_work,CSV text,float64,numeric,preserved or typed; exclusions in row reconciliation
+tech_mode_for_embedings_with_length_with_temperatures_ids16.csv,watercut,watercut_pct,CSV text,float64,numeric,preserved or typed; exclusions in row reconciliation
+uzt.csv,ID замера,measurement_id,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+uzt.csv,ID контрольной точки,control_point_id,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+uzt.csv,angle,angle,CSV text,float64,numeric,preserved or typed; exclusions in row reconciliation
+uzt.csv,date,date,CSV text,datetime64[ns],date,preserved or typed; exclusions in row reconciliation
+uzt.csv,id,id,CSV text,Int64,numeric,preserved or typed; exclusions in row reconciliation
+uzt.csv,residual_wall_thickness,residual_wall_thickness,CSV text,float64,numeric,preserved or typed; exclusions in row reconciliation
+uzt.csv,start_distance,start_distance,CSV text,float64,numeric,preserved or typed; exclusions in row reconciliation
+uzt.csv,Адрес от начала участка_1,distance,CSV text,float64,numeric,preserved or typed; exclusions in row reconciliation
+uzt.csv,Номер контролируемого участка,control_section_num,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+uzt.csv,Номер точки,point_num,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+vtd.csv,Angle,angle,CSV text,float64,numeric,preserved or typed; exclusions in row reconciliation
+vtd.csv,Class,class,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+vtd.csv,Cluster,cluster,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+vtd.csv,Comment,comment,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+vtd.csv,Defect Depth,defect_depth,CSV text,float64,numeric,preserved or typed; exclusions in row reconciliation
+vtd.csv,Defect Depth in %,defect_depth_pct,CSV text,float64,numeric,preserved or typed; exclusions in row reconciliation
+vtd.csv,Defect Type,defect_type,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+vtd.csv,Distance,distance,CSV text,float64,numeric,preserved or typed; exclusions in row reconciliation
+vtd.csv,"Distance to Reference Point 1, m",distance_to_reference_point_1_m,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+vtd.csv,"Distance to Reference Point 2, m",distance_to_reference_point_2_m,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+vtd.csv,Distance_adjusted,distance_adjusted,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+vtd.csv,Distance_raw,distance_raw,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+vtd.csv,ERF,erf,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+vtd.csv,Feature Description,feature_description,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+vtd.csv,Feature Length,defect_length,CSV text,float64,numeric,preserved or typed; exclusions in row reconciliation
+vtd.csv,Feature Number,feature_number,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+vtd.csv,Feature Width,defect_width,CSV text,float64,numeric,preserved or typed; exclusions in row reconciliation
+vtd.csv,Height,height,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+vtd.csv,Inspection Number,inspection_number,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+vtd.csv,Latitude,latitude,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+vtd.csv,Longitude,longitude,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+vtd.csv,Pipe Length,pipe_length,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+vtd.csv,PreRepair classification,prerepair_classification,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+vtd.csv,Psafe,psafe,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+vtd.csv,Recommended Repair Method,recommended_repair_method,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+vtd.csv,Reference Point 1 (Against Flow),reference_point_1_against_flow,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+vtd.csv,Reference Point 2 (With Flow),reference_point_2_with_flow,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+vtd.csv,Relative Distance,relative_distance,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+vtd.csv,Repair Method,repair_method,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+vtd.csv,Repair Time (Years),repair_time_years,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+vtd.csv,"Repair parameter, m",repair_parameter_m,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+vtd.csv,Residual Wall Thickness,residual_wall_thickness,CSV text,float64,numeric,preserved or typed; exclusions in row reconciliation
+vtd.csv,Section Number,section_number,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+vtd.csv,Wall Thickness,wall_thickness,CSV text,float64,numeric,preserved or typed; exclusions in row reconciliation
+vtd.csv,accumulated_value,accumulated_value,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+vtd.csv,date,date,CSV text,datetime64[ns],date,preserved or typed; exclusions in row reconciliation
+vtd.csv,id,id,CSV text,Int64,numeric,preserved or typed; exclusions in row reconciliation
+vtd.csv,is_beyond_pot,is_beyond_pot,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+vtd.csv,row_id,row_id,CSV text,float64,numeric,preserved or typed; exclusions in row reconciliation
+vtd.csv,section_length,section_length,CSV text,float64,numeric,preserved or typed; exclusions in row reconciliation
+vtd.csv,trait,trait,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation
+vtd.csv,vtd_date_raw,vtd_date_raw,CSV text,string,archival text,preserved or typed; exclusions in row reconciliation

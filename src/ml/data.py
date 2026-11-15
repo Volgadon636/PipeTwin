@@ -11,6 +11,8 @@ from src.storage import sha256
 class RepositoryData:
     def __init__(self, root=BASE_DIR):
         self.root = Path(root)
+        if (self.root/'reports/PUBLISH_IN_PROGRESS').exists():
+            raise ValueError('Preprocessing publication incomplete; recover the artifact root first')
         self.config = json.loads((self.root / 'configs/preprocessing.json').read_text())
         self.manifest = json.loads((self.root / 'reports/run_manifest.json').read_text())
         if self.config != self.manifest['config']:
@@ -24,6 +26,8 @@ class RepositoryData:
         Reading explicit types also permits ML-only execution without PyArrow.
         Every CSV must match the preprocessing manifest before it can be used.
         """
+        if (self.root/'reports/PUBLISH_IN_PROGRESS').exists():
+            raise ValueError('Preprocessing publication incomplete; recover the artifact root first')
         if stem not in self._cache:
             entry = self.manifest['outputs'][stem]
             path = self.root / (stem + '.csv')

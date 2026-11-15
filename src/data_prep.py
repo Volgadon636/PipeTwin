@@ -119,13 +119,37 @@ def run_pipeline(data_dir=DATA_DIR, output_root=BASE_DIR, config_path=None, requ
         write_json(stage/'reports/validation.json', validation)
         write_json(stage/'reports/run_manifest.json', manifest)
         (stage/'reports/data_quality.md').write_text(quality_report(cleaned,quarantine,tables,issues,validation),encoding='utf-8')
-        for path in sorted(stage.rglob('*')):
-            if path.is_file():
-                dest = output_root/path.relative_to(stage)
-                if not dest.resolve().is_relative_to(output_root):
-                    raise ValueError(f'Output escapes destination root: {dest}')
-                dest.parent.mkdir(parents=True, exist_ok=True)
-                publish_file(path, dest)
+        paths = [p for p in sorted(stage.rglob('*')) if p.is_file()]
+        marker = output_root/'reports/PUBLISH_IN_PROGRESS'
+        marker.parent.mkdir(parents=True, exist_ok=True)
+        # A leftover marker indicates an interrupted generation requiring recovery.
+        with marker.open('x') as handle:
+            handle.write('Preprocessing publication in progress; do not consume this root.\n')
+        touched = []
+        with tempfile.TemporaryDirectory(prefix='.prep-rollback-', dir=output_root) as backup:
+            try:
+                for path in paths:
+                    relative = path.relative_to(stage)
+                    dest = output_root/relative
+                    if not dest.resolve().is_relative_to(output_root):
+                        raise ValueError(f'Output escapes destination root: {dest}')
+                    old = Path(backup)/relative if dest.exists() else None
+                    if old is not None:
+                        old.parent.mkdir(parents=True, exist_ok=True)
+                        shutil.copyfile(dest, old)
+                    dest.parent.mkdir(parents=True, exist_ok=True)
+                    touched.append((dest, old))
+                    publish_file(path, dest)
+            except BaseException:
+                for dest, old in reversed(touched):
+                    if old is None:
+                        dest.unlink(missing_ok=True)
+                    else:
+                        shutil.copyfile(old, dest)
+                marker.unlink()
+                raise
+            else:
+                marker.unlink()
     print(f"PASS: {validation['checks_passed']} checks, {validation['csv_parquet_pairs_verified']} CSV/Parquet pairs; {len(target_grid)} target segments.", flush=True)
     return {'cleaned':cleaned, 'quarantine':quarantine, 'grid':grid, 'tables':tables,
             'validation':validation, 'source_summary':source_summary}
