@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import { Header } from './components/Header'
 import { useProjectData } from './hooks/useProjectData'
 import { FactorsSection } from './sections/FactorsSection'
 import { RiskSection } from './sections/RiskSection'
@@ -7,7 +6,6 @@ import { ValidationSection } from './sections/ValidationSection'
 import { ProfileSection } from './sections/ProfileSection'
 import { ComparisonSection } from './sections/ComparisonSection'
 import type { FrontendData, SegmentSelection } from './types'
-import { integer } from './utils/format'
 
 function Dashboard({ data }: { data: FrontendData }) {
   const [groupId, setGroupId] = useState(data.validation.groups[0].id)
@@ -19,15 +17,15 @@ function Dashboard({ data }: { data: FrontendData }) {
   }
 
   //return <> <Header/> </>
-  return <> <main className="dashboard">
+  return <> <main className="dashboard" aria-label="Метрики и прогноз толщины стенки">
     <div className="page-heading">
       {/* <div><h1>Прогноз толщины стенки</h1><p>{data.profile.pipes.length} трубы · {integer(data.metrics.segment_count)} сегментов · шаг {data.metrics.segment_size_m} м</p></div> */}
       {/* <span className="dataset-label">Модели v2 · {data.metrics.final_model}</span> */}
     </div>
-    <div className="overview-grid"><FactorsSection data={data.importance}/><ComparisonSection data={data.metrics}/></div>
-    <RiskSection data={data.risk} onSelect={selectSegment}/>
-    <ValidationSection data={data.validation} group={group} onChange={setGroupId}/>
     <ProfileSection data={data.profile} intervalMethod={data.validation.interval_method} selection={selection}/>
+    <RiskSection data={data.risk} profile={data.profile} onSelect={selectSegment}/>
+    <ValidationSection data={data.validation} group={group} onChange={setGroupId}/>
+    <div className="overview-grid"><FactorsSection data={data.importance}/><ComparisonSection data={data.metrics}/></div>
   </main></>
 }
 
