@@ -5,6 +5,7 @@ import { RiskSection } from './sections/RiskSection'
 import { ValidationSection } from './sections/ValidationSection'
 import { ProfileSection } from './sections/ProfileSection'
 import { ComparisonSection } from './sections/ComparisonSection'
+import { Pipe3DSection } from './sections/Pipe3DSection'
 import type { FrontendData, SegmentSelection } from './types'
 
 function Dashboard({ data }: { data: FrontendData }) {
@@ -26,6 +27,7 @@ function Dashboard({ data }: { data: FrontendData }) {
     <RiskSection data={data.risk} profile={data.profile} onSelect={selectSegment}/>
     <ValidationSection data={data.validation} group={group} onChange={setGroupId}/>
     <div className="overview-grid"><FactorsSection data={data.importance}/><ComparisonSection data={data.metrics}/></div>
+    <Pipe3DSection data={data.profile}/>
   </main></>
 }
 
