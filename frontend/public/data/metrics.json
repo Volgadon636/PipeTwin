@@ -1,0 +1,155 @@
+{
+  "schema_version": 1,
+  "final_model": "M1S / C0-style",
+  "model_status": "Сохранённая физическая модель v2. Итоговая CatBoost в репозитории отсутствует.",
+  "segment_count": 2000,
+  "total_length_m": 19993.5,
+  "segment_size_m": 10,
+  "headline": {
+    "n": 466,
+    "mae_mm": 0.42889812716839437,
+    "rmse_mm": 0.5580843177832749,
+    "bias_mm": -0.09438103391991233,
+    "r2": null,
+    "pearson_r": 0.1288222684653598,
+    "pearson_squared": 0.016595176852561233,
+    "coverage": null,
+    "mean_interval_width_mm": null
+  },
+  "comparison": [
+    {
+      "id": "C0",
+      "label": "Без утонения · C0",
+      "cohort": "cold_start",
+      "final": false,
+      "metrics": {
+        "n": 466,
+        "mae_mm": 1.6760944206008583,
+        "rmse_mm": 1.799456641880705,
+        "bias_mm": 1.6760944206008583,
+        "r2": null,
+        "pearson_r": null,
+        "pearson_squared": null,
+        "coverage": null,
+        "mean_interval_width_mm": null
+      }
+    },
+    {
+      "id": "M0",
+      "label": "Постоянная скорость · M0",
+      "cohort": "cold_start",
+      "final": false,
+      "metrics": {
+        "n": 466,
+        "mae_mm": 0.432555878354948,
+        "rmse_mm": 0.5380332142895434,
+        "bias_mm": 0.046927141929961974,
+        "r2": null,
+        "pearson_r": null,
+        "pearson_squared": null,
+        "coverage": null,
+        "mean_interval_width_mm": null
+      }
+    },
+    {
+      "id": "M1",
+      "label": "Физическая модель · M1",
+      "cohort": "cold_start",
+      "final": false,
+      "metrics": {
+        "n": 466,
+        "mae_mm": 0.4289216552371229,
+        "rmse_mm": 0.5610891256125352,
+        "bias_mm": -0.09839236550619568,
+        "r2": null,
+        "pearson_r": null,
+        "pearson_squared": null,
+        "coverage": null,
+        "mean_interval_width_mm": null
+      }
+    },
+    {
+      "id": "M1S",
+      "label": "Физика и профиль · M1S",
+      "cohort": "cold_start",
+      "final": true,
+      "metrics": {
+        "n": 466,
+        "mae_mm": 0.42889812716839437,
+        "rmse_mm": 0.5580843177832749,
+        "bias_mm": -0.09438103391991233,
+        "r2": null,
+        "pearson_r": 0.1288222684653598,
+        "pearson_squared": 0.016595176852561233,
+        "coverage": null,
+        "mean_interval_width_mm": null
+      }
+    },
+    {
+      "id": "C0",
+      "label": "Без утонения · C0",
+      "cohort": "between_vtd",
+      "final": false,
+      "metrics": {
+        "n": 357,
+        "mae_mm": 0.49822273660440736,
+        "rmse_mm": 0.652255303799292,
+        "bias_mm": 0.04931517357919729,
+        "r2": null,
+        "pearson_r": 0.3365403513173198,
+        "pearson_squared": 0.11325940806478503,
+        "coverage": null,
+        "mean_interval_width_mm": null
+      }
+    },
+    {
+      "id": "M0",
+      "label": "Постоянная скорость · M0",
+      "cohort": "between_vtd",
+      "final": false,
+      "metrics": {
+        "n": 357,
+        "mae_mm": 0.49822273660440736,
+        "rmse_mm": 0.652255303799292,
+        "bias_mm": 0.04931517357919729,
+        "r2": null,
+        "pearson_r": 0.3365403513173198,
+        "pearson_squared": 0.11325940806478503,
+        "coverage": null,
+        "mean_interval_width_mm": null
+      }
+    },
+    {
+      "id": "M0dense",
+      "label": "Сопоставимые кампании · M0dense",
+      "cohort": "between_vtd",
+      "final": true,
+      "metrics": {
+        "n": 357,
+        "mae_mm": 0.49822273660440736,
+        "rmse_mm": 0.652255303799292,
+        "bias_mm": 0.04931517357919729,
+        "r2": null,
+        "pearson_r": 0.3365403513173198,
+        "pearson_squared": 0.11325940806478503,
+        "coverage": null,
+        "mean_interval_width_mm": null
+      }
+    }
+  ],
+  "comparison_note": "Готовые метрики v2. Pearson² — корреляция после вычитания среднего кампании. Cold start: leave-one-pipe-out, 466 строк; между ВТД: pair leave-one-pipe-out, 357 строк. Обычный агрегированный R² в этих сводках не сохранён.",
+  "provenance": {
+    "source_sha256": {
+      "experiments\\ml_v2\\metrics.json": "a8b8b3ae7b2fce3b418fdaeb1a974f1a2ddb20b39bef353100172a64efe04b51",
+      "experiments\\ml_v2\\models.json": "d297e4d6802cff483c49f6b1a95e15a6694c15d82a9d9014256cd3be33979131",
+      "experiments\\ml_v2\\prediction_diagnostics.csv": "5112ceaca7a0eb09b29e67955c396bc9b9651daacc894e559118e60ea323b672",
+      "experiments\\ml_v2\\risk_top_10pct.csv": "17d2591bd4859cf3913020d2168fe4f3990c1e3b3419fb77d44810d0c243b177",
+      "experiments\\ml_baseline\\validation_predictions.csv": "ef078e68c96d226085830c631312271c8918af90af28eb6689554943c3ebd831",
+      "experiments\\ml_baseline\\metrics.json": "afab0cd255dff1aadc90c17530bd770025bd6017d360776a58a866d732776885",
+      "experiments\\ml_v2\\result.csv": "b9672908d81203a52b03940f6b71734ac14e88fb86fbddc053462fc722a70147"
+    },
+    "mode": "saved_artifacts_only",
+    "metrics_recomputed": false,
+    "models_trained": false
+  }
+}
