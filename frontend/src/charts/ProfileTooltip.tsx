@@ -8,8 +8,8 @@ export function ProfileTooltip({ point }: { point?: Pipe['points'][number] }) {
     <p>{integer(point.position_m)}–{integer(point.end_m)} м</p>
     <dl>
       <div><dt>Прогноз</dt><dd>{format(point.prediction_mm)} мм</dd></div>
-      <div><dt>P10</dt><dd>{format(point.p10_mm)} мм</dd></div>
-      <div><dt>P90</dt><dd>{format(point.p90_mm)} мм</dd></div>
+      <div><dt>Нижняя граница</dt><dd>{format(point.lower_mm)} мм</dd></div>
+      <div><dt>Верхняя граница</dt><dd>{format(point.upper_mm)} мм</dd></div>
       <div><dt>Прошлое ВТД</dt><dd>{point.actual_mm === null ? 'Нет измерения' : `${format(point.actual_mm)} мм`}</dd></div>
     </dl>
     {point.actual_date && <small>Дата ВТД: {date(point.actual_date)}</small>}

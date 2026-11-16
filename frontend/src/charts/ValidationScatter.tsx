@@ -12,7 +12,7 @@ export function ValidationScatter({ group }: { group: ValidationGroup }) {
       <YAxis dataKey="prediction_mm" name="Прогноз" type="number" unit=" мм" domain={[0, max]} tick={AXIS_STYLE} tickLine={false} axisLine={false} label={{ value: 'Прогноз, мм', angle: -90, position: 'insideLeft', ...AXIS_STYLE }}/>
       <ReferenceLine segment={[{ x: 0, y: 0 }, { x: max, y: max }]} stroke="#a5b3be" strokeDasharray="5 5" label={{ value: 'y = x', position: 'insideTopRight', ...AXIS_STYLE }}/>
       <Tooltip cursor={{ strokeDasharray: '3 3' }} formatter={(value, name) => [`${format(Number(value))} мм`, name]}/>
-      <Scatter name="Валидация C0" data={group.rows} fill={COLORS.prediction} fillOpacity={0.55} isAnimationActive={false}/>
+      <Scatter name={`Валидация ${group.model}`} data={group.rows} fill={COLORS.prediction} fillOpacity={0.55} isAnimationActive={false}/>
     </ScatterChart>
   </ResponsiveContainer>
 }

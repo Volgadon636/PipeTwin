@@ -20,7 +20,7 @@ export function RiskSegmentDetails({ row, pipe, onSelect }: {
     <dl className="segment-details-grid">
       <div><dt>Участок трубы</dt><dd>{integer(row.position_m)}{point && `–${integer(point.end_m)}`} м</dd></div>
       <div><dt>Прогноз толщины</dt><dd>{format(row.prediction_mm)} мм</dd></div>
-      <div><dt>Границы P10–P90</dt><dd>{format(row.p10_mm)}–{format(row.p90_mm)} мм</dd></div>
+      <div><dt>Эмпирический интервал</dt><dd>{format(row.lower_mm)}–{format(row.upper_mm)} мм</dd></div>
       <div><dt>Дата прогноза</dt><dd>{pipe ? date(pipe.prediction_date) : '—'}</dd></div>
       <div><dt>Прошлое ВТД</dt><dd>{point?.actual_mm == null ? 'Нет измерения' : `${format(point.actual_mm)} мм`}
         {point?.actual_date && <small>от {date(point.actual_date)}</small>}

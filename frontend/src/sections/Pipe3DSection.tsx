@@ -76,7 +76,7 @@ export function Pipe3DSection({ data }: { data: ProfileData }) {
         <span className="pipe3d-kicker">Выбранный сегмент</span><h3>#{point.segment_id}</h3>
         <p>{integer(point.position_m)}–{format(point.end_m, 1)} м</p>
         <span className={point.is_risk ? 'risk-badge' : 'pipe3d-neutral'}>{point.is_risk ? 'Проверить в первую очередь' : 'Вне выбранных 10 %'}</span>
-        <dl><div><dt>Прогноз</dt><dd>{format(point.prediction_mm)} мм</dd></div><div><dt>P10–P90</dt><dd>{format(point.p10_mm)}–{format(point.p90_mm)} мм</dd></div>
+        <dl><div><dt>Прогноз {pipe.model}</dt><dd>{format(point.prediction_mm)} мм</dd></div><div><dt>{format(pipe.interval_summary.nominal_coverage * 100, 0)}%-интервал</dt><dd>{format(point.lower_mm)}–{format(point.upper_mm)} мм</dd></div>
           <div><dt>Прошлое ВТД</dt><dd>{point.actual_mm === null ? 'Нет измерения' : `${format(point.actual_mm)} мм`}</dd></div></dl>
         <p className="pipe3d-date">Прогноз на {date(pipe.prediction_date)}{point.actual_date && <><br/>ВТД от {date(point.actual_date)}</>}</p>
         <div className="pipe3d-risk-navigation"><button className="button" disabled={previousRisk === null} onClick={() => { if (previousRisk !== null) move(previousRisk) }}>← К приоритетному</button><button className="button" disabled={nextRisk === null} onClick={() => { if (nextRisk !== null) move(nextRisk) }}>К приоритетному →</button></div>

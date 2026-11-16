@@ -1,2 +1,3 @@
-numpy==2.5.4
-pandas==3.1.1
+# Full verified environment is needed only for offline interval calibration.
+# scripts/export_data.py itself uses the Python standard library only.
+-r ../requirements.txt

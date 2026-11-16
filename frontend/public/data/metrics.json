@@ -1,155 +1,193 @@
 {
-  "schema_version": 1,
-  "final_model": "M1S / C0-style",
-  "model_status": "Сохранённая физическая модель v2. Итоговая CatBoost в репозитории отсутствует.",
+  "schema_version": 2,
+  "release_id": "c4034453abd0b57ba30c8aeb452718c12388cc6bec0b33997efe74c2716b751c",
+  "final_model": "H18 / H31",
+  "model_status": "H18 для S1; H31 только для S2. Исследовательская оценка; скрытые ответы недоступны.",
   "segment_count": 2000,
   "total_length_m": 19993.5,
   "segment_size_m": 10,
-  "headline": {
-    "n": 466,
-    "mae_mm": 0.42889812716839437,
-    "rmse_mm": 0.5580843177832749,
-    "bias_mm": -0.09438103391991233,
-    "r2": null,
-    "pearson_r": 0.1288222684653598,
-    "pearson_squared": 0.016595176852561233,
-    "coverage": null,
-    "mean_interval_width_mm": null
-  },
-  "comparison": [
+  "headlines": [
     {
-      "id": "C0",
-      "label": "Без утонения · C0",
-      "cohort": "cold_start",
-      "final": false,
+      "case": "S1",
+      "model": "H18",
+      "scheme": "S1_peer_2023",
       "metrics": {
-        "n": 466,
-        "mae_mm": 1.6760944206008583,
-        "rmse_mm": 1.799456641880705,
-        "bias_mm": 1.6760944206008583,
-        "r2": null,
-        "pearson_r": null,
-        "pearson_squared": null,
+        "n": 52,
+        "mae_mm": 0.493439418544314,
+        "rmse_mm": 0.575866929231507,
+        "bias_mm": 0.492042614517087,
+        "r2": -1.22062754869959,
+        "pearson_r": 0.715186837298638,
+        "pearson_squared": 0.511492212245229,
         "coverage": null,
         "mean_interval_width_mm": null
       }
     },
     {
-      "id": "M0",
-      "label": "Постоянная скорость · M0",
-      "cohort": "cold_start",
-      "final": false,
+      "case": "S2",
+      "model": "H31",
+      "scheme": "S2_retro_2023",
       "metrics": {
-        "n": 466,
-        "mae_mm": 0.432555878354948,
-        "rmse_mm": 0.5380332142895434,
-        "bias_mm": 0.046927141929961974,
-        "r2": null,
-        "pearson_r": null,
-        "pearson_squared": null,
-        "coverage": null,
-        "mean_interval_width_mm": null
-      }
-    },
-    {
-      "id": "M1",
-      "label": "Физическая модель · M1",
-      "cohort": "cold_start",
-      "final": false,
-      "metrics": {
-        "n": 466,
-        "mae_mm": 0.4289216552371229,
-        "rmse_mm": 0.5610891256125352,
-        "bias_mm": -0.09839236550619568,
-        "r2": null,
-        "pearson_r": null,
-        "pearson_squared": null,
-        "coverage": null,
-        "mean_interval_width_mm": null
-      }
-    },
-    {
-      "id": "M1S",
-      "label": "Физика и профиль · M1S",
-      "cohort": "cold_start",
-      "final": true,
-      "metrics": {
-        "n": 466,
-        "mae_mm": 0.42889812716839437,
-        "rmse_mm": 0.5580843177832749,
-        "bias_mm": -0.09438103391991233,
-        "r2": null,
-        "pearson_r": 0.1288222684653598,
-        "pearson_squared": 0.016595176852561233,
-        "coverage": null,
-        "mean_interval_width_mm": null
-      }
-    },
-    {
-      "id": "C0",
-      "label": "Без утонения · C0",
-      "cohort": "between_vtd",
-      "final": false,
-      "metrics": {
-        "n": 357,
-        "mae_mm": 0.49822273660440736,
-        "rmse_mm": 0.652255303799292,
-        "bias_mm": 0.04931517357919729,
-        "r2": null,
-        "pearson_r": 0.3365403513173198,
-        "pearson_squared": 0.11325940806478503,
-        "coverage": null,
-        "mean_interval_width_mm": null
-      }
-    },
-    {
-      "id": "M0",
-      "label": "Постоянная скорость · M0",
-      "cohort": "between_vtd",
-      "final": false,
-      "metrics": {
-        "n": 357,
-        "mae_mm": 0.49822273660440736,
-        "rmse_mm": 0.652255303799292,
-        "bias_mm": 0.04931517357919729,
-        "r2": null,
-        "pearson_r": 0.3365403513173198,
-        "pearson_squared": 0.11325940806478503,
-        "coverage": null,
-        "mean_interval_width_mm": null
-      }
-    },
-    {
-      "id": "M0dense",
-      "label": "Сопоставимые кампании · M0dense",
-      "cohort": "between_vtd",
-      "final": true,
-      "metrics": {
-        "n": 357,
-        "mae_mm": 0.49822273660440736,
-        "rmse_mm": 0.652255303799292,
-        "bias_mm": 0.04931517357919729,
-        "r2": null,
-        "pearson_r": 0.3365403513173198,
-        "pearson_squared": 0.11325940806478503,
+        "n": 94,
+        "mae_mm": 0.333020650391596,
+        "rmse_mm": 0.464528654168146,
+        "bias_mm": 0.31598162734911,
+        "r2": -0.830393915969483,
+        "pearson_r": 0.244004438968998,
+        "pearson_squared": 0.0595381662365756,
         "coverage": null,
         "mean_interval_width_mm": null
       }
     }
   ],
-  "comparison_note": "Готовые метрики v2. Pearson² — корреляция после вычитания среднего кампании. Cold start: leave-one-pipe-out, 466 строк; между ВТД: pair leave-one-pipe-out, 357 строк. Обычный агрегированный R² в этих сводках не сохранён.",
+  "comparison_groups": [
+    {
+      "id": "S1_peer_2023",
+      "label": "S1 · 2023",
+      "description": "Ретроспектива 2022→2023: 52 сегмента двух связанных участков. Геометрия соседних труб на дату ответа; одна родительская труба. Сводная корреляция не является скрытым конкурсным баллом."
+    },
+    {
+      "id": "S2_retro_2023",
+      "label": "S2 · 2023",
+      "description": "Перенос на первое обследование 2023 года: 94 сегмента семи связанных участков. Модель обучена до 01.07.2022. Есть отрицательные корреляции и малые группы."
+    },
+    {
+      "id": "S2_LOSO_pooled",
+      "label": "S2 · 2018",
+      "description": "Исключение участков кампании 2018 года: 372 сегмента, фиксированные признаки basin_ranks. H31 уступает базе на всех трёх участках. Это дополнительная схема, не итоговый прогноз S1."
+    }
+  ],
+  "comparison_note": "Сравнение только внутри одной схемы и одинаковых ключей. Pearson² — квадрат корреляции, R² — отдельная метрика. S1 и S2 не объединяются в общий балл. S2 на проверке 2018 года ухудшается.",
+  "comparison": [
+    {
+      "id": "S1_peer_2023:baseline",
+      "cohort": "S1_peer_2023",
+      "label": "joint_blend",
+      "final": false,
+      "metrics": {
+        "n": 52,
+        "mae_mm": 0.372496292426509,
+        "rmse_mm": 0.467289411265941,
+        "bias_mm": 0.359913800409242,
+        "r2": -0.462188372688116,
+        "pearson_r": 0.676772972161371,
+        "pearson_squared": 0.458021655848136,
+        "coverage": null,
+        "mean_interval_width_mm": null
+      }
+    },
+    {
+      "id": "S1_peer_2023:H18",
+      "cohort": "S1_peer_2023",
+      "label": "H18",
+      "final": true,
+      "metrics": {
+        "n": 52,
+        "mae_mm": 0.493439418544314,
+        "rmse_mm": 0.575866929231507,
+        "bias_mm": 0.492042614517087,
+        "r2": -1.22062754869959,
+        "pearson_r": 0.715186837298638,
+        "pearson_squared": 0.511492212245229,
+        "coverage": null,
+        "mean_interval_width_mm": null
+      }
+    },
+    {
+      "id": "S2_retro_2023:baseline",
+      "cohort": "S2_retro_2023",
+      "label": "spatial_no_temperature_centered",
+      "final": false,
+      "metrics": {
+        "n": 94,
+        "mae_mm": 0.314582974780016,
+        "rmse_mm": 0.458987229345907,
+        "bias_mm": 0.310343419051334,
+        "r2": -0.786984358164966,
+        "pearson_r": 0.202068828956305,
+        "pearson_squared": 0.0408318116357726,
+        "coverage": null,
+        "mean_interval_width_mm": null
+      }
+    },
+    {
+      "id": "S2_retro_2023:H31",
+      "cohort": "S2_retro_2023",
+      "label": "H31",
+      "final": true,
+      "metrics": {
+        "n": 94,
+        "mae_mm": 0.333020650391596,
+        "rmse_mm": 0.464528654168146,
+        "bias_mm": 0.31598162734911,
+        "r2": -0.830393915969483,
+        "pearson_r": 0.244004438968998,
+        "pearson_squared": 0.0595381662365756,
+        "coverage": null,
+        "mean_interval_width_mm": null
+      }
+    },
+    {
+      "id": "S2_LOSO_pooled:baseline",
+      "cohort": "S2_LOSO_pooled",
+      "label": "basin_ranks",
+      "final": false,
+      "metrics": {
+        "n": 372,
+        "mae_mm": 0.449626034235696,
+        "rmse_mm": 0.565473938786049,
+        "bias_mm": -0.121048738734714,
+        "r2": -0.051095919490179,
+        "pearson_r": 0.093598417267623,
+        "pearson_squared": 0.00876066371500408,
+        "coverage": null,
+        "mean_interval_width_mm": null
+      }
+    },
+    {
+      "id": "S2_LOSO_pooled:H31",
+      "cohort": "S2_LOSO_pooled",
+      "label": "H31",
+      "final": true,
+      "metrics": {
+        "n": 372,
+        "mae_mm": 0.456079988576678,
+        "rmse_mm": 0.570616005855729,
+        "bias_mm": -0.110393788209423,
+        "r2": -0.0702988546113721,
+        "pearson_r": 0.0634916969073573,
+        "pearson_squared": 0.00403119557617572,
+        "coverage": null,
+        "mean_interval_width_mm": null
+      }
+    }
+  ],
   "provenance": {
     "source_sha256": {
-      "experiments\\ml_v2\\metrics.json": "a8b8b3ae7b2fce3b418fdaeb1a974f1a2ddb20b39bef353100172a64efe04b51",
-      "experiments\\ml_v2\\models.json": "d297e4d6802cff483c49f6b1a95e15a6694c15d82a9d9014256cd3be33979131",
-      "experiments\\ml_v2\\prediction_diagnostics.csv": "5112ceaca7a0eb09b29e67955c396bc9b9651daacc894e559118e60ea323b672",
-      "experiments\\ml_v2\\risk_top_10pct.csv": "17d2591bd4859cf3913020d2168fe4f3990c1e3b3419fb77d44810d0c243b177",
-      "experiments\\ml_baseline\\validation_predictions.csv": "ef078e68c96d226085830c631312271c8918af90af28eb6689554943c3ebd831",
-      "experiments\\ml_baseline\\metrics.json": "afab0cd255dff1aadc90c17530bd770025bd6017d360776a58a866d732776885",
-      "experiments\\ml_v2\\result.csv": "b9672908d81203a52b03940f6b71734ac14e88fb86fbddc053462fc722a70147"
+      "experiments/r2_pool/workflow_state.json": "6260ffe000feeb28cd7a694022a948844f484b533ae9664f9f505ed78e4156cf",
+      "frontend/calibration/intervals/nested_validation.csv": "a1afc1aa5d56889231af1f442d6bb36aeeebc12f5a387b7030f1b785b803c474",
+      "frontend/calibration/intervals/summary.json": "361ac90c6ec2418fcae870c4bf6e4316892a82abb4a0b988238ddf76173204a0",
+      "frontend/calibration/intervals/target_intervals.csv": "1a44a0b2938d3191727eee3058ebeecd16923714f21274229294c32f85ad3eea",
+      "production/h18_h31_validation/manifest.json": "8bb07d1bffa2c0a35a81836772b6dfb9a9b199d7e2aafbf94f11da307b19bebc",
+      "production/h18_h31_validation/metrics.csv": "9c56db2efb95819d432e7f2bc564bcc27765b8b018145d82148d15f6283da5f1",
+      "production/h18_h31_validation/S1_peer_2023/validation_predictions.csv": "60ac04bb4e764bed85b736a4af443d83cb6a1c1a17e7af80c6dac2460991e703",
+      "production/h18_h31_validation/S2_LOSO_pooled/validation_predictions.csv": "33bacdc755293c59b657499aa8ea83ae5f38825ab1c380b159a219d94918dbc8",
+      "production/h18_h31_validation/S2_retro_2023/validation_predictions.csv": "497593bdf0273852dd19498b584e0631de2d0143d021aaba584dbc025929f1d7",
+      "production/h18_h31_verified/manifest.json": "acf603a30b5eb2eaa23493eee564793c3233f0afa69cffe1ecaa75d1fef55bfd",
+      "production/h18_h31_verified/predictions_s1.csv": "a33bbe1a21e6703d762581286997225d39bf83846e6899da3d6913125577079a",
+      "production/h18_h31_verified/predictions_s2.csv": "237d96db6eb09041fa75d9931192568eb22f620725fb0f4b1c97ea13ba71299d",
+      "production/h18_h31_verified/result.csv": "effbc492cf79325b4b29a33c1f4a40a3a6f4b7fbf9edb832b7e4d67d5b423f02",
+      "production/h18_h31_verified_models/manifest.json": "cfea8130fcb369df54b32f9cab4296288f1294d254ce2e3b20be1cefd138c8e8",
+      "reports/final_top10_segments.csv": "269c1d23381f04613c64222d73b3f534290d8de06a837c2842d12a70c0c7f96a",
+      "scratch/odo_alignment_verified/processed/segments_grid.csv": "55cce38f655fc47eaabf2255d4e74e31e6d81f774f95df40f47f23adcfeb48a3",
+      "scratch/odo_alignment_verified/processed/target_features.csv": "1ff33a4842b63f9b255afb189bb36676d202b5ebaacca9c925d18885abbac767",
+      "scratch/odo_alignment_verified/processed/vtd_by_segment.csv": "ab6e17e9f5f286b884b5a3f47ef9109061ccf55c880f961f2cc5c149fd7ccc5e",
+      "scratch/odo_alignment_verified/reports/run_manifest.json": "1d99d2f71b51a825e101fbce09f90f9f0ed309b4c68b9921f5e7188b40f6cf43"
     },
-    "mode": "saved_artifacts_only",
+    "models_trained": false,
     "metrics_recomputed": false,
-    "models_trained": false
+    "intervals_tested_separately": true,
+    "result_sha256": "effbc492cf79325b4b29a33c1f4a40a3a6f4b7fbf9edb832b7e4d67d5b423f02",
+    "bundle_sha256": "8599d618f141425381a5ce21978ddc27a3b6b8ee4f84f70d76153fad8580e6aa"
   }
 }

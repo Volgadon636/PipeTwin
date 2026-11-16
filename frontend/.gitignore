@@ -3,3 +3,5 @@ dist/
 artifacts/
 *.tsbuildinfo
 *.log
+.npm-cache/
+__pycache__/

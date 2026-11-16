@@ -5,11 +5,11 @@ import type { ProfileData, RiskData, RiskRow, SegmentSelection } from '../types'
 import { PAGE_SIZE } from '../utils/constants'
 import { format, integer } from '../utils/format'
 
-type SortKey = 'pipe_id' | 'segment_id' | 'position_m' | 'prediction_mm' | 'p10_mm' | 'p90_mm' | 'risk_level'
+type SortKey = 'pipe_id' | 'segment_id' | 'position_m' | 'prediction_mm' | 'lower_mm' | 'upper_mm' | 'risk_level'
 const columns: { key: SortKey; label: string }[] = [
   { key: 'pipe_id', label: 'Труба' }, { key: 'segment_id', label: 'Сегмент' },
   { key: 'position_m', label: 'Позиция, м' }, { key: 'prediction_mm', label: 'Прогноз, мм' },
-  { key: 'p10_mm', label: 'P10, мм' }, { key: 'p90_mm', label: 'P90, мм' },
+  { key: 'lower_mm', label: 'Нижняя, мм' }, { key: 'upper_mm', label: 'Верхняя, мм' },
   { key: 'risk_level', label: 'Проверка' },
 ]
 
@@ -45,7 +45,7 @@ export function RiskSection({ data, profile, onSelect }: {
     setExpandedKey(null)
   }
   function cell(row: RiskRow, key: SortKey) {
-    if (key === 'p10_mm' || key === 'p90_mm') return <span className="muted">{format(row[key])}</span>
+    if (key === 'lower_mm' || key === 'upper_mm') return <span className="muted">{format(row[key])}</span>
     if (key === 'risk_level') return <span className="risk-badge">В первую очередь</span>
     if (key === 'prediction_mm') return <strong>{format(row.prediction_mm)}</strong>
     if (key === 'segment_id') {
@@ -86,6 +86,6 @@ export function RiskSection({ data, profile, onSelect }: {
           </Fragment>
         })}</tbody>
       </table><div className="table-pagination"><span>{integer(page * PAGE_SIZE + 1)}–{integer(Math.min((page + 1) * PAGE_SIZE, rows.length))} из {integer(rows.length)} сегментов</span><div><button disabled={page === 0} onClick={() => changePage(page - 1)} aria-label="Предыдущая страница">←</button><span>Страница {page + 1} / {pageCount}</span><button disabled={page + 1 >= pageCount} onClick={() => changePage(page + 1)} aria-label="Следующая страница">→</button></div></div>
-    </div><p className="footnote">P10–P90 — сохранённые сценарные границы. Они не калиброваны как предиктивный интервал.</p>
+    </div><details className="method-details"><summary>Интервалы и ограничения приоритета</summary><p>{data.interval_note} Приоритет относительный: нормативная критическая толщина и вероятность отказа не заданы.</p></details>
   </section>
 }

@@ -25,11 +25,21 @@ export function useProjectData(retry: number): State {
       read('validation', validationSchema, controller.signal),
       read('profile', profileSchema, controller.signal),
     ]).then(([metrics, importance, risk, validation, profile]) => {
+      if (new Set([metrics, importance, risk, validation, profile].map(document => document.release_id)).size !== 1)
+        throw new Error('JSON-файлы относятся к разным версиям модели. Повторите экспорт и загрузку.')
       const pipeIds = new Set(profile.pipes.map(pipe => pipe.pipe_id))
       if (risk.rows.some(row => !pipeIds.has(row.pipe_id)) || importance.models.some(model => !pipeIds.has(model.pipe_id)))
         throw new Error('JSON-файлы относятся к разным наборам труб. Повторите экспорт.')
       if (profile.pipes.reduce((sum, pipe) => sum + pipe.points.length, 0) !== metrics.segment_count)
         throw new Error('Количество точек профиля не совпадает с числом сегментов.')
+      for (const pipe of profile.pipes) {
+        if (pipe.segment_count !== pipe.points.length || pipe.risk_count !== pipe.points.filter(point => point.is_risk).length)
+          throw new Error('Число сегментов или приоритетов не согласовано с профилем.')
+      }
+      if (risk.rows.some(row => {
+        const point = profile.pipes.find(pipe => pipe.pipe_id === row.pipe_id)?.points.find(item => item.segment_id === row.segment_id)
+        return !point?.is_risk || point.prediction_mm !== row.prediction_mm || point.lower_mm !== row.lower_mm || point.upper_mm !== row.upper_mm
+      })) throw new Error('Рейтинг и профиль относятся к разным прогнозам или интервалам.')
       setState({ status: 'ready', data: { metrics, importance, risk, validation, profile } })
     }).catch((error: unknown) => {
       if (!controller.signal.aborted) setState({ status: 'error', message: error instanceof Error ? error.message : 'Не удалось прочитать данные' })

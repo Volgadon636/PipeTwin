@@ -21,7 +21,7 @@ function Dashboard({ data }: { data: FrontendData }) {
   return <> <main className="dashboard" aria-label="Метрики и прогноз толщины стенки">
     <div className="page-heading">
       {/* <div><h1>Прогноз толщины стенки</h1><p>{data.profile.pipes.length} трубы · {integer(data.metrics.segment_count)} сегментов · шаг {data.metrics.segment_size_m} м</p></div> */}
-      {/* <span className="dataset-label">Модели v2 · {data.metrics.final_model}</span> */}
+      {/* <span className="dataset-label">Модели H18 / H31 · {data.metrics.final_model}</span> */}
     </div>
     <ProfileSection data={data.profile} intervalMethod={data.validation.interval_method} selection={selection}/>
     <RiskSection data={data.risk} profile={data.profile} onSelect={selectSegment}/>

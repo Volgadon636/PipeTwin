@@ -1,0 +1,281 @@
+{
+  "method": "nested_section_cv_absolute_residual",
+  "nominal_coverage": 0.8,
+  "alpha": 0.2,
+  "seed": 17,
+  "cases": {
+    "S1": {
+      "model": "H18",
+      "cutoff": "2023-12-01",
+      "calibration_n": 357,
+      "calibration_radius_mm": 0.8465109105800979,
+      "calibration_dates": [
+        "2022-07-06"
+      ],
+      "section_count": 3,
+      "parent_count": 1,
+      "nested_validation": {
+        "n": 357,
+        "coverage": 0.7310924369747899,
+        "covered": 261,
+        "mean_interval_width_mm": 1.3791829210446198
+      },
+      "by_profile": [
+        {
+          "id": 1250009490,
+          "n": 4,
+          "coverage": 1.0,
+          "covered": 4,
+          "mean_interval_width_mm": 1.6576654978529781
+        },
+        {
+          "id": 1250011604,
+          "n": 32,
+          "coverage": 0.875,
+          "covered": 28,
+          "mean_interval_width_mm": 1.6396063754821402
+        },
+        {
+          "id": 1250022871,
+          "n": 321,
+          "coverage": 0.7133956386292835,
+          "covered": 229,
+          "mean_interval_width_mm": 1.349751516529872
+        }
+      ]
+    },
+    "S2": {
+      "model": "H31",
+      "cutoff": "2022-07-01",
+      "calibration_n": 372,
+      "calibration_radius_mm": 0.7470711088774546,
+      "calibration_dates": [
+        "2018-09-23"
+      ],
+      "section_count": 3,
+      "parent_count": 1,
+      "nested_validation": {
+        "n": 372,
+        "coverage": 0.8360215053763441,
+        "covered": 311,
+        "mean_interval_width_mm": 1.6170885002421211
+      },
+      "by_profile": [
+        {
+          "id": 1250009490,
+          "n": 4,
+          "coverage": 1.0,
+          "covered": 4,
+          "mean_interval_width_mm": 1.5021460816486023
+        },
+        {
+          "id": 1250011604,
+          "n": 34,
+          "coverage": 0.9705882352941176,
+          "covered": 33,
+          "mean_interval_width_mm": 1.8264697160019556
+        },
+        {
+          "id": 1250022871,
+          "n": 334,
+          "coverage": 0.8203592814371258,
+          "covered": 274,
+          "mean_interval_width_mm": 1.5971508006569108
+        }
+      ]
+    }
+  },
+  "folds": {
+    "S1": [
+      {
+        "held_id": 1250009490,
+        "fit_ids": [
+          1250011604,
+          1250022871
+        ],
+        "calibration_ids": [
+          1250011604,
+          1250022871
+        ],
+        "calibration_n": 353,
+        "radius_mm": 0.8288327489264891,
+        "calibration_date_max": "2022-07-06"
+      },
+      {
+        "held_id": 1250011604,
+        "fit_ids": [
+          1250009490,
+          1250022871
+        ],
+        "calibration_ids": [
+          1250009490,
+          1250022871
+        ],
+        "calibration_n": 325,
+        "radius_mm": 0.8198031877410701,
+        "calibration_date_max": "2022-07-06"
+      },
+      {
+        "held_id": 1250022871,
+        "fit_ids": [
+          1250009490,
+          1250011604
+        ],
+        "calibration_ids": [
+          1250009490,
+          1250011604
+        ],
+        "calibration_n": 36,
+        "radius_mm": 0.6749853156218908,
+        "calibration_date_max": "2022-07-06"
+      }
+    ],
+    "S2": [
+      {
+        "held_id": 1250009490,
+        "fit_ids": [
+          1250011604,
+          1250022871
+        ],
+        "calibration_ids": [
+          1250011604,
+          1250022871
+        ],
+        "calibration_n": 368,
+        "radius_mm": 0.7510730408243012,
+        "calibration_date_max": "2018-09-23"
+      },
+      {
+        "held_id": 1250011604,
+        "fit_ids": [
+          1250009490,
+          1250022871
+        ],
+        "calibration_ids": [
+          1250009490,
+          1250022871
+        ],
+        "calibration_n": 338,
+        "radius_mm": 0.9132348580009779,
+        "calibration_date_max": "2018-09-23"
+      },
+      {
+        "held_id": 1250022871,
+        "fit_ids": [
+          1250009490,
+          1250011604
+        ],
+        "calibration_ids": [
+          1250009490,
+          1250011604
+        ],
+        "calibration_n": 38,
+        "radius_mm": 0.7985754003284553,
+        "calibration_date_max": "2018-09-23"
+      }
+    ]
+  },
+  "limitations": "Section holdouts share one parent pipeline. Coverage is empirical, not an independent-parent or forward-time guarantee. Target labels are unavailable.",
+  "result_sha256": "effbc492cf79325b4b29a33c1f4a40a3a6f4b7fbf9edb832b7e4d67d5b423f02",
+  "preprocessing_manifest_sha256": "1d99d2f71b51a825e101fbce09f90f9f0ed309b4c68b9921f5e7188b40f6cf43",
+  "input_sha256": {
+    "processed/target_features.csv": "1ff33a4842b63f9b255afb189bb36676d202b5ebaacca9c925d18885abbac767",
+    "data/cleaned/vtd.csv": "e52f3a5c573078cd03689cc8774047a01fa3176192db9b84b095b45f5c752ab2",
+    "processed/segments_grid.csv": "55cce38f655fc47eaabf2255d4e74e31e6d81f774f95df40f47f23adcfeb48a3",
+    "processed/training_targets.csv": "8f32b9c374533183abf02e25a6a990988d0e7a661b48f34252667708800cdd18",
+    "data/cleaned/passport.csv": "4d5245d8a7702cba3f739538726325972db1afc44e36df956200725b879a01ab",
+    "data/cleaned/regime.csv": "65e53ebe1a154c5a7a3b6fa5806f1d8e83122c985e1049f38162e316eb95cb79",
+    "data/cleaned/tech_mode_for_embedings_with_length_with_temperatures_ids16.csv": "a0e58cf2deb665f5c99efc71416edeed68c33334d865ceee1f566a8df031ebfd",
+    "processed/vtd_by_segment.csv": "ab6e17e9f5f286b884b5a3f47ef9109061ccf55c880f961f2cc5c149fd7ccc5e",
+    "processed/uzt_by_segment.csv": "aed45ba93f914f2f4d66f02c31d4b144cd865d69bfc6113a94f1fb1689e364ef",
+    "processed/profile_by_segment.csv": "3e4b4994a3f3da4fa04c403dcac85bf4484ca9feca68103665db6cc39f2d04ca"
+  },
+  "code_sha256": {
+    "src/__init__.py": "12eb4e6a222cd629a0b3cd1ca4c511291094d28ecf18fde8235dd633a359b840",
+    "src/cache.py": "e7fb89365aa6f3696ed1b6d302a16dc4a0d823d2ea8b6e9ef284ee6cf50e251b",
+    "src/config.py": "a8c5f490b84a8b77a14f63e6cd100aeccb2e51269361e803d11bb564834eaf82",
+    "src/data_cleaner.py": "af966a254949001b1910ab6aa2e40eb3fea13df5e43995395c467edf7d2647da",
+    "src/data_prep.py": "918a6ecf78c5e289b62f296a7108aa1c932c4c0532d498ccf52be2de7caba72b",
+    "src/experiments/r2_pool_final.py": "4c4fa2a154183a4f60cec4f3cf466ec2930753a45fac59df5c7e49955b28764d",
+    "src/experiments/r2_pool_stage1.py": "7c1e4201b8d232171b3377405161c36675ede45685e4ca586b485d205e08cd0a",
+    "src/experiments/r2_pool_stage1_photo.py": "18705154cc41623bc50ce9b3e5c3bc14dbb6ec91664f8433fe202ff125a1fc07",
+    "src/experiments/r2_pool_stage1_strong.py": "d073bfa5109bde6d820f27045eeb2cfd1294e786d56f3a19865b27845f5dd229",
+    "src/experiments/r2_pool_stage2.py": "3be7bab1411f418f847f4270afc9eb4fdd067971c361c8e83f36fecb396da2dc",
+    "src/experiments/r2_pool_stage3.py": "e180b39bdbec8aed7d8b4a3c3a41e8ab3bde76017d537ab90303b722680053ed",
+    "src/experiments/r2_pool_stage4.py": "3d14e936bc493587fe708b6d9101812b437b25496c001c51658041f7d3879096",
+    "src/experiments/r2_pool_stage5.py": "54f86f29dbee88654544f9892b3b6e95a725b77bb60c953df20695b54a44143e",
+    "src/experiments/r2_pool_stage6.py": "8d7fce5953a1b7af5f43abbb237f80b26ab998bca4d7c5e32c053ab51ec73359",
+    "src/experiments/r2_pool_stage7.py": "afe78b7fe6bea6dac2a4f961b81c6d179aeca305a577678c960a292245fcc340",
+    "src/experiments/r2_pool_stage7_models.py": "4dfb06cf23718ea234066aa516cc17b8decedba2abe5495b47c83470e2bbd14a",
+    "src/experiments/r2_pool_stage8.py": "ad4a29cdb2f29bd86614ec6d76b3c9e5e67f7d70b3f5e23adf03d415869e2f3d",
+    "src/experiments/r2_pool_stage8_models.py": "9b4a269028af7c740138418f412bdc2fd4780e491db3eb0bd0b1173fccfeb259",
+    "src/experiments/validate_production_forecast.py": "e719f4e395453404609b089a012324c6fb2d2a1c948dfafae133fbc52cec04fb",
+    "src/fluid.py": "3448199a1400600c819e1fb4f7c7f1a8e4731e1bc8109ce24085cb24e4878768",
+    "src/format_detector.py": "7540be5dee62e13b0e2c473209065f0fe9e8f4e8b69ec3edce909753f82701c0",
+    "src/grid_builder.py": "5c942f17e51c95cbdc13e04f48a4bd8662dff2f5d1cfbef9e17ff934d5d292f6",
+    "src/heat_transfer.py": "c45833f0e9cd093ce8956904d8bb4455137321c111d4053356dddbedc2e5a46b",
+    "src/leakage.py": "49846f8342ee64765fb2097ffe2280458a7dc4c5d1c36e320ddde6cc49cb388f",
+    "src/lineage.py": "ff05e01998eb8f75ea4abc1084338a80e299ec806546e19a32c6d0ad9af47d20",
+    "src/mentor_ingest.py": "a5700435344d869d952abd171888944df362f6b4db35894fb8cb28e4b4bd8f66",
+    "src/ml/__init__.py": "c8080173a7916d41892ea671a60f69dce94d194a8149788d177b95d36df21990",
+    "src/ml/audit.py": "cf19ab1b56834d7cdea8c73d805c8d5181a2433026616c69d847fb12d384d357",
+    "src/ml/data.py": "a01b5569f712c387f2730c9b19d2c18a2b1da7cf2ed85afc13b26deb780c6f3d",
+    "src/ml/evaluate_external.py": "c5cd0393ab9715b5d4730c2f1097eaa2c37dd61299128194d7ca436d782d78a6",
+    "src/ml/evaluation.py": "6c454fa5a962711979940cbf24d16cdbebb326abaa200f145375e3b43146c0a2",
+    "src/ml/experiment.py": "24cfd929f84133d942a2c09394596a0c1d2b08adf6316d032abbbacccd4a5dcc",
+    "src/ml/experiment_v2.py": "99ca4cd05eab66befa8262cf48499df11c2008a3be128cb3dbb7c840902fe991",
+    "src/ml/exposure.py": "fed8a7128d0ab6a413a968f1023df10e1ced8c0a0c8a8fc33c11038e448e87a9",
+    "src/ml/incremental.py": "163947e35e5a832fdc748a9adba5c05fb40435014dbdc1de43731c85866c469a",
+    "src/ml/incremental_features.py": "107953dfa4b6546ed6557294bcfc22627867fcf8b079169ffaf4c0ef85119b8f",
+    "src/ml/models.py": "27ce924c9545785ff9dd2eacddad379a6cc09032f24f4369e9dc96a3ced78f12",
+    "src/ml/next_all.py": "8a1f4749973f540e8be3f3a34063c557076127787c5635aeb11f1f1aa9945d34",
+    "src/ml/next_audit.py": "a837a0f07db72fef2a18103f9db1d76aee24765dc365bcdf595ca6b2e6010b61",
+    "src/ml/next_common.py": "8c990ee35245daf2bb8334c15a720837281736b0ee70b83d86963db7775922e9",
+    "src/ml/next_compare.py": "bb7032dfa73dab9b2566ccbe5f8d05bbc74e5b58a46f88b16481057838549137",
+    "src/ml/next_s1.py": "e00a7091917d9e0879c953fd721c53d3638dcbb2bb97d11e8ab4ccc586573dd0",
+    "src/ml/next_s2.py": "7dda82276377da1730521302dd68fc02bfba72deadac6f5f793e244ac8cbb349",
+    "src/ml/physics.py": "17aec3fc667c0a3ec7ce7b412c5cbe99257013d4b67d6d109561546b1484f70f",
+    "src/ml/production.py": "630821c3efa8abe1655082345cd02562a0b8157e5525577ef79f090f84b80632",
+    "src/ml/production_models.py": "96d696a89df8e7a3925c7aaa63974c8fdfa7297afafcea0851b7f895d140ad4e",
+    "src/ml/production_validation.py": "74f7d86fd84fe68ba5ffc25c669a6d797a46fb842779c9481a48700069450744",
+    "src/ml/s1_alignment.py": "7abbcb6ba0ae7934d530bfcabc5558248a11da9c257fcede0be128a8019380f5",
+    "src/ml/s1_all.py": "b8b92cb8dbaa6038f4663a6e6611430d018e26fb861ac90acd7dfb71d6ed42de",
+    "src/ml/s1_contract.py": "37cd023e7f4324e3db0b8230a0bbdcde9474c61de3793ec782a2c118f0e35816",
+    "src/ml/s1_joint_alignment.py": "e101beb8541e88b08ea88029fe240fc6e7f0b44e30c4d70082221eee35fc7133",
+    "src/ml/s1_metrics.py": "e0c31bffbbbbb76c5286ddc14c93247500f6dbbaadd52e168fb0aa9febd717d8",
+    "src/ml/s1_model.py": "67c63d3660250329f09a260e70a1667bab28de1835676a16b5f702ee38c1cab5",
+    "src/ml/s1_next.py": "abb866d3ddbb465c4a95dbff80f8409769169128dbf7700f7c6f0bfad19aaff5",
+    "src/ml/s1_stages.py": "67fa32fab8587c14dc9b2338d636fd0be152eee2a3dd72675e6d360b3e1f593a",
+    "src/ml/s1a.py": "23ca28a06ce1b87a2c8a7a3c91cd8b47621e7d7d3389583eac5f2861c0e3f621",
+    "src/ml/s1b.py": "b3ff8788d3cfcc219c3e7218e438a01dd2f2fad6ca818a0b15d33754103e8655",
+    "src/ml/s1c.py": "c883057f933f242280ef9b87d39c998d447f48cffd3ad1e71cff6f01f4ccb7d0",
+    "src/ml/s2_next.py": "65441bd0ceabc0d83571997ae0dfcbcf4ea4d35efa3315a1c0f623d3ac3b56a6",
+    "src/ml/s2_terrain.py": "364fda390c7353dde8a8d3c6660ece546c49fc4edc91795103fff79e145e8d29",
+    "src/ml/spatial.py": "8309bc245edeaff461622903b97d6ea19c33ee4e6282bc8494406d6776a26d1d",
+    "src/ml/submission.py": "e33e4d9466897abd0f9bd106a2f0f4f4e00f06e07ab32869bd82b6094adc0bb4",
+    "src/ml/targeted_audit.py": "1c78fd894a597de94860a75d80d90a40a6d85b7fa2334cbbfbae32cdaff1bca4",
+    "src/ml/targeted_freeze.py": "f5f864dad750918c42d1e0d120d52b74bd0e1e3264c7d29f7beb49bdf1a2e12d",
+    "src/ml/targeted_s1.py": "963e1bee3d67b2299066d3f1e4675ae06583b525d792485419132bdf067ad2d8",
+    "src/ml/targeted_s1_stage4.py": "ba70954073b870db5d8baf42510466aa59f19f11b391591f96c372fac48559ce",
+    "src/ml/targeted_s1_temporal.py": "89e06b85664b785eed223ba9ac5a74fbd57dc702728fa7be340a7486d34ced1f",
+    "src/ml/targeted_s2.py": "f05c2a6f003ea4c81c3d633905e88e62bd24338a2e9dcd9d0f1faeb9244acdbb",
+    "src/ml/targeted_stage5_recalc.py": "a4dd2bb8cdfd9a5a2ae243a33492c3c952739ad84beea8bdd910788006bc65f6",
+    "src/ml/windows.py": "03aad916b783015b10e30e1300dedec08fd9bdd8129f0abf17e14626983f05fd",
+    "src/odo_align.py": "59914317e99e2e188701d00b94fde28786372ef21e5cdad9ac2ef6c7ea6ddffc",
+    "src/parsing.py": "fce9e7bbad291c18a791f8a8b3c3c7a69b981279c58f1b300c7ba2e4a131440f",
+    "src/quality.py": "c4f46d6dbe5b1ab9b9184f70dd6f46c14458666eddb6e8cad3b4892c2c35cf97",
+    "src/schema_registry.py": "4dddae070e531c9dd80b91399787372bacc34519c67fd09aab276d40022c0989",
+    "src/segment_mapper.py": "f7e3a92e7de6a08abaf2d2d869ea5b47186bc1c9feeabc751881857ed1e8b581",
+    "src/segment_quantiles.py": "30b64fad611c416eab0d459c32c4622423460a83b3a627e4fa1009aa0a8f4fc3",
+    "src/source_registry.py": "b4707b4851246c1a375567fdb86c14199d15cfea31b33d600aaa83d25e348910",
+    "src/storage.py": "7f1d53a83f136c5fa22b9c7e079ff8f5584d0f60378572b43e1fa47f4f4348e6",
+    "src/temporal.py": "3eef057e56456fe094052a072affb8b4a777eb652556602e3beab14ba78bd55e",
+    "src/units.py": "6f11d778b55db59e2145fe8d072457f7d6836a63f8ec07f22f39335f09bc8f44",
+    "src/validator.py": "83300b66ba7b081b008d6793f38bc474e7e8cf3b7bf2efb30553d47cce4599e0",
+    "frontend/scripts/calibrate_intervals.py": "a161e5ea834cd7f5e9c93b40312f62e6c29fbc29f10434d5ad027a7209e8be3e"
+  },
+  "output_sha256": {
+    "target_intervals.csv": "1a44a0b2938d3191727eee3058ebeecd16923714f21274229294c32f85ad3eea",
+    "nested_validation.csv": "a1afc1aa5d56889231af1f442d6bb36aeeebc12f5a387b7030f1b785b803c474"
+  }
+}
