@@ -1,0 +1,38 @@
+{
+  "audit": {
+    "open_question": "Q-0007",
+    "passport_populated_repair_fields": [
+      "Количество дефектов первоочередного ремонта"
+    ],
+    "verified_dated_spatial_repair_records": 0,
+    "vtd_nonempty_before_cutoff": {
+      "1250009490": {
+        "prerepair_classification": 15,
+        "recommended_repair_method": 223,
+        "repair_method": 0,
+        "repair_time_years": 238
+      },
+      "1250009583": {
+        "prerepair_classification": 0,
+        "recommended_repair_method": 0,
+        "repair_method": 0,
+        "repair_time_years": 0
+      },
+      "1250011604": {
+        "prerepair_classification": 161,
+        "recommended_repair_method": 2331,
+        "repair_method": 0,
+        "repair_time_years": 2492
+      },
+      "1250022871": {
+        "prerepair_classification": 1830,
+        "recommended_repair_method": 26108,
+        "repair_method": 0,
+        "repair_time_years": 27938
+      }
+    }
+  },
+  "evaluation": null,
+  "evidence": "not_evaluated",
+  "state": "blocked_data"
+}

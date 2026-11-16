@@ -1,0 +1,57 @@
+{
+  "code_sha256": "4d4e52e10ac0021340f3391aa1c282e5c006c562bc436df3a4979a5464c4d26c",
+  "cross_section_calibration": [
+    {
+      "calibration_rows": 48,
+      "held_section": 1250009490,
+      "selected_offset_m": 8,
+      "test_rows": 5,
+      "train_section": 1250011604
+    },
+    {
+      "calibration_rows": 5,
+      "held_section": 1250011604,
+      "selected_offset_m": 10,
+      "test_rows": 48,
+      "train_section": 1250009490
+    }
+  ],
+  "direct_segments": 508,
+  "fallback_segments": 17,
+  "input_sha256": {
+    "data/cleaned/passport.csv": "4d5245d8a7702cba3f739538726325972db1afc44e36df956200725b879a01ab",
+    "data/cleaned/regime.csv": "65e53ebe1a154c5a7a3b6fa5806f1d8e83122c985e1049f38162e316eb95cb79",
+    "data/cleaned/tech_mode_for_embedings_with_length_with_temperatures_ids16.csv": "a0e58cf2deb665f5c99efc71416edeed68c33334d865ceee1f566a8df031ebfd",
+    "data/cleaned/vtd.csv": "e52f3a5c573078cd03689cc8774047a01fa3176192db9b84b095b45f5c752ab2",
+    "processed/profile_by_segment.csv": "3e4b4994a3f3da4fa04c403dcac85bf4484ca9feca68103665db6cc39f2d04ca",
+    "processed/segments_grid.csv": "55cce38f655fc47eaabf2255d4e74e31e6d81f774f95df40f47f23adcfeb48a3",
+    "processed/target_features.csv": "1ff33a4842b63f9b255afb189bb36676d202b5ebaacca9c925d18885abbac767",
+    "processed/uzt_by_segment.csv": "aed45ba93f914f2f4d66f02c31d4b144cd865d69bfc6113a94f1fb1689e364ef",
+    "processed/vtd_by_segment.csv": "ab6e17e9f5f286b884b5a3f47ef9109061ccf55c880f961f2cc5c149fd7ccc5e"
+  },
+  "observations_outside_grid": 63,
+  "offset_m": 8,
+  "offset_provenance": "Peer README hypothesis previously assessed on same-date reference labels",
+  "peer_labels_date": "2023-12-01",
+  "result_sha256": "5d2caae265f57a9a440f7ea690788d62ff793590553f12fdc6813e20e886189a",
+  "ridge_reference_sha256": "ed17c1faf4ebc5b4060437a0c5a12c48d92640f31bf2c83cb097f337476648fa",
+  "s2_source_sha256": "8474285d39a6a1f46ca8450ff0ef5cdbe3733e580e441c75d5435b37b87c928a",
+  "source_date": "2022-07-06",
+  "status": "candidate for external comparison",
+  "strict_asof_validated": false,
+  "submission_validation": {
+    "bounded": true,
+    "finite_mm": true,
+    "rows": 2000,
+    "template": {
+      "available": false,
+      "key_set_compared": false,
+      "status": "no_template_supplied",
+      "validation_grid": "derived_target_grid"
+    },
+    "unique_keys": true,
+    "upper_bound_column": "h0_mm"
+  },
+  "target_date": "2023-12-01",
+  "target_id": 1250022871
+}

@@ -1,0 +1,48 @@
+{
+  "constant_diagnostics": {
+    "S1": {
+      "is_constant": false,
+      "max": 7.2,
+      "min": 3.52,
+      "near_constant": false,
+      "nunique": 49,
+      "rows": 525,
+      "std_mm": 0.5547620663886986
+    },
+    "S2": {
+      "is_constant": false,
+      "max": 3.788812353,
+      "min": 2.0037940036,
+      "near_constant": false,
+      "nunique": 1475,
+      "rows": 1475,
+      "std_mm": 0.14609923307428913
+    }
+  },
+  "name": "s1a__spatial_no_temperature_centered",
+  "prediction_sha256": "3c511e32077ab0f4a1680b77dea00c76778a080253674688f75e4020c93610c0",
+  "result_path": "C:\\Program Files\\PipeTwin\\experiments\\targeted_cycle\\frozen_candidates\\combinations\\s1a__spatial_no_temperature_centered\\result.csv",
+  "result_sha256": "59b22ddcef9543443f3a7fdd1d02a421f029e4e0e87f726fd13a8262f5086b5c",
+  "role": "s2_spatial_pair",
+  "rows": 2000,
+  "s1": "s1a",
+  "s1_max_abs_diff_vs_frozen": 0.0,
+  "s1_rows": 525,
+  "s2": "spatial_no_temperature_centered",
+  "s2_max_abs_diff_vs_frozen": 0.0,
+  "s2_rows": 1475,
+  "unique_keys": true,
+  "validation": {
+    "bounded": true,
+    "finite_mm": true,
+    "rows": 2000,
+    "template": {
+      "available": false,
+      "key_set_compared": false,
+      "status": "no_template_supplied",
+      "validation_grid": "derived_target_grid"
+    },
+    "unique_keys": true,
+    "upper_bound_column": "upper_mm"
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "blocked_diagnostic": [
+    {
+      "block_m": 200.0,
+      "buffer_m": 50.0,
+      "name": "200m_50m"
+    },
+    {
+      "block_m": 500.0,
+      "buffer_m": 100.0,
+      "name": "500m_100m"
+    }
+  ],
+  "cutoff": "2022-07-01",
+  "post_cutoff_policy": "Previously viewed retrospective, scored after selection, never fit.",
+  "radius_m": [
+    30,
+    100
+  ],
+  "ridge_alpha": 10.0,
+  "selection": "Highest pooled Pearson r² among models improving over baseline with positive signed r both pooled and on the largest held-out section.",
+  "variants": {
+    "basin_depth": [
+      "z",
+      "slope",
+      "abs_slope",
+      "position",
+      "local_low",
+      "pool_depth",
+      "basin_depth_30m",
+      "basin_depth_100m"
+    ],
+    "basin_ranks": [
+      "z_rank",
+      "slope_rank",
+      "abs_slope_rank",
+      "position_rank",
+      "local_low_rank",
+      "pool_depth_rank",
+      "basin_depth_30m_rank",
+      "basin_depth_100m_rank"
+    ],
+    "profile_ranks": [
+      "z_rank",
+      "slope_rank",
+      "abs_slope_rank",
+      "position_rank",
+      "local_low_rank",
+      "pool_depth_rank"
+    ],
+    "spatial_no_temperature_centered": [
+      "z",
+      "slope",
+      "abs_slope",
+      "position",
+      "local_low",
+      "pool_depth"
+    ]
+  }
+}

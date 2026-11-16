@@ -1,0 +1,47 @@
+{
+  "above_last_rows": 149,
+  "above_s1b_rows": 199,
+  "artifact": {
+    "artifact_path": "C:\\Users\\Администратор\\Documents\\PipeTwin_next\\experiments\\next_cycle\\repro_s1abc\\s1c\\model_artifact.joblib",
+    "artifact_sha256": "e998606bc75b97ff9b88360b0d6a11a10dfefa466090abfa7ca3afbe61ae83cf",
+    "metadata_path": "C:\\Users\\Администратор\\Documents\\PipeTwin_next\\experiments\\next_cycle\\repro_s1abc\\s1c\\model_metadata.json"
+  },
+  "bounds_policy": "[0, nominal]",
+  "candidate": "old_s1c",
+  "fallback_rows": 4,
+  "max_mm": 7.0663657433,
+  "mean_mm": 6.0261033862657145,
+  "min_mm": 4.4980896973,
+  "model_label": "old S1C reference",
+  "rows": 525,
+  "s2": {
+    "max_abs_diff": 0.0,
+    "rows": 1475,
+    "source": "C:\\Users\\Администратор\\Documents\\PipeTwin_next\\experiments\\ml_v2\\result.csv"
+  },
+  "segment_135": {
+    "delta_vs_s1a_mm": 1.6080546922,
+    "delta_vs_s1b_mm": 1.6080546922,
+    "fallback": false,
+    "prediction_mm": 5.1280546922,
+    "s1a_mm": 3.52,
+    "s1b_mm": 3.52
+  },
+  "std_mm": 0.2815246022245081,
+  "top33_overlap_with_s1a": 12,
+  "training_completed": true,
+  "training_required": true,
+  "validation": {
+    "bounded": true,
+    "finite_mm": true,
+    "rows": 2000,
+    "template": {
+      "available": false,
+      "key_set_compared": false,
+      "status": "no_template_supplied",
+      "validation_grid": "derived_target_grid"
+    },
+    "unique_keys": true,
+    "upper_bound_column": "upper_mm"
+  }
+}

@@ -1,0 +1,4 @@
+{
+  "id": "H04",
+  "specification": "Remove one predeclared category from historical VTD features and S2 fold training. Keep evaluation keys and measured minima immutable."
+}

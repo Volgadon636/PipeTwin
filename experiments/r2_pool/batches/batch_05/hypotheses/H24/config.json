@@ -1,0 +1,6 @@
+{
+  "case": "S2",
+  "controls": [],
+  "description": "Audit whether an independently specified physical model of liquid-phase distribution or wall contact can be evaluated. Require verified phase-specific flow rates or velocities in operating conditions, fluid properties needed by the selected closure, and section boundary conditions or independent wetting/holdup observations to constrain the model. No fit with unverified phase semantics or watercut as a substitute for wetting.",
+  "primary": null
+}

@@ -1,0 +1,31 @@
+{
+  "baseline": {
+    "bias_mm": 0.31034341905133306,
+    "mae_mm": 0.314582974780016,
+    "pearson_r": 0.20206882895630215,
+    "pearson_reason": "",
+    "pearson_squared": 0.0408318116357713,
+    "prediction_std": 0.10514386144950326,
+    "rmse_mm": 0.45898722934590697
+  },
+  "candidate": {
+    "bias_mm": 0.30526273282710664,
+    "mae_mm": 0.39201964637756076,
+    "pearson_r": 0.03855830030879269,
+    "pearson_reason": "",
+    "pearson_squared": 0.0014867425227030424,
+    "prediction_std": 0.3060982833850866,
+    "rmse_mm": 0.544671934583473
+  },
+  "changed_predictions": 94,
+  "delta_pearson_squared": -0.03934506911306826,
+  "delta_vs_reference_candidate": -0.03934506911306954,
+  "independent_parent_count": 1,
+  "max_abs_affine_residual_mm": 1.0448629030294079,
+  "n": 94,
+  "profile_count": 7,
+  "reference_candidate": {
+    "name": "spatial_no_temperature_centered",
+    "r2": 0.04083181163577258
+  }
+}

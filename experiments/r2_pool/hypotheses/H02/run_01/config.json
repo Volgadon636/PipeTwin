@@ -1,0 +1,4 @@
+{
+  "id": "H02",
+  "method": "Check local raw hash against preprocessing manifest. Independently reparse Distance, residual thickness and defect depth percent by source_record_number, using the confirmed 2018 fraction rule. Budget one verified correction or report already applied/undetermined."
+}

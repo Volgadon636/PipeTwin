@@ -1,0 +1,71 @@
+{
+  "baseline": {
+    "mae_mm": 0.49822273660440736,
+    "within_section_pearson_squared": 0.11325940806478454
+  },
+  "best_mae": "mix_050",
+  "best_spatial": "mix_025",
+  "candidates": {
+    "catboost": {
+      "mae_mm": 0.4449189254704986,
+      "pooled_pearson_squared": 0.033815274101382846,
+      "topk_recall": 0.18421052631578946,
+      "within_section_pearson_r": 0.1883225350451305,
+      "within_section_pearson_squared": 0.035465377205824405
+    },
+    "mix_025": {
+      "mae_mm": 0.465837169878955,
+      "pooled_pearson_squared": 0.10103589391906412,
+      "topk_recall": 0.2894736842105263,
+      "within_section_pearson_r": 0.31934063010093894,
+      "within_section_pearson_squared": 0.10197843803326472
+    },
+    "mix_050": {
+      "mae_mm": 0.4426065646328596,
+      "pooled_pearson_squared": 0.08172276915096621,
+      "topk_recall": 0.2631578947368421,
+      "within_section_pearson_r": 0.2880483911420274,
+      "within_section_pearson_squared": 0.08297187563951042
+    },
+    "mix_100": {
+      "mae_mm": 0.45114796978292915,
+      "pooled_pearson_squared": 0.010865521401666753,
+      "topk_recall": 0.07894736842105263,
+      "within_section_pearson_r": 0.10914739977900685,
+      "within_section_pearson_squared": 0.011913154878518345
+    },
+    "rate_nonnegative": {
+      "mae_mm": 0.45801203015201114,
+      "pooled_pearson_squared": 0.10182947981976594,
+      "topk_recall": 0.2894736842105263,
+      "within_section_pearson_r": 0.3187808414878316,
+      "within_section_pearson_squared": 0.10162122489969001
+    },
+    "rate_signed": {
+      "mae_mm": 0.4511479697829292,
+      "pooled_pearson_squared": 0.010865521401666748,
+      "topk_recall": 0.07894736842105263,
+      "within_section_pearson_r": 0.10914739977900678,
+      "within_section_pearson_squared": 0.01191315487851833
+    },
+    "ridge_geometry": {
+      "mae_mm": 0.45114796978292915,
+      "pooled_pearson_squared": 0.010865521401666753,
+      "topk_recall": 0.07894736842105263,
+      "within_section_pearson_r": 0.10914739977900685,
+      "within_section_pearson_squared": 0.011913154878518345
+    },
+    "ridge_history": {
+      "mae_mm": 0.445390382460616,
+      "pooled_pearson_squared": 0.019102256334683723,
+      "topk_recall": 0.13157894736842105,
+      "within_section_pearson_r": 0.14094458313053398,
+      "within_section_pearson_squared": 0.019865375513840006
+    }
+  },
+  "caveat": "LOPO on three sections of one parent is exploratory spatial transfer, not a fresh independent holdout. No hidden-test accuracy is claimed.",
+  "default": "s1a",
+  "default_reason": "no candidate improved both within-section spatial signal and MAE; S1A remains default",
+  "no_proven_winner": true,
+  "qualifying_candidates": []
+}

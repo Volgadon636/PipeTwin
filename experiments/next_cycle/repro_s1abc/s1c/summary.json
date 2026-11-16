@@ -1,0 +1,152 @@
+{
+  "above_h0_rows": 149,
+  "artifact_path": "C:\\Users\\Администратор\\Documents\\PipeTwin_next\\experiments\\next_cycle\\repro_s1abc\\s1c\\model_artifact.joblib",
+  "artifact_sha256": "e998606bc75b97ff9b88360b0d6a11a10dfefa466090abfa7ca3afbe61ae83cf",
+  "artifact_version": "s1c-ridge-v1",
+  "bounds_policy": {
+    "lower_mm": 0.0,
+    "upper_column": "nominal_thickness_mm",
+    "upper_is_not_baseline": true
+  },
+  "clipped_rows": 0,
+  "contract_version": "s1abc-v1",
+  "fallback_policy": "rows without own prior measurement keep S1B and do not enter Ridge",
+  "fallback_rows": 4,
+  "fallback_segments": [
+    {
+      "fallback_distance_m": 10.0,
+      "fallback_measurement_date": "2018-09-23",
+      "fallback_segment_id": 16,
+      "fallback_source": "nearest_prior_vtd_assumption",
+      "s1a_prediction_mm": 6.12,
+      "s1b_prediction_mm": 6.12,
+      "segment_id": 17
+    },
+    {
+      "fallback_distance_m": 10.0,
+      "fallback_measurement_date": "2022-07-06",
+      "fallback_segment_id": 246,
+      "fallback_source": "nearest_prior_vtd_assumption",
+      "s1a_prediction_mm": 6.8,
+      "s1b_prediction_mm": 6.8,
+      "segment_id": 247
+    },
+    {
+      "fallback_distance_m": 10.0,
+      "fallback_measurement_date": "2022-07-06",
+      "fallback_segment_id": 400,
+      "fallback_source": "nearest_prior_vtd_assumption",
+      "s1a_prediction_mm": 6.48,
+      "s1b_prediction_mm": 6.48,
+      "segment_id": 401
+    },
+    {
+      "fallback_distance_m": 10.0,
+      "fallback_measurement_date": "2022-07-06",
+      "fallback_segment_id": 454,
+      "fallback_source": "nearest_prior_vtd_assumption",
+      "s1a_prediction_mm": 6.72,
+      "s1b_prediction_mm": 6.72,
+      "segment_id": 455
+    }
+  ],
+  "feature_count": 9,
+  "input_note": "Predict reads no training_targets and calls no fit; all features use VTD rows strictly before 2023-12-01.",
+  "negative_vs_s1b_rows": 322,
+  "positive_vs_s1b_rows": 199,
+  "prediction_mode": "loaded_saved_artifact_no_fit",
+  "ridge_applied_rows": 521,
+  "rows": 525,
+  "s1c_vs_s1a_stats_mm": {
+    "count": 525,
+    "max": 1.608054692236537,
+    "mean": -0.19893372427170217,
+    "median": -0.23578161284184596,
+    "min": -1.7585201889373634,
+    "q05": -0.8838740042377315,
+    "q25": -0.4520112280427844,
+    "q75": 0.030916013207548332,
+    "q95": 0.5298040958959029,
+    "std": 0.45012668094892894
+  },
+  "s1c_vs_s1b_stats_mm": {
+    "count": 525,
+    "max": 1.608054692236537,
+    "mean": -0.06331467665265454,
+    "median": -0.10024684563402708,
+    "min": -0.7131653150702624,
+    "q05": -0.5372081373443939,
+    "q25": -0.3230277730608808,
+    "q75": 0.1305857508497743,
+    "q95": 0.5834906433061459,
+    "std": 0.3583026215298835
+  },
+  "s2": {
+    "keys": [
+      1250009583,
+      1475
+    ],
+    "policy": "copied by exact keys from the explicitly selected result.csv; never retrained",
+    "rows": 1475,
+    "source_path": "C:\\Users\\Администратор\\Documents\\PipeTwin_next\\experiments\\ml_v2\\result.csv",
+    "source_sha256": "79ba544232d4d34ed33609ef2fc352d9c39edb49b6a118470f63f11fb0e25f05",
+    "unchanged": true,
+    "written_vs_source": {
+      "exact_numeric_match": true,
+      "max_abs_difference": 0.0,
+      "rows": 1475,
+      "source_rows": 1475
+    }
+  },
+  "stage": "S1C_predict",
+  "thickness_stats_mm": {
+    "count": 525,
+    "max": 7.066365743348191,
+    "mean": 6.026103386265872,
+    "median": 6.05511700682733,
+    "min": 4.498089697331068,
+    "q05": 5.505636992016865,
+    "q25": 5.8765263557290925,
+    "q75": 6.224356808525339,
+    "q95": 6.37641474157465,
+    "std": 0.28152460222366066
+  },
+  "training_completed": true,
+  "training_dates": [
+    "2022-07-06"
+  ],
+  "training_required": true,
+  "training_rows": 357,
+  "training_simple_sections": [
+    1250009490,
+    1250011604,
+    1250022871
+  ],
+  "validation": {
+    "bounded": true,
+    "finite_mm": true,
+    "revalidated_after_write": {
+      "bounded": true,
+      "finite_mm": true,
+      "rows": 2000,
+      "template": {
+        "available": false,
+        "key_set_compared": false,
+        "status": "no_template_supplied",
+        "validation_grid": "derived_target_grid"
+      },
+      "unique_keys": true,
+      "upper_bound_column": "upper_mm"
+    },
+    "rows": 2000,
+    "s1_upper_column": "nominal_thickness_mm",
+    "template": {
+      "available": false,
+      "key_set_compared": false,
+      "status": "no_template_supplied",
+      "validation_grid": "derived_target_grid"
+    },
+    "unique_keys": true,
+    "upper_bound_column": "upper_mm"
+  }
+}

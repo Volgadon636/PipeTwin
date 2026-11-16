@@ -1,0 +1,58 @@
+{
+  "commit": "1c823c4ab86bde55702495014c8f595f0f769abe",
+  "date": "2026-11-16",
+  "hashes_sha256": {
+    "README.md": "7d368e1ffe72308ac45cbfc73b4eb06eb7aa6a72fa735820d65e16f40f8f1c17",
+    "configs/production_forecast.json": "c0045eb082e9afb3bdd1d0680fc2598b3f9841b7730f797d929a97abdee1b22f",
+    "configs/production_preprocessing.json": "fd1c40a1e3b4b8868cb0fba8e7a0615ecd12a7d0f547391f630060ffeb17a470",
+    "docs/production_forecast.md": "c4e35b1afb31ec745daf001bdfe8fadd18473a081646b8a92ef4a22688237cc3",
+    "production/h18_h31_validation/manifest.json": "8bb07d1bffa2c0a35a81836772b6dfb9a9b199d7e2aafbf94f11da307b19bebc",
+    "production/h18_h31_validation/metrics.csv": "8182be6551e8d81fe22b6d2497056cd13a9bebac942fbb3d3732c40427aebd25",
+    "production/h18_h31_verified/manifest.json": "acf603a30b5eb2eaa23493eee564793c3233f0afa69cffe1ecaa75d1fef55bfd",
+    "production/h18_h31_verified/previous_result.csv": "ee07ed00d86c253250ac8fb3022b2e853cff3fbf5220ab3c3aed38370ee7a478",
+    "production/h18_h31_verified/result.csv": "5fb9bf836c0b9423b0ce33be58d5235866a3bc74a0549c975b37098112011d68",
+    "production/h18_h31_verified_models/manifest.json": "cfea8130fcb369df54b32f9cab4296288f1294d254ce2e3b20be1cefd138c8e8",
+    "scripts/verify_production_forecast.py": "ce5bfb05826877abb583732b0a528ffba12d1f4dc384fa3aab1966bc2bf3e730",
+    "src/ml/production.py": "fed60e028b7db754e742cdb99cc80a4d7359158074d2b35d76980c3b3efc689e",
+    "src/ml/production_models.py": "febb8734161d5930c696cf1eacd6d5449b4fd4982c06a29c37a57ef4f9dbf99f",
+    "src/ml/production_validation.py": "43408060084bd001c6b105fecd0f694f41582a239480536b04776d7e5bdce582",
+    "tests/test_production_forecast.py": "94fb03ae18aa697097ef9a388249e88e757cc266433af4259525595192a376cb"
+  },
+  "initial_snapshot": "scratch/h18_h31_integration_initial",
+  "initial_test_run": {
+    "cause": "missing PIPETWIN_NEXT_DATA_ROOT",
+    "import_errors": 4,
+    "tests": 175
+  },
+  "methods": {
+    "S1": "H18",
+    "S2": "H31"
+  },
+  "original_pool_sha256": "fb3bc2bedc82de8805a0f0ad09b9889595219f376ac363bbca2ab55d9de4a11b",
+  "original_workflow_sha256": "8eec22f9703070299096479550044b817cc1cd2963b6c1e373c46cf510a91b34",
+  "report_sha256": "5902cf038da876aee8e3a40b3d12b1db41b5be3d08f54b3c799ff68f064f5afd",
+  "saved_inference_verification": {
+    "S1_training_rows": 357,
+    "S2_training_rows": 372,
+    "bundle_sha256": "8599d618f141425381a5ce21978ddc27a3b6b8ee4f84f70d76153fad8580e6aa",
+    "case_isolation_all_ablations": true,
+    "forecast_output_checksums": true,
+    "fresh_process_result_byte_identical": true,
+    "previous_baseline_exact": true,
+    "result_sha256": "5fb9bf836c0b9423b0ce33be58d5235866a3bc74a0549c975b37098112011d68",
+    "saved_inference_without_fit_or_training_labels": true,
+    "target_rows": {
+      "S1": 525,
+      "S2": 1475
+    },
+    "training_cutoffs_and_s2_exclusion": true
+  },
+  "status": "exploratory_local_gain_independent_evaluation_unavailable",
+  "tests": {
+    "count": 197,
+    "log": "test_results_verified.txt",
+    "log_sha256": "9e524aa31b3d26490fb4a1e588fcf5c8a3b3c7d1be8351b35e0f9020e09d1ef0",
+    "seconds": 153.126,
+    "status": "passed"
+  }
+}

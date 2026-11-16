@@ -1,0 +1,45 @@
+{
+  "S2": {
+    "audit": "s2_cutoff_audit.json",
+    "implementation": "blocked_validation"
+  },
+  "primary": "shared_terrain_multitask",
+  "schemes": {
+    "S1_peer_2023": {
+      "shared_terrain_multitask": {
+        "baseline": {
+          "bias_mm": 0.35991380040924165,
+          "mae_mm": 0.372496292426509,
+          "pearson_r": 0.6767729721613717,
+          "pearson_reason": "",
+          "pearson_squared": 0.45802165584813676,
+          "prediction_std": 0.3503243484313467,
+          "rmse_mm": 0.46728941126594076
+        },
+        "candidate": {
+          "bias_mm": 0.36079554036808215,
+          "mae_mm": 0.38770566281086916,
+          "pearson_r": 0.5596291228767657,
+          "pearson_reason": "",
+          "pearson_squared": 0.3131847551718181,
+          "prediction_std": 0.21115797492917598,
+          "rmse_mm": 0.48245900412257164
+        },
+        "changed_predictions": 52,
+        "delta_pearson_squared": -0.14483690067631866,
+        "delta_vs_H12": -0.16030279861967384,
+        "delta_vs_matched_H11": 0.0010615056581161353,
+        "delta_vs_reference_candidate": -0.20196255521022077,
+        "independent_parent_count": 1,
+        "max_abs_affine_residual_mm": 0.3856762980866595,
+        "n": 52,
+        "profile_count": 2,
+        "reference_candidate": {
+          "name": "H16 squared-loss diagnostic control",
+          "predictions": "experiments/r2_pool/batches/batch_04/hypotheses/H16/S1_peer_2023/squared_loss_matched/validation_predictions.csv",
+          "r2": 0.5151473103820389
+        }
+      }
+    }
+  }
+}

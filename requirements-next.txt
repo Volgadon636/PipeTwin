@@ -1,0 +1,10 @@
+# Next-cycle S1/S2 environment; tested on Windows with CPython 3.12.8.
+# These are the actual versions used for the saved artifacts.
+numpy==2.3.5
+pandas==2.2.3
+scikit-learn==1.7.2
+joblib==1.5.3
+scipy==1.18.1
+pyarrow==21.0.0
+catboost==1.2.10
+matplotlib==3.10.8

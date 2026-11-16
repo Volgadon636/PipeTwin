@@ -1,0 +1,12 @@
+{
+  "candidate": "spatial_centered_corrected_temperature",
+  "clipping_count": 0,
+  "finite": true,
+  "max_mm": 3.777105133597775,
+  "mean_mm": 2.809559113932836,
+  "min_mm": 1.95222369681666,
+  "prediction_mode": "loaded_artifact_full_grid_no_fit",
+  "rows": 1475,
+  "std_mm": 0.11950132007947692,
+  "within_bounds": true
+}

@@ -1,0 +1,24 @@
+{
+  "audit": {
+    "defect_depth_pct": {
+      "finite": 47726,
+      "mismatches": 0,
+      "rows": 48040
+    },
+    "distance": {
+      "finite": 48040,
+      "mismatches": 0,
+      "rows": 48040
+    },
+    "residual_wall_thickness": {
+      "finite": 47696,
+      "mismatches": 0,
+      "rows": 48040
+    }
+  },
+  "cases": {
+    "S1": "implemented",
+    "S2": "implemented"
+  },
+  "protocol": "r2-pool-v2"
+}

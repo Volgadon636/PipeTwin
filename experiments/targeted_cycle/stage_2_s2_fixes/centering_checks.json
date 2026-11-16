@@ -1,0 +1,20 @@
+{
+  "spatial_centered_corrected_temperature": {
+    "arithmetic_mean_g_centered": 1.9734893123935212e-05,
+    "centered": true,
+    "length_weighted_mean_g_centered": -9.637679442799305e-19,
+    "max_abs_mean_check": 9.637679442799305e-19
+  },
+  "spatial_no_temperature_centered": {
+    "arithmetic_mean_g_centered": -3.863066741251074e-05,
+    "centered": true,
+    "length_weighted_mean_g_centered": 1.5420287108478888e-17,
+    "max_abs_mean_check": 1.5420287108478888e-17
+  },
+  "spatial_no_temperature_uncentered": {
+    "arithmetic_mean_g_centered": 0.004743557544858768,
+    "centered": false,
+    "length_weighted_mean_g_centered": 0.004782188212271277,
+    "max_abs_mean_check": null
+  }
+}

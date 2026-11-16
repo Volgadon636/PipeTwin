@@ -1,0 +1,25 @@
+{
+  "candidate": "v2_reference",
+  "max_mm": 3.2913984501,
+  "mean_mm": 2.8095393790394576,
+  "min_mm": 2.4165941715,
+  "note": "unchanged v2 S2 reference; its old OOF used post-cutoff 2023 campaigns and is not a strict baseline.",
+  "rows": 1475,
+  "source": "C:\\Users\\Администратор\\Documents\\PipeTwin_next\\experiments\\ml_v2\\result.csv",
+  "std_mm": 0.07151815365875377,
+  "training_completed": false,
+  "training_required": false,
+  "validation": {
+    "bounded": true,
+    "finite_mm": true,
+    "rows": 2000,
+    "template": {
+      "available": false,
+      "key_set_compared": false,
+      "status": "no_template_supplied",
+      "validation_grid": "derived_target_grid"
+    },
+    "unique_keys": true,
+    "upper_bound_column": "upper_mm"
+  }
+}

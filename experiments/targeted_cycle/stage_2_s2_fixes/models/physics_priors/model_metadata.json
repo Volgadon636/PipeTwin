@@ -1,0 +1,21 @@
+{
+  "gap_policy": "own_mean",
+  "interpretation": "Effective segment-minimum thinning rate under declared environment priors; not an electrochemical CO2/H2S constant",
+  "name": "M1",
+  "priors": {
+    "age_exponent": 1.0,
+    "beta_W": 0.3,
+    "beta_v": 0.1,
+    "theta_K": 2500.0,
+    "velocity_offset_m_s": 0.1
+  },
+  "r_ref_mm_year": 0.10555247320293284,
+  "reference": {
+    "temperature_K": 285.6940825298223,
+    "velocity_m_s": 0.5707789385004212,
+    "water_fraction": 0.867897304128054
+  },
+  "training_groups": 1,
+  "training_rows": 372,
+  "weighting": "W0"
+}

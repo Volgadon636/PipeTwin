@@ -1,0 +1,17 @@
+{
+  "case": "S1",
+  "controls": [
+    "best_uniform_gate",
+    "full_correction"
+  ],
+  "description": "Apply an unmodified S1C auxiliary with one correction weight for high-support prior segments and one for low-support prior segments. Fit S1C without the outer section. Pick weights on inner leave-one-section-out predictions on the historical proxy. High-support weight cannot exceed low-support weight. Maximize the mean of the defined per-section r-squared scores only when all sections have a defined score. Prefer smaller sums of weights on ties. No correction without direct measurement. Use own and nearby eligible point coverage as a proxy for reliability.",
+  "minimum_measured_neighbors": 2,
+  "minimum_own_measurements": 2,
+  "neighbor_radius_m": 20,
+  "primary": "support_gate",
+  "weights": [
+    0.0,
+    0.5,
+    1.0
+  ]
+}

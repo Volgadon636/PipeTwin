@@ -1,0 +1,9 @@
+{
+  "description": "Blend latest measured minimum and historical measured minimum on the frozen S1 joint_blend baseline",
+  "historical_coordinate": "The published local Distance and frozen grid for 2018. The latest campaign retains the existing fold-specific alignment. Classification is exploratory because equivalence of 2018 coordinates could not be verified independently.",
+  "last_weight": 0.5,
+  "latest_campaign": "2022-07-06",
+  "older_campaign": "2018-09-23",
+  "require_older_direct_measurement": true,
+  "require_recent_direct_measurement": true
+}

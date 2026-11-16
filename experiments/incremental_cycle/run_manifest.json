@@ -1,0 +1,103 @@
+{
+  "artifact_sha256": {
+    "e0/result.csv": "ee07ed00d86c253250ac8fb3022b2e853cff3fbf5220ab3c3aed38370ee7a478",
+    "e6/result.csv": "ee07ed00d86c253250ac8fb3022b2e853cff3fbf5220ab3c3aed38370ee7a478",
+    "models/defect_stats_full/model_artifact.joblib": "64ce72969e0a4d347be250d71b8dce64040c2cc1e7dfd240a055c93211e63c5e",
+    "models/defect_stats_full/model_metadata.json": "19721d416fd0761931c87a0d3faecb6e9b907035eda11dd1e7a778a86580cb18",
+    "models/defect_stats_support/model_artifact.joblib": "ed17c1faf4ebc5b4060437a0c5a12c48d92640f31bf2c83cb097f337476648fa",
+    "models/defect_stats_support/model_metadata.json": "2ab573e364394dd023341475e430a10c8bcb1ccb9603565c10be37ae0b20b404",
+    "models/global_ridge_geometry/model_artifact.joblib": "4a6ed7b24404e0883b95ae4fb9e640269374c77284bf86129b300aa43af61d36",
+    "models/global_ridge_geometry/model_metadata.json": "48d4fe05236f606144c06640d81be5adecb75de5aeee61b545a964c0eb6ed274",
+    "models/multiscale_100/model_artifact.joblib": "a3a88b06b1f46cd57f08580e543ec3fa267a0139fdb206a8f8292b2ac06bee6b",
+    "models/multiscale_100/model_metadata.json": "2d3f66cb0d3b9cbcdb5d3682c296277e392d9f3a9d1ef5f0ca4065c1d84b171a",
+    "models/multiscale_1000/model_artifact.joblib": "770e5a3857eccdb4b57665c1e6b75e9066ea9b80eadc7c2cbe0ecf673fb416f8",
+    "models/multiscale_1000/model_metadata.json": "8fb2edb45fe095fa5572071b17200e500b9c671b9e7e80ff37040b60dc1efe97",
+    "models/multiscale_100_300_1000/model_artifact.joblib": "7aa3315eca19778197d4df2ea692fa068c587c0d9fe840cec4310e2a84d15cb9",
+    "models/multiscale_100_300_1000/model_metadata.json": "7453d8e020df979150f24afaa14d311f64a65e3a693f73b9b12181ceadf25ab0",
+    "models/multiscale_300/model_artifact.joblib": "2e695b7d033a99a8a45d5562ae4298df3f1f3aa14cee0b2eae8828a7ea34bbce",
+    "models/multiscale_300/model_metadata.json": "203da0d3c31ce4e93e4aab57aaf5258f07423d478f7fe5531bc570fa2e5f34c5",
+    "models/spatial_no_temperature_centered/model_artifact.joblib": "999e0305a821f3d5d88a573263b887aed4b60cab357966cb418066dfcc009b22",
+    "models/spatial_no_temperature_centered/model_metadata.json": "78801233fd7f3a7745f7ad152b55b162fbaff4baa7d08542769ac1d6964b5933",
+    "s1_challenger/result.csv": "8474285d39a6a1f46ca8450ff0ef5cdbe3733e580e441c75d5435b37b87c928a"
+  },
+  "code_sha256": {
+    "src\\ml\\next_all.py": "8a1f4749973f540e8be3f3a34063c557076127787c5635aeb11f1f1aa9945d34",
+    "src\\ml\\next_audit.py": "a837a0f07db72fef2a18103f9db1d76aee24765dc365bcdf595ca6b2e6010b61",
+    "src\\ml\\next_common.py": "8c990ee35245daf2bb8334c15a720837281736b0ee70b83d86963db7775922e9",
+    "src\\ml\\next_compare.py": "bb7032dfa73dab9b2566ccbe5f8d05bbc74e5b58a46f88b16481057838549137",
+    "src\\ml\\next_s1.py": "e00a7091917d9e0879c953fd721c53d3638dcbb2bb97d11e8ab4ccc586573dd0",
+    "src\\ml\\next_s2.py": "7dda82276377da1730521302dd68fc02bfba72deadac6f5f793e244ac8cbb349",
+    "src\\ml\\s1_all.py": "b8b92cb8dbaa6038f4663a6e6611430d018e26fb861ac90acd7dfb71d6ed42de",
+    "src\\ml\\s1_contract.py": "37cd023e7f4324e3db0b8230a0bbdcde9474c61de3793ec782a2c118f0e35816",
+    "src\\ml\\s1_metrics.py": "e0c31bffbbbbb76c5286ddc14c93247500f6dbbaadd52e168fb0aa9febd717d8",
+    "src\\ml\\s1_model.py": "67c63d3660250329f09a260e70a1667bab28de1835676a16b5f702ee38c1cab5",
+    "src\\ml\\s1_next.py": "abb866d3ddbb465c4a95dbff80f8409769169128dbf7700f7c6f0bfad19aaff5",
+    "src\\ml\\s1_stages.py": "67fa32fab8587c14dc9b2338d636fd0be152eee2a3dd72675e6d360b3e1f593a",
+    "src\\ml\\s2_next.py": "65441bd0ceabc0d83571997ae0dfcbcf4ea4d35efa3315a1c0f623d3ac3b56a6",
+    "src\\ml\\submission.py": "e33e4d9466897abd0f9bd106a2f0f4f4e00f06e07ab32869bd82b6094adc0bb4"
+  },
+  "data_root": "C:\\Users\\Администратор\\Documents\\PipeTwin_next\\experiments\\next_cycle\\data_generation",
+  "experiment_code_sha256": {
+    "configs/incremental.json": "3b601bdc0332d7031cc836d2c9d0855e756b4ecd318bc7d42548d00aefb6a973",
+    "src/ml/incremental.py": "74ab1c11f69610671386664b5e909c0f7d1a4292297b227600826bcfddbd5093",
+    "src/ml/incremental_features.py": "29878617977878ff14792226731adcaf5f690b21a2b1026abcc18ec460ba104c",
+    "src/ml/targeted_s1.py": "963e1bee3d67b2299066d3f1e4675ae06583b525d792485419132bdf067ad2d8",
+    "src/ml/targeted_s1_stage4.py": "ba70954073b870db5d8baf42510466aa59f19f11b391591f96c372fac48559ce",
+    "src/ml/targeted_s2.py": "f05c2a6f003ea4c81c3d633905e88e62bd24338a2e9dcd9d0f1faeb9244acdbb"
+  },
+  "finished_utc": "2026-11-15T22:43:08+00:00",
+  "git": {
+    "branch": "momo",
+    "commit": "990a096fb262b645337abfaf8efab74ea15cb402",
+    "dirty": true,
+    "status": [
+      "?? configs/incremental.json",
+      "?? experiments/incremental_cycle/",
+      "?? src/ml/incremental.py",
+      "?? src/ml/incremental_features.py",
+      "?? tests/test_incremental.py"
+    ],
+    "tracked_dirty": false
+  },
+  "input_sha256": {
+    "configs/preprocessing.json": "64669ba69e237bf00a38af5148ad6f801c89b31f12377d37ac0e00b6e6bdbb0c",
+    "data/cleaned/passport.csv": "4d5245d8a7702cba3f739538726325972db1afc44e36df956200725b879a01ab",
+    "data/cleaned/regime.csv": "65e53ebe1a154c5a7a3b6fa5806f1d8e83122c985e1049f38162e316eb95cb79",
+    "data/cleaned/tech_mode_for_embedings_with_length_with_temperatures_ids16.csv": "a0e58cf2deb665f5c99efc71416edeed68c33334d865ceee1f566a8df031ebfd",
+    "data/cleaned/vtd.csv": "e52f3a5c573078cd03689cc8774047a01fa3176192db9b84b095b45f5c752ab2",
+    "processed/profile_by_segment.csv": "3e4b4994a3f3da4fa04c403dcac85bf4484ca9feca68103665db6cc39f2d04ca",
+    "processed/segments_grid.csv": "55cce38f655fc47eaabf2255d4e74e31e6d81f774f95df40f47f23adcfeb48a3",
+    "processed/target_features.csv": "1ff33a4842b63f9b255afb189bb36676d202b5ebaacca9c925d18885abbac767",
+    "processed/training_targets.csv": "8f32b9c374533183abf02e25a6a990988d0e7a661b48f34252667708800cdd18",
+    "processed/uzt_by_segment.csv": "aed45ba93f914f2f4d66f02c31d4b144cd865d69bfc6113a94f1fb1689e364ef",
+    "processed/vtd_by_segment.csv": "ab6e17e9f5f286b884b5a3f47ef9109061ccf55c880f961f2cc5c149fd7ccc5e",
+    "reports/run_manifest.json": "eba9d43c1cf5da4b1148d89e34ad5d922eac4f8752c0c4a790bf9b0f93a4c72b"
+  },
+  "output_root": "experiments\\incremental_cycle",
+  "outputs_sha256": {
+    "decision.json": "d5f0baba6e53b70cf41f927e5cc26f393e06ec202b161a59df540c6bfe2e4e66",
+    "e6_config.json": "dd2e2af16384e5fa0a45a9f859de25c346042ae2051a11cf20275efa43845973",
+    "metrics.csv": "360684538b6dc78aeb942768c639c9c6f0baf5122cc912fe54a7145853f7eb23",
+    "protocol.json": "6368f491f7626b8faeb4db87b16942f16e2947bbf2d1e546a90f4100ad593932",
+    "s1_100m_20m_oof.csv": "31f8cc67fbc26eb1c5e59bdecad871708f152bc20a5f2053f3d4fa794b532d2a",
+    "s1_200m_50m_oof.csv": "ca89a0e4f2915f9805385a583b85c58c51e08c90ca7ae59cc5af00aaea4e29f4",
+    "s1_500m_100m_oof.csv": "3cc6de81948dc8c783f6ef804154ac282585b969ed316379542b123e78ad46b9",
+    "s2_section_metrics.csv": "2944059f225c85bf51cdd7966751ed124256735a4f9a9cbf9309313e106426f5",
+    "s2_section_oof.csv": "f13b0099ac12fe5fd28f00be7f40a2c7ea0bd4d51a464824fb674b024fa09fa3"
+  },
+  "root": "C:\\Program Files\\PipeTwin",
+  "stage": "incremental",
+  "started_utc": "2026-11-15T22:42:35+00:00",
+  "versions": {
+    "catboost": "1.2.10",
+    "executable": "C:\\Users\\Администратор\\Documents\\PipeTwin_s1abc_env\\Scripts\\python.exe",
+    "joblib": "1.5.3",
+    "matplotlib": "3.10.8",
+    "numpy": "2.3.5",
+    "pandas": "2.2.3",
+    "platform": "Windows-11-10.0.26300-SP0",
+    "pyarrow": "21.0.0",
+    "python": "3.12.8",
+    "scikit-learn": "1.7.2"
+  }
+}

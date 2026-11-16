@@ -1,0 +1,32 @@
+{
+  "baseline": {
+    "bias_mm": -0.1210487387347141,
+    "mae_mm": 0.44962603423569575,
+    "pearson_r": 0.09359841726762078,
+    "pearson_reason": "",
+    "pearson_squared": 0.008760663715003652,
+    "prediction_std": 0.11126193619242135,
+    "rmse_mm": 0.5654739387860497
+  },
+  "candidate": {
+    "bias_mm": -0.12104873873471383,
+    "mae_mm": 0.4496260342356955,
+    "pearson_r": 0.09359841726762304,
+    "pearson_reason": "",
+    "pearson_squared": 0.008760663715004075,
+    "prediction_std": 0.11126193619242114,
+    "rmse_mm": 0.5654739387860493
+  },
+  "changed_predictions": 0,
+  "delta_pearson_squared": 4.2327252813834093e-16,
+  "delta_vs_reference_candidate": -0.00011718914401358249,
+  "independent_parent_count": 1,
+  "max_abs_affine_residual_mm": 6.217248937900877e-15,
+  "n": 372,
+  "profile_count": 3,
+  "reference_candidate": {
+    "name": "H20 local_cooling control",
+    "predictions": "experiments/r2_pool/batches/batch_04/hypotheses/H20/S2_LOSO_pooled/local_cooling/validation_predictions.csv",
+    "r2": 0.008877852859017658
+  }
+}

@@ -1,0 +1,137 @@
+{
+  "primary": "terrain_times_water_fraction",
+  "schemes": {
+    "S2_LOSO_pooled": {
+      "terrain_times_constant_water": {
+        "baseline": {
+          "bias_mm": -0.1210487387347141,
+          "mae_mm": 0.44962603423569575,
+          "pearson_r": 0.09359841726762078,
+          "pearson_reason": "",
+          "pearson_squared": 0.008760663715003652,
+          "prediction_std": 0.11126193619242135,
+          "rmse_mm": 0.5654739387860497
+        },
+        "candidate": {
+          "bias_mm": -0.12104873873471383,
+          "mae_mm": 0.4496260342356955,
+          "pearson_r": 0.09359841726762304,
+          "pearson_reason": "",
+          "pearson_squared": 0.008760663715004075,
+          "prediction_std": 0.11126193619242114,
+          "rmse_mm": 0.5654739387860493
+        },
+        "changed_predictions": 0,
+        "delta_pearson_squared": 4.2327252813834093e-16,
+        "delta_vs_reference_candidate": -0.00011718914401358249,
+        "independent_parent_count": 1,
+        "max_abs_affine_residual_mm": 6.217248937900877e-15,
+        "n": 372,
+        "profile_count": 3,
+        "reference_candidate": {
+          "name": "H20 local_cooling control",
+          "predictions": "experiments/r2_pool/batches/batch_04/hypotheses/H20/S2_LOSO_pooled/local_cooling/validation_predictions.csv",
+          "r2": 0.008877852859017658
+        }
+      },
+      "terrain_times_water_fraction": {
+        "baseline": {
+          "bias_mm": -0.1210487387347141,
+          "mae_mm": 0.44962603423569575,
+          "pearson_r": 0.09359841726762078,
+          "pearson_reason": "",
+          "pearson_squared": 0.008760663715003652,
+          "prediction_std": 0.11126193619242135,
+          "rmse_mm": 0.5654739387860497
+        },
+        "candidate": {
+          "bias_mm": -0.12104873873471383,
+          "mae_mm": 0.4496260342356955,
+          "pearson_r": 0.09359841726762304,
+          "pearson_reason": "",
+          "pearson_squared": 0.008760663715004075,
+          "prediction_std": 0.11126193619242114,
+          "rmse_mm": 0.5654739387860493
+        },
+        "changed_predictions": 0,
+        "delta_pearson_squared": 4.2327252813834093e-16,
+        "delta_vs_reference_candidate": -0.00011718914401358249,
+        "independent_parent_count": 1,
+        "max_abs_affine_residual_mm": 6.217248937900877e-15,
+        "n": 372,
+        "profile_count": 3,
+        "reference_candidate": {
+          "name": "H20 local_cooling control",
+          "predictions": "experiments/r2_pool/batches/batch_04/hypotheses/H20/S2_LOSO_pooled/local_cooling/validation_predictions.csv",
+          "r2": 0.008877852859017658
+        }
+      }
+    },
+    "S2_retro_2023": {
+      "terrain_times_constant_water": {
+        "baseline": {
+          "bias_mm": 0.31034341905133306,
+          "mae_mm": 0.314582974780016,
+          "pearson_r": 0.20206882895630215,
+          "pearson_reason": "",
+          "pearson_squared": 0.0408318116357713,
+          "prediction_std": 0.10514386144950326,
+          "rmse_mm": 0.45898722934590697
+        },
+        "candidate": {
+          "bias_mm": 0.31034341905133356,
+          "mae_mm": 0.3145829747800164,
+          "pearson_r": 0.20206882895630535,
+          "pearson_reason": "",
+          "pearson_squared": 0.04083181163577258,
+          "prediction_std": 0.10514386144950313,
+          "rmse_mm": 0.45898722934590697
+        },
+        "changed_predictions": 0,
+        "delta_pearson_squared": 1.2836953722228372e-15,
+        "delta_vs_reference_candidate": -0.005517143367061432,
+        "independent_parent_count": 1,
+        "max_abs_affine_residual_mm": 7.105427357601002e-15,
+        "n": 94,
+        "profile_count": 7,
+        "reference_candidate": {
+          "name": "H20 terrain_without_coordinate control",
+          "predictions": "experiments/r2_pool/batches/batch_04/hypotheses/H20/S2_retro_2023/terrain_without_coordinate/validation_predictions.csv",
+          "r2": 0.046348955002834015
+        }
+      },
+      "terrain_times_water_fraction": {
+        "baseline": {
+          "bias_mm": 0.31034341905133306,
+          "mae_mm": 0.314582974780016,
+          "pearson_r": 0.20206882895630215,
+          "pearson_reason": "",
+          "pearson_squared": 0.0408318116357713,
+          "prediction_std": 0.10514386144950326,
+          "rmse_mm": 0.45898722934590697
+        },
+        "candidate": {
+          "bias_mm": 0.31034341905133356,
+          "mae_mm": 0.3145829747800164,
+          "pearson_r": 0.20206882895630535,
+          "pearson_reason": "",
+          "pearson_squared": 0.04083181163577258,
+          "prediction_std": 0.10514386144950313,
+          "rmse_mm": 0.45898722934590697
+        },
+        "changed_predictions": 0,
+        "delta_pearson_squared": 1.2836953722228372e-15,
+        "delta_vs_reference_candidate": -0.005517143367061432,
+        "independent_parent_count": 1,
+        "max_abs_affine_residual_mm": 7.105427357601002e-15,
+        "n": 94,
+        "profile_count": 7,
+        "reference_candidate": {
+          "name": "H20 terrain_without_coordinate control",
+          "predictions": "experiments/r2_pool/batches/batch_04/hypotheses/H20/S2_retro_2023/terrain_without_coordinate/validation_predictions.csv",
+          "r2": 0.046348955002834015
+        }
+      }
+    }
+  }
+}

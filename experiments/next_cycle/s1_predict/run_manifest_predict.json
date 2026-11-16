@@ -1,0 +1,111 @@
+{
+  "candidate": "ridge_geometry",
+  "code_sha256": {
+    "src\\ml\\next_all.py": "736e6b22cbb42b403f08d232860fdf213cd844ecc3d4c5afe8ee419d1f078568",
+    "src\\ml\\next_audit.py": "b73c3e4c1193801096a43d58d7b24de4c0fdea7ab4fdb65219d1c98227622ed0",
+    "src\\ml\\next_common.py": "b00e4b7c425716904e50e67cf946b3c7eeef03a7b7ee29841e6f20ced321a258",
+    "src\\ml\\next_compare.py": "bb7032dfa73dab9b2566ccbe5f8d05bbc74e5b58a46f88b16481057838549137",
+    "src\\ml\\next_s1.py": "33bcd911907baff51bc821456fcc442ec3b7a649f00bd8f5be3db1fe403cfdc0",
+    "src\\ml\\next_s2.py": "2e8c3c075a0fe2477ef7b89f9beafe3df450eb98918d47997ba359cb223468de",
+    "src\\ml\\s1_all.py": "ba3a9bc3964739f661c14542c7a97b9385678ad57dacb2fcf29ad29d1adcfe4c",
+    "src\\ml\\s1_contract.py": "507d543aaff2e0ea70e57231ca0aad6d51f2dc002601983dc7b9e201b3407815",
+    "src\\ml\\s1_metrics.py": "018977417d74f60c32726d5d906ec911ad57db6053b42df3fb74e9133220b8c7",
+    "src\\ml\\s1_model.py": "6abfd5ab1540caa7c0ee3d3c2718ebf7d9f35396c811f92d63d0aa1f464e8b2c",
+    "src\\ml\\s1_next.py": "abb866d3ddbb465c4a95dbff80f8409769169128dbf7700f7c6f0bfad19aaff5",
+    "src\\ml\\s1_stages.py": "67fa32fab8587c14dc9b2338d636fd0be152eee2a3dd72675e6d360b3e1f593a",
+    "src\\ml\\s2_next.py": "0ec96875757ba5ca3caff5b28a188fcbd93a912bbc418c743cc035e8753a8733",
+    "src\\ml\\submission.py": "280d4da72f6ed1dabceb8fcc188d125e1b9a77fa04643fa2280be062026bdddc"
+  },
+  "data_root": "C:\\Users\\Администратор\\Documents\\PipeTwin_next\\experiments\\next_cycle\\data_generation",
+  "finished_utc": "2026-11-15T17:35:00+00:00",
+  "git": {
+    "branch": "next-cycle",
+    "commit": "6aaa8f64597923cd69f09825958441ad3f40793c",
+    "dirty": true,
+    "status": [
+      "?? experiments/next_cycle/"
+    ],
+    "tracked_dirty": false
+  },
+  "input_sha256": {
+    "C:\\Users\\Администратор\\Documents\\PipeTwin_next\\experiments\\ml_v2\\result.csv": "79ba544232d4d34ed33609ef2fc352d9c39edb49b6a118470f63f11fb0e25f05",
+    "configs/preprocessing.json": "64669ba69e237bf00a38af5148ad6f801c89b31f12377d37ac0e00b6e6bdbb0c",
+    "data/cleaned/passport.csv": "4d5245d8a7702cba3f739538726325972db1afc44e36df956200725b879a01ab",
+    "data/cleaned/regime.csv": "65e53ebe1a154c5a7a3b6fa5806f1d8e83122c985e1049f38162e316eb95cb79",
+    "data/cleaned/tech_mode_for_embedings_with_length_with_temperatures_ids16.csv": "a0e58cf2deb665f5c99efc71416edeed68c33334d865ceee1f566a8df031ebfd",
+    "processed/profile_by_segment.csv": "3e4b4994a3f3da4fa04c403dcac85bf4484ca9feca68103665db6cc39f2d04ca",
+    "processed/segments_grid.csv": "55cce38f655fc47eaabf2255d4e74e31e6d81f774f95df40f47f23adcfeb48a3",
+    "processed/target_features.csv": "1ff33a4842b63f9b255afb189bb36676d202b5ebaacca9c925d18885abbac767",
+    "processed/target_segments_grid.csv": "89ee38ef86368798426a5d91daeb4e849518cb40b2185e1c632dd9f3953db936",
+    "processed/uzt_by_segment.csv": "aed45ba93f914f2f4d66f02c31d4b144cd865d69bfc6113a94f1fb1689e364ef",
+    "processed/vtd_by_segment.csv": "ab6e17e9f5f286b884b5a3f47ef9109061ccf55c880f961f2cc5c149fd7ccc5e",
+    "reports/run_manifest.json": "eba9d43c1cf5da4b1148d89e34ad5d922eac4f8752c0c4a790bf9b0f93a4c72b"
+  },
+  "output_root": "C:\\Users\\Администратор\\Documents\\PipeTwin_next\\experiments\\next_cycle\\s1_predict",
+  "outputs_sha256": {
+    "run_manifest_predict.json": "c623d64cac572bbcd4d2db620795c66c82b1a76898b4721ab61b2f940cf62770"
+  },
+  "prediction_mode": "loaded_artifact_no_fit",
+  "root": "C:\\Users\\Администратор\\Documents\\PipeTwin_next",
+  "stage": "S1_predict",
+  "started_utc": "2026-11-15T17:34:59+00:00",
+  "summary": {
+    "above_last_rows": 147,
+    "above_s1b_rows": 220,
+    "artifact": {
+      "artifact_path": "C:\\Users\\Администратор\\Documents\\PipeTwin_next\\experiments\\next_cycle\\s1\\candidates\\ridge_geometry\\model_artifact.joblib",
+      "artifact_sha256": "26f27ff81c88e73b44d8f43bd2a817ebd9fa538d8456fa93f010c9fc0e0b55da",
+      "metadata_path": "C:\\Users\\Администратор\\Documents\\PipeTwin_next\\experiments\\next_cycle\\s1\\candidates\\ridge_geometry\\model_metadata.json"
+    },
+    "bounds_policy": "[0, nominal]",
+    "candidate": "ridge_geometry",
+    "fallback_rows": 4,
+    "max_mm": 7.049605822526611,
+    "mean_mm": 6.060359370240536,
+    "min_mm": 4.798128565530908,
+    "model_label": "Ridge last + history + geometry",
+    "rows": 525,
+    "s2": {
+      "max_abs_diff": 0.0,
+      "rows": 1475,
+      "source": "C:\\Users\\Администратор\\Documents\\PipeTwin_next\\experiments\\ml_v2\\result.csv"
+    },
+    "segment_135": {
+      "delta_vs_s1a_mm": 1.470340711537157,
+      "delta_vs_s1b_mm": 1.470340711537157,
+      "fallback": false,
+      "prediction_mm": 4.990340711537157,
+      "s1a_mm": 3.52,
+      "s1b_mm": 3.52
+    },
+    "std_mm": 0.29644435217214044,
+    "top33_overlap_with_s1a": 27,
+    "training_completed": true,
+    "training_required": true,
+    "validation": {
+      "bounded": true,
+      "finite_mm": true,
+      "rows": 2000,
+      "template": {
+        "available": false,
+        "key_set_compared": false,
+        "status": "no_template_supplied",
+        "validation_grid": "derived_target_grid"
+      },
+      "unique_keys": true,
+      "upper_bound_column": "upper_mm"
+    }
+  },
+  "versions": {
+    "catboost": "1.2.10",
+    "executable": "C:\\Users\\Администратор\\Documents\\PipeTwin_s1abc_env\\Scripts\\python.exe",
+    "joblib": "1.5.3",
+    "matplotlib": "3.10.8",
+    "numpy": "2.3.5",
+    "pandas": "2.2.3",
+    "platform": "Windows-11-10.0.26300-SP0",
+    "pyarrow": "21.0.0",
+    "python": "3.12.8",
+    "scikit-learn": "1.7.2"
+  }
+}

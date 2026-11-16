@@ -1,0 +1,16 @@
+{
+  "before_commissioning_rows": 398,
+  "cutoff": "2022-07-01",
+  "eligible_dates": [
+    "2018-09-23"
+  ],
+  "eligible_ids": [
+    1250009490,
+    1250011604,
+    1250022871
+  ],
+  "eligible_parent_count": 1,
+  "eligible_rows": 372,
+  "target_eligible_uzt_before_cutoff": 0,
+  "target_vtd_rows": 0
+}

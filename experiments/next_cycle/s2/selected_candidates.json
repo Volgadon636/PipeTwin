@@ -1,0 +1,242 @@
+{
+  "caveat": "Strict fit has one parent and one campaign; leave-one-parent-out is unavailable. The 2023 retrospective is frozen and is not used for selection.",
+  "default": "physics_priors",
+  "domain_shift": {
+    "post_cutoff": {
+      "post_age_years": {
+        "max": 11.811088295687885,
+        "mean": 11.811088295687878,
+        "min": 11.811088295687885,
+        "std": 7.105427357601002e-15
+      },
+      "post_coverage_fraction": {
+        "max": 0.42102071850478207,
+        "mean": 0.41800998444414506,
+        "min": 0.41709003792561694,
+        "std": 0.001664245870446073
+      },
+      "post_nominal_thickness_mm": {
+        "max": 6.0,
+        "mean": 6.0,
+        "min": 6.0,
+        "std": 0.0
+      },
+      "post_scenario_cooling_c": {
+        "max": 0.0014352072191208265,
+        "mean": 0.0012850731292434697,
+        "min": 0.0003768895582227927,
+        "std": 0.0003509818977956583
+      },
+      "post_t_mix_mean": {
+        "max": 1.3202341271279516,
+        "mean": 0.5487055933175204,
+        "min": 0.5144547671840355,
+        "std": 0.14109906760559854
+      },
+      "post_v_mix_mean": {
+        "max": 0.12494890109890111,
+        "mean": 0.12494890109890106,
+        "min": 0.12494890109890111,
+        "std": 5.551115123125783e-17
+      },
+      "post_watercut_pct_mean": {
+        "max": 0.07638110928061505,
+        "mean": 0.07638110928061506,
+        "min": 0.07638110928061505,
+        "std": 1.3877787807814457e-17
+      }
+    },
+    "strict": {
+      "strict_age_years": {
+        "max": 18.420260095824776,
+        "mean": 18.420260095824776,
+        "min": 18.420260095824776,
+        "std": 0.0
+      },
+      "strict_coverage_fraction": {
+        "max": 0.17564623003093763,
+        "mean": 0.17526758972582177,
+        "min": 0.17522451088871274,
+        "std": 0.00012771602885694173
+      },
+      "strict_nominal_thickness_mm": {
+        "max": 8.0,
+        "mean": 8.0,
+        "min": 8.0,
+        "std": 0.0
+      },
+      "strict_scenario_cooling_c": {
+        "max": 0.0012369264586968853,
+        "mean": 0.001176486657775654,
+        "min": 0.00032704157288776514,
+        "std": 9.571755580997104e-05
+      },
+      "strict_t_mix_mean": {
+        "max": 12.544082529822335,
+        "mean": 12.38469012406764,
+        "min": 10.382627605518111,
+        "std": 0.4771235694600794
+      },
+      "strict_v_mix_mean": {
+        "max": 0.6278153748946925,
+        "mean": 0.5759919461278546,
+        "min": 0.5707789385004212,
+        "std": 0.01643642082210351
+      },
+      "strict_watercut_pct_mean": {
+        "max": 86.7897304128054,
+        "mean": 86.786841794168,
+        "min": 86.7581255265375,
+        "std": 0.00910770804723864
+      }
+    },
+    "target": {
+      "target_age_years": {
+        "max": 29.02943189596167,
+        "mean": 29.02943189596167,
+        "min": 29.02943189596167,
+        "std": 0.0
+      },
+      "target_coverage_fraction": {
+        "max": 0.1329915439288671,
+        "mean": 0.1329915439288671,
+        "min": 0.1329915439288671,
+        "std": 0.0
+      },
+      "target_nominal_thickness_mm": {
+        "max": 4.5,
+        "mean": 4.5,
+        "min": 4.5,
+        "std": 0.0
+      },
+      "target_scenario_cooling_c": {
+        "max": 0.018237032775665796,
+        "mean": 0.008798515567800504,
+        "min": 0.0017157739990913967,
+        "std": 0.00420185095459886
+      },
+      "target_t_mix_mean": {
+        "max": 6.198584465346535,
+        "mean": 6.198584465346535,
+        "min": 6.198584465346535,
+        "std": 0.0
+      },
+      "target_v_mix_mean": {
+        "max": 0.06472519462137297,
+        "mean": 0.06472519462137295,
+        "min": 0.06472519462137297,
+        "std": 1.3877787807814457e-17
+      },
+      "target_watercut_pct_mean": {
+        "max": 0.055417256011315426,
+        "mean": 0.05541725601131543,
+        "min": 0.055417256011315426,
+        "std": 6.938893903907228e-18
+      }
+    }
+  },
+  "level_winner": "constant_effective_rate",
+  "no_proven_winner": true,
+  "production_summaries": {
+    "catboost_residual": {
+      "max_mm": 3.038614809915905,
+      "mean_mm": 2.82680550947846,
+      "min_mm": 2.649096330359519,
+      "std_mm": 0.07330566034807008
+    },
+    "constant_effective_rate": {
+      "max_mm": 1.5395840525232374,
+      "mean_mm": 1.5395840525232372,
+      "min_mm": 1.5395840525232374,
+      "std_mm": 2.220446049250313e-16
+    },
+    "physics_priors": {
+      "max_mm": 2.809539379039712,
+      "mean_mm": 2.8095393790397125,
+      "min_mm": 2.809539379039712,
+      "std_mm": 4.440892098500626e-16
+    },
+    "physics_spatial": {
+      "max_mm": 3.7935945412477783,
+      "mean_mm": 2.8142829365845707,
+      "min_mm": 2.008576191832326,
+      "std_mm": 0.14609923307451528
+    },
+    "physics_spatial_temperature": {
+      "max_mm": 3.5565131444467544,
+      "mean_mm": 2.5906871874169943,
+      "min_mm": 1.724668375298728,
+      "std_mm": 0.1235601994826132
+    },
+    "physics_velocity_consistent": {
+      "max_mm": 2.8095393790397116,
+      "mean_mm": 2.8095393790397125,
+      "min_mm": 2.8095393790397116,
+      "std_mm": 8.881784197001252e-16
+    }
+  },
+  "reason": "physics_priors is the predeclared strict level model; constant/velocity/spatial results do not establish a transferable improvement on the target domain.",
+  "spatial_winner": "physics_spatial",
+  "strict_oof": {
+    "catboost_residual": {
+      "bias_mm": -0.05156140899028895,
+      "mae_mm": 0.44271857748337595,
+      "pearson_r": 0.03418847460014876,
+      "pearson_squared": 0.0011688517954850169,
+      "prediction_std_mm": 0.09323989856475358,
+      "r2": -0.02575737520918553,
+      "topk_recall": 0.15384615384615385,
+      "within_section_pearson_squared": 0.004008379348944238
+    },
+    "constant_effective_rate": {
+      "bias_mm": -0.044262170154486996,
+      "mae_mm": 0.43977203698308565,
+      "pearson_r": -0.03015105948741885,
+      "pearson_squared": 0.0009090863882138702,
+      "prediction_std_mm": 0.01601317073677388,
+      "r2": -0.009033570120206669,
+      "topk_recall": 0.15384615384615385,
+      "within_section_pearson_squared": null
+    },
+    "physics_priors": {
+      "bias_mm": -0.1129067713823119,
+      "mae_mm": 0.45441649979338194,
+      "pearson_r": -0.03261905029200108,
+      "pearson_squared": 0.0010640024419520957,
+      "prediction_std_mm": 0.06586060035484054,
+      "r2": -0.06395245193054211,
+      "topk_recall": 0.15384615384615385,
+      "within_section_pearson_squared": null
+    },
+    "physics_spatial": {
+      "bias_mm": -0.10995301301412144,
+      "mae_mm": 0.4481677423964688,
+      "pearson_r": 0.061651626661225645,
+      "pearson_squared": 0.003800923069975149,
+      "prediction_std_mm": 0.09715264754567848,
+      "r2": -0.04904747669527554,
+      "topk_recall": 0.1282051282051282,
+      "within_section_pearson_squared": 0.012362932569277342
+    },
+    "physics_spatial_temperature": {
+      "bias_mm": -0.11855457163260098,
+      "mae_mm": 0.45214116535469756,
+      "pearson_r": 0.051316959168218795,
+      "pearson_squared": 0.002633430298272635,
+      "prediction_std_mm": 0.10742891000261175,
+      "r2": -0.06414758860354652,
+      "topk_recall": 0.1282051282051282,
+      "within_section_pearson_squared": 0.011664633109543871
+    },
+    "physics_velocity_consistent": {
+      "bias_mm": -0.1129067713823119,
+      "mae_mm": 0.45441649979338194,
+      "pearson_r": -0.03261905029200104,
+      "pearson_squared": 0.001064002441952093,
+      "prediction_std_mm": 0.06586060035484051,
+      "r2": -0.06395245193054211,
+      "topk_recall": 0.15384615384615385,
+      "within_section_pearson_squared": null
+    }
+  }
+}

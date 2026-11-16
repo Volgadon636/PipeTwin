@@ -1,0 +1,86 @@
+{
+  "audit_version": "leakage-audit-v1",
+  "checks": [
+    {
+      "check": "feature_keys_unique",
+      "detail": "duplicate feature keys",
+      "passed": true
+    },
+    {
+      "check": "hydraulic_source_date_max_strictly_before_cutoff",
+      "detail": "0 rows violate cutoff",
+      "passed": true
+    },
+    {
+      "check": "monitoring_source_date_max_strictly_before_cutoff",
+      "detail": "0 rows violate cutoff",
+      "passed": true
+    },
+    {
+      "check": "last_vtd_date_strictly_before_cutoff",
+      "detail": "0 rows violate cutoff",
+      "passed": true
+    },
+    {
+      "check": "last_uzt_date_strictly_before_cutoff",
+      "detail": "0 rows violate cutoff",
+      "passed": true
+    },
+    {
+      "check": "cold_start_no_target_diagnostic_features",
+      "detail": "cold-start rows contain diagnostic values",
+      "passed": true
+    },
+    {
+      "check": "target_cold_pipe_has_no_diagnostic_history",
+      "detail": "target cold pipe has VTD/UZT-derived values",
+      "passed": true
+    },
+    {
+      "check": "no_unapproved_static_diagnostic_features",
+      "detail": "[]",
+      "passed": true
+    },
+    {
+      "check": "no_global_imputation_in_preprocessing",
+      "detail": "preprocessing publishes NaN with coverage; imputation/scaling must be fold-fitted",
+      "passed": true
+    },
+    {
+      "check": "requested_ids_only",
+      "detail": "[np.int64(1250009583), np.int64(1250022871)]",
+      "passed": true
+    },
+    {
+      "check": "parent_pipeline_not_a_published_feature",
+      "detail": "main_pipeline_id is grouping metadata only",
+      "passed": true
+    }
+  ],
+  "failures": [],
+  "monitoring_use": {
+    "checks": [
+      {
+        "column": "ph_median",
+        "consistent": true,
+        "identity_usable_rows_for_target": 0,
+        "nonnull_target_values": 0
+      },
+      {
+        "column": "co2_water_median",
+        "consistent": true,
+        "identity_usable_rows_for_target": 0,
+        "nonnull_target_values": 0
+      },
+      {
+        "column": "total_mineralization_median",
+        "consistent": true,
+        "identity_usable_rows_for_target": 0,
+        "nonnull_target_values": 0
+      }
+    ],
+    "note": "Transferred or imputed chemistry is never accepted as measured chemistry.",
+    "passed": true
+  },
+  "passed": true
+}

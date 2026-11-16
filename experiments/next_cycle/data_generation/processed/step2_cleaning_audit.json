@@ -1,0 +1,65 @@
+{
+  "passport.csv": {
+    "cleaned_rows": 16,
+    "flag_counts": {
+      "history_date_conflict_flag": 5,
+      "id_leading_zero_flag": 0
+    },
+    "input_rows": 16
+  },
+  "profile.csv": {
+    "cleaned_rows": 20180,
+    "flag_counts": {
+      "id_leading_zero_flag": 0,
+      "steep_step_flag": 61
+    },
+    "input_rows": 20218
+  },
+  "regime.csv": {
+    "cleaned_rows": 495,
+    "flag_counts": {
+      "density_suspect_flag": 3,
+      "direction_conflict_flag": 83,
+      "exposure_invalid_flag": 3,
+      "exposure_mismatch_flag": 92,
+      "id_leading_zero_flag": 0,
+      "negative_protective_effect_flag": 2
+    },
+    "input_rows": 495
+  },
+  "tech_mode_for_embedings_with_length_with_temperatures_ids16.csv": {
+    "cleaned_rows": 39052,
+    "flag_counts": {
+      "before_commissioning_flag": 0,
+      "diameter_mismatch_flag": 0,
+      "id_leading_zero_flag": 0
+    },
+    "input_rows": 39052
+  },
+  "uzt.csv": {
+    "cleaned_rows": 67,
+    "flag_counts": {
+      "above_nominal_flag": 67,
+      "before_commissioning_flag": 0,
+      "id_leading_zero_flag": 0
+    },
+    "input_rows": 67
+  },
+  "vtd.csv": {
+    "cleaned_rows": 48040,
+    "flag_counts": {
+      "above_local_wall_flag": 0,
+      "above_nominal_flag": 24,
+      "before_commissioning_flag": 13485,
+      "commissioning_unknown_flag": 0,
+      "depth_residual_mismatch_flag": 6,
+      "heldout_or_future_flag": 0,
+      "id_leading_zero_flag": 0,
+      "nominal_unresolved_flag": 0,
+      "residual_invalid_flag": 24,
+      "residual_missing_flag": 344,
+      "wall_nominal_mismatch_flag": 14239
+    },
+    "input_rows": 48291
+  }
+}

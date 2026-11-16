@@ -1,0 +1,34 @@
+{
+  "old_physics_spatial": {
+    "mean_mm": 2.8142829365854243,
+    "note": "old uncentered spatial reference; no refit",
+    "path": "C:\\Program Files\\PipeTwin\\experiments\\next_cycle\\s2\\candidates\\physics_spatial\\predictions_s2.csv",
+    "rows": 1475,
+    "sha256": "34ffc930480ea2d69f948295281079d74154411971bceede4affe94fdf95c25f",
+    "std_mm": 0.14609923307479528
+  },
+  "old_physics_spatial_temperature": {
+    "mean_mm": 2.5906871874170845,
+    "note": "old uncentered temperature-spatial reference; shows old level shift, no refit",
+    "path": "C:\\Program Files\\PipeTwin\\experiments\\next_cycle\\s2\\candidates\\physics_spatial_temperature\\predictions_s2.csv",
+    "rows": 1475,
+    "sha256": "85507b65cdecc37e1de8f94ff9c2c804ab3249e006e8faa1d577913db34f49d5",
+    "std_mm": 0.12356019948232133
+  },
+  "physics_priors": {
+    "mean_mm": 2.8095393789999994,
+    "note": "old physics reference; new strict full-train physics artifact is saved separately",
+    "path": "C:\\Program Files\\PipeTwin\\experiments\\next_cycle\\s2\\candidates\\physics_priors\\predictions_s2.csv",
+    "rows": 1475,
+    "sha256": "7a01e6b255aa972f96193889ee9665c7baa0f0e4cc96c1cf22508fe06e54f8f0",
+    "std_mm": 4.440892098500626e-16
+  },
+  "v2_reference": {
+    "mean_mm": 2.8095393790394576,
+    "note": "unchanged old S2 production reference; no refit",
+    "path": "C:\\Program Files\\PipeTwin\\experiments\\ml_v2\\result.csv",
+    "rows": 1475,
+    "sha256": "b9672908d81203a52b03940f6b71734ac14e88fb86fbddc053462fc722a70147",
+    "std_mm": 0.07151815365875377
+  }
+}

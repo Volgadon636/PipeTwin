@@ -1,0 +1,13 @@
+{
+  "cases": [
+    "S2"
+  ],
+  "controls": [
+    "early_ground_temperature",
+    "early_first_observed_year"
+  ],
+  "description": "Two explicit assumptions for the leading thermal-history gap only. At ground temperature the leading gap adds no spatial thermal contrast. Replay of the first 365 days of admissible hydraulic history adds its duration-weighted thermal shape to the leading gap duration. Both share observed intervals and default H23 heat assumptions. Fit one Ridge per scenario on the same frozen rows, then blend paired predictions 50/50 with a fixed weight and compare both endpoints. Missing thermal histories use the spatial baseline; other gaps are not imputed into this feature.",
+  "early_replay_weight": 0.5,
+  "first_window_days": 365,
+  "primary": "equal_early_thermal_scenarios"
+}

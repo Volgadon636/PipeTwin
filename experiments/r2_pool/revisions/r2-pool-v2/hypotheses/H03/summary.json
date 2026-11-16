@@ -1,0 +1,11 @@
+{
+  "audit": {
+    "observed_wall_mismatch": 14239,
+    "verified_dated_joint_nominal_map": false
+  },
+  "cases": {
+    "S1": "blocked_data",
+    "S2": "blocked_data"
+  },
+  "protocol": "r2-pool-v2"
+}

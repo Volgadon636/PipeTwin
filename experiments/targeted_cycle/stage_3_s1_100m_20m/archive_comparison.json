@@ -1,0 +1,12 @@
+{
+  "block_mapping_equal": true,
+  "catboost_max_abs_diff": 0.10080499517674735,
+  "current_block_definition": "center_m // 100 (physical)",
+  "global_ridge_max_abs_diff": 0.07982826600551984,
+  "note": "Archive used only for protocol comparison; no selection.",
+  "old_block_definition": "segment_id // 10 (archive)",
+  "rows_both": 321,
+  "rows_only_archive": 0,
+  "rows_only_current": 0,
+  "s1a_max_abs_diff": 0.0
+}

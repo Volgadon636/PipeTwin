@@ -1,0 +1,15 @@
+{
+  "baseline_pooled_r2": 0.2897090514635777,
+  "baseline_r2": 0.2897090514635777,
+  "candidate_pearson_r": 0.538091652342298,
+  "candidate_pooled_r2": 0.28954262632046457,
+  "candidate_r2": 0.28954262632046457,
+  "changed_predictions": 321,
+  "delta_pearson_squared": -0.00016642514311315804,
+  "delta_pooled_r2": -0.00016642514311315804,
+  "independent_parent_count": 1,
+  "n": 321,
+  "profile_count": 1,
+  "ranking_metric": "profile_r2",
+  "status": "worse"
+}

@@ -1,0 +1,2853 @@
+{
+  "date_coverage": {
+    "passport.csv:commissioning_date": {
+      "date_only_rows": 16,
+      "declared_timezone_values": [],
+      "max": "2016-03-16 00:00:00",
+      "min": "1993-06-20 00:00:00",
+      "missing_or_invalid": 0,
+      "rows": 16,
+      "valid_dates": 16
+    },
+    "regime.csv:sample_installation_date": {
+      "date_only_rows": 457,
+      "declared_timezone_values": [],
+      "max": "2024-01-18 00:00:00",
+      "min": "2012-05-30 00:00:00",
+      "missing_or_invalid": 38,
+      "rows": 495,
+      "valid_dates": 457
+    },
+    "regime.csv:sample_removal_date": {
+      "date_only_rows": 495,
+      "declared_timezone_values": [],
+      "max": "2024-02-14 00:00:00",
+      "min": "2012-01-23 00:00:00",
+      "missing_or_invalid": 0,
+      "rows": 495,
+      "valid_dates": 495
+    },
+    "tech_mode_for_embedings_with_length_with_temperatures_ids16.csv:date": {
+      "date_only_rows": 0,
+      "declared_timezone_values": [],
+      "max": "2024-11-24 07:09:55",
+      "min": "2012-12-12 11:42:29",
+      "missing_or_invalid": 0,
+      "rows": 39052,
+      "valid_dates": 39052
+    },
+    "uzt.csv:date": {
+      "date_only_rows": 67,
+      "declared_timezone_values": [],
+      "max": "2020-01-24 00:00:00",
+      "min": "2013-12-18 00:00:00",
+      "missing_or_invalid": 0,
+      "rows": 67,
+      "valid_dates": 67
+    },
+    "vtd.csv:date": {
+      "date_only_rows": 48040,
+      "declared_timezone_values": [],
+      "max": "2023-12-01 00:00:00",
+      "min": "2014-12-28 00:00:00",
+      "missing_or_invalid": 0,
+      "rows": 48040,
+      "valid_dates": 48040
+    }
+  },
+  "feature_coverage": {
+    "1250009583:cold_start": {
+      "columns_full_coverage": [
+        "age_days",
+        "age_years",
+        "case",
+        "commissioning_date",
+        "d_inner_assumed_flag",
+        "d_inner_assumed_mm",
+        "density_liquid_work_mean",
+        "density_liquid_work_std",
+        "density_liquid_work_valid_days",
+        "density_oil_mean",
+        "density_oil_std",
+        "density_oil_valid_days",
+        "diameter_mm",
+        "end_m",
+        "has_previous_vtd",
+        "hydraulic_coverage_fraction",
+        "hydraulic_coverage_since_start",
+        "hydraulic_days_count",
+        "hydraulic_expected_days",
+        "hydraulic_latest_age_days",
+        "hydraulic_max_gap_days",
+        "hydraulic_observed_days",
+        "hydraulic_records_count",
+        "hydraulic_source_date_max",
+        "hydraulic_source_date_min",
+        "hydraulic_unobserved_days_since_start",
+        "hydraulic_window_start",
+        "id",
+        "length_m",
+        "max_profile_gap_m",
+        "monitoring_candidate_records",
+        "monitoring_records_count",
+        "nominal_thickness_mm",
+        "p_end_mean",
+        "p_end_std",
+        "p_end_valid_days",
+        "p_start_mean",
+        "p_start_std",
+        "p_start_valid_days",
+        "points_count",
+        "prediction_date",
+        "profile_extrapolated_flag",
+        "q_liquid_mean",
+        "q_liquid_std",
+        "q_liquid_valid_days",
+        "q_oil_mean",
+        "q_oil_std",
+        "q_oil_valid_days",
+        "segment_id",
+        "slope_m_per_m",
+        "start_m",
+        "t_end_mean",
+        "t_end_std",
+        "t_end_valid_days",
+        "t_mix_mean",
+        "t_mix_std",
+        "t_mix_valid_days",
+        "t_start_mean",
+        "t_start_std",
+        "t_start_valid_days",
+        "v_liquid_true_mean",
+        "v_liquid_true_std",
+        "v_liquid_true_valid_days",
+        "v_mix_mean",
+        "v_mix_std",
+        "v_mix_valid_days",
+        "water_fraction_mean",
+        "water_fraction_valid_days",
+        "watercut_pct_mean",
+        "watercut_pct_std",
+        "watercut_pct_valid_days",
+        "z_center",
+        "z_end",
+        "z_max",
+        "z_mean",
+        "z_min",
+        "z_start"
+      ],
+      "columns_with_zero_coverage": [
+        "co2_water_median",
+        "last_uzt_date",
+        "last_uzt_thickness_mm",
+        "last_vtd_date",
+        "last_vtd_thickness_mm",
+        "monitoring_source_date_max",
+        "ph_median",
+        "prior_vtd_campaign_count",
+        "prior_vtd_min_date",
+        "prior_vtd_min_thickness_mm",
+        "total_mineralization_median",
+        "years_since_vtd"
+      ],
+      "missing_by_column": {
+        "age_days": 0,
+        "age_years": 0,
+        "case": 0,
+        "co2_water_median": 1475,
+        "commissioning_date": 0,
+        "d_inner_assumed_flag": 0,
+        "d_inner_assumed_mm": 0,
+        "density_liquid_work_mean": 0,
+        "density_liquid_work_std": 0,
+        "density_liquid_work_valid_days": 0,
+        "density_oil_mean": 0,
+        "density_oil_std": 0,
+        "density_oil_valid_days": 0,
+        "diameter_mm": 0,
+        "end_m": 0,
+        "has_previous_vtd": 0,
+        "hydraulic_coverage_fraction": 0,
+        "hydraulic_coverage_since_start": 0,
+        "hydraulic_days_count": 0,
+        "hydraulic_expected_days": 0,
+        "hydraulic_latest_age_days": 0,
+        "hydraulic_max_gap_days": 0,
+        "hydraulic_observed_days": 0,
+        "hydraulic_records_count": 0,
+        "hydraulic_source_date_max": 0,
+        "hydraulic_source_date_min": 0,
+        "hydraulic_unobserved_days_since_start": 0,
+        "hydraulic_window_start": 0,
+        "id": 0,
+        "last_uzt_date": 1475,
+        "last_uzt_thickness_mm": 1475,
+        "last_vtd_date": 1475,
+        "last_vtd_thickness_mm": 1475,
+        "length_m": 0,
+        "max_profile_gap_m": 0,
+        "monitoring_candidate_records": 0,
+        "monitoring_records_count": 0,
+        "monitoring_source_date_max": 1475,
+        "nominal_thickness_mm": 0,
+        "p_end_mean": 0,
+        "p_end_std": 0,
+        "p_end_valid_days": 0,
+        "p_start_mean": 0,
+        "p_start_std": 0,
+        "p_start_valid_days": 0,
+        "ph_median": 1475,
+        "points_count": 0,
+        "prediction_date": 0,
+        "prior_vtd_campaign_count": 1475,
+        "prior_vtd_min_date": 1475,
+        "prior_vtd_min_thickness_mm": 1475,
+        "profile_extrapolated_flag": 0,
+        "q_liquid_mean": 0,
+        "q_liquid_std": 0,
+        "q_liquid_valid_days": 0,
+        "q_oil_mean": 0,
+        "q_oil_std": 0,
+        "q_oil_valid_days": 0,
+        "segment_id": 0,
+        "slope_m_per_m": 0,
+        "start_m": 0,
+        "t_end_mean": 0,
+        "t_end_std": 0,
+        "t_end_valid_days": 0,
+        "t_mix_mean": 0,
+        "t_mix_std": 0,
+        "t_mix_valid_days": 0,
+        "t_start_mean": 0,
+        "t_start_std": 0,
+        "t_start_valid_days": 0,
+        "total_mineralization_median": 1475,
+        "v_liquid_true_mean": 0,
+        "v_liquid_true_std": 0,
+        "v_liquid_true_valid_days": 0,
+        "v_mix_mean": 0,
+        "v_mix_std": 0,
+        "v_mix_valid_days": 0,
+        "water_fraction_mean": 0,
+        "water_fraction_valid_days": 0,
+        "watercut_pct_mean": 0,
+        "watercut_pct_std": 0,
+        "watercut_pct_valid_days": 0,
+        "years_since_vtd": 1475,
+        "z_center": 0,
+        "z_end": 0,
+        "z_max": 0,
+        "z_mean": 0,
+        "z_min": 0,
+        "z_start": 0
+      },
+      "rows": 1475
+    },
+    "1250022871:between_vtd": {
+      "columns_full_coverage": [
+        "age_days",
+        "age_years",
+        "case",
+        "commissioning_date",
+        "d_inner_assumed_flag",
+        "d_inner_assumed_mm",
+        "density_liquid_work_mean",
+        "density_liquid_work_std",
+        "density_liquid_work_valid_days",
+        "density_oil_mean",
+        "density_oil_std",
+        "density_oil_valid_days",
+        "diameter_mm",
+        "end_m",
+        "has_previous_vtd",
+        "hydraulic_coverage_fraction",
+        "hydraulic_coverage_since_start",
+        "hydraulic_days_count",
+        "hydraulic_expected_days",
+        "hydraulic_latest_age_days",
+        "hydraulic_max_gap_days",
+        "hydraulic_observed_days",
+        "hydraulic_records_count",
+        "hydraulic_source_date_max",
+        "hydraulic_source_date_min",
+        "hydraulic_unobserved_days_since_start",
+        "hydraulic_window_start",
+        "id",
+        "length_m",
+        "max_profile_gap_m",
+        "monitoring_candidate_records",
+        "monitoring_records_count",
+        "nominal_thickness_mm",
+        "p_end_mean",
+        "p_end_std",
+        "p_end_valid_days",
+        "p_start_mean",
+        "p_start_std",
+        "p_start_valid_days",
+        "points_count",
+        "prediction_date",
+        "profile_extrapolated_flag",
+        "q_liquid_mean",
+        "q_liquid_std",
+        "q_liquid_valid_days",
+        "q_oil_mean",
+        "q_oil_std",
+        "q_oil_valid_days",
+        "segment_id",
+        "slope_m_per_m",
+        "start_m",
+        "t_end_mean",
+        "t_end_std",
+        "t_end_valid_days",
+        "t_mix_mean",
+        "t_mix_std",
+        "t_mix_valid_days",
+        "t_start_mean",
+        "t_start_std",
+        "t_start_valid_days",
+        "v_liquid_true_mean",
+        "v_liquid_true_std",
+        "v_liquid_true_valid_days",
+        "v_mix_mean",
+        "v_mix_std",
+        "v_mix_valid_days",
+        "water_fraction_mean",
+        "water_fraction_valid_days",
+        "watercut_pct_mean",
+        "watercut_pct_std",
+        "watercut_pct_valid_days",
+        "z_center",
+        "z_end",
+        "z_max",
+        "z_mean",
+        "z_min",
+        "z_start"
+      ],
+      "columns_with_zero_coverage": [
+        "co2_water_median",
+        "last_uzt_date",
+        "last_uzt_thickness_mm",
+        "monitoring_source_date_max",
+        "ph_median",
+        "total_mineralization_median"
+      ],
+      "missing_by_column": {
+        "age_days": 0,
+        "age_years": 0,
+        "case": 0,
+        "co2_water_median": 525,
+        "commissioning_date": 0,
+        "d_inner_assumed_flag": 0,
+        "d_inner_assumed_mm": 0,
+        "density_liquid_work_mean": 0,
+        "density_liquid_work_std": 0,
+        "density_liquid_work_valid_days": 0,
+        "density_oil_mean": 0,
+        "density_oil_std": 0,
+        "density_oil_valid_days": 0,
+        "diameter_mm": 0,
+        "end_m": 0,
+        "has_previous_vtd": 0,
+        "hydraulic_coverage_fraction": 0,
+        "hydraulic_coverage_since_start": 0,
+        "hydraulic_days_count": 0,
+        "hydraulic_expected_days": 0,
+        "hydraulic_latest_age_days": 0,
+        "hydraulic_max_gap_days": 0,
+        "hydraulic_observed_days": 0,
+        "hydraulic_records_count": 0,
+        "hydraulic_source_date_max": 0,
+        "hydraulic_source_date_min": 0,
+        "hydraulic_unobserved_days_since_start": 0,
+        "hydraulic_window_start": 0,
+        "id": 0,
+        "last_uzt_date": 525,
+        "last_uzt_thickness_mm": 525,
+        "last_vtd_date": 4,
+        "last_vtd_thickness_mm": 4,
+        "length_m": 0,
+        "max_profile_gap_m": 0,
+        "monitoring_candidate_records": 0,
+        "monitoring_records_count": 0,
+        "monitoring_source_date_max": 525,
+        "nominal_thickness_mm": 0,
+        "p_end_mean": 0,
+        "p_end_std": 0,
+        "p_end_valid_days": 0,
+        "p_start_mean": 0,
+        "p_start_std": 0,
+        "p_start_valid_days": 0,
+        "ph_median": 525,
+        "points_count": 0,
+        "prediction_date": 0,
+        "prior_vtd_campaign_count": 4,
+        "prior_vtd_min_date": 4,
+        "prior_vtd_min_thickness_mm": 4,
+        "profile_extrapolated_flag": 0,
+        "q_liquid_mean": 0,
+        "q_liquid_std": 0,
+        "q_liquid_valid_days": 0,
+        "q_oil_mean": 0,
+        "q_oil_std": 0,
+        "q_oil_valid_days": 0,
+        "segment_id": 0,
+        "slope_m_per_m": 0,
+        "start_m": 0,
+        "t_end_mean": 0,
+        "t_end_std": 0,
+        "t_end_valid_days": 0,
+        "t_mix_mean": 0,
+        "t_mix_std": 0,
+        "t_mix_valid_days": 0,
+        "t_start_mean": 0,
+        "t_start_std": 0,
+        "t_start_valid_days": 0,
+        "total_mineralization_median": 525,
+        "v_liquid_true_mean": 0,
+        "v_liquid_true_std": 0,
+        "v_liquid_true_valid_days": 0,
+        "v_mix_mean": 0,
+        "v_mix_std": 0,
+        "v_mix_valid_days": 0,
+        "water_fraction_mean": 0,
+        "water_fraction_valid_days": 0,
+        "watercut_pct_mean": 0,
+        "watercut_pct_std": 0,
+        "watercut_pct_valid_days": 0,
+        "years_since_vtd": 4,
+        "z_center": 0,
+        "z_end": 0,
+        "z_max": 0,
+        "z_mean": 0,
+        "z_min": 0,
+        "z_start": 0
+      },
+      "rows": 525
+    }
+  },
+  "feature_inventory_summary": {
+    "by_source": {
+      "corrosion_monitoring": 59,
+      "derived": 89,
+      "hydraulic_regime": 24,
+      "passport": 286,
+      "profile": 5,
+      "uzt": 10,
+      "vtd": 42
+    },
+    "by_status": {
+      "assumed_scenario": 1,
+      "available_but_excluded": 378,
+      "derived_verified": 26,
+      "measured": 31,
+      "source_calculated": 69,
+      "unresolved_semantics": 10
+    },
+    "rows": 515
+  },
+  "persistence_filter": {
+    "by_action": {
+      "keep_persistent": 22,
+      "set_missing": 19
+    },
+    "by_rule": {
+      "high_flow_review_threshold": 1,
+      "high_pressure_review_threshold": 2,
+      "paired_with_high_liquid_flow": 3,
+      "zero_temperature_during_flow": 35
+    },
+    "policy": "Persistence is evaluated after cutoff and before aggregation; three distinct consecutive observed calendar days required.",
+    "rows": 41
+  },
+  "row_reconciliation": [
+    {
+      "accounted_records": 16,
+      "disjoint_accounting_ok": true,
+      "duplicate_records": 0,
+      "input_records": 16,
+      "malformed_records": 0,
+      "note": "Malformed/rejected field values are masked and listed in quality_issues; they do not necessarily drop the whole record.",
+      "parse_rejected_records": 0,
+      "quarantined_records": 0,
+      "retained_records": 16,
+      "source_file": "passport.csv",
+      "source_type": "passport"
+    },
+    {
+      "accounted_records": 20218,
+      "disjoint_accounting_ok": true,
+      "duplicate_records": 38,
+      "input_records": 20218,
+      "malformed_records": 0,
+      "note": "Malformed/rejected field values are masked and listed in quality_issues; they do not necessarily drop the whole record.",
+      "parse_rejected_records": 0,
+      "quarantined_records": 0,
+      "retained_records": 20180,
+      "source_file": "profile.csv",
+      "source_type": "profile"
+    },
+    {
+      "accounted_records": 67,
+      "disjoint_accounting_ok": true,
+      "duplicate_records": 0,
+      "input_records": 67,
+      "malformed_records": 0,
+      "note": "Malformed/rejected field values are masked and listed in quality_issues; they do not necessarily drop the whole record.",
+      "parse_rejected_records": 0,
+      "quarantined_records": 0,
+      "retained_records": 67,
+      "source_file": "uzt.csv",
+      "source_type": "uzt"
+    },
+    {
+      "accounted_records": 48291,
+      "disjoint_accounting_ok": true,
+      "duplicate_records": 0,
+      "input_records": 48291,
+      "malformed_records": 0,
+      "note": "Malformed/rejected field values are masked and listed in quality_issues; they do not necessarily drop the whole record.",
+      "parse_rejected_records": 0,
+      "quarantined_records": 251,
+      "retained_records": 48040,
+      "source_file": "vtd.csv",
+      "source_type": "vtd"
+    },
+    {
+      "accounted_records": 495,
+      "disjoint_accounting_ok": true,
+      "duplicate_records": 0,
+      "input_records": 495,
+      "malformed_records": 0,
+      "note": "Malformed/rejected field values are masked and listed in quality_issues; they do not necessarily drop the whole record.",
+      "parse_rejected_records": 0,
+      "quarantined_records": 0,
+      "retained_records": 495,
+      "source_file": "regime.csv",
+      "source_type": "corrosion_monitoring"
+    },
+    {
+      "accounted_records": 39052,
+      "disjoint_accounting_ok": true,
+      "duplicate_records": 0,
+      "input_records": 39052,
+      "malformed_records": 0,
+      "note": "Malformed/rejected field values are masked and listed in quality_issues; they do not necessarily drop the whole record.",
+      "parse_rejected_records": 0,
+      "quarantined_records": 0,
+      "retained_records": 39052,
+      "source_file": "tech_mode_for_embedings_with_length_with_temperatures_ids16.csv",
+      "source_type": "hydraulic_regime"
+    }
+  ],
+  "schema_drift": {
+    "passport.csv": {
+      "archival_known_but_excluded": [],
+      "duplicate_raw_headers": [],
+      "empty_raw_headers": [],
+      "parse_issue_records": 0,
+      "policy": "Unrecognized columns remain in the archival table; they are not model features.",
+      "raw_preserved": true,
+      "required_fields_missing": [],
+      "required_fields_present": [
+        "diameter_mm",
+        "id",
+        "length_km",
+        "nominal_thickness_mm"
+      ],
+      "source_type": "passport",
+      "unknown_column_count": 273,
+      "unknown_columns": [
+        {
+          "canonical_column": "mestonakhozhdenie_dochernee_obshchestvo",
+          "raw_column": "Местонахождение_Дочернее общество",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "mestonakhozhdenie_predpriyatie",
+          "raw_column": "Местонахождение_Предприятие",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "mestonakhozhdenie_oblast",
+          "raw_column": "Местонахождение_Область",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "mestonakhozhdenie_rayon",
+          "raw_column": "Местонахождение_Район",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "mestonakhozhdenie_mestorozhdenie",
+          "raw_column": "Местонахождение_Месторождение",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "mestonakhozhdenie_prinadlezhnost_k_obektu_ploshchadka",
+          "raw_column": "Местонахождение_Принадлежность к объекту (площадка)",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "mestonakhozhdenie_no_tstort",
+          "raw_column": "Местонахождение_№ ЦТОРТ",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "mestonakhozhdenie_tsekh",
+          "raw_column": "Местонахождение_Цех",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "mestonakhozhdenie_brigada",
+          "raw_column": "Местонахождение_Бригада",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "mestonakhozhdenie_kategoriya_zemel",
+          "raw_column": "Местонахождение_Категория земель",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "tip_tip_truboprovodnoy_seti",
+          "raw_column": "Тип_Тип трубопроводной сети",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "tip_naznachenie_truboprovoda",
+          "raw_column": "Тип_Назначение трубопровода",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "tip_tip_truboprovoda",
+          "raw_column": "Тип_Тип трубопровода",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "tip_rabochaya_sreda",
+          "raw_column": "Тип_Рабочая среда",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "obshchie_dannye_naimenovanie_os_po_bukh_uchetu",
+          "raw_column": "Общие данные_Наименование ОС по бух.учету",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "obshchie_dannye_nitka",
+          "raw_column": "Общие данные_Нитка",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "obshchie_dannye_inventarnyy_nomer",
+          "raw_column": "Общие данные_Инвентарный номер",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "obshchie_dannye_registratsionnyy_nomer",
+          "raw_column": "Общие данные_Регистрационный номер",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "obshchie_dannye_reg_no_pasporta",
+          "raw_column": "Общие данные_Рег. № паспорта",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "obshchie_dannye_registriruyushchee_litso",
+          "raw_column": "Общие данные_Регистрирующее лицо",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "obshchie_dannye_tip_truby",
+          "raw_column": "Общие данные_Тип трубы",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "obshchie_dannye_gost_truby",
+          "raw_column": "Общие данные_ГОСТ трубы",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "obshchie_dannye_god_vvoda",
+          "raw_column": "Общие данные_Год ввода",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "obshchie_dannye_vozrast_fakticheskiy_let",
+          "raw_column": "Общие данные_Возраст фактический, лет",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "obshchie_dannye_data_zapuska_dlya_gos_organov",
+          "raw_column": "Общие данные_Дата запуска для гос. органов",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "obshchie_dannye_vozrast_ofitsialnyy_let",
+          "raw_column": "Общие данные_Возраст официальный, лет",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "obshchie_dannye_god_stroitelstva",
+          "raw_column": "Общие данные_Год строительства",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "obshchie_dannye_balansovaya_stoimost",
+          "raw_column": "Общие данные_Балансовая стоимость",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "obshchie_dannye_gruppa_riska",
+          "raw_column": "Общие данные_Группа риска",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "obshchie_dannye_srok_ekspluatatsii_s_nachala_otchetnogo_goda_dney",
+          "raw_column": "Общие данные_Срок эксплуатации с начала отчетного года, дней",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "obshchie_dannye_poryadok",
+          "raw_column": "Общие данные_Порядок",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "obshchie_dannye_korrozionnaya_aktivnost_grunta",
+          "raw_column": "Общие данные_Коррозионная активность грунта",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "obshchie_dannye_pervonachalnaya_balansovaya_stoimost_rub",
+          "raw_column": "Общие данные_Первоначальная балансовая стоимость, руб.",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "obshchie_dannye_data_inventarizatsii",
+          "raw_column": "Общие данные_Дата инвентаризации",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "obshchie_dannye_norma_amortizatsii_pct",
+          "raw_column": "Общие данные_Норма амортизации, %",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "obshchie_dannye_dlina_po_verifikatsii_m",
+          "raw_column": "Общие данные_Длина по верификации, м",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "dannye_po_protyazhyonnosti_v_strukture_seti_oispipe_pasportizatsiya_l_napravleniya_truboprovoda_km",
+          "raw_column": "Данные по протяжённости в структуре сети OISPIPE Паспортизация_L направления трубопровода, км",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "dannye_po_protyazhyonnosti_v_strukture_seti_oispipe_pasportizatsiya_naimenovanie_osnovnogo_uchastka_truboprovoda",
+          "raw_column": "Данные по протяжённости в структуре сети OISPIPE Паспортизация_Наименование основного участка трубопровода",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "dannye_po_protyazhyonnosti_v_strukture_seti_oispipe_pasportizatsiya_l_osnovnogo_uchastka_km",
+          "raw_column": "Данные по протяжённости в структуре сети OISPIPE Паспортизация_L основного участка, км",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "dannye_po_protyazhyonnosti_v_strukture_seti_oispipe_pasportizatsiya_naimenovanie_prostogo_uchastka_truboprovoda",
+          "raw_column": "Данные по протяжённости в структуре сети OISPIPE Паспортизация_Наименование простого участка трубопровода",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "parametry_perekachki_qzh_gaza_tys_m3_sut",
+          "raw_column": "Параметры перекачки_Qж.,газа (тыс.) м3/сут",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "parametry_perekachki_qn_t_sut",
+          "raw_column": "Параметры перекачки_Qн. т/сут",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "parametry_perekachki_pct_obvod_tip_perekach_sredy",
+          "raw_column": "Параметры перекачки_% обвод. / тип перекач.среды",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "parametry_perekachki_skorost_korrozii_mm_god",
+          "raw_column": "Параметры перекачки_Скорость коррозии, мм/год",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "parametry_perekachki_rnach_atm",
+          "raw_column": "Параметры перекачки_Рнач., атм",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "parametry_perekachki_rkon_atm",
+          "raw_column": "Параметры перекачки_Ркон., атм",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "parametry_perekachki_rmax_rab_atm_pispyt_na_plotnost",
+          "raw_column": "Параметры перекачки_Рmax раб., атм (Pиспыт. на плотность)",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "parametry_perekachki_udelnye_poteri_p_atm",
+          "raw_column": "Параметры перекачки_Удельные потери P, атм",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "parametry_perekachki_nalichie_nefti_v_truboprovode_tn",
+          "raw_column": "Параметры перекачки_Наличие нефти в трубопроводе, тн",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "parametry_perekachki_nalichie_nefti_v_truboprovode_rasch_tn",
+          "raw_column": "Параметры перекачки_Наличие нефти в трубопроводе (расч), тн",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "parametry_perekachki_kontsentratsiya_iso",
+          "raw_column": "Параметры перекачки_Концентрация ИСО",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "dannye_o_montazhe_stroitelnaya_organizatsiya",
+          "raw_column": "Данные о монтаже_Строительная организация",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "dannye_o_montazhe_vid_soedineniya",
+          "raw_column": "Данные о монтаже_Вид соединения",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "dannye_o_montazhe_sposob_prokladki",
+          "raw_column": "Данные о монтаже_Способ прокладки",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "dannye_o_montazhe_tip_grunta",
+          "raw_column": "Данные о монтаже_Тип грунта",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "dannye_o_montazhe_konstruktsiya_opor",
+          "raw_column": "Данные о монтаже_Конструкция опор",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "dannye_o_montazhe_vysota_truboprovoda_ot_zemli",
+          "raw_column": "Данные о монтаже_Высота трубопровода от земли",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "dannye_o_montazhe_glub_zalozh_m",
+          "raw_column": "Данные о монтаже_Глуб. залож., м",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "dannye_o_montazhe_nalichie_ispolnit_dokumentatsii",
+          "raw_column": "Данные о монтаже_Наличие исполнит. документации",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "dannye_o_montazhe_mesto_khraneniya_isp_dokument",
+          "raw_column": "Данные о монтаже_Место хранения исп.документ",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "dannye_o_montazhe_nomer_ispolnitelnoy_dok",
+          "raw_column": "Данные о монтаже_Номер исполнительной док",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "dannye_o_montazhe_data_zapuska_dlya_gos_organov",
+          "raw_column": "Данные о монтаже_Дата запуска для гос органов",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "dannye_o_montazhe_kontrol_svarnykh_shvov_pct",
+          "raw_column": "Данные о монтаже_Контроль сварных швов, %",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "dannye_o_montazhe_rasstoyanie_mezhdu_oporami_m",
+          "raw_column": "Данные о монтаже_Расстояние между опорами, м",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "material_gostili_tu_na_material",
+          "raw_column": "Материал_ГОСТили ТУ на материал",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "material_zavod_izgotovitel_truby",
+          "raw_column": "Материал_Завод изготовитель трубы",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "material_gruppa_prochnosti",
+          "raw_column": "Материал_Группа прочности",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "material_gruppa_ispolneniya_soglasno_ttk",
+          "raw_column": "Материал_Группа исполнения согласно ТТК",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "material_ekvivalentnaya_sherokhovatost",
+          "raw_column": "Материал_Эквивалентная шероховатость",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "material_vremennoe_soprotivlenie_razryvu_predel_prochnosti_n_mm2",
+          "raw_column": "Материал_Временное сопротивление разрыву (предел прочности), Н/мм2",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "material_predel_tekuchesti_n_mm2",
+          "raw_column": "Материал_Предел текучести, Н/мм2",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "material_minimalnyy_diametr_mm",
+          "raw_column": "Материал_Минимальный диаметр, мм",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "material_maksimalnyy_diametr_mm",
+          "raw_column": "Материал_Максимальный диаметр, мм",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "material_minimalnaya_temperatura_okruzhayushchey_sredy_pri_ekspluatatsii_gradusov_tselsiya",
+          "raw_column": "Материал_Минимальная температура окружающей среды при эксплуатации, градусов Цельсия",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "material_maksimalnaya_temperatura_okruzhayushchey_sredy_pri_ekspluatatsii_gradusov_tselsiya",
+          "raw_column": "Материал_Максимальная температура окружающей среды при эксплуатации, градусов Цельсия",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "material_minimalnaya_temperatura_transportiruemogo_produkta_pri_ekspluatatsii_gradusov_tselsiya",
+          "raw_column": "Материал_Минимальная температура транспортируемого продукта при эксплуатации, градусов Цельсия",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "material_maksimalnaya_temperatura_transportiruemogo_produkta_pri_ekspluatatsii_gradusov_tselsiya",
+          "raw_column": "Материал_Максимальная температура транспортируемого продукта при эксплуатации, градусов Цельсия",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "material_partsialnoe_davlenie_serovodoroda_mpa",
+          "raw_column": "Материал_Парциальное давление сероводорода, МПа",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "material_gruppy_izgotovleniya_dlya_pokazatelya_iz_gost",
+          "raw_column": "Материал_Группы изготовления (для показателя из ГОСТ)",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "material_maksimalnoe_davlenie_mpa",
+          "raw_column": "Материал_Максимальное давление, Мпа",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "material_kcv_udarnaya_vyazkost_pri_20_gradusakh_tselsiya_dzh_sm2",
+          "raw_column": "Материал_KCV ударная вязкость при +20 градусах Цельсия, Дж/см2",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "material_kcv_udarnaya_vyazkost_pri_0_gradusakh_tselsiya_dzh_sm2",
+          "raw_column": "Материал_KCV ударная вязкость при 0 градусах Цельсия, Дж/см2",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "material_kcv_udarnaya_vyazkost_pri_5_gradusakh_tselsiya_dzh_sm2",
+          "raw_column": "Материал_KCV ударная вязкость при -5 градусах Цельсия, Дж/см2",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "material_kcv_udarnaya_vyazkost_pri_10_gradusakh_tselsiya_dzh_sm2",
+          "raw_column": "Материал_KCV ударная вязкость при -10 градусах Цельсия, Дж/см2",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "material_kcv_udarnaya_vyazkost_pri_20_gradusakh_tselsiya_dzh_sm2_fbd97b39",
+          "raw_column": "Материал_KCV ударная вязкость при -20 градусах Цельсия, Дж/см2",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "material_kcv_udarnaya_vyazkost_pri_40_gradusakh_tselsiya_dzh_sm2",
+          "raw_column": "Материал_KCV ударная вязкость при -40 градусах Цельсия, Дж/см2",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "material_kcv_udarnaya_vyazkost_pri_50_gradusakh_tselsiya_dzh_sm2",
+          "raw_column": "Материал_KCV ударная вязкость при -50 градусах Цельсия, Дж/см2",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "material_kcv_udarnaya_vyazkost_pri_60_gradusakh_tselsiya_dzh_sm2",
+          "raw_column": "Материал_KCV ударная вязкость при -60 градусах Цельсия, Дж/см2",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "material_metod_soedineniya",
+          "raw_column": "Материал_Метод соединения",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "material_predel_tekuchesti_pri_rastyazhenii_mpa_ne_menee",
+          "raw_column": "Материал_Предел текучести при растяжении, Мпа, не менее",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "material_predel_prochnosti_pri_rastyazhenii_mpa_ne_menee",
+          "raw_column": "Материал_Предел прочности при растяжении, Мпа, не менее",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "material_modul_uprugosti_pri_rastyazhenii_mpa_ne_menee",
+          "raw_column": "Материал_Модуль упругости при растяжении, МПА, не менее",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "material_temperatura_plavleniya_s_ne_menee",
+          "raw_column": "Материал_Температура плавления, °С, не менее",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "material_davlenie_pri_ispytaniyakh_mpa",
+          "raw_column": "Материал_Давление при испытаниях, Мпа",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "material_razrushayushchee_davlenie_mpa",
+          "raw_column": "Материал_Разрушающее давление, Мпа",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "material_maksimalnoe_dopustimoe_usilie_pri_namotke_kn",
+          "raw_column": "Материал_Максимальное допустимое усилие при намотке, кН",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "material_maksimalnoe_dopustimoe_usilie_pri_rastyazhenii_kn",
+          "raw_column": "Материал_Максимальное допустимое усилие при растяжении, кН",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "material_razrushayushchee_usilie_pri_rastyazhenii_kn",
+          "raw_column": "Материал_Разрушающее усилие при растяжении, кН",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "material_razrushayushchee_usilie_pri_smyatii_kn",
+          "raw_column": "Материал_Разрушающее усилие при смятии, кН",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "material_zhestkost_pri_izgibe_kn_m2",
+          "raw_column": "Материал_Жесткость при изгибе, кН*м2",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "material_radius_izgiba_pri_khranenii_mm_ne_menee",
+          "raw_column": "Материал_Радиус изгиба при хранении, мм, не менее",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "material_maksimalnaya_dlina_odnogo_otrezka_truby_m",
+          "raw_column": "Материал_Максимальная длина одного отрезка трубы, м",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "material_udarnaya_vyazkost_po_sharpi_pri_23_s_kdzh_m²",
+          "raw_column": "Материал_Ударная вязкость по Шарпи ( при 23°С), кДж/м²",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "material_stoykost_k_istiraniyu_mm³_m_ne_bolee",
+          "raw_column": "Материал_Стойкость к истиранию, мм³/м, не более",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "proekt_rrab_atm",
+          "raw_column": "Проект_Рраб., атм",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "proekt_rrab_v_nachale_uchastka_atm",
+          "raw_column": "Проект_Рраб. в начале участка, атм",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "proekt_rrab_v_kontse_uchastka_atm",
+          "raw_column": "Проект_Рраб. в конце участка, атм",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "proekt_temperatura_sredy_v_nachale_uchastka_s",
+          "raw_column": "Проект_Температура среды в начале участка, С",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "proekt_temperatura_sredy_v_kontse_uchastka_s",
+          "raw_column": "Проект_Температура среды в конце участка, С",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "proekt_propusknaya_sposobnost_m3_sut",
+          "raw_column": "Проект_Пропускная способность, м3/сут",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "proekt_proizvoditelnost_po_nefti_t_sut",
+          "raw_column": "Проект_Производительность по нефти, т/сут",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "proekt_proizvoditelnost_po_gazu_m3_sut",
+          "raw_column": "Проект_Производительность по газу, м3/сут",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "proekt_litera_kategorii",
+          "raw_column": "Проект_Литера категории",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "proekt_nalichie_bluzhdayushchikh_tokov",
+          "raw_column": "Проект_Наличие блуждающих токов",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "proekt_rabochie_chertezhi",
+          "raw_column": "Проект_Рабочие чертежи",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "proekt_naimenovanie_proektnoy_organizatsii",
+          "raw_column": "Проект_Наименование проектной организации",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "proekt_shifr_proekta",
+          "raw_column": "Проект_Шифр проекта",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "vnutrennee_pokrytie_zavod_izgotovitel_vnutrennego_pokrytiya",
+          "raw_column": "Внутреннее покрытие_Завод изготовитель внутреннего покрытия",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "vnutrennee_pokrytie_tu_gost_vnutrennego_pokrytiya",
+          "raw_column": "Внутреннее покрытие_ТУ, ГОСТ внутреннего покрытия",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "vnutrennee_pokrytie_usloviya_naneseniya_vnutrennego_pokrytiya",
+          "raw_column": "Внутреннее покрытие_Условия нанесения внутреннего покрытия",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "vnutrennee_pokrytie_konstruktsiya_vnutrennego_pokrytiya_spr",
+          "raw_column": "Внутреннее покрытие_Конструкция внутреннего покрытия спр",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "vnutrennyaya_zashchita_svarnogo_shva_vid_zashchity_svarnogo_styka",
+          "raw_column": "Внутренняя защита сварного шва_Вид защиты сварного стыка",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "vnutrennyaya_zashchita_svarnogo_shva_gost_na_zashchitu_svarnogo_shva",
+          "raw_column": "Внутренняя защита сварного шва_ГОСТ на защиту сварного шва",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "vnutrennyaya_zashchita_svarnogo_shva_zavod_izgotovitel_zashchity_shva",
+          "raw_column": "Внутренняя защита сварного шва_Завод изготовитель защиты шва",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "teploizolyatsiya_tip_teploizolyatsionnogo_pokrytiya",
+          "raw_column": "Теплоизоляция_Тип теплоизоляционного покрытия",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "teploizolyatsiya_tolshchina_izolyatsii",
+          "raw_column": "Теплоизоляция_Толщина изоляции",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "teploizolyatsiya_tolshchina_otsinkovannogo_lista",
+          "raw_column": "Теплоизоляция_Толщина оцинкованного листа",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "naruzhnoe_pokrytie_tip_naruzhnogo_pokrytiya",
+          "raw_column": "Наружное покрытие_Тип наружного покрытия",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "naruzhnoe_pokrytie_zavod_izgotovitel_naruzhnogo_pokrytiya",
+          "raw_column": "Наружное покрытие_Завод изготовитель наружного покрытия",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "naruzhnoe_pokrytie_tu_gost_naruzhnogo_pokrytiya",
+          "raw_column": "Наружное покрытие_ТУ, ГОСТ наружного покрытия",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "naruzhnoe_pokrytie_usloviya_naneseniya_naruzhnogo_pokrytiya",
+          "raw_column": "Наружное покрытие_Условия нанесения наружного покрытия",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "naruzhnoe_pokrytie_konstruktsiya_vneshnego_pokrytiya_spr",
+          "raw_column": "Наружное покрытие_Конструкция внешнего покрытия спр",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "svarka_tip_svarki",
+          "raw_column": "Сварка_Тип сварки",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "svarka_prisadochnye_materialy",
+          "raw_column": "Сварка_Присадочные материалы",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "svarka_gost_na_prisadochnyy_material",
+          "raw_column": "Сварка_ГОСТ на присадочный материал",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "svarka_naruzhnaya_zashchita_shva",
+          "raw_column": "Сварка_Наружная защита шва",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "svarka_zavod_izgotovitel_naruzhnoy_zashchity_shva_spr",
+          "raw_column": "Сварка_Завод-изготовитель наружной защиты шва спр",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "svarka_primechanie_po_svarke",
+          "raw_column": "Сварка_Примечание по сварке",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "dannye_o_sostoyanii_po_stroitelnym_uchastkam_sostoyanie_ekspluatatsii_uchastka",
+          "raw_column": "Данные о состоянии по строительным участкам_Состояние эксплуатации участка",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "dannye_o_sostoyanii_po_stroitelnym_uchastkam_l_deystvuyushchego_osnovogo_uchastka_km",
+          "raw_column": "Данные о состоянии по строительным участкам_L действующего основого участка, км",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "dannye_o_sostoyanii_po_stroitelnym_uchastkam_dopustimoe_rabochee_davlenie_atm",
+          "raw_column": "Данные о состоянии по строительным участкам_Допустимое рабочее давление, атм",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "dannye_o_sostoyanii_po_stroitelnym_uchastkam_rasshifrovka_bezdeystvuyushchego_sostoyaniya",
+          "raw_column": "Данные о состоянии по строительным участкам_Расшифровка  бездействующего состояния",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "dannye_o_sostoyanii_po_stroitelnym_uchastkam_data_izmeneniya_sostoyaniya",
+          "raw_column": "Данные о состоянии по строительным участкам_Дата изменения состояния",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "dannye_o_sostoyanii_po_stroitelnym_uchastkam_god_vyvoda_v_bezdeystvie",
+          "raw_column": "Данные о состоянии по строительным участкам_Год вывода в бездействие",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "dannye_o_sostoyanii_po_stroitelnym_uchastkam_vid_rabot_po_konservatsii",
+          "raw_column": "Данные о состоянии по строительным участкам_Вид работ по консервации",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "dannye_o_sostoyanii_po_stroitelnym_uchastkam_vid_konservanta",
+          "raw_column": "Данные о состоянии по строительным участкам_Вид консерванта",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "dannye_o_sostoyanii_po_stroitelnym_uchastkam_data_okonchaniya_normativnogo_sroka_sluzhby_uchastka_truboprovoda",
+          "raw_column": "Данные о состоянии по строительным участкам_Дата окончания нормативного срока службы участка трубопровода",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "dannye_o_sostoyanii_po_stroitelnym_uchastkam_data_okonchaniya_sroka_sluzhby_uchastka_truboprovoda",
+          "raw_column": "Данные о состоянии по строительным участкам_Дата окончания срока службы участка трубопровода",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "dannye_o_sostoyanii_po_stroitelnym_uchastkam_prikaz",
+          "raw_column": "Данные о состоянии по строительным участкам_Приказ",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "dannye_o_sostoyanii_po_stroitelnym_uchastkam_meropriyatie",
+          "raw_column": "Данные о состоянии по строительным участкам_Мероприятие",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "dannye_o_sostoyanii_po_stroitelnym_uchastkam_otbrakovka",
+          "raw_column": "Данные о состоянии по строительным участкам_Отбраковка",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "dannye_o_sostoyanii_po_stroitelnym_uchastkam_proveren",
+          "raw_column": "Данные о состоянии по строительным участкам_Проверен",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "dannye_o_sostoyanii_po_stroitelnym_uchastkam_primechanie",
+          "raw_column": "Данные о состоянии по строительным участкам_Примечание",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "dannye_o_sostoyanii_po_prostym_uchastkam_sostoyanie_ekspluatatsii_prostogo_uchastka",
+          "raw_column": "Данные о состоянии по простым участкам_Состояние эксплуатации простого участка",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "dannye_o_sostoyanii_po_prostym_uchastkam_rasshifrovka_bezdeystvuyushchego_sostoyaniya",
+          "raw_column": "Данные о состоянии по простым участкам_Расшифровка  бездействующего состояния",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "dannye_o_sostoyanii_po_prostym_uchastkam_data_izmeneniya_sostoyaniya",
+          "raw_column": "Данные о состоянии по простым участкам_Дата изменения состояния",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "dannye_o_sostoyanii_po_prostym_uchastkam_god_vyvoda_v_bezdeystvie",
+          "raw_column": "Данные о состоянии по простым участкам_Год вывода в бездействие",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "dannye_o_sostoyanii_po_prostym_uchastkam_gazovaya_liniya",
+          "raw_column": "Данные о состоянии по простым участкам_Газовая линия",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "dannye_o_sostoyanii_po_prostym_uchastkam_prikaz",
+          "raw_column": "Данные о состоянии по простым участкам_Приказ",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "dannye_o_sostoyanii_po_prostym_uchastkam_meropriyatie",
+          "raw_column": "Данные о состоянии по простым участкам_Мероприятие",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "dannye_o_sostoyanii_po_prostym_uchastkam_peremychka",
+          "raw_column": "Данные о состоянии по простым участкам_Перемычка",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "dannye_o_sostoyanii_po_prostym_uchastkam_vid_rabot_po_vytesneniyu_nefti_spr",
+          "raw_column": "Данные о состоянии по простым участкам_Вид работ по вытеснению нефти спр",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "dannye_o_sostoyanii_po_prostym_uchastkam_obvodnennost_pri_perevode_v_bezdeystvie_pct",
+          "raw_column": "Данные о состоянии по простым участкам_Обводненность при переводе в бездействиe, %",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "dannye_o_sostoyanii_po_prostym_uchastkam_plotnost_nefti_pri_perevode_v_bezdeystvie_kg_m3",
+          "raw_column": "Данные о состоянии по простым участкам_Плотность нефти при переводе в бездействиe, кг/м3",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "dannye_o_sostoyanii_po_prostym_uchastkam_vazhnost_prostogo_uchastka",
+          "raw_column": "Данные о состоянии по простым участкам_Важность простого участка",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "dannye_o_sostoyanii_po_prostym_uchastkam_popravochnyy_koeffitsient_treniya_prisadki",
+          "raw_column": "Данные о состоянии по простым участкам_Поправочный коэффициент трения (присадки)",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "dannye_o_sostoyanii_po_prostym_uchastkam_peredavat_popravochnyy_koeffitsient_treniya",
+          "raw_column": "Данные о состоянии по простым участкам_Передавать \"Поправочный коэффициент трения\"",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "dannye_o_sostoyanii_po_prostym_uchastkam_primechanie",
+          "raw_column": "Данные о состоянии по простым участкам_Примечание",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "dannye_po_ekspertize_promyshlennoy_bezopasnosti_data_provedeniya_posledney_epb",
+          "raw_column": "Данные по экспертизе промышленной безопасности_Дата проведения последней ЭПБ",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "dannye_po_ekspertize_promyshlennoy_bezopasnosti_sposob_diagnostiki",
+          "raw_column": "Данные по экспертизе промышленной безопасности_Способ диагностики",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "dannye_po_ekspertize_promyshlennoy_bezopasnosti_organizatsiya_provodivshaya_poslednyuyu_epb",
+          "raw_column": "Данные по экспертизе промышленной безопасности_Организация, проводившая последнюю ЭПБ",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "dannye_po_ekspertize_promyshlennoy_bezopasnosti_minimalnaya_tolshchina_stenki_mm",
+          "raw_column": "Данные по экспертизе промышленной безопасности_Минимальная толщина стенки, мм",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "dannye_po_ekspertize_promyshlennoy_bezopasnosti_maks_glubina_proniknoveniya_pct",
+          "raw_column": "Данные по экспертизе промышленной безопасности_Макс. глубина проникновения, %",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "dannye_po_ekspertize_promyshlennoy_bezopasnosti_rasschitannyy_ostatochnyy_resurs_let",
+          "raw_column": "Данные по экспертизе промышленной безопасности_Рассчитанный остаточный ресурс, лет",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "dannye_po_ekspertize_promyshlennoy_bezopasnosti_zaklyuchenie",
+          "raw_column": "Данные по экспертизе промышленной безопасности_Заключение",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "dannye_po_ekspertize_promyshlennoy_bezopasnosti_data_provedeniya_sleduyushchey_epb",
+          "raw_column": "Данные по экспертизе промышленной безопасности_Дата проведения следующей ЭПБ",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "dannye_po_ekspertize_promyshlennoy_bezopasnosti_srok_sluzhby_prodlen_do",
+          "raw_column": "Данные по экспертизе промышленной безопасности_Срок службы продлен до",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "dannye_po_ekspertize_promyshlennoy_bezopasnosti_srok_bezopasnoy_ekspluatatsii_prodleno_na_srok_let",
+          "raw_column": "Данные по экспертизе промышленной безопасности_Срок безопасной эксплуатации продлено на срок, лет",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "dannye_po_tekhnicheskomu_obsledovaniyu_data_provedeniya_poslednego_tekhnicheskogo_diagnostirovaniya",
+          "raw_column": "Данные по техническому обследованию_Дата проведения последнего технического диагностирования",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "dannye_po_tekhnicheskomu_obsledovaniyu_sposob_diagnostiki",
+          "raw_column": "Данные по техническому обследованию_Способ диагностики",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "dannye_po_tekhnicheskomu_obsledovaniyu_organizatsiya_provodivshaya_poslednyuyu_diagnostiku",
+          "raw_column": "Данные по техническому обследованию_Организация, проводившая последнюю диагностику",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "dannye_po_tekhnicheskomu_obsledovaniyu_minimalnaya_tolshchina_stenki_mm",
+          "raw_column": "Данные по техническому обследованию_Минимальная толщина стенки, мм",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "dannye_po_tekhnicheskomu_obsledovaniyu_maks_glubina_proniknoveniya_pct",
+          "raw_column": "Данные по техническому обследованию_Макс. глубина проникновения, %",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "dannye_po_tekhnicheskomu_obsledovaniyu_rasschitannyy_ostatochnyy_resurs_let",
+          "raw_column": "Данные по техническому обследованию_Рассчитанный остаточный ресурс, лет",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "dannye_po_tekhnicheskomu_obsledovaniyu_zaklyuchenie",
+          "raw_column": "Данные по техническому обследованию_Заключение",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "dannye_po_tekhnicheskomu_obsledovaniyu_data_provedeniya_sleduyushchego_tekhnicheskogo_diagnostirovaniya",
+          "raw_column": "Данные по техническому обследованию_Дата проведения следующего технического диагностирования",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "dannye_po_tekhnicheskomu_obsledovaniyu_kolichestvo_neustranennykh_defektov_po_rezultatam_tekhnicheskogo_diagnostirovaniya",
+          "raw_column": "Данные по техническому обследованию_Количество неустраненных дефектов по результатам технического диагностирования",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "dannye_po_tekhnicheskomu_obsledovaniyu_srok_bezopasnoy_ekspluatatsii_prodleno_na_srok_let",
+          "raw_column": "Данные по техническому обследованию_Срок безопасной эксплуатации продлено на срок, лет",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "uzt_silami_lnk_uet_data_provedeniya_posledney_tolshchinometrii",
+          "raw_column": "УЗТ (силами ЛНК УЭТ)_Дата проведения последней толщинометрии",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "uzt_silami_lnk_uet_minimalnaya_tolshchina_stenki_mm",
+          "raw_column": "УЗТ (силами ЛНК УЭТ)_Минимальная толщина стенки, мм",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "uzt_silami_lnk_uet_data_provedeniya_sleduyushchey_tolshchinometrii",
+          "raw_column": "УЗТ (силами ЛНК УЭТ)_Дата проведения следующей толщинометрии",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "uzt_silami_lnk_uet_ostatochnyy_resurs_rasschitannyy_uslovnyy_ostatochnyy_resurs_iz_oispipe",
+          "raw_column": "УЗТ (силами ЛНК УЭТ)_Остаточный ресурс (рассчитанный условный остаточный ресурс из OISPIPE)",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "vodnye_i_podvodnye_perekhody_naimenov_vod_obekta",
+          "raw_column": "Водные и подводные переходы_Наименов. вод. объекта",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "vodnye_i_podvodnye_perekhody_naimenovanie_dyukernogo_perekhoda",
+          "raw_column": "Водные и подводные переходы_Наименование дюкерного перехода",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "vodnye_i_podvodnye_perekhody_adres_ot_nachala_osnovnogo_uchastka_m",
+          "raw_column": "Водные и подводные переходы_Адрес от начала основного участка, м",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "vodnye_i_podvodnye_perekhody_shirina_zerkala_vody",
+          "raw_column": "Водные и подводные переходы_Ширина зеркала воды",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "vodnye_i_podvodnye_perekhody_skorost_techeniya",
+          "raw_column": "Водные и подводные переходы_Скорость течения",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "vodnye_i_podvodnye_perekhody_protyazhennost_dyukera_m",
+          "raw_column": "Водные и подводные переходы_Протяженность дюкера, м",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "vodnye_i_podvodnye_perekhody_diametr_mm",
+          "raw_column": "Водные и подводные переходы_Диаметр, мм",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "vodnye_i_podvodnye_perekhody_tolshchina_stenki_mm",
+          "raw_column": "Водные и подводные переходы_Толщина стенки, мм",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "vodnye_i_podvodnye_perekhody_data_vvoda_dyukernogo_perekhoda",
+          "raw_column": "Водные и подводные переходы_Дата ввода дюкерного перехода",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "vodnye_i_podvodnye_perekhody_metod_prokladki",
+          "raw_column": "Водные и подводные переходы_Метод прокладки",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "vodnye_i_podvodnye_perekhody_sudokhodnost",
+          "raw_column": "Водные и подводные переходы_Судоходность",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "vodnye_i_podvodnye_perekhody_nalichie_rezervnykh_liniy_baypas",
+          "raw_column": "Водные и подводные переходы_Наличие резервных линий (байпас)",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "vodnye_i_podvodnye_perekhody_data_poslednego_obsledovaniya",
+          "raw_column": "Водные и подводные переходы_Дата последнего  обследования",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "vodnye_i_podvodnye_perekhody_organizatsiya_provodivshaya_obsledovaniya",
+          "raw_column": "Водные и подводные переходы_Организация, проводившая обследования",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "vodnye_i_podvodnye_perekhody_rezultat_obsledovaniya",
+          "raw_column": "Водные и подводные переходы_Результат обследования",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "vodnye_i_podvodnye_perekhody_minimalnaya_tolshchina_stenki_mm",
+          "raw_column": "Водные и подводные переходы_Минимальная толщина стенки, мм",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "vodnye_i_podvodnye_perekhody_data_sleduyushchego_obsledovaniya",
+          "raw_column": "Водные и подводные переходы_Дата следующего обследования",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "vodnye_i_podvodnye_perekhody_ostatochnyy_resurs",
+          "raw_column": "Водные и подводные переходы_Остаточный ресурс",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "reviziya_data_fakt_rev",
+          "raw_column": "Ревизия_Дата факт. рев.",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "reviziya_periodich_provedeniya_revizii",
+          "raw_column": "Ревизия_Периодич. проведения ревизии",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "reviziya_zaklyuchenie",
+          "raw_column": "Ревизия_Заключение",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "reviziya_srok_sled_rev",
+          "raw_column": "Ревизия_Срок след. рев.",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "ispytanie_data_fakt_ispyt",
+          "raw_column": "Испытание_Дата факт. испыт.",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "ispytanie_srok_sled_ispyt",
+          "raw_column": "Испытание_Срок след. испыт.",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "dannye_po_ochistke_naimenovanie_segmenta_ochistki",
+          "raw_column": "Данные по очистке_Наименование сегмента очистки",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "dannye_po_ochistke_sostoyanie_segmenta_ochistki",
+          "raw_column": "Данные по очистке_Состояние сегмента очистки",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "dannye_po_ochistke_nalichie_kamer_puska_priema_ou",
+          "raw_column": "Данные по очистке_Наличие камер пуска/ приема ОУ",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "dannye_po_ochistke_vozmozhnost_ochistki",
+          "raw_column": "Данные по очистке_Возможность очистки",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "dannye_po_ochistke_data_predydushchey_ochistki",
+          "raw_column": "Данные по очистке_Дата предыдущей очистки",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "dannye_po_ochistke_data_sleduyushchey_ochistki",
+          "raw_column": "Данные по очистке_Дата следующей очистки",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "nalichie_i_sostoyanie_ekhz",
+          "raw_column": "Наличие и состояние ЭХЗ",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "ingibirovanie_nazvanie_zashchishchaemogo_napravleniya",
+          "raw_column": "Ингибирование_Название защищаемого направления",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "ingibirovanie_naimenovanie_segmenta_zashchity",
+          "raw_column": "Ингибирование_Наименование сегмента защиты",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "ingibirovanie_naimenovanie_khim_reagenta",
+          "raw_column": "Ингибирование_Наименование хим.реагента",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "ingibirovanie_tip_ustanovki_dozirovaniya",
+          "raw_column": "Ингибирование_Тип установки дозирования",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "ingibirovanie_raspolozhenie_ustanovki_dozirovaniya",
+          "raw_column": "Ингибирование_Расположение установки дозирования",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "ingibirovanie_zashchishchaetsya",
+          "raw_column": "Ингибирование_Защищается",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "ingibirovanie_data_nachala_ingibitornoy_zashchity",
+          "raw_column": "Ингибирование_Дата начала ингибиторной защиты",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "monitoring_skorosti_korrozii_no_ukk",
+          "raw_column": "Мониторинг скорости коррозии_№ УКК",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "monitoring_skorosti_korrozii_nazvanie_ukk",
+          "raw_column": "Мониторинг скорости коррозии_Название УКК",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "monitoring_skorosti_korrozii_tekhnicheskoe_sostoyanie_ukk",
+          "raw_column": "Мониторинг скорости коррозии_Техническое состояние УКК",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "monitoring_skorosti_korrozii_data_provedeniya_zamera",
+          "raw_column": "Мониторинг скорости коррозии_Дата проведения замера",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "monitoring_skorosti_korrozii_metod_zamera",
+          "raw_column": "Мониторинг скорости коррозии_Метод замера",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "monitoring_skorosti_korrozii_srednyaya_skorost_korrozii_mm_god",
+          "raw_column": "Мониторинг скорости коррозии_Средняя скорость коррозии, мм/год",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "monitoring_skorosti_korrozii_maksimalnaya_skorost_korrozii_mm_god",
+          "raw_column": "Мониторинг скорости коррозии_Максимальная скорость коррозии, мм/год",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "monitoring_skorosti_korrozii_data_provedeniya_sleduyushchego_zamera",
+          "raw_column": "Мониторинг скорости коррозии_Дата проведения следующего замера",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "monitoring_skorosti_korrozii_kolichestvo_opz_v_tekushchem_mesyatse",
+          "raw_column": "Мониторинг скорости коррозии_Количество ОПЗ в текущем месяце",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "khimizatsiya_protsessa_transportirovki_zakachka_reagentov_protiv_aspo_protivoturbulentnaya_prisadka_soleotlozheniya_gidratoobrazovaniya_naimenovanie_khim_reagenta",
+          "raw_column": "Химизация процесса транспортировки (закачка реагентов против АСПО, противотурбулентная присадка, солеотложения, гидратообразования)_Наименование хим.реагента",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "khimizatsiya_protsessa_transportirovki_zakachka_reagentov_protiv_aspo_protivoturbulentnaya_prisadka_soleotlozheniya_gidratoobrazovaniya_tip_ustanovki_dozirovaniya",
+          "raw_column": "Химизация процесса транспортировки (закачка реагентов против АСПО, противотурбулентная присадка, солеотложения, гидратообразования)_Тип установки дозирования",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "khimizatsiya_protsessa_transportirovki_zakachka_reagentov_protiv_aspo_protivoturbulentnaya_prisadka_soleotlozheniya_gidratoobrazovaniya_raspolozhenie_ustanovki_dozirovaniya",
+          "raw_column": "Химизация процесса транспортировки (закачка реагентов против АСПО, противотурбулентная присадка, солеотложения, гидратообразования)_Расположение установки дозирования",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "otkazy_truboprovodov_srok_ekspluatatsii_do_pervogo_otkaza_dn",
+          "raw_column": "Отказы трубопроводов_Срок эксплуатации до первого отказа, дн",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "otkazy_truboprovodov_data_pervogo_otkaza",
+          "raw_column": "Отказы трубопроводов_Дата первого отказа",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "otkazy_truboprovodov_kolichestvo_ne_ustranennykh_vgu",
+          "raw_column": "Отказы трубопроводов_Количество не устраненных ВГУ",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "otkazy_truboprovodov_kolichestvo_otkazov_s_nachala_ekspluatatsii",
+          "raw_column": "Отказы трубопроводов_Количество отказов с начала эксплуатации",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "otkazy_truboprovodov_data_otkaza",
+          "raw_column": "Отказы трубопроводов_Дата отказа",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "otkazy_truboprovodov_prichina_otkaza",
+          "raw_column": "Отказы трубопроводов_Причина отказа",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "otkazy_truboprovodov_faktory_svyazannye_s_organami_gosudarstvennoy_vlasti",
+          "raw_column": "Отказы трубопроводов_Факторы, связанные с органами государственной власти",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "otkazy_truboprovodov_faktory_territorialnogo_raspolozheniya",
+          "raw_column": "Отказы трубопроводов_Факторы территориального расположения",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "otkazy_truboprovodov_kategoriya_rayona",
+          "raw_column": "Отказы трубопроводов_Категория района",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "kolichestvo_otkazov_za_period_za_poslednie_12_mesyatsev",
+          "raw_column": "Количество отказов за период_За последние 12 месяцев",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "kolichestvo_otkazov_za_period_za_poslednie_24_mesyatsa",
+          "raw_column": "Количество отказов за период_За последние 24 месяца",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "kolichestvo_otkazov_za_period_za_poslednie_36_mesyatsev",
+          "raw_column": "Количество отказов за период_За последние 36 месяцев",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "kolichestvo_otkazov_za_period_za_poslednie_48_mesyatsev",
+          "raw_column": "Количество отказов за период_За последние 48 месяцев",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "kolichestvo_otkazov_za_period_za_poslednie_60_mesyatsev",
+          "raw_column": "Количество отказов за период_За последние 60 месяцев",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "kolichestvo_otkazov_za_period_za_poslednie_120_mesyatsev",
+          "raw_column": "Количество отказов за период_За последние 120 месяцев",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "kolichestvo_otkazov_za_period_za_poslednie_180_mesyatsev",
+          "raw_column": "Количество отказов за период_За последние 180 месяцев",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "kolichestvo_otkazov_po_kalendarnym_godam_za_tekushchiy_god",
+          "raw_column": "Количество отказов по календарным годам_За текущий год",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "kolichestvo_otkazov_po_kalendarnym_godam_0_2_let",
+          "raw_column": "Количество отказов по календарным годам_0-2 лет",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "kolichestvo_otkazov_po_kalendarnym_godam_2_3_let",
+          "raw_column": "Количество отказов по календарным годам_2-3 лет",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "kolichestvo_otkazov_po_kalendarnym_godam_3_4_let",
+          "raw_column": "Количество отказов по календарным годам_3-4 лет",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "kolichestvo_otkazov_po_kalendarnym_godam_4_5_let",
+          "raw_column": "Количество отказов по календарным годам_4-5 лет",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "kolichestvo_otkazov_po_kalendarnym_godam_5_10_let",
+          "raw_column": "Количество отказов по календарным годам_5-10 лет",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "kolichestvo_otkazov_po_kalendarnym_godam_10_15_let",
+          "raw_column": "Количество отказов по календарным годам_10-15 лет",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "kolichestvo_otkazov_po_kalendarnym_godam_za_ves_srok_ekspluatatsii",
+          "raw_column": "Количество отказов по календарным годам_За весь срок эксплуатации",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "kolichestvo_defektov_pervoocherednogo_remonta",
+          "raw_column": "Количество дефектов первоочередного ремонта",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "otkazy_kotorye_uchastvuyut_v_raschete_tekh_prioritizatsii_obshchee_chislo_otkazov_sht",
+          "raw_column": "Отказы, которые участвуют в расчете тех приоритизации_Общее число отказов, шт",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "otkazy_kotorye_uchastvuyut_v_raschete_tekh_prioritizatsii_chislo_otkazov_po_oborudovaniyu_sht",
+          "raw_column": "Отказы, которые участвуют в расчете тех приоритизации_Число отказов по оборудованию, шт",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "otkazy_kotorye_uchastvuyut_v_raschete_tekh_prioritizatsii_chislo_otkazov_po_trube_sht",
+          "raw_column": "Отказы, которые участвуют в расчете тех приоритизации_Число отказов по трубе, шт",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "otkazy_kotorye_uchastvuyut_v_raschete_tekh_prioritizatsii_obshchiy_udelnyy_pokazatel_avariynosti_sht_km",
+          "raw_column": "Отказы, которые участвуют в расчете тех приоритизации_Общий удельный показатель аварийности, шт/км",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "otkazy_kotorye_uchastvuyut_v_raschete_tekh_prioritizatsii_udelnyy_pokazatel_avariynosti_po_oborudovaniyu_sht_km",
+          "raw_column": "Отказы, которые участвуют в расчете тех приоритизации_Удельный показатель аварийности по оборудованию, шт/км",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        },
+        {
+          "canonical_column": "otkazy_kotorye_uchastvuyut_v_raschete_tekh_prioritizatsii_udelnyy_pokazatel_avariynosti_po_trube_sht_km",
+          "raw_column": "Отказы, которые участвуют в расчете тех приоритизации_Удельный показатель аварийности по трубе, шт/км",
+          "reason": "Archival passport field; no dated as-of history or approved feature contract"
+        }
+      ]
+    },
+    "profile.csv": {
+      "archival_known_but_excluded": [],
+      "duplicate_raw_headers": [],
+      "empty_raw_headers": [],
+      "parse_issue_records": 0,
+      "policy": "Unrecognized columns remain in the archival table; they are not model features.",
+      "raw_preserved": true,
+      "required_fields_missing": [],
+      "required_fields_present": [
+        "id",
+        "total_distance",
+        "z"
+      ],
+      "source_type": "profile",
+      "unknown_column_count": 0,
+      "unknown_columns": []
+    },
+    "regime.csv": {
+      "archival_known_but_excluded": [],
+      "duplicate_raw_headers": [],
+      "empty_raw_headers": [],
+      "parse_issue_records": 0,
+      "policy": "Unrecognized columns remain in the archival table; they are not model features.",
+      "raw_preserved": true,
+      "required_fields_missing": [],
+      "required_fields_present": [
+        "id"
+      ],
+      "source_type": "corrosion_monitoring",
+      "unknown_column_count": 41,
+      "unknown_columns": [
+        {
+          "canonical_column": "file_name",
+          "raw_column": "File name",
+          "reason": "Archival monitoring field; identity/coverage unresolved"
+        },
+        {
+          "canonical_column": "n_p_p",
+          "raw_column": "N p/p",
+          "reason": "Archival monitoring field; identity/coverage unresolved"
+        },
+        {
+          "canonical_column": "subsidiary_company",
+          "raw_column": "Subsidiary Company",
+          "reason": "Archival monitoring field; identity/coverage unresolved"
+        },
+        {
+          "canonical_column": "enterprise",
+          "raw_column": "Enterprise",
+          "reason": "Archival monitoring field; identity/coverage unresolved"
+        },
+        {
+          "canonical_column": "field",
+          "raw_column": "Field",
+          "reason": "Archival monitoring field; identity/coverage unresolved"
+        },
+        {
+          "canonical_column": "workshop",
+          "raw_column": "Workshop",
+          "reason": "Archival monitoring field; identity/coverage unresolved"
+        },
+        {
+          "canonical_column": "site",
+          "raw_column": "Site",
+          "reason": "Archival monitoring field; identity/coverage unresolved"
+        },
+        {
+          "canonical_column": "pipeline_purpose",
+          "raw_column": "Pipeline Purpose",
+          "reason": "Archival monitoring field; identity/coverage unresolved"
+        },
+        {
+          "canonical_column": "protected_segment_name",
+          "raw_column": "Protected Segment Name",
+          "reason": "Archival monitoring field; identity/coverage unresolved"
+        },
+        {
+          "canonical_column": "protected_simple_section_name",
+          "raw_column": "Protected Simple Section Name",
+          "reason": "Archival monitoring field; identity/coverage unresolved"
+        },
+        {
+          "canonical_column": "ukk_name",
+          "raw_column": "UKK Name",
+          "reason": "Archival monitoring field; identity/coverage unresolved"
+        },
+        {
+          "canonical_column": "measurement_method",
+          "raw_column": "Measurement Method",
+          "reason": "Archival monitoring field; identity/coverage unresolved"
+        },
+        {
+          "canonical_column": "sample_type",
+          "raw_column": "Sample Type",
+          "reason": "Archival monitoring field; identity/coverage unresolved"
+        },
+        {
+          "canonical_column": "average_corrosion_rate_by_gravimetry",
+          "raw_column": "Average Corrosion Rate by Gravimetry",
+          "reason": "Archival monitoring field; identity/coverage unresolved"
+        },
+        {
+          "canonical_column": "maximum_corrosion_rate_by_gravimetry",
+          "raw_column": "Maximum Corrosion Rate by Gravimetry",
+          "reason": "Archival monitoring field; identity/coverage unresolved"
+        },
+        {
+          "canonical_column": "det_of_average_corrosion_rate_by_er",
+          "raw_column": "Det. of Average Corrosion Rate by ER",
+          "reason": "Archival monitoring field; identity/coverage unresolved"
+        },
+        {
+          "canonical_column": "sample_metal_grade",
+          "raw_column": "Sample Metal Grade",
+          "reason": "Archival monitoring field; identity/coverage unresolved"
+        },
+        {
+          "canonical_column": "corrosion_inhibitor_grade",
+          "raw_column": "Corrosion Inhibitor Grade",
+          "reason": "Archival monitoring field; identity/coverage unresolved"
+        },
+        {
+          "canonical_column": "osi_in_water_phase",
+          "raw_column": "OSI in Water Phase",
+          "reason": "Archival monitoring field; identity/coverage unresolved"
+        },
+        {
+          "canonical_column": "flow_phase_state",
+          "raw_column": "Flow Phase State",
+          "reason": "Archival monitoring field; identity/coverage unresolved"
+        },
+        {
+          "canonical_column": "water_content_0",
+          "raw_column": "Water Content 0",
+          "reason": "Archival monitoring field; identity/coverage unresolved"
+        },
+        {
+          "canonical_column": "state_0",
+          "raw_column": "State 0",
+          "reason": "Archival monitoring field; identity/coverage unresolved"
+        },
+        {
+          "canonical_column": "water_content_50",
+          "raw_column": "Water Content 50",
+          "reason": "Archival monitoring field; identity/coverage unresolved"
+        },
+        {
+          "canonical_column": "state_50",
+          "raw_column": "State 50",
+          "reason": "Archival monitoring field; identity/coverage unresolved"
+        },
+        {
+          "canonical_column": "water_content_100",
+          "raw_column": "Water Content 100",
+          "reason": "Archival monitoring field; identity/coverage unresolved"
+        },
+        {
+          "canonical_column": "state_100",
+          "raw_column": "State 100",
+          "reason": "Archival monitoring field; identity/coverage unresolved"
+        },
+        {
+          "canonical_column": "water_content_150",
+          "raw_column": "Water Content 150",
+          "reason": "Archival monitoring field; identity/coverage unresolved"
+        },
+        {
+          "canonical_column": "state_150",
+          "raw_column": "State 150",
+          "reason": "Archival monitoring field; identity/coverage unresolved"
+        },
+        {
+          "canonical_column": "water_content_200",
+          "raw_column": "Water Content 200",
+          "reason": "Archival monitoring field; identity/coverage unresolved"
+        },
+        {
+          "canonical_column": "state_200",
+          "raw_column": "State 200",
+          "reason": "Archival monitoring field; identity/coverage unresolved"
+        },
+        {
+          "canonical_column": "hardness",
+          "raw_column": "Hardness",
+          "reason": "Archival monitoring field; identity/coverage unresolved"
+        },
+        {
+          "canonical_column": "ca2",
+          "raw_column": "Ca2+",
+          "reason": "Archival monitoring field; identity/coverage unresolved"
+        },
+        {
+          "canonical_column": "mg2",
+          "raw_column": "Mg2+",
+          "reason": "Archival monitoring field; identity/coverage unresolved"
+        },
+        {
+          "canonical_column": "cl",
+          "raw_column": "Cl-",
+          "reason": "Archival monitoring field; identity/coverage unresolved"
+        },
+        {
+          "canonical_column": "so4",
+          "raw_column": "SO4-",
+          "reason": "Archival monitoring field; identity/coverage unresolved"
+        },
+        {
+          "canonical_column": "hco3",
+          "raw_column": "HCO3-",
+          "reason": "Archival monitoring field; identity/coverage unresolved"
+        },
+        {
+          "canonical_column": "total_fe",
+          "raw_column": "Total Fe",
+          "reason": "Archival monitoring field; identity/coverage unresolved"
+        },
+        {
+          "canonical_column": "o2",
+          "raw_column": "O2",
+          "reason": "Archival monitoring field; identity/coverage unresolved"
+        },
+        {
+          "canonical_column": "h2s",
+          "raw_column": "H2S",
+          "reason": "Archival monitoring field; identity/coverage unresolved"
+        },
+        {
+          "canonical_column": "svb_cell_content",
+          "raw_column": "SVB Cell Content",
+          "reason": "Archival monitoring field; identity/coverage unresolved"
+        },
+        {
+          "canonical_column": "mechanical_impurities",
+          "raw_column": "Mechanical Impurities",
+          "reason": "Archival monitoring field; identity/coverage unresolved"
+        }
+      ]
+    },
+    "tech_mode_for_embedings_with_length_with_temperatures_ids16.csv": {
+      "archival_known_but_excluded": [],
+      "duplicate_raw_headers": [],
+      "empty_raw_headers": [],
+      "parse_issue_records": 0,
+      "policy": "Unrecognized columns remain in the archival table; they are not model features.",
+      "raw_preserved": true,
+      "required_fields_missing": [],
+      "required_fields_present": [
+        "date",
+        "id",
+        "q_liquid",
+        "watercut_pct"
+      ],
+      "source_type": "hydraulic_regime",
+      "unknown_column_count": 0,
+      "unknown_columns": []
+    },
+    "uzt.csv": {
+      "archival_known_but_excluded": [],
+      "duplicate_raw_headers": [],
+      "empty_raw_headers": [],
+      "parse_issue_records": 0,
+      "policy": "Unrecognized columns remain in the archival table; they are not model features.",
+      "raw_preserved": true,
+      "required_fields_missing": [],
+      "required_fields_present": [
+        "date",
+        "distance",
+        "id",
+        "residual_wall_thickness"
+      ],
+      "source_type": "uzt",
+      "unknown_column_count": 0,
+      "unknown_columns": []
+    },
+    "vtd.csv": {
+      "archival_known_but_excluded": [],
+      "duplicate_raw_headers": [],
+      "empty_raw_headers": [],
+      "parse_issue_records": 0,
+      "policy": "Unrecognized columns remain in the archival table; they are not model features.",
+      "raw_preserved": true,
+      "required_fields_missing": [],
+      "required_fields_present": [
+        "date",
+        "distance",
+        "id",
+        "residual_wall_thickness"
+      ],
+      "source_type": "vtd",
+      "unknown_column_count": 27,
+      "unknown_columns": [
+        {
+          "canonical_column": "vtd_date_raw",
+          "raw_column": "vtd_date_raw",
+          "reason": "Archival VTD field; no approved defect-matching or predictor contract"
+        },
+        {
+          "canonical_column": "accumulated_value",
+          "raw_column": "accumulated_value",
+          "reason": "Archival VTD field; no approved defect-matching or predictor contract"
+        },
+        {
+          "canonical_column": "section_length",
+          "raw_column": "section_length",
+          "reason": "Archival VTD field; no approved defect-matching or predictor contract"
+        },
+        {
+          "canonical_column": "is_beyond_pot",
+          "raw_column": "is_beyond_pot",
+          "reason": "Archival VTD field; no approved defect-matching or predictor contract"
+        },
+        {
+          "canonical_column": "feature_description",
+          "raw_column": "Feature Description",
+          "reason": "Archival VTD field; no approved defect-matching or predictor contract"
+        },
+        {
+          "canonical_column": "trait",
+          "raw_column": "trait",
+          "reason": "Archival VTD field; no approved defect-matching or predictor contract"
+        },
+        {
+          "canonical_column": "relative_distance",
+          "raw_column": "Relative Distance",
+          "reason": "Archival VTD field; no approved defect-matching or predictor contract"
+        },
+        {
+          "canonical_column": "pipe_length",
+          "raw_column": "Pipe Length",
+          "reason": "Archival VTD field; no approved defect-matching or predictor contract"
+        },
+        {
+          "canonical_column": "class",
+          "raw_column": "Class",
+          "reason": "Archival VTD field; no approved defect-matching or predictor contract"
+        },
+        {
+          "canonical_column": "comment",
+          "raw_column": "Comment",
+          "reason": "Archival VTD field; no approved defect-matching or predictor contract"
+        },
+        {
+          "canonical_column": "erf",
+          "raw_column": "ERF",
+          "reason": "Archival VTD field; no approved defect-matching or predictor contract"
+        },
+        {
+          "canonical_column": "psafe",
+          "raw_column": "Psafe",
+          "reason": "Archival VTD field; no approved defect-matching or predictor contract"
+        },
+        {
+          "canonical_column": "repair_time_years",
+          "raw_column": "Repair Time (Years)",
+          "reason": "Archival VTD field; no approved defect-matching or predictor contract"
+        },
+        {
+          "canonical_column": "repair_method",
+          "raw_column": "Repair Method",
+          "reason": "Archival VTD field; no approved defect-matching or predictor contract"
+        },
+        {
+          "canonical_column": "repair_parameter_m",
+          "raw_column": "Repair parameter, m",
+          "reason": "Archival VTD field; no approved defect-matching or predictor contract"
+        },
+        {
+          "canonical_column": "latitude",
+          "raw_column": "Latitude",
+          "reason": "Archival VTD field; no approved defect-matching or predictor contract"
+        },
+        {
+          "canonical_column": "longitude",
+          "raw_column": "Longitude",
+          "reason": "Archival VTD field; no approved defect-matching or predictor contract"
+        },
+        {
+          "canonical_column": "height",
+          "raw_column": "Height",
+          "reason": "Archival VTD field; no approved defect-matching or predictor contract"
+        },
+        {
+          "canonical_column": "inspection_number",
+          "raw_column": "Inspection Number",
+          "reason": "Archival VTD field; no approved defect-matching or predictor contract"
+        },
+        {
+          "canonical_column": "distance_adjusted",
+          "raw_column": "Distance_adjusted",
+          "reason": "Archival VTD field; no approved defect-matching or predictor contract"
+        },
+        {
+          "canonical_column": "cluster",
+          "raw_column": "Cluster",
+          "reason": "Archival VTD field; no approved defect-matching or predictor contract"
+        },
+        {
+          "canonical_column": "prerepair_classification",
+          "raw_column": "PreRepair classification",
+          "reason": "Archival VTD field; no approved defect-matching or predictor contract"
+        },
+        {
+          "canonical_column": "reference_point_1_against_flow",
+          "raw_column": "Reference Point 1 (Against Flow)",
+          "reason": "Archival VTD field; no approved defect-matching or predictor contract"
+        },
+        {
+          "canonical_column": "distance_to_reference_point_1_m",
+          "raw_column": "Distance to Reference Point 1, m",
+          "reason": "Archival VTD field; no approved defect-matching or predictor contract"
+        },
+        {
+          "canonical_column": "reference_point_2_with_flow",
+          "raw_column": "Reference Point 2 (With Flow)",
+          "reason": "Archival VTD field; no approved defect-matching or predictor contract"
+        },
+        {
+          "canonical_column": "distance_to_reference_point_2_m",
+          "raw_column": "Distance to Reference Point 2, m",
+          "reason": "Archival VTD field; no approved defect-matching or predictor contract"
+        },
+        {
+          "canonical_column": "recommended_repair_method",
+          "raw_column": "Recommended Repair Method",
+          "reason": "Archival VTD field; no approved defect-matching or predictor contract"
+        }
+      ]
+    }
+  },
+  "source_inventory": {
+    "policy": "Schema fingerprint decides meaning; filenames are hints. Conflicting copies fail closed.",
+    "sources": [
+      {
+        "adapter_version": "adapter-passport-1",
+        "delimiter": ",",
+        "display_name": "passport",
+        "encoding": "utf-8",
+        "filename_hints": [
+          "passport.csv"
+        ],
+        "filename_schema_conflict": false,
+        "limitations": [],
+        "optional_fields": [
+          "steel_grade",
+          "internal_coating",
+          "commissioning_date",
+          "main_pipeline_id",
+          "direction_id",
+          "direction_name",
+          "pipeline_name",
+          "length_accounting_m",
+          "scrap_wall_thickness_mm"
+        ],
+        "path": "C:\\Program Files\\PipeTwin\\data\\passport.csv",
+        "record_count": 16,
+        "record_count_summary": 16,
+        "required_fields": [
+          "id",
+          "length_km",
+          "diameter_mm",
+          "nominal_thickness_mm"
+        ],
+        "role": "input",
+        "schema_fingerprint": "3c23361b75656e2c6a7a31d8f57d6f10373c59f1f06ebfb5709810f5a3e24592",
+        "schema_version": "passport-v1",
+        "selected": true,
+        "sha256": "c132ed4ab2974b72d2be308b892ccabb703bc8f3a944a3d7ac5badb67d863017",
+        "size_bytes": 88965,
+        "source_type": "passport"
+      },
+      {
+        "adapter_version": "adapter-profile-1",
+        "delimiter": ",",
+        "display_name": "route profile",
+        "encoding": "utf-8",
+        "filename_hints": [
+          "profile.csv"
+        ],
+        "filename_schema_conflict": false,
+        "limitations": [],
+        "optional_fields": [
+          "lon",
+          "lat"
+        ],
+        "path": "C:\\Program Files\\PipeTwin\\data\\profile.csv",
+        "record_count": 20218,
+        "record_count_summary": 20218,
+        "required_fields": [
+          "id",
+          "total_distance",
+          "z"
+        ],
+        "role": "input",
+        "schema_fingerprint": "78c9989d4901c84676e07a54c4b18fdb6edb0c7b54e59f2797fa970a86bc2991",
+        "schema_version": "profile-v1",
+        "selected": true,
+        "sha256": "3c68f09fb0d9ac575a55506841d5b25fe23c012a5b9f9768a9098a7a704a313f",
+        "size_bytes": 1216378,
+        "source_type": "profile"
+      },
+      {
+        "adapter_version": "adapter-vtd-1",
+        "delimiter": ",",
+        "display_name": "VTD in-line inspection",
+        "encoding": "utf-8",
+        "filename_hints": [
+          "vtd.csv"
+        ],
+        "filename_schema_conflict": false,
+        "limitations": [],
+        "optional_fields": [
+          "row_id",
+          "distance_raw",
+          "wall_thickness",
+          "defect_depth_pct",
+          "defect_depth",
+          "angle",
+          "defect_length",
+          "defect_width",
+          "defect_type",
+          "section_number",
+          "feature_number"
+        ],
+        "path": "C:\\Program Files\\PipeTwin\\data\\vtd.csv",
+        "record_count": 48291,
+        "record_count_summary": 48291,
+        "required_fields": [
+          "id",
+          "date",
+          "distance",
+          "residual_wall_thickness"
+        ],
+        "role": "input",
+        "schema_fingerprint": "165d6f7e8f7fd3e5d4e6e4be7c7222b3887260d196c4925cedfb6fb78d7e1b73",
+        "schema_version": "vtd-v1",
+        "selected": true,
+        "sha256": "c584d7ae0eb80e43970ec387c814424a2df081c41bb32f9c7e5c2d2fefcbbbf4",
+        "size_bytes": 21316966,
+        "source_type": "vtd"
+      },
+      {
+        "adapter_version": "adapter-uzt-1",
+        "delimiter": ",",
+        "display_name": "UZT ultrasonic measurements",
+        "encoding": "utf-8",
+        "filename_hints": [
+          "uzt.csv"
+        ],
+        "filename_schema_conflict": false,
+        "limitations": [],
+        "optional_fields": [
+          "control_section_num",
+          "start_distance",
+          "control_point_id",
+          "point_num",
+          "measurement_id",
+          "angle"
+        ],
+        "path": "C:\\Program Files\\PipeTwin\\data\\uzt.csv",
+        "record_count": 67,
+        "record_count_summary": 67,
+        "required_fields": [
+          "id",
+          "date",
+          "distance",
+          "residual_wall_thickness"
+        ],
+        "role": "input",
+        "schema_fingerprint": "6574dbfc018e0292067362ca52cf930b2073cde47bb9fb88508c1c61fda7271a",
+        "schema_version": "uzt-v1",
+        "selected": true,
+        "sha256": "162bf7fb6dfab70c2af3ca85735a99ae0fa5e6c936f8f764c4a8ef3f2b295961",
+        "size_bytes": 4479,
+        "source_type": "uzt"
+      },
+      {
+        "adapter_version": "adapter-hydraulic-1",
+        "delimiter": ",",
+        "display_name": "technology/hydraulic regime (Techmod)",
+        "encoding": "utf-8",
+        "filename_hints": [
+          "tech_mode_for_embedings_with_length_with_temperatures_ids16.csv"
+        ],
+        "filename_schema_conflict": false,
+        "limitations": [],
+        "optional_fields": [
+          "p_start_fact",
+          "p_end_fact",
+          "p_start",
+          "p_end",
+          "q_oil",
+          "q_gas",
+          "gas_content_rate",
+          "v_liquid_true",
+          "v_mix",
+          "flow_regime",
+          "fill_coefficient",
+          "density_liquid_work",
+          "density_oil",
+          "viscosity_liquid_work",
+          "pit_corrosion_intensity",
+          "length",
+          "diameter_mm",
+          "t_start",
+          "t_end",
+          "t_mix"
+        ],
+        "path": "C:\\Program Files\\PipeTwin\\data\\tech_mode_for_embedings_with_length_with_temperatures_ids16.csv",
+        "record_count": 39052,
+        "record_count_summary": 39052,
+        "required_fields": [
+          "id",
+          "date",
+          "q_liquid",
+          "watercut_pct"
+        ],
+        "role": "input",
+        "schema_fingerprint": "bca9fa6dbab574c72b0393f7693db95487fd19956d9fe06ecc2d0448243302b5",
+        "schema_version": "hydraulic-v1",
+        "selected": true,
+        "sha256": "ebb1cdbdab0ead66fcbc48c59ce04386f5799ea4415a5a0417306e9e998b3c89",
+        "size_bytes": 6876726,
+        "source_type": "hydraulic_regime"
+      },
+      {
+        "adapter_version": "adapter-monitoring-1",
+        "delimiter": ",",
+        "display_name": "corrosion/chemistry monitoring (RepCorr)",
+        "encoding": "utf-8",
+        "filename_hints": [
+          "regime.csv"
+        ],
+        "filename_schema_conflict": true,
+        "limitations": [],
+        "optional_fields": [
+          "year",
+          "sample_installation_date",
+          "sample_removal_date",
+          "ukk_number",
+          "ukk_distance",
+          "length",
+          "diameter",
+          "wall_thickness",
+          "flow_liquid",
+          "watercut_pct",
+          "exposure_days",
+          "direction_name",
+          "fluid_density",
+          "protective_effect_pct",
+          "ph",
+          "co2_water",
+          "total_mineralization"
+        ],
+        "path": "C:\\Program Files\\PipeTwin\\data\\regime.csv",
+        "record_count": 495,
+        "record_count_summary": 495,
+        "required_fields": [
+          "id"
+        ],
+        "role": "input",
+        "schema_fingerprint": "263e8242574baa1ddae2adbfec6752381b9db9157fec9112c2f1e24bbf4f511f",
+        "schema_version": "monitoring-v1",
+        "selected": true,
+        "sha256": "12208a887775cda5763180df04f43dd9fb4dcc1952d9d959b2fd14ddccb6937a",
+        "size_bytes": 219005,
+        "source_type": "corrosion_monitoring"
+      }
+    ],
+    "version": "source-inventory-v2",
+    "warnings": [
+      "filename/schema conflict: regime.csv looks like corrosion_monitoring by contents; filename also appears in another source's alias list"
+    ]
+  },
+  "spatial_coverage": {
+    "endpoint_rule": "a point exactly at pipe length maps to the final segment; no extra endpoint segment",
+    "grid_length_m": 46604.700000000004,
+    "grid_pipes": 16,
+    "grid_segments": 4668,
+    "out_of_pipe": {
+      "uzt_rejected": {
+        "above_pipe_length": 0,
+        "negative_coordinates": 0,
+        "rows": 0
+      },
+      "vtd_rejected": {
+        "above_pipe_length": 247,
+        "negative_coordinates": 4,
+        "rows": 251
+      }
+    },
+    "profile": {
+      "duplicate_rows_removed": 38,
+      "max_gap_m": 12.781535789999964,
+      "pipes": 16,
+      "pipes_missing_profile": [],
+      "rows": 20180,
+      "short_pipes_under_10m": 0
+    },
+    "short_final_segments": 16,
+    "zero_or_negative_segments": 0
+  },
+  "vtd_campaigns": {
+    "campaigns": [
+      {
+        "above_nominal_observations": 0,
+        "date": "2018-09-23 00:00:00",
+        "id": 1250009490,
+        "min_residual_mm": 5.53,
+        "missing_residual_observations": 3,
+        "observations": 16,
+        "precommissioning_observations": 0,
+        "segments_with_eligible_measurement": 4,
+        "segments_with_observation": 5
+      },
+      {
+        "above_nominal_observations": 0,
+        "date": "2022-07-06 00:00:00",
+        "id": 1250009490,
+        "min_residual_mm": 5.36,
+        "missing_residual_observations": 4,
+        "observations": 223,
+        "precommissioning_observations": 0,
+        "segments_with_eligible_measurement": 5,
+        "segments_with_observation": 5
+      },
+      {
+        "above_nominal_observations": 0,
+        "date": "2023-12-01 00:00:00",
+        "id": 1250009490,
+        "min_residual_mm": 4.95,
+        "missing_residual_observations": 26,
+        "observations": 369,
+        "precommissioning_observations": 0,
+        "segments_with_eligible_measurement": 5,
+        "segments_with_observation": 5
+      },
+      {
+        "above_nominal_observations": 0,
+        "date": "2023-08-12 00:00:00",
+        "id": 1250009584,
+        "min_residual_mm": 3.9,
+        "missing_residual_observations": 24,
+        "observations": 51,
+        "precommissioning_observations": 0,
+        "segments_with_eligible_measurement": 19,
+        "segments_with_observation": 39
+      },
+      {
+        "above_nominal_observations": 0,
+        "date": "2023-08-12 00:00:00",
+        "id": 1250009587,
+        "min_residual_mm": 4.91,
+        "missing_residual_observations": 0,
+        "observations": 3,
+        "precommissioning_observations": 0,
+        "segments_with_eligible_measurement": 3,
+        "segments_with_observation": 3
+      },
+      {
+        "above_nominal_observations": 0,
+        "date": "2018-09-23 00:00:00",
+        "id": 1250011604,
+        "min_residual_mm": 4.77,
+        "missing_residual_observations": 6,
+        "observations": 200,
+        "precommissioning_observations": 0,
+        "segments_with_eligible_measurement": 34,
+        "segments_with_observation": 37
+      },
+      {
+        "above_nominal_observations": 0,
+        "date": "2022-07-06 00:00:00",
+        "id": 1250011604,
+        "min_residual_mm": 5.28,
+        "missing_residual_observations": 16,
+        "observations": 2331,
+        "precommissioning_observations": 0,
+        "segments_with_eligible_measurement": 48,
+        "segments_with_observation": 49
+      },
+      {
+        "above_nominal_observations": 0,
+        "date": "2023-12-01 00:00:00",
+        "id": 1250011604,
+        "min_residual_mm": 4.62,
+        "missing_residual_observations": 59,
+        "observations": 2825,
+        "precommissioning_observations": 0,
+        "segments_with_eligible_measurement": 48,
+        "segments_with_observation": 50
+      },
+      {
+        "above_nominal_observations": 3,
+        "date": "2014-12-28 00:00:00",
+        "id": 1250013653,
+        "min_residual_mm": 1.81,
+        "missing_residual_observations": 5,
+        "observations": 4490,
+        "precommissioning_observations": 4490,
+        "segments_with_eligible_measurement": 64,
+        "segments_with_observation": 64
+      },
+      {
+        "above_nominal_observations": 0,
+        "date": "2014-12-28 00:00:00",
+        "id": 1250013655,
+        "min_residual_mm": 1.8,
+        "missing_residual_observations": 3,
+        "observations": 3133,
+        "precommissioning_observations": 3133,
+        "segments_with_eligible_measurement": 55,
+        "segments_with_observation": 55
+      },
+      {
+        "above_nominal_observations": 0,
+        "date": "2014-12-28 00:00:00",
+        "id": 1250013657,
+        "min_residual_mm": 2.17,
+        "missing_residual_observations": 7,
+        "observations": 1386,
+        "precommissioning_observations": 1386,
+        "segments_with_eligible_measurement": 132,
+        "segments_with_observation": 133
+      },
+      {
+        "above_nominal_observations": 21,
+        "date": "2018-09-23 00:00:00",
+        "id": 1250022871,
+        "min_residual_mm": 3.76,
+        "missing_residual_observations": 23,
+        "observations": 2280,
+        "precommissioning_observations": 0,
+        "segments_with_eligible_measurement": 334,
+        "segments_with_observation": 340
+      },
+      {
+        "above_nominal_observations": 0,
+        "date": "2022-07-06 00:00:00",
+        "id": 1250022871,
+        "min_residual_mm": 3.52,
+        "missing_residual_observations": 121,
+        "observations": 26110,
+        "precommissioning_observations": 0,
+        "segments_with_eligible_measurement": 508,
+        "segments_with_observation": 509
+      },
+      {
+        "above_nominal_observations": 0,
+        "date": "2014-12-28 00:00:00",
+        "id": 1250022875,
+        "min_residual_mm": 1.67,
+        "missing_residual_observations": 3,
+        "observations": 3440,
+        "precommissioning_observations": 3440,
+        "segments_with_eligible_measurement": 95,
+        "segments_with_observation": 95
+      },
+      {
+        "above_nominal_observations": 0,
+        "date": "2014-12-28 00:00:00",
+        "id": 1250022876,
+        "min_residual_mm": 2.34,
+        "missing_residual_observations": 2,
+        "observations": 1036,
+        "precommissioning_observations": 1036,
+        "segments_with_eligible_measurement": 51,
+        "segments_with_observation": 51
+      },
+      {
+        "above_nominal_observations": 0,
+        "date": "2023-08-12 00:00:00",
+        "id": 1250028931,
+        "min_residual_mm": 4.32,
+        "missing_residual_observations": 6,
+        "observations": 20,
+        "precommissioning_observations": 0,
+        "segments_with_eligible_measurement": 4,
+        "segments_with_observation": 7
+      },
+      {
+        "above_nominal_observations": 0,
+        "date": "2023-08-12 00:00:00",
+        "id": 1250028932,
+        "min_residual_mm": 4.38,
+        "missing_residual_observations": 5,
+        "observations": 19,
+        "precommissioning_observations": 0,
+        "segments_with_eligible_measurement": 9,
+        "segments_with_observation": 14
+      },
+      {
+        "above_nominal_observations": 0,
+        "date": "2023-08-12 00:00:00",
+        "id": 1250028933,
+        "min_residual_mm": 4.93,
+        "missing_residual_observations": 1,
+        "observations": 2,
+        "precommissioning_observations": 0,
+        "segments_with_eligible_measurement": 1,
+        "segments_with_observation": 2
+      },
+      {
+        "above_nominal_observations": 0,
+        "date": "2023-08-12 00:00:00",
+        "id": 1250028934,
+        "min_residual_mm": 3.25,
+        "missing_residual_observations": 17,
+        "observations": 58,
+        "precommissioning_observations": 0,
+        "segments_with_eligible_measurement": 31,
+        "segments_with_observation": 42
+      },
+      {
+        "above_nominal_observations": 0,
+        "date": "2023-08-12 00:00:00",
+        "id": 1250028935,
+        "min_residual_mm": 4.81,
+        "missing_residual_observations": 13,
+        "observations": 48,
+        "precommissioning_observations": 0,
+        "segments_with_eligible_measurement": 27,
+        "segments_with_observation": 38
+      }
+    ],
+    "note": "Sparse campaigns have different ascertainment; observation counts are not independent defect counts."
+  }
+}

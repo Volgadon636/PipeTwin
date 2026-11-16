@@ -1,0 +1,71 @@
+{
+  "primary": "multiscale_terrain",
+  "schemes": {
+    "S2_LOSO_pooled": {
+      "multiscale_terrain": {
+        "baseline": {
+          "bias_mm": -0.1210487387347141,
+          "mae_mm": 0.44962603423569575,
+          "pearson_r": 0.09359841726762078,
+          "pearson_reason": "",
+          "pearson_squared": 0.008760663715003652,
+          "prediction_std": 0.11126193619242135,
+          "rmse_mm": 0.5654739387860497
+        },
+        "candidate": {
+          "bias_mm": -0.1351561861415764,
+          "mae_mm": 0.4656045051430948,
+          "pearson_r": 0.07569729264270686,
+          "pearson_reason": "",
+          "pearson_squared": 0.005730080113435602,
+          "prediction_std": 0.18504213509408665,
+          "rmse_mm": 0.584185565828459
+        },
+        "changed_predictions": 372,
+        "delta_pearson_squared": -0.0030305836015680496,
+        "delta_vs_reference_candidate": -0.003030583584854837,
+        "independent_parent_count": 1,
+        "max_abs_affine_residual_mm": 0.5986014807354207,
+        "n": 372,
+        "profile_count": 3,
+        "reference_candidate": {
+          "name": "basin_ranks",
+          "r2": 0.00876066369829044
+        }
+      }
+    },
+    "S2_retro_2023": {
+      "multiscale_terrain": {
+        "baseline": {
+          "bias_mm": 0.31034341905133306,
+          "mae_mm": 0.314582974780016,
+          "pearson_r": 0.20206882895630215,
+          "pearson_reason": "",
+          "pearson_squared": 0.0408318116357713,
+          "prediction_std": 0.10514386144950326,
+          "rmse_mm": 0.45898722934590697
+        },
+        "candidate": {
+          "bias_mm": 0.30526273282710664,
+          "mae_mm": 0.39201964637756076,
+          "pearson_r": 0.03855830030879269,
+          "pearson_reason": "",
+          "pearson_squared": 0.0014867425227030424,
+          "prediction_std": 0.3060982833850866,
+          "rmse_mm": 0.544671934583473
+        },
+        "changed_predictions": 94,
+        "delta_pearson_squared": -0.03934506911306826,
+        "delta_vs_reference_candidate": -0.03934506911306954,
+        "independent_parent_count": 1,
+        "max_abs_affine_residual_mm": 1.0448629030294079,
+        "n": 94,
+        "profile_count": 7,
+        "reference_candidate": {
+          "name": "spatial_no_temperature_centered",
+          "r2": 0.04083181163577258
+        }
+      }
+    }
+  }
+}

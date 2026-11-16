@@ -1,0 +1,11 @@
+{
+  "description": "Train original S1C with and without neighboring minimum/count inputs; apply only the difference of the two unfaded Ridge corrections to joint_blend.",
+  "primary": "multiscale",
+  "radii_m": [
+    10,
+    20,
+    50,
+    100
+  ],
+  "training": "Same historical rows, feature fit and regularization as the unmodified S1C auxiliary. Neighborhoods are same-section, latest campaign only, and exclude own segment. No independently confirmed insert boundaries are present in this dataset."
+}

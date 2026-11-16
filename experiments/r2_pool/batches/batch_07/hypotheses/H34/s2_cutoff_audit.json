@@ -1,0 +1,8 @@
+{
+  "earliest_excluded_s1_repeat_label": "2022-07-06",
+  "excluded_s1_repeat_labels_at_or_after_boundary": 357,
+  "implementation": "blocked_validation",
+  "result": "not_evaluated",
+  "s1_repeat_labels_strictly_before_boundary": 0,
+  "s2_frozen_training_boundary": "2022-07-01"
+}

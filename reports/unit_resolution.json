@@ -1,0 +1,300 @@
+{
+  "config_version": "unit-policy-v1",
+  "conversions": [
+    {
+      "field": "length_km -> length_m",
+      "rows": 16,
+      "rule_id": "UNIT-0001",
+      "status": "verified"
+    },
+    {
+      "field": "defect_depth_pct fraction -> percent",
+      "rows": 2473,
+      "rule_id": "UNIT-0008",
+      "status": "conditional_campaign"
+    },
+    {
+      "field": "Techmod d_mm m -> mm",
+      "rows": 39052,
+      "rule_id": "UNIT-0010",
+      "status": "verified"
+    },
+    {
+      "field": "watercut_pct -> water_fraction",
+      "rows": 0,
+      "rule_id": "UNIT-0011",
+      "status": "derived_only"
+    }
+  ],
+  "monitoring_unit_anomalies": {
+    "fluid_density_suspect_rows": 3
+  },
+  "policy": "No conversion is applied from a filename, a single character count, or an inferred locale.",
+  "rules": [
+    {
+      "conversion": "multiply by 1000",
+      "field": "length_km",
+      "normalized_unit": "m",
+      "raw_unit": "km",
+      "rule_id": "UNIT-0001",
+      "source_type": "passport",
+      "status": "verified",
+      "verification": "grid length = round(length_km*1000, 6); last segment truncated"
+    },
+    {
+      "conversion": "",
+      "field": "diameter_mm",
+      "normalized_unit": "mm",
+      "raw_unit": "mm",
+      "rule_id": "UNIT-0002",
+      "source_type": "passport",
+      "status": "verified",
+      "verification": "passport header states mm; values 159/219 match Techmod after conversion"
+    },
+    {
+      "conversion": "",
+      "field": "nominal_thickness_mm",
+      "normalized_unit": "mm",
+      "raw_unit": "mm",
+      "rule_id": "UNIT-0003",
+      "source_type": "passport",
+      "status": "verified",
+      "verification": "passport header states mm; positive for all 16 IDs"
+    },
+    {
+      "conversion": "",
+      "field": "total_distance",
+      "normalized_unit": "m",
+      "raw_unit": "m",
+      "rule_id": "UNIT-0004",
+      "source_type": "profile",
+      "status": "verified",
+      "verification": "profile coordinates are metres on the same nominal pipe scale"
+    },
+    {
+      "conversion": "",
+      "field": "z",
+      "normalized_unit": "m",
+      "raw_unit": "m",
+      "rule_id": "UNIT-0005",
+      "source_type": "profile",
+      "status": "verified",
+      "verification": "elevation profile header/description; no datum transformation applied"
+    },
+    {
+      "conversion": "",
+      "field": "distance",
+      "normalized_unit": "m",
+      "raw_unit": "m",
+      "rule_id": "UNIT-0006",
+      "source_type": "vtd",
+      "status": "verified",
+      "verification": "Distance is used directly; out-of-[0,L] quarantined, never clipped"
+    },
+    {
+      "conversion": "",
+      "field": "residual_wall_thickness",
+      "normalized_unit": "mm",
+      "raw_unit": "mm",
+      "rule_id": "UNIT-0007",
+      "source_type": "vtd",
+      "status": "verified",
+      "verification": "source values compared with passport nominal; no unit scaling"
+    },
+    {
+      "conversion": "multiply by 100 for the configured campaign",
+      "field": "defect_depth_pct",
+      "normalized_unit": "%",
+      "raw_unit": "%",
+      "rule_id": "UNIT-0008",
+      "source_type": "vtd",
+      "status": "conditional",
+      "verification": "2018-09-23 campaign fraction->percent only after measured residual check"
+    },
+    {
+      "conversion": "",
+      "field": "residual_wall_thickness",
+      "normalized_unit": "mm",
+      "raw_unit": "mm",
+      "rule_id": "UNIT-0009",
+      "source_type": "uzt",
+      "status": "unresolved",
+      "verification": "values above passport nominal; method/reference unknown; excluded"
+    },
+    {
+      "conversion": "multiply by 1000",
+      "field": "diameter_mm",
+      "normalized_unit": "mm",
+      "raw_unit": "m",
+      "rule_id": "UNIT-0010",
+      "source_type": "hydraulic_regime",
+      "status": "verified",
+      "verification": "convert only when d*1000 matches passport diameter"
+    },
+    {
+      "conversion": "divide by 100 for derived field",
+      "field": "watercut_pct",
+      "normalized_unit": "%",
+      "raw_unit": "%",
+      "rule_id": "UNIT-0011",
+      "source_type": "hydraulic_regime",
+      "status": "verified",
+      "verification": "observed range 0..100; fraction only as named water_fraction_mean"
+    },
+    {
+      "conversion": "",
+      "field": "p_start/p_end",
+      "normalized_unit": "unresolved",
+      "raw_unit": "pressure",
+      "rule_id": "UNIT-0012",
+      "source_type": "hydraulic_regime",
+      "status": "unresolved",
+      "verification": "gauge/absolute basis and exact unit require confirmation; no conversion"
+    },
+    {
+      "conversion": "",
+      "field": "viscosity_liquid_work",
+      "normalized_unit": "unresolved",
+      "raw_unit": "Pa.s or m2/s",
+      "rule_id": "UNIT-0013",
+      "source_type": "hydraulic_regime",
+      "status": "unresolved",
+      "verification": "dynamic vs kinematic not established; Reynolds not computed"
+    },
+    {
+      "conversion": "",
+      "field": "q/q_oil/q_gas",
+      "normalized_unit": "unresolved",
+      "raw_unit": "volume/time",
+      "rule_id": "UNIT-0014",
+      "source_type": "hydraulic_regime",
+      "status": "unresolved",
+      "verification": "operating vs standard conditions not established; no conversion"
+    },
+    {
+      "conversion": "",
+      "field": "t_start/t_end/t_mix",
+      "normalized_unit": "degC",
+      "raw_unit": "degC",
+      "rule_id": "UNIT-0015",
+      "source_type": "hydraulic_regime",
+      "status": "observed_scale_only",
+      "verification": "no transformation; t_mix meaning unresolved"
+    },
+    {
+      "conversion": "",
+      "field": "ph",
+      "normalized_unit": "pH",
+      "raw_unit": "pH",
+      "rule_id": "UNIT-0016",
+      "source_type": "corrosion_monitoring",
+      "status": "verified",
+      "verification": "dimensionless pH; no mapping to target pipe"
+    },
+    {
+      "conversion": "",
+      "field": "co2_water",
+      "normalized_unit": "unresolved",
+      "raw_unit": "concentration",
+      "rule_id": "UNIT-0017",
+      "source_type": "corrosion_monitoring",
+      "status": "unresolved",
+      "verification": "dissolved concentration vs gas fraction/partial pressure unresolved"
+    },
+    {
+      "conversion": "",
+      "field": "fluid_density",
+      "normalized_unit": "unresolved",
+      "raw_unit": "unknown",
+      "rule_id": "UNIT-0018",
+      "source_type": "corrosion_monitoring",
+      "status": "unresolved",
+      "verification": "suspicious values 39/76/81; no scale conversion"
+    },
+    {
+      "conversion": "",
+      "field": "length",
+      "normalized_unit": "m",
+      "raw_unit": "m",
+      "rule_id": "UNIT-0019",
+      "source_type": "hydraulic_regime",
+      "status": "unresolved_scope",
+      "verification": "hydraulic section length is not the passport 10 m grid length; reconciliation only"
+    }
+  ],
+  "tech_length_reconciliation": {
+    "available": true,
+    "exact_or_within_0_1m": 39052,
+    "max_abs_diff_m": 9.094947017729282e-13,
+    "median_abs_diff_m": 0.0,
+    "mismatch_over_0_1m": 0,
+    "policy": "Source hydraulic length is retained; passport length defines the segment grid.",
+    "rows": 39052
+  },
+  "unresolved": [
+    {
+      "field": "residual_wall_thickness",
+      "raw_unit": "mm",
+      "rule_id": "UNIT-0009",
+      "source_type": "uzt",
+      "status": "unresolved",
+      "verification": "values above passport nominal; method/reference unknown; excluded"
+    },
+    {
+      "field": "p_start/p_end",
+      "raw_unit": "pressure",
+      "rule_id": "UNIT-0012",
+      "source_type": "hydraulic_regime",
+      "status": "unresolved",
+      "verification": "gauge/absolute basis and exact unit require confirmation; no conversion"
+    },
+    {
+      "field": "viscosity_liquid_work",
+      "raw_unit": "Pa.s or m2/s",
+      "rule_id": "UNIT-0013",
+      "source_type": "hydraulic_regime",
+      "status": "unresolved",
+      "verification": "dynamic vs kinematic not established; Reynolds not computed"
+    },
+    {
+      "field": "q/q_oil/q_gas",
+      "raw_unit": "volume/time",
+      "rule_id": "UNIT-0014",
+      "source_type": "hydraulic_regime",
+      "status": "unresolved",
+      "verification": "operating vs standard conditions not established; no conversion"
+    },
+    {
+      "field": "t_start/t_end/t_mix",
+      "raw_unit": "degC",
+      "rule_id": "UNIT-0015",
+      "source_type": "hydraulic_regime",
+      "status": "observed_scale_only",
+      "verification": "no transformation; t_mix meaning unresolved"
+    },
+    {
+      "field": "co2_water",
+      "raw_unit": "concentration",
+      "rule_id": "UNIT-0017",
+      "source_type": "corrosion_monitoring",
+      "status": "unresolved",
+      "verification": "dissolved concentration vs gas fraction/partial pressure unresolved"
+    },
+    {
+      "field": "fluid_density",
+      "raw_unit": "unknown",
+      "rule_id": "UNIT-0018",
+      "source_type": "corrosion_monitoring",
+      "status": "unresolved",
+      "verification": "suspicious values 39/76/81; no scale conversion"
+    },
+    {
+      "field": "length",
+      "raw_unit": "m",
+      "rule_id": "UNIT-0019",
+      "source_type": "hydraulic_regime",
+      "status": "unresolved_scope",
+      "verification": "hydraulic section length is not the passport 10 m grid length; reconciliation only"
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "constant_diagnostics": {
+    "S1": {
+      "is_constant": false,
+      "max": 7.2,
+      "min": 3.52,
+      "near_constant": false,
+      "nunique": 49,
+      "rows": 525,
+      "std_mm": 0.5547620663886986
+    },
+    "S2": {
+      "is_constant": true,
+      "max": 2.809539379,
+      "min": 2.809539379,
+      "near_constant": true,
+      "nunique": 1,
+      "rows": 1475,
+      "std_mm": 4.440892098500626e-16
+    }
+  },
+  "name": "s1a__physics_priors",
+  "prediction_sha256": "8b3dfec7207c6c08deab04810790ed4b1ca8edf4d86126c6225d586dfe2c84fe",
+  "result_path": "C:\\Program Files\\PipeTwin\\experiments\\targeted_cycle\\frozen_candidates\\combinations\\s1a__physics_priors\\result.csv",
+  "result_sha256": "4fd624c7b605c7bfab12b8855dbe6fad68decb0f3a46e5a732176f72fd5655b2",
+  "role": "reference_pair",
+  "rows": 2000,
+  "s1": "s1a",
+  "s1_max_abs_diff_vs_frozen": 0.0,
+  "s1_rows": 525,
+  "s2": "physics_priors",
+  "s2_max_abs_diff_vs_frozen": 0.0,
+  "s2_rows": 1475,
+  "unique_keys": true,
+  "validation": {
+    "bounded": true,
+    "finite_mm": true,
+    "rows": 2000,
+    "template": {
+      "available": false,
+      "key_set_compared": false,
+      "status": "no_template_supplied",
+      "validation_grid": "derived_target_grid"
+    },
+    "unique_keys": true,
+    "upper_bound_column": "upper_mm"
+  }
+}

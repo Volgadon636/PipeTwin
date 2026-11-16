@@ -1,0 +1,55 @@
+{
+  "audit": {
+    "eligible_previous_segments": [
+      {
+        "date": "2018-09-23",
+        "eligible_rows": 4,
+        "id": 1250009490
+      },
+      {
+        "date": "2022-07-06",
+        "eligible_rows": 5,
+        "id": 1250009490
+      },
+      {
+        "date": "2018-09-23",
+        "eligible_rows": 34,
+        "id": 1250011604
+      },
+      {
+        "date": "2022-07-06",
+        "eligible_rows": 48,
+        "id": 1250011604
+      }
+    ],
+    "rows_with_two_direct_inputs": 36
+  },
+  "evaluation": {
+    "baseline": {
+      "bias_mm": 0.3599138004092422,
+      "mae_mm": 0.37249629242650933,
+      "pearson_r": 0.676772972161371,
+      "pearson_reason": "",
+      "pearson_squared": 0.45802165584813587,
+      "prediction_std": 0.35032434843134647,
+      "rmse_mm": 0.46728941126594137
+    },
+    "candidate": {
+      "bias_mm": 0.25731764656308836,
+      "mae_mm": 0.3358609608351614,
+      "pearson_r": 0.5131231698469064,
+      "pearson_reason": "",
+      "pearson_squared": 0.2632953874337372,
+      "prediction_std": 0.34424085891414236,
+      "rmse_mm": 0.4444444728601806
+    },
+    "changed_predictions": 21,
+    "delta_pearson_squared": -0.19472626841439866,
+    "independent_parent_count": 1,
+    "max_abs_affine_residual_mm": 0.5992355259689948,
+    "n": 52,
+    "profile_count": 2
+  },
+  "evidence": "exploratory",
+  "state": "implemented"
+}

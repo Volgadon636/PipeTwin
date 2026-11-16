@@ -1,0 +1,10 @@
+{
+  "audit": {
+    "eligible_s1_uzt": 0
+  },
+  "cases": {
+    "S1": "blocked_data",
+    "S2": "not_applicable"
+  },
+  "protocol": "r2-pool-v2"
+}

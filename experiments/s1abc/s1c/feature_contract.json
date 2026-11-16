@@ -1,0 +1,165 @@
+{
+  "alpha": 10.0,
+  "artifact_version": "s1c-ridge-v1",
+  "baseline_column": "s1b_prediction",
+  "bounds_policy": {
+    "lower_mm": 0.0,
+    "upper_column": "nominal_thickness_mm",
+    "upper_is_not_baseline": true
+  },
+  "contract_version": "s1abc-v1",
+  "declared_features": [
+    "s1b_prediction",
+    "last_vtd_thickness_mm",
+    "age_last_vtd_years",
+    "age_min_vtd_years",
+    "prior_vtd_campaign_count",
+    "last_minus_min_mm",
+    "neighbor_prior_median_mm",
+    "neighbor_prior_count",
+    "neighbor_missing",
+    "slope_m_per_m",
+    "abs_slope_m_per_m",
+    "relative_position",
+    "local_low_m"
+  ],
+  "dropped_columns": {
+    "age_last_vtd_years": "constant_on_training_fold",
+    "age_min_vtd_years": "constant_on_training_fold",
+    "last_minus_min_mm": "constant_on_training_fold",
+    "prior_vtd_campaign_count": "constant_on_training_fold"
+  },
+  "fallback_policy": "rows without own prior measurement keep S1B and do not enter Ridge",
+  "feature_order": [
+    "s1b_prediction",
+    "last_vtd_thickness_mm",
+    "age_last_vtd_years",
+    "age_min_vtd_years",
+    "prior_vtd_campaign_count",
+    "last_minus_min_mm",
+    "neighbor_prior_median_mm",
+    "neighbor_prior_count",
+    "neighbor_missing",
+    "slope_m_per_m",
+    "abs_slope_m_per_m",
+    "relative_position",
+    "local_low_m"
+  ],
+  "fit_intercept": true,
+  "interpretation": "Learned effective correction to a conservative past minimum; not a physical corrosion rate. Both signs are allowed.",
+  "observed_decrease_rows": 178,
+  "observed_increase_rows": 177,
+  "observed_zero_rows": 2,
+  "preprocessing": {
+    "constant_columns": [
+      "age_last_vtd_years",
+      "age_min_vtd_years",
+      "prior_vtd_campaign_count",
+      "last_minus_min_mm"
+    ],
+    "dropped_columns": {
+      "age_last_vtd_years": "constant_on_training_fold",
+      "age_min_vtd_years": "constant_on_training_fold",
+      "last_minus_min_mm": "constant_on_training_fold",
+      "prior_vtd_campaign_count": "constant_on_training_fold"
+    },
+    "empty_columns": [],
+    "feature_order": [
+      "s1b_prediction",
+      "last_vtd_thickness_mm",
+      "age_last_vtd_years",
+      "age_min_vtd_years",
+      "prior_vtd_campaign_count",
+      "last_minus_min_mm",
+      "neighbor_prior_median_mm",
+      "neighbor_prior_count",
+      "neighbor_missing",
+      "slope_m_per_m",
+      "abs_slope_m_per_m",
+      "relative_position",
+      "local_low_m"
+    ],
+    "imputer": "SimpleImputer(strategy=median)",
+    "imputer_statistics": {
+      "abs_slope_m_per_m": 0.0,
+      "last_vtd_thickness_mm": 6.11,
+      "local_low_m": 0.0,
+      "neighbor_missing": 0.0,
+      "neighbor_prior_count": 3.0,
+      "neighbor_prior_median_mm": 6.1,
+      "relative_position": 0.438228793537078,
+      "s1b_prediction": 6.11,
+      "slope_m_per_m": 0.0
+    },
+    "scaler": "StandardScaler",
+    "scaler_mean": {
+      "abs_slope_m_per_m": 0.005058970038990697,
+      "last_vtd_thickness_mm": 6.130504201680672,
+      "local_low_m": -0.004764359930490752,
+      "neighbor_missing": 0.0392156862745098,
+      "neighbor_prior_count": 2.764705882352941,
+      "neighbor_prior_median_mm": 6.113893557422969,
+      "relative_position": 0.45956816385026394,
+      "s1b_prediction": 6.130504201680672,
+      "slope_m_per_m": -0.0011917096449217588
+    },
+    "scaler_scale": {
+      "abs_slope_m_per_m": 0.010132041994656983,
+      "last_vtd_thickness_mm": 0.5507186780083602,
+      "local_low_m": 0.12023276779833235,
+      "neighbor_missing": 0.1941077438551307,
+      "neighbor_prior_count": 1.1155073133583098,
+      "neighbor_prior_median_mm": 0.40449050829782274,
+      "relative_position": 0.27458872294749737,
+      "s1b_prediction": 0.5507186780083602,
+      "slope_m_per_m": 0.011261939484791181
+    },
+    "used_features": [
+      "s1b_prediction",
+      "last_vtd_thickness_mm",
+      "neighbor_prior_median_mm",
+      "neighbor_prior_count",
+      "neighbor_missing",
+      "slope_m_per_m",
+      "abs_slope_m_per_m",
+      "relative_position",
+      "local_low_m"
+    ]
+  },
+  "solver": "cholesky",
+  "target": "target_delta_mm = measured_thickness - S1B baseline",
+  "target_delta_mean_mm": -0.04931517357919729,
+  "target_delta_std_mm": 0.6503883416768479,
+  "tie_policy": "earliest source date on exact minimum tie",
+  "training_dates": [
+    "2022-07-06"
+  ],
+  "training_parents": [
+    "MAIN-2"
+  ],
+  "training_rows": 357,
+  "training_simple_sections": [
+    1250009490,
+    1250011604,
+    1250022871
+  ],
+  "unidentifiable_in_training": [
+    "last_minus_min is constant because only one prior campaign exists",
+    "prior_vtd_campaign_count is constant because only one prior campaign exists",
+    "S1B baseline and last VTD thickness are identical with one prior campaign",
+    "age_last and age_min coincide with one prior campaign"
+  ],
+  "used_features": [
+    "s1b_prediction",
+    "last_vtd_thickness_mm",
+    "neighbor_prior_median_mm",
+    "neighbor_prior_count",
+    "neighbor_missing",
+    "slope_m_per_m",
+    "abs_slope_m_per_m",
+    "relative_position",
+    "local_low_m"
+  ],
+  "weighting": "equal_total_per_simple_pipe_id_normalized_mean_1",
+  "weighting_detail": "each simple section has equal total weight; weights normalized to mean 1"
+}

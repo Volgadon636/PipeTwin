@@ -1,0 +1,647 @@
+{
+  "data_generation": {
+    "code_audit": {
+      "all_content_match": true,
+      "files": [
+        {
+          "content_match": true,
+          "crlf_pairs": 1,
+          "file": "__init__.py",
+          "match_lf_normalized": true,
+          "match_raw": false
+        },
+        {
+          "content_match": true,
+          "crlf_pairs": 84,
+          "file": "cache.py",
+          "match_lf_normalized": true,
+          "match_raw": false
+        },
+        {
+          "content_match": true,
+          "crlf_pairs": 175,
+          "file": "config.py",
+          "match_lf_normalized": true,
+          "match_raw": false
+        },
+        {
+          "content_match": true,
+          "crlf_pairs": 285,
+          "file": "data_cleaner.py",
+          "match_lf_normalized": true,
+          "match_raw": false
+        },
+        {
+          "content_match": true,
+          "crlf_pairs": 470,
+          "file": "data_prep.py",
+          "match_lf_normalized": true,
+          "match_raw": false
+        },
+        {
+          "content_match": true,
+          "crlf_pairs": 70,
+          "file": "fluid.py",
+          "match_lf_normalized": true,
+          "match_raw": false
+        },
+        {
+          "content_match": true,
+          "crlf_pairs": 251,
+          "file": "format_detector.py",
+          "match_lf_normalized": true,
+          "match_raw": false
+        },
+        {
+          "content_match": true,
+          "crlf_pairs": 30,
+          "file": "grid_builder.py",
+          "match_lf_normalized": true,
+          "match_raw": false
+        },
+        {
+          "content_match": true,
+          "crlf_pairs": 185,
+          "file": "heat_transfer.py",
+          "match_lf_normalized": true,
+          "match_raw": false
+        },
+        {
+          "content_match": true,
+          "crlf_pairs": 102,
+          "file": "leakage.py",
+          "match_lf_normalized": true,
+          "match_raw": false
+        },
+        {
+          "content_match": true,
+          "crlf_pairs": 140,
+          "file": "lineage.py",
+          "match_lf_normalized": true,
+          "match_raw": false
+        },
+        {
+          "content_match": true,
+          "crlf_pairs": 499,
+          "file": "mentor_ingest.py",
+          "match_lf_normalized": true,
+          "match_raw": false
+        },
+        {
+          "content_match": true,
+          "crlf_pairs": 457,
+          "file": "parsing.py",
+          "match_lf_normalized": true,
+          "match_raw": false
+        },
+        {
+          "content_match": true,
+          "crlf_pairs": 225,
+          "file": "quality.py",
+          "match_lf_normalized": true,
+          "match_raw": false
+        },
+        {
+          "content_match": true,
+          "crlf_pairs": 457,
+          "file": "schema_registry.py",
+          "match_lf_normalized": true,
+          "match_raw": false
+        },
+        {
+          "content_match": true,
+          "crlf_pairs": 188,
+          "file": "segment_mapper.py",
+          "match_lf_normalized": true,
+          "match_raw": false
+        },
+        {
+          "content_match": true,
+          "crlf_pairs": 418,
+          "file": "source_registry.py",
+          "match_lf_normalized": true,
+          "match_raw": false
+        },
+        {
+          "content_match": true,
+          "crlf_pairs": 161,
+          "file": "storage.py",
+          "match_lf_normalized": true,
+          "match_raw": false
+        },
+        {
+          "content_match": true,
+          "crlf_pairs": 125,
+          "file": "temporal.py",
+          "match_lf_normalized": true,
+          "match_raw": false
+        },
+        {
+          "content_match": true,
+          "crlf_pairs": 136,
+          "file": "units.py",
+          "match_lf_normalized": true,
+          "match_raw": false
+        },
+        {
+          "content_match": true,
+          "crlf_pairs": 87,
+          "file": "validator.py",
+          "match_lf_normalized": true,
+          "match_raw": false
+        }
+      ],
+      "lf_matches": 21,
+      "manifest": "C:\\Program Files\\PipeTwin\\experiments\\next_cycle\\data_generation\\reports\\run_manifest.json",
+      "manifest_git": {
+        "dirty_status_excerpt": [],
+        "dirty_status_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "revision": "855da1853cc2e4e2017d2d6401ccada28ae48d9f",
+        "working_tree_dirty": false
+      },
+      "missing": [],
+      "raw_matches": 0
+    },
+    "manifest_sha256": "eba9d43c1cf5da4b1148d89e34ad5d922eac4f8752c0c4a790bf9b0f93a4c72b",
+    "output_hash_audit": {
+      "all_content_match": true,
+      "files": [
+        {
+          "actual_sha256": "dbbaff9f527637df6d335b3c5dd86d2411990ae78cf7839fadd265f0cce79f0c",
+          "content_match": true,
+          "expected_sha256": "4d5245d8a7702cba3f739538726325972db1afc44e36df956200725b879a01ab",
+          "match_lf_normalized": true,
+          "match_raw": false,
+          "name": "data/cleaned/passport"
+        },
+        {
+          "actual_sha256": "8d32c4bd5bb63c1cac4778b7bd2071b8f2ad3f4232419a574211a3a75143dbb1",
+          "content_match": true,
+          "expected_sha256": "394dbcdfbc9b140a89e86131305b41f641917e3b7e64c4737ae9cef25afc6d02",
+          "match_lf_normalized": true,
+          "match_raw": false,
+          "name": "data/cleaned/profile"
+        },
+        {
+          "actual_sha256": "657cb26456a1cf165ed03ec0b9deefb0097f9710cfc29cca40e14e974dd87c4d",
+          "content_match": true,
+          "expected_sha256": "65e53ebe1a154c5a7a3b6fa5806f1d8e83122c985e1049f38162e316eb95cb79",
+          "match_lf_normalized": true,
+          "match_raw": false,
+          "name": "data/cleaned/regime"
+        },
+        {
+          "actual_sha256": "2a1eae1a730be7702b656a185353ce77969e41c43db62f2e7c79bd1edc6c76cc",
+          "content_match": true,
+          "expected_sha256": "a0e58cf2deb665f5c99efc71416edeed68c33334d865ceee1f566a8df031ebfd",
+          "match_lf_normalized": true,
+          "match_raw": false,
+          "name": "data/cleaned/tech_mode_for_embedings_with_length_with_temperatures_ids16"
+        },
+        {
+          "actual_sha256": "ee574738ebbf0fffcb9bad2f2254f1e0a0f91eae4121be0cf20088bbe49edf62",
+          "content_match": true,
+          "expected_sha256": "80c67ab7ed812ea195f0965467051dd4871dc78a87d1a9f0445d471dfcbea529",
+          "match_lf_normalized": true,
+          "match_raw": false,
+          "name": "data/cleaned/uzt"
+        },
+        {
+          "actual_sha256": "20de8d820260c5b27ec952021fe066182ba11e1b10dccbe07263a1b3044420b7",
+          "content_match": true,
+          "expected_sha256": "e52f3a5c573078cd03689cc8774047a01fa3176192db9b84b095b45f5c752ab2",
+          "match_lf_normalized": true,
+          "match_raw": false,
+          "name": "data/cleaned/vtd"
+        },
+        {
+          "actual_sha256": "2f72a8d29ebc925a9c62653ec5f3e2e2efca30d53c5aae01ef783ab29f1d0e71",
+          "content_match": true,
+          "expected_sha256": "2e2fb85ee43d37490b24e39df4f20736077dbd43796c46c2c1062f171fb59951",
+          "match_lf_normalized": true,
+          "match_raw": false,
+          "name": "processed/hydraulic_asof"
+        },
+        {
+          "actual_sha256": "b8651e538ef7540b55cc2cd2853529470bc814ea1e875e4c68a97e3dc369d305",
+          "content_match": true,
+          "expected_sha256": "b3838662af9e71718113715c4082a17b7724273c7c94f9cb6cc8e8c264611f39",
+          "match_lf_normalized": true,
+          "match_raw": false,
+          "name": "processed/hydraulic_quality"
+        },
+        {
+          "actual_sha256": "f990dcea7e1910974d087dd5fda6ba4265c53c1c79e54675f1696b879a974adb",
+          "content_match": true,
+          "expected_sha256": "5f0dbd87ddb973946dc05ea40d20e3c1bf5594809195d9be4c54f304653ad1f0",
+          "match_lf_normalized": true,
+          "match_raw": false,
+          "name": "processed/lineage_keys"
+        },
+        {
+          "actual_sha256": "259dfe1089fa9690c4191f692604747fecfe07fa7e5399e1f8fe7dded41a6867",
+          "content_match": true,
+          "expected_sha256": "f6e51a342bb9f91565f5b5bcc5994c46c64c42c5c901f377e3f0999f5eb5e248",
+          "match_lf_normalized": true,
+          "match_raw": false,
+          "name": "processed/monitoring_mapped"
+        },
+        {
+          "actual_sha256": "7a2bd3be99f77ed986c936bfd57196cc56ebcd54a89be4d7f969c12708f68b72",
+          "content_match": true,
+          "expected_sha256": "902ed93728afdfc8d8f204b81ce54eb607cffe4f2bd3ad79ccaea88ac915f49c",
+          "match_lf_normalized": true,
+          "match_raw": false,
+          "name": "processed/pipes_summary"
+        },
+        {
+          "actual_sha256": "5c47c9bb0ecbf08574dd48964322e7e0d499d29ee7f30995772e9bc8b5f1a11b",
+          "content_match": true,
+          "expected_sha256": "3e4b4994a3f3da4fa04c403dcac85bf4484ca9feca68103665db6cc39f2d04ca",
+          "match_lf_normalized": true,
+          "match_raw": false,
+          "name": "processed/profile_by_segment"
+        },
+        {
+          "actual_sha256": "661e109d879ca2f5375ea43460610e98a6315182eda7cda9098c3111dcd34a29",
+          "content_match": true,
+          "expected_sha256": "c294007bc5dffc5a496269f5019c190ad4cbb72e8c7934451661477b61337776",
+          "match_lf_normalized": true,
+          "match_raw": false,
+          "name": "processed/profile_rejected"
+        },
+        {
+          "actual_sha256": "be62af1e9de008af5e36143ac453b0e21c0346b9f0219d182bd98f37f2b753f1",
+          "content_match": true,
+          "expected_sha256": "9f9fe8cbfcbb8a777a9eca1d8ba97b568f30a4e3159bb117880fb03f6b190d58",
+          "match_lf_normalized": true,
+          "match_raw": false,
+          "name": "processed/quality_issues"
+        },
+        {
+          "actual_sha256": "4693e5858101046bb2f92c0ec346760a4aae93bd18bb41d30cf7ae064c426cb2",
+          "content_match": true,
+          "expected_sha256": "024a5fdbb032a47c5f6938cf50a0fd3971089b5cd1b2c6915a997589018dcc63",
+          "match_lf_normalized": true,
+          "match_raw": false,
+          "name": "processed/regime_mapped"
+        },
+        {
+          "actual_sha256": "eb377f42fd5d0bbd37b40858725374924b1913c1639a4676e46381c743066b3e",
+          "content_match": true,
+          "expected_sha256": "6a3ff831ca96d678edfebbe653b74e49bde7e43a481fbd8af64d73788dbe8264",
+          "match_lf_normalized": true,
+          "match_raw": false,
+          "name": "processed/rejected_records"
+        },
+        {
+          "actual_sha256": "3c2b2e8b66a1a3985d252f5c5169209959a294016abbd626bd91b50bc200a291",
+          "content_match": true,
+          "expected_sha256": "55cce38f655fc47eaabf2255d4e74e31e6d81f774f95df40f47f23adcfeb48a3",
+          "match_lf_normalized": true,
+          "match_raw": false,
+          "name": "processed/segments_grid"
+        },
+        {
+          "actual_sha256": "e92e10c7a40ee395a2ca11f4f73bcb4ff88498a5f2cb4c57d9951735ef211ed5",
+          "content_match": true,
+          "expected_sha256": "1ff33a4842b63f9b255afb189bb36676d202b5ebaacca9c925d18885abbac767",
+          "match_lf_normalized": true,
+          "match_raw": false,
+          "name": "processed/target_features"
+        },
+        {
+          "actual_sha256": "3ef5ef46c18f9285b109011a362b91035d79dcd3a0a5d5d679ef5e4382019a53",
+          "content_match": true,
+          "expected_sha256": "89ee38ef86368798426a5d91daeb4e849518cb40b2185e1c632dd9f3953db936",
+          "match_lf_normalized": true,
+          "match_raw": false,
+          "name": "processed/target_segments_grid"
+        },
+        {
+          "actual_sha256": "d33b847399d345e132ef5b416b4ec84c17d25406521e280dd14ba5747962affb",
+          "content_match": true,
+          "expected_sha256": "8f32b9c374533183abf02e25a6a990988d0e7a661b48f34252667708800cdd18",
+          "match_lf_normalized": true,
+          "match_raw": false,
+          "name": "processed/training_targets"
+        },
+        {
+          "actual_sha256": "55ab0ded8718c0eb46af77dd869e9907b37296a0b9365f5869f99766a62a07b4",
+          "content_match": true,
+          "expected_sha256": "aed45ba93f914f2f4d66f02c31d4b144cd865d69bfc6113a94f1fb1689e364ef",
+          "match_lf_normalized": true,
+          "match_raw": false,
+          "name": "processed/uzt_by_segment"
+        },
+        {
+          "actual_sha256": "f0f20199799fb0e224198e343e30a0fe867765c1a8540c51eebcff32561e852f",
+          "content_match": true,
+          "expected_sha256": "336f046ab254f9a739bd306111b147ed2017a60dc12e2d639faf3cb669c83d57",
+          "match_lf_normalized": true,
+          "match_raw": false,
+          "name": "processed/uzt_rejected"
+        },
+        {
+          "actual_sha256": "7eb7dc545a60492003cb40bb5be683927d11099363f6c3f55cc25c438fc69dcd",
+          "content_match": true,
+          "expected_sha256": "ab6e17e9f5f286b884b5a3f47ef9109061ccf55c880f961f2cc5c149fd7ccc5e",
+          "match_lf_normalized": true,
+          "match_raw": false,
+          "name": "processed/vtd_by_segment"
+        },
+        {
+          "actual_sha256": "5ecabe74bc14e8094938f117c1ba472d9f30e9482966278cacce695d72bb5cec",
+          "content_match": true,
+          "expected_sha256": "ddc149382a52f8a26295c1ea91c61091ea7771306fe1e94c120e159d9c4a4fc4",
+          "match_lf_normalized": true,
+          "match_raw": false,
+          "name": "processed/vtd_rejected"
+        },
+        {
+          "actual_sha256": "765b60d888be3833d79c3a003e18e8f9e6ea03526f38c28760236f4900607eb5",
+          "content_match": true,
+          "expected_sha256": "18f1b27538e9b9bceb1c68de197a5d6de16581625ac04dbfb6e089cbe85b8014",
+          "match_lf_normalized": true,
+          "match_raw": false,
+          "name": "reports/feature_inventory"
+        }
+      ],
+      "lf_matches": 25,
+      "manifest": "C:\\Program Files\\PipeTwin\\experiments\\next_cycle\\data_generation\\reports\\run_manifest.json",
+      "missing": [],
+      "outputs": 25,
+      "raw_matches": 0
+    },
+    "root": "C:\\Program Files\\PipeTwin\\experiments\\next_cycle\\data_generation",
+    "versions": {
+      "numpy": "2.3.5",
+      "pandas": "2.2.3",
+      "pyarrow": "21.0.0",
+      "python": "3.12.8"
+    }
+  },
+  "environment": {
+    "main_venv": {
+      "catboost": "1.2.10",
+      "exists": true,
+      "joblib": "1.6.0",
+      "matplotlib": "3.11.2",
+      "numpy": "2.5.4",
+      "pandas": "3.0.6",
+      "path": "C:\\Program Files\\PipeTwin\\.venv\\Scripts\\python.exe",
+      "pyarrow": "26.0.1",
+      "python": "3.13.5",
+      "sklearn": "1.9.1"
+    },
+    "next_cycle_venv": {
+      "catboost": "1.2.10",
+      "exists": true,
+      "joblib": "1.5.3",
+      "matplotlib": "3.10.8",
+      "numpy": "2.3.5",
+      "pandas": "2.2.3",
+      "path": "C:\\Users\\Администратор\\Documents\\PipeTwin_s1abc_env\\Scripts\\python.exe",
+      "pyarrow": "21.0.0",
+      "python": "3.12.8",
+      "sklearn": "1.7.2"
+    },
+    "note": "The next_cycle artifacts record Python 3.12.8 / pandas 2.2.3 / numpy 2.3.5 / sklearn 1.7.2 / catboost 1.2.10 / pyarrow 21.0.0.",
+    "platform": "Windows-11-10.0.26300-SP0"
+  },
+  "generated_utc": "2026-11-15T18:57:18+00:00",
+  "git": {
+    "branch": "momo",
+    "dirty": true,
+    "head": "ab57c280061ff919cce4c4240051a4760a0f8019",
+    "log": [
+      "ab57c28 model_improvment_2",
+      "1b24bf9 Next cycle outputs: data audit, S1/S2 artifacts and explicit assembly",
+      "6aaa8f6 Next cycle: S1 diagnostics and strict S2 candidates",
+      "855da18 model_improvment_1",
+      "a590ae1 S1A/S1B/S1C reproducible outputs and metric tables",
+      "c62279b S1A/S1B/S1C: as-of baselines, Ridge correction, metrics artifacts",
+      "9af2fbc Merge pull request #2 from Volgadon636/model_v2",
+      "15155a3 V1/V2 implementation"
+    ],
+    "origin_main": "9af2fbcd91e7cbe34392c0b02891cf4c4c10e35f",
+    "origin_momo": "ab57c280061ff919cce4c4240051a4760a0f8019",
+    "status_porcelain": [
+      "?? experiments/targeted_cycle/",
+      "?? src/ml/targeted_audit.py"
+    ],
+    "tracked_dirty": false,
+    "tracked_status_porcelain": [],
+    "untracked_count": 2
+  },
+  "next_cycle_code": {
+    "code_commit_claim": "6aaa8f64597923cd69f09825958441ad3f40793c",
+    "current_head": "ab57c280061ff919cce4c4240051a4760a0f8019",
+    "expected_modules": [
+      "next_common.py",
+      "next_s1.py",
+      "next_s2.py",
+      "next_compare.py",
+      "s1_next.py",
+      "s2_next.py"
+    ],
+    "manifest_code_audit": {
+      "all_content_match": true,
+      "files": [
+        {
+          "content_match": true,
+          "crlf_pairs": 29,
+          "file": "src\\ml\\next_all.py",
+          "match_lf_normalized": true,
+          "match_raw": false
+        },
+        {
+          "content_match": true,
+          "crlf_pairs": 76,
+          "file": "src\\ml\\next_audit.py",
+          "match_lf_normalized": true,
+          "match_raw": false
+        },
+        {
+          "content_match": true,
+          "crlf_pairs": 573,
+          "file": "src\\ml\\next_common.py",
+          "match_lf_normalized": true,
+          "match_raw": false
+        },
+        {
+          "content_match": true,
+          "crlf_pairs": 293,
+          "file": "src\\ml\\next_compare.py",
+          "match_lf_normalized": false,
+          "match_raw": true
+        },
+        {
+          "content_match": true,
+          "crlf_pairs": 34,
+          "file": "src\\ml\\next_s1.py",
+          "match_lf_normalized": true,
+          "match_raw": false
+        },
+        {
+          "content_match": true,
+          "crlf_pairs": 34,
+          "file": "src\\ml\\next_s2.py",
+          "match_lf_normalized": true,
+          "match_raw": false
+        },
+        {
+          "content_match": true,
+          "crlf_pairs": 25,
+          "file": "src\\ml\\s1_all.py",
+          "match_lf_normalized": true,
+          "match_raw": false
+        },
+        {
+          "content_match": true,
+          "crlf_pairs": 447,
+          "file": "src\\ml\\s1_contract.py",
+          "match_lf_normalized": true,
+          "match_raw": false
+        },
+        {
+          "content_match": true,
+          "crlf_pairs": 26,
+          "file": "src\\ml\\s1_metrics.py",
+          "match_lf_normalized": true,
+          "match_raw": false
+        },
+        {
+          "content_match": true,
+          "crlf_pairs": 353,
+          "file": "src\\ml\\s1_model.py",
+          "match_lf_normalized": true,
+          "match_raw": false
+        },
+        {
+          "content_match": true,
+          "crlf_pairs": 961,
+          "file": "src\\ml\\s1_next.py",
+          "match_lf_normalized": false,
+          "match_raw": true
+        },
+        {
+          "content_match": true,
+          "crlf_pairs": 1646,
+          "file": "src\\ml\\s1_stages.py",
+          "match_lf_normalized": false,
+          "match_raw": true
+        },
+        {
+          "content_match": true,
+          "crlf_pairs": 793,
+          "file": "src\\ml\\s2_next.py",
+          "match_lf_normalized": true,
+          "match_raw": false
+        },
+        {
+          "content_match": true,
+          "crlf_pairs": 154,
+          "file": "src\\ml\\submission.py",
+          "match_lf_normalized": true,
+          "match_raw": false
+        }
+      ],
+      "lf_matches": 11,
+      "manifest": "C:\\Program Files\\PipeTwin\\experiments\\next_cycle\\s1\\run_manifest.json",
+      "manifest_git": {
+        "branch": "next-cycle",
+        "commit": "6aaa8f64597923cd69f09825958441ad3f40793c",
+        "dirty": true,
+        "status": [
+          "?? experiments/next_cycle/"
+        ],
+        "tracked_dirty": false
+      },
+      "missing": [],
+      "raw_matches": 3
+    },
+    "manifest_git": {
+      "branch": "next-cycle",
+      "commit": "6aaa8f64597923cd69f09825958441ad3f40793c",
+      "dirty": true,
+      "status": [
+        "?? experiments/next_cycle/"
+      ],
+      "tracked_dirty": false
+    },
+    "present": {
+      "next_common.py": true,
+      "next_compare.py": true,
+      "next_s1.py": true,
+      "next_s2.py": true,
+      "s1_next.py": true,
+      "s2_next.py": true
+    },
+    "s1_manifest_sha256": "360a3e1c26b7c5ce888272a98cad3ffdcf538c1d8722f4be1946b2bfb869511b",
+    "s2_manifest_sha256": "10c04d9e79363a44500206b444f973dffa6401736d4a4e03b197fea86e26e9e7",
+    "src_paths_changed_since_manifest": []
+  },
+  "no_fit_performed": true,
+  "prediction_sources": [
+    {
+      "path": "experiments/next_cycle/s1/oof_fit_predictions.csv",
+      "role": "S1 LOPO saved OOF",
+      "sha256": "7db9fc220e9aa66563dba07280f302e879c94f2ced9f3f06618b0c31c829dbdd"
+    },
+    {
+      "path": "experiments/next_cycle/s1/block_cv/oof_predictions.csv",
+      "role": "S1 block-CV saved OOF",
+      "sha256": "0a87d43455dfd8804b54cd62d32438cbeee45ce495bfdab8f5cd1d48ec653a91"
+    },
+    {
+      "path": "experiments/next_cycle/s2/oof_predictions.csv",
+      "role": "S2 strict saved OOF",
+      "sha256": "8134b44bf8e5c3b7f8f2fd81fd8db591938aed2da646131e7f4cd18136a90c10"
+    },
+    {
+      "path": "experiments/next_cycle/s2/post_cutoff_retrospective/predictions.csv",
+      "role": "S2 2023 retrospective saved predictions",
+      "sha256": "a844932eab3ccaa9df727bd8e79ba8b2d65a7d80776629ab1e0ee6890463ab8d"
+    },
+    {
+      "path": "experiments/ml_v2/result.csv",
+      "role": "old v2 production result",
+      "sha256": "b9672908d81203a52b03940f6b71734ac14e88fb86fbddc053462fc722a70147"
+    }
+  ],
+  "project_root": "C:\\Program Files\\PipeTwin",
+  "requested_archive": {
+    "checked": [
+      {
+        "exists": false,
+        "path": "C:\\Program Files\\PipeTwin\\scratch\\ml_repro\\next_cycle.zip"
+      },
+      {
+        "exists": false,
+        "path": "C:\\Program Files\\PipeTwin\\scratch\\ml_repro.zip"
+      },
+      {
+        "exists": false,
+        "path": "C:\\Program Files\\PipeTwin\\experiments\\next_cycle.zip"
+      }
+    ],
+    "expected_path": "C:\\Program Files\\PipeTwin\\scratch\\ml_repro\\next_cycle.zip",
+    "note": "The archive named in the plan is absent. The audit uses the checked-in experiments/next_cycle outputs and their manifests; it does not claim to have verified the external archive bytes.",
+    "present": false
+  },
+  "scorer": {
+    "case_pdf": "pdfs/Кейс_хакатона_прогноз_деградации_трубопроводов_на_согл.pdf",
+    "code_scorer_found": false,
+    "criteria_pdf": "pdfs/Критерии оценивания Nedra Digital PipeTwin.pdf",
+    "documented_additional": [
+      "MAE",
+      "RMSE",
+      "MAPE (mentioned in mentor materials)",
+      "R² separately (do not confuse with Pearson r²)"
+    ],
+    "documented_primary_metric": "Pearson r² separately per case",
+    "note": "No scorer code or authoritative weight formula was found in the repository. Do not invent a final score.",
+    "overall_score_formula": "unavailable / not specified in checked files"
+  }
+}

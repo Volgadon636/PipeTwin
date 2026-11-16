@@ -1,0 +1,21 @@
+{
+  "baseline": "last eligible own prior VTD measurement (last_mm)",
+  "bounds": "[0, nominal_thickness_mm]",
+  "catboost": "fixed reference parameters; no search",
+  "core_features": [
+    "last_mm",
+    "age_last_vtd_years",
+    "prior_vtd_campaign_count",
+    "neighbor_prior_median_mm",
+    "neighbor_prior_count",
+    "neighbor_missing",
+    "slope_m_per_m",
+    "abs_slope_m_per_m",
+    "local_low_m",
+    "relative_position"
+  ],
+  "global_ridge": "fit on all eligible rows outside target block+buffer, including other simple sections",
+  "preprocessing": "NextPreprocessor train-only: median imputer, constant/duplicate/empty drop, StandardScaler",
+  "target": "target_delta_mm = next_mm - last_mm",
+  "target_ridge": "fit only on target-section rows outside held-out block+buffer"
+}

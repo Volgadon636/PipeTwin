@@ -1,0 +1,152 @@
+{
+  "implementation": "blocked_data",
+  "missing": "Verified pre-cutoff location and date for local chemistry and protection on S2 grids.",
+  "raw_mapping_eligible": 0,
+  "raw_monitoring_rows": 495,
+  "raw_nonmissing": {
+    "co2_water": 74,
+    "corrosion_inhibitor_grade": 230,
+    "ph": 191,
+    "protective_effect_pct": 20,
+    "total_mineralization": 178
+  },
+  "raw_observation_eligible": 0,
+  "raw_records_with_known_id": 83,
+  "result": "not_evaluated",
+  "s2_grids": [
+    {
+      "grid_rows": 5,
+      "id": 1250009490,
+      "label_rows": 4,
+      "linked_monitoring_rows": 0,
+      "nonmissing_grid_rows": {
+        "co2_water_median": 0,
+        "ph_median": 0,
+        "total_mineralization_median": 0
+      },
+      "prediction_date": "2018-09-23"
+    },
+    {
+      "grid_rows": 1475,
+      "id": 1250009583,
+      "label_rows": 0,
+      "linked_monitoring_rows": 0,
+      "nonmissing_grid_rows": {
+        "co2_water_median": 0,
+        "ph_median": 0,
+        "total_mineralization_median": 0
+      },
+      "prediction_date": "2022-07-01"
+    },
+    {
+      "grid_rows": 508,
+      "id": 1250009584,
+      "label_rows": 19,
+      "linked_monitoring_rows": 0,
+      "nonmissing_grid_rows": {
+        "co2_water_median": 0,
+        "ph_median": 0,
+        "total_mineralization_median": 0
+      },
+      "prediction_date": "2023-08-12"
+    },
+    {
+      "grid_rows": 13,
+      "id": 1250009587,
+      "label_rows": 3,
+      "linked_monitoring_rows": 0,
+      "nonmissing_grid_rows": {
+        "co2_water_median": 0,
+        "ph_median": 0,
+        "total_mineralization_median": 0
+      },
+      "prediction_date": "2023-08-12"
+    },
+    {
+      "grid_rows": 50,
+      "id": 1250011604,
+      "label_rows": 34,
+      "linked_monitoring_rows": 0,
+      "nonmissing_grid_rows": {
+        "co2_water_median": 0,
+        "ph_median": 0,
+        "total_mineralization_median": 0
+      },
+      "prediction_date": "2018-09-23"
+    },
+    {
+      "grid_rows": 525,
+      "id": 1250022871,
+      "label_rows": 334,
+      "linked_monitoring_rows": 0,
+      "nonmissing_grid_rows": {
+        "co2_water_median": 0,
+        "ph_median": 0,
+        "total_mineralization_median": 0
+      },
+      "prediction_date": "2018-09-23"
+    },
+    {
+      "grid_rows": 104,
+      "id": 1250028931,
+      "label_rows": 4,
+      "linked_monitoring_rows": 0,
+      "nonmissing_grid_rows": {
+        "co2_water_median": 0,
+        "ph_median": 0,
+        "total_mineralization_median": 0
+      },
+      "prediction_date": "2023-08-12"
+    },
+    {
+      "grid_rows": 446,
+      "id": 1250028932,
+      "label_rows": 9,
+      "linked_monitoring_rows": 0,
+      "nonmissing_grid_rows": {
+        "co2_water_median": 0,
+        "ph_median": 0,
+        "total_mineralization_median": 0
+      },
+      "prediction_date": "2023-08-12"
+    },
+    {
+      "grid_rows": 38,
+      "id": 1250028933,
+      "label_rows": 1,
+      "linked_monitoring_rows": 0,
+      "nonmissing_grid_rows": {
+        "co2_water_median": 0,
+        "ph_median": 0,
+        "total_mineralization_median": 0
+      },
+      "prediction_date": "2023-08-12"
+    },
+    {
+      "grid_rows": 726,
+      "id": 1250028934,
+      "label_rows": 31,
+      "linked_monitoring_rows": 0,
+      "nonmissing_grid_rows": {
+        "co2_water_median": 0,
+        "ph_median": 0,
+        "total_mineralization_median": 0
+      },
+      "prediction_date": "2023-08-12"
+    },
+    {
+      "grid_rows": 350,
+      "id": 1250028935,
+      "label_rows": 27,
+      "linked_monitoring_rows": 0,
+      "nonmissing_grid_rows": {
+        "co2_water_median": 0,
+        "ph_median": 0,
+        "total_mineralization_median": 0
+      },
+      "prediction_date": "2023-08-12"
+    }
+  ],
+  "target_monitoring_grid_rows": 2000,
+  "target_s2_raw_rows_with_exact_id": 0
+}

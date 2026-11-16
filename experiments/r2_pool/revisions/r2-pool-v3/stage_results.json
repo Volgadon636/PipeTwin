@@ -1,0 +1,273 @@
+{
+  "audits": {
+    "H01": {
+      "peer_geometry_available_on": "2023-12-01",
+      "verified_target_anchors": 0
+    },
+    "H02": {
+      "defect_depth_pct": {
+        "finite": 47726,
+        "mismatches": 0,
+        "rows": 48040
+      },
+      "distance": {
+        "finite": 48040,
+        "mismatches": 0,
+        "rows": 48040
+      },
+      "relative_distance": {
+        "finite": 47980,
+        "mismatches": 0,
+        "rows": 48040
+      },
+      "residual_wall_thickness": {
+        "finite": 47696,
+        "mismatches": 0,
+        "rows": 48040
+      },
+      "section_number": {
+        "finite": 48040,
+        "mismatches": 0,
+        "rows": 48040
+      },
+      "wall_thickness": {
+        "finite": 48037,
+        "mismatches": 0,
+        "rows": 48040
+      }
+    },
+    "H03": {
+      "verified_dated_local_nominal_map": false,
+      "wall_nominal_mismatch_rows": 14239
+    },
+    "H04": {
+      "mentor_policy": "docs\\mentor\\sources\\SRC-M2-STRICT-REVIEW.md",
+      "raw_records_excluded_in_sensitivity": [
+        {
+          "date": "2018-09-23",
+          "distance": 2148.44553228737,
+          "id": 1250022871,
+          "residual_for_target_mm": 3.76,
+          "source_row": 33624
+        },
+        {
+          "date": "2018-09-23",
+          "distance": 3438.35122571356,
+          "id": 1250022871,
+          "residual_for_target_mm": 5.87,
+          "source_row": 34049
+        }
+      ],
+      "s2_training_changes": [
+        {
+          "id": 1250022871,
+          "next_mm": 3.76,
+          "next_mm_filtered": 6.26,
+          "prediction_date": "2018-09-23",
+          "segment_id": 214
+        },
+        {
+          "id": 1250022871,
+          "next_mm": 5.87,
+          "next_mm_filtered": null,
+          "prediction_date": "2018-09-23",
+          "segment_id": 343
+        }
+      ],
+      "sensitivity_fit_rows": 371,
+      "strict_fit_rows": 372
+    },
+    "H05": {
+      "1250009490": {
+        "eligible": 0,
+        "rows": 0
+      },
+      "1250011604": {
+        "eligible": 0,
+        "rows": 32
+      },
+      "1250022871": {
+        "eligible": 0,
+        "rows": 32
+      }
+    }
+  },
+  "schemes": {
+    "S1_100m_20m": {
+      "archive_max_abs_replay_mm": 4.999556324492005e-11,
+      "baseline": {
+        "bias_mm": 0.010056871938597774,
+        "mae_mm": 0.38263273593815356,
+        "pearson_r": 0.5382462739868535,
+        "pearson_reason": "",
+        "pearson_squared": 0.289709051460731,
+        "prediction_std": 0.3341840335691759,
+        "rmse_mm": 0.5027120788170734
+      },
+      "block_m": 100,
+      "buffer_m": 20,
+      "candidate": {
+        "bias_mm": 0.010210288387982299,
+        "mae_mm": 0.3822021227318121,
+        "pearson_r": 0.538091652342298,
+        "pearson_reason": "",
+        "pearson_squared": 0.28954262632046457,
+        "prediction_std": 0.3317993411495563,
+        "rmse_mm": 0.5027185591470323
+      },
+      "case": "S1",
+      "changed_predictions": 321,
+      "date": "2022-07-06",
+      "delta_pearson_squared": -0.00016642514026643518,
+      "independent_parent_count": 1,
+      "max_abs_affine_residual_mm": 0.3131813821889029,
+      "model": "defect_stats_support",
+      "n": 321,
+      "profile_count": 1,
+      "r2": 0.2897090514635777,
+      "role": "supporting",
+      "source": "experiments/incremental_cycle/s1_100m_20m_oof.csv"
+    },
+    "S1_500m_100m": {
+      "archive_max_abs_replay_mm": 4.977351863999502e-11,
+      "baseline": {
+        "bias_mm": -0.004711019486805147,
+        "mae_mm": 0.38566531456723563,
+        "pearson_r": 0.5312421592602136,
+        "pearson_reason": "",
+        "pearson_squared": 0.28221823177545413,
+        "prediction_std": 0.3361723266389257,
+        "rmse_mm": 0.5054747897750876
+      },
+      "block_m": 500,
+      "buffer_m": 100,
+      "candidate": {
+        "bias_mm": -0.0038947734415335092,
+        "mae_mm": 0.38571358779199627,
+        "pearson_r": 0.5279875339747477,
+        "pearson_reason": "",
+        "pearson_squared": 0.2787708360327354,
+        "prediction_std": 0.33331710293158023,
+        "rmse_mm": 0.5066440323313752
+      },
+      "case": "S1",
+      "changed_predictions": 321,
+      "date": "2022-07-06",
+      "delta_pearson_squared": -0.0034473957427187396,
+      "independent_parent_count": 1,
+      "max_abs_affine_residual_mm": 0.33627480646600727,
+      "model": "defect_stats_support",
+      "n": 321,
+      "profile_count": 1,
+      "r2": 0.2822182317784289,
+      "role": "supporting",
+      "source": "experiments/incremental_cycle/s1_500m_100m_oof.csv"
+    },
+    "S1_peer_2023": {
+      "archive_max_abs_replay_mm": 4.983746748621343e-11,
+      "baseline": {
+        "bias_mm": 0.3599138004092422,
+        "mae_mm": 0.37249629242650933,
+        "pearson_r": 0.676772972161371,
+        "pearson_reason": "",
+        "pearson_squared": 0.45802165584813587,
+        "prediction_std": 0.35032434843134647,
+        "rmse_mm": 0.46728941126594137
+      },
+      "candidate": {
+        "bias_mm": 0.3599138004092422,
+        "mae_mm": 0.37249629242650933,
+        "pearson_r": 0.676772972161371,
+        "pearson_reason": "",
+        "pearson_squared": 0.45802165584813587,
+        "prediction_std": 0.35032434843134647,
+        "rmse_mm": 0.46728941126594137
+      },
+      "case": "S1",
+      "changed_predictions": 0,
+      "date": "2023-12-01",
+      "delta_pearson_squared": 0.0,
+      "independent_parent_count": 1,
+      "max_abs_affine_residual_mm": 1.7763568394002505e-15,
+      "model": "joint_blend",
+      "n": 52,
+      "profile_count": 2,
+      "r2": 0.4580216558,
+      "role": "photo_max",
+      "source": "experiments/s1_joint_alignment/peer_oof.csv"
+    },
+    "S2_LOSO_pooled": {
+      "archive_max_abs_replay_mm": 4.982636525596718e-10,
+      "baseline": {
+        "bias_mm": -0.12104873873471383,
+        "mae_mm": 0.4496260342356955,
+        "pearson_r": 0.09359841726762304,
+        "pearson_reason": "",
+        "pearson_squared": 0.008760663715004075,
+        "prediction_std": 0.11126193619242114,
+        "rmse_mm": 0.5654739387860493
+      },
+      "candidate": {
+        "bias_mm": -0.11997621133537847,
+        "mae_mm": 0.45008755986636306,
+        "pearson_r": 0.08835317887738016,
+        "pearson_reason": "",
+        "pearson_squared": 0.007806284217738335,
+        "prediction_std": 0.1125738614192813,
+        "rmse_mm": 0.5659609826328272
+      },
+      "case": "S2",
+      "changed_predictions": 38,
+      "date": "2018-09-23",
+      "delta_pearson_squared": -0.0009543794972657399,
+      "independent_parent_count": 1,
+      "max_abs_affine_residual_mm": 0.03482625681952367,
+      "model": "basin_ranks",
+      "n": 372,
+      "profile_count": 3,
+      "r2": 0.00876066369829044,
+      "role": "supporting",
+      "source": "experiments/s2_terrain/section_oof.csv"
+    },
+    "S2_retro_2023": {
+      "archive_max_abs_replay_mm": 4.9458215301001474e-11,
+      "baseline": {
+        "bias_mm": 0.31034341905133356,
+        "mae_mm": 0.3145829747800164,
+        "pearson_r": 0.20206882895630535,
+        "pearson_reason": "",
+        "pearson_squared": 0.04083181163577258,
+        "prediction_std": 0.10514386144950313,
+        "rmse_mm": 0.45898722934590697
+      },
+      "candidate": {
+        "bias_mm": 0.30990365217035004,
+        "mae_mm": 0.3131545624223047,
+        "pearson_r": 0.19779998808307941,
+        "pearson_reason": "",
+        "pearson_squared": 0.039124835285666355,
+        "prediction_std": 0.09704829305854155,
+        "rmse_mm": 0.45844028786999025
+      },
+      "case": "S2",
+      "changed_predictions": 94,
+      "date": "2023-08-12",
+      "delta_pearson_squared": -0.0017069763501062277,
+      "independent_parent_count": 1,
+      "max_abs_affine_residual_mm": 0.010912990523327615,
+      "model": "spatial_no_temperature_centered",
+      "n": 94,
+      "profile_count": 7,
+      "r2": 0.04083181163577258,
+      "role": "photo_max",
+      "source": "experiments/targeted_cycle/stage_2_s2_fixes/post_cutoff_retrospective/predictions.csv"
+    }
+  },
+  "states": {
+    "H01": "blocked_data",
+    "H02": "no_confirmed_correction",
+    "H03": "blocked_data",
+    "H04": "exploratory_sensitivity_only",
+    "H05": "blocked_data"
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "baseline": {
+    "bias_mm": 0.35991380040924165,
+    "mae_mm": 0.372496292426509,
+    "pearson_r": 0.6767729721613717,
+    "pearson_reason": "",
+    "pearson_squared": 0.45802165584813676,
+    "prediction_std": 0.3503243484313467,
+    "rmse_mm": 0.46728941126594076
+  },
+  "candidate": {
+    "bias_mm": 0.5649573675636828,
+    "mae_mm": 0.5714057549731981,
+    "pearson_r": 0.7020618232489003,
+    "pearson_reason": "",
+    "pearson_squared": 0.49289080366357013,
+    "prediction_std": 0.39221538930896627,
+    "rmse_mm": 0.6399423686934279
+  },
+  "changed_predictions": 52,
+  "delta_pearson_squared": 0.03486914781543338,
+  "delta_vs_H12": 0.0194032498720782,
+  "delta_vs_reference_candidate": -0.022256506718468738,
+  "independent_parent_count": 1,
+  "max_abs_affine_residual_mm": 0.4683375364728848,
+  "n": 52,
+  "profile_count": 2,
+  "reference_candidate": {
+    "name": "H16 squared-loss diagnostic control",
+    "predictions": "experiments/r2_pool/batches/batch_04/hypotheses/H16/S1_peer_2023/squared_loss_matched/validation_predictions.csv",
+    "r2": 0.5151473103820389
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "batch": 8,
+  "protocol_version": "r2-pool-v3",
+  "baseline_protocol": "experiments/r2_pool/protocol_photo_v3.json",
+  "baseline_root": "experiments/r2_pool/revisions/r2-pool-v3/baseline",
+  "pool_sha256": "fb3bc2bedc82de8805a0f0ad09b9889595219f376ac363bbca2ab55d9de4a11b",
+  "seed": 17,
+  "decision": "приступай к этапу 8",
+  "candidate_scope": {"H31": ["S2"]},
+  "evaluation": "Use complete grids of the S1 peer and both S2 designs for shape transformations. Reproduce exact prediction keys, labels, folds and original baselines. S1 block designs remain in the final comparison from earlier stages. Train and select only within outer training; no outer predictions or labels for selection.",
+  "dependencies": {
+    "H12_S1": "experiments/r2_pool/batches/batch_03/hypotheses/H12/S1_peer_2023/selected_lambda/validation_predictions.csv",
+    "H18_S1": "experiments/r2_pool/batches/batch_04/hypotheses/H18/S1_peer_2023/geometry_type_distribution/validation_predictions.csv",
+    "batch_04_config": "experiments/r2_pool/protocol_batch_04.json",
+    "H20_S2_retro": "experiments/r2_pool/batches/batch_04/hypotheses/H20/S2_retro_2023/centered_fluid_temperature/validation_predictions.csv",
+    "H20_S2_loso": "experiments/r2_pool/batches/batch_04/hypotheses/H20/S2_LOSO_pooled/centered_fluid_temperature/validation_predictions.csv",
+    "batch_07": "experiments/r2_pool/batches/batch_07"
+  },
+  "reference_candidates": {
+    "S1_peer_2023": {
+      "name": "H16 squared-loss diagnostic control",
+      "predictions": "experiments/r2_pool/batches/batch_04/hypotheses/H16/S1_peer_2023/squared_loss_matched/validation_predictions.csv"
+    },
+    "S2_retro_2023": {
+      "name": "H31 spatial Gaussian process",
+      "predictions": "experiments/r2_pool/batches/batch_07/hypotheses/H31/S2_retro_2023/spatial_gaussian_process/validation_predictions.csv"
+    },
+    "S2_LOSO_pooled": {
+      "name": "H27 largest-donor diagnostic control",
+      "predictions": "experiments/r2_pool/batches/batch_06/hypotheses/H27/S2_LOSO_pooled/largest_section_donor/validation_predictions.csv"
+    }
+  },
+  "inner_minimum_rows": 4,
+  "hypotheses": {
+    "H36": {
+      "cases": ["S2"],
+      "primary": "selected_thermal_length",
+      "controls": ["default_thermal_length"],
+      "conductance_w_m2_k": [1.0, 0.3, 3.0],
+      "description": "Vary heat-loss decay by fixed conductance scenarios. Transform each to the same centered midpoint-temperature feature as H20. Select conductance by mean Pearson squared of complete section-wise inner OOF predictions with default first on ties. Refit on outer train. Keep thermal-missing profiles at the spatial baseline. No change to the global corrosion-rate multiplier."
+    },
+    "H37": {
+      "cases": ["S1", "S2"],
+      "primary": "crossfit_isotonic_shape",
+      "quantile_bins": 5,
+      "shape_blend": 0.5,
+      "description": "Fit a nondecreasing piecewise-linear isotonic map on up to five bin summaries of standardized OOF predictions and labels. OOF files come from batch 7 inside each identical outer training split and are checked for exact keys and targets. Equal total weight per section/campaign. Transform on the full grid and restore the original prediction mean and standard deviation before clipping. The affine shape control is the frozen baseline."
+    },
+    "H38": {
+      "cases": ["S1", "S2"],
+      "primary": "robust_iqr_cap",
+      "controls": ["soft_physical_bounds"],
+      "iqr_factor": 1.5,
+      "softness_mm": 0.15,
+      "description": "On each full grid compare the frozen hard bound with a Tukey IQR cap of that prediction and fixed soft physical bounds applied to the pre-clipping prediction. No labels or fit. Apply admissible thickness bounds after the transformation."
+    },
+    "H39": {
+      "cases": ["S1", "S2"],
+      "primary": "selected_feature_ablation",
+      "s1_groups": {
+        "no_extension": [], "geometry_only": ["geometry"], "distribution_only": ["distribution"],
+        "geometry_distribution": ["geometry", "distribution"], "full_extension": ["geometry", "distribution", "type"]
+      },
+      "s2_drop_groups": {
+        "terrain_only_without_elevation": ["position", "z"], "terrain_without_coordinate": ["position"],
+        "terrain_without_absolute_elevation": ["z"], "full_spatial_features": []
+      },
+      "description": "Choose one declared feature group by mean per-profile Pearson squared on inner section-wise refits; deterministic ties prefer earlier smaller group. S1 ablates the already available H18 features against the frozen joint_blend and matched full H18. S2 ablates the fixed spatial features, keeping physics and preprocessing rules. Save fixed variants, selection scores and paired forecasts."
+    },
+    "H40": {
+      "cases": ["S2"],
+      "primary": "equal_early_thermal_scenarios",
+      "controls": ["early_ground_temperature", "early_first_observed_year"],
+      "first_window_days": 365,
+      "early_replay_weight": 0.5,
+      "description": "Two explicit assumptions for the leading thermal-history gap only. At ground temperature the leading gap adds no spatial thermal contrast. Replay of the first 365 days of admissible hydraulic history adds its duration-weighted thermal shape to the leading gap duration. Both share observed intervals and default H23 heat assumptions. Fit one Ridge per scenario on the same frozen rows, then blend paired predictions 50/50 with a fixed weight and compare both endpoints. Missing thermal histories use the spatial baseline; other gaps are not imputed into this feature."
+    }
+  }
+}

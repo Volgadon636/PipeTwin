@@ -1,0 +1,127 @@
+{
+  "created_before_next_fit": true,
+  "cutoffs": {
+    "s1": "2023-12-01",
+    "s2": "2022-07-01"
+  },
+  "cycle": "next_cycle_2026_11",
+  "data_generation_root": "C:\\Users\\Администратор\\Documents\\PipeTwin_next\\experiments\\next_cycle\\data_generation",
+  "environment": "Python 3.12.8; pandas 2.2.3; numpy 2.3.5; sklearn 1.7.2; pyarrow 21.0.0; catboost 1.2.10",
+  "s1": {
+    "additional_diagnostics": [
+      "same_pipe_100m_blocks_with_20m_buffer",
+      "forward_fold_audit"
+    ],
+    "alpha": 10.0,
+    "candidates": [
+      "ridge_history",
+      "ridge_history_geometry",
+      "rate_signed",
+      "rate_nonnegative",
+      "catboost_delta"
+    ],
+    "catboost": {
+      "depth": 2,
+      "iterations": 200,
+      "l2_leaf_reg": 10,
+      "learning_rate": 0.03,
+      "loss_function": "RMSE",
+      "random_seed": 17,
+      "row_uniform": true,
+      "use_best_model": false
+    },
+    "controls": [
+      "S1A",
+      "S1B",
+      "old_S1C",
+      "train_median",
+      "affine_last"
+    ],
+    "fit_rows": 357,
+    "folds": [
+      "leave_one_simple_section_out"
+    ],
+    "mixture_lambdas": [
+      0.0,
+      0.25,
+      0.5,
+      1.0
+    ],
+    "prediction_date": "2023-12-01",
+    "primary_metrics": [
+      "within_section_pearson_signed",
+      "within_section_pearson_squared",
+      "mae_mm",
+      "top10_recall"
+    ],
+    "ridge_solver": "cholesky",
+    "secondary_metrics": [
+      "rmse_mm",
+      "bias_mm",
+      "pearson_r",
+      "pearson_squared",
+      "r2",
+      "spearman"
+    ],
+    "sections": {
+      "1250009490": 4,
+      "1250011604": 32,
+      "1250022871": 321
+    },
+    "selection_policy": "Do not auto-replace S1A. Report Pareto trade-offs; default remains S1A unless a candidate improves within-section spatial metrics and MAE without relying on post-cutoff labels.",
+    "target_id": 1250022871,
+    "weight_schemes": [
+      "row_uniform",
+      "inverse_sqrt_section_size",
+      "inverse_section_size"
+    ]
+  },
+  "s2": {
+    "candidates": [
+      "physics_priors",
+      "physics_spatial",
+      "physics_spatial_temperature",
+      "catboost_residual"
+    ],
+    "catboost": {
+      "depth": 2,
+      "iterations": 200,
+      "l2_leaf_reg": 10,
+      "learning_rate": 0.03,
+      "loss_function": "RMSE",
+      "random_seed": 17,
+      "row_uniform": true,
+      "use_best_model": false
+    },
+    "controls": [
+      "v2_reference",
+      "constant_effective_rate"
+    ],
+    "folds": [
+      "leave_one_simple_section_out"
+    ],
+    "gap_policy": "own_mean",
+    "leave_one_parent_out": "unavailable if strict train has one parent",
+    "physics_priors": {
+      "age_exponent": 1.0,
+      "beta_W": 0.3,
+      "beta_v": 0.1,
+      "theta_K": 2500.0,
+      "velocity_offset_m_s": 0.1
+    },
+    "prediction_date": "2022-07-01",
+    "primary_metrics": [
+      "within_section_pearson_signed",
+      "within_section_pearson_squared",
+      "mae_mm",
+      "thin_tail_recall"
+    ],
+    "selection_policy": "Report level and spatial pattern separately. No post-cutoff 2023 data in strict fit/gate/selection. Frozen retrospective only.",
+    "strict_train": "cold_start labels strictly before 2022-07-01 (2018 campaigns only)",
+    "target_id": 1250009583
+  },
+  "seeds": {
+    "catboost": 17,
+    "ridge": null
+  }
+}

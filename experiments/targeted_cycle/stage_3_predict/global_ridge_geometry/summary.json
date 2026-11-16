@@ -1,0 +1,10 @@
+{
+  "clipping_count": 0,
+  "max_mm": 7.049605822526611,
+  "mean_mm": 6.058073841250277,
+  "min_mm": 4.798128565530908,
+  "model": "global_ridge_geometry",
+  "prediction_mode": "loaded_artifact_no_fit",
+  "rows": 525,
+  "std_mm": 0.2937038494049068
+}

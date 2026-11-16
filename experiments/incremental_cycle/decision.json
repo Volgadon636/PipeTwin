@@ -1,0 +1,97 @@
+{
+  "E0": {
+    "all_off_S1_max_abs_mm": 5.000000413701855e-10,
+    "all_off_S2_max_abs_mm": 5.000000413701855e-10,
+    "baseline_oof_max_abs_mm": {
+      "100m_20m": 4.994671343183654e-11,
+      "200m_50m": 4.969447076064171e-11,
+      "500m_100m": 4.993516711238044e-11,
+      "S2": 4.993605529080014e-11
+    },
+    "bounded": true,
+    "finite_mm": true,
+    "rows": 2000,
+    "sha256": "ee07ed00d86c253250ac8fb3022b2e853cff3fbf5220ab3c3aed38370ee7a478",
+    "template": {
+      "available": false,
+      "key_set_compared": false,
+      "status": "no_template_supplied",
+      "validation_grid": "derived_target_grid"
+    },
+    "unique_keys": true,
+    "upper_bound_column": "h0_mm"
+  },
+  "E1": {
+    "reason": "DEC-0002 requires Distance. No verified independent pre-cutoff section anchor map is provided.",
+    "status": "unavailable"
+  },
+  "E3": {
+    "reason": "E1 has no admissible alignment; see E2 for stats",
+    "status": "unavailable"
+  },
+  "E4": {
+    "reason": "No independent forward OOF base forecasts: all eligible S1 fit labels are one campaign.",
+    "status": "unavailable"
+  },
+  "E6": {
+    "s1": "global_ridge_geometry",
+    "s2": "spatial_no_temperature_centered",
+    "status": "historical diagnostic selection; external evaluation pending",
+    "validation": {
+      "all_off_S1_max_abs_mm": 5.000000413701855e-10,
+      "all_off_S2_max_abs_mm": 5.000000413701855e-10,
+      "bounded": true,
+      "finite_mm": true,
+      "rows": 2000,
+      "sha256": "ee07ed00d86c253250ac8fb3022b2e853cff3fbf5220ab3c3aed38370ee7a478",
+      "template": {
+        "available": false,
+        "key_set_compared": false,
+        "status": "no_template_supplied",
+        "validation_grid": "derived_target_grid"
+      },
+      "unique_keys": true,
+      "upper_bound_column": "h0_mm"
+    }
+  },
+  "S1_fit_dates": [
+    "2022-07-06"
+  ],
+  "S2_fit_dates": [
+    "2018-09-23"
+  ],
+  "historical_prior_coverage": {
+    "fit": {
+      "max": 159,
+      "median": 3.0,
+      "rows": 357,
+      "single_measurement": 116
+    },
+    "target_above_fit_max": 18,
+    "target_with_own_prior": {
+      "max": 418,
+      "median": 38.0,
+      "rows": 521,
+      "single_measurement": 11
+    }
+  },
+  "s1_challenger": {
+    "s1": "defect_stats_support",
+    "s2": "spatial_no_temperature_centered",
+    "status": "candidate for external evaluation",
+    "validation": {
+      "bounded": true,
+      "finite_mm": true,
+      "rows": 2000,
+      "sha256": "8474285d39a6a1f46ca8450ff0ef5cdbe3733e580e441c75d5435b37b87c928a",
+      "template": {
+        "available": false,
+        "key_set_compared": false,
+        "status": "no_template_supplied",
+        "validation_grid": "derived_target_grid"
+      },
+      "unique_keys": true,
+      "upper_bound_column": "h0_mm"
+    }
+  }
+}

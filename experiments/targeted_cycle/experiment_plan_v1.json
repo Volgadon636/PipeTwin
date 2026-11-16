@@ -1,0 +1,186 @@
+{
+  "created_before_new_fit": true,
+  "created_utc": "2026-11-15T18:57:22+00:00",
+  "cycle": "targeted_cycle",
+  "data_roles_file": "experiments/targeted_cycle/data_roles.json",
+  "global_rules": {
+    "already_viewed": [
+      "S1 OOF",
+      "S1 block-CV",
+      "S2 strict OOF",
+      "S2 2023 retrospective"
+    ],
+    "no_dependency_updates": true,
+    "no_new_algorithms": true,
+    "no_push_merge": true,
+    "no_untouched_holdout_claim": true,
+    "primary_metric": "Pearson r² separately per case; keep signed Pearson r and separate R²",
+    "secondary_metrics": [
+      "MAE",
+      "RMSE",
+      "bias pred−truth",
+      "lower-tail MAE",
+      "top-10% recall",
+      "std pred/truth",
+      "clipping/coverage"
+    ],
+    "tie_policy": "truth/prediction ascending; equal values by lower segment_id"
+  },
+  "source_document": "C:/Users/Администратор/Downloads/Telegram Desktop/PipeTwin_Targeted_Recovery_Plan_Agent_RU.md",
+  "stages": {
+    "stage_2_thermal_contract": {
+      "candidates": [
+        "full_grid_scenario",
+        "subset_invariance_check"
+      ],
+      "fixed_parameters": "existing HeatTransferParameters(U=1.0, cp=3500, Tground=5C, roughness=5e-5)",
+      "goal": "Fix sparse-grid thermal scenario and separate local vs cumulative temperature.",
+      "outputs": [
+        "thermal_contract/t_in_segment_c",
+        "t_out_segment_c",
+        "local_delta_t_c",
+        "cumulative_cooling_from_inlet_c",
+        "before_after_metrics"
+      ],
+      "selection": "No temperature parameter tuning; fix contract before model comparison.",
+      "tests": [
+        "label-subset invariance",
+        "row-order invariance",
+        "full-grid→subset equality",
+        "gap detection",
+        "analytic exponential solution",
+        "local-sum equals total delta"
+      ]
+    },
+    "stage_3_s1_known_pipe": {
+      "blocks": [
+        {
+          "block_m": 100,
+          "buffer_m": 20,
+          "name": "100m_20m"
+        },
+        {
+          "block_m": 200,
+          "buffer_m": 50,
+          "name": "200m_50m"
+        },
+        {
+          "block_m": 500,
+          "buffer_m": 100,
+          "name": "500m_100m"
+        }
+      ],
+      "candidates": [
+        "S1A",
+        "train_median",
+        "affine_global",
+        "affine_target_only",
+        "global_ridge_geometry_alpha10",
+        "target_section_ridge_geometry_alpha10",
+        "catboost_reference_fixed"
+      ],
+      "fixed_parameters": {
+        "catboost": {
+          "depth": 2,
+          "iterations": 200,
+          "l2_leaf_reg": 10,
+          "learning_rate": 0.03,
+          "loss_function": "RMSE",
+          "seed": 17
+        },
+        "ridge_alpha": 10.0
+      },
+      "folds": "identical fixed block masks per scheme; LOPO retained separately",
+      "goal": "Test same-pipe spatial signal at fixed block schemes and compare global vs local Ridge.",
+      "max_final_candidates": 3,
+      "metrics": [
+        "MAE",
+        "RMSE",
+        "bias_pred_minus_truth",
+        "signed_pearson_r",
+        "pearson_squared",
+        "ordinary_r2",
+        "lower_tail_mae",
+        "top10_recall",
+        "std_pred",
+        "std_truth",
+        "paired_block_mae_difference"
+      ],
+      "production_outputs": [
+        "correction",
+        "time-scaled (fixed rule)",
+        "conservative lambda=0.25"
+      ],
+      "selection_filter": "promising_S1 only if on both 200m/50m and 500m/100m schemes MAE < S1A, signed r > 0, and Pearson r / top10 recall not worse than S1A; then compare with affine; max 2 S1 challengers.",
+      "temporal_hypotheses": [
+        "correction",
+        "time_scaled_correction",
+        "rate_model"
+      ],
+      "temporal_limit": "Training has one dt=3.78370979; production dt=1.404517/5.188227; time law not identifiable from OOF."
+    },
+    "stage_4_s2_centered": {
+      "candidates": [
+        "no_temperature_centered_ridge",
+        "centered_ridge_with_corrected_temperature"
+      ],
+      "constraints": [
+        "no target labels",
+        "no post-cutoff 2023 in fit/gate/selection",
+        "no tuning of U/cp/Tground/Arrhenius on one environment",
+        "save raw/centered/clipped predictions and clipping count"
+      ],
+      "fixed_parameters": {
+        "centering": "full-grid per id/cutoff, length-weighted and arithmetic-mean reported",
+        "lambda": 1.0,
+        "ridge_alpha": 10.0
+      },
+      "goal": "Separate physics level from a full-grid-centered spatial residual.",
+      "level_reference": "physics_priors (unchanged)",
+      "max_final_candidates": 3,
+      "metrics": [
+        "MAE",
+        "RMSE",
+        "bias",
+        "signed_pearson_r",
+        "pearson_squared",
+        "ordinary_r2",
+        "lower_tail_mae",
+        "top10_recall",
+        "std_pred",
+        "mean_shift",
+        "clipping_count"
+      ],
+      "references": [
+        "v2_reference",
+        "old physics_spatial"
+      ]
+    },
+    "stage_5_external_evaluation": {
+      "candidate_freeze": {
+        "max_s1": 3,
+        "max_s2": 3
+      },
+      "evaluator": "evaluate_external.py / existing evaluator extension",
+      "goal": "Freeze candidates and prepare one-shot external evaluation without fit.",
+      "if_labels_arrive": "mark as used development data, require new independent check",
+      "if_only_scores": "compare frozen candidates; no segment-level diagnosis",
+      "input_truth_policy": "truth separate from inference features; no fit; no overwrite",
+      "reporting": [
+        "per-case metrics",
+        "error profile",
+        "lower-tail",
+        "top10"
+      ]
+    },
+    "stage_6_handoff": {
+      "goal": "Final frozen package, mentor questions and handoff.",
+      "outputs": [
+        "mentor_questions_ru.md",
+        "candidate_freeze.json",
+        "stage_6_report_ru.md",
+        "final report"
+      ]
+    }
+  }
+}

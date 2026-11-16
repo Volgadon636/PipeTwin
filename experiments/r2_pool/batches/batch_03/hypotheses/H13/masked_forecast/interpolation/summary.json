@@ -1,0 +1,26 @@
+{
+  "baseline": {
+    "bias_mm": 0.16342771507101336,
+    "mae_mm": 0.5202765982842766,
+    "pearson_r": -0.008772386636795375,
+    "pearson_reason": "",
+    "pearson_squared": 7.695476730542607e-05,
+    "prediction_std": 0.470915559455634,
+    "rmse_mm": 0.6332458416489668
+  },
+  "candidate": {
+    "bias_mm": 0.15381551074771221,
+    "mae_mm": 0.4103223892242807,
+    "pearson_r": 0.050008785527569814,
+    "pearson_reason": "",
+    "pearson_squared": 0.002500878629942476,
+    "prediction_std": 0.32574380547666976,
+    "rmse_mm": 0.5162512061514624
+  },
+  "changed_predictions": 46,
+  "delta_pearson_squared": 0.00242392386263705,
+  "independent_parent_count": 1,
+  "max_abs_affine_residual_mm": 0.655466779658191,
+  "n": 52,
+  "profile_count": 2
+}

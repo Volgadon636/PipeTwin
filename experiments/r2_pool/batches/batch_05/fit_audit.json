@@ -1,0 +1,4846 @@
+{
+  "S2_LOSO_pooled": {
+    "1250009490": {
+      "physics": {
+        "gap_policy": "own_mean",
+        "interpretation": "Effective segment-minimum thinning rate under declared environment priors; not an electrochemical CO2/H2S constant",
+        "name": "M1",
+        "priors": {
+          "age_exponent": 1.0,
+          "beta_W": 0.3,
+          "beta_v": 0.1,
+          "theta_K": 2500.0,
+          "velocity_offset_m_s": 0.1
+        },
+        "r_ref_mm_year": 0.10537139350469842,
+        "reference": {
+          "temperature_K": 285.6940825298223,
+          "velocity_m_s": 0.5707789385004212,
+          "water_fraction": 0.867897304128054
+        },
+        "training_groups": 1,
+        "training_rows": 368,
+        "weighting": "W0"
+      },
+      "spatial": {
+        "baseline": {
+          "alpha": 10.0,
+          "baseline_column": null,
+          "coefficient_by_feature": {
+            "abs_slope_rank": -0.03309629524170907,
+            "basin_depth_100m_rank": -0.029501404212349123,
+            "basin_depth_30m_rank": 0.060250651602466614,
+            "local_low_rank": -0.008195643017642678,
+            "pool_depth_rank": 0.0925318388086775,
+            "position_rank": -0.01919987150249136,
+            "slope_rank": -0.016909795051929268,
+            "z_rank": 0.006731958353502896
+          },
+          "coefficients": [
+            0.006731958353502896,
+            -0.016909795051929268,
+            -0.03309629524170907,
+            -0.01919987150249136,
+            -0.008195643017642678,
+            0.0925318388086775,
+            0.060250651602466614,
+            -0.029501404212349123
+          ],
+          "dropped_columns": {},
+          "features": [
+            "z_rank",
+            "slope_rank",
+            "abs_slope_rank",
+            "position_rank",
+            "local_low_rank",
+            "pool_depth_rank",
+            "basin_depth_30m_rank",
+            "basin_depth_100m_rank"
+          ],
+          "fit_intercept": true,
+          "intercept": -1.846709268221059e-17,
+          "model_name": "s2_spatial_ridge",
+          "model_type": "Ridge",
+          "prediction_policy": "delta",
+          "preprocessing": {
+            "constant_columns": [],
+            "dropped_columns": {},
+            "duplicate_columns": {},
+            "empty_columns": [],
+            "feature_order": [
+              "z_rank",
+              "slope_rank",
+              "abs_slope_rank",
+              "position_rank",
+              "local_low_rank",
+              "pool_depth_rank",
+              "basin_depth_30m_rank",
+              "basin_depth_100m_rank"
+            ],
+            "imputer": "median",
+            "imputer_statistics": {
+              "abs_slope_rank": 0.3323809523809524,
+              "basin_depth_100m_rank": 0.4438095238095238,
+              "basin_depth_30m_rank": 0.49142857142857144,
+              "local_low_rank": 0.49523809523809526,
+              "pool_depth_rank": 0.43142857142857144,
+              "position_rank": 0.4323809523809524,
+              "slope_rank": 0.5019047619047619,
+              "z_rank": 0.5371428571428571
+            },
+            "scaler": "StandardScaler",
+            "scaler_mean": {
+              "abs_slope_rank": 0.48800077639751555,
+              "basin_depth_100m_rank": 0.5075750517598342,
+              "basin_depth_30m_rank": 0.5012551759834368,
+              "local_low_rank": 0.4993180641821947,
+              "pool_depth_rank": 0.4585960144927536,
+              "position_rank": 0.4504399585921325,
+              "slope_rank": 0.5007052277432713,
+              "z_rank": 0.5346829710144928
+            },
+            "scaler_scale": {
+              "abs_slope_rank": 0.23909600304764517,
+              "basin_depth_100m_rank": 0.16192243703509648,
+              "basin_depth_30m_rank": 0.07281054074658154,
+              "local_low_rank": 0.20830091185409105,
+              "pool_depth_rank": 0.2796422809522079,
+              "position_rank": 0.2788000423047912,
+              "slope_rank": 0.2375080620305507,
+              "z_rank": 0.28287032528373013
+            },
+            "used_features": [
+              "z_rank",
+              "slope_rank",
+              "abs_slope_rank",
+              "position_rank",
+              "local_low_rank",
+              "pool_depth_rank",
+              "basin_depth_30m_rank",
+              "basin_depth_100m_rank"
+            ]
+          },
+          "residual_centering": "within training simple section",
+          "solver": "cholesky",
+          "target": "residual_centered_mm",
+          "target_mean": -1.8704844436619485e-17,
+          "target_std": 0.5533035471391229,
+          "training_dates": [
+            "2018-09-23"
+          ],
+          "training_rows": 368,
+          "training_sections": [
+            1250011604,
+            1250022871
+          ],
+          "used_features": [
+            "z_rank",
+            "slope_rank",
+            "abs_slope_rank",
+            "position_rank",
+            "local_low_rank",
+            "pool_depth_rank",
+            "basin_depth_30m_rank",
+            "basin_depth_100m_rank"
+          ]
+        },
+        "centered_relative_loss": {
+          "alpha": 10.0,
+          "baseline_column": null,
+          "coefficient_by_feature": {
+            "abs_slope_rank": 0.004137036905213632,
+            "basin_depth_100m_rank": 0.0036876755265436417,
+            "basin_depth_30m_rank": -0.00753133145030833,
+            "local_low_rank": 0.001024455377205333,
+            "pool_depth_rank": -0.011566479851084685,
+            "position_rank": 0.0023999839378114206,
+            "slope_rank": 0.002113724381491158,
+            "z_rank": -0.0008414947941878611
+          },
+          "coefficients": [
+            -0.0008414947941878611,
+            0.002113724381491158,
+            0.004137036905213632,
+            0.0023999839378114206,
+            0.001024455377205333,
+            -0.011566479851084685,
+            -0.00753133145030833,
+            0.0036876755265436417
+          ],
+          "dropped_columns": {},
+          "features": [
+            "z_rank",
+            "slope_rank",
+            "abs_slope_rank",
+            "position_rank",
+            "local_low_rank",
+            "pool_depth_rank",
+            "basin_depth_30m_rank",
+            "basin_depth_100m_rank"
+          ],
+          "fit_intercept": true,
+          "intercept": 1.629581746850616e-18,
+          "model_name": "s2_relative_loss_ridge",
+          "model_type": "Ridge",
+          "nominal_thicknesses_mm": [
+            8.0
+          ],
+          "prediction_policy": "delta",
+          "preprocessing": {
+            "constant_columns": [],
+            "dropped_columns": {},
+            "duplicate_columns": {},
+            "empty_columns": [],
+            "feature_order": [
+              "z_rank",
+              "slope_rank",
+              "abs_slope_rank",
+              "position_rank",
+              "local_low_rank",
+              "pool_depth_rank",
+              "basin_depth_30m_rank",
+              "basin_depth_100m_rank"
+            ],
+            "imputer": "median",
+            "imputer_statistics": {
+              "abs_slope_rank": 0.3323809523809524,
+              "basin_depth_100m_rank": 0.4438095238095238,
+              "basin_depth_30m_rank": 0.49142857142857144,
+              "local_low_rank": 0.49523809523809526,
+              "pool_depth_rank": 0.43142857142857144,
+              "position_rank": 0.4323809523809524,
+              "slope_rank": 0.5019047619047619,
+              "z_rank": 0.5371428571428571
+            },
+            "scaler": "StandardScaler",
+            "scaler_mean": {
+              "abs_slope_rank": 0.48800077639751555,
+              "basin_depth_100m_rank": 0.5075750517598342,
+              "basin_depth_30m_rank": 0.5012551759834368,
+              "local_low_rank": 0.4993180641821947,
+              "pool_depth_rank": 0.4585960144927536,
+              "position_rank": 0.4504399585921325,
+              "slope_rank": 0.5007052277432713,
+              "z_rank": 0.5346829710144928
+            },
+            "scaler_scale": {
+              "abs_slope_rank": 0.23909600304764517,
+              "basin_depth_100m_rank": 0.16192243703509648,
+              "basin_depth_30m_rank": 0.07281054074658154,
+              "local_low_rank": 0.20830091185409105,
+              "pool_depth_rank": 0.2796422809522079,
+              "position_rank": 0.2788000423047912,
+              "slope_rank": 0.2375080620305507,
+              "z_rank": 0.28287032528373013
+            },
+            "used_features": [
+              "z_rank",
+              "slope_rank",
+              "abs_slope_rank",
+              "position_rank",
+              "local_low_rank",
+              "pool_depth_rank",
+              "basin_depth_30m_rank",
+              "basin_depth_100m_rank"
+            ]
+          },
+          "solver": "cholesky",
+          "target": "relative_loss",
+          "target_centered_within_profile": true,
+          "target_mean": 1.6593007161517286e-18,
+          "target_std": 0.06916294339239036,
+          "training_dates": [
+            "2018-09-23"
+          ],
+          "training_rows": 368,
+          "training_sections": [
+            1250011604,
+            1250022871
+          ],
+          "used_features": [
+            "z_rank",
+            "slope_rank",
+            "abs_slope_rank",
+            "position_rank",
+            "local_low_rank",
+            "pool_depth_rank",
+            "basin_depth_30m_rank",
+            "basin_depth_100m_rank"
+          ]
+        },
+        "constant_conditions_thermal_exposure": {
+          "alpha": 10.0,
+          "baseline_column": null,
+          "coefficient_by_feature": {
+            "abs_slope_rank": -0.03338900701797111,
+            "basin_depth_100m_rank": -0.03079893118200997,
+            "basin_depth_30m_rank": 0.05961786232474148,
+            "constant_conditions_thermal_exposure": -0.023516642712271028,
+            "local_low_rank": -0.01034097441900397,
+            "pool_depth_rank": 0.09157102971686581,
+            "position_rank": -0.04104639757684865,
+            "slope_rank": -0.016784395740058366,
+            "z_rank": 0.0058959434168586325
+          },
+          "coefficients": [
+            0.0058959434168586325,
+            -0.016784395740058366,
+            -0.03338900701797111,
+            -0.04104639757684865,
+            -0.01034097441900397,
+            0.09157102971686581,
+            0.05961786232474148,
+            -0.03079893118200997,
+            -0.023516642712271028
+          ],
+          "dropped_columns": {},
+          "features": [
+            "z_rank",
+            "slope_rank",
+            "abs_slope_rank",
+            "position_rank",
+            "local_low_rank",
+            "pool_depth_rank",
+            "basin_depth_30m_rank",
+            "basin_depth_100m_rank",
+            "constant_conditions_thermal_exposure"
+          ],
+          "fit_intercept": true,
+          "intercept": -1.4212689580918368e-17,
+          "model_name": "s2_spatial_ridge",
+          "model_type": "Ridge",
+          "prediction_policy": "delta",
+          "preprocessing": {
+            "constant_columns": [],
+            "dropped_columns": {},
+            "duplicate_columns": {},
+            "empty_columns": [],
+            "feature_order": [
+              "z_rank",
+              "slope_rank",
+              "abs_slope_rank",
+              "position_rank",
+              "local_low_rank",
+              "pool_depth_rank",
+              "basin_depth_30m_rank",
+              "basin_depth_100m_rank",
+              "constant_conditions_thermal_exposure"
+            ],
+            "imputer": "median",
+            "imputer_statistics": {
+              "abs_slope_rank": 0.3323809523809524,
+              "basin_depth_100m_rank": 0.4438095238095238,
+              "basin_depth_30m_rank": 0.49142857142857144,
+              "constant_conditions_thermal_exposure": 0.06814748275759719,
+              "local_low_rank": 0.49523809523809526,
+              "pool_depth_rank": 0.43142857142857144,
+              "position_rank": 0.4323809523809524,
+              "slope_rank": 0.5019047619047619,
+              "z_rank": 0.5371428571428571
+            },
+            "scaler": "StandardScaler",
+            "scaler_mean": {
+              "abs_slope_rank": 0.48800077639751555,
+              "basin_depth_100m_rank": 0.5075750517598342,
+              "basin_depth_30m_rank": 0.5012551759834368,
+              "constant_conditions_thermal_exposure": 0.0979354196606007,
+              "local_low_rank": 0.4993180641821947,
+              "pool_depth_rank": 0.4585960144927536,
+              "position_rank": 0.4504399585921325,
+              "slope_rank": 0.5007052277432713,
+              "z_rank": 0.5346829710144928
+            },
+            "scaler_scale": {
+              "abs_slope_rank": 0.23909600304764517,
+              "basin_depth_100m_rank": 0.16192243703509648,
+              "basin_depth_30m_rank": 0.07281054074658154,
+              "constant_conditions_thermal_exposure": 0.4969550651592564,
+              "local_low_rank": 0.20830091185409105,
+              "pool_depth_rank": 0.2796422809522079,
+              "position_rank": 0.2788000423047912,
+              "slope_rank": 0.2375080620305507,
+              "z_rank": 0.28287032528373013
+            },
+            "used_features": [
+              "z_rank",
+              "slope_rank",
+              "abs_slope_rank",
+              "position_rank",
+              "local_low_rank",
+              "pool_depth_rank",
+              "basin_depth_30m_rank",
+              "basin_depth_100m_rank",
+              "constant_conditions_thermal_exposure"
+            ]
+          },
+          "residual_centering": "within training simple section",
+          "solver": "cholesky",
+          "target": "residual_centered_mm",
+          "target_mean": -1.8704844436619485e-17,
+          "target_std": 0.5533035471391229,
+          "training_dates": [
+            "2018-09-23"
+          ],
+          "training_rows": 368,
+          "training_sections": [
+            1250011604,
+            1250022871
+          ],
+          "used_features": [
+            "z_rank",
+            "slope_rank",
+            "abs_slope_rank",
+            "position_rank",
+            "local_low_rank",
+            "pool_depth_rank",
+            "basin_depth_30m_rank",
+            "basin_depth_100m_rank",
+            "constant_conditions_thermal_exposure"
+          ]
+        },
+        "integrated_thermal_exposure": {
+          "alpha": 10.0,
+          "baseline_column": null,
+          "coefficient_by_feature": {
+            "abs_slope_rank": -0.0333872197067748,
+            "basin_depth_100m_rank": -0.03078459103387571,
+            "basin_depth_30m_rank": 0.05961957321347529,
+            "integrated_thermal_exposure": -0.023443082755414568,
+            "local_low_rank": -0.010328000340376928,
+            "pool_depth_rank": 0.09158348711242881,
+            "position_rank": -0.040986364276946005,
+            "slope_rank": -0.016780965831391926,
+            "z_rank": 0.00588770501108163
+          },
+          "coefficients": [
+            0.00588770501108163,
+            -0.016780965831391926,
+            -0.0333872197067748,
+            -0.040986364276946005,
+            -0.010328000340376928,
+            0.09158348711242881,
+            0.05961957321347529,
+            -0.03078459103387571,
+            -0.023443082755414568
+          ],
+          "dropped_columns": {},
+          "features": [
+            "z_rank",
+            "slope_rank",
+            "abs_slope_rank",
+            "position_rank",
+            "local_low_rank",
+            "pool_depth_rank",
+            "basin_depth_30m_rank",
+            "basin_depth_100m_rank",
+            "integrated_thermal_exposure"
+          ],
+          "fit_intercept": true,
+          "intercept": -1.6044753426252318e-17,
+          "model_name": "s2_spatial_ridge",
+          "model_type": "Ridge",
+          "prediction_policy": "delta",
+          "preprocessing": {
+            "constant_columns": [],
+            "dropped_columns": {},
+            "duplicate_columns": {},
+            "empty_columns": [],
+            "feature_order": [
+              "z_rank",
+              "slope_rank",
+              "abs_slope_rank",
+              "position_rank",
+              "local_low_rank",
+              "pool_depth_rank",
+              "basin_depth_30m_rank",
+              "basin_depth_100m_rank",
+              "integrated_thermal_exposure"
+            ],
+            "imputer": "median",
+            "imputer_statistics": {
+              "abs_slope_rank": 0.3323809523809524,
+              "basin_depth_100m_rank": 0.4438095238095238,
+              "basin_depth_30m_rank": 0.49142857142857144,
+              "integrated_thermal_exposure": 0.07147225835350035,
+              "local_low_rank": 0.49523809523809526,
+              "pool_depth_rank": 0.43142857142857144,
+              "position_rank": 0.4323809523809524,
+              "slope_rank": 0.5019047619047619,
+              "z_rank": 0.5371428571428571
+            },
+            "scaler": "StandardScaler",
+            "scaler_mean": {
+              "abs_slope_rank": 0.48800077639751555,
+              "basin_depth_100m_rank": 0.5075750517598342,
+              "basin_depth_30m_rank": 0.5012551759834368,
+              "integrated_thermal_exposure": 0.10250679170110406,
+              "local_low_rank": 0.4993180641821947,
+              "pool_depth_rank": 0.4585960144927536,
+              "position_rank": 0.4504399585921325,
+              "slope_rank": 0.5007052277432713,
+              "z_rank": 0.5346829710144928
+            },
+            "scaler_scale": {
+              "abs_slope_rank": 0.23909600304764517,
+              "basin_depth_100m_rank": 0.16192243703509648,
+              "basin_depth_30m_rank": 0.07281054074658154,
+              "integrated_thermal_exposure": 0.5203982648351301,
+              "local_low_rank": 0.20830091185409105,
+              "pool_depth_rank": 0.2796422809522079,
+              "position_rank": 0.2788000423047912,
+              "slope_rank": 0.2375080620305507,
+              "z_rank": 0.28287032528373013
+            },
+            "used_features": [
+              "z_rank",
+              "slope_rank",
+              "abs_slope_rank",
+              "position_rank",
+              "local_low_rank",
+              "pool_depth_rank",
+              "basin_depth_30m_rank",
+              "basin_depth_100m_rank",
+              "integrated_thermal_exposure"
+            ]
+          },
+          "residual_centering": "within training simple section",
+          "solver": "cholesky",
+          "target": "residual_centered_mm",
+          "target_mean": -1.8704844436619485e-17,
+          "target_std": 0.5533035471391229,
+          "training_dates": [
+            "2018-09-23"
+          ],
+          "training_rows": 368,
+          "training_sections": [
+            1250011604,
+            1250022871
+          ],
+          "used_features": [
+            "z_rank",
+            "slope_rank",
+            "abs_slope_rank",
+            "position_rank",
+            "local_low_rank",
+            "pool_depth_rank",
+            "basin_depth_30m_rank",
+            "basin_depth_100m_rank",
+            "integrated_thermal_exposure"
+          ]
+        },
+        "relative_loss_uncentered_fit": {
+          "alpha": 10.0,
+          "baseline_column": null,
+          "coefficient_by_feature": {
+            "abs_slope_rank": 0.0041268707589685195,
+            "basin_depth_100m_rank": 0.0036750025023223262,
+            "basin_depth_30m_rank": -0.007487344274077915,
+            "local_low_rank": 0.0010475373390345748,
+            "pool_depth_rank": -0.01159547682788799,
+            "position_rank": 0.00251150951959354,
+            "slope_rank": 0.0021679515267547405,
+            "z_rank": -0.000903201466175573
+          },
+          "coefficients": [
+            -0.000903201466175573,
+            0.0021679515267547405,
+            0.0041268707589685195,
+            0.00251150951959354,
+            0.0010475373390345748,
+            -0.01159547682788799,
+            -0.007487344274077915,
+            0.0036750025023223262
+          ],
+          "dropped_columns": {},
+          "features": [
+            "z_rank",
+            "slope_rank",
+            "abs_slope_rank",
+            "position_rank",
+            "local_low_rank",
+            "pool_depth_rank",
+            "basin_depth_30m_rank",
+            "basin_depth_100m_rank"
+          ],
+          "fit_intercept": true,
+          "intercept": 0.23455502717391302,
+          "model_name": "s2_relative_loss_ridge",
+          "model_type": "Ridge",
+          "nominal_thicknesses_mm": [
+            8.0
+          ],
+          "prediction_policy": "delta",
+          "preprocessing": {
+            "constant_columns": [],
+            "dropped_columns": {},
+            "duplicate_columns": {},
+            "empty_columns": [],
+            "feature_order": [
+              "z_rank",
+              "slope_rank",
+              "abs_slope_rank",
+              "position_rank",
+              "local_low_rank",
+              "pool_depth_rank",
+              "basin_depth_30m_rank",
+              "basin_depth_100m_rank"
+            ],
+            "imputer": "median",
+            "imputer_statistics": {
+              "abs_slope_rank": 0.3323809523809524,
+              "basin_depth_100m_rank": 0.4438095238095238,
+              "basin_depth_30m_rank": 0.49142857142857144,
+              "local_low_rank": 0.49523809523809526,
+              "pool_depth_rank": 0.43142857142857144,
+              "position_rank": 0.4323809523809524,
+              "slope_rank": 0.5019047619047619,
+              "z_rank": 0.5371428571428571
+            },
+            "scaler": "StandardScaler",
+            "scaler_mean": {
+              "abs_slope_rank": 0.48800077639751555,
+              "basin_depth_100m_rank": 0.5075750517598342,
+              "basin_depth_30m_rank": 0.5012551759834368,
+              "local_low_rank": 0.4993180641821947,
+              "pool_depth_rank": 0.4585960144927536,
+              "position_rank": 0.4504399585921325,
+              "slope_rank": 0.5007052277432713,
+              "z_rank": 0.5346829710144928
+            },
+            "scaler_scale": {
+              "abs_slope_rank": 0.23909600304764517,
+              "basin_depth_100m_rank": 0.16192243703509648,
+              "basin_depth_30m_rank": 0.07281054074658154,
+              "local_low_rank": 0.20830091185409105,
+              "pool_depth_rank": 0.2796422809522079,
+              "position_rank": 0.2788000423047912,
+              "slope_rank": 0.2375080620305507,
+              "z_rank": 0.28287032528373013
+            },
+            "used_features": [
+              "z_rank",
+              "slope_rank",
+              "abs_slope_rank",
+              "position_rank",
+              "local_low_rank",
+              "pool_depth_rank",
+              "basin_depth_30m_rank",
+              "basin_depth_100m_rank"
+            ]
+          },
+          "solver": "cholesky",
+          "target": "relative_loss",
+          "target_centered_within_profile": false,
+          "target_mean": 0.23455502717391302,
+          "target_std": 0.06917729021522165,
+          "training_dates": [
+            "2018-09-23"
+          ],
+          "training_rows": 368,
+          "training_sections": [
+            1250011604,
+            1250022871
+          ],
+          "used_features": [
+            "z_rank",
+            "slope_rank",
+            "abs_slope_rank",
+            "position_rank",
+            "local_low_rank",
+            "pool_depth_rank",
+            "basin_depth_30m_rank",
+            "basin_depth_100m_rank"
+          ]
+        },
+        "terrain_times_constant_velocity": {
+          "alpha": 10.0,
+          "baseline_column": null,
+          "coefficient_by_feature": {
+            "abs_slope_rank": -0.03309629524170907,
+            "basin_depth_100m_rank": -0.029501404212349123,
+            "basin_depth_30m_rank": 0.060250651602466614,
+            "local_low_rank": -0.008195643017642678,
+            "pool_depth_rank": 0.0925318388086775,
+            "position_rank": -0.01919987150249136,
+            "slope_rank": -0.016909795051929268,
+            "z_rank": 0.006731958353502896
+          },
+          "coefficients": [
+            0.006731958353502896,
+            -0.016909795051929268,
+            -0.03309629524170907,
+            -0.01919987150249136,
+            -0.008195643017642678,
+            0.0925318388086775,
+            0.060250651602466614,
+            -0.029501404212349123
+          ],
+          "dropped_columns": {
+            "H22_x_abs_slope_rank": "near_duplicate_abs_corr_1.00000000",
+            "H22_x_local_low_rank": "near_duplicate_abs_corr_1.00000000",
+            "H22_x_pool_depth_rank": "near_duplicate_abs_corr_1.00000000"
+          },
+          "features": [
+            "z_rank",
+            "slope_rank",
+            "abs_slope_rank",
+            "position_rank",
+            "local_low_rank",
+            "pool_depth_rank",
+            "basin_depth_30m_rank",
+            "basin_depth_100m_rank",
+            "H22_x_abs_slope_rank",
+            "H22_x_local_low_rank",
+            "H22_x_pool_depth_rank"
+          ],
+          "fit_intercept": true,
+          "intercept": -1.846709268221059e-17,
+          "model_name": "s2_spatial_ridge",
+          "model_type": "Ridge",
+          "prediction_policy": "delta",
+          "preprocessing": {
+            "constant_columns": [],
+            "dropped_columns": {
+              "H22_x_abs_slope_rank": "near_duplicate_abs_corr_1.00000000",
+              "H22_x_local_low_rank": "near_duplicate_abs_corr_1.00000000",
+              "H22_x_pool_depth_rank": "near_duplicate_abs_corr_1.00000000"
+            },
+            "duplicate_columns": {
+              "H22_x_abs_slope_rank": {
+                "kept": "abs_slope_rank",
+                "relation": "near_duplicate_abs_corr_1.00000000"
+              },
+              "H22_x_local_low_rank": {
+                "kept": "local_low_rank",
+                "relation": "near_duplicate_abs_corr_1.00000000"
+              },
+              "H22_x_pool_depth_rank": {
+                "kept": "pool_depth_rank",
+                "relation": "near_duplicate_abs_corr_1.00000000"
+              }
+            },
+            "empty_columns": [],
+            "feature_order": [
+              "z_rank",
+              "slope_rank",
+              "abs_slope_rank",
+              "position_rank",
+              "local_low_rank",
+              "pool_depth_rank",
+              "basin_depth_30m_rank",
+              "basin_depth_100m_rank",
+              "H22_x_abs_slope_rank",
+              "H22_x_local_low_rank",
+              "H22_x_pool_depth_rank"
+            ],
+            "imputer": "median",
+            "imputer_statistics": {
+              "abs_slope_rank": 0.3323809523809524,
+              "basin_depth_100m_rank": 0.4438095238095238,
+              "basin_depth_30m_rank": 0.49142857142857144,
+              "local_low_rank": 0.49523809523809526,
+              "pool_depth_rank": 0.43142857142857144,
+              "position_rank": 0.4323809523809524,
+              "slope_rank": 0.5019047619047619,
+              "z_rank": 0.5371428571428571
+            },
+            "scaler": "StandardScaler",
+            "scaler_mean": {
+              "abs_slope_rank": 0.48800077639751555,
+              "basin_depth_100m_rank": 0.5075750517598342,
+              "basin_depth_30m_rank": 0.5012551759834368,
+              "local_low_rank": 0.4993180641821947,
+              "pool_depth_rank": 0.4585960144927536,
+              "position_rank": 0.4504399585921325,
+              "slope_rank": 0.5007052277432713,
+              "z_rank": 0.5346829710144928
+            },
+            "scaler_scale": {
+              "abs_slope_rank": 0.23909600304764517,
+              "basin_depth_100m_rank": 0.16192243703509648,
+              "basin_depth_30m_rank": 0.07281054074658154,
+              "local_low_rank": 0.20830091185409105,
+              "pool_depth_rank": 0.2796422809522079,
+              "position_rank": 0.2788000423047912,
+              "slope_rank": 0.2375080620305507,
+              "z_rank": 0.28287032528373013
+            },
+            "used_features": [
+              "z_rank",
+              "slope_rank",
+              "abs_slope_rank",
+              "position_rank",
+              "local_low_rank",
+              "pool_depth_rank",
+              "basin_depth_30m_rank",
+              "basin_depth_100m_rank"
+            ]
+          },
+          "residual_centering": "within training simple section",
+          "solver": "cholesky",
+          "target": "residual_centered_mm",
+          "target_mean": -1.8704844436619485e-17,
+          "target_std": 0.5533035471391229,
+          "training_dates": [
+            "2018-09-23"
+          ],
+          "training_rows": 368,
+          "training_sections": [
+            1250011604,
+            1250022871
+          ],
+          "used_features": [
+            "z_rank",
+            "slope_rank",
+            "abs_slope_rank",
+            "position_rank",
+            "local_low_rank",
+            "pool_depth_rank",
+            "basin_depth_30m_rank",
+            "basin_depth_100m_rank"
+          ]
+        },
+        "terrain_times_constant_water": {
+          "alpha": 10.0,
+          "baseline_column": null,
+          "coefficient_by_feature": {
+            "abs_slope_rank": -0.03309629524170907,
+            "basin_depth_100m_rank": -0.029501404212349123,
+            "basin_depth_30m_rank": 0.060250651602466614,
+            "local_low_rank": -0.008195643017642678,
+            "pool_depth_rank": 0.0925318388086775,
+            "position_rank": -0.01919987150249136,
+            "slope_rank": -0.016909795051929268,
+            "z_rank": 0.006731958353502896
+          },
+          "coefficients": [
+            0.006731958353502896,
+            -0.016909795051929268,
+            -0.03309629524170907,
+            -0.01919987150249136,
+            -0.008195643017642678,
+            0.0925318388086775,
+            0.060250651602466614,
+            -0.029501404212349123
+          ],
+          "dropped_columns": {
+            "H21_x_abs_slope_rank": "near_duplicate_abs_corr_1.00000000",
+            "H21_x_local_low_rank": "near_duplicate_abs_corr_1.00000000",
+            "H21_x_pool_depth_rank": "near_duplicate_abs_corr_1.00000000"
+          },
+          "features": [
+            "z_rank",
+            "slope_rank",
+            "abs_slope_rank",
+            "position_rank",
+            "local_low_rank",
+            "pool_depth_rank",
+            "basin_depth_30m_rank",
+            "basin_depth_100m_rank",
+            "H21_x_abs_slope_rank",
+            "H21_x_local_low_rank",
+            "H21_x_pool_depth_rank"
+          ],
+          "fit_intercept": true,
+          "intercept": -1.846709268221059e-17,
+          "model_name": "s2_spatial_ridge",
+          "model_type": "Ridge",
+          "prediction_policy": "delta",
+          "preprocessing": {
+            "constant_columns": [],
+            "dropped_columns": {
+              "H21_x_abs_slope_rank": "near_duplicate_abs_corr_1.00000000",
+              "H21_x_local_low_rank": "near_duplicate_abs_corr_1.00000000",
+              "H21_x_pool_depth_rank": "near_duplicate_abs_corr_1.00000000"
+            },
+            "duplicate_columns": {
+              "H21_x_abs_slope_rank": {
+                "kept": "abs_slope_rank",
+                "relation": "near_duplicate_abs_corr_1.00000000"
+              },
+              "H21_x_local_low_rank": {
+                "kept": "local_low_rank",
+                "relation": "near_duplicate_abs_corr_1.00000000"
+              },
+              "H21_x_pool_depth_rank": {
+                "kept": "pool_depth_rank",
+                "relation": "near_duplicate_abs_corr_1.00000000"
+              }
+            },
+            "empty_columns": [],
+            "feature_order": [
+              "z_rank",
+              "slope_rank",
+              "abs_slope_rank",
+              "position_rank",
+              "local_low_rank",
+              "pool_depth_rank",
+              "basin_depth_30m_rank",
+              "basin_depth_100m_rank",
+              "H21_x_abs_slope_rank",
+              "H21_x_local_low_rank",
+              "H21_x_pool_depth_rank"
+            ],
+            "imputer": "median",
+            "imputer_statistics": {
+              "abs_slope_rank": 0.3323809523809524,
+              "basin_depth_100m_rank": 0.4438095238095238,
+              "basin_depth_30m_rank": 0.49142857142857144,
+              "local_low_rank": 0.49523809523809526,
+              "pool_depth_rank": 0.43142857142857144,
+              "position_rank": 0.4323809523809524,
+              "slope_rank": 0.5019047619047619,
+              "z_rank": 0.5371428571428571
+            },
+            "scaler": "StandardScaler",
+            "scaler_mean": {
+              "abs_slope_rank": 0.48800077639751555,
+              "basin_depth_100m_rank": 0.5075750517598342,
+              "basin_depth_30m_rank": 0.5012551759834368,
+              "local_low_rank": 0.4993180641821947,
+              "pool_depth_rank": 0.4585960144927536,
+              "position_rank": 0.4504399585921325,
+              "slope_rank": 0.5007052277432713,
+              "z_rank": 0.5346829710144928
+            },
+            "scaler_scale": {
+              "abs_slope_rank": 0.23909600304764517,
+              "basin_depth_100m_rank": 0.16192243703509648,
+              "basin_depth_30m_rank": 0.07281054074658154,
+              "local_low_rank": 0.20830091185409105,
+              "pool_depth_rank": 0.2796422809522079,
+              "position_rank": 0.2788000423047912,
+              "slope_rank": 0.2375080620305507,
+              "z_rank": 0.28287032528373013
+            },
+            "used_features": [
+              "z_rank",
+              "slope_rank",
+              "abs_slope_rank",
+              "position_rank",
+              "local_low_rank",
+              "pool_depth_rank",
+              "basin_depth_30m_rank",
+              "basin_depth_100m_rank"
+            ]
+          },
+          "residual_centering": "within training simple section",
+          "solver": "cholesky",
+          "target": "residual_centered_mm",
+          "target_mean": -1.8704844436619485e-17,
+          "target_std": 0.5533035471391229,
+          "training_dates": [
+            "2018-09-23"
+          ],
+          "training_rows": 368,
+          "training_sections": [
+            1250011604,
+            1250022871
+          ],
+          "used_features": [
+            "z_rank",
+            "slope_rank",
+            "abs_slope_rank",
+            "position_rank",
+            "local_low_rank",
+            "pool_depth_rank",
+            "basin_depth_30m_rank",
+            "basin_depth_100m_rank"
+          ]
+        },
+        "terrain_times_log_liquid_velocity": {
+          "alpha": 10.0,
+          "baseline_column": null,
+          "coefficient_by_feature": {
+            "H22_x_abs_slope_rank": -0.013882473974671648,
+            "H22_x_local_low_rank": -0.0010377957221649396,
+            "H22_x_pool_depth_rank": 0.055922208942553536,
+            "abs_slope_rank": -0.02031400238889715,
+            "basin_depth_100m_rank": -0.029193676331221205,
+            "basin_depth_30m_rank": 0.060642892947792605,
+            "local_low_rank": -0.007827907248092935,
+            "pool_depth_rank": 0.039179905357284196,
+            "position_rank": -0.020039893739106838,
+            "slope_rank": -0.016900314178701702,
+            "z_rank": 0.006459149523089153
+          },
+          "coefficients": [
+            0.006459149523089153,
+            -0.016900314178701702,
+            -0.02031400238889715,
+            -0.020039893739106838,
+            -0.007827907248092935,
+            0.039179905357284196,
+            0.060642892947792605,
+            -0.029193676331221205,
+            -0.013882473974671648,
+            -0.0010377957221649396,
+            0.055922208942553536
+          ],
+          "dropped_columns": {},
+          "features": [
+            "z_rank",
+            "slope_rank",
+            "abs_slope_rank",
+            "position_rank",
+            "local_low_rank",
+            "pool_depth_rank",
+            "basin_depth_30m_rank",
+            "basin_depth_100m_rank",
+            "H22_x_abs_slope_rank",
+            "H22_x_local_low_rank",
+            "H22_x_pool_depth_rank"
+          ],
+          "fit_intercept": true,
+          "intercept": -7.146864976780756e-18,
+          "model_name": "s2_spatial_ridge",
+          "model_type": "Ridge",
+          "prediction_policy": "delta",
+          "preprocessing": {
+            "constant_columns": [],
+            "dropped_columns": {},
+            "duplicate_columns": {},
+            "empty_columns": [],
+            "feature_order": [
+              "z_rank",
+              "slope_rank",
+              "abs_slope_rank",
+              "position_rank",
+              "local_low_rank",
+              "pool_depth_rank",
+              "basin_depth_30m_rank",
+              "basin_depth_100m_rank",
+              "H22_x_abs_slope_rank",
+              "H22_x_local_low_rank",
+              "H22_x_pool_depth_rank"
+            ],
+            "imputer": "median",
+            "imputer_statistics": {
+              "H22_x_abs_slope_rank": 0.10168628076454608,
+              "H22_x_local_low_rank": 0.15150964469216036,
+              "H22_x_pool_depth_rank": 0.13198820970297814,
+              "abs_slope_rank": 0.3323809523809524,
+              "basin_depth_100m_rank": 0.4438095238095238,
+              "basin_depth_30m_rank": 0.49142857142857144,
+              "local_low_rank": 0.49523809523809526,
+              "pool_depth_rank": 0.43142857142857144,
+              "position_rank": 0.4323809523809524,
+              "slope_rank": 0.5019047619047619,
+              "z_rank": 0.5371428571428571
+            },
+            "scaler": "StandardScaler",
+            "scaler_mean": {
+              "H22_x_abs_slope_rank": 0.15013801166313864,
+              "H22_x_local_low_rank": 0.1536084976284744,
+              "H22_x_pool_depth_rank": 0.1410962553021629,
+              "abs_slope_rank": 0.48800077639751555,
+              "basin_depth_100m_rank": 0.5075750517598342,
+              "basin_depth_30m_rank": 0.5012551759834368,
+              "local_low_rank": 0.4993180641821947,
+              "pool_depth_rank": 0.4585960144927536,
+              "position_rank": 0.4504399585921325,
+              "slope_rank": 0.5007052277432713,
+              "z_rank": 0.5346829710144928
+            },
+            "scaler_scale": {
+              "H22_x_abs_slope_rank": 0.07374236048294913,
+              "H22_x_local_low_rank": 0.06442831622973769,
+              "H22_x_pool_depth_rank": 0.08611197206830827,
+              "abs_slope_rank": 0.23909600304764517,
+              "basin_depth_100m_rank": 0.16192243703509648,
+              "basin_depth_30m_rank": 0.07281054074658154,
+              "local_low_rank": 0.20830091185409105,
+              "pool_depth_rank": 0.2796422809522079,
+              "position_rank": 0.2788000423047912,
+              "slope_rank": 0.2375080620305507,
+              "z_rank": 0.28287032528373013
+            },
+            "used_features": [
+              "z_rank",
+              "slope_rank",
+              "abs_slope_rank",
+              "position_rank",
+              "local_low_rank",
+              "pool_depth_rank",
+              "basin_depth_30m_rank",
+              "basin_depth_100m_rank",
+              "H22_x_abs_slope_rank",
+              "H22_x_local_low_rank",
+              "H22_x_pool_depth_rank"
+            ]
+          },
+          "residual_centering": "within training simple section",
+          "solver": "cholesky",
+          "target": "residual_centered_mm",
+          "target_mean": -1.8704844436619485e-17,
+          "target_std": 0.5533035471391229,
+          "training_dates": [
+            "2018-09-23"
+          ],
+          "training_rows": 368,
+          "training_sections": [
+            1250011604,
+            1250022871
+          ],
+          "used_features": [
+            "z_rank",
+            "slope_rank",
+            "abs_slope_rank",
+            "position_rank",
+            "local_low_rank",
+            "pool_depth_rank",
+            "basin_depth_30m_rank",
+            "basin_depth_100m_rank",
+            "H22_x_abs_slope_rank",
+            "H22_x_local_low_rank",
+            "H22_x_pool_depth_rank"
+          ]
+        },
+        "terrain_times_water_fraction": {
+          "alpha": 10.0,
+          "baseline_column": null,
+          "coefficient_by_feature": {
+            "abs_slope_rank": -0.03309629524170907,
+            "basin_depth_100m_rank": -0.029501404212349123,
+            "basin_depth_30m_rank": 0.060250651602466614,
+            "local_low_rank": -0.008195643017642678,
+            "pool_depth_rank": 0.0925318388086775,
+            "position_rank": -0.01919987150249136,
+            "slope_rank": -0.016909795051929268,
+            "z_rank": 0.006731958353502896
+          },
+          "coefficients": [
+            0.006731958353502896,
+            -0.016909795051929268,
+            -0.03309629524170907,
+            -0.01919987150249136,
+            -0.008195643017642678,
+            0.0925318388086775,
+            0.060250651602466614,
+            -0.029501404212349123
+          ],
+          "dropped_columns": {
+            "H21_x_abs_slope_rank": "near_duplicate_abs_corr_0.99999997",
+            "H21_x_local_low_rank": "near_duplicate_abs_corr_0.99999996",
+            "H21_x_pool_depth_rank": "near_duplicate_abs_corr_0.99999998"
+          },
+          "features": [
+            "z_rank",
+            "slope_rank",
+            "abs_slope_rank",
+            "position_rank",
+            "local_low_rank",
+            "pool_depth_rank",
+            "basin_depth_30m_rank",
+            "basin_depth_100m_rank",
+            "H21_x_abs_slope_rank",
+            "H21_x_local_low_rank",
+            "H21_x_pool_depth_rank"
+          ],
+          "fit_intercept": true,
+          "intercept": -1.846709268221059e-17,
+          "model_name": "s2_spatial_ridge",
+          "model_type": "Ridge",
+          "prediction_policy": "delta",
+          "preprocessing": {
+            "constant_columns": [],
+            "dropped_columns": {
+              "H21_x_abs_slope_rank": "near_duplicate_abs_corr_0.99999997",
+              "H21_x_local_low_rank": "near_duplicate_abs_corr_0.99999996",
+              "H21_x_pool_depth_rank": "near_duplicate_abs_corr_0.99999998"
+            },
+            "duplicate_columns": {
+              "H21_x_abs_slope_rank": {
+                "kept": "abs_slope_rank",
+                "relation": "near_duplicate_abs_corr_0.99999997"
+              },
+              "H21_x_local_low_rank": {
+                "kept": "local_low_rank",
+                "relation": "near_duplicate_abs_corr_0.99999996"
+              },
+              "H21_x_pool_depth_rank": {
+                "kept": "pool_depth_rank",
+                "relation": "near_duplicate_abs_corr_0.99999998"
+              }
+            },
+            "empty_columns": [],
+            "feature_order": [
+              "z_rank",
+              "slope_rank",
+              "abs_slope_rank",
+              "position_rank",
+              "local_low_rank",
+              "pool_depth_rank",
+              "basin_depth_30m_rank",
+              "basin_depth_100m_rank",
+              "H21_x_abs_slope_rank",
+              "H21_x_local_low_rank",
+              "H21_x_pool_depth_rank"
+            ],
+            "imputer": "median",
+            "imputer_statistics": {
+              "abs_slope_rank": 0.3323809523809524,
+              "basin_depth_100m_rank": 0.4438095238095238,
+              "basin_depth_30m_rank": 0.49142857142857144,
+              "local_low_rank": 0.49523809523809526,
+              "pool_depth_rank": 0.43142857142857144,
+              "position_rank": 0.4323809523809524,
+              "slope_rank": 0.5019047619047619,
+              "z_rank": 0.5371428571428571
+            },
+            "scaler": "StandardScaler",
+            "scaler_mean": {
+              "abs_slope_rank": 0.48800077639751555,
+              "basin_depth_100m_rank": 0.5075750517598342,
+              "basin_depth_30m_rank": 0.5012551759834368,
+              "local_low_rank": 0.4993180641821947,
+              "pool_depth_rank": 0.4585960144927536,
+              "position_rank": 0.4504399585921325,
+              "slope_rank": 0.5007052277432713,
+              "z_rank": 0.5346829710144928
+            },
+            "scaler_scale": {
+              "abs_slope_rank": 0.23909600304764517,
+              "basin_depth_100m_rank": 0.16192243703509648,
+              "basin_depth_30m_rank": 0.07281054074658154,
+              "local_low_rank": 0.20830091185409105,
+              "pool_depth_rank": 0.2796422809522079,
+              "position_rank": 0.2788000423047912,
+              "slope_rank": 0.2375080620305507,
+              "z_rank": 0.28287032528373013
+            },
+            "used_features": [
+              "z_rank",
+              "slope_rank",
+              "abs_slope_rank",
+              "position_rank",
+              "local_low_rank",
+              "pool_depth_rank",
+              "basin_depth_30m_rank",
+              "basin_depth_100m_rank"
+            ]
+          },
+          "residual_centering": "within training simple section",
+          "solver": "cholesky",
+          "target": "residual_centered_mm",
+          "target_mean": -1.8704844436619485e-17,
+          "target_std": 0.5533035471391229,
+          "training_dates": [
+            "2018-09-23"
+          ],
+          "training_rows": 368,
+          "training_sections": [
+            1250011604,
+            1250022871
+          ],
+          "used_features": [
+            "z_rank",
+            "slope_rank",
+            "abs_slope_rank",
+            "position_rank",
+            "local_low_rank",
+            "pool_depth_rank",
+            "basin_depth_30m_rank",
+            "basin_depth_100m_rank"
+          ]
+        }
+      }
+    },
+    "1250011604": {
+      "physics": {
+        "gap_policy": "own_mean",
+        "interpretation": "Effective segment-minimum thinning rate under declared environment priors; not an electrochemical CO2/H2S constant",
+        "name": "M1",
+        "priors": {
+          "age_exponent": 1.0,
+          "beta_W": 0.3,
+          "beta_v": 0.1,
+          "theta_K": 2500.0,
+          "velocity_offset_m_s": 0.1
+        },
+        "r_ref_mm_year": 0.1050127394112433,
+        "reference": {
+          "temperature_K": 285.6940825298223,
+          "velocity_m_s": 0.5707789385004212,
+          "water_fraction": 0.867897304128054
+        },
+        "training_groups": 1,
+        "training_rows": 338,
+        "weighting": "W0"
+      },
+      "spatial": {
+        "baseline": {
+          "alpha": 10.0,
+          "baseline_column": null,
+          "coefficient_by_feature": {
+            "abs_slope_rank": -0.029349295531391595,
+            "basin_depth_100m_rank": -0.0428545281277744,
+            "basin_depth_30m_rank": 0.05394187345147859,
+            "local_low_rank": -0.01856720632771444,
+            "pool_depth_rank": 0.07115867852679812,
+            "position_rank": -0.0029696838477196144,
+            "slope_rank": -0.013685028636962566,
+            "z_rank": 0.005982273364297125
+          },
+          "coefficients": [
+            0.005982273364297125,
+            -0.013685028636962566,
+            -0.029349295531391595,
+            -0.0029696838477196144,
+            -0.01856720632771444,
+            0.07115867852679812,
+            0.05394187345147859,
+            -0.0428545281277744
+          ],
+          "dropped_columns": {},
+          "features": [
+            "z_rank",
+            "slope_rank",
+            "abs_slope_rank",
+            "position_rank",
+            "local_low_rank",
+            "pool_depth_rank",
+            "basin_depth_30m_rank",
+            "basin_depth_100m_rank"
+          ],
+          "fit_intercept": true,
+          "intercept": -3.9263887681295654e-17,
+          "model_name": "s2_spatial_ridge",
+          "model_type": "Ridge",
+          "prediction_policy": "delta",
+          "preprocessing": {
+            "constant_columns": [],
+            "dropped_columns": {},
+            "duplicate_columns": {},
+            "empty_columns": [],
+            "feature_order": [
+              "z_rank",
+              "slope_rank",
+              "abs_slope_rank",
+              "position_rank",
+              "local_low_rank",
+              "pool_depth_rank",
+              "basin_depth_30m_rank",
+              "basin_depth_100m_rank"
+            ],
+            "imputer": "median",
+            "imputer_statistics": {
+              "abs_slope_rank": 0.3323809523809524,
+              "basin_depth_100m_rank": 0.4438095238095238,
+              "basin_depth_30m_rank": 0.49142857142857144,
+              "local_low_rank": 0.49523809523809526,
+              "pool_depth_rank": 0.43142857142857144,
+              "position_rank": 0.4247619047619048,
+              "slope_rank": 0.5019047619047619,
+              "z_rank": 0.5371428571428571
+            },
+            "scaler": "StandardScaler",
+            "scaler_mean": {
+              "abs_slope_rank": 0.4883262890955199,
+              "basin_depth_100m_rank": 0.5073006480698788,
+              "basin_depth_30m_rank": 0.5004198365736827,
+              "local_low_rank": 0.5004705550859396,
+              "pool_depth_rank": 0.4592702169625246,
+              "position_rank": 0.44249084249084253,
+              "slope_rank": 0.4986080586080586,
+              "z_rank": 0.5412228796844182
+            },
+            "scaler_scale": {
+              "abs_slope_rank": 0.23638201660059974,
+              "basin_depth_100m_rank": 0.16478466643561918,
+              "basin_depth_30m_rank": 0.06612311758322582,
+              "local_low_rank": 0.20058529452486257,
+              "pool_depth_rank": 0.27927088993578386,
+              "position_rank": 0.2745402551576399,
+              "slope_rank": 0.23446487867955595,
+              "z_rank": 0.2795968499690223
+            },
+            "used_features": [
+              "z_rank",
+              "slope_rank",
+              "abs_slope_rank",
+              "position_rank",
+              "local_low_rank",
+              "pool_depth_rank",
+              "basin_depth_30m_rank",
+              "basin_depth_100m_rank"
+            ]
+          },
+          "residual_centering": "within training simple section",
+          "solver": "cholesky",
+          "target": "residual_centered_mm",
+          "target_mean": -1.8394227626925672e-17,
+          "target_std": 0.5587450882835931,
+          "training_dates": [
+            "2018-09-23"
+          ],
+          "training_rows": 338,
+          "training_sections": [
+            1250009490,
+            1250022871
+          ],
+          "used_features": [
+            "z_rank",
+            "slope_rank",
+            "abs_slope_rank",
+            "position_rank",
+            "local_low_rank",
+            "pool_depth_rank",
+            "basin_depth_30m_rank",
+            "basin_depth_100m_rank"
+          ]
+        },
+        "centered_relative_loss": {
+          "alpha": 10.0,
+          "baseline_column": null,
+          "coefficient_by_feature": {
+            "abs_slope_rank": 0.003668661941423948,
+            "basin_depth_100m_rank": 0.005356816015971802,
+            "basin_depth_30m_rank": -0.006742734181434825,
+            "local_low_rank": 0.0023209007909643065,
+            "pool_depth_rank": -0.008894834815849764,
+            "position_rank": 0.0003712104809649526,
+            "slope_rank": 0.0017106285796203208,
+            "z_rank": -0.0007477841705371409
+          },
+          "coefficients": [
+            -0.0007477841705371409,
+            0.0017106285796203208,
+            0.003668661941423948,
+            0.0003712104809649526,
+            0.0023209007909643065,
+            -0.008894834815849764,
+            -0.006742734181434825,
+            0.005356816015971802
+          ],
+          "dropped_columns": {},
+          "features": [
+            "z_rank",
+            "slope_rank",
+            "abs_slope_rank",
+            "position_rank",
+            "local_low_rank",
+            "pool_depth_rank",
+            "basin_depth_30m_rank",
+            "basin_depth_100m_rank"
+          ],
+          "fit_intercept": true,
+          "intercept": 5.236454310642772e-18,
+          "model_name": "s2_relative_loss_ridge",
+          "model_type": "Ridge",
+          "nominal_thicknesses_mm": [
+            8.0
+          ],
+          "prediction_policy": "delta",
+          "preprocessing": {
+            "constant_columns": [],
+            "dropped_columns": {},
+            "duplicate_columns": {},
+            "empty_columns": [],
+            "feature_order": [
+              "z_rank",
+              "slope_rank",
+              "abs_slope_rank",
+              "position_rank",
+              "local_low_rank",
+              "pool_depth_rank",
+              "basin_depth_30m_rank",
+              "basin_depth_100m_rank"
+            ],
+            "imputer": "median",
+            "imputer_statistics": {
+              "abs_slope_rank": 0.3323809523809524,
+              "basin_depth_100m_rank": 0.4438095238095238,
+              "basin_depth_30m_rank": 0.49142857142857144,
+              "local_low_rank": 0.49523809523809526,
+              "pool_depth_rank": 0.43142857142857144,
+              "position_rank": 0.4247619047619048,
+              "slope_rank": 0.5019047619047619,
+              "z_rank": 0.5371428571428571
+            },
+            "scaler": "StandardScaler",
+            "scaler_mean": {
+              "abs_slope_rank": 0.4883262890955199,
+              "basin_depth_100m_rank": 0.5073006480698788,
+              "basin_depth_30m_rank": 0.5004198365736827,
+              "local_low_rank": 0.5004705550859396,
+              "pool_depth_rank": 0.4592702169625246,
+              "position_rank": 0.44249084249084253,
+              "slope_rank": 0.4986080586080586,
+              "z_rank": 0.5412228796844182
+            },
+            "scaler_scale": {
+              "abs_slope_rank": 0.23638201660059974,
+              "basin_depth_100m_rank": 0.16478466643561918,
+              "basin_depth_30m_rank": 0.06612311758322582,
+              "local_low_rank": 0.20058529452486257,
+              "pool_depth_rank": 0.27927088993578386,
+              "position_rank": 0.2745402551576399,
+              "slope_rank": 0.23446487867955595,
+              "z_rank": 0.2795968499690223
+            },
+            "used_features": [
+              "z_rank",
+              "slope_rank",
+              "abs_slope_rank",
+              "position_rank",
+              "local_low_rank",
+              "pool_depth_rank",
+              "basin_depth_30m_rank",
+              "basin_depth_100m_rank"
+            ]
+          },
+          "solver": "cholesky",
+          "target": "relative_loss",
+          "target_centered_within_profile": true,
+          "target_mean": 2.6277468038465243e-18,
+          "target_std": 0.06984313603544914,
+          "training_dates": [
+            "2018-09-23"
+          ],
+          "training_rows": 338,
+          "training_sections": [
+            1250009490,
+            1250022871
+          ],
+          "used_features": [
+            "z_rank",
+            "slope_rank",
+            "abs_slope_rank",
+            "position_rank",
+            "local_low_rank",
+            "pool_depth_rank",
+            "basin_depth_30m_rank",
+            "basin_depth_100m_rank"
+          ]
+        },
+        "constant_conditions_thermal_exposure": {
+          "alpha": 10.0,
+          "baseline_column": null,
+          "coefficient_by_feature": {
+            "abs_slope_rank": -0.030325957507046912,
+            "basin_depth_100m_rank": -0.041937008024162885,
+            "basin_depth_30m_rank": 0.05456821255450277,
+            "constant_conditions_thermal_exposure": 0.06256270151085454,
+            "local_low_rank": -0.017294004502282315,
+            "pool_depth_rank": 0.07352360458790509,
+            "position_rank": 0.05642161215391427,
+            "slope_rank": -0.013340821448477891,
+            "z_rank": 0.005349989649590508
+          },
+          "coefficients": [
+            0.005349989649590508,
+            -0.013340821448477891,
+            -0.030325957507046912,
+            0.05642161215391427,
+            -0.017294004502282315,
+            0.07352360458790509,
+            0.05456821255450277,
+            -0.041937008024162885,
+            0.06256270151085454
+          ],
+          "dropped_columns": {},
+          "features": [
+            "z_rank",
+            "slope_rank",
+            "abs_slope_rank",
+            "position_rank",
+            "local_low_rank",
+            "pool_depth_rank",
+            "basin_depth_30m_rank",
+            "basin_depth_100m_rank",
+            "constant_conditions_thermal_exposure"
+          ],
+          "fit_intercept": true,
+          "intercept": -1.9908339180244513e-17,
+          "model_name": "s2_spatial_ridge",
+          "model_type": "Ridge",
+          "prediction_policy": "delta",
+          "preprocessing": {
+            "constant_columns": [],
+            "dropped_columns": {},
+            "duplicate_columns": {},
+            "empty_columns": [],
+            "feature_order": [
+              "z_rank",
+              "slope_rank",
+              "abs_slope_rank",
+              "position_rank",
+              "local_low_rank",
+              "pool_depth_rank",
+              "basin_depth_30m_rank",
+              "basin_depth_100m_rank",
+              "constant_conditions_thermal_exposure"
+            ],
+            "imputer": "median",
+            "imputer_statistics": {
+              "abs_slope_rank": 0.3323809523809524,
+              "basin_depth_100m_rank": 0.4438095238095238,
+              "basin_depth_30m_rank": 0.49142857142857144,
+              "constant_conditions_thermal_exposure": 0.12897686506948602,
+              "local_low_rank": 0.49523809523809526,
+              "pool_depth_rank": 0.43142857142857144,
+              "position_rank": 0.4247619047619048,
+              "slope_rank": 0.5019047619047619,
+              "z_rank": 0.5371428571428571
+            },
+            "scaler": "StandardScaler",
+            "scaler_mean": {
+              "abs_slope_rank": 0.4883262890955199,
+              "basin_depth_100m_rank": 0.5073006480698788,
+              "basin_depth_30m_rank": 0.5004198365736827,
+              "constant_conditions_thermal_exposure": 0.10714991036372976,
+              "local_low_rank": 0.5004705550859396,
+              "pool_depth_rank": 0.4592702169625246,
+              "position_rank": 0.44249084249084253,
+              "slope_rank": 0.4986080586080586,
+              "z_rank": 0.5412228796844182
+            },
+            "scaler_scale": {
+              "abs_slope_rank": 0.23638201660059974,
+              "basin_depth_100m_rank": 0.16478466643561918,
+              "basin_depth_30m_rank": 0.06612311758322582,
+              "constant_conditions_thermal_exposure": 0.5173420292117689,
+              "local_low_rank": 0.20058529452486257,
+              "pool_depth_rank": 0.27927088993578386,
+              "position_rank": 0.2745402551576399,
+              "slope_rank": 0.23446487867955595,
+              "z_rank": 0.2795968499690223
+            },
+            "used_features": [
+              "z_rank",
+              "slope_rank",
+              "abs_slope_rank",
+              "position_rank",
+              "local_low_rank",
+              "pool_depth_rank",
+              "basin_depth_30m_rank",
+              "basin_depth_100m_rank",
+              "constant_conditions_thermal_exposure"
+            ]
+          },
+          "residual_centering": "within training simple section",
+          "solver": "cholesky",
+          "target": "residual_centered_mm",
+          "target_mean": -1.8394227626925672e-17,
+          "target_std": 0.5587450882835931,
+          "training_dates": [
+            "2018-09-23"
+          ],
+          "training_rows": 338,
+          "training_sections": [
+            1250009490,
+            1250022871
+          ],
+          "used_features": [
+            "z_rank",
+            "slope_rank",
+            "abs_slope_rank",
+            "position_rank",
+            "local_low_rank",
+            "pool_depth_rank",
+            "basin_depth_30m_rank",
+            "basin_depth_100m_rank",
+            "constant_conditions_thermal_exposure"
+          ]
+        },
+        "integrated_thermal_exposure": {
+          "alpha": 10.0,
+          "baseline_column": null,
+          "coefficient_by_feature": {
+            "abs_slope_rank": -0.03032952389015614,
+            "basin_depth_100m_rank": -0.0419590395775257,
+            "basin_depth_30m_rank": 0.05457129093786307,
+            "integrated_thermal_exposure": 0.06272966966458961,
+            "local_low_rank": -0.017301815774152084,
+            "pool_depth_rank": 0.07350523814070817,
+            "position_rank": 0.05659700429018076,
+            "slope_rank": -0.013349850413224557,
+            "z_rank": 0.005379081696080422
+          },
+          "coefficients": [
+            0.005379081696080422,
+            -0.013349850413224557,
+            -0.03032952389015614,
+            0.05659700429018076,
+            -0.017301815774152084,
+            0.07350523814070817,
+            0.05457129093786307,
+            -0.0419590395775257,
+            0.06272966966458961
+          ],
+          "dropped_columns": {},
+          "features": [
+            "z_rank",
+            "slope_rank",
+            "abs_slope_rank",
+            "position_rank",
+            "local_low_rank",
+            "pool_depth_rank",
+            "basin_depth_30m_rank",
+            "basin_depth_100m_rank",
+            "integrated_thermal_exposure"
+          ],
+          "fit_intercept": true,
+          "intercept": -4.094435483310912e-17,
+          "model_name": "s2_spatial_ridge",
+          "model_type": "Ridge",
+          "prediction_policy": "delta",
+          "preprocessing": {
+            "constant_columns": [],
+            "dropped_columns": {},
+            "duplicate_columns": {},
+            "empty_columns": [],
+            "feature_order": [
+              "z_rank",
+              "slope_rank",
+              "abs_slope_rank",
+              "position_rank",
+              "local_low_rank",
+              "pool_depth_rank",
+              "basin_depth_30m_rank",
+              "basin_depth_100m_rank",
+              "integrated_thermal_exposure"
+            ],
+            "imputer": "median",
+            "imputer_statistics": {
+              "abs_slope_rank": 0.3323809523809524,
+              "basin_depth_100m_rank": 0.4438095238095238,
+              "basin_depth_30m_rank": 0.49142857142857144,
+              "integrated_thermal_exposure": 0.1345322413990484,
+              "local_low_rank": 0.49523809523809526,
+              "pool_depth_rank": 0.43142857142857144,
+              "position_rank": 0.4247619047619048,
+              "slope_rank": 0.5019047619047619,
+              "z_rank": 0.5371428571428571
+            },
+            "scaler": "StandardScaler",
+            "scaler_mean": {
+              "abs_slope_rank": 0.4883262890955199,
+              "basin_depth_100m_rank": 0.5073006480698788,
+              "basin_depth_30m_rank": 0.5004198365736827,
+              "integrated_thermal_exposure": 0.11215742019744163,
+              "local_low_rank": 0.5004705550859396,
+              "pool_depth_rank": 0.4592702169625246,
+              "position_rank": 0.44249084249084253,
+              "slope_rank": 0.4986080586080586,
+              "z_rank": 0.5412228796844182
+            },
+            "scaler_scale": {
+              "abs_slope_rank": 0.23638201660059974,
+              "basin_depth_100m_rank": 0.16478466643561918,
+              "basin_depth_30m_rank": 0.06612311758322582,
+              "integrated_thermal_exposure": 0.541742281325713,
+              "local_low_rank": 0.20058529452486257,
+              "pool_depth_rank": 0.27927088993578386,
+              "position_rank": 0.2745402551576399,
+              "slope_rank": 0.23446487867955595,
+              "z_rank": 0.2795968499690223
+            },
+            "used_features": [
+              "z_rank",
+              "slope_rank",
+              "abs_slope_rank",
+              "position_rank",
+              "local_low_rank",
+              "pool_depth_rank",
+              "basin_depth_30m_rank",
+              "basin_depth_100m_rank",
+              "integrated_thermal_exposure"
+            ]
+          },
+          "residual_centering": "within training simple section",
+          "solver": "cholesky",
+          "target": "residual_centered_mm",
+          "target_mean": -1.8394227626925672e-17,
+          "target_std": 0.5587450882835931,
+          "training_dates": [
+            "2018-09-23"
+          ],
+          "training_rows": 338,
+          "training_sections": [
+            1250009490,
+            1250022871
+          ],
+          "used_features": [
+            "z_rank",
+            "slope_rank",
+            "abs_slope_rank",
+            "position_rank",
+            "local_low_rank",
+            "pool_depth_rank",
+            "basin_depth_30m_rank",
+            "basin_depth_100m_rank",
+            "integrated_thermal_exposure"
+          ]
+        },
+        "relative_loss_uncentered_fit": {
+          "alpha": 10.0,
+          "baseline_column": null,
+          "coefficient_by_feature": {
+            "abs_slope_rank": 0.003658607192596582,
+            "basin_depth_100m_rank": 0.005387055366174052,
+            "basin_depth_30m_rank": -0.00673720660896985,
+            "local_low_rank": 0.002354895028786935,
+            "pool_depth_rank": -0.0088084835056528,
+            "position_rank": 0.0003348380771719357,
+            "slope_rank": 0.001716931414874661,
+            "z_rank": -0.0007894938569862574
+          },
+          "coefficients": [
+            -0.0007894938569862574,
+            0.001716931414874661,
+            0.003658607192596582,
+            0.0003348380771719357,
+            0.002354895028786935,
+            -0.0088084835056528,
+            -0.00673720660896985,
+            0.005387055366174052
+          ],
+          "dropped_columns": {},
+          "features": [
+            "z_rank",
+            "slope_rank",
+            "abs_slope_rank",
+            "position_rank",
+            "local_low_rank",
+            "pool_depth_rank",
+            "basin_depth_30m_rank",
+            "basin_depth_100m_rank"
+          ],
+          "fit_intercept": true,
+          "intercept": 0.23439349112426033,
+          "model_name": "s2_relative_loss_ridge",
+          "model_type": "Ridge",
+          "nominal_thicknesses_mm": [
+            8.0
+          ],
+          "prediction_policy": "delta",
+          "preprocessing": {
+            "constant_columns": [],
+            "dropped_columns": {},
+            "duplicate_columns": {},
+            "empty_columns": [],
+            "feature_order": [
+              "z_rank",
+              "slope_rank",
+              "abs_slope_rank",
+              "position_rank",
+              "local_low_rank",
+              "pool_depth_rank",
+              "basin_depth_30m_rank",
+              "basin_depth_100m_rank"
+            ],
+            "imputer": "median",
+            "imputer_statistics": {
+              "abs_slope_rank": 0.3323809523809524,
+              "basin_depth_100m_rank": 0.4438095238095238,
+              "basin_depth_30m_rank": 0.49142857142857144,
+              "local_low_rank": 0.49523809523809526,
+              "pool_depth_rank": 0.43142857142857144,
+              "position_rank": 0.4247619047619048,
+              "slope_rank": 0.5019047619047619,
+              "z_rank": 0.5371428571428571
+            },
+            "scaler": "StandardScaler",
+            "scaler_mean": {
+              "abs_slope_rank": 0.4883262890955199,
+              "basin_depth_100m_rank": 0.5073006480698788,
+              "basin_depth_30m_rank": 0.5004198365736827,
+              "local_low_rank": 0.5004705550859396,
+              "pool_depth_rank": 0.4592702169625246,
+              "position_rank": 0.44249084249084253,
+              "slope_rank": 0.4986080586080586,
+              "z_rank": 0.5412228796844182
+            },
+            "scaler_scale": {
+              "abs_slope_rank": 0.23638201660059974,
+              "basin_depth_100m_rank": 0.16478466643561918,
+              "basin_depth_30m_rank": 0.06612311758322582,
+              "local_low_rank": 0.20058529452486257,
+              "pool_depth_rank": 0.27927088993578386,
+              "position_rank": 0.2745402551576399,
+              "slope_rank": 0.23446487867955595,
+              "z_rank": 0.2795968499690223
+            },
+            "used_features": [
+              "z_rank",
+              "slope_rank",
+              "abs_slope_rank",
+              "position_rank",
+              "local_low_rank",
+              "pool_depth_rank",
+              "basin_depth_30m_rank",
+              "basin_depth_100m_rank"
+            ]
+          },
+          "solver": "cholesky",
+          "target": "relative_loss",
+          "target_centered_within_profile": false,
+          "target_mean": 0.23439349112426033,
+          "target_std": 0.06989268328351293,
+          "training_dates": [
+            "2018-09-23"
+          ],
+          "training_rows": 338,
+          "training_sections": [
+            1250009490,
+            1250022871
+          ],
+          "used_features": [
+            "z_rank",
+            "slope_rank",
+            "abs_slope_rank",
+            "position_rank",
+            "local_low_rank",
+            "pool_depth_rank",
+            "basin_depth_30m_rank",
+            "basin_depth_100m_rank"
+          ]
+        },
+        "terrain_times_constant_velocity": {
+          "alpha": 10.0,
+          "baseline_column": null,
+          "coefficient_by_feature": {
+            "abs_slope_rank": -0.029349295531391595,
+            "basin_depth_100m_rank": -0.0428545281277744,
+            "basin_depth_30m_rank": 0.05394187345147859,
+            "local_low_rank": -0.01856720632771444,
+            "pool_depth_rank": 0.07115867852679812,
+            "position_rank": -0.0029696838477196144,
+            "slope_rank": -0.013685028636962566,
+            "z_rank": 0.005982273364297125
+          },
+          "coefficients": [
+            0.005982273364297125,
+            -0.013685028636962566,
+            -0.029349295531391595,
+            -0.0029696838477196144,
+            -0.01856720632771444,
+            0.07115867852679812,
+            0.05394187345147859,
+            -0.0428545281277744
+          ],
+          "dropped_columns": {
+            "H22_x_abs_slope_rank": "near_duplicate_abs_corr_1.00000000",
+            "H22_x_local_low_rank": "near_duplicate_abs_corr_1.00000000",
+            "H22_x_pool_depth_rank": "near_duplicate_abs_corr_1.00000000"
+          },
+          "features": [
+            "z_rank",
+            "slope_rank",
+            "abs_slope_rank",
+            "position_rank",
+            "local_low_rank",
+            "pool_depth_rank",
+            "basin_depth_30m_rank",
+            "basin_depth_100m_rank",
+            "H22_x_abs_slope_rank",
+            "H22_x_local_low_rank",
+            "H22_x_pool_depth_rank"
+          ],
+          "fit_intercept": true,
+          "intercept": -3.9263887681295654e-17,
+          "model_name": "s2_spatial_ridge",
+          "model_type": "Ridge",
+          "prediction_policy": "delta",
+          "preprocessing": {
+            "constant_columns": [],
+            "dropped_columns": {
+              "H22_x_abs_slope_rank": "near_duplicate_abs_corr_1.00000000",
+              "H22_x_local_low_rank": "near_duplicate_abs_corr_1.00000000",
+              "H22_x_pool_depth_rank": "near_duplicate_abs_corr_1.00000000"
+            },
+            "duplicate_columns": {
+              "H22_x_abs_slope_rank": {
+                "kept": "abs_slope_rank",
+                "relation": "near_duplicate_abs_corr_1.00000000"
+              },
+              "H22_x_local_low_rank": {
+                "kept": "local_low_rank",
+                "relation": "near_duplicate_abs_corr_1.00000000"
+              },
+              "H22_x_pool_depth_rank": {
+                "kept": "pool_depth_rank",
+                "relation": "near_duplicate_abs_corr_1.00000000"
+              }
+            },
+            "empty_columns": [],
+            "feature_order": [
+              "z_rank",
+              "slope_rank",
+              "abs_slope_rank",
+              "position_rank",
+              "local_low_rank",
+              "pool_depth_rank",
+              "basin_depth_30m_rank",
+              "basin_depth_100m_rank",
+              "H22_x_abs_slope_rank",
+              "H22_x_local_low_rank",
+              "H22_x_pool_depth_rank"
+            ],
+            "imputer": "median",
+            "imputer_statistics": {
+              "abs_slope_rank": 0.3323809523809524,
+              "basin_depth_100m_rank": 0.4438095238095238,
+              "basin_depth_30m_rank": 0.49142857142857144,
+              "local_low_rank": 0.49523809523809526,
+              "pool_depth_rank": 0.43142857142857144,
+              "position_rank": 0.4247619047619048,
+              "slope_rank": 0.5019047619047619,
+              "z_rank": 0.5371428571428571
+            },
+            "scaler": "StandardScaler",
+            "scaler_mean": {
+              "abs_slope_rank": 0.4883262890955199,
+              "basin_depth_100m_rank": 0.5073006480698788,
+              "basin_depth_30m_rank": 0.5004198365736827,
+              "local_low_rank": 0.5004705550859396,
+              "pool_depth_rank": 0.4592702169625246,
+              "position_rank": 0.44249084249084253,
+              "slope_rank": 0.4986080586080586,
+              "z_rank": 0.5412228796844182
+            },
+            "scaler_scale": {
+              "abs_slope_rank": 0.23638201660059974,
+              "basin_depth_100m_rank": 0.16478466643561918,
+              "basin_depth_30m_rank": 0.06612311758322582,
+              "local_low_rank": 0.20058529452486257,
+              "pool_depth_rank": 0.27927088993578386,
+              "position_rank": 0.2745402551576399,
+              "slope_rank": 0.23446487867955595,
+              "z_rank": 0.2795968499690223
+            },
+            "used_features": [
+              "z_rank",
+              "slope_rank",
+              "abs_slope_rank",
+              "position_rank",
+              "local_low_rank",
+              "pool_depth_rank",
+              "basin_depth_30m_rank",
+              "basin_depth_100m_rank"
+            ]
+          },
+          "residual_centering": "within training simple section",
+          "solver": "cholesky",
+          "target": "residual_centered_mm",
+          "target_mean": -1.8394227626925672e-17,
+          "target_std": 0.5587450882835931,
+          "training_dates": [
+            "2018-09-23"
+          ],
+          "training_rows": 338,
+          "training_sections": [
+            1250009490,
+            1250022871
+          ],
+          "used_features": [
+            "z_rank",
+            "slope_rank",
+            "abs_slope_rank",
+            "position_rank",
+            "local_low_rank",
+            "pool_depth_rank",
+            "basin_depth_30m_rank",
+            "basin_depth_100m_rank"
+          ]
+        },
+        "terrain_times_constant_water": {
+          "alpha": 10.0,
+          "baseline_column": null,
+          "coefficient_by_feature": {
+            "abs_slope_rank": -0.029349295531391595,
+            "basin_depth_100m_rank": -0.0428545281277744,
+            "basin_depth_30m_rank": 0.05394187345147859,
+            "local_low_rank": -0.01856720632771444,
+            "pool_depth_rank": 0.07115867852679812,
+            "position_rank": -0.0029696838477196144,
+            "slope_rank": -0.013685028636962566,
+            "z_rank": 0.005982273364297125
+          },
+          "coefficients": [
+            0.005982273364297125,
+            -0.013685028636962566,
+            -0.029349295531391595,
+            -0.0029696838477196144,
+            -0.01856720632771444,
+            0.07115867852679812,
+            0.05394187345147859,
+            -0.0428545281277744
+          ],
+          "dropped_columns": {
+            "H21_x_abs_slope_rank": "near_duplicate_abs_corr_1.00000000",
+            "H21_x_local_low_rank": "near_duplicate_abs_corr_1.00000000",
+            "H21_x_pool_depth_rank": "near_duplicate_abs_corr_1.00000000"
+          },
+          "features": [
+            "z_rank",
+            "slope_rank",
+            "abs_slope_rank",
+            "position_rank",
+            "local_low_rank",
+            "pool_depth_rank",
+            "basin_depth_30m_rank",
+            "basin_depth_100m_rank",
+            "H21_x_abs_slope_rank",
+            "H21_x_local_low_rank",
+            "H21_x_pool_depth_rank"
+          ],
+          "fit_intercept": true,
+          "intercept": -3.9263887681295654e-17,
+          "model_name": "s2_spatial_ridge",
+          "model_type": "Ridge",
+          "prediction_policy": "delta",
+          "preprocessing": {
+            "constant_columns": [],
+            "dropped_columns": {
+              "H21_x_abs_slope_rank": "near_duplicate_abs_corr_1.00000000",
+              "H21_x_local_low_rank": "near_duplicate_abs_corr_1.00000000",
+              "H21_x_pool_depth_rank": "near_duplicate_abs_corr_1.00000000"
+            },
+            "duplicate_columns": {
+              "H21_x_abs_slope_rank": {
+                "kept": "abs_slope_rank",
+                "relation": "near_duplicate_abs_corr_1.00000000"
+              },
+              "H21_x_local_low_rank": {
+                "kept": "local_low_rank",
+                "relation": "near_duplicate_abs_corr_1.00000000"
+              },
+              "H21_x_pool_depth_rank": {
+                "kept": "pool_depth_rank",
+                "relation": "near_duplicate_abs_corr_1.00000000"
+              }
+            },
+            "empty_columns": [],
+            "feature_order": [
+              "z_rank",
+              "slope_rank",
+              "abs_slope_rank",
+              "position_rank",
+              "local_low_rank",
+              "pool_depth_rank",
+              "basin_depth_30m_rank",
+              "basin_depth_100m_rank",
+              "H21_x_abs_slope_rank",
+              "H21_x_local_low_rank",
+              "H21_x_pool_depth_rank"
+            ],
+            "imputer": "median",
+            "imputer_statistics": {
+              "abs_slope_rank": 0.3323809523809524,
+              "basin_depth_100m_rank": 0.4438095238095238,
+              "basin_depth_30m_rank": 0.49142857142857144,
+              "local_low_rank": 0.49523809523809526,
+              "pool_depth_rank": 0.43142857142857144,
+              "position_rank": 0.4247619047619048,
+              "slope_rank": 0.5019047619047619,
+              "z_rank": 0.5371428571428571
+            },
+            "scaler": "StandardScaler",
+            "scaler_mean": {
+              "abs_slope_rank": 0.4883262890955199,
+              "basin_depth_100m_rank": 0.5073006480698788,
+              "basin_depth_30m_rank": 0.5004198365736827,
+              "local_low_rank": 0.5004705550859396,
+              "pool_depth_rank": 0.4592702169625246,
+              "position_rank": 0.44249084249084253,
+              "slope_rank": 0.4986080586080586,
+              "z_rank": 0.5412228796844182
+            },
+            "scaler_scale": {
+              "abs_slope_rank": 0.23638201660059974,
+              "basin_depth_100m_rank": 0.16478466643561918,
+              "basin_depth_30m_rank": 0.06612311758322582,
+              "local_low_rank": 0.20058529452486257,
+              "pool_depth_rank": 0.27927088993578386,
+              "position_rank": 0.2745402551576399,
+              "slope_rank": 0.23446487867955595,
+              "z_rank": 0.2795968499690223
+            },
+            "used_features": [
+              "z_rank",
+              "slope_rank",
+              "abs_slope_rank",
+              "position_rank",
+              "local_low_rank",
+              "pool_depth_rank",
+              "basin_depth_30m_rank",
+              "basin_depth_100m_rank"
+            ]
+          },
+          "residual_centering": "within training simple section",
+          "solver": "cholesky",
+          "target": "residual_centered_mm",
+          "target_mean": -1.8394227626925672e-17,
+          "target_std": 0.5587450882835931,
+          "training_dates": [
+            "2018-09-23"
+          ],
+          "training_rows": 338,
+          "training_sections": [
+            1250009490,
+            1250022871
+          ],
+          "used_features": [
+            "z_rank",
+            "slope_rank",
+            "abs_slope_rank",
+            "position_rank",
+            "local_low_rank",
+            "pool_depth_rank",
+            "basin_depth_30m_rank",
+            "basin_depth_100m_rank"
+          ]
+        },
+        "terrain_times_log_liquid_velocity": {
+          "alpha": 10.0,
+          "baseline_column": null,
+          "coefficient_by_feature": {
+            "abs_slope_rank": -0.029349295531391595,
+            "basin_depth_100m_rank": -0.0428545281277744,
+            "basin_depth_30m_rank": 0.05394187345147859,
+            "local_low_rank": -0.01856720632771444,
+            "pool_depth_rank": 0.07115867852679812,
+            "position_rank": -0.0029696838477196144,
+            "slope_rank": -0.013685028636962566,
+            "z_rank": 0.005982273364297125
+          },
+          "coefficients": [
+            0.005982273364297125,
+            -0.013685028636962566,
+            -0.029349295531391595,
+            -0.0029696838477196144,
+            -0.01856720632771444,
+            0.07115867852679812,
+            0.05394187345147859,
+            -0.0428545281277744
+          ],
+          "dropped_columns": {
+            "H22_x_abs_slope_rank": "near_duplicate_abs_corr_1.00000000",
+            "H22_x_local_low_rank": "near_duplicate_abs_corr_1.00000000",
+            "H22_x_pool_depth_rank": "near_duplicate_abs_corr_1.00000000"
+          },
+          "features": [
+            "z_rank",
+            "slope_rank",
+            "abs_slope_rank",
+            "position_rank",
+            "local_low_rank",
+            "pool_depth_rank",
+            "basin_depth_30m_rank",
+            "basin_depth_100m_rank",
+            "H22_x_abs_slope_rank",
+            "H22_x_local_low_rank",
+            "H22_x_pool_depth_rank"
+          ],
+          "fit_intercept": true,
+          "intercept": -3.9263887681295654e-17,
+          "model_name": "s2_spatial_ridge",
+          "model_type": "Ridge",
+          "prediction_policy": "delta",
+          "preprocessing": {
+            "constant_columns": [],
+            "dropped_columns": {
+              "H22_x_abs_slope_rank": "near_duplicate_abs_corr_1.00000000",
+              "H22_x_local_low_rank": "near_duplicate_abs_corr_1.00000000",
+              "H22_x_pool_depth_rank": "near_duplicate_abs_corr_1.00000000"
+            },
+            "duplicate_columns": {
+              "H22_x_abs_slope_rank": {
+                "kept": "abs_slope_rank",
+                "relation": "near_duplicate_abs_corr_1.00000000"
+              },
+              "H22_x_local_low_rank": {
+                "kept": "local_low_rank",
+                "relation": "near_duplicate_abs_corr_1.00000000"
+              },
+              "H22_x_pool_depth_rank": {
+                "kept": "pool_depth_rank",
+                "relation": "near_duplicate_abs_corr_1.00000000"
+              }
+            },
+            "empty_columns": [],
+            "feature_order": [
+              "z_rank",
+              "slope_rank",
+              "abs_slope_rank",
+              "position_rank",
+              "local_low_rank",
+              "pool_depth_rank",
+              "basin_depth_30m_rank",
+              "basin_depth_100m_rank",
+              "H22_x_abs_slope_rank",
+              "H22_x_local_low_rank",
+              "H22_x_pool_depth_rank"
+            ],
+            "imputer": "median",
+            "imputer_statistics": {
+              "abs_slope_rank": 0.3323809523809524,
+              "basin_depth_100m_rank": 0.4438095238095238,
+              "basin_depth_30m_rank": 0.49142857142857144,
+              "local_low_rank": 0.49523809523809526,
+              "pool_depth_rank": 0.43142857142857144,
+              "position_rank": 0.4247619047619048,
+              "slope_rank": 0.5019047619047619,
+              "z_rank": 0.5371428571428571
+            },
+            "scaler": "StandardScaler",
+            "scaler_mean": {
+              "abs_slope_rank": 0.4883262890955199,
+              "basin_depth_100m_rank": 0.5073006480698788,
+              "basin_depth_30m_rank": 0.5004198365736827,
+              "local_low_rank": 0.5004705550859396,
+              "pool_depth_rank": 0.4592702169625246,
+              "position_rank": 0.44249084249084253,
+              "slope_rank": 0.4986080586080586,
+              "z_rank": 0.5412228796844182
+            },
+            "scaler_scale": {
+              "abs_slope_rank": 0.23638201660059974,
+              "basin_depth_100m_rank": 0.16478466643561918,
+              "basin_depth_30m_rank": 0.06612311758322582,
+              "local_low_rank": 0.20058529452486257,
+              "pool_depth_rank": 0.27927088993578386,
+              "position_rank": 0.2745402551576399,
+              "slope_rank": 0.23446487867955595,
+              "z_rank": 0.2795968499690223
+            },
+            "used_features": [
+              "z_rank",
+              "slope_rank",
+              "abs_slope_rank",
+              "position_rank",
+              "local_low_rank",
+              "pool_depth_rank",
+              "basin_depth_30m_rank",
+              "basin_depth_100m_rank"
+            ]
+          },
+          "residual_centering": "within training simple section",
+          "solver": "cholesky",
+          "target": "residual_centered_mm",
+          "target_mean": -1.8394227626925672e-17,
+          "target_std": 0.5587450882835931,
+          "training_dates": [
+            "2018-09-23"
+          ],
+          "training_rows": 338,
+          "training_sections": [
+            1250009490,
+            1250022871
+          ],
+          "used_features": [
+            "z_rank",
+            "slope_rank",
+            "abs_slope_rank",
+            "position_rank",
+            "local_low_rank",
+            "pool_depth_rank",
+            "basin_depth_30m_rank",
+            "basin_depth_100m_rank"
+          ]
+        },
+        "terrain_times_water_fraction": {
+          "alpha": 10.0,
+          "baseline_column": null,
+          "coefficient_by_feature": {
+            "abs_slope_rank": -0.029349295531391595,
+            "basin_depth_100m_rank": -0.0428545281277744,
+            "basin_depth_30m_rank": 0.05394187345147859,
+            "local_low_rank": -0.01856720632771444,
+            "pool_depth_rank": 0.07115867852679812,
+            "position_rank": -0.0029696838477196144,
+            "slope_rank": -0.013685028636962566,
+            "z_rank": 0.005982273364297125
+          },
+          "coefficients": [
+            0.005982273364297125,
+            -0.013685028636962566,
+            -0.029349295531391595,
+            -0.0029696838477196144,
+            -0.01856720632771444,
+            0.07115867852679812,
+            0.05394187345147859,
+            -0.0428545281277744
+          ],
+          "dropped_columns": {
+            "H21_x_abs_slope_rank": "near_duplicate_abs_corr_1.00000000",
+            "H21_x_local_low_rank": "near_duplicate_abs_corr_1.00000000",
+            "H21_x_pool_depth_rank": "near_duplicate_abs_corr_1.00000000"
+          },
+          "features": [
+            "z_rank",
+            "slope_rank",
+            "abs_slope_rank",
+            "position_rank",
+            "local_low_rank",
+            "pool_depth_rank",
+            "basin_depth_30m_rank",
+            "basin_depth_100m_rank",
+            "H21_x_abs_slope_rank",
+            "H21_x_local_low_rank",
+            "H21_x_pool_depth_rank"
+          ],
+          "fit_intercept": true,
+          "intercept": -3.9263887681295654e-17,
+          "model_name": "s2_spatial_ridge",
+          "model_type": "Ridge",
+          "prediction_policy": "delta",
+          "preprocessing": {
+            "constant_columns": [],
+            "dropped_columns": {
+              "H21_x_abs_slope_rank": "near_duplicate_abs_corr_1.00000000",
+              "H21_x_local_low_rank": "near_duplicate_abs_corr_1.00000000",
+              "H21_x_pool_depth_rank": "near_duplicate_abs_corr_1.00000000"
+            },
+            "duplicate_columns": {
+              "H21_x_abs_slope_rank": {
+                "kept": "abs_slope_rank",
+                "relation": "near_duplicate_abs_corr_1.00000000"
+              },
+              "H21_x_local_low_rank": {
+                "kept": "local_low_rank",
+                "relation": "near_duplicate_abs_corr_1.00000000"
+              },
+              "H21_x_pool_depth_rank": {
+                "kept": "pool_depth_rank",
+                "relation": "near_duplicate_abs_corr_1.00000000"
+              }
+            },
+            "empty_columns": [],
+            "feature_order": [
+              "z_rank",
+              "slope_rank",
+              "abs_slope_rank",
+              "position_rank",
+              "local_low_rank",
+              "pool_depth_rank",
+              "basin_depth_30m_rank",
+              "basin_depth_100m_rank",
+              "H21_x_abs_slope_rank",
+              "H21_x_local_low_rank",
+              "H21_x_pool_depth_rank"
+            ],
+            "imputer": "median",
+            "imputer_statistics": {
+              "abs_slope_rank": 0.3323809523809524,
+              "basin_depth_100m_rank": 0.4438095238095238,
+              "basin_depth_30m_rank": 0.49142857142857144,
+              "local_low_rank": 0.49523809523809526,
+              "pool_depth_rank": 0.43142857142857144,
+              "position_rank": 0.4247619047619048,
+              "slope_rank": 0.5019047619047619,
+              "z_rank": 0.5371428571428571
+            },
+            "scaler": "StandardScaler",
+            "scaler_mean": {
+              "abs_slope_rank": 0.4883262890955199,
+              "basin_depth_100m_rank": 0.5073006480698788,
+              "basin_depth_30m_rank": 0.5004198365736827,
+              "local_low_rank": 0.5004705550859396,
+              "pool_depth_rank": 0.4592702169625246,
+              "position_rank": 0.44249084249084253,
+              "slope_rank": 0.4986080586080586,
+              "z_rank": 0.5412228796844182
+            },
+            "scaler_scale": {
+              "abs_slope_rank": 0.23638201660059974,
+              "basin_depth_100m_rank": 0.16478466643561918,
+              "basin_depth_30m_rank": 0.06612311758322582,
+              "local_low_rank": 0.20058529452486257,
+              "pool_depth_rank": 0.27927088993578386,
+              "position_rank": 0.2745402551576399,
+              "slope_rank": 0.23446487867955595,
+              "z_rank": 0.2795968499690223
+            },
+            "used_features": [
+              "z_rank",
+              "slope_rank",
+              "abs_slope_rank",
+              "position_rank",
+              "local_low_rank",
+              "pool_depth_rank",
+              "basin_depth_30m_rank",
+              "basin_depth_100m_rank"
+            ]
+          },
+          "residual_centering": "within training simple section",
+          "solver": "cholesky",
+          "target": "residual_centered_mm",
+          "target_mean": -1.8394227626925672e-17,
+          "target_std": 0.5587450882835931,
+          "training_dates": [
+            "2018-09-23"
+          ],
+          "training_rows": 338,
+          "training_sections": [
+            1250009490,
+            1250022871
+          ],
+          "used_features": [
+            "z_rank",
+            "slope_rank",
+            "abs_slope_rank",
+            "position_rank",
+            "local_low_rank",
+            "pool_depth_rank",
+            "basin_depth_30m_rank",
+            "basin_depth_100m_rank"
+          ]
+        }
+      }
+    },
+    "1250022871": {
+      "physics": {
+        "gap_policy": "own_mean",
+        "interpretation": "Effective segment-minimum thinning rate under declared environment priors; not an electrochemical CO2/H2S constant",
+        "name": "M1",
+        "priors": {
+          "age_exponent": 1.0,
+          "beta_W": 0.3,
+          "beta_v": 0.1,
+          "theta_K": 2500.0,
+          "velocity_offset_m_s": 0.1
+        },
+        "r_ref_mm_year": 0.10850260213494746,
+        "reference": {
+          "temperature_K": 284.2044309050126,
+          "velocity_m_s": 0.6278153748946925,
+          "water_fraction": 0.867581255265375
+        },
+        "training_groups": 1,
+        "training_rows": 38,
+        "weighting": "W0"
+      },
+      "spatial": {
+        "baseline": {
+          "alpha": 10.0,
+          "baseline_column": null,
+          "coefficient_by_feature": {
+            "abs_slope_rank": 0.007431743881993702,
+            "basin_depth_30m_rank": 0.0350540013297943,
+            "local_low_rank": -0.022227395063270546,
+            "pool_depth_rank": 0.09188053412961641,
+            "position_rank": -0.014966462924381026,
+            "slope_rank": -0.03234114056404591,
+            "z_rank": 0.01571033537159951
+          },
+          "coefficients": [
+            0.01571033537159951,
+            -0.03234114056404591,
+            0.007431743881993702,
+            -0.014966462924381026,
+            -0.022227395063270546,
+            0.09188053412961641,
+            0.0350540013297943
+          ],
+          "dropped_columns": {
+            "basin_depth_100m_rank": "exact_duplicate"
+          },
+          "features": [
+            "z_rank",
+            "slope_rank",
+            "abs_slope_rank",
+            "position_rank",
+            "local_low_rank",
+            "pool_depth_rank",
+            "basin_depth_30m_rank",
+            "basin_depth_100m_rank"
+          ],
+          "fit_intercept": true,
+          "intercept": 6.663911840441386e-17,
+          "model_name": "s2_spatial_ridge",
+          "model_type": "Ridge",
+          "prediction_policy": "delta",
+          "preprocessing": {
+            "constant_columns": [],
+            "dropped_columns": {
+              "basin_depth_100m_rank": "exact_duplicate"
+            },
+            "duplicate_columns": {
+              "basin_depth_100m_rank": {
+                "kept": "basin_depth_30m_rank",
+                "relation": "exact_duplicate"
+              }
+            },
+            "empty_columns": [],
+            "feature_order": [
+              "z_rank",
+              "slope_rank",
+              "abs_slope_rank",
+              "position_rank",
+              "local_low_rank",
+              "pool_depth_rank",
+              "basin_depth_30m_rank",
+              "basin_depth_100m_rank"
+            ],
+            "imputer": "median",
+            "imputer_statistics": {
+              "abs_slope_rank": 0.27,
+              "basin_depth_30m_rank": 0.48,
+              "local_low_rank": 0.52,
+              "pool_depth_rank": 0.44,
+              "position_rank": 0.54,
+              "slope_rank": 0.71,
+              "z_rank": 0.44
+            },
+            "scaler": "StandardScaler",
+            "scaler_mean": {
+              "abs_slope_rank": 0.48763157894736836,
+              "basin_depth_30m_rank": 0.508421052631579,
+              "local_low_rank": 0.4944736842105263,
+              "pool_depth_rank": 0.46657894736842126,
+              "position_rank": 0.5210526315789473,
+              "slope_rank": 0.5192105263157895,
+              "z_rank": 0.47447368421052627
+            },
+            "scaler_scale": {
+              "abs_slope_rank": 0.2768377276019703,
+              "basin_depth_30m_rank": 0.11132045529601924,
+              "local_low_rank": 0.28409317752808766,
+              "pool_depth_rank": 0.2876335050737261,
+              "position_rank": 0.30855170575554064,
+              "slope_rank": 0.27735955743352886,
+              "z_rank": 0.3063511690546707
+            },
+            "used_features": [
+              "z_rank",
+              "slope_rank",
+              "abs_slope_rank",
+              "position_rank",
+              "local_low_rank",
+              "pool_depth_rank",
+              "basin_depth_30m_rank"
+            ]
+          },
+          "residual_centering": "within training simple section",
+          "solver": "cholesky",
+          "target": "residual_centered_mm",
+          "target_mean": -2.1912296538654406e-17,
+          "target_std": 0.452221682877321,
+          "training_dates": [
+            "2018-09-23"
+          ],
+          "training_rows": 38,
+          "training_sections": [
+            1250009490,
+            1250011604
+          ],
+          "used_features": [
+            "z_rank",
+            "slope_rank",
+            "abs_slope_rank",
+            "position_rank",
+            "local_low_rank",
+            "pool_depth_rank",
+            "basin_depth_30m_rank"
+          ]
+        },
+        "centered_relative_loss": {
+          "alpha": 10.0,
+          "baseline_column": null,
+          "coefficient_by_feature": {
+            "abs_slope_rank": -0.0009289679852492056,
+            "basin_depth_30m_rank": -0.004381750166224289,
+            "local_low_rank": 0.002778424382908819,
+            "pool_depth_rank": -0.011485066766202052,
+            "position_rank": 0.0018708078655476296,
+            "slope_rank": 0.004042642570505746,
+            "z_rank": -0.001963791921449937
+          },
+          "coefficients": [
+            -0.001963791921449937,
+            0.004042642570505746,
+            -0.0009289679852492056,
+            0.0018708078655476296,
+            0.002778424382908819,
+            -0.011485066766202052,
+            -0.004381750166224289
+          ],
+          "dropped_columns": {
+            "basin_depth_100m_rank": "exact_duplicate"
+          },
+          "features": [
+            "z_rank",
+            "slope_rank",
+            "abs_slope_rank",
+            "position_rank",
+            "local_low_rank",
+            "pool_depth_rank",
+            "basin_depth_30m_rank",
+            "basin_depth_100m_rank"
+          ],
+          "fit_intercept": true,
+          "intercept": -1.399056640637079e-17,
+          "model_name": "s2_relative_loss_ridge",
+          "model_type": "Ridge",
+          "nominal_thicknesses_mm": [
+            8.0
+          ],
+          "prediction_policy": "delta",
+          "preprocessing": {
+            "constant_columns": [],
+            "dropped_columns": {
+              "basin_depth_100m_rank": "exact_duplicate"
+            },
+            "duplicate_columns": {
+              "basin_depth_100m_rank": {
+                "kept": "basin_depth_30m_rank",
+                "relation": "exact_duplicate"
+              }
+            },
+            "empty_columns": [],
+            "feature_order": [
+              "z_rank",
+              "slope_rank",
+              "abs_slope_rank",
+              "position_rank",
+              "local_low_rank",
+              "pool_depth_rank",
+              "basin_depth_30m_rank",
+              "basin_depth_100m_rank"
+            ],
+            "imputer": "median",
+            "imputer_statistics": {
+              "abs_slope_rank": 0.27,
+              "basin_depth_30m_rank": 0.48,
+              "local_low_rank": 0.52,
+              "pool_depth_rank": 0.44,
+              "position_rank": 0.54,
+              "slope_rank": 0.71,
+              "z_rank": 0.44
+            },
+            "scaler": "StandardScaler",
+            "scaler_mean": {
+              "abs_slope_rank": 0.48763157894736836,
+              "basin_depth_30m_rank": 0.508421052631579,
+              "local_low_rank": 0.4944736842105263,
+              "pool_depth_rank": 0.46657894736842126,
+              "position_rank": 0.5210526315789473,
+              "slope_rank": 0.5192105263157895,
+              "z_rank": 0.47447368421052627
+            },
+            "scaler_scale": {
+              "abs_slope_rank": 0.2768377276019703,
+              "basin_depth_30m_rank": 0.11132045529601924,
+              "local_low_rank": 0.28409317752808766,
+              "pool_depth_rank": 0.2876335050737261,
+              "position_rank": 0.30855170575554064,
+              "slope_rank": 0.27735955743352886,
+              "z_rank": 0.3063511690546707
+            },
+            "used_features": [
+              "z_rank",
+              "slope_rank",
+              "abs_slope_rank",
+              "position_rank",
+              "local_low_rank",
+              "pool_depth_rank",
+              "basin_depth_30m_rank"
+            ]
+          },
+          "solver": "cholesky",
+          "target": "relative_loss",
+          "target_centered_within_profile": true,
+          "target_mean": -2.921639538487254e-18,
+          "target_std": 0.056527710359665126,
+          "training_dates": [
+            "2018-09-23"
+          ],
+          "training_rows": 38,
+          "training_sections": [
+            1250009490,
+            1250011604
+          ],
+          "used_features": [
+            "z_rank",
+            "slope_rank",
+            "abs_slope_rank",
+            "position_rank",
+            "local_low_rank",
+            "pool_depth_rank",
+            "basin_depth_30m_rank"
+          ]
+        },
+        "constant_conditions_thermal_exposure": {
+          "alpha": 10.0,
+          "baseline_column": null,
+          "coefficient_by_feature": {
+            "abs_slope_rank": -0.00012686023399075525,
+            "basin_depth_30m_rank": 0.03509796002954191,
+            "constant_conditions_thermal_exposure": 0.08026003973521399,
+            "local_low_rank": -0.026553170261438105,
+            "pool_depth_rank": 0.09828486815873903,
+            "position_rank": 0.019901213838948748,
+            "slope_rank": -0.034196263639415816,
+            "z_rank": -0.015915678617766164
+          },
+          "coefficients": [
+            -0.015915678617766164,
+            -0.034196263639415816,
+            -0.00012686023399075525,
+            0.019901213838948748,
+            -0.026553170261438105,
+            0.09828486815873903,
+            0.03509796002954191,
+            0.08026003973521399
+          ],
+          "dropped_columns": {
+            "basin_depth_100m_rank": "exact_duplicate"
+          },
+          "features": [
+            "z_rank",
+            "slope_rank",
+            "abs_slope_rank",
+            "position_rank",
+            "local_low_rank",
+            "pool_depth_rank",
+            "basin_depth_30m_rank",
+            "basin_depth_100m_rank",
+            "constant_conditions_thermal_exposure"
+          ],
+          "fit_intercept": true,
+          "intercept": 7.047802844958754e-17,
+          "model_name": "s2_spatial_ridge",
+          "model_type": "Ridge",
+          "prediction_policy": "delta",
+          "preprocessing": {
+            "constant_columns": [],
+            "dropped_columns": {
+              "basin_depth_100m_rank": "exact_duplicate"
+            },
+            "duplicate_columns": {
+              "basin_depth_100m_rank": {
+                "kept": "basin_depth_30m_rank",
+                "relation": "exact_duplicate"
+              }
+            },
+            "empty_columns": [],
+            "feature_order": [
+              "z_rank",
+              "slope_rank",
+              "abs_slope_rank",
+              "position_rank",
+              "local_low_rank",
+              "pool_depth_rank",
+              "basin_depth_30m_rank",
+              "basin_depth_100m_rank",
+              "constant_conditions_thermal_exposure"
+            ],
+            "imputer": "median",
+            "imputer_statistics": {
+              "abs_slope_rank": 0.27,
+              "basin_depth_30m_rank": 0.48,
+              "constant_conditions_thermal_exposure": -0.005388021005586552,
+              "local_low_rank": 0.52,
+              "pool_depth_rank": 0.44,
+              "position_rank": 0.54,
+              "slope_rank": 0.71,
+              "z_rank": 0.44
+            },
+            "scaler": "StandardScaler",
+            "scaler_mean": {
+              "abs_slope_rank": 0.48763157894736836,
+              "basin_depth_30m_rank": 0.508421052631579,
+              "constant_conditions_thermal_exposure": -0.004613667499716905,
+              "local_low_rank": 0.4944736842105263,
+              "pool_depth_rank": 0.46657894736842126,
+              "position_rank": 0.5210526315789473,
+              "slope_rank": 0.5192105263157895,
+              "z_rank": 0.47447368421052627
+            },
+            "scaler_scale": {
+              "abs_slope_rank": 0.2768377276019703,
+              "basin_depth_30m_rank": 0.11132045529601924,
+              "constant_conditions_thermal_exposure": 0.042278656207129006,
+              "local_low_rank": 0.28409317752808766,
+              "pool_depth_rank": 0.2876335050737261,
+              "position_rank": 0.30855170575554064,
+              "slope_rank": 0.27735955743352886,
+              "z_rank": 0.3063511690546707
+            },
+            "used_features": [
+              "z_rank",
+              "slope_rank",
+              "abs_slope_rank",
+              "position_rank",
+              "local_low_rank",
+              "pool_depth_rank",
+              "basin_depth_30m_rank",
+              "constant_conditions_thermal_exposure"
+            ]
+          },
+          "residual_centering": "within training simple section",
+          "solver": "cholesky",
+          "target": "residual_centered_mm",
+          "target_mean": -2.1912296538654406e-17,
+          "target_std": 0.452221682877321,
+          "training_dates": [
+            "2018-09-23"
+          ],
+          "training_rows": 38,
+          "training_sections": [
+            1250009490,
+            1250011604
+          ],
+          "used_features": [
+            "z_rank",
+            "slope_rank",
+            "abs_slope_rank",
+            "position_rank",
+            "local_low_rank",
+            "pool_depth_rank",
+            "basin_depth_30m_rank",
+            "constant_conditions_thermal_exposure"
+          ]
+        },
+        "integrated_thermal_exposure": {
+          "alpha": 10.0,
+          "baseline_column": null,
+          "coefficient_by_feature": {
+            "abs_slope_rank": -0.00012470779464014828,
+            "basin_depth_30m_rank": 0.03509636210194669,
+            "integrated_thermal_exposure": 0.08025247292359645,
+            "local_low_rank": -0.026551176854102833,
+            "pool_depth_rank": 0.0982862960236968,
+            "position_rank": 0.01989884467478117,
+            "slope_rank": -0.03419688875414147,
+            "z_rank": -0.015913840355989486
+          },
+          "coefficients": [
+            -0.015913840355989486,
+            -0.03419688875414147,
+            -0.00012470779464014828,
+            0.01989884467478117,
+            -0.026551176854102833,
+            0.0982862960236968,
+            0.03509636210194669,
+            0.08025247292359645
+          ],
+          "dropped_columns": {
+            "basin_depth_100m_rank": "exact_duplicate"
+          },
+          "features": [
+            "z_rank",
+            "slope_rank",
+            "abs_slope_rank",
+            "position_rank",
+            "local_low_rank",
+            "pool_depth_rank",
+            "basin_depth_30m_rank",
+            "basin_depth_100m_rank",
+            "integrated_thermal_exposure"
+          ],
+          "fit_intercept": true,
+          "intercept": 7.563595586646083e-17,
+          "model_name": "s2_spatial_ridge",
+          "model_type": "Ridge",
+          "prediction_policy": "delta",
+          "preprocessing": {
+            "constant_columns": [],
+            "dropped_columns": {
+              "basin_depth_100m_rank": "exact_duplicate"
+            },
+            "duplicate_columns": {
+              "basin_depth_100m_rank": {
+                "kept": "basin_depth_30m_rank",
+                "relation": "exact_duplicate"
+              }
+            },
+            "empty_columns": [],
+            "feature_order": [
+              "z_rank",
+              "slope_rank",
+              "abs_slope_rank",
+              "position_rank",
+              "local_low_rank",
+              "pool_depth_rank",
+              "basin_depth_30m_rank",
+              "basin_depth_100m_rank",
+              "integrated_thermal_exposure"
+            ],
+            "imputer": "median",
+            "imputer_statistics": {
+              "abs_slope_rank": 0.27,
+              "basin_depth_30m_rank": 0.48,
+              "integrated_thermal_exposure": -0.005709092301472651,
+              "local_low_rank": 0.52,
+              "pool_depth_rank": 0.44,
+              "position_rank": 0.54,
+              "slope_rank": 0.71,
+              "z_rank": 0.44
+            },
+            "scaler": "StandardScaler",
+            "scaler_mean": {
+              "abs_slope_rank": 0.48763157894736836,
+              "basin_depth_30m_rank": 0.508421052631579,
+              "integrated_thermal_exposure": -0.004882258988732022,
+              "local_low_rank": 0.4944736842105263,
+              "pool_depth_rank": 0.46657894736842126,
+              "position_rank": 0.5210526315789473,
+              "slope_rank": 0.5192105263157895,
+              "z_rank": 0.47447368421052627
+            },
+            "scaler_scale": {
+              "abs_slope_rank": 0.2768377276019703,
+              "basin_depth_30m_rank": 0.11132045529601924,
+              "integrated_thermal_exposure": 0.04474731338654648,
+              "local_low_rank": 0.28409317752808766,
+              "pool_depth_rank": 0.2876335050737261,
+              "position_rank": 0.30855170575554064,
+              "slope_rank": 0.27735955743352886,
+              "z_rank": 0.3063511690546707
+            },
+            "used_features": [
+              "z_rank",
+              "slope_rank",
+              "abs_slope_rank",
+              "position_rank",
+              "local_low_rank",
+              "pool_depth_rank",
+              "basin_depth_30m_rank",
+              "integrated_thermal_exposure"
+            ]
+          },
+          "residual_centering": "within training simple section",
+          "solver": "cholesky",
+          "target": "residual_centered_mm",
+          "target_mean": -2.1912296538654406e-17,
+          "target_std": 0.452221682877321,
+          "training_dates": [
+            "2018-09-23"
+          ],
+          "training_rows": 38,
+          "training_sections": [
+            1250009490,
+            1250011604
+          ],
+          "used_features": [
+            "z_rank",
+            "slope_rank",
+            "abs_slope_rank",
+            "position_rank",
+            "local_low_rank",
+            "pool_depth_rank",
+            "basin_depth_30m_rank",
+            "integrated_thermal_exposure"
+          ]
+        },
+        "relative_loss_uncentered_fit": {
+          "alpha": 10.0,
+          "baseline_column": null,
+          "coefficient_by_feature": {
+            "abs_slope_rank": -0.0009699217622778474,
+            "basin_depth_30m_rank": -0.004473106649980618,
+            "local_low_rank": 0.002631947509791271,
+            "pool_depth_rank": -0.011214637057175335,
+            "position_rank": 0.0014059351412624864,
+            "slope_rank": 0.00392464166372114,
+            "z_rank": -0.0020272249479086416
+          },
+          "coefficients": [
+            -0.0020272249479086416,
+            0.00392464166372114,
+            -0.0009699217622778474,
+            0.0014059351412624864,
+            0.002631947509791271,
+            -0.011214637057175335,
+            -0.004473106649980618
+          ],
+          "dropped_columns": {
+            "basin_depth_100m_rank": "exact_duplicate"
+          },
+          "features": [
+            "z_rank",
+            "slope_rank",
+            "abs_slope_rank",
+            "position_rank",
+            "local_low_rank",
+            "pool_depth_rank",
+            "basin_depth_30m_rank",
+            "basin_depth_100m_rank"
+          ],
+          "fit_intercept": true,
+          "intercept": 0.24101973684210526,
+          "model_name": "s2_relative_loss_ridge",
+          "model_type": "Ridge",
+          "nominal_thicknesses_mm": [
+            8.0
+          ],
+          "prediction_policy": "delta",
+          "preprocessing": {
+            "constant_columns": [],
+            "dropped_columns": {
+              "basin_depth_100m_rank": "exact_duplicate"
+            },
+            "duplicate_columns": {
+              "basin_depth_100m_rank": {
+                "kept": "basin_depth_30m_rank",
+                "relation": "exact_duplicate"
+              }
+            },
+            "empty_columns": [],
+            "feature_order": [
+              "z_rank",
+              "slope_rank",
+              "abs_slope_rank",
+              "position_rank",
+              "local_low_rank",
+              "pool_depth_rank",
+              "basin_depth_30m_rank",
+              "basin_depth_100m_rank"
+            ],
+            "imputer": "median",
+            "imputer_statistics": {
+              "abs_slope_rank": 0.27,
+              "basin_depth_30m_rank": 0.48,
+              "local_low_rank": 0.52,
+              "pool_depth_rank": 0.44,
+              "position_rank": 0.54,
+              "slope_rank": 0.71,
+              "z_rank": 0.44
+            },
+            "scaler": "StandardScaler",
+            "scaler_mean": {
+              "abs_slope_rank": 0.48763157894736836,
+              "basin_depth_30m_rank": 0.508421052631579,
+              "local_low_rank": 0.4944736842105263,
+              "pool_depth_rank": 0.46657894736842126,
+              "position_rank": 0.5210526315789473,
+              "slope_rank": 0.5192105263157895,
+              "z_rank": 0.47447368421052627
+            },
+            "scaler_scale": {
+              "abs_slope_rank": 0.2768377276019703,
+              "basin_depth_30m_rank": 0.11132045529601924,
+              "local_low_rank": 0.28409317752808766,
+              "pool_depth_rank": 0.2876335050737261,
+              "position_rank": 0.30855170575554064,
+              "slope_rank": 0.27735955743352886,
+              "z_rank": 0.3063511690546707
+            },
+            "used_features": [
+              "z_rank",
+              "slope_rank",
+              "abs_slope_rank",
+              "position_rank",
+              "local_low_rank",
+              "pool_depth_rank",
+              "basin_depth_30m_rank"
+            ]
+          },
+          "solver": "cholesky",
+          "target": "relative_loss",
+          "target_centered_within_profile": false,
+          "target_mean": 0.24101973684210526,
+          "target_std": 0.05684253357843014,
+          "training_dates": [
+            "2018-09-23"
+          ],
+          "training_rows": 38,
+          "training_sections": [
+            1250009490,
+            1250011604
+          ],
+          "used_features": [
+            "z_rank",
+            "slope_rank",
+            "abs_slope_rank",
+            "position_rank",
+            "local_low_rank",
+            "pool_depth_rank",
+            "basin_depth_30m_rank"
+          ]
+        },
+        "terrain_times_constant_velocity": {
+          "alpha": 10.0,
+          "baseline_column": null,
+          "coefficient_by_feature": {
+            "abs_slope_rank": 0.007431743881993702,
+            "basin_depth_30m_rank": 0.0350540013297943,
+            "local_low_rank": -0.022227395063270546,
+            "pool_depth_rank": 0.09188053412961641,
+            "position_rank": -0.014966462924381026,
+            "slope_rank": -0.03234114056404591,
+            "z_rank": 0.01571033537159951
+          },
+          "coefficients": [
+            0.01571033537159951,
+            -0.03234114056404591,
+            0.007431743881993702,
+            -0.014966462924381026,
+            -0.022227395063270546,
+            0.09188053412961641,
+            0.0350540013297943
+          ],
+          "dropped_columns": {
+            "H22_x_abs_slope_rank": "near_duplicate_abs_corr_1.00000000",
+            "H22_x_local_low_rank": "near_duplicate_abs_corr_1.00000000",
+            "H22_x_pool_depth_rank": "near_duplicate_abs_corr_1.00000000",
+            "basin_depth_100m_rank": "exact_duplicate"
+          },
+          "features": [
+            "z_rank",
+            "slope_rank",
+            "abs_slope_rank",
+            "position_rank",
+            "local_low_rank",
+            "pool_depth_rank",
+            "basin_depth_30m_rank",
+            "basin_depth_100m_rank",
+            "H22_x_abs_slope_rank",
+            "H22_x_local_low_rank",
+            "H22_x_pool_depth_rank"
+          ],
+          "fit_intercept": true,
+          "intercept": 6.663911840441386e-17,
+          "model_name": "s2_spatial_ridge",
+          "model_type": "Ridge",
+          "prediction_policy": "delta",
+          "preprocessing": {
+            "constant_columns": [],
+            "dropped_columns": {
+              "H22_x_abs_slope_rank": "near_duplicate_abs_corr_1.00000000",
+              "H22_x_local_low_rank": "near_duplicate_abs_corr_1.00000000",
+              "H22_x_pool_depth_rank": "near_duplicate_abs_corr_1.00000000",
+              "basin_depth_100m_rank": "exact_duplicate"
+            },
+            "duplicate_columns": {
+              "H22_x_abs_slope_rank": {
+                "kept": "abs_slope_rank",
+                "relation": "near_duplicate_abs_corr_1.00000000"
+              },
+              "H22_x_local_low_rank": {
+                "kept": "local_low_rank",
+                "relation": "near_duplicate_abs_corr_1.00000000"
+              },
+              "H22_x_pool_depth_rank": {
+                "kept": "pool_depth_rank",
+                "relation": "near_duplicate_abs_corr_1.00000000"
+              },
+              "basin_depth_100m_rank": {
+                "kept": "basin_depth_30m_rank",
+                "relation": "exact_duplicate"
+              }
+            },
+            "empty_columns": [],
+            "feature_order": [
+              "z_rank",
+              "slope_rank",
+              "abs_slope_rank",
+              "position_rank",
+              "local_low_rank",
+              "pool_depth_rank",
+              "basin_depth_30m_rank",
+              "basin_depth_100m_rank",
+              "H22_x_abs_slope_rank",
+              "H22_x_local_low_rank",
+              "H22_x_pool_depth_rank"
+            ],
+            "imputer": "median",
+            "imputer_statistics": {
+              "abs_slope_rank": 0.27,
+              "basin_depth_30m_rank": 0.48,
+              "local_low_rank": 0.52,
+              "pool_depth_rank": 0.44,
+              "position_rank": 0.54,
+              "slope_rank": 0.71,
+              "z_rank": 0.44
+            },
+            "scaler": "StandardScaler",
+            "scaler_mean": {
+              "abs_slope_rank": 0.48763157894736836,
+              "basin_depth_30m_rank": 0.508421052631579,
+              "local_low_rank": 0.4944736842105263,
+              "pool_depth_rank": 0.46657894736842126,
+              "position_rank": 0.5210526315789473,
+              "slope_rank": 0.5192105263157895,
+              "z_rank": 0.47447368421052627
+            },
+            "scaler_scale": {
+              "abs_slope_rank": 0.2768377276019703,
+              "basin_depth_30m_rank": 0.11132045529601924,
+              "local_low_rank": 0.28409317752808766,
+              "pool_depth_rank": 0.2876335050737261,
+              "position_rank": 0.30855170575554064,
+              "slope_rank": 0.27735955743352886,
+              "z_rank": 0.3063511690546707
+            },
+            "used_features": [
+              "z_rank",
+              "slope_rank",
+              "abs_slope_rank",
+              "position_rank",
+              "local_low_rank",
+              "pool_depth_rank",
+              "basin_depth_30m_rank"
+            ]
+          },
+          "residual_centering": "within training simple section",
+          "solver": "cholesky",
+          "target": "residual_centered_mm",
+          "target_mean": -2.1912296538654406e-17,
+          "target_std": 0.452221682877321,
+          "training_dates": [
+            "2018-09-23"
+          ],
+          "training_rows": 38,
+          "training_sections": [
+            1250009490,
+            1250011604
+          ],
+          "used_features": [
+            "z_rank",
+            "slope_rank",
+            "abs_slope_rank",
+            "position_rank",
+            "local_low_rank",
+            "pool_depth_rank",
+            "basin_depth_30m_rank"
+          ]
+        },
+        "terrain_times_constant_water": {
+          "alpha": 10.0,
+          "baseline_column": null,
+          "coefficient_by_feature": {
+            "abs_slope_rank": 0.007431743881993702,
+            "basin_depth_30m_rank": 0.0350540013297943,
+            "local_low_rank": -0.022227395063270546,
+            "pool_depth_rank": 0.09188053412961641,
+            "position_rank": -0.014966462924381026,
+            "slope_rank": -0.03234114056404591,
+            "z_rank": 0.01571033537159951
+          },
+          "coefficients": [
+            0.01571033537159951,
+            -0.03234114056404591,
+            0.007431743881993702,
+            -0.014966462924381026,
+            -0.022227395063270546,
+            0.09188053412961641,
+            0.0350540013297943
+          ],
+          "dropped_columns": {
+            "H21_x_abs_slope_rank": "near_duplicate_abs_corr_1.00000000",
+            "H21_x_local_low_rank": "near_duplicate_abs_corr_1.00000000",
+            "H21_x_pool_depth_rank": "near_duplicate_abs_corr_1.00000000",
+            "basin_depth_100m_rank": "exact_duplicate"
+          },
+          "features": [
+            "z_rank",
+            "slope_rank",
+            "abs_slope_rank",
+            "position_rank",
+            "local_low_rank",
+            "pool_depth_rank",
+            "basin_depth_30m_rank",
+            "basin_depth_100m_rank",
+            "H21_x_abs_slope_rank",
+            "H21_x_local_low_rank",
+            "H21_x_pool_depth_rank"
+          ],
+          "fit_intercept": true,
+          "intercept": 6.663911840441386e-17,
+          "model_name": "s2_spatial_ridge",
+          "model_type": "Ridge",
+          "prediction_policy": "delta",
+          "preprocessing": {
+            "constant_columns": [],
+            "dropped_columns": {
+              "H21_x_abs_slope_rank": "near_duplicate_abs_corr_1.00000000",
+              "H21_x_local_low_rank": "near_duplicate_abs_corr_1.00000000",
+              "H21_x_pool_depth_rank": "near_duplicate_abs_corr_1.00000000",
+              "basin_depth_100m_rank": "exact_duplicate"
+            },
+            "duplicate_columns": {
+              "H21_x_abs_slope_rank": {
+                "kept": "abs_slope_rank",
+                "relation": "near_duplicate_abs_corr_1.00000000"
+              },
+              "H21_x_local_low_rank": {
+                "kept": "local_low_rank",
+                "relation": "near_duplicate_abs_corr_1.00000000"
+              },
+              "H21_x_pool_depth_rank": {
+                "kept": "pool_depth_rank",
+                "relation": "near_duplicate_abs_corr_1.00000000"
+              },
+              "basin_depth_100m_rank": {
+                "kept": "basin_depth_30m_rank",
+                "relation": "exact_duplicate"
+              }
+            },
+            "empty_columns": [],
+            "feature_order": [
+              "z_rank",
+              "slope_rank",
+              "abs_slope_rank",
+              "position_rank",
+              "local_low_rank",
+              "pool_depth_rank",
+              "basin_depth_30m_rank",
+              "basin_depth_100m_rank",
+              "H21_x_abs_slope_rank",
+              "H21_x_local_low_rank",
+              "H21_x_pool_depth_rank"
+            ],
+            "imputer": "median",
+            "imputer_statistics": {
+              "abs_slope_rank": 0.27,
+              "basin_depth_30m_rank": 0.48,
+              "local_low_rank": 0.52,
+              "pool_depth_rank": 0.44,
+              "position_rank": 0.54,
+              "slope_rank": 0.71,
+              "z_rank": 0.44
+            },
+            "scaler": "StandardScaler",
+            "scaler_mean": {
+              "abs_slope_rank": 0.48763157894736836,
+              "basin_depth_30m_rank": 0.508421052631579,
+              "local_low_rank": 0.4944736842105263,
+              "pool_depth_rank": 0.46657894736842126,
+              "position_rank": 0.5210526315789473,
+              "slope_rank": 0.5192105263157895,
+              "z_rank": 0.47447368421052627
+            },
+            "scaler_scale": {
+              "abs_slope_rank": 0.2768377276019703,
+              "basin_depth_30m_rank": 0.11132045529601924,
+              "local_low_rank": 0.28409317752808766,
+              "pool_depth_rank": 0.2876335050737261,
+              "position_rank": 0.30855170575554064,
+              "slope_rank": 0.27735955743352886,
+              "z_rank": 0.3063511690546707
+            },
+            "used_features": [
+              "z_rank",
+              "slope_rank",
+              "abs_slope_rank",
+              "position_rank",
+              "local_low_rank",
+              "pool_depth_rank",
+              "basin_depth_30m_rank"
+            ]
+          },
+          "residual_centering": "within training simple section",
+          "solver": "cholesky",
+          "target": "residual_centered_mm",
+          "target_mean": -2.1912296538654406e-17,
+          "target_std": 0.452221682877321,
+          "training_dates": [
+            "2018-09-23"
+          ],
+          "training_rows": 38,
+          "training_sections": [
+            1250009490,
+            1250011604
+          ],
+          "used_features": [
+            "z_rank",
+            "slope_rank",
+            "abs_slope_rank",
+            "position_rank",
+            "local_low_rank",
+            "pool_depth_rank",
+            "basin_depth_30m_rank"
+          ]
+        },
+        "terrain_times_log_liquid_velocity": {
+          "alpha": 10.0,
+          "baseline_column": null,
+          "coefficient_by_feature": {
+            "H22_x_abs_slope_rank": 0.0015393838840440882,
+            "H22_x_local_low_rank": -0.010928681051915608,
+            "H22_x_pool_depth_rank": 0.058726617317241034,
+            "abs_slope_rank": 0.0039098075702702385,
+            "basin_depth_30m_rank": 0.03782496374119442,
+            "local_low_rank": -0.019877065524437937,
+            "pool_depth_rank": 0.04934460585433642,
+            "position_rank": -0.01567702817598636,
+            "slope_rank": -0.030025344448520976,
+            "z_rank": 0.016925161664314993
+          },
+          "coefficients": [
+            0.016925161664314993,
+            -0.030025344448520976,
+            0.0039098075702702385,
+            -0.01567702817598636,
+            -0.019877065524437937,
+            0.04934460585433642,
+            0.03782496374119442,
+            0.0015393838840440882,
+            -0.010928681051915608,
+            0.058726617317241034
+          ],
+          "dropped_columns": {
+            "basin_depth_100m_rank": "exact_duplicate"
+          },
+          "features": [
+            "z_rank",
+            "slope_rank",
+            "abs_slope_rank",
+            "position_rank",
+            "local_low_rank",
+            "pool_depth_rank",
+            "basin_depth_30m_rank",
+            "basin_depth_100m_rank",
+            "H22_x_abs_slope_rank",
+            "H22_x_local_low_rank",
+            "H22_x_pool_depth_rank"
+          ],
+          "fit_intercept": true,
+          "intercept": 6.925026954346558e-17,
+          "model_name": "s2_spatial_ridge",
+          "model_type": "Ridge",
+          "prediction_policy": "delta",
+          "preprocessing": {
+            "constant_columns": [],
+            "dropped_columns": {
+              "basin_depth_100m_rank": "exact_duplicate"
+            },
+            "duplicate_columns": {
+              "basin_depth_100m_rank": {
+                "kept": "basin_depth_30m_rank",
+                "relation": "exact_duplicate"
+              }
+            },
+            "empty_columns": [],
+            "feature_order": [
+              "z_rank",
+              "slope_rank",
+              "abs_slope_rank",
+              "position_rank",
+              "local_low_rank",
+              "pool_depth_rank",
+              "basin_depth_30m_rank",
+              "basin_depth_100m_rank",
+              "H22_x_abs_slope_rank",
+              "H22_x_local_low_rank",
+              "H22_x_pool_depth_rank"
+            ],
+            "imputer": "median",
+            "imputer_statistics": {
+              "H22_x_abs_slope_rank": 0.08766607412197282,
+              "H22_x_local_low_rank": 0.16883836497565133,
+              "H22_x_pool_depth_rank": 0.1428632319024742,
+              "abs_slope_rank": 0.27,
+              "basin_depth_30m_rank": 0.48,
+              "local_low_rank": 0.52,
+              "pool_depth_rank": 0.44,
+              "position_rank": 0.54,
+              "slope_rank": 0.71,
+              "z_rank": 0.44
+            },
+            "scaler": "StandardScaler",
+            "scaler_mean": {
+              "H22_x_abs_slope_rank": 0.15734151958001283,
+              "H22_x_local_low_rank": 0.1595137185217527,
+              "H22_x_pool_depth_rank": 0.15045659975281603,
+              "abs_slope_rank": 0.48763157894736836,
+              "basin_depth_30m_rank": 0.508421052631579,
+              "local_low_rank": 0.4944736842105263,
+              "pool_depth_rank": 0.46657894736842126,
+              "position_rank": 0.5210526315789473,
+              "slope_rank": 0.5192105263157895,
+              "z_rank": 0.47447368421052627
+            },
+            "scaler_scale": {
+              "H22_x_abs_slope_rank": 0.08922782311757364,
+              "H22_x_local_low_rank": 0.09159149780712297,
+              "H22_x_pool_depth_rank": 0.09264779178222618,
+              "abs_slope_rank": 0.2768377276019703,
+              "basin_depth_30m_rank": 0.11132045529601924,
+              "local_low_rank": 0.28409317752808766,
+              "pool_depth_rank": 0.2876335050737261,
+              "position_rank": 0.30855170575554064,
+              "slope_rank": 0.27735955743352886,
+              "z_rank": 0.3063511690546707
+            },
+            "used_features": [
+              "z_rank",
+              "slope_rank",
+              "abs_slope_rank",
+              "position_rank",
+              "local_low_rank",
+              "pool_depth_rank",
+              "basin_depth_30m_rank",
+              "H22_x_abs_slope_rank",
+              "H22_x_local_low_rank",
+              "H22_x_pool_depth_rank"
+            ]
+          },
+          "residual_centering": "within training simple section",
+          "solver": "cholesky",
+          "target": "residual_centered_mm",
+          "target_mean": -2.1912296538654406e-17,
+          "target_std": 0.452221682877321,
+          "training_dates": [
+            "2018-09-23"
+          ],
+          "training_rows": 38,
+          "training_sections": [
+            1250009490,
+            1250011604
+          ],
+          "used_features": [
+            "z_rank",
+            "slope_rank",
+            "abs_slope_rank",
+            "position_rank",
+            "local_low_rank",
+            "pool_depth_rank",
+            "basin_depth_30m_rank",
+            "H22_x_abs_slope_rank",
+            "H22_x_local_low_rank",
+            "H22_x_pool_depth_rank"
+          ]
+        },
+        "terrain_times_water_fraction": {
+          "alpha": 10.0,
+          "baseline_column": null,
+          "coefficient_by_feature": {
+            "abs_slope_rank": 0.007431743881993702,
+            "basin_depth_30m_rank": 0.0350540013297943,
+            "local_low_rank": -0.022227395063270546,
+            "pool_depth_rank": 0.09188053412961641,
+            "position_rank": -0.014966462924381026,
+            "slope_rank": -0.03234114056404591,
+            "z_rank": 0.01571033537159951
+          },
+          "coefficients": [
+            0.01571033537159951,
+            -0.03234114056404591,
+            0.007431743881993702,
+            -0.014966462924381026,
+            -0.022227395063270546,
+            0.09188053412961641,
+            0.0350540013297943
+          ],
+          "dropped_columns": {
+            "H21_x_abs_slope_rank": "near_duplicate_abs_corr_0.99999997",
+            "H21_x_local_low_rank": "near_duplicate_abs_corr_0.99999997",
+            "H21_x_pool_depth_rank": "near_duplicate_abs_corr_0.99999997",
+            "basin_depth_100m_rank": "exact_duplicate"
+          },
+          "features": [
+            "z_rank",
+            "slope_rank",
+            "abs_slope_rank",
+            "position_rank",
+            "local_low_rank",
+            "pool_depth_rank",
+            "basin_depth_30m_rank",
+            "basin_depth_100m_rank",
+            "H21_x_abs_slope_rank",
+            "H21_x_local_low_rank",
+            "H21_x_pool_depth_rank"
+          ],
+          "fit_intercept": true,
+          "intercept": 6.663911840441386e-17,
+          "model_name": "s2_spatial_ridge",
+          "model_type": "Ridge",
+          "prediction_policy": "delta",
+          "preprocessing": {
+            "constant_columns": [],
+            "dropped_columns": {
+              "H21_x_abs_slope_rank": "near_duplicate_abs_corr_0.99999997",
+              "H21_x_local_low_rank": "near_duplicate_abs_corr_0.99999997",
+              "H21_x_pool_depth_rank": "near_duplicate_abs_corr_0.99999997",
+              "basin_depth_100m_rank": "exact_duplicate"
+            },
+            "duplicate_columns": {
+              "H21_x_abs_slope_rank": {
+                "kept": "abs_slope_rank",
+                "relation": "near_duplicate_abs_corr_0.99999997"
+              },
+              "H21_x_local_low_rank": {
+                "kept": "local_low_rank",
+                "relation": "near_duplicate_abs_corr_0.99999997"
+              },
+              "H21_x_pool_depth_rank": {
+                "kept": "pool_depth_rank",
+                "relation": "near_duplicate_abs_corr_0.99999997"
+              },
+              "basin_depth_100m_rank": {
+                "kept": "basin_depth_30m_rank",
+                "relation": "exact_duplicate"
+              }
+            },
+            "empty_columns": [],
+            "feature_order": [
+              "z_rank",
+              "slope_rank",
+              "abs_slope_rank",
+              "position_rank",
+              "local_low_rank",
+              "pool_depth_rank",
+              "basin_depth_30m_rank",
+              "basin_depth_100m_rank",
+              "H21_x_abs_slope_rank",
+              "H21_x_local_low_rank",
+              "H21_x_pool_depth_rank"
+            ],
+            "imputer": "median",
+            "imputer_statistics": {
+              "abs_slope_rank": 0.27,
+              "basin_depth_30m_rank": 0.48,
+              "local_low_rank": 0.52,
+              "pool_depth_rank": 0.44,
+              "position_rank": 0.54,
+              "slope_rank": 0.71,
+              "z_rank": 0.44
+            },
+            "scaler": "StandardScaler",
+            "scaler_mean": {
+              "abs_slope_rank": 0.48763157894736836,
+              "basin_depth_30m_rank": 0.508421052631579,
+              "local_low_rank": 0.4944736842105263,
+              "pool_depth_rank": 0.46657894736842126,
+              "position_rank": 0.5210526315789473,
+              "slope_rank": 0.5192105263157895,
+              "z_rank": 0.47447368421052627
+            },
+            "scaler_scale": {
+              "abs_slope_rank": 0.2768377276019703,
+              "basin_depth_30m_rank": 0.11132045529601924,
+              "local_low_rank": 0.28409317752808766,
+              "pool_depth_rank": 0.2876335050737261,
+              "position_rank": 0.30855170575554064,
+              "slope_rank": 0.27735955743352886,
+              "z_rank": 0.3063511690546707
+            },
+            "used_features": [
+              "z_rank",
+              "slope_rank",
+              "abs_slope_rank",
+              "position_rank",
+              "local_low_rank",
+              "pool_depth_rank",
+              "basin_depth_30m_rank"
+            ]
+          },
+          "residual_centering": "within training simple section",
+          "solver": "cholesky",
+          "target": "residual_centered_mm",
+          "target_mean": -2.1912296538654406e-17,
+          "target_std": 0.452221682877321,
+          "training_dates": [
+            "2018-09-23"
+          ],
+          "training_rows": 38,
+          "training_sections": [
+            1250009490,
+            1250011604
+          ],
+          "used_features": [
+            "z_rank",
+            "slope_rank",
+            "abs_slope_rank",
+            "position_rank",
+            "local_low_rank",
+            "pool_depth_rank",
+            "basin_depth_30m_rank"
+          ]
+        }
+      }
+    }
+  },
+  "S2_retro_2023": {
+    "strict_before_2022_07_01": {
+      "physics": {
+        "gap_policy": "own_mean",
+        "interpretation": "Effective segment-minimum thinning rate under declared environment priors; not an electrochemical CO2/H2S constant",
+        "name": "M1",
+        "priors": {
+          "age_exponent": 1.0,
+          "beta_W": 0.3,
+          "beta_v": 0.1,
+          "theta_K": 2500.0,
+          "velocity_offset_m_s": 0.1
+        },
+        "r_ref_mm_year": 0.10555247320293284,
+        "reference": {
+          "temperature_K": 285.6940825298223,
+          "velocity_m_s": 0.5707789385004212,
+          "water_fraction": 0.867897304128054
+        },
+        "training_groups": 1,
+        "training_rows": 372,
+        "weighting": "W0"
+      },
+      "spatial": {
+        "baseline": {
+          "alpha": 10.0,
+          "baseline_column": null,
+          "coefficient_by_feature": {
+            "abs_slope": -0.017667507536957127,
+            "local_low": -0.05461999476164285,
+            "pool_depth": 0.08594768188807936,
+            "position": -0.015251520587215569,
+            "slope": -0.04853773825501767,
+            "z": 0.0294804038049897
+          },
+          "coefficients": [
+            0.0294804038049897,
+            -0.04853773825501767,
+            -0.017667507536957127,
+            -0.015251520587215569,
+            -0.05461999476164285,
+            0.08594768188807936
+          ],
+          "dropped_columns": {},
+          "features": [
+            "z",
+            "slope",
+            "abs_slope",
+            "position",
+            "local_low",
+            "pool_depth"
+          ],
+          "fit_intercept": true,
+          "intercept": -1.1523002500837628e-17,
+          "model_name": "s2_spatial_ridge",
+          "model_type": "Ridge",
+          "prediction_policy": "delta",
+          "preprocessing": {
+            "constant_columns": [],
+            "dropped_columns": {},
+            "duplicate_columns": {},
+            "empty_columns": [],
+            "feature_order": [
+              "z",
+              "slope",
+              "abs_slope",
+              "position",
+              "local_low",
+              "pool_depth"
+            ],
+            "imputer": "median",
+            "imputer_statistics": {
+              "abs_slope": -0.44923552528216465,
+              "local_low": 0.03987353589666821,
+              "pool_depth": -0.4561191788135494,
+              "position": -0.23401648525708696,
+              "slope": -0.02304655387687253,
+              "z": 0.06337914076041866
+            },
+            "scaler": "StandardScaler",
+            "scaler_mean": {
+              "abs_slope": -0.07462613643461653,
+              "local_low": -0.011665241473470495,
+              "pool_depth": -0.15571808987257665,
+              "position": -0.17145651045226365,
+              "slope": -0.038763229481698386,
+              "z": 0.1405633701184284
+            },
+            "scaler_scale": {
+              "abs_slope": 0.7617851488028493,
+              "local_low": 1.0327842659649233,
+              "pool_depth": 0.7886213479436135,
+              "position": 0.9635774092115081,
+              "slope": 0.7749841572840873,
+              "z": 0.8745879935439962
+            },
+            "used_features": [
+              "z",
+              "slope",
+              "abs_slope",
+              "position",
+              "local_low",
+              "pool_depth"
+            ]
+          },
+          "residual_centering": "within training simple section",
+          "solver": "cholesky",
+          "target": "residual_centered_mm",
+          "target_mean": -1.850371707708594e-17,
+          "target_std": 0.5510921878606806,
+          "training_dates": [
+            "2018-09-23"
+          ],
+          "training_rows": 372,
+          "training_sections": [
+            1250009490,
+            1250011604,
+            1250022871
+          ],
+          "used_features": [
+            "z",
+            "slope",
+            "abs_slope",
+            "position",
+            "local_low",
+            "pool_depth"
+          ]
+        },
+        "centered_relative_loss": {
+          "alpha": 10.0,
+          "baseline_column": null,
+          "coefficient_by_feature": {
+            "abs_slope": 0.002208438442119641,
+            "local_low": 0.006827499345205357,
+            "pool_depth": -0.01074346023600992,
+            "position": 0.0019064400734019461,
+            "slope": 0.00606721728187721,
+            "z": -0.0036850504756237128
+          },
+          "coefficients": [
+            -0.0036850504756237128,
+            0.00606721728187721,
+            0.002208438442119641,
+            0.0019064400734019461,
+            0.006827499345205357,
+            -0.01074346023600992
+          ],
+          "dropped_columns": {},
+          "features": [
+            "z",
+            "slope",
+            "abs_slope",
+            "position",
+            "local_low",
+            "pool_depth"
+          ],
+          "fit_intercept": true,
+          "intercept": 1.0673165005666804e-18,
+          "model_name": "s2_relative_loss_ridge",
+          "model_type": "Ridge",
+          "nominal_thicknesses_mm": [
+            8.0
+          ],
+          "prediction_policy": "delta",
+          "preprocessing": {
+            "constant_columns": [],
+            "dropped_columns": {},
+            "duplicate_columns": {},
+            "empty_columns": [],
+            "feature_order": [
+              "z",
+              "slope",
+              "abs_slope",
+              "position",
+              "local_low",
+              "pool_depth"
+            ],
+            "imputer": "median",
+            "imputer_statistics": {
+              "abs_slope": -0.44923552528216465,
+              "local_low": 0.03987353589666821,
+              "pool_depth": -0.4561191788135494,
+              "position": -0.23401648525708696,
+              "slope": -0.02304655387687253,
+              "z": 0.06337914076041866
+            },
+            "scaler": "StandardScaler",
+            "scaler_mean": {
+              "abs_slope": -0.07462613643461653,
+              "local_low": -0.011665241473470495,
+              "pool_depth": -0.15571808987257665,
+              "position": -0.17145651045226365,
+              "slope": -0.038763229481698386,
+              "z": 0.1405633701184284
+            },
+            "scaler_scale": {
+              "abs_slope": 0.7617851488028493,
+              "local_low": 1.0327842659649233,
+              "pool_depth": 0.7886213479436135,
+              "position": 0.9635774092115081,
+              "slope": 0.7749841572840873,
+              "z": 0.8745879935439962
+            },
+            "used_features": [
+              "z",
+              "slope",
+              "abs_slope",
+              "position",
+              "local_low",
+              "pool_depth"
+            ]
+          },
+          "solver": "cholesky",
+          "target": "relative_loss",
+          "target_centered_within_profile": true,
+          "target_mean": 1.9399058225977196e-18,
+          "target_std": 0.06888652348258507,
+          "training_dates": [
+            "2018-09-23"
+          ],
+          "training_rows": 372,
+          "training_sections": [
+            1250009490,
+            1250011604,
+            1250022871
+          ],
+          "used_features": [
+            "z",
+            "slope",
+            "abs_slope",
+            "position",
+            "local_low",
+            "pool_depth"
+          ]
+        },
+        "constant_conditions_thermal_exposure": {
+          "alpha": 10.0,
+          "baseline_column": null,
+          "coefficient_by_feature": {
+            "abs_slope": -0.017653661348233828,
+            "constant_conditions_thermal_exposure": -0.0027832181410154568,
+            "local_low": -0.0545997114916685,
+            "pool_depth": 0.08566092367653054,
+            "position": -0.017774228471815888,
+            "slope": -0.04856436283201105,
+            "z": 0.029322004698092128
+          },
+          "coefficients": [
+            0.029322004698092128,
+            -0.04856436283201105,
+            -0.017653661348233828,
+            -0.017774228471815888,
+            -0.0545997114916685,
+            0.08566092367653054,
+            -0.0027832181410154568
+          ],
+          "dropped_columns": {},
+          "features": [
+            "z",
+            "slope",
+            "abs_slope",
+            "position",
+            "local_low",
+            "pool_depth",
+            "constant_conditions_thermal_exposure"
+          ],
+          "fit_intercept": true,
+          "intercept": -1.1332698944738202e-17,
+          "model_name": "s2_spatial_ridge",
+          "model_type": "Ridge",
+          "prediction_policy": "delta",
+          "preprocessing": {
+            "constant_columns": [],
+            "dropped_columns": {},
+            "duplicate_columns": {},
+            "empty_columns": [],
+            "feature_order": [
+              "z",
+              "slope",
+              "abs_slope",
+              "position",
+              "local_low",
+              "pool_depth",
+              "constant_conditions_thermal_exposure"
+            ],
+            "imputer": "median",
+            "imputer_statistics": {
+              "abs_slope": -0.44923552528216465,
+              "constant_conditions_thermal_exposure": 0.06376875818625649,
+              "local_low": 0.03987353589666821,
+              "pool_depth": -0.4561191788135494,
+              "position": -0.23401648525708696,
+              "slope": -0.02304655387687253,
+              "z": 0.06337914076041866
+            },
+            "scaler": "StandardScaler",
+            "scaler_mean": {
+              "abs_slope": -0.07462613643461653,
+              "constant_conditions_thermal_exposure": 0.09688385050141461,
+              "local_low": -0.011665241473470495,
+              "pool_depth": -0.15571808987257665,
+              "position": -0.17145651045226365,
+              "slope": -0.038763229481698386,
+              "z": 0.1405633701184284
+            },
+            "scaler_scale": {
+              "abs_slope": 0.7617851488028493,
+              "constant_conditions_thermal_exposure": 0.49437909650782846,
+              "local_low": 1.0327842659649233,
+              "pool_depth": 0.7886213479436135,
+              "position": 0.9635774092115081,
+              "slope": 0.7749841572840873,
+              "z": 0.8745879935439962
+            },
+            "used_features": [
+              "z",
+              "slope",
+              "abs_slope",
+              "position",
+              "local_low",
+              "pool_depth",
+              "constant_conditions_thermal_exposure"
+            ]
+          },
+          "residual_centering": "within training simple section",
+          "solver": "cholesky",
+          "target": "residual_centered_mm",
+          "target_mean": -1.850371707708594e-17,
+          "target_std": 0.5510921878606806,
+          "training_dates": [
+            "2018-09-23"
+          ],
+          "training_rows": 372,
+          "training_sections": [
+            1250009490,
+            1250011604,
+            1250022871
+          ],
+          "used_features": [
+            "z",
+            "slope",
+            "abs_slope",
+            "position",
+            "local_low",
+            "pool_depth",
+            "constant_conditions_thermal_exposure"
+          ]
+        },
+        "integrated_thermal_exposure": {
+          "alpha": 10.0,
+          "baseline_column": null,
+          "coefficient_by_feature": {
+            "abs_slope": -0.01765340290730545,
+            "integrated_thermal_exposure": -0.002773917271838533,
+            "local_low": -0.054600048535302294,
+            "pool_depth": 0.08566321934135311,
+            "position": -0.017767210165109078,
+            "slope": -0.04856388697002468,
+            "z": 0.02932148234226885
+          },
+          "coefficients": [
+            0.02932148234226885,
+            -0.04856388697002468,
+            -0.01765340290730545,
+            -0.017767210165109078,
+            -0.054600048535302294,
+            0.08566321934135311,
+            -0.002773917271838533
+          ],
+          "dropped_columns": {},
+          "features": [
+            "z",
+            "slope",
+            "abs_slope",
+            "position",
+            "local_low",
+            "pool_depth",
+            "integrated_thermal_exposure"
+          ],
+          "fit_intercept": true,
+          "intercept": -1.1121311580691792e-17,
+          "model_name": "s2_spatial_ridge",
+          "model_type": "Ridge",
+          "prediction_policy": "delta",
+          "preprocessing": {
+            "constant_columns": [],
+            "dropped_columns": {},
+            "duplicate_columns": {},
+            "empty_columns": [],
+            "feature_order": [
+              "z",
+              "slope",
+              "abs_slope",
+              "position",
+              "local_low",
+              "pool_depth",
+              "integrated_thermal_exposure"
+            ],
+            "imputer": "median",
+            "imputer_statistics": {
+              "abs_slope": -0.44923552528216465,
+              "integrated_thermal_exposure": 0.06650498076034062,
+              "local_low": 0.03987353589666821,
+              "pool_depth": -0.4561191788135494,
+              "position": -0.23401648525708696,
+              "slope": -0.02304655387687253,
+              "z": 0.06337914076041866
+            },
+            "scaler": "StandardScaler",
+            "scaler_mean": {
+              "abs_slope": -0.07462613643461653,
+              "integrated_thermal_exposure": 0.10140615797200231,
+              "local_low": -0.011665241473470495,
+              "pool_depth": -0.15571808987257665,
+              "position": -0.17145651045226365,
+              "slope": -0.038763229481698386,
+              "z": 0.1405633701184284
+            },
+            "scaler_scale": {
+              "abs_slope": 0.7617851488028493,
+              "integrated_thermal_exposure": 0.5177006761895154,
+              "local_low": 1.0327842659649233,
+              "pool_depth": 0.7886213479436135,
+              "position": 0.9635774092115081,
+              "slope": 0.7749841572840873,
+              "z": 0.8745879935439962
+            },
+            "used_features": [
+              "z",
+              "slope",
+              "abs_slope",
+              "position",
+              "local_low",
+              "pool_depth",
+              "integrated_thermal_exposure"
+            ]
+          },
+          "residual_centering": "within training simple section",
+          "solver": "cholesky",
+          "target": "residual_centered_mm",
+          "target_mean": -1.850371707708594e-17,
+          "target_std": 0.5510921878606806,
+          "training_dates": [
+            "2018-09-23"
+          ],
+          "training_rows": 372,
+          "training_sections": [
+            1250009490,
+            1250011604,
+            1250022871
+          ],
+          "used_features": [
+            "z",
+            "slope",
+            "abs_slope",
+            "position",
+            "local_low",
+            "pool_depth",
+            "integrated_thermal_exposure"
+          ]
+        },
+        "relative_loss_uncentered_fit": {
+          "alpha": 10.0,
+          "baseline_column": null,
+          "coefficient_by_feature": {
+            "abs_slope": 0.0023144947479432046,
+            "local_low": 0.006872872516718443,
+            "pool_depth": -0.010719545652352868,
+            "position": 0.0019462772250581945,
+            "slope": 0.006097761496827377,
+            "z": -0.0038098608626354743
+          },
+          "coefficients": [
+            -0.0038098608626354743,
+            0.006097761496827377,
+            0.0023144947479432046,
+            0.0019462772250581945,
+            0.006872872516718443,
+            -0.010719545652352868
+          ],
+          "dropped_columns": {},
+          "features": [
+            "z",
+            "slope",
+            "abs_slope",
+            "position",
+            "local_low",
+            "pool_depth"
+          ],
+          "fit_intercept": true,
+          "intercept": 0.23481182795698924,
+          "model_name": "s2_relative_loss_ridge",
+          "model_type": "Ridge",
+          "nominal_thicknesses_mm": [
+            8.0
+          ],
+          "prediction_policy": "delta",
+          "preprocessing": {
+            "constant_columns": [],
+            "dropped_columns": {},
+            "duplicate_columns": {},
+            "empty_columns": [],
+            "feature_order": [
+              "z",
+              "slope",
+              "abs_slope",
+              "position",
+              "local_low",
+              "pool_depth"
+            ],
+            "imputer": "median",
+            "imputer_statistics": {
+              "abs_slope": -0.44923552528216465,
+              "local_low": 0.03987353589666821,
+              "pool_depth": -0.4561191788135494,
+              "position": -0.23401648525708696,
+              "slope": -0.02304655387687253,
+              "z": 0.06337914076041866
+            },
+            "scaler": "StandardScaler",
+            "scaler_mean": {
+              "abs_slope": -0.07462613643461653,
+              "local_low": -0.011665241473470495,
+              "pool_depth": -0.15571808987257665,
+              "position": -0.17145651045226365,
+              "slope": -0.038763229481698386,
+              "z": 0.1405633701184284
+            },
+            "scaler_scale": {
+              "abs_slope": 0.7617851488028493,
+              "local_low": 1.0327842659649233,
+              "pool_depth": 0.7886213479436135,
+              "position": 0.9635774092115081,
+              "slope": 0.7749841572840873,
+              "z": 0.8745879935439962
+            },
+            "used_features": [
+              "z",
+              "slope",
+              "abs_slope",
+              "position",
+              "local_low",
+              "pool_depth"
+            ]
+          },
+          "solver": "cholesky",
+          "target": "relative_loss",
+          "target_centered_within_profile": false,
+          "target_mean": 0.23481182795698924,
+          "target_std": 0.06894478667817773,
+          "training_dates": [
+            "2018-09-23"
+          ],
+          "training_rows": 372,
+          "training_sections": [
+            1250009490,
+            1250011604,
+            1250022871
+          ],
+          "used_features": [
+            "z",
+            "slope",
+            "abs_slope",
+            "position",
+            "local_low",
+            "pool_depth"
+          ]
+        },
+        "terrain_times_constant_velocity": {
+          "alpha": 10.0,
+          "baseline_column": null,
+          "coefficient_by_feature": {
+            "abs_slope": -0.017667507536957127,
+            "local_low": -0.05461999476164285,
+            "pool_depth": 0.08594768188807936,
+            "position": -0.015251520587215569,
+            "slope": -0.04853773825501767,
+            "z": 0.0294804038049897
+          },
+          "coefficients": [
+            0.0294804038049897,
+            -0.04853773825501767,
+            -0.017667507536957127,
+            -0.015251520587215569,
+            -0.05461999476164285,
+            0.08594768188807936
+          ],
+          "dropped_columns": {
+            "H22_x_abs_slope": "near_duplicate_abs_corr_1.00000000",
+            "H22_x_local_low": "near_duplicate_abs_corr_1.00000000",
+            "H22_x_pool_depth": "near_duplicate_abs_corr_1.00000000"
+          },
+          "features": [
+            "z",
+            "slope",
+            "abs_slope",
+            "position",
+            "local_low",
+            "pool_depth",
+            "H22_x_abs_slope",
+            "H22_x_local_low",
+            "H22_x_pool_depth"
+          ],
+          "fit_intercept": true,
+          "intercept": -1.1523002500837628e-17,
+          "model_name": "s2_spatial_ridge",
+          "model_type": "Ridge",
+          "prediction_policy": "delta",
+          "preprocessing": {
+            "constant_columns": [],
+            "dropped_columns": {
+              "H22_x_abs_slope": "near_duplicate_abs_corr_1.00000000",
+              "H22_x_local_low": "near_duplicate_abs_corr_1.00000000",
+              "H22_x_pool_depth": "near_duplicate_abs_corr_1.00000000"
+            },
+            "duplicate_columns": {
+              "H22_x_abs_slope": {
+                "kept": "abs_slope",
+                "relation": "near_duplicate_abs_corr_1.00000000"
+              },
+              "H22_x_local_low": {
+                "kept": "local_low",
+                "relation": "near_duplicate_abs_corr_1.00000000"
+              },
+              "H22_x_pool_depth": {
+                "kept": "pool_depth",
+                "relation": "near_duplicate_abs_corr_1.00000000"
+              }
+            },
+            "empty_columns": [],
+            "feature_order": [
+              "z",
+              "slope",
+              "abs_slope",
+              "position",
+              "local_low",
+              "pool_depth",
+              "H22_x_abs_slope",
+              "H22_x_local_low",
+              "H22_x_pool_depth"
+            ],
+            "imputer": "median",
+            "imputer_statistics": {
+              "abs_slope": -0.44923552528216465,
+              "local_low": 0.03987353589666821,
+              "pool_depth": -0.4561191788135494,
+              "position": -0.23401648525708696,
+              "slope": -0.02304655387687253,
+              "z": 0.06337914076041866
+            },
+            "scaler": "StandardScaler",
+            "scaler_mean": {
+              "abs_slope": -0.07462613643461653,
+              "local_low": -0.011665241473470495,
+              "pool_depth": -0.15571808987257665,
+              "position": -0.17145651045226365,
+              "slope": -0.038763229481698386,
+              "z": 0.1405633701184284
+            },
+            "scaler_scale": {
+              "abs_slope": 0.7617851488028493,
+              "local_low": 1.0327842659649233,
+              "pool_depth": 0.7886213479436135,
+              "position": 0.9635774092115081,
+              "slope": 0.7749841572840873,
+              "z": 0.8745879935439962
+            },
+            "used_features": [
+              "z",
+              "slope",
+              "abs_slope",
+              "position",
+              "local_low",
+              "pool_depth"
+            ]
+          },
+          "residual_centering": "within training simple section",
+          "solver": "cholesky",
+          "target": "residual_centered_mm",
+          "target_mean": -1.850371707708594e-17,
+          "target_std": 0.5510921878606806,
+          "training_dates": [
+            "2018-09-23"
+          ],
+          "training_rows": 372,
+          "training_sections": [
+            1250009490,
+            1250011604,
+            1250022871
+          ],
+          "used_features": [
+            "z",
+            "slope",
+            "abs_slope",
+            "position",
+            "local_low",
+            "pool_depth"
+          ]
+        },
+        "terrain_times_constant_water": {
+          "alpha": 10.0,
+          "baseline_column": null,
+          "coefficient_by_feature": {
+            "abs_slope": -0.017667507536957127,
+            "local_low": -0.05461999476164285,
+            "pool_depth": 0.08594768188807936,
+            "position": -0.015251520587215569,
+            "slope": -0.04853773825501767,
+            "z": 0.0294804038049897
+          },
+          "coefficients": [
+            0.0294804038049897,
+            -0.04853773825501767,
+            -0.017667507536957127,
+            -0.015251520587215569,
+            -0.05461999476164285,
+            0.08594768188807936
+          ],
+          "dropped_columns": {
+            "H21_x_abs_slope": "near_duplicate_abs_corr_1.00000000",
+            "H21_x_local_low": "near_duplicate_abs_corr_1.00000000",
+            "H21_x_pool_depth": "near_duplicate_abs_corr_1.00000000"
+          },
+          "features": [
+            "z",
+            "slope",
+            "abs_slope",
+            "position",
+            "local_low",
+            "pool_depth",
+            "H21_x_abs_slope",
+            "H21_x_local_low",
+            "H21_x_pool_depth"
+          ],
+          "fit_intercept": true,
+          "intercept": -1.1523002500837628e-17,
+          "model_name": "s2_spatial_ridge",
+          "model_type": "Ridge",
+          "prediction_policy": "delta",
+          "preprocessing": {
+            "constant_columns": [],
+            "dropped_columns": {
+              "H21_x_abs_slope": "near_duplicate_abs_corr_1.00000000",
+              "H21_x_local_low": "near_duplicate_abs_corr_1.00000000",
+              "H21_x_pool_depth": "near_duplicate_abs_corr_1.00000000"
+            },
+            "duplicate_columns": {
+              "H21_x_abs_slope": {
+                "kept": "abs_slope",
+                "relation": "near_duplicate_abs_corr_1.00000000"
+              },
+              "H21_x_local_low": {
+                "kept": "local_low",
+                "relation": "near_duplicate_abs_corr_1.00000000"
+              },
+              "H21_x_pool_depth": {
+                "kept": "pool_depth",
+                "relation": "near_duplicate_abs_corr_1.00000000"
+              }
+            },
+            "empty_columns": [],
+            "feature_order": [
+              "z",
+              "slope",
+              "abs_slope",
+              "position",
+              "local_low",
+              "pool_depth",
+              "H21_x_abs_slope",
+              "H21_x_local_low",
+              "H21_x_pool_depth"
+            ],
+            "imputer": "median",
+            "imputer_statistics": {
+              "abs_slope": -0.44923552528216465,
+              "local_low": 0.03987353589666821,
+              "pool_depth": -0.4561191788135494,
+              "position": -0.23401648525708696,
+              "slope": -0.02304655387687253,
+              "z": 0.06337914076041866
+            },
+            "scaler": "StandardScaler",
+            "scaler_mean": {
+              "abs_slope": -0.07462613643461653,
+              "local_low": -0.011665241473470495,
+              "pool_depth": -0.15571808987257665,
+              "position": -0.17145651045226365,
+              "slope": -0.038763229481698386,
+              "z": 0.1405633701184284
+            },
+            "scaler_scale": {
+              "abs_slope": 0.7617851488028493,
+              "local_low": 1.0327842659649233,
+              "pool_depth": 0.7886213479436135,
+              "position": 0.9635774092115081,
+              "slope": 0.7749841572840873,
+              "z": 0.8745879935439962
+            },
+            "used_features": [
+              "z",
+              "slope",
+              "abs_slope",
+              "position",
+              "local_low",
+              "pool_depth"
+            ]
+          },
+          "residual_centering": "within training simple section",
+          "solver": "cholesky",
+          "target": "residual_centered_mm",
+          "target_mean": -1.850371707708594e-17,
+          "target_std": 0.5510921878606806,
+          "training_dates": [
+            "2018-09-23"
+          ],
+          "training_rows": 372,
+          "training_sections": [
+            1250009490,
+            1250011604,
+            1250022871
+          ],
+          "used_features": [
+            "z",
+            "slope",
+            "abs_slope",
+            "position",
+            "local_low",
+            "pool_depth"
+          ]
+        },
+        "terrain_times_log_liquid_velocity": {
+          "alpha": 10.0,
+          "baseline_column": null,
+          "coefficient_by_feature": {
+            "H22_x_abs_slope": -0.00335561223745591,
+            "H22_x_local_low": -0.023005064939730212,
+            "H22_x_pool_depth": 0.047667387976171954,
+            "abs_slope": -0.01489438063024504,
+            "local_low": -0.033080502550522355,
+            "pool_depth": 0.040449231823298425,
+            "position": -0.016077936642406816,
+            "slope": -0.04866397702162835,
+            "z": 0.029619089907177758
+          },
+          "coefficients": [
+            0.029619089907177758,
+            -0.04866397702162835,
+            -0.01489438063024504,
+            -0.016077936642406816,
+            -0.033080502550522355,
+            0.040449231823298425,
+            -0.00335561223745591,
+            -0.023005064939730212,
+            0.047667387976171954
+          ],
+          "dropped_columns": {},
+          "features": [
+            "z",
+            "slope",
+            "abs_slope",
+            "position",
+            "local_low",
+            "pool_depth",
+            "H22_x_abs_slope",
+            "H22_x_local_low",
+            "H22_x_pool_depth"
+          ],
+          "fit_intercept": true,
+          "intercept": -1.5066764511638487e-17,
+          "model_name": "s2_spatial_ridge",
+          "model_type": "Ridge",
+          "prediction_policy": "delta",
+          "preprocessing": {
+            "constant_columns": [],
+            "dropped_columns": {},
+            "duplicate_columns": {},
+            "empty_columns": [],
+            "feature_order": [
+              "z",
+              "slope",
+              "abs_slope",
+              "position",
+              "local_low",
+              "pool_depth",
+              "H22_x_abs_slope",
+              "H22_x_local_low",
+              "H22_x_pool_depth"
+            ],
+            "imputer": "median",
+            "imputer_statistics": {
+              "H22_x_abs_slope": -0.13743594338370504,
+              "H22_x_local_low": 0.012198627921424069,
+              "H22_x_pool_depth": -0.1395418797217055,
+              "abs_slope": -0.44923552528216465,
+              "local_low": 0.03987353589666821,
+              "pool_depth": -0.4561191788135494,
+              "position": -0.23401648525708696,
+              "slope": -0.02304655387687253,
+              "z": 0.06337914076041866
+            },
+            "scaler": "StandardScaler",
+            "scaler_mean": {
+              "H22_x_abs_slope": -0.02278936454412625,
+              "H22_x_local_low": -0.003758675071762196,
+              "H22_x_pool_depth": -0.047873510813344955,
+              "abs_slope": -0.07462613643461653,
+              "local_low": -0.011665241473470495,
+              "pool_depth": -0.15571808987257665,
+              "position": -0.17145651045226365,
+              "slope": -0.038763229481698386,
+              "z": 0.1405633701184284
+            },
+            "scaler_scale": {
+              "H22_x_abs_slope": 0.23581432585823575,
+              "H22_x_local_low": 0.31832139187278435,
+              "H22_x_pool_depth": 0.24346758279624445,
+              "abs_slope": 0.7617851488028493,
+              "local_low": 1.0327842659649233,
+              "pool_depth": 0.7886213479436135,
+              "position": 0.9635774092115081,
+              "slope": 0.7749841572840873,
+              "z": 0.8745879935439962
+            },
+            "used_features": [
+              "z",
+              "slope",
+              "abs_slope",
+              "position",
+              "local_low",
+              "pool_depth",
+              "H22_x_abs_slope",
+              "H22_x_local_low",
+              "H22_x_pool_depth"
+            ]
+          },
+          "residual_centering": "within training simple section",
+          "solver": "cholesky",
+          "target": "residual_centered_mm",
+          "target_mean": -1.850371707708594e-17,
+          "target_std": 0.5510921878606806,
+          "training_dates": [
+            "2018-09-23"
+          ],
+          "training_rows": 372,
+          "training_sections": [
+            1250009490,
+            1250011604,
+            1250022871
+          ],
+          "used_features": [
+            "z",
+            "slope",
+            "abs_slope",
+            "position",
+            "local_low",
+            "pool_depth",
+            "H22_x_abs_slope",
+            "H22_x_local_low",
+            "H22_x_pool_depth"
+          ]
+        },
+        "terrain_times_water_fraction": {
+          "alpha": 10.0,
+          "baseline_column": null,
+          "coefficient_by_feature": {
+            "abs_slope": -0.017667507536957127,
+            "local_low": -0.05461999476164285,
+            "pool_depth": 0.08594768188807936,
+            "position": -0.015251520587215569,
+            "slope": -0.04853773825501767,
+            "z": 0.0294804038049897
+          },
+          "coefficients": [
+            0.0294804038049897,
+            -0.04853773825501767,
+            -0.017667507536957127,
+            -0.015251520587215569,
+            -0.05461999476164285,
+            0.08594768188807936
+          ],
+          "dropped_columns": {
+            "H21_x_abs_slope": "near_duplicate_abs_corr_0.99999999",
+            "H21_x_local_low": "near_duplicate_abs_corr_0.99999999",
+            "H21_x_pool_depth": "near_duplicate_abs_corr_0.99999999"
+          },
+          "features": [
+            "z",
+            "slope",
+            "abs_slope",
+            "position",
+            "local_low",
+            "pool_depth",
+            "H21_x_abs_slope",
+            "H21_x_local_low",
+            "H21_x_pool_depth"
+          ],
+          "fit_intercept": true,
+          "intercept": -1.1523002500837628e-17,
+          "model_name": "s2_spatial_ridge",
+          "model_type": "Ridge",
+          "prediction_policy": "delta",
+          "preprocessing": {
+            "constant_columns": [],
+            "dropped_columns": {
+              "H21_x_abs_slope": "near_duplicate_abs_corr_0.99999999",
+              "H21_x_local_low": "near_duplicate_abs_corr_0.99999999",
+              "H21_x_pool_depth": "near_duplicate_abs_corr_0.99999999"
+            },
+            "duplicate_columns": {
+              "H21_x_abs_slope": {
+                "kept": "abs_slope",
+                "relation": "near_duplicate_abs_corr_0.99999999"
+              },
+              "H21_x_local_low": {
+                "kept": "local_low",
+                "relation": "near_duplicate_abs_corr_0.99999999"
+              },
+              "H21_x_pool_depth": {
+                "kept": "pool_depth",
+                "relation": "near_duplicate_abs_corr_0.99999999"
+              }
+            },
+            "empty_columns": [],
+            "feature_order": [
+              "z",
+              "slope",
+              "abs_slope",
+              "position",
+              "local_low",
+              "pool_depth",
+              "H21_x_abs_slope",
+              "H21_x_local_low",
+              "H21_x_pool_depth"
+            ],
+            "imputer": "median",
+            "imputer_statistics": {
+              "abs_slope": -0.44923552528216465,
+              "local_low": 0.03987353589666821,
+              "pool_depth": -0.4561191788135494,
+              "position": -0.23401648525708696,
+              "slope": -0.02304655387687253,
+              "z": 0.06337914076041866
+            },
+            "scaler": "StandardScaler",
+            "scaler_mean": {
+              "abs_slope": -0.07462613643461653,
+              "local_low": -0.011665241473470495,
+              "pool_depth": -0.15571808987257665,
+              "position": -0.17145651045226365,
+              "slope": -0.038763229481698386,
+              "z": 0.1405633701184284
+            },
+            "scaler_scale": {
+              "abs_slope": 0.7617851488028493,
+              "local_low": 1.0327842659649233,
+              "pool_depth": 0.7886213479436135,
+              "position": 0.9635774092115081,
+              "slope": 0.7749841572840873,
+              "z": 0.8745879935439962
+            },
+            "used_features": [
+              "z",
+              "slope",
+              "abs_slope",
+              "position",
+              "local_low",
+              "pool_depth"
+            ]
+          },
+          "residual_centering": "within training simple section",
+          "solver": "cholesky",
+          "target": "residual_centered_mm",
+          "target_mean": -1.850371707708594e-17,
+          "target_std": 0.5510921878606806,
+          "training_dates": [
+            "2018-09-23"
+          ],
+          "training_rows": 372,
+          "training_sections": [
+            1250009490,
+            1250011604,
+            1250022871
+          ],
+          "used_features": [
+            "z",
+            "slope",
+            "abs_slope",
+            "position",
+            "local_low",
+            "pool_depth"
+          ]
+        }
+      }
+    }
+  }
+}

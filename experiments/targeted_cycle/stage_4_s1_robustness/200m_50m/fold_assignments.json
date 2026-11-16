@@ -1,0 +1,2806 @@
+{
+  "adjacent_section_policy": "no shared buffer across simple sections: common parent coordinate continuity is not confirmed",
+  "block_definition": "floor(center_m / block_m); center=(start+end)/2",
+  "block_m": 200.0,
+  "buffer_m": 50.0,
+  "folds": [
+    {
+      "affine_global": {
+        "a": 0.3512704239071477,
+        "b": 3.9171091030920464
+      },
+      "affine_target": {
+        "a": 0.37261388836404524,
+        "b": 3.7735295822685906
+      },
+      "block": 0,
+      "buffer_exclusion_ok": true,
+      "buffer_m": 50.0,
+      "buffer_minus_test_rows": 4,
+      "catboost_used_features": [
+        "last_mm",
+        "neighbor_prior_median_mm",
+        "neighbor_prior_count",
+        "neighbor_missing",
+        "slope_m_per_m",
+        "abs_slope_m_per_m",
+        "local_low_m",
+        "relative_position"
+      ],
+      "global_used_features": [
+        "last_mm",
+        "neighbor_prior_median_mm",
+        "neighbor_prior_count",
+        "neighbor_missing",
+        "slope_m_per_m",
+        "abs_slope_m_per_m",
+        "local_low_m",
+        "relative_position"
+      ],
+      "high_m": 200.0,
+      "low_m": 0.0,
+      "min_target_train_center_distance_m": 55.0,
+      "scheme": "200m_50m",
+      "target_used_features": [
+        "last_mm",
+        "neighbor_prior_median_mm",
+        "neighbor_prior_count",
+        "neighbor_missing",
+        "slope_m_per_m",
+        "abs_slope_m_per_m",
+        "local_low_m",
+        "relative_position"
+      ],
+      "test_in_global_train": false,
+      "test_in_local_train": false,
+      "test_keys": [
+        [
+          1250022871,
+          0
+        ],
+        [
+          1250022871,
+          1
+        ],
+        [
+          1250022871,
+          2
+        ],
+        [
+          1250022871,
+          3
+        ],
+        [
+          1250022871,
+          5
+        ],
+        [
+          1250022871,
+          11
+        ],
+        [
+          1250022871,
+          12
+        ]
+      ],
+      "test_rows": 7,
+      "train_global_rows": 346,
+      "train_local_rows": 310,
+      "train_median": 6.16
+    },
+    {
+      "affine_global": {
+        "a": 0.35449536619769445,
+        "b": 3.898370686587508
+      },
+      "affine_target": {
+        "a": 0.37688049656440487,
+        "b": 3.748386977673427
+      },
+      "block": 1,
+      "buffer_exclusion_ok": true,
+      "buffer_m": 50.0,
+      "buffer_minus_test_rows": 3,
+      "catboost_used_features": [
+        "last_mm",
+        "neighbor_prior_median_mm",
+        "neighbor_prior_count",
+        "neighbor_missing",
+        "slope_m_per_m",
+        "abs_slope_m_per_m",
+        "local_low_m",
+        "relative_position"
+      ],
+      "global_used_features": [
+        "last_mm",
+        "neighbor_prior_median_mm",
+        "neighbor_prior_count",
+        "neighbor_missing",
+        "slope_m_per_m",
+        "abs_slope_m_per_m",
+        "local_low_m",
+        "relative_position"
+      ],
+      "high_m": 400.0,
+      "low_m": 200.0,
+      "min_target_train_center_distance_m": 55.0,
+      "scheme": "200m_50m",
+      "target_used_features": [
+        "last_mm",
+        "neighbor_prior_median_mm",
+        "neighbor_prior_count",
+        "neighbor_missing",
+        "slope_m_per_m",
+        "abs_slope_m_per_m",
+        "local_low_m",
+        "relative_position"
+      ],
+      "test_in_global_train": false,
+      "test_in_local_train": false,
+      "test_keys": [
+        [
+          1250022871,
+          21
+        ],
+        [
+          1250022871,
+          22
+        ],
+        [
+          1250022871,
+          23
+        ],
+        [
+          1250022871,
+          24
+        ],
+        [
+          1250022871,
+          25
+        ],
+        [
+          1250022871,
+          27
+        ],
+        [
+          1250022871,
+          29
+        ],
+        [
+          1250022871,
+          30
+        ],
+        [
+          1250022871,
+          31
+        ],
+        [
+          1250022871,
+          32
+        ],
+        [
+          1250022871,
+          33
+        ],
+        [
+          1250022871,
+          34
+        ],
+        [
+          1250022871,
+          36
+        ],
+        [
+          1250022871,
+          39
+        ]
+      ],
+      "test_rows": 14,
+      "train_global_rows": 340,
+      "train_local_rows": 304,
+      "train_median": 6.16
+    },
+    {
+      "affine_global": {
+        "a": 0.3506525618027077,
+        "b": 3.9291169332707088
+      },
+      "affine_target": {
+        "a": 0.3719155445261025,
+        "b": 3.7872613541779123
+      },
+      "block": 2,
+      "buffer_exclusion_ok": true,
+      "buffer_m": 50.0,
+      "buffer_minus_test_rows": 4,
+      "catboost_used_features": [
+        "last_mm",
+        "neighbor_prior_median_mm",
+        "neighbor_prior_count",
+        "neighbor_missing",
+        "slope_m_per_m",
+        "abs_slope_m_per_m",
+        "local_low_m",
+        "relative_position"
+      ],
+      "global_used_features": [
+        "last_mm",
+        "neighbor_prior_median_mm",
+        "neighbor_prior_count",
+        "neighbor_missing",
+        "slope_m_per_m",
+        "abs_slope_m_per_m",
+        "local_low_m",
+        "relative_position"
+      ],
+      "high_m": 600.0,
+      "low_m": 400.0,
+      "min_target_train_center_distance_m": 55.0,
+      "scheme": "200m_50m",
+      "target_used_features": [
+        "last_mm",
+        "neighbor_prior_median_mm",
+        "neighbor_prior_count",
+        "neighbor_missing",
+        "slope_m_per_m",
+        "abs_slope_m_per_m",
+        "local_low_m",
+        "relative_position"
+      ],
+      "test_in_global_train": false,
+      "test_in_local_train": false,
+      "test_keys": [
+        [
+          1250022871,
+          40
+        ],
+        [
+          1250022871,
+          42
+        ],
+        [
+          1250022871,
+          43
+        ],
+        [
+          1250022871,
+          45
+        ],
+        [
+          1250022871,
+          47
+        ],
+        [
+          1250022871,
+          49
+        ],
+        [
+          1250022871,
+          50
+        ],
+        [
+          1250022871,
+          52
+        ],
+        [
+          1250022871,
+          53
+        ],
+        [
+          1250022871,
+          54
+        ],
+        [
+          1250022871,
+          57
+        ],
+        [
+          1250022871,
+          58
+        ],
+        [
+          1250022871,
+          59
+        ]
+      ],
+      "test_rows": 13,
+      "train_global_rows": 340,
+      "train_local_rows": 304,
+      "train_median": 6.16
+    },
+    {
+      "affine_global": {
+        "a": 0.3321126826515462,
+        "b": 4.064079070105574
+      },
+      "affine_target": {
+        "a": 0.35230333306261574,
+        "b": 3.9308417614818425
+      },
+      "block": 3,
+      "buffer_exclusion_ok": true,
+      "buffer_m": 50.0,
+      "buffer_minus_test_rows": 8,
+      "catboost_used_features": [
+        "last_mm",
+        "neighbor_prior_median_mm",
+        "neighbor_prior_count",
+        "neighbor_missing",
+        "slope_m_per_m",
+        "abs_slope_m_per_m",
+        "local_low_m",
+        "relative_position"
+      ],
+      "global_used_features": [
+        "last_mm",
+        "neighbor_prior_median_mm",
+        "neighbor_prior_count",
+        "neighbor_missing",
+        "slope_m_per_m",
+        "abs_slope_m_per_m",
+        "local_low_m",
+        "relative_position"
+      ],
+      "high_m": 800.0,
+      "low_m": 600.0,
+      "min_target_train_center_distance_m": 55.0,
+      "scheme": "200m_50m",
+      "target_used_features": [
+        "last_mm",
+        "neighbor_prior_median_mm",
+        "neighbor_prior_count",
+        "neighbor_missing",
+        "slope_m_per_m",
+        "abs_slope_m_per_m",
+        "local_low_m",
+        "relative_position"
+      ],
+      "test_in_global_train": false,
+      "test_in_local_train": false,
+      "test_keys": [
+        [
+          1250022871,
+          62
+        ],
+        [
+          1250022871,
+          64
+        ],
+        [
+          1250022871,
+          69
+        ],
+        [
+          1250022871,
+          70
+        ],
+        [
+          1250022871,
+          71
+        ],
+        [
+          1250022871,
+          72
+        ],
+        [
+          1250022871,
+          73
+        ],
+        [
+          1250022871,
+          75
+        ],
+        [
+          1250022871,
+          76
+        ],
+        [
+          1250022871,
+          78
+        ],
+        [
+          1250022871,
+          79
+        ]
+      ],
+      "test_rows": 11,
+      "train_global_rows": 338,
+      "train_local_rows": 302,
+      "train_median": 6.16
+    },
+    {
+      "affine_global": {
+        "a": 0.35718484519563515,
+        "b": 3.9024564821879695
+      },
+      "affine_target": {
+        "a": 0.37921261370088155,
+        "b": 3.7567174582562104
+      },
+      "block": 4,
+      "buffer_exclusion_ok": true,
+      "buffer_m": 50.0,
+      "buffer_minus_test_rows": 9,
+      "catboost_used_features": [
+        "last_mm",
+        "neighbor_prior_median_mm",
+        "neighbor_prior_count",
+        "neighbor_missing",
+        "slope_m_per_m",
+        "abs_slope_m_per_m",
+        "local_low_m",
+        "relative_position"
+      ],
+      "global_used_features": [
+        "last_mm",
+        "neighbor_prior_median_mm",
+        "neighbor_prior_count",
+        "neighbor_missing",
+        "slope_m_per_m",
+        "abs_slope_m_per_m",
+        "local_low_m",
+        "relative_position"
+      ],
+      "high_m": 1000.0,
+      "low_m": 800.0,
+      "min_target_train_center_distance_m": 55.0,
+      "scheme": "200m_50m",
+      "target_used_features": [
+        "last_mm",
+        "neighbor_prior_median_mm",
+        "neighbor_prior_count",
+        "neighbor_missing",
+        "slope_m_per_m",
+        "abs_slope_m_per_m",
+        "local_low_m",
+        "relative_position"
+      ],
+      "test_in_global_train": false,
+      "test_in_local_train": false,
+      "test_keys": [
+        [
+          1250022871,
+          80
+        ],
+        [
+          1250022871,
+          81
+        ],
+        [
+          1250022871,
+          82
+        ],
+        [
+          1250022871,
+          83
+        ],
+        [
+          1250022871,
+          84
+        ],
+        [
+          1250022871,
+          85
+        ],
+        [
+          1250022871,
+          86
+        ],
+        [
+          1250022871,
+          87
+        ],
+        [
+          1250022871,
+          88
+        ],
+        [
+          1250022871,
+          90
+        ],
+        [
+          1250022871,
+          91
+        ],
+        [
+          1250022871,
+          96
+        ],
+        [
+          1250022871,
+          97
+        ],
+        [
+          1250022871,
+          98
+        ],
+        [
+          1250022871,
+          99
+        ]
+      ],
+      "test_rows": 15,
+      "train_global_rows": 333,
+      "train_local_rows": 297,
+      "train_median": 6.16
+    },
+    {
+      "affine_global": {
+        "a": 0.36723788797773216,
+        "b": 3.8408381956346913
+      },
+      "affine_target": {
+        "a": 0.3906526880579805,
+        "b": 3.6867514810584234
+      },
+      "block": 5,
+      "buffer_exclusion_ok": true,
+      "buffer_m": 50.0,
+      "buffer_minus_test_rows": 8,
+      "catboost_used_features": [
+        "last_mm",
+        "neighbor_prior_median_mm",
+        "neighbor_prior_count",
+        "neighbor_missing",
+        "slope_m_per_m",
+        "abs_slope_m_per_m",
+        "local_low_m",
+        "relative_position"
+      ],
+      "global_used_features": [
+        "last_mm",
+        "neighbor_prior_median_mm",
+        "neighbor_prior_count",
+        "neighbor_missing",
+        "slope_m_per_m",
+        "abs_slope_m_per_m",
+        "local_low_m",
+        "relative_position"
+      ],
+      "high_m": 1200.0,
+      "low_m": 1000.0,
+      "min_target_train_center_distance_m": 55.0,
+      "scheme": "200m_50m",
+      "target_used_features": [
+        "last_mm",
+        "neighbor_prior_median_mm",
+        "neighbor_prior_count",
+        "neighbor_missing",
+        "slope_m_per_m",
+        "abs_slope_m_per_m",
+        "local_low_m",
+        "relative_position"
+      ],
+      "test_in_global_train": false,
+      "test_in_local_train": false,
+      "test_keys": [
+        [
+          1250022871,
+          100
+        ],
+        [
+          1250022871,
+          101
+        ],
+        [
+          1250022871,
+          102
+        ],
+        [
+          1250022871,
+          103
+        ],
+        [
+          1250022871,
+          104
+        ],
+        [
+          1250022871,
+          105
+        ],
+        [
+          1250022871,
+          106
+        ],
+        [
+          1250022871,
+          107
+        ],
+        [
+          1250022871,
+          108
+        ],
+        [
+          1250022871,
+          109
+        ],
+        [
+          1250022871,
+          111
+        ],
+        [
+          1250022871,
+          112
+        ],
+        [
+          1250022871,
+          113
+        ],
+        [
+          1250022871,
+          114
+        ],
+        [
+          1250022871,
+          115
+        ],
+        [
+          1250022871,
+          116
+        ],
+        [
+          1250022871,
+          117
+        ],
+        [
+          1250022871,
+          118
+        ],
+        [
+          1250022871,
+          119
+        ]
+      ],
+      "test_rows": 19,
+      "train_global_rows": 330,
+      "train_local_rows": 294,
+      "train_median": 6.16
+    },
+    {
+      "affine_global": {
+        "a": 0.2745072475737597,
+        "b": 4.426043083391075
+      },
+      "affine_target": {
+        "a": 0.29107803466754206,
+        "b": 4.3161960764010905
+      },
+      "block": 6,
+      "buffer_exclusion_ok": true,
+      "buffer_m": 50.0,
+      "buffer_minus_test_rows": 7,
+      "catboost_used_features": [
+        "last_mm",
+        "neighbor_prior_median_mm",
+        "neighbor_prior_count",
+        "neighbor_missing",
+        "slope_m_per_m",
+        "abs_slope_m_per_m",
+        "local_low_m",
+        "relative_position"
+      ],
+      "global_used_features": [
+        "last_mm",
+        "neighbor_prior_median_mm",
+        "neighbor_prior_count",
+        "neighbor_missing",
+        "slope_m_per_m",
+        "abs_slope_m_per_m",
+        "local_low_m",
+        "relative_position"
+      ],
+      "high_m": 1400.0,
+      "low_m": 1200.0,
+      "min_target_train_center_distance_m": 55.0,
+      "scheme": "200m_50m",
+      "target_used_features": [
+        "last_mm",
+        "neighbor_prior_median_mm",
+        "neighbor_prior_count",
+        "neighbor_missing",
+        "slope_m_per_m",
+        "abs_slope_m_per_m",
+        "local_low_m",
+        "relative_position"
+      ],
+      "test_in_global_train": false,
+      "test_in_local_train": false,
+      "test_keys": [
+        [
+          1250022871,
+          120
+        ],
+        [
+          1250022871,
+          121
+        ],
+        [
+          1250022871,
+          123
+        ],
+        [
+          1250022871,
+          124
+        ],
+        [
+          1250022871,
+          125
+        ],
+        [
+          1250022871,
+          126
+        ],
+        [
+          1250022871,
+          127
+        ],
+        [
+          1250022871,
+          128
+        ],
+        [
+          1250022871,
+          129
+        ],
+        [
+          1250022871,
+          130
+        ],
+        [
+          1250022871,
+          131
+        ],
+        [
+          1250022871,
+          132
+        ],
+        [
+          1250022871,
+          133
+        ],
+        [
+          1250022871,
+          134
+        ],
+        [
+          1250022871,
+          135
+        ],
+        [
+          1250022871,
+          136
+        ],
+        [
+          1250022871,
+          137
+        ],
+        [
+          1250022871,
+          138
+        ],
+        [
+          1250022871,
+          139
+        ]
+      ],
+      "test_rows": 19,
+      "train_global_rows": 331,
+      "train_local_rows": 295,
+      "train_median": 6.16
+    },
+    {
+      "affine_global": {
+        "a": 0.34772638937381345,
+        "b": 3.954873190747742
+      },
+      "affine_target": {
+        "a": 0.3691919658006205,
+        "b": 3.812558913026247
+      },
+      "block": 7,
+      "buffer_exclusion_ok": true,
+      "buffer_m": 50.0,
+      "buffer_minus_test_rows": 9,
+      "catboost_used_features": [
+        "last_mm",
+        "neighbor_prior_median_mm",
+        "neighbor_prior_count",
+        "neighbor_missing",
+        "slope_m_per_m",
+        "abs_slope_m_per_m",
+        "local_low_m",
+        "relative_position"
+      ],
+      "global_used_features": [
+        "last_mm",
+        "neighbor_prior_median_mm",
+        "neighbor_prior_count",
+        "neighbor_missing",
+        "slope_m_per_m",
+        "abs_slope_m_per_m",
+        "local_low_m",
+        "relative_position"
+      ],
+      "high_m": 1600.0,
+      "low_m": 1400.0,
+      "min_target_train_center_distance_m": 55.0,
+      "scheme": "200m_50m",
+      "target_used_features": [
+        "last_mm",
+        "neighbor_prior_median_mm",
+        "neighbor_prior_count",
+        "neighbor_missing",
+        "slope_m_per_m",
+        "abs_slope_m_per_m",
+        "local_low_m",
+        "relative_position"
+      ],
+      "test_in_global_train": false,
+      "test_in_local_train": false,
+      "test_keys": [
+        [
+          1250022871,
+          141
+        ],
+        [
+          1250022871,
+          142
+        ],
+        [
+          1250022871,
+          145
+        ],
+        [
+          1250022871,
+          146
+        ],
+        [
+          1250022871,
+          147
+        ],
+        [
+          1250022871,
+          148
+        ],
+        [
+          1250022871,
+          149
+        ],
+        [
+          1250022871,
+          152
+        ],
+        [
+          1250022871,
+          153
+        ],
+        [
+          1250022871,
+          154
+        ],
+        [
+          1250022871,
+          157
+        ],
+        [
+          1250022871,
+          158
+        ],
+        [
+          1250022871,
+          159
+        ]
+      ],
+      "test_rows": 13,
+      "train_global_rows": 335,
+      "train_local_rows": 299,
+      "train_median": 6.16
+    },
+    {
+      "affine_global": {
+        "a": 0.30941663505414335,
+        "b": 4.199278323837289
+      },
+      "affine_target": {
+        "a": 0.3275941071675808,
+        "b": 4.0780055305982446
+      },
+      "block": 8,
+      "buffer_exclusion_ok": true,
+      "buffer_m": 50.0,
+      "buffer_minus_test_rows": 8,
+      "catboost_used_features": [
+        "last_mm",
+        "neighbor_prior_median_mm",
+        "neighbor_prior_count",
+        "neighbor_missing",
+        "slope_m_per_m",
+        "abs_slope_m_per_m",
+        "local_low_m",
+        "relative_position"
+      ],
+      "global_used_features": [
+        "last_mm",
+        "neighbor_prior_median_mm",
+        "neighbor_prior_count",
+        "neighbor_missing",
+        "slope_m_per_m",
+        "abs_slope_m_per_m",
+        "local_low_m",
+        "relative_position"
+      ],
+      "high_m": 1800.0,
+      "low_m": 1600.0,
+      "min_target_train_center_distance_m": 55.0,
+      "scheme": "200m_50m",
+      "target_used_features": [
+        "last_mm",
+        "neighbor_prior_median_mm",
+        "neighbor_prior_count",
+        "neighbor_missing",
+        "slope_m_per_m",
+        "abs_slope_m_per_m",
+        "local_low_m",
+        "relative_position"
+      ],
+      "test_in_global_train": false,
+      "test_in_local_train": false,
+      "test_keys": [
+        [
+          1250022871,
+          160
+        ],
+        [
+          1250022871,
+          161
+        ],
+        [
+          1250022871,
+          162
+        ],
+        [
+          1250022871,
+          163
+        ],
+        [
+          1250022871,
+          165
+        ],
+        [
+          1250022871,
+          169
+        ],
+        [
+          1250022871,
+          172
+        ],
+        [
+          1250022871,
+          173
+        ],
+        [
+          1250022871,
+          175
+        ],
+        [
+          1250022871,
+          176
+        ],
+        [
+          1250022871,
+          177
+        ],
+        [
+          1250022871,
+          178
+        ],
+        [
+          1250022871,
+          179
+        ]
+      ],
+      "test_rows": 13,
+      "train_global_rows": 336,
+      "train_local_rows": 300,
+      "train_median": 6.16
+    },
+    {
+      "affine_global": {
+        "a": 0.31197220279037174,
+        "b": 4.182682073655822
+      },
+      "affine_target": {
+        "a": 0.33069704562420593,
+        "b": 4.057799460715046
+      },
+      "block": 9,
+      "buffer_exclusion_ok": true,
+      "buffer_m": 50.0,
+      "buffer_minus_test_rows": 7,
+      "catboost_used_features": [
+        "last_mm",
+        "neighbor_prior_median_mm",
+        "neighbor_prior_count",
+        "neighbor_missing",
+        "slope_m_per_m",
+        "abs_slope_m_per_m",
+        "local_low_m",
+        "relative_position"
+      ],
+      "global_used_features": [
+        "last_mm",
+        "neighbor_prior_median_mm",
+        "neighbor_prior_count",
+        "neighbor_missing",
+        "slope_m_per_m",
+        "abs_slope_m_per_m",
+        "local_low_m",
+        "relative_position"
+      ],
+      "high_m": 2000.0,
+      "low_m": 1800.0,
+      "min_target_train_center_distance_m": 55.0,
+      "scheme": "200m_50m",
+      "target_used_features": [
+        "last_mm",
+        "neighbor_prior_median_mm",
+        "neighbor_prior_count",
+        "neighbor_missing",
+        "slope_m_per_m",
+        "abs_slope_m_per_m",
+        "local_low_m",
+        "relative_position"
+      ],
+      "test_in_global_train": false,
+      "test_in_local_train": false,
+      "test_keys": [
+        [
+          1250022871,
+          180
+        ],
+        [
+          1250022871,
+          181
+        ],
+        [
+          1250022871,
+          182
+        ],
+        [
+          1250022871,
+          183
+        ],
+        [
+          1250022871,
+          184
+        ],
+        [
+          1250022871,
+          185
+        ],
+        [
+          1250022871,
+          186
+        ],
+        [
+          1250022871,
+          187
+        ],
+        [
+          1250022871,
+          188
+        ],
+        [
+          1250022871,
+          193
+        ],
+        [
+          1250022871,
+          194
+        ],
+        [
+          1250022871,
+          195
+        ],
+        [
+          1250022871,
+          197
+        ],
+        [
+          1250022871,
+          198
+        ]
+      ],
+      "test_rows": 14,
+      "train_global_rows": 336,
+      "train_local_rows": 300,
+      "train_median": 6.16
+    },
+    {
+      "affine_global": {
+        "a": 0.3793645392980098,
+        "b": 3.771282591398577
+      },
+      "affine_target": {
+        "a": 0.4050174624102675,
+        "b": 3.6034055649959353
+      },
+      "block": 10,
+      "buffer_exclusion_ok": true,
+      "buffer_m": 50.0,
+      "buffer_minus_test_rows": 7,
+      "catboost_used_features": [
+        "last_mm",
+        "neighbor_prior_median_mm",
+        "neighbor_prior_count",
+        "neighbor_missing",
+        "slope_m_per_m",
+        "abs_slope_m_per_m",
+        "local_low_m",
+        "relative_position"
+      ],
+      "global_used_features": [
+        "last_mm",
+        "neighbor_prior_median_mm",
+        "neighbor_prior_count",
+        "neighbor_missing",
+        "slope_m_per_m",
+        "abs_slope_m_per_m",
+        "local_low_m",
+        "relative_position"
+      ],
+      "high_m": 2200.0,
+      "low_m": 2000.0,
+      "min_target_train_center_distance_m": 55.0,
+      "scheme": "200m_50m",
+      "target_used_features": [
+        "last_mm",
+        "neighbor_prior_median_mm",
+        "neighbor_prior_count",
+        "neighbor_missing",
+        "slope_m_per_m",
+        "abs_slope_m_per_m",
+        "local_low_m",
+        "relative_position"
+      ],
+      "test_in_global_train": false,
+      "test_in_local_train": false,
+      "test_keys": [
+        [
+          1250022871,
+          203
+        ],
+        [
+          1250022871,
+          204
+        ],
+        [
+          1250022871,
+          205
+        ],
+        [
+          1250022871,
+          206
+        ],
+        [
+          1250022871,
+          207
+        ],
+        [
+          1250022871,
+          209
+        ],
+        [
+          1250022871,
+          210
+        ],
+        [
+          1250022871,
+          211
+        ],
+        [
+          1250022871,
+          212
+        ],
+        [
+          1250022871,
+          213
+        ],
+        [
+          1250022871,
+          214
+        ],
+        [
+          1250022871,
+          215
+        ],
+        [
+          1250022871,
+          216
+        ],
+        [
+          1250022871,
+          217
+        ],
+        [
+          1250022871,
+          218
+        ],
+        [
+          1250022871,
+          219
+        ]
+      ],
+      "test_rows": 16,
+      "train_global_rows": 334,
+      "train_local_rows": 298,
+      "train_median": 6.16
+    },
+    {
+      "affine_global": {
+        "a": 0.366420349847577,
+        "b": 3.8553409892902573
+      },
+      "affine_target": {
+        "a": 0.3895165268718307,
+        "b": 3.703881695688176
+      },
+      "block": 11,
+      "buffer_exclusion_ok": true,
+      "buffer_m": 50.0,
+      "buffer_minus_test_rows": 10,
+      "catboost_used_features": [
+        "last_mm",
+        "neighbor_prior_median_mm",
+        "neighbor_prior_count",
+        "neighbor_missing",
+        "slope_m_per_m",
+        "abs_slope_m_per_m",
+        "local_low_m",
+        "relative_position"
+      ],
+      "global_used_features": [
+        "last_mm",
+        "neighbor_prior_median_mm",
+        "neighbor_prior_count",
+        "neighbor_missing",
+        "slope_m_per_m",
+        "abs_slope_m_per_m",
+        "local_low_m",
+        "relative_position"
+      ],
+      "high_m": 2400.0,
+      "low_m": 2200.0,
+      "min_target_train_center_distance_m": 55.0,
+      "scheme": "200m_50m",
+      "target_used_features": [
+        "last_mm",
+        "neighbor_prior_median_mm",
+        "neighbor_prior_count",
+        "neighbor_missing",
+        "slope_m_per_m",
+        "abs_slope_m_per_m",
+        "local_low_m",
+        "relative_position"
+      ],
+      "test_in_global_train": false,
+      "test_in_local_train": false,
+      "test_keys": [
+        [
+          1250022871,
+          221
+        ],
+        [
+          1250022871,
+          222
+        ],
+        [
+          1250022871,
+          223
+        ],
+        [
+          1250022871,
+          224
+        ],
+        [
+          1250022871,
+          225
+        ],
+        [
+          1250022871,
+          226
+        ],
+        [
+          1250022871,
+          227
+        ],
+        [
+          1250022871,
+          228
+        ],
+        [
+          1250022871,
+          229
+        ],
+        [
+          1250022871,
+          230
+        ],
+        [
+          1250022871,
+          232
+        ],
+        [
+          1250022871,
+          233
+        ],
+        [
+          1250022871,
+          234
+        ],
+        [
+          1250022871,
+          235
+        ],
+        [
+          1250022871,
+          236
+        ],
+        [
+          1250022871,
+          239
+        ]
+      ],
+      "test_rows": 16,
+      "train_global_rows": 331,
+      "train_local_rows": 295,
+      "train_median": 6.16
+    },
+    {
+      "affine_global": {
+        "a": 0.35175253885494634,
+        "b": 3.9176705974766026
+      },
+      "affine_target": {
+        "a": 0.37305354090321763,
+        "b": 3.7745001290909928
+      },
+      "block": 12,
+      "buffer_exclusion_ok": true,
+      "buffer_m": 50.0,
+      "buffer_minus_test_rows": 7,
+      "catboost_used_features": [
+        "last_mm",
+        "neighbor_prior_median_mm",
+        "neighbor_prior_count",
+        "neighbor_missing",
+        "slope_m_per_m",
+        "abs_slope_m_per_m",
+        "local_low_m",
+        "relative_position"
+      ],
+      "global_used_features": [
+        "last_mm",
+        "neighbor_prior_median_mm",
+        "neighbor_prior_count",
+        "neighbor_missing",
+        "slope_m_per_m",
+        "abs_slope_m_per_m",
+        "local_low_m",
+        "relative_position"
+      ],
+      "high_m": 2600.0,
+      "low_m": 2400.0,
+      "min_target_train_center_distance_m": 55.0,
+      "scheme": "200m_50m",
+      "target_used_features": [
+        "last_mm",
+        "neighbor_prior_median_mm",
+        "neighbor_prior_count",
+        "neighbor_missing",
+        "slope_m_per_m",
+        "abs_slope_m_per_m",
+        "local_low_m",
+        "relative_position"
+      ],
+      "test_in_global_train": false,
+      "test_in_local_train": false,
+      "test_keys": [
+        [
+          1250022871,
+          240
+        ],
+        [
+          1250022871,
+          241
+        ],
+        [
+          1250022871,
+          242
+        ],
+        [
+          1250022871,
+          243
+        ],
+        [
+          1250022871,
+          244
+        ],
+        [
+          1250022871,
+          245
+        ],
+        [
+          1250022871,
+          246
+        ],
+        [
+          1250022871,
+          250
+        ],
+        [
+          1250022871,
+          251
+        ],
+        [
+          1250022871,
+          255
+        ],
+        [
+          1250022871,
+          257
+        ],
+        [
+          1250022871,
+          258
+        ],
+        [
+          1250022871,
+          259
+        ]
+      ],
+      "test_rows": 13,
+      "train_global_rows": 337,
+      "train_local_rows": 301,
+      "train_median": 6.16
+    },
+    {
+      "affine_global": {
+        "a": 0.3607074737525891,
+        "b": 3.8736723909748396
+      },
+      "affine_target": {
+        "a": 0.3826899322515882,
+        "b": 3.7274329733211027
+      },
+      "block": 13,
+      "buffer_exclusion_ok": true,
+      "buffer_m": 50.0,
+      "buffer_minus_test_rows": 8,
+      "catboost_used_features": [
+        "last_mm",
+        "neighbor_prior_median_mm",
+        "neighbor_prior_count",
+        "neighbor_missing",
+        "slope_m_per_m",
+        "abs_slope_m_per_m",
+        "local_low_m",
+        "relative_position"
+      ],
+      "global_used_features": [
+        "last_mm",
+        "neighbor_prior_median_mm",
+        "neighbor_prior_count",
+        "neighbor_missing",
+        "slope_m_per_m",
+        "abs_slope_m_per_m",
+        "local_low_m",
+        "relative_position"
+      ],
+      "high_m": 2800.0,
+      "low_m": 2600.0,
+      "min_target_train_center_distance_m": 55.0,
+      "scheme": "200m_50m",
+      "target_used_features": [
+        "last_mm",
+        "neighbor_prior_median_mm",
+        "neighbor_prior_count",
+        "neighbor_missing",
+        "slope_m_per_m",
+        "abs_slope_m_per_m",
+        "local_low_m",
+        "relative_position"
+      ],
+      "test_in_global_train": false,
+      "test_in_local_train": false,
+      "test_keys": [
+        [
+          1250022871,
+          261
+        ],
+        [
+          1250022871,
+          262
+        ],
+        [
+          1250022871,
+          263
+        ],
+        [
+          1250022871,
+          264
+        ],
+        [
+          1250022871,
+          266
+        ],
+        [
+          1250022871,
+          267
+        ],
+        [
+          1250022871,
+          268
+        ],
+        [
+          1250022871,
+          269
+        ],
+        [
+          1250022871,
+          270
+        ],
+        [
+          1250022871,
+          271
+        ],
+        [
+          1250022871,
+          272
+        ],
+        [
+          1250022871,
+          273
+        ],
+        [
+          1250022871,
+          274
+        ],
+        [
+          1250022871,
+          275
+        ],
+        [
+          1250022871,
+          276
+        ],
+        [
+          1250022871,
+          277
+        ],
+        [
+          1250022871,
+          278
+        ]
+      ],
+      "test_rows": 17,
+      "train_global_rows": 332,
+      "train_local_rows": 296,
+      "train_median": 6.16
+    },
+    {
+      "affine_global": {
+        "a": 0.3500749831383252,
+        "b": 3.9315257107210053
+      },
+      "affine_target": {
+        "a": 0.3714616593352207,
+        "b": 3.788219240942888
+      },
+      "block": 14,
+      "buffer_exclusion_ok": true,
+      "buffer_m": 50.0,
+      "buffer_minus_test_rows": 9,
+      "catboost_used_features": [
+        "last_mm",
+        "neighbor_prior_median_mm",
+        "neighbor_prior_count",
+        "neighbor_missing",
+        "slope_m_per_m",
+        "abs_slope_m_per_m",
+        "local_low_m",
+        "relative_position"
+      ],
+      "global_used_features": [
+        "last_mm",
+        "neighbor_prior_median_mm",
+        "neighbor_prior_count",
+        "neighbor_missing",
+        "slope_m_per_m",
+        "abs_slope_m_per_m",
+        "local_low_m",
+        "relative_position"
+      ],
+      "high_m": 3000.0,
+      "low_m": 2800.0,
+      "min_target_train_center_distance_m": 55.0,
+      "scheme": "200m_50m",
+      "target_used_features": [
+        "last_mm",
+        "neighbor_prior_median_mm",
+        "neighbor_prior_count",
+        "neighbor_missing",
+        "slope_m_per_m",
+        "abs_slope_m_per_m",
+        "local_low_m",
+        "relative_position"
+      ],
+      "test_in_global_train": false,
+      "test_in_local_train": false,
+      "test_keys": [
+        [
+          1250022871,
+          280
+        ],
+        [
+          1250022871,
+          282
+        ],
+        [
+          1250022871,
+          283
+        ],
+        [
+          1250022871,
+          284
+        ],
+        [
+          1250022871,
+          285
+        ],
+        [
+          1250022871,
+          286
+        ],
+        [
+          1250022871,
+          287
+        ],
+        [
+          1250022871,
+          288
+        ],
+        [
+          1250022871,
+          290
+        ],
+        [
+          1250022871,
+          291
+        ],
+        [
+          1250022871,
+          293
+        ],
+        [
+          1250022871,
+          294
+        ],
+        [
+          1250022871,
+          297
+        ],
+        [
+          1250022871,
+          298
+        ],
+        [
+          1250022871,
+          299
+        ]
+      ],
+      "test_rows": 15,
+      "train_global_rows": 333,
+      "train_local_rows": 297,
+      "train_median": 6.16
+    },
+    {
+      "affine_global": {
+        "a": 0.33467046540008827,
+        "b": 4.032572047803834
+      },
+      "affine_target": {
+        "a": 0.35626101883730626,
+        "b": 3.8886165818310765
+      },
+      "block": 15,
+      "buffer_exclusion_ok": true,
+      "buffer_m": 50.0,
+      "buffer_minus_test_rows": 7,
+      "catboost_used_features": [
+        "last_mm",
+        "neighbor_prior_median_mm",
+        "neighbor_prior_count",
+        "neighbor_missing",
+        "slope_m_per_m",
+        "abs_slope_m_per_m",
+        "local_low_m",
+        "relative_position"
+      ],
+      "global_used_features": [
+        "last_mm",
+        "neighbor_prior_median_mm",
+        "neighbor_prior_count",
+        "neighbor_missing",
+        "slope_m_per_m",
+        "abs_slope_m_per_m",
+        "local_low_m",
+        "relative_position"
+      ],
+      "high_m": 3200.0,
+      "low_m": 3000.0,
+      "min_target_train_center_distance_m": 55.0,
+      "scheme": "200m_50m",
+      "target_used_features": [
+        "last_mm",
+        "neighbor_prior_median_mm",
+        "neighbor_prior_count",
+        "neighbor_missing",
+        "slope_m_per_m",
+        "abs_slope_m_per_m",
+        "local_low_m",
+        "relative_position"
+      ],
+      "test_in_global_train": false,
+      "test_in_local_train": false,
+      "test_keys": [
+        [
+          1250022871,
+          300
+        ],
+        [
+          1250022871,
+          301
+        ],
+        [
+          1250022871,
+          302
+        ],
+        [
+          1250022871,
+          303
+        ],
+        [
+          1250022871,
+          304
+        ],
+        [
+          1250022871,
+          305
+        ],
+        [
+          1250022871,
+          306
+        ],
+        [
+          1250022871,
+          307
+        ],
+        [
+          1250022871,
+          315
+        ],
+        [
+          1250022871,
+          316
+        ],
+        [
+          1250022871,
+          317
+        ],
+        [
+          1250022871,
+          318
+        ],
+        [
+          1250022871,
+          319
+        ]
+      ],
+      "test_rows": 13,
+      "train_global_rows": 337,
+      "train_local_rows": 301,
+      "train_median": 6.16
+    },
+    {
+      "affine_global": {
+        "a": 0.33857494295171287,
+        "b": 4.011106138922386
+      },
+      "affine_target": {
+        "a": 0.36074067271100757,
+        "b": 3.8639534686316677
+      },
+      "block": 16,
+      "buffer_exclusion_ok": true,
+      "buffer_m": 50.0,
+      "buffer_minus_test_rows": 7,
+      "catboost_used_features": [
+        "last_mm",
+        "neighbor_prior_median_mm",
+        "neighbor_prior_count",
+        "neighbor_missing",
+        "slope_m_per_m",
+        "abs_slope_m_per_m",
+        "local_low_m",
+        "relative_position"
+      ],
+      "global_used_features": [
+        "last_mm",
+        "neighbor_prior_median_mm",
+        "neighbor_prior_count",
+        "neighbor_missing",
+        "slope_m_per_m",
+        "abs_slope_m_per_m",
+        "local_low_m",
+        "relative_position"
+      ],
+      "high_m": 3400.0,
+      "low_m": 3200.0,
+      "min_target_train_center_distance_m": 55.0,
+      "scheme": "200m_50m",
+      "target_used_features": [
+        "last_mm",
+        "neighbor_prior_median_mm",
+        "neighbor_prior_count",
+        "neighbor_missing",
+        "slope_m_per_m",
+        "abs_slope_m_per_m",
+        "local_low_m",
+        "relative_position"
+      ],
+      "test_in_global_train": false,
+      "test_in_local_train": false,
+      "test_keys": [
+        [
+          1250022871,
+          320
+        ],
+        [
+          1250022871,
+          322
+        ],
+        [
+          1250022871,
+          323
+        ],
+        [
+          1250022871,
+          324
+        ],
+        [
+          1250022871,
+          325
+        ],
+        [
+          1250022871,
+          326
+        ],
+        [
+          1250022871,
+          327
+        ],
+        [
+          1250022871,
+          328
+        ],
+        [
+          1250022871,
+          330
+        ],
+        [
+          1250022871,
+          332
+        ],
+        [
+          1250022871,
+          333
+        ],
+        [
+          1250022871,
+          334
+        ],
+        [
+          1250022871,
+          335
+        ]
+      ],
+      "test_rows": 13,
+      "train_global_rows": 337,
+      "train_local_rows": 301,
+      "train_median": 6.16
+    },
+    {
+      "affine_global": {
+        "a": 0.34462450752640533,
+        "b": 3.967039933263761
+      },
+      "affine_target": {
+        "a": 0.3651882406486236,
+        "b": 3.8292745985091323
+      },
+      "block": 17,
+      "buffer_exclusion_ok": true,
+      "buffer_m": 50.0,
+      "buffer_minus_test_rows": 5,
+      "catboost_used_features": [
+        "last_mm",
+        "neighbor_prior_median_mm",
+        "neighbor_prior_count",
+        "neighbor_missing",
+        "slope_m_per_m",
+        "abs_slope_m_per_m",
+        "local_low_m",
+        "relative_position"
+      ],
+      "global_used_features": [
+        "last_mm",
+        "neighbor_prior_median_mm",
+        "neighbor_prior_count",
+        "neighbor_missing",
+        "slope_m_per_m",
+        "abs_slope_m_per_m",
+        "local_low_m",
+        "relative_position"
+      ],
+      "high_m": 3600.0,
+      "low_m": 3400.0,
+      "min_target_train_center_distance_m": 55.0,
+      "scheme": "200m_50m",
+      "target_used_features": [
+        "last_mm",
+        "neighbor_prior_median_mm",
+        "neighbor_prior_count",
+        "neighbor_missing",
+        "slope_m_per_m",
+        "abs_slope_m_per_m",
+        "local_low_m",
+        "relative_position"
+      ],
+      "test_in_global_train": false,
+      "test_in_local_train": false,
+      "test_keys": [
+        [
+          1250022871,
+          340
+        ],
+        [
+          1250022871,
+          344
+        ],
+        [
+          1250022871,
+          345
+        ],
+        [
+          1250022871,
+          348
+        ],
+        [
+          1250022871,
+          349
+        ],
+        [
+          1250022871,
+          351
+        ],
+        [
+          1250022871,
+          352
+        ],
+        [
+          1250022871,
+          353
+        ],
+        [
+          1250022871,
+          356
+        ],
+        [
+          1250022871,
+          357
+        ],
+        [
+          1250022871,
+          358
+        ]
+      ],
+      "test_rows": 11,
+      "train_global_rows": 341,
+      "train_local_rows": 305,
+      "train_median": 6.16
+    },
+    {
+      "affine_global": {
+        "a": 0.3527962652227334,
+        "b": 3.914363665603973
+      },
+      "affine_target": {
+        "a": 0.3737735574188542,
+        "b": 3.7739327935718157
+      },
+      "block": 18,
+      "buffer_exclusion_ok": true,
+      "buffer_m": 50.0,
+      "buffer_minus_test_rows": 4,
+      "catboost_used_features": [
+        "last_mm",
+        "neighbor_prior_median_mm",
+        "neighbor_prior_count",
+        "neighbor_missing",
+        "slope_m_per_m",
+        "abs_slope_m_per_m",
+        "local_low_m",
+        "relative_position"
+      ],
+      "global_used_features": [
+        "last_mm",
+        "neighbor_prior_median_mm",
+        "neighbor_prior_count",
+        "neighbor_missing",
+        "slope_m_per_m",
+        "abs_slope_m_per_m",
+        "local_low_m",
+        "relative_position"
+      ],
+      "high_m": 3800.0,
+      "low_m": 3600.0,
+      "min_target_train_center_distance_m": 65.0,
+      "scheme": "200m_50m",
+      "target_used_features": [
+        "last_mm",
+        "neighbor_prior_median_mm",
+        "neighbor_prior_count",
+        "neighbor_missing",
+        "slope_m_per_m",
+        "abs_slope_m_per_m",
+        "local_low_m",
+        "relative_position"
+      ],
+      "test_in_global_train": false,
+      "test_in_local_train": false,
+      "test_keys": [
+        [
+          1250022871,
+          360
+        ],
+        [
+          1250022871,
+          362
+        ],
+        [
+          1250022871,
+          363
+        ],
+        [
+          1250022871,
+          364
+        ],
+        [
+          1250022871,
+          365
+        ],
+        [
+          1250022871,
+          366
+        ],
+        [
+          1250022871,
+          368
+        ],
+        [
+          1250022871,
+          374
+        ]
+      ],
+      "test_rows": 8,
+      "train_global_rows": 345,
+      "train_local_rows": 309,
+      "train_median": 6.16
+    },
+    {
+      "affine_global": {
+        "a": 0.36499390761499867,
+        "b": 3.8370977839106564
+      },
+      "affine_target": {
+        "a": 0.3875131382650853,
+        "b": 3.686813849729862
+      },
+      "block": 19,
+      "buffer_exclusion_ok": true,
+      "buffer_m": 50.0,
+      "buffer_minus_test_rows": 3,
+      "catboost_used_features": [
+        "last_mm",
+        "neighbor_prior_median_mm",
+        "neighbor_prior_count",
+        "neighbor_missing",
+        "slope_m_per_m",
+        "abs_slope_m_per_m",
+        "local_low_m",
+        "relative_position"
+      ],
+      "global_used_features": [
+        "last_mm",
+        "neighbor_prior_median_mm",
+        "neighbor_prior_count",
+        "neighbor_missing",
+        "slope_m_per_m",
+        "abs_slope_m_per_m",
+        "local_low_m",
+        "relative_position"
+      ],
+      "high_m": 4000.0,
+      "low_m": 3800.0,
+      "min_target_train_center_distance_m": 55.0,
+      "scheme": "200m_50m",
+      "target_used_features": [
+        "last_mm",
+        "neighbor_prior_median_mm",
+        "neighbor_prior_count",
+        "neighbor_missing",
+        "slope_m_per_m",
+        "abs_slope_m_per_m",
+        "local_low_m",
+        "relative_position"
+      ],
+      "test_in_global_train": false,
+      "test_in_local_train": false,
+      "test_keys": [
+        [
+          1250022871,
+          380
+        ],
+        [
+          1250022871,
+          389
+        ],
+        [
+          1250022871,
+          393
+        ],
+        [
+          1250022871,
+          395
+        ],
+        [
+          1250022871,
+          397
+        ]
+      ],
+      "test_rows": 5,
+      "train_global_rows": 349,
+      "train_local_rows": 313,
+      "train_median": 6.16
+    },
+    {
+      "affine_global": {
+        "a": 0.36406349536162685,
+        "b": 3.8369843592098487
+      },
+      "affine_target": {
+        "a": 0.3867015123187424,
+        "b": 3.685143382203148
+      },
+      "block": 20,
+      "buffer_exclusion_ok": true,
+      "buffer_m": 50.0,
+      "buffer_minus_test_rows": 4,
+      "catboost_used_features": [
+        "last_mm",
+        "neighbor_prior_median_mm",
+        "neighbor_prior_count",
+        "neighbor_missing",
+        "slope_m_per_m",
+        "abs_slope_m_per_m",
+        "local_low_m",
+        "relative_position"
+      ],
+      "global_used_features": [
+        "last_mm",
+        "neighbor_prior_median_mm",
+        "neighbor_prior_count",
+        "neighbor_missing",
+        "slope_m_per_m",
+        "abs_slope_m_per_m",
+        "local_low_m",
+        "relative_position"
+      ],
+      "high_m": 4200.0,
+      "low_m": 4000.0,
+      "min_target_train_center_distance_m": 65.0,
+      "scheme": "200m_50m",
+      "target_used_features": [
+        "last_mm",
+        "neighbor_prior_median_mm",
+        "neighbor_prior_count",
+        "neighbor_missing",
+        "slope_m_per_m",
+        "abs_slope_m_per_m",
+        "local_low_m",
+        "relative_position"
+      ],
+      "test_in_global_train": false,
+      "test_in_local_train": false,
+      "test_keys": [
+        [
+          1250022871,
+          400
+        ],
+        [
+          1250022871,
+          403
+        ],
+        [
+          1250022871,
+          404
+        ],
+        [
+          1250022871,
+          406
+        ],
+        [
+          1250022871,
+          407
+        ],
+        [
+          1250022871,
+          408
+        ],
+        [
+          1250022871,
+          409
+        ],
+        [
+          1250022871,
+          410
+        ],
+        [
+          1250022871,
+          411
+        ],
+        [
+          1250022871,
+          412
+        ],
+        [
+          1250022871,
+          413
+        ],
+        [
+          1250022871,
+          415
+        ],
+        [
+          1250022871,
+          416
+        ],
+        [
+          1250022871,
+          417
+        ]
+      ],
+      "test_rows": 14,
+      "train_global_rows": 339,
+      "train_local_rows": 303,
+      "train_median": 6.16
+    },
+    {
+      "affine_global": {
+        "a": 0.3484074150694834,
+        "b": 3.947402651204038
+      },
+      "affine_target": {
+        "a": 0.3689247894015812,
+        "b": 3.810597782709742
+      },
+      "block": 21,
+      "buffer_exclusion_ok": true,
+      "buffer_m": 50.0,
+      "buffer_minus_test_rows": 3,
+      "catboost_used_features": [
+        "last_mm",
+        "neighbor_prior_median_mm",
+        "neighbor_prior_count",
+        "neighbor_missing",
+        "slope_m_per_m",
+        "abs_slope_m_per_m",
+        "local_low_m",
+        "relative_position"
+      ],
+      "global_used_features": [
+        "last_mm",
+        "neighbor_prior_median_mm",
+        "neighbor_prior_count",
+        "neighbor_missing",
+        "slope_m_per_m",
+        "abs_slope_m_per_m",
+        "local_low_m",
+        "relative_position"
+      ],
+      "high_m": 4400.0,
+      "low_m": 4200.0,
+      "min_target_train_center_distance_m": 65.0,
+      "scheme": "200m_50m",
+      "target_used_features": [
+        "last_mm",
+        "neighbor_prior_median_mm",
+        "neighbor_prior_count",
+        "neighbor_missing",
+        "slope_m_per_m",
+        "abs_slope_m_per_m",
+        "local_low_m",
+        "relative_position"
+      ],
+      "test_in_global_train": false,
+      "test_in_local_train": false,
+      "test_keys": [
+        [
+          1250022871,
+          423
+        ],
+        [
+          1250022871,
+          424
+        ],
+        [
+          1250022871,
+          432
+        ],
+        [
+          1250022871,
+          433
+        ],
+        [
+          1250022871,
+          434
+        ],
+        [
+          1250022871,
+          437
+        ]
+      ],
+      "test_rows": 6,
+      "train_global_rows": 348,
+      "train_local_rows": 312,
+      "train_median": 6.16
+    },
+    {
+      "affine_global": {
+        "a": 0.35904489055615846,
+        "b": 3.878945545839454
+      },
+      "affine_target": {
+        "a": 0.380418110295258,
+        "b": 3.7366852310269087
+      },
+      "block": 22,
+      "buffer_exclusion_ok": true,
+      "buffer_m": 50.0,
+      "buffer_minus_test_rows": 3,
+      "catboost_used_features": [
+        "last_mm",
+        "neighbor_prior_median_mm",
+        "neighbor_prior_count",
+        "neighbor_missing",
+        "slope_m_per_m",
+        "abs_slope_m_per_m",
+        "local_low_m",
+        "relative_position"
+      ],
+      "global_used_features": [
+        "last_mm",
+        "neighbor_prior_median_mm",
+        "neighbor_prior_count",
+        "neighbor_missing",
+        "slope_m_per_m",
+        "abs_slope_m_per_m",
+        "local_low_m",
+        "relative_position"
+      ],
+      "high_m": 4600.0,
+      "low_m": 4400.0,
+      "min_target_train_center_distance_m": 55.0,
+      "scheme": "200m_50m",
+      "target_used_features": [
+        "last_mm",
+        "neighbor_prior_median_mm",
+        "neighbor_prior_count",
+        "neighbor_missing",
+        "slope_m_per_m",
+        "abs_slope_m_per_m",
+        "local_low_m",
+        "relative_position"
+      ],
+      "test_in_global_train": false,
+      "test_in_local_train": false,
+      "test_keys": [
+        [
+          1250022871,
+          451
+        ],
+        [
+          1250022871,
+          458
+        ]
+      ],
+      "test_rows": 2,
+      "train_global_rows": 352,
+      "train_local_rows": 316,
+      "train_median": 6.16
+    },
+    {
+      "affine_global": {
+        "a": 0.35295317500126766,
+        "b": 3.9070533535745366
+      },
+      "affine_target": {
+        "a": 0.3739817393017055,
+        "b": 3.765654350083149
+      },
+      "block": 23,
+      "buffer_exclusion_ok": true,
+      "buffer_m": 50.0,
+      "buffer_minus_test_rows": 3,
+      "catboost_used_features": [
+        "last_mm",
+        "neighbor_prior_median_mm",
+        "neighbor_prior_count",
+        "neighbor_missing",
+        "slope_m_per_m",
+        "abs_slope_m_per_m",
+        "local_low_m",
+        "relative_position"
+      ],
+      "global_used_features": [
+        "last_mm",
+        "neighbor_prior_median_mm",
+        "neighbor_prior_count",
+        "neighbor_missing",
+        "slope_m_per_m",
+        "abs_slope_m_per_m",
+        "local_low_m",
+        "relative_position"
+      ],
+      "high_m": 4800.0,
+      "low_m": 4600.0,
+      "min_target_train_center_distance_m": 55.0,
+      "scheme": "200m_50m",
+      "target_used_features": [
+        "last_mm",
+        "neighbor_prior_median_mm",
+        "neighbor_prior_count",
+        "neighbor_missing",
+        "slope_m_per_m",
+        "abs_slope_m_per_m",
+        "local_low_m",
+        "relative_position"
+      ],
+      "test_in_global_train": false,
+      "test_in_local_train": false,
+      "test_keys": [
+        [
+          1250022871,
+          462
+        ],
+        [
+          1250022871,
+          464
+        ],
+        [
+          1250022871,
+          465
+        ],
+        [
+          1250022871,
+          466
+        ],
+        [
+          1250022871,
+          468
+        ],
+        [
+          1250022871,
+          469
+        ],
+        [
+          1250022871,
+          470
+        ],
+        [
+          1250022871,
+          473
+        ],
+        [
+          1250022871,
+          474
+        ],
+        [
+          1250022871,
+          476
+        ],
+        [
+          1250022871,
+          479
+        ]
+      ],
+      "test_rows": 11,
+      "train_global_rows": 343,
+      "train_local_rows": 307,
+      "train_median": 6.16
+    },
+    {
+      "affine_global": {
+        "a": 0.379207231853956,
+        "b": 3.741216317142827
+      },
+      "affine_target": {
+        "a": 0.40313957920651505,
+        "b": 3.5810251967909563
+      },
+      "block": 24,
+      "buffer_exclusion_ok": true,
+      "buffer_m": 50.0,
+      "buffer_minus_test_rows": 5,
+      "catboost_used_features": [
+        "last_mm",
+        "neighbor_prior_median_mm",
+        "neighbor_prior_count",
+        "neighbor_missing",
+        "slope_m_per_m",
+        "abs_slope_m_per_m",
+        "local_low_m",
+        "relative_position"
+      ],
+      "global_used_features": [
+        "last_mm",
+        "neighbor_prior_median_mm",
+        "neighbor_prior_count",
+        "neighbor_missing",
+        "slope_m_per_m",
+        "abs_slope_m_per_m",
+        "local_low_m",
+        "relative_position"
+      ],
+      "high_m": 5000.0,
+      "low_m": 4800.0,
+      "min_target_train_center_distance_m": 55.0,
+      "scheme": "200m_50m",
+      "target_used_features": [
+        "last_mm",
+        "neighbor_prior_median_mm",
+        "neighbor_prior_count",
+        "neighbor_missing",
+        "slope_m_per_m",
+        "abs_slope_m_per_m",
+        "local_low_m",
+        "relative_position"
+      ],
+      "test_in_global_train": false,
+      "test_in_local_train": false,
+      "test_keys": [
+        [
+          1250022871,
+          482
+        ],
+        [
+          1250022871,
+          483
+        ],
+        [
+          1250022871,
+          485
+        ],
+        [
+          1250022871,
+          486
+        ],
+        [
+          1250022871,
+          489
+        ],
+        [
+          1250022871,
+          490
+        ],
+        [
+          1250022871,
+          491
+        ],
+        [
+          1250022871,
+          492
+        ],
+        [
+          1250022871,
+          493
+        ],
+        [
+          1250022871,
+          495
+        ],
+        [
+          1250022871,
+          496
+        ]
+      ],
+      "test_rows": 11,
+      "train_global_rows": 341,
+      "train_local_rows": 305,
+      "train_median": 6.16
+    },
+    {
+      "affine_global": {
+        "a": 0.3941918440249798,
+        "b": 3.6445535086677934
+      },
+      "affine_target": {
+        "a": 0.42025030291458504,
+        "b": 3.470397919975259
+      },
+      "block": 25,
+      "buffer_exclusion_ok": true,
+      "buffer_m": 50.0,
+      "buffer_minus_test_rows": 4,
+      "catboost_used_features": [
+        "last_mm",
+        "neighbor_prior_median_mm",
+        "neighbor_prior_count",
+        "neighbor_missing",
+        "slope_m_per_m",
+        "abs_slope_m_per_m",
+        "local_low_m",
+        "relative_position"
+      ],
+      "global_used_features": [
+        "last_mm",
+        "neighbor_prior_median_mm",
+        "neighbor_prior_count",
+        "neighbor_missing",
+        "slope_m_per_m",
+        "abs_slope_m_per_m",
+        "local_low_m",
+        "relative_position"
+      ],
+      "high_m": 5200.0,
+      "low_m": 5000.0,
+      "min_target_train_center_distance_m": 65.0,
+      "scheme": "200m_50m",
+      "target_used_features": [
+        "last_mm",
+        "neighbor_prior_median_mm",
+        "neighbor_prior_count",
+        "neighbor_missing",
+        "slope_m_per_m",
+        "abs_slope_m_per_m",
+        "local_low_m",
+        "relative_position"
+      ],
+      "test_in_global_train": false,
+      "test_in_local_train": false,
+      "test_keys": [
+        [
+          1250022871,
+          500
+        ],
+        [
+          1250022871,
+          503
+        ],
+        [
+          1250022871,
+          504
+        ],
+        [
+          1250022871,
+          505
+        ],
+        [
+          1250022871,
+          507
+        ],
+        [
+          1250022871,
+          511
+        ],
+        [
+          1250022871,
+          512
+        ],
+        [
+          1250022871,
+          515
+        ],
+        [
+          1250022871,
+          516
+        ],
+        [
+          1250022871,
+          517
+        ]
+      ],
+      "test_rows": 10,
+      "train_global_rows": 343,
+      "train_local_rows": 307,
+      "train_median": 6.16
+    },
+    {
+      "affine_global": {
+        "a": 0.36540559161897823,
+        "b": 3.833962882916914
+      },
+      "affine_target": {
+        "a": 0.3878644791023991,
+        "b": 3.6840180806589604
+      },
+      "block": 26,
+      "buffer_exclusion_ok": true,
+      "buffer_m": 50.0,
+      "buffer_minus_test_rows": 3,
+      "catboost_used_features": [
+        "last_mm",
+        "neighbor_prior_median_mm",
+        "neighbor_prior_count",
+        "neighbor_missing",
+        "slope_m_per_m",
+        "abs_slope_m_per_m",
+        "local_low_m",
+        "relative_position"
+      ],
+      "global_used_features": [
+        "last_mm",
+        "neighbor_prior_median_mm",
+        "neighbor_prior_count",
+        "neighbor_missing",
+        "slope_m_per_m",
+        "abs_slope_m_per_m",
+        "local_low_m",
+        "relative_position"
+      ],
+      "high_m": 5400.0,
+      "low_m": 5200.0,
+      "min_target_train_center_distance_m": 75.0,
+      "scheme": "200m_50m",
+      "target_used_features": [
+        "last_mm",
+        "neighbor_prior_median_mm",
+        "neighbor_prior_count",
+        "neighbor_missing",
+        "slope_m_per_m",
+        "abs_slope_m_per_m",
+        "local_low_m",
+        "relative_position"
+      ],
+      "test_in_global_train": false,
+      "test_in_local_train": false,
+      "test_keys": [
+        [
+          1250022871,
+          520
+        ],
+        [
+          1250022871,
+          523
+        ]
+      ],
+      "test_rows": 2,
+      "train_global_rows": 352,
+      "train_local_rows": 316,
+      "train_median": 6.16
+    }
+  ],
+  "rules": "test keys in block; target train excludes block+buffer; global includes other simple sections; local includes only target outside buffer",
+  "scheme": "200m_50m"
+}

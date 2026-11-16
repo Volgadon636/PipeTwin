@@ -1,0 +1,45 @@
+{
+  "audit": {
+    "defect_depth_pct": {
+      "finite": 47726,
+      "mismatches": 0,
+      "rows": 48040
+    },
+    "distance": {
+      "finite": 48040,
+      "mismatches": 0,
+      "rows": 48040
+    },
+    "residual_wall_thickness": {
+      "finite": 47696,
+      "mismatches": 0,
+      "rows": 48040
+    }
+  },
+  "cases": {
+    "S1": {
+      "baseline_r2": 0.14129130319950559,
+      "candidate_pearson_r": 0.3198318539815371,
+      "candidate_r2": 0.14129130319950559,
+      "changed_predictions": 0,
+      "delta_pearson_squared": 0.0,
+      "implementation": "implemented",
+      "independent_parent_count": 1,
+      "n": 357,
+      "profile_count": 3,
+      "result": "no_increment"
+    },
+    "S2": {
+      "baseline_r2": null,
+      "candidate_pearson_r": null,
+      "candidate_r2": null,
+      "changed_predictions": 0,
+      "delta_pearson_squared": null,
+      "implementation": "implemented",
+      "independent_parent_count": 1,
+      "n": 372,
+      "profile_count": 3,
+      "result": "undefined_metric"
+    }
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "cases": [
+    "S2"
+  ],
+  "conductance_w_m2_k": [
+    1.0,
+    0.3,
+    3.0
+  ],
+  "controls": [
+    "default_thermal_length"
+  ],
+  "description": "Vary heat-loss decay by fixed conductance scenarios. Transform each to the same centered midpoint-temperature feature as H20. Select conductance by mean Pearson squared of complete section-wise inner OOF predictions with default first on ties. Refit on outer train. Keep thermal-missing profiles at the spatial baseline. No change to the global corrosion-rate multiplier.",
+  "primary": "selected_thermal_length"
+}

@@ -1,0 +1,8 @@
+{
+  "description": "Fixed GP posterior mean of the residual, with linear covariance plus Matérn 3/2 in normalized section coordinate times Gaussian covariance in the fixed standardized predictors. No fitted kernel hyperparameters or observed thickness in S2 inference. Use the corresponding full-grid centering, level and clipping.",
+  "feature_length_per_sqrt_dimension": 1.0,
+  "length_fraction": 0.25,
+  "noise_to_linear_variance": 10.0,
+  "primary": "spatial_gaussian_process",
+  "spatial_variance": 4.0
+}

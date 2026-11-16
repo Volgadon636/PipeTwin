@@ -1,0 +1,11 @@
+{
+  "s1_method": "H18",
+  "s2_method": "H31",
+  "previous_result": "experiments/incremental_cycle/e0/result.csv",
+  "h31": {
+    "length_fraction": 0.25,
+    "feature_length_per_sqrt_dimension": 1.0,
+    "spatial_variance": 4.0,
+    "noise_to_linear_variance": 10.0
+  }
+}

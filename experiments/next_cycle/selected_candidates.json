@@ -1,0 +1,39 @@
+{
+  "assembly": {
+    "assembled_utc": "2026-11-15T17:35:06+00:00",
+    "note": "Explicit candidate pair. This is not a claim of a best production result and does not overwrite experiments/ml_v2/result.csv.",
+    "result_sha256": "8b3dfec7207c6c08deab04810790ed4b1ca8edf4d86126c6225d586dfe2c84fe",
+    "rows": 2000,
+    "s1_artifact_sha256": null,
+    "s1_candidate": "s1a",
+    "s1_max_abs_diff_vs_candidate": 0.0,
+    "s1_rows": 525,
+    "s2_artifact_sha256": "73b1ed0bad2493de697c10f775205bd197399f2ee381854a6c81a28663dd2215",
+    "s2_candidate": "physics_priors",
+    "s2_max_abs_diff_vs_candidate": 0.0,
+    "s2_rows": 1475,
+    "unique_keys": true,
+    "validation": {
+      "bounded": true,
+      "finite_mm": true,
+      "rows": 2000,
+      "template": {
+        "available": false,
+        "key_set_compared": false,
+        "status": "no_template_supplied",
+        "validation_grid": "derived_target_grid"
+      },
+      "unique_keys": true,
+      "upper_bound_column": "upper_mm"
+    }
+  },
+  "explicit_pair": {
+    "s1": "s1a",
+    "s2": "physics_priors"
+  },
+  "generated_utc": "2026-11-15T17:35:06+00:00",
+  "note": "No automatic production replacement; no push/deploy.",
+  "report_path": "C:\\Users\\Администратор\\Documents\\PipeTwin_next\\experiments\\next_cycle\\report_ru.md",
+  "s1_default": "s1a",
+  "s2_default": "physics_priors"
+}

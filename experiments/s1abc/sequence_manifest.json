@@ -1,0 +1,1098 @@
+{
+  "candidate_result_path": "C:\\Users\\Администратор\\Documents\\PipeTwin_s1abc\\experiments\\s1abc\\result.csv",
+  "candidate_result_sha256": "9b79ae3edf686e1bcdcee793566b81c7a3f523bcdb94925517b3346323efbad0",
+  "contract_version": "s1abc-v1",
+  "finished_utc": "2026-11-15T14:53:49+00:00",
+  "git": {
+    "branch": "s1abc-ridge",
+    "commit": "c62279be3b689a81b28e9572d76929070b8b465e",
+    "dirty": true,
+    "status_porcelain": [
+      "?? experiments/s1abc/"
+    ],
+    "status_porcelain_tracked": [],
+    "tracked_dirty": false
+  },
+  "metric_comparison_path": "C:\\Users\\Администратор\\Documents\\PipeTwin_s1abc\\experiments\\s1abc\\model_comparison.csv",
+  "order": [
+    "S1A",
+    "S1B",
+    "S1C_train",
+    "S1C_predict"
+  ],
+  "reproduce_command": "python -m src.ml.s1_all --root . --output-root experiments/s1abc",
+  "result_paths": {
+    "s1a": "C:\\Users\\Администратор\\Documents\\PipeTwin_s1abc\\experiments\\s1abc\\s1a\\result.csv",
+    "s1b": "C:\\Users\\Администратор\\Documents\\PipeTwin_s1abc\\experiments\\s1abc\\s1b\\result.csv",
+    "s1c": "C:\\Users\\Администратор\\Documents\\PipeTwin_s1abc\\experiments\\s1abc\\s1c\\result.csv"
+  },
+  "s2_source": "C:\\Users\\Администратор\\Documents\\PipeTwin_s1abc\\experiments\\ml_v2\\result.csv",
+  "s2_source_sha256": "79ba544232d4d34ed33609ef2fc352d9c39edb49b6a118470f63f11fb0e25f05",
+  "stages": {
+    "s1a": {
+      "path": "C:\\Users\\Администратор\\Documents\\PipeTwin_s1abc\\experiments\\s1abc\\s1a",
+      "summary": {
+        "bounds_policy": {
+          "lower_mm": 0.0,
+          "note": "S1A is persistence and cannot exceed h0",
+          "upper_column": "h0_mm"
+        },
+        "contract_version": "s1abc-v1",
+        "fallback_rows": 4,
+        "fallback_segments": [
+          {
+            "fallback_distance_m": 10.0,
+            "fallback_measurement_date": "2018-09-23",
+            "fallback_segment_id": 16,
+            "fallback_source": "nearest_prior_vtd_assumption",
+            "s1a_prediction_mm": 6.12,
+            "s1b_prediction_mm": 6.12,
+            "segment_id": 17
+          },
+          {
+            "fallback_distance_m": 10.0,
+            "fallback_measurement_date": "2022-07-06",
+            "fallback_segment_id": 246,
+            "fallback_source": "nearest_prior_vtd_assumption",
+            "s1a_prediction_mm": 6.8,
+            "s1b_prediction_mm": 6.8,
+            "segment_id": 247
+          },
+          {
+            "fallback_distance_m": 10.0,
+            "fallback_measurement_date": "2022-07-06",
+            "fallback_segment_id": 400,
+            "fallback_source": "nearest_prior_vtd_assumption",
+            "s1a_prediction_mm": 6.48,
+            "s1b_prediction_mm": 6.48,
+            "segment_id": 401
+          },
+          {
+            "fallback_distance_m": 10.0,
+            "fallback_measurement_date": "2022-07-06",
+            "fallback_segment_id": 454,
+            "fallback_source": "nearest_prior_vtd_assumption",
+            "s1a_prediction_mm": 6.72,
+            "s1b_prediction_mm": 6.72,
+            "segment_id": 455
+          }
+        ],
+        "input_note": "All features use eligible VTD rows strictly before 2023-12-01; no S1 target label is read.",
+        "own_prior_rows": 521,
+        "rows": 525,
+        "rule": "last eligible own prior VTD thickness; documented nearest-prior fallback otherwise",
+        "s2": {
+          "keys": [
+            1250009583,
+            1475
+          ],
+          "policy": "copied by exact keys from the explicitly selected result.csv; never retrained",
+          "rows": 1475,
+          "source_path": "C:\\Users\\Администратор\\Documents\\PipeTwin_s1abc\\experiments\\ml_v2\\result.csv",
+          "source_sha256": "79ba544232d4d34ed33609ef2fc352d9c39edb49b6a118470f63f11fb0e25f05",
+          "unchanged": true,
+          "written_vs_source": {
+            "exact_numeric_match": true,
+            "max_abs_difference": 0.0,
+            "rows": 1475,
+            "source_rows": 1475
+          }
+        },
+        "stage": "S1A",
+        "thickness_stats_mm": {
+          "count": 525,
+          "max": 7.2,
+          "mean": 6.225037110537575,
+          "median": 6.32,
+          "min": 3.52,
+          "q05": 5.2,
+          "q25": 6.0,
+          "q75": 6.64,
+          "q95": 6.88,
+          "std": 0.5547620663885927
+        },
+        "training_completed": false,
+        "training_required": false,
+        "v2_comparison": {
+          "max_abs_difference_mm": 2.6560087462712545e-11,
+          "mean_difference_mm": 5.0590642786119134e-14,
+          "note": "v2 S1 was a persistence baseline; agreement verifies the last-measured/fallback input, not hidden-test accuracy.",
+          "rows": 525,
+          "rows_difference_gt_1e_9_mm": 0
+        },
+        "validation": {
+          "bounded": true,
+          "finite_mm": true,
+          "revalidated_after_write": {
+            "bounded": true,
+            "finite_mm": true,
+            "rows": 2000,
+            "template": {
+              "available": false,
+              "key_set_compared": false,
+              "status": "no_template_supplied",
+              "validation_grid": "derived_target_grid"
+            },
+            "unique_keys": true,
+            "upper_bound_column": "upper_mm"
+          },
+          "rows": 2000,
+          "s1_upper_column": "h0_mm",
+          "template": {
+            "available": false,
+            "key_set_compared": false,
+            "status": "no_template_supplied",
+            "validation_grid": "derived_target_grid"
+          },
+          "unique_keys": true,
+          "upper_bound_column": "upper_mm"
+        }
+      }
+    },
+    "s1b": {
+      "path": "C:\\Users\\Администратор\\Documents\\PipeTwin_s1abc\\experiments\\s1abc\\s1b",
+      "summary": {
+        "bounds_policy": {
+          "lower_mm": 0.0,
+          "note": "S1B is a past minimum and cannot exceed h0",
+          "upper_column": "h0_mm"
+        },
+        "changed_segments": 157,
+        "contract_version": "s1abc-v1",
+        "delta_stats_mm": {
+          "count": 525,
+          "max": 0.0,
+          "mean": -0.13561904761904764,
+          "median": 0.0,
+          "min": -2.4000000000000004,
+          "q05": -0.748,
+          "q25": -0.08999999999999986,
+          "q75": 0.0,
+          "q95": 0.0,
+          "std": 0.31048141976314875
+        },
+        "examples": [
+          {
+            "delta_mm": -2.4000000000000004,
+            "fallback_segment_id": null,
+            "last_date": "2022-07-06",
+            "min_date": "2018-09-23",
+            "min_source": "own_prior_vtd_min",
+            "s1a_mm": 6.16,
+            "s1b_mm": 3.76,
+            "segment_id": 214
+          },
+          {
+            "delta_mm": -1.8599999999999994,
+            "fallback_segment_id": null,
+            "last_date": "2022-07-06",
+            "min_date": "2018-09-23",
+            "min_source": "own_prior_vtd_min",
+            "s1a_mm": 6.72,
+            "s1b_mm": 4.86,
+            "segment_id": 395
+          },
+          {
+            "delta_mm": -1.8499999999999996,
+            "fallback_segment_id": null,
+            "last_date": "2022-07-06",
+            "min_date": "2018-09-23",
+            "min_source": "own_prior_vtd_min",
+            "s1a_mm": 6.56,
+            "s1b_mm": 4.71,
+            "segment_id": 495
+          },
+          {
+            "delta_mm": -1.7400000000000002,
+            "fallback_segment_id": null,
+            "last_date": "2022-07-06",
+            "min_date": "2018-09-23",
+            "min_source": "own_prior_vtd_min",
+            "s1a_mm": 6.8,
+            "s1b_mm": 5.06,
+            "segment_id": 25
+          },
+          {
+            "delta_mm": -1.63,
+            "fallback_segment_id": null,
+            "last_date": "2022-07-06",
+            "min_date": "2018-09-23",
+            "min_source": "own_prior_vtd_min",
+            "s1a_mm": 6.88,
+            "s1b_mm": 5.25,
+            "segment_id": 517
+          }
+        ],
+        "fallback_rows": 4,
+        "fallback_segments": [
+          {
+            "fallback_distance_m": 10.0,
+            "fallback_measurement_date": "2018-09-23",
+            "fallback_segment_id": 16,
+            "fallback_source": "nearest_prior_vtd_assumption",
+            "s1a_prediction_mm": 6.12,
+            "s1b_prediction_mm": 6.12,
+            "segment_id": 17
+          },
+          {
+            "fallback_distance_m": 10.0,
+            "fallback_measurement_date": "2022-07-06",
+            "fallback_segment_id": 246,
+            "fallback_source": "nearest_prior_vtd_assumption",
+            "s1a_prediction_mm": 6.8,
+            "s1b_prediction_mm": 6.8,
+            "segment_id": 247
+          },
+          {
+            "fallback_distance_m": 10.0,
+            "fallback_measurement_date": "2022-07-06",
+            "fallback_segment_id": 400,
+            "fallback_source": "nearest_prior_vtd_assumption",
+            "s1a_prediction_mm": 6.48,
+            "s1b_prediction_mm": 6.48,
+            "segment_id": 401
+          },
+          {
+            "fallback_distance_m": 10.0,
+            "fallback_measurement_date": "2022-07-06",
+            "fallback_segment_id": 454,
+            "fallback_source": "nearest_prior_vtd_assumption",
+            "s1a_prediction_mm": 6.72,
+            "s1b_prediction_mm": 6.72,
+            "segment_id": 455
+          }
+        ],
+        "historical_single_prior_pairs": {
+          "campaign_count_by_pipe": {
+            "1250009490": 2,
+            "1250009584": 1,
+            "1250009587": 1,
+            "1250011604": 2,
+            "1250022871": 2,
+            "1250028931": 1,
+            "1250028932": 1,
+            "1250028933": 1,
+            "1250028934": 1,
+            "1250028935": 1
+          },
+          "cutoff": "2023-12-01",
+          "max_prior_campaigns_per_pipe_before_cutoff": 2,
+          "note": "Only campaigns strictly before the cutoff are counted. A two-prior -> third-answer test needs at least three eligible campaigns for the same pipe; it is not available.",
+          "two_campaign_pair_counts": {
+            "1250009490": 4,
+            "1250011604": 32,
+            "1250022871": 321
+          },
+          "two_prior_campaign_test_available": false
+        },
+        "input_note": "All features use eligible VTD rows strictly before 2023-12-01; no S1 target label is read.",
+        "largest_decrease_mm": -2.4000000000000004,
+        "largest_increase_mm": 0.0,
+        "own_prior_rows": 521,
+        "quality_status": "not_verified_in_two_prior_campaign_regime; only one prior campaign exists for every pre-cutoff S1 label",
+        "rows": 525,
+        "rule": "minimum eligible own prior VTD thickness; earliest source date on exact minimum tie; S1A fallback reused only when no own prior",
+        "s1b_le_s1a_on_own_prior": true,
+        "s2": {
+          "keys": [
+            1250009583,
+            1475
+          ],
+          "policy": "copied by exact keys from the explicitly selected result.csv; never retrained",
+          "rows": 1475,
+          "source_path": "C:\\Users\\Администратор\\Documents\\PipeTwin_s1abc\\experiments\\ml_v2\\result.csv",
+          "source_sha256": "79ba544232d4d34ed33609ef2fc352d9c39edb49b6a118470f63f11fb0e25f05",
+          "unchanged": true,
+          "written_vs_source": {
+            "exact_numeric_match": true,
+            "max_abs_difference": 0.0,
+            "rows": 1475,
+            "source_rows": 1475
+          }
+        },
+        "stage": "S1B",
+        "tie_policy": "earliest source date on exact minimum tie",
+        "training_completed": false,
+        "training_required": false,
+        "unchanged_segments": 368,
+        "validation": {
+          "bounded": true,
+          "finite_mm": true,
+          "revalidated_after_write": {
+            "bounded": true,
+            "finite_mm": true,
+            "rows": 2000,
+            "template": {
+              "available": false,
+              "key_set_compared": false,
+              "status": "no_template_supplied",
+              "validation_grid": "derived_target_grid"
+            },
+            "unique_keys": true,
+            "upper_bound_column": "upper_mm"
+          },
+          "rows": 2000,
+          "s1_upper_column": "h0_mm",
+          "template": {
+            "available": false,
+            "key_set_compared": false,
+            "status": "no_template_supplied",
+            "validation_grid": "derived_target_grid"
+          },
+          "unique_keys": true,
+          "upper_bound_column": "upper_mm"
+        }
+      }
+    },
+    "s1c_predict": {
+      "path": "C:\\Users\\Администратор\\Documents\\PipeTwin_s1abc\\experiments\\s1abc\\s1c",
+      "summary": {
+        "above_h0_rows": 149,
+        "artifact_path": "C:\\Users\\Администратор\\Documents\\PipeTwin_s1abc\\experiments\\s1abc\\s1c\\model_artifact.joblib",
+        "artifact_sha256": "e998606bc75b97ff9b88360b0d6a11a10dfefa466090abfa7ca3afbe61ae83cf",
+        "artifact_version": "s1c-ridge-v1",
+        "bounds_policy": {
+          "lower_mm": 0.0,
+          "upper_column": "nominal_thickness_mm",
+          "upper_is_not_baseline": true
+        },
+        "clipped_rows": 0,
+        "contract_version": "s1abc-v1",
+        "fallback_policy": "rows without own prior measurement keep S1B and do not enter Ridge",
+        "fallback_rows": 4,
+        "fallback_segments": [
+          {
+            "fallback_distance_m": 10.0,
+            "fallback_measurement_date": "2018-09-23",
+            "fallback_segment_id": 16,
+            "fallback_source": "nearest_prior_vtd_assumption",
+            "s1a_prediction_mm": 6.12,
+            "s1b_prediction_mm": 6.12,
+            "segment_id": 17
+          },
+          {
+            "fallback_distance_m": 10.0,
+            "fallback_measurement_date": "2022-07-06",
+            "fallback_segment_id": 246,
+            "fallback_source": "nearest_prior_vtd_assumption",
+            "s1a_prediction_mm": 6.8,
+            "s1b_prediction_mm": 6.8,
+            "segment_id": 247
+          },
+          {
+            "fallback_distance_m": 10.0,
+            "fallback_measurement_date": "2022-07-06",
+            "fallback_segment_id": 400,
+            "fallback_source": "nearest_prior_vtd_assumption",
+            "s1a_prediction_mm": 6.48,
+            "s1b_prediction_mm": 6.48,
+            "segment_id": 401
+          },
+          {
+            "fallback_distance_m": 10.0,
+            "fallback_measurement_date": "2022-07-06",
+            "fallback_segment_id": 454,
+            "fallback_source": "nearest_prior_vtd_assumption",
+            "s1a_prediction_mm": 6.72,
+            "s1b_prediction_mm": 6.72,
+            "segment_id": 455
+          }
+        ],
+        "feature_count": 9,
+        "input_note": "Predict reads no training_targets and calls no fit; all features use VTD rows strictly before 2023-12-01.",
+        "negative_vs_s1b_rows": 322,
+        "positive_vs_s1b_rows": 199,
+        "prediction_mode": "loaded_saved_artifact_no_fit",
+        "ridge_applied_rows": 521,
+        "rows": 525,
+        "s1c_vs_s1a_stats_mm": {
+          "count": 525,
+          "max": 1.608054692236537,
+          "mean": -0.19893372427170217,
+          "median": -0.23578161284184596,
+          "min": -1.7585201889373634,
+          "q05": -0.8838740042377315,
+          "q25": -0.4520112280427844,
+          "q75": 0.030916013207548332,
+          "q95": 0.5298040958959029,
+          "std": 0.45012668094892894
+        },
+        "s1c_vs_s1b_stats_mm": {
+          "count": 525,
+          "max": 1.608054692236537,
+          "mean": -0.06331467665265454,
+          "median": -0.10024684563402708,
+          "min": -0.7131653150702624,
+          "q05": -0.5372081373443939,
+          "q25": -0.3230277730608808,
+          "q75": 0.1305857508497743,
+          "q95": 0.5834906433061459,
+          "std": 0.3583026215298835
+        },
+        "s2": {
+          "keys": [
+            1250009583,
+            1475
+          ],
+          "policy": "copied by exact keys from the explicitly selected result.csv; never retrained",
+          "rows": 1475,
+          "source_path": "C:\\Users\\Администратор\\Documents\\PipeTwin_s1abc\\experiments\\ml_v2\\result.csv",
+          "source_sha256": "79ba544232d4d34ed33609ef2fc352d9c39edb49b6a118470f63f11fb0e25f05",
+          "unchanged": true,
+          "written_vs_source": {
+            "exact_numeric_match": true,
+            "max_abs_difference": 0.0,
+            "rows": 1475,
+            "source_rows": 1475
+          }
+        },
+        "stage": "S1C_predict",
+        "thickness_stats_mm": {
+          "count": 525,
+          "max": 7.066365743348191,
+          "mean": 6.026103386265872,
+          "median": 6.05511700682733,
+          "min": 4.498089697331068,
+          "q05": 5.505636992016865,
+          "q25": 5.8765263557290925,
+          "q75": 6.224356808525339,
+          "q95": 6.37641474157465,
+          "std": 0.28152460222366066
+        },
+        "training_completed": true,
+        "training_dates": [
+          "2022-07-06"
+        ],
+        "training_required": true,
+        "training_rows": 357,
+        "training_simple_sections": [
+          1250009490,
+          1250011604,
+          1250022871
+        ],
+        "validation": {
+          "bounded": true,
+          "finite_mm": true,
+          "revalidated_after_write": {
+            "bounded": true,
+            "finite_mm": true,
+            "rows": 2000,
+            "template": {
+              "available": false,
+              "key_set_compared": false,
+              "status": "no_template_supplied",
+              "validation_grid": "derived_target_grid"
+            },
+            "unique_keys": true,
+            "upper_bound_column": "upper_mm"
+          },
+          "rows": 2000,
+          "s1_upper_column": "nominal_thickness_mm",
+          "template": {
+            "available": false,
+            "key_set_compared": false,
+            "status": "no_template_supplied",
+            "validation_grid": "derived_target_grid"
+          },
+          "unique_keys": true,
+          "upper_bound_column": "upper_mm"
+        }
+      }
+    },
+    "s1c_train": {
+      "path": "C:\\Users\\Администратор\\Documents\\PipeTwin_s1abc\\experiments\\s1abc\\s1c",
+      "summary": {
+        "alpha": 10.0,
+        "artifact_path": "C:\\Users\\Администратор\\Documents\\PipeTwin_s1abc\\experiments\\s1abc\\s1c\\model_artifact.joblib",
+        "artifact_sha256": "e998606bc75b97ff9b88360b0d6a11a10dfefa466090abfa7ca3afbe61ae83cf",
+        "artifact_version": "s1c-ridge-v1",
+        "coefficients": [
+          -0.18317281549962347,
+          -0.18317281549962375,
+          -0.003331588906259681,
+          -0.008645174441220208,
+          0.020518743314178276,
+          0.025212760006810477,
+          0.050347570974280956,
+          0.04740458754320794,
+          0.018130328495469226
+        ],
+        "contract_version": "s1abc-v1",
+        "coverage": {
+          "by_simple_section": [
+            {
+              "campaign_dates": [
+                "2022-07-06"
+              ],
+              "fallback_rows": 1,
+              "fit_coverage_fraction": 0.8,
+              "fit_rows": 4,
+              "id": 1250009490,
+              "total_rows": 5
+            },
+            {
+              "campaign_dates": [
+                "2022-07-06"
+              ],
+              "fallback_rows": 16,
+              "fit_coverage_fraction": 0.6666666666666666,
+              "fit_rows": 32,
+              "id": 1250011604,
+              "total_rows": 48
+            },
+            {
+              "campaign_dates": [
+                "2022-07-06"
+              ],
+              "fallback_rows": 187,
+              "fit_coverage_fraction": 0.6318897637795275,
+              "fit_rows": 321,
+              "id": 1250022871,
+              "total_rows": 508
+            }
+          ],
+          "historical_fallback_rows": 204,
+          "historical_fit_coverage_fraction": 0.6363636363636364,
+          "historical_fit_rows": 357,
+          "historical_s1_rows": 561,
+          "policy": "Ridge is applied only to rows with an own measured prior baseline; fallback rows keep S1B and are shown separately.",
+          "production_fallback_rows": 4,
+          "production_ridge_applicable_rows": 521,
+          "production_ridge_coverage_fraction": 0.9923809523809524,
+          "production_s1_rows": 525
+        },
+        "declared_feature_count": 13,
+        "dropped_columns": {
+          "age_last_vtd_years": "constant_on_training_fold",
+          "age_min_vtd_years": "constant_on_training_fold",
+          "last_minus_min_mm": "constant_on_training_fold",
+          "prior_vtd_campaign_count": "constant_on_training_fold"
+        },
+        "equivalence": {
+          "artifact_vs_manual_max_abs_difference_mm": 0.0,
+          "artifact_vs_reloaded_max_abs_difference_mm": 0.0,
+          "note": "Numerical serialization/equivalence check, not a validation score.",
+          "rows": 357
+        },
+        "fallback_metrics": {
+          "note": "Fallback rows have no own prior baseline and are not Ridge-fit or Ridge-predicted.",
+          "rows": 204,
+          "s1a": {
+            "bias_mm": -0.274313725490196,
+            "coverage": 204,
+            "mae_mm": 0.5868627450980393,
+            "n": 204,
+            "pearson_r": -0.03531207595007256,
+            "pearson_reason": "",
+            "pearson_squared": 0.001246942707903693,
+            "pearson_status": "defined",
+            "r2": -3.9834255703636794,
+            "r2_reason": "",
+            "r2_status": "defined",
+            "rmse_mm": 0.7204839060128473
+          },
+          "s1b": {
+            "bias_mm": -0.274313725490196,
+            "coverage": 204,
+            "mae_mm": 0.5868627450980393,
+            "n": 204,
+            "pearson_r": -0.03531207595007256,
+            "pearson_reason": "",
+            "pearson_squared": 0.001246942707903693,
+            "pearson_status": "defined",
+            "r2": -3.9834255703636794,
+            "r2_reason": "",
+            "r2_status": "defined",
+            "rmse_mm": 0.7204839060128473
+          }
+        },
+        "feature_count": 9,
+        "intercept": -0.04526097095971396,
+        "interpretation": "Learned effective correction to a conservative past minimum; not a physical corrosion rate. Both signs are allowed.",
+        "lopo": {
+          "diagnostic_type": "leave_one_simple_pipe_out_same_campaign",
+          "folds": [
+            {
+              "coefficients": [
+                -0.22010359340170732,
+                -0.22010359340170838,
+                0.025667062843694733,
+                -0.11286030149147541,
+                -0.030814406910108005,
+                -0.006139575998810445,
+                0.04450897783615495,
+                0.03925335341212212,
+                0.030904529524421853
+              ],
+              "diagnostic_type": "spatial_transfer_same_campaign",
+              "dropped_columns": {
+                "age_last_vtd_years": "constant_on_training_fold",
+                "age_min_vtd_years": "constant_on_training_fold",
+                "last_minus_min_mm": "constant_on_training_fold",
+                "prior_vtd_campaign_count": "constant_on_training_fold"
+              },
+              "heldout_labels_used_in_fit": false,
+              "heldout_simple_section_id": 1250009490,
+              "intercept": -0.025362709059161947,
+              "strict_forward_time": false,
+              "test_rows": 4,
+              "train_date_max": "2022-07-06",
+              "train_rows": 353,
+              "train_simple_section_ids": [
+                1250011604,
+                1250022871
+              ],
+              "used_features": [
+                "s1b_prediction",
+                "last_vtd_thickness_mm",
+                "neighbor_prior_median_mm",
+                "neighbor_prior_count",
+                "neighbor_missing",
+                "slope_m_per_m",
+                "abs_slope_m_per_m",
+                "relative_position",
+                "local_low_m"
+              ],
+              "validation_date": "2022-07-06"
+            },
+            {
+              "coefficients": [
+                -0.13714404040139488,
+                -0.13714404040139364,
+                0.042846977041769,
+                0.0914984740935626,
+                0.05002307445999295,
+                0.038138871522065354,
+                0.08029763999114208,
+                0.12527248739859104,
+                0.06357633066354033
+              ],
+              "diagnostic_type": "spatial_transfer_same_campaign",
+              "dropped_columns": {
+                "age_last_vtd_years": "constant_on_training_fold",
+                "age_min_vtd_years": "constant_on_training_fold",
+                "last_minus_min_mm": "constant_on_training_fold",
+                "prior_vtd_campaign_count": "constant_on_training_fold"
+              },
+              "heldout_labels_used_in_fit": false,
+              "heldout_simple_section_id": 1250011604,
+              "intercept": -0.08841922465695964,
+              "strict_forward_time": false,
+              "test_rows": 32,
+              "train_date_max": "2022-07-06",
+              "train_rows": 325,
+              "train_simple_section_ids": [
+                1250009490,
+                1250022871
+              ],
+              "used_features": [
+                "s1b_prediction",
+                "last_vtd_thickness_mm",
+                "neighbor_prior_median_mm",
+                "neighbor_prior_count",
+                "neighbor_missing",
+                "slope_m_per_m",
+                "abs_slope_m_per_m",
+                "relative_position",
+                "local_low_m"
+              ],
+              "validation_date": "2022-07-06"
+            },
+            {
+              "coefficients": [
+                -0.1260484039487538,
+                -0.12604840394875377,
+                -0.10747684346666363,
+                0.030387688073904802,
+                0.012638660991059453,
+                -0.03366354567424208,
+                0.024225992349528144,
+                -0.020080710734173716,
+                -0.01321392847406717
+              ],
+              "diagnostic_type": "spatial_transfer_same_campaign",
+              "dropped_columns": {
+                "age_last_vtd_years": "constant_on_training_fold",
+                "age_min_vtd_years": "constant_on_training_fold",
+                "last_minus_min_mm": "constant_on_training_fold",
+                "prior_vtd_campaign_count": "constant_on_training_fold"
+              },
+              "heldout_labels_used_in_fit": false,
+              "heldout_simple_section_id": 1250022871,
+              "intercept": -0.010095903045231877,
+              "strict_forward_time": false,
+              "test_rows": 321,
+              "train_date_max": "2022-07-06",
+              "train_rows": 36,
+              "train_simple_section_ids": [
+                1250009490,
+                1250011604
+              ],
+              "used_features": [
+                "s1b_prediction",
+                "last_vtd_thickness_mm",
+                "neighbor_prior_median_mm",
+                "neighbor_prior_count",
+                "neighbor_missing",
+                "slope_m_per_m",
+                "abs_slope_m_per_m",
+                "relative_position",
+                "local_low_m"
+              ],
+              "validation_date": "2022-07-06"
+            }
+          ],
+          "note": "All train and validation rows are from the same 2022-07-06 campaign on one parent pipeline. This is spatial transfer, not forward-time validation.",
+          "strict_forward_time": false
+        },
+        "metrics": {
+          "S1A": {
+            "macro": {
+              "bias_mm": -0.03237258103034963,
+              "bias_mm_defined_groups": 3,
+              "groups": 3,
+              "mae_mm": 0.40945698802468683,
+              "mae_mm_defined_groups": 3,
+              "pearson_r": 0.3198318539815371,
+              "pearson_r_defined_groups": 3,
+              "pearson_squared": 0.14129130319950559,
+              "pearson_squared_defined_groups": 3,
+              "r2": -0.5859239746276591,
+              "r2_defined_groups": 3,
+              "rmse_mm": 0.5304596298441773,
+              "rmse_mm_defined_groups": 3
+            },
+            "per_simple_section": [
+              {
+                "bias_mm": -0.08750000000000036,
+                "coverage": 4,
+                "group": "1250009490",
+                "mae_mm": 0.2825000000000002,
+                "n": 4,
+                "pearson_r": 0.5453820587889924,
+                "pearson_reason": "",
+                "pearson_squared": 0.29744159004891996,
+                "pearson_status": "defined",
+                "r2": 0.23692528735632046,
+                "r2_reason": "",
+                "r2_status": "defined",
+                "rmse_mm": 0.3643830402200413
+              },
+              {
+                "bias_mm": -0.07281250000000006,
+                "coverage": 32,
+                "group": "1250011604",
+                "mae_mm": 0.43906249999999997,
+                "n": 32,
+                "pearson_r": 0.06442554390976904,
+                "pearson_reason": "",
+                "pearson_squared": 0.004150650708069578,
+                "pearson_status": "defined",
+                "r2": -1.7572233967582798,
+                "r2_reason": "",
+                "r2_status": "defined",
+                "rmse_mm": 0.5638179005671955
+              },
+              {
+                "bias_mm": 0.06319475690895153,
+                "coverage": 321,
+                "group": "1250022871",
+                "mae_mm": 0.5068084640740605,
+                "n": 321,
+                "pearson_r": 0.3496879592458499,
+                "pearson_reason": "",
+                "pearson_squared": 0.12228166884152718,
+                "pearson_status": "defined",
+                "r2": -0.237473814481018,
+                "r2_reason": "",
+                "r2_status": "defined",
+                "rmse_mm": 0.663177948745295
+              }
+            ],
+            "pooled": {
+              "bias_mm": 0.04931517357919729,
+              "coverage": 357,
+              "mae_mm": 0.49822273660440736,
+              "n": 357,
+              "pearson_r": 0.33545108483042263,
+              "pearson_reason": "",
+              "pearson_squared": 0.1125274303139074,
+              "pearson_status": "defined",
+              "r2": -0.2780081174156064,
+              "r2_reason": "",
+              "r2_status": "defined",
+              "rmse_mm": 0.652255303799292
+            }
+          },
+          "S1A_ridge_control": {
+            "macro": {
+              "bias_mm": 0.0504044294263128,
+              "bias_mm_defined_groups": 3,
+              "groups": 3,
+              "mae_mm": 0.43472716795351873,
+              "mae_mm_defined_groups": 3,
+              "pearson_r": 0.150668302167583,
+              "pearson_r_defined_groups": 3,
+              "pearson_squared": 0.0530388054084693,
+              "pearson_squared_defined_groups": 3,
+              "r2": -0.5933110000621239,
+              "r2_defined_groups": 3,
+              "rmse_mm": 0.5468782539204722,
+              "rmse_mm_defined_groups": 3
+            },
+            "per_simple_section": [
+              {
+                "bias_mm": 0.32517977878397253,
+                "coverage": 4,
+                "group": "1250009490",
+                "mae_mm": 0.41747257187065157,
+                "n": 4,
+                "pearson_r": 0.3828125682154473,
+                "pearson_reason": "",
+                "pearson_squared": 0.1465454623837065,
+                "pearson_status": "defined",
+                "r2": -0.5079302957342042,
+                "r2_reason": "",
+                "r2_status": "defined",
+                "rmse_mm": 0.5122302914293058
+              },
+              {
+                "bias_mm": -0.18674089730683938,
+                "coverage": 32,
+                "group": "1250011604",
+                "mae_mm": 0.4103267779937557,
+                "n": 32,
+                "pearson_r": -0.036738128367676745,
+                "pearson_reason": "",
+                "pearson_squared": 0.0013496900759598948,
+                "pearson_status": "defined",
+                "r2": -1.1557313414839117,
+                "r2_reason": "",
+                "r2_status": "defined",
+                "rmse_mm": 0.4985402193927896
+              },
+              {
+                "bias_mm": 0.012774406801805242,
+                "coverage": 321,
+                "group": "1250022871",
+                "mae_mm": 0.4763821539961488,
+                "n": 321,
+                "pearson_r": 0.10593046665497852,
+                "pearson_reason": "",
+                "pearson_squared": 0.011221263765741516,
+                "pearson_status": "defined",
+                "r2": -0.11627136296825591,
+                "r2_reason": "",
+                "r2_status": "defined",
+                "rmse_mm": 0.6298642509393213
+              }
+            ],
+            "pooled": {
+              "bias_mm": -0.001608977633903315,
+              "coverage": 357,
+              "mae_mm": 0.46980117259396803,
+              "n": 357,
+              "pearson_r": 0.09134598205564638,
+              "pearson_reason": "",
+              "pearson_squared": 0.008344088437710472,
+              "pearson_status": "defined",
+              "r2": -0.14734614008248959,
+              "r2_reason": "",
+              "r2_status": "defined",
+              "rmse_mm": 0.6180136146265014
+            }
+          },
+          "S1B": {
+            "macro": {
+              "bias_mm": -0.03237258103034963,
+              "bias_mm_defined_groups": 3,
+              "groups": 3,
+              "mae_mm": 0.40945698802468683,
+              "mae_mm_defined_groups": 3,
+              "pearson_r": 0.3198318539815371,
+              "pearson_r_defined_groups": 3,
+              "pearson_squared": 0.14129130319950559,
+              "pearson_squared_defined_groups": 3,
+              "r2": -0.5859239746276591,
+              "r2_defined_groups": 3,
+              "rmse_mm": 0.5304596298441773,
+              "rmse_mm_defined_groups": 3
+            },
+            "per_simple_section": [
+              {
+                "bias_mm": -0.08750000000000036,
+                "coverage": 4,
+                "group": "1250009490",
+                "mae_mm": 0.2825000000000002,
+                "n": 4,
+                "pearson_r": 0.5453820587889924,
+                "pearson_reason": "",
+                "pearson_squared": 0.29744159004891996,
+                "pearson_status": "defined",
+                "r2": 0.23692528735632046,
+                "r2_reason": "",
+                "r2_status": "defined",
+                "rmse_mm": 0.3643830402200413
+              },
+              {
+                "bias_mm": -0.07281250000000006,
+                "coverage": 32,
+                "group": "1250011604",
+                "mae_mm": 0.43906249999999997,
+                "n": 32,
+                "pearson_r": 0.06442554390976904,
+                "pearson_reason": "",
+                "pearson_squared": 0.004150650708069578,
+                "pearson_status": "defined",
+                "r2": -1.7572233967582798,
+                "r2_reason": "",
+                "r2_status": "defined",
+                "rmse_mm": 0.5638179005671955
+              },
+              {
+                "bias_mm": 0.06319475690895153,
+                "coverage": 321,
+                "group": "1250022871",
+                "mae_mm": 0.5068084640740605,
+                "n": 321,
+                "pearson_r": 0.3496879592458499,
+                "pearson_reason": "",
+                "pearson_squared": 0.12228166884152718,
+                "pearson_status": "defined",
+                "r2": -0.237473814481018,
+                "r2_reason": "",
+                "r2_status": "defined",
+                "rmse_mm": 0.663177948745295
+              }
+            ],
+            "pooled": {
+              "bias_mm": 0.04931517357919729,
+              "coverage": 357,
+              "mae_mm": 0.49822273660440736,
+              "n": 357,
+              "pearson_r": 0.33545108483042263,
+              "pearson_reason": "",
+              "pearson_squared": 0.1125274303139074,
+              "pearson_status": "defined",
+              "r2": -0.2780081174156064,
+              "r2_reason": "",
+              "r2_status": "defined",
+              "rmse_mm": 0.652255303799292
+            }
+          },
+          "S1C": {
+            "macro": {
+              "bias_mm": 0.0504044294263128,
+              "bias_mm_defined_groups": 3,
+              "groups": 3,
+              "mae_mm": 0.43472716795351873,
+              "mae_mm_defined_groups": 3,
+              "pearson_r": 0.150668302167583,
+              "pearson_r_defined_groups": 3,
+              "pearson_squared": 0.0530388054084693,
+              "pearson_squared_defined_groups": 3,
+              "r2": -0.5933110000621239,
+              "r2_defined_groups": 3,
+              "rmse_mm": 0.5468782539204722,
+              "rmse_mm_defined_groups": 3
+            },
+            "per_simple_section": [
+              {
+                "bias_mm": 0.32517977878397253,
+                "coverage": 4,
+                "group": "1250009490",
+                "mae_mm": 0.41747257187065157,
+                "n": 4,
+                "pearson_r": 0.3828125682154473,
+                "pearson_reason": "",
+                "pearson_squared": 0.1465454623837065,
+                "pearson_status": "defined",
+                "r2": -0.5079302957342042,
+                "r2_reason": "",
+                "r2_status": "defined",
+                "rmse_mm": 0.5122302914293058
+              },
+              {
+                "bias_mm": -0.18674089730683938,
+                "coverage": 32,
+                "group": "1250011604",
+                "mae_mm": 0.4103267779937557,
+                "n": 32,
+                "pearson_r": -0.036738128367676745,
+                "pearson_reason": "",
+                "pearson_squared": 0.0013496900759598948,
+                "pearson_status": "defined",
+                "r2": -1.1557313414839117,
+                "r2_reason": "",
+                "r2_status": "defined",
+                "rmse_mm": 0.4985402193927896
+              },
+              {
+                "bias_mm": 0.012774406801805242,
+                "coverage": 321,
+                "group": "1250022871",
+                "mae_mm": 0.4763821539961488,
+                "n": 321,
+                "pearson_r": 0.10593046665497852,
+                "pearson_reason": "",
+                "pearson_squared": 0.011221263765741516,
+                "pearson_status": "defined",
+                "r2": -0.11627136296825591,
+                "r2_reason": "",
+                "r2_status": "defined",
+                "rmse_mm": 0.6298642509393213
+              }
+            ],
+            "pooled": {
+              "bias_mm": -0.001608977633903315,
+              "coverage": 357,
+              "mae_mm": 0.46980117259396803,
+              "n": 357,
+              "pearson_r": 0.09134598205564638,
+              "pearson_reason": "",
+              "pearson_squared": 0.008344088437710472,
+              "pearson_status": "defined",
+              "r2": -0.14734614008248959,
+              "r2_reason": "",
+              "r2_status": "defined",
+              "rmse_mm": 0.6180136146265014
+            }
+          }
+        },
+        "observed_decrease_rows": 178,
+        "observed_increase_rows": 177,
+        "observed_zero_rows": 2,
+        "production_cutoff": "2023-12-01",
+        "stage": "S1C_train",
+        "training_completed": true,
+        "training_date_max": "2022-07-06",
+        "training_dates": [
+          "2022-07-06"
+        ],
+        "training_required": true,
+        "training_rows": 357,
+        "training_simple_sections": [
+          1250009490,
+          1250011604,
+          1250022871
+        ],
+        "two_prior_campaign_test": {
+          "available_before_cutoff": false,
+          "reason": "Every eligible pre-cutoff S1 label has exactly one prior campaign; 2023-12-01 labels are on the cutoff and excluded."
+        },
+        "weighting": "equal_total_per_simple_pipe_id_normalized_mean_1"
+      }
+    }
+  },
+  "started_utc": "2026-11-15T14:53:38+00:00",
+  "versions": {
+    "executable": "C:\\Users\\Администратор\\Documents\\PipeTwin_s1abc_env\\Scripts\\python.exe",
+    "joblib": "1.5.3",
+    "numpy": "2.3.5",
+    "pandas": "2.2.3",
+    "platform": "Windows-11-10.0.26300-SP0",
+    "python": "3.12.8",
+    "scikit-learn": "1.7.2",
+    "scipy": "1.18.1"
+  }
+}

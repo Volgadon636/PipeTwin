@@ -1,0 +1,10 @@
+{
+  "case": "S2",
+  "controls": [
+    "local_cooling",
+    "coordinate_only",
+    "terrain_without_coordinate"
+  ],
+  "description": "Extend the frozen spatial Ridge with estimated segment temperature (mean of scenario inlet and outlet) minus the full-section length-weighted mean. Use the existing heat-loss scenario from pre-cutoff hydraulic rows. Train with the frozen label set and train-only imputation. For a section without a complete valid thermal profile, use the frozen spatial prediction for the whole section. Local cooling and position/terrain controls run on the same keys and physics.",
+  "primary": "centered_fluid_temperature"
+}

@@ -1,0 +1,14 @@
+{
+  "case": "S2",
+  "controls": [
+    "terrain_times_constant_velocity"
+  ],
+  "description": "Append three products of terrain and log(1+v_liquid_true_mean / 1 m/s) using filtered pre-cutoff source values on their nominal m/s scale. Treat this as a source proxy with unresolved exact phase definition. Estimate interaction coefficients without sign constraints. Use the unweighted training section mean of the transformed speed for the matched control. Record extrapolation. Do not infer a flow-regime category or multiply by a water fraction.",
+  "primary": "terrain_times_log_liquid_velocity",
+  "terrain_features": [
+    "abs_slope",
+    "local_low",
+    "pool_depth"
+  ],
+  "velocity_reference_m_s": 1.0
+}

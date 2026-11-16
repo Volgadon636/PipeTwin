@@ -1,0 +1,82 @@
+{
+  "by_campaign": [
+    {
+      "id": 1250009490,
+      "prediction_date": "2018-09-23",
+      "reasons": "",
+      "rows": 4,
+      "valid": 4
+    },
+    {
+      "id": 1250009584,
+      "prediction_date": "2023-08-12",
+      "reasons": "",
+      "rows": 19,
+      "valid": 19
+    },
+    {
+      "id": 1250009587,
+      "prediction_date": "2023-08-12",
+      "reasons": "",
+      "rows": 3,
+      "valid": 3
+    },
+    {
+      "id": 1250011604,
+      "prediction_date": "2018-09-23",
+      "reasons": "",
+      "rows": 34,
+      "valid": 34
+    },
+    {
+      "id": 1250022871,
+      "prediction_date": "2018-09-23",
+      "reasons": "",
+      "rows": 334,
+      "valid": 334
+    },
+    {
+      "id": 1250028931,
+      "prediction_date": "2023-08-12",
+      "reasons": "missing_inlet_temperature",
+      "rows": 4,
+      "valid": 0
+    },
+    {
+      "id": 1250028932,
+      "prediction_date": "2023-08-12",
+      "reasons": "missing_inlet_temperature",
+      "rows": 9,
+      "valid": 0
+    },
+    {
+      "id": 1250028933,
+      "prediction_date": "2023-08-12",
+      "reasons": "missing_inlet_temperature",
+      "rows": 1,
+      "valid": 0
+    },
+    {
+      "id": 1250028934,
+      "prediction_date": "2023-08-12",
+      "reasons": "missing_inlet_temperature",
+      "rows": 31,
+      "valid": 0
+    },
+    {
+      "id": 1250028935,
+      "prediction_date": "2023-08-12",
+      "reasons": "missing_inlet_temperature",
+      "rows": 27,
+      "valid": 0
+    },
+    {
+      "id": 1250009583,
+      "prediction_date": "2022-07-01",
+      "reasons": "",
+      "rows": 1475,
+      "valid": 1475
+    }
+  ],
+  "note": "Invalid scenario rows are retained with NaN thermal features; no labels were used."
+}

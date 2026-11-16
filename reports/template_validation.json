@@ -1,0 +1,22 @@
+{
+  "available": false,
+  "derived_grid": {
+    "counts_by_id": {
+      "1250009583": 1475,
+      "1250022871": 525
+    },
+    "ids": [
+      1250009583,
+      1250022871
+    ],
+    "rows": 2000,
+    "status": "derived_target_grid_validated",
+    "unique_keys": true
+  },
+  "detail": "No CSV with exact id,segment_id,thickness_pred schema was found.",
+  "key_set_comparison": {
+    "detail": "No CSV with exact id,segment_id,thickness_pred schema was found. The supplied sample_result.csv is not treated as a template by filename alone.",
+    "validation_grid": "derived_target_grid"
+  },
+  "status": "no_authoritative_template"
+}

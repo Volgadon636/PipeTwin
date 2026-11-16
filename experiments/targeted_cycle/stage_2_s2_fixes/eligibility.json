@@ -1,0 +1,26 @@
+{
+  "policy": "strict labels < 2022-07-01; 2023 only frozen retrospective; no target diagnostics",
+  "post_ids": [
+    1250009584,
+    1250009587,
+    1250028931,
+    1250028932,
+    1250028933,
+    1250028934,
+    1250028935
+  ],
+  "post_rows": 94,
+  "strict_dates": [
+    "2018-09-23"
+  ],
+  "strict_ids": [
+    1250009490,
+    1250011604,
+    1250022871
+  ],
+  "strict_rows": 372,
+  "target_id": 1250009583,
+  "target_rows": 1475,
+  "target_uzt_eligible_rows": 0,
+  "target_vtd_rows": 0
+}

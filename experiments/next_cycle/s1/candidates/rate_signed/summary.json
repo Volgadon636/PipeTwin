@@ -1,0 +1,47 @@
+{
+  "above_last_rows": 147,
+  "above_s1b_rows": 259,
+  "artifact": {
+    "artifact_path": "C:\\Users\\Администратор\\Documents\\PipeTwin_next\\experiments\\next_cycle\\s1\\candidates\\rate_signed\\model_artifact.joblib",
+    "artifact_sha256": "f1ebbeb94078a817cda252a3777868d9e8fb2e25011732d76c08eb61b8d9a9b4",
+    "metadata_path": "C:\\Users\\Администратор\\Documents\\PipeTwin_next\\experiments\\next_cycle\\s1\\candidates\\rate_signed\\model_metadata.json"
+  },
+  "bounds_policy": "[0, nominal]",
+  "candidate": "rate_signed",
+  "fallback_rows": 4,
+  "max_mm": 6.909499598931282,
+  "mean_mm": 6.161802706843127,
+  "min_mm": 4.06579217439838,
+  "model_label": "Ridge signed rate",
+  "rows": 525,
+  "s2": {
+    "max_abs_diff": 0.0,
+    "rows": 1475,
+    "source": "C:\\Users\\Администратор\\Documents\\PipeTwin_next\\experiments\\ml_v2\\result.csv"
+  },
+  "segment_135": {
+    "delta_vs_s1a_mm": 0.5457921743983802,
+    "delta_vs_s1b_mm": 0.5457921743983802,
+    "fallback": false,
+    "prediction_mm": 4.06579217439838,
+    "s1a_mm": 3.52,
+    "s1b_mm": 3.52
+  },
+  "std_mm": 0.443369883927698,
+  "top33_overlap_with_s1a": 32,
+  "training_completed": true,
+  "training_required": true,
+  "validation": {
+    "bounded": true,
+    "finite_mm": true,
+    "rows": 2000,
+    "template": {
+      "available": false,
+      "key_set_compared": false,
+      "status": "no_template_supplied",
+      "validation_grid": "derived_target_grid"
+    },
+    "unique_keys": true,
+    "upper_bound_column": "upper_mm"
+  }
+}

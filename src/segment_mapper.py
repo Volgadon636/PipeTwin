@@ -7,8 +7,8 @@ from .grid_builder import assign_segments
 from .temporal import hydraulic_asof, hydraulic_summary
 
 
-def map_vtd_to_segments(vtd, grid):
-    df = assign_segments(vtd, 'distance', grid)
+def map_vtd_to_segments(vtd, grid, coordinate='distance'):
+    df = assign_segments(vtd, coordinate, grid)
     # Optional audit flags: older callers may not provide them.
     for optional in ('above_nominal_flag', 'above_local_wall_flag', 'nominal_unresolved_flag',
                      'residual_invalid_flag'):

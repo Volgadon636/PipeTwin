@@ -1,0 +1,8 @@
+{
+  "case": "S2",
+  "controls": [
+    "constant_conditions_thermal_exposure"
+  ],
+  "description": "Integrate T(x)-T_ground at segment centers over available pre-cutoff hydraulic intervals under the existing heat-loss scenario and length-center on the full section. Require finite inlet temperature, positive liquid density and velocity, and usable diameter. Use bounded one-day intervals. Leave unobserved time outside the feature. The control uses the same observed duration and a single profile evaluated at duration-weighted average inlet temperature and mass flow. Unavailable temporal profiles fall back to the frozen spatial prediction for the entire section.",
+  "primary": "integrated_thermal_exposure"
+}

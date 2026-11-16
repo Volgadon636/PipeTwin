@@ -1,0 +1,96 @@
+{
+  "s1_block_cv": {
+    "block_equals_segment_id_floor_div_10": true,
+    "block_size_max": 10,
+    "block_size_min": 1,
+    "blocks_nonempty": 52,
+    "expected_321": true,
+    "ids": {
+      "1250022871": 321
+    },
+    "keys_subset_of_lopo_target": true,
+    "only_target_id": true,
+    "rows": 321,
+    "unique_keys": true
+  },
+  "s1_lopo": {
+    "expected_357": true,
+    "finite_predictions": {
+      "affine": true,
+      "affine_a": true,
+      "affine_c": true,
+      "affine_fold": true,
+      "catboost": true,
+      "catboost_fold": true,
+      "mix_000": true,
+      "mix_025": true,
+      "mix_050": true,
+      "mix_100": true,
+      "old_s1c": true,
+      "rate_nonnegative": true,
+      "rate_nonnegative_fold": true,
+      "rate_signed": true,
+      "rate_signed_fold": true,
+      "ridge_geometry": true,
+      "ridge_geometry_fold": true,
+      "ridge_history": true,
+      "ridge_history_fold": true,
+      "s1a": true,
+      "s1b": true,
+      "train_median": true
+    },
+    "finite_truth": true,
+    "ids": {
+      "1250009490": 4,
+      "1250011604": 32,
+      "1250022871": 321
+    },
+    "keys_equal_fit_table": true,
+    "rows": 357,
+    "unique_keys": true
+  },
+  "s2_retrospective": {
+    "dates": [
+      "2023-08-12"
+    ],
+    "ids": {
+      "1250009584": 19,
+      "1250009587": 3,
+      "1250028931": 4,
+      "1250028932": 9,
+      "1250028933": 1,
+      "1250028934": 31,
+      "1250028935": 27
+    },
+    "long_rows": 564,
+    "models": {
+      "catboost_residual": 94,
+      "constant_effective_rate": 94,
+      "physics_priors": 94,
+      "physics_spatial": 94,
+      "physics_spatial_temperature": 94,
+      "physics_velocity_consistent": 94
+    },
+    "rows_expected_94": true,
+    "target_id_absent": true,
+    "unique_keys_per_model": true,
+    "wide_rows": 94
+  },
+  "s2_strict": {
+    "dates": [
+      "2018-09-23"
+    ],
+    "expected_372": true,
+    "finite_truth": true,
+    "fold_equals_id": true,
+    "ids": {
+      "1250009490": 4,
+      "1250011604": 34,
+      "1250022871": 334
+    },
+    "keys_equal_training_table": true,
+    "rows": 372,
+    "target_id_absent": true,
+    "unique_keys": true
+  }
+}

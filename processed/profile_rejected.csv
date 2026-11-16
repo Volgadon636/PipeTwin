@@ -1,1 +1,1 @@
-source_row,id,lon,lat,z,total_distance
+source_row,source_record_number,source_physical_line,id,lon,lat,z,total_distance,id_source_text,id_leading_zero_flag

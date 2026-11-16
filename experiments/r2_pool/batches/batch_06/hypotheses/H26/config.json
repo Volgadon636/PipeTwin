@@ -1,0 +1,7 @@
+{
+  "cases": [
+    "S2"
+  ],
+  "description": "Keep the independently fitted physics level and the base spatial feature order and preprocessing. Center the standardized predictors and response within each training section and date, and fit a fixed Ridge alpha 10 on the within-profile relationship. At inference, center the prediction over the full grid using segment lengths and add the unchanged physics estimate. The frozen spatial Ridge already centers the response, so the isolated change is centering the design matrix as well.",
+  "primary": "within_profile_spatial_ridge"
+}

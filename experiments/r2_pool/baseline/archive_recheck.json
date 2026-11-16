@@ -1,0 +1,16 @@
+{
+  "S1": {
+    "archive": "experiments/next_cycle/s1/oof_fit_predictions.csv",
+    "archive_sha256": "7db9fc220e9aa66563dba07280f302e879c94f2ced9f3f06618b0c31c829dbdd",
+    "max_prediction_difference_mm": 0.0,
+    "max_truth_difference_mm": 3.000000248221113e-11,
+    "rows": 357
+  },
+  "S2": {
+    "archive": "experiments/targeted_cycle/stage_2_s2_fixes/oof_predictions.csv",
+    "archive_sha256": "d8590c203f3e411460259defe35c46d7713b477360535891ef22eacc3b240f7b",
+    "max_prediction_difference_mm": 4.000000330961484e-11,
+    "max_truth_difference_mm": 0.0,
+    "rows": 372
+  }
+}

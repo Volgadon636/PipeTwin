@@ -1,0 +1,119 @@
+{
+  "by_campaign": [
+    {
+      "id": 1250009490,
+      "max_abs_local_cooling_diff_c": 6.640144079028687e-08,
+      "max_abs_t_out_diff_c": 0.0008907293782911552,
+      "mean_abs_local_cooling_diff_c": 1.6600360197571717e-08,
+      "prediction_date": "2018-09-23",
+      "reasons": "",
+      "rows": 4,
+      "valid": 4
+    },
+    {
+      "id": 1250009584,
+      "max_abs_local_cooling_diff_c": 0.00045033138528172145,
+      "max_abs_t_out_diff_c": 0.5399572135069199,
+      "mean_abs_local_cooling_diff_c": 0.00018853642221813702,
+      "prediction_date": "2023-08-12",
+      "reasons": "",
+      "rows": 19,
+      "valid": 19
+    },
+    {
+      "id": 1250009587,
+      "max_abs_local_cooling_diff_c": 3.125060089814724e-06,
+      "max_abs_t_out_diff_c": 0.004122886676467097,
+      "mean_abs_local_cooling_diff_c": 1.959710216326016e-06,
+      "prediction_date": "2023-08-12",
+      "reasons": "",
+      "rows": 3,
+      "valid": 3
+    },
+    {
+      "id": 1250011604,
+      "max_abs_local_cooling_diff_c": 2.276013109536734e-06,
+      "max_abs_t_out_diff_c": 0.015374643381463216,
+      "mean_abs_local_cooling_diff_c": 1.3050780516930245e-06,
+      "prediction_date": "2018-09-23",
+      "reasons": "",
+      "rows": 34,
+      "valid": 34
+    },
+    {
+      "id": 1250022871,
+      "max_abs_local_cooling_diff_c": 3.482974907598191e-05,
+      "max_abs_t_out_diff_c": 0.2195827559919472,
+      "mean_abs_local_cooling_diff_c": 1.2235572985924004e-05,
+      "prediction_date": "2018-09-23",
+      "reasons": "",
+      "rows": 334,
+      "valid": 334
+    },
+    {
+      "id": 1250028931,
+      "max_abs_local_cooling_diff_c": null,
+      "max_abs_t_out_diff_c": null,
+      "mean_abs_local_cooling_diff_c": null,
+      "prediction_date": "2023-08-12",
+      "reasons": "missing_inlet_temperature",
+      "rows": 4,
+      "valid": 0
+    },
+    {
+      "id": 1250028932,
+      "max_abs_local_cooling_diff_c": null,
+      "max_abs_t_out_diff_c": null,
+      "mean_abs_local_cooling_diff_c": null,
+      "prediction_date": "2023-08-12",
+      "reasons": "missing_inlet_temperature",
+      "rows": 9,
+      "valid": 0
+    },
+    {
+      "id": 1250028933,
+      "max_abs_local_cooling_diff_c": null,
+      "max_abs_t_out_diff_c": null,
+      "mean_abs_local_cooling_diff_c": null,
+      "prediction_date": "2023-08-12",
+      "reasons": "missing_inlet_temperature",
+      "rows": 1,
+      "valid": 0
+    },
+    {
+      "id": 1250028934,
+      "max_abs_local_cooling_diff_c": null,
+      "max_abs_t_out_diff_c": null,
+      "mean_abs_local_cooling_diff_c": null,
+      "prediction_date": "2023-08-12",
+      "reasons": "missing_inlet_temperature",
+      "rows": 31,
+      "valid": 0
+    },
+    {
+      "id": 1250028935,
+      "max_abs_local_cooling_diff_c": null,
+      "max_abs_t_out_diff_c": null,
+      "mean_abs_local_cooling_diff_c": null,
+      "prediction_date": "2023-08-12",
+      "reasons": "missing_inlet_temperature",
+      "rows": 27,
+      "valid": 0
+    }
+  ],
+  "max_abs_local_cooling_diff_c": 0.00045033138528172145,
+  "max_abs_t_out_diff_c": 0.5399572135069199,
+  "mean_abs_local_cooling_diff_c": 1.9591856815458253e-05,
+  "new_full_grid": "scenario built on full contiguous grid before label join",
+  "note": "This is the contract difference, not a temperature-accuracy claim.",
+  "old_measured_grids": "scenario built on measured rows (defect)",
+  "parameters": {
+    "flow_basis": "liquid mass flow rho_liquid*v_liquid*pi*D_inner^2/4; mixture flow unverified",
+    "ground_temperature_c": 5.0,
+    "heat_capacity_j_kg_k": 3500.0,
+    "overall_heat_transfer_w_m2_k": 1.0,
+    "perimeter_basis": "pi*(D_inner-2*roughness) as supplied by mentor; same area basis for U",
+    "roughness_m": 5e-05
+  },
+  "rows": 466
+}

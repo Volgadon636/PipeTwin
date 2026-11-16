@@ -1,0 +1,143 @@
+{
+  "amplitude": 1.0,
+  "baseline_column": null,
+  "dropped_columns": {},
+  "feature_importance": {
+    "abs_slope": 9.389271330653054,
+    "local_low": 6.721030282612488,
+    "pool_depth": 32.74583743805801,
+    "position": 17.74396552334638,
+    "scenario_cooling_c": 12.981472888734661,
+    "slope": 4.627058304198164,
+    "z": 15.791364232397246
+  },
+  "features": [
+    "z",
+    "slope",
+    "abs_slope",
+    "position",
+    "local_low",
+    "pool_depth",
+    "scenario_cooling_c"
+  ],
+  "model_name": "s2_catboost_residual",
+  "model_type": "CatBoostRegressor",
+  "name": "catboost_residual",
+  "params": {
+    "allow_writing_files": false,
+    "depth": 2,
+    "iterations": 200,
+    "l2_leaf_reg": 10,
+    "learning_rate": 0.03,
+    "loss_function": "RMSE",
+    "random_seed": 17,
+    "thread_count": 4,
+    "use_best_model": false
+  },
+  "physics_metadata": {
+    "gap_policy": "own_mean",
+    "interpretation": "Effective segment-minimum thinning rate under declared environment priors; not an electrochemical CO2/H2S constant",
+    "name": "M1",
+    "priors": {
+      "age_exponent": 1.0,
+      "beta_W": 0.3,
+      "beta_v": 0.1,
+      "theta_K": 2500.0,
+      "velocity_offset_m_s": 0.1
+    },
+    "r_ref_mm_year": 0.10555247320293284,
+    "reference": {
+      "temperature_K": 285.6940825298223,
+      "velocity_m_s": 0.5707789385004212,
+      "water_fraction": 0.867897304128054
+    },
+    "training_groups": 1,
+    "training_rows": 372,
+    "weighting": "W0"
+  },
+  "physics_velocity_consistent": false,
+  "prediction_policy": "delta",
+  "preprocessing": {
+    "constant_columns": [],
+    "dropped_columns": {},
+    "duplicate_columns": {},
+    "empty_columns": [],
+    "feature_order": [
+      "z",
+      "slope",
+      "abs_slope",
+      "position",
+      "local_low",
+      "pool_depth",
+      "scenario_cooling_c"
+    ],
+    "imputer": "median",
+    "imputer_statistics": {
+      "abs_slope": -0.44923552528216465,
+      "local_low": 0.03987353589666821,
+      "pool_depth": -0.4561191788135494,
+      "position": -0.23401648525708696,
+      "scenario_cooling_c": 0.0012010646380566925,
+      "slope": -0.02304655387687253,
+      "z": 0.06337914076041866
+    },
+    "scaler": "StandardScaler",
+    "scaler_mean": {
+      "abs_slope": -0.07462613643461653,
+      "local_low": -0.011665241473470495,
+      "pool_depth": -0.15571808987257665,
+      "position": -0.17145651045226365,
+      "scenario_cooling_c": 0.001176486657775654,
+      "slope": -0.038763229481698386,
+      "z": 0.1405633701184284
+    },
+    "scaler_scale": {
+      "abs_slope": 0.7617851488028493,
+      "local_low": 1.0327842659649233,
+      "pool_depth": 0.7886213479436135,
+      "position": 0.9635774092115081,
+      "scenario_cooling_c": 9.571755580997104e-05,
+      "slope": 0.7749841572840873,
+      "z": 0.8745879935439962
+    },
+    "used_features": [
+      "z",
+      "slope",
+      "abs_slope",
+      "position",
+      "local_low",
+      "pool_depth",
+      "scenario_cooling_c"
+    ]
+  },
+  "residual_centering": "within training simple section",
+  "strict_dates": [
+    "2018-09-23"
+  ],
+  "strict_ids": [
+    1250009490,
+    1250011604,
+    1250022871
+  ],
+  "strict_rows": 372,
+  "target": "residual_centered_mm",
+  "target_policy": "physics level + within-section residual deviation",
+  "training_dates": [
+    "2018-09-23"
+  ],
+  "training_rows": 372,
+  "training_sections": [
+    1250009490,
+    1250011604,
+    1250022871
+  ],
+  "used_features": [
+    "z",
+    "slope",
+    "abs_slope",
+    "position",
+    "local_low",
+    "pool_depth",
+    "scenario_cooling_c"
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "description": "Impute missing own prior minima using local median, bracket interpolation, or linear fit and compare to the existing nearest-neighbor rule.",
+  "local_radius_m": 30,
+  "methods": [
+    "nearest",
+    "median",
+    "interpolation",
+    "local_linear"
+  ],
+  "minimum_regression_neighbors": 3,
+  "primary": "interpolation",
+  "validation": "Natural missingness on frozen S1, leave-one-interior-measurement-out reconstruction on the S1 target's past measurements, and separately one masked prior input per scored retrospective key."
+}

@@ -1,0 +1,18 @@
+{
+  "audit": {
+    "above_nominal": 67,
+    "all_uzt_rows": 67,
+    "s1_eligible_before_cutoff": 0,
+    "s1_target_rows": 32
+  },
+  "cases": {
+    "S1": {
+      "implementation": "blocked_data",
+      "result": "not_evaluated"
+    },
+    "S2": {
+      "implementation": "not_applicable",
+      "result": "not_evaluated"
+    }
+  }
+}

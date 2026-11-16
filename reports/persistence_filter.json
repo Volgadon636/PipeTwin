@@ -1,0 +1,14 @@
+{
+  "by_action": {
+    "keep_persistent": 22,
+    "set_missing": 19
+  },
+  "by_rule": {
+    "high_flow_review_threshold": 1,
+    "high_pressure_review_threshold": 2,
+    "paired_with_high_liquid_flow": 3,
+    "zero_temperature_during_flow": 35
+  },
+  "policy": "Persistence is evaluated after cutoff and before aggregation; three distinct consecutive observed calendar days required.",
+  "rows": 41
+}

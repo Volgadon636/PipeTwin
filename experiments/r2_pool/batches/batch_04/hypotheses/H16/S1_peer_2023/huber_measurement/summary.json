@@ -1,0 +1,32 @@
+{
+  "baseline": {
+    "bias_mm": 0.35991380040924165,
+    "mae_mm": 0.372496292426509,
+    "pearson_r": 0.6767729721613717,
+    "pearson_reason": "",
+    "pearson_squared": 0.45802165584813676,
+    "prediction_std": 0.3503243484313467,
+    "rmse_mm": 0.46728941126594076
+  },
+  "candidate": {
+    "bias_mm": 0.3727210338600105,
+    "mae_mm": 0.3829259587857328,
+    "pearson_r": 0.6580532640705469,
+    "pearson_reason": "",
+    "pearson_squared": 0.4330340983539009,
+    "prediction_std": 0.1165749578358449,
+    "rmse_mm": 0.492501976382459
+  },
+  "changed_predictions": 52,
+  "delta_pearson_squared": -0.024987557494235868,
+  "delta_vs_reference_candidate": -0.04045345543759077,
+  "independent_parent_count": 1,
+  "max_abs_affine_residual_mm": 0.2123582798052377,
+  "n": 52,
+  "profile_count": 2,
+  "reference_candidate": {
+    "name": "H12 selected_lambda",
+    "predictions": "experiments/r2_pool/batches/batch_03/hypotheses/H12/S1_peer_2023/selected_lambda/validation_predictions.csv",
+    "r2": 0.47348755379149166
+  }
+}

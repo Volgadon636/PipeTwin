@@ -1,0 +1,228 @@
+{
+  "change_reason": "After the Stage 1 review the six-stage sequence was agreed: Stage 2 combines both S2 contract fixes (full-grid thermal scenario and full-grid centering with limited spatial Ridge retraining); S1 100m/20m training is Stage 3; 200m/50m and 500m/100m robustness is Stage 4; temporal transfer is Stage 5; freeze/external evaluator is Stage 6. Model criteria and fixed parameters are unchanged.",
+  "created_utc": "2026-11-15T19:36:56+00:00",
+  "cycle": "targeted_cycle",
+  "data_roles_file": "experiments/targeted_cycle/data_roles.json",
+  "global_rules": {
+    "already_viewed": [
+      "S1 LOPO",
+      "S1 block-CV",
+      "S2 strict OOF",
+      "S2 2023 retrospective"
+    ],
+    "no_dependency_updates": true,
+    "no_new_algorithms": true,
+    "no_push_merge": true,
+    "no_untouched_holdout_claim": true,
+    "primary_metric": "Pearson r² separately per case; keep signed Pearson r and separate R²",
+    "secondary_metrics": [
+      "MAE",
+      "RMSE",
+      "bias pred−truth",
+      "lower-tail MAE",
+      "top-10% recall",
+      "std pred/truth",
+      "clipping/coverage"
+    ],
+    "tie_policy": "truth/prediction ascending; equal values by lower segment_id",
+    "top10_definitions": {
+      "global": "k=ceil(0.1*n_global); one denominator",
+      "per_section": "k=ceil(0.1*n_section) per section; aggregate with sum(k) or macro; different from global"
+    }
+  },
+  "plan_version": 2,
+  "previous_version_sha256": "2c3bfe2a92efee51a53097511111c569c85c1ed6cc38f6bad8968449c8aca68f",
+  "source_document": "C:/Users/Администратор/Downloads/Telegram Desktop/PipeTwin_Targeted_Recovery_Plan_Agent_RU.md",
+  "stage_1": {
+    "name": "audit_initial_state",
+    "report": "experiments/targeted_cycle/stage_1_report_ru.md",
+    "status": "completed"
+  },
+  "stages": {
+    "stage_2_s2_fixes": {
+      "candidates": [
+        "spatial_no_temperature_uncentered",
+        "spatial_no_temperature_centered",
+        "spatial_centered_corrected_temperature"
+      ],
+      "centering": {
+        "formula": "h_raw = h_physics + lambda * (g(X) - mean_full_grid(g(X)))",
+        "full_grid_per_id_cutoff": true,
+        "lambda": 1.0,
+        "no_labels_in_context": true,
+        "partial_inference": "must reproduce full-grid context",
+        "weights": "segment length (arithmetic mean also reported)"
+      },
+      "fixed_parameters": {
+        "catboost": "reference only, not retrained",
+        "ridge_alpha": 10.0,
+        "solver": "cholesky"
+      },
+      "goal": "Fix both S2 contracts: full-grid thermal scenario and full-grid centering; retrain limited spatial Ridge.",
+      "input": "strict S2 train 2018-09-23 only; target 2022-07-01 features only; retrospective not used for tuning.",
+      "max_new_candidates": 3,
+      "metrics": [
+        "MAE",
+        "RMSE",
+        "bias_pred_minus_truth",
+        "signed_pearson_r",
+        "pearson_squared",
+        "ordinary_r2",
+        "lower_tail_mae",
+        "top10_recall",
+        "std_pred",
+        "std_truth",
+        "mean_shift",
+        "clipping_count"
+      ],
+      "references": [
+        "physics_priors",
+        "v2_reference",
+        "old_physics_spatial"
+      ],
+      "selection": "No retrospective tuning. Report centered as contract fix, not proven improvement.",
+      "thermal": {
+        "additional_columns": [
+          "t_in_segment_c",
+          "t_out_segment_c",
+          "local_delta_t_c",
+          "cumulative_cooling_from_inlet_c"
+        ],
+        "build_before_label_join": true,
+        "full_grid_per_id_cutoff_case": true,
+        "grid_checks": [
+          "lengths",
+          "direction",
+          "contiguous",
+          "gaps",
+          "overlaps"
+        ],
+        "no_new_physics_tuning": true,
+        "preserve_feature_type": "local scenario_cooling_c (-delta_temperature_c)",
+        "preserve_parameters": {
+          "ground_temperature_c": 5.0,
+          "heat_capacity_j_kg_k": 3500.0,
+          "overall_heat_transfer_w_m2_k": 1.0,
+          "roughness_m": 5e-05
+        }
+      }
+    },
+    "stage_3_s1_100m_20m": {
+      "blocks": [
+        {
+          "block_m": 100,
+          "buffer_m": 20,
+          "name": "100m_20m"
+        }
+      ],
+      "candidates": [
+        "S1A",
+        "train_median",
+        "affine_global",
+        "affine_target_only",
+        "global_ridge_geometry_alpha10",
+        "target_section_ridge_geometry_alpha10",
+        "catboost_reference_fixed"
+      ],
+      "fixed_parameters": {
+        "catboost": {
+          "depth": 2,
+          "iterations": 200,
+          "l2_leaf_reg": 10,
+          "learning_rate": 0.03,
+          "loss_function": "RMSE",
+          "seed": 17
+        },
+        "ridge_alpha": 10.0
+      },
+      "goal": "Train/evaluate S1 candidates on the fixed 100 m block / 20 m buffer scheme.",
+      "max_new_candidates": 3,
+      "metrics": [
+        "MAE",
+        "RMSE",
+        "bias",
+        "signed_pearson_r",
+        "pearson_squared",
+        "ordinary_r2",
+        "lower_tail_mae",
+        "top10_recall",
+        "std_pred",
+        "std_truth",
+        "paired_block_mae_difference"
+      ],
+      "selection": "No automatic winner; retain S1A unless predeclared filter is met on later robustness schemes.",
+      "top10_rule": "per-section k=ceil(0.1*n); global k also reported; ties lower segment_id"
+    },
+    "stage_4_s1_robustness": {
+      "blocks": [
+        {
+          "block_m": 200,
+          "buffer_m": 50,
+          "name": "200m_50m"
+        },
+        {
+          "block_m": 500,
+          "buffer_m": 100,
+          "name": "500m_100m"
+        }
+      ],
+      "candidates": "same fixed set as Stage 3",
+      "folds": "same fixed masks per scheme; LOPO retained separately",
+      "goal": "Check stability on 200 m / 50 m and 500 m / 100 m; do not select a scheme after seeing results.",
+      "metrics": "same definitions and keys within each scheme",
+      "selection_filter": "promising_S1 only if MAE<S1A, signed r>0, and Pearson r/top10 recall not worse than S1A on both larger schemes; then compare affine; max 2 S1 challengers",
+      "unsupported": "record unsupported if blocks or train rows insufficient; do not shrink buffer to force a result"
+    },
+    "stage_5_temporal_transfer": {
+      "audit_fact": "train dt is common 3.783710 years; production dt 1.404517 (508) / 5.188227 (13) / 4 fallback",
+      "definitions": {
+        "conservative_correction_0.25": "h_last + 0.25*g(X)",
+        "correction": "h_last + g(X)",
+        "time_scaled_correction": "h_last + (dt_target/dt_train)*g(X)"
+      },
+      "goal": "Test only fixed temporal interpretations of a selected S1 correction, without a new hyperparameter search.",
+      "metrics": "same OOF/block metrics plus production prediction shift, |pred-last|, above-last, above-nominal, fallback, segment 135",
+      "rate_fit": "Only if training horizons are unequal. Audit found common dt_train, so a separate rate-fit is not needed/identifiable in this cycle.",
+      "selection": "External evaluation is required to choose a time law; keep S1A reference if no basis.",
+      "temporal_hypotheses": [
+        "correction",
+        "time_scaled_correction",
+        "conservative_correction_0.25"
+      ]
+    },
+    "stage_6_freeze_external": {
+      "artifacts": [
+        "candidate_freeze.json",
+        "mentor_questions_ru.md",
+        "evaluate_external.py or evaluator extension"
+      ],
+      "freeze": {
+        "max_s1": 3,
+        "max_s2": 3
+      },
+      "goal": "Freeze and prepare one-shot external evaluation; no fit in evaluator.",
+      "score_policy": "Do not invent overall score; per-case Pearson r² primary plus separate diagnostics.",
+      "truth_policy": "truth separate; no fit; no overwrite; metrics per case and lower-tail/top10"
+    }
+  },
+  "supersedes": "experiment_plan_v1.json",
+  "unchanged_from_v1": {
+    "catboost_reference": {
+      "depth": 2,
+      "iterations": 200,
+      "l2_leaf_reg": 10,
+      "learning_rate": 0.03,
+      "loss_function": "RMSE",
+      "seed": 17
+    },
+    "no_retrospective_tuning": true,
+    "ridge_alpha": 10.0,
+    "s1_blocks": [
+      "100m/20m",
+      "200m/50m",
+      "500m/100m"
+    ],
+    "s1_selection_filter": "MAE<S1A, signed r>0, Pearson r/top10 not worse on 200m/50m and 500m/100m; max 2 challengers",
+    "s2_centering_lambda": 1.0
+  }
+}

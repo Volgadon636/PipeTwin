@@ -1,0 +1,9 @@
+{
+  "description": "Mix frozen prior-derived prediction and a local median with a guard that preserves measured local troughs and keeps fallback rows fixed.",
+  "primary_radius_m": 10,
+  "radii_m": [
+    10,
+    20
+  ],
+  "smooth_weight": 0.5
+}

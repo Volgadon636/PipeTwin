@@ -1,0 +1,98 @@
+{
+  "alpha": 10.0,
+  "baseline_column": "last_mm",
+  "coefficient_by_feature": {
+    "last_mm": -0.3832533207708949,
+    "neighbor_missing": -0.018635112400545845,
+    "neighbor_prior_count": -0.11897376492856429,
+    "neighbor_prior_median_mm": 0.08932693092034774
+  },
+  "coefficients": [
+    -0.3832533207708949,
+    0.08932693092034774,
+    -0.11897376492856429,
+    -0.018635112400545845
+  ],
+  "dropped_columns": {
+    "age_last_vtd_years": "constant_on_train",
+    "prior_vtd_campaign_count": "constant_on_train"
+  },
+  "features": [
+    "last_mm",
+    "age_last_vtd_years",
+    "prior_vtd_campaign_count",
+    "neighbor_prior_median_mm",
+    "neighbor_prior_count",
+    "neighbor_missing"
+  ],
+  "fit_intercept": true,
+  "intercept": -0.049315173579197354,
+  "model_name": "ridge_history",
+  "model_type": "Ridge",
+  "prediction_policy": "delta",
+  "preprocessing": {
+    "constant_columns": [
+      "age_last_vtd_years",
+      "prior_vtd_campaign_count"
+    ],
+    "dropped_columns": {
+      "age_last_vtd_years": "constant_on_train",
+      "prior_vtd_campaign_count": "constant_on_train"
+    },
+    "duplicate_columns": {},
+    "empty_columns": [],
+    "feature_order": [
+      "last_mm",
+      "age_last_vtd_years",
+      "prior_vtd_campaign_count",
+      "neighbor_prior_median_mm",
+      "neighbor_prior_count",
+      "neighbor_missing"
+    ],
+    "imputer": "median",
+    "imputer_statistics": {
+      "last_mm": 6.11,
+      "neighbor_missing": 0.0,
+      "neighbor_prior_count": 3.0,
+      "neighbor_prior_median_mm": 6.1
+    },
+    "scaler": "StandardScaler",
+    "scaler_mean": {
+      "last_mm": 6.130504201680672,
+      "neighbor_missing": 0.0392156862745098,
+      "neighbor_prior_count": 2.764705882352941,
+      "neighbor_prior_median_mm": 6.113893557422969
+    },
+    "scaler_scale": {
+      "last_mm": 0.5507186780083602,
+      "neighbor_missing": 0.1941077438551307,
+      "neighbor_prior_count": 1.1155073133583098,
+      "neighbor_prior_median_mm": 0.40449050829782274
+    },
+    "used_features": [
+      "last_mm",
+      "neighbor_prior_median_mm",
+      "neighbor_prior_count",
+      "neighbor_missing"
+    ]
+  },
+  "solver": "cholesky",
+  "target": "target_delta_mm",
+  "target_mean": -0.04931517357919729,
+  "target_std": 0.6503883416768479,
+  "training_dates": [
+    "2022-07-06"
+  ],
+  "training_rows": 357,
+  "training_sections": [
+    1250009490,
+    1250011604,
+    1250022871
+  ],
+  "used_features": [
+    "last_mm",
+    "neighbor_prior_median_mm",
+    "neighbor_prior_count",
+    "neighbor_missing"
+  ]
+}

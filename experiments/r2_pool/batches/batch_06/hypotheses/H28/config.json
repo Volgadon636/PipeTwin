@@ -1,0 +1,7 @@
+{
+  "cases": [
+    "S2"
+  ],
+  "description": "Audit dated usable local pH, aqueous CO2, mineralization and protection history. Require verified location, availability before each cutoff and spatial support on the train and target grids. No model in the absence of confirmed local inputs.",
+  "primary": null
+}

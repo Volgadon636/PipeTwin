@@ -1,0 +1,181 @@
+{
+  "all_manifest_csv_hashes_ok": true,
+  "data_root": "C:\\Users\\Администратор\\Documents\\PipeTwin_next\\experiments\\next_cycle\\data_generation",
+  "generated_utc": "2026-11-15T17:35:04+00:00",
+  "keys": {
+    "1250009583": 1475,
+    "1250022871": 525
+  },
+  "manifest_outputs": {
+    "data/cleaned/passport": {
+      "actual": "4d5245d8a7702cba3f739538726325972db1afc44e36df956200725b879a01ab",
+      "csv_sha256_ok": true,
+      "expected": "4d5245d8a7702cba3f739538726325972db1afc44e36df956200725b879a01ab",
+      "rows": 16
+    },
+    "data/cleaned/profile": {
+      "actual": "394dbcdfbc9b140a89e86131305b41f641917e3b7e64c4737ae9cef25afc6d02",
+      "csv_sha256_ok": true,
+      "expected": "394dbcdfbc9b140a89e86131305b41f641917e3b7e64c4737ae9cef25afc6d02",
+      "rows": 20180
+    },
+    "data/cleaned/regime": {
+      "actual": "65e53ebe1a154c5a7a3b6fa5806f1d8e83122c985e1049f38162e316eb95cb79",
+      "csv_sha256_ok": true,
+      "expected": "65e53ebe1a154c5a7a3b6fa5806f1d8e83122c985e1049f38162e316eb95cb79",
+      "rows": 495
+    },
+    "data/cleaned/tech_mode_for_embedings_with_length_with_temperatures_ids16": {
+      "actual": "a0e58cf2deb665f5c99efc71416edeed68c33334d865ceee1f566a8df031ebfd",
+      "csv_sha256_ok": true,
+      "expected": "a0e58cf2deb665f5c99efc71416edeed68c33334d865ceee1f566a8df031ebfd",
+      "rows": 39052
+    },
+    "data/cleaned/uzt": {
+      "actual": "80c67ab7ed812ea195f0965467051dd4871dc78a87d1a9f0445d471dfcbea529",
+      "csv_sha256_ok": true,
+      "expected": "80c67ab7ed812ea195f0965467051dd4871dc78a87d1a9f0445d471dfcbea529",
+      "rows": 67
+    },
+    "data/cleaned/vtd": {
+      "actual": "e52f3a5c573078cd03689cc8774047a01fa3176192db9b84b095b45f5c752ab2",
+      "csv_sha256_ok": true,
+      "expected": "e52f3a5c573078cd03689cc8774047a01fa3176192db9b84b095b45f5c752ab2",
+      "rows": 48040
+    },
+    "processed/hydraulic_asof": {
+      "actual": "2e2fb85ee43d37490b24e39df4f20736077dbd43796c46c2c1062f171fb59951",
+      "csv_sha256_ok": true,
+      "expected": "2e2fb85ee43d37490b24e39df4f20736077dbd43796c46c2c1062f171fb59951",
+      "rows": 4208
+    },
+    "processed/hydraulic_quality": {
+      "actual": "b3838662af9e71718113715c4082a17b7724273c7c94f9cb6cc8e8c264611f39",
+      "csv_sha256_ok": true,
+      "expected": "b3838662af9e71718113715c4082a17b7724273c7c94f9cb6cc8e8c264611f39",
+      "rows": 41
+    },
+    "processed/lineage_keys": {
+      "actual": "5f0dbd87ddb973946dc05ea40d20e3c1bf5594809195d9be4c54f304653ad1f0",
+      "csv_sha256_ok": true,
+      "expected": "5f0dbd87ddb973946dc05ea40d20e3c1bf5594809195d9be4c54f304653ad1f0",
+      "rows": 2000
+    },
+    "processed/monitoring_mapped": {
+      "actual": "f6e51a342bb9f91565f5b5bcc5994c46c64c42c5c901f377e3f0999f5eb5e248",
+      "csv_sha256_ok": true,
+      "expected": "f6e51a342bb9f91565f5b5bcc5994c46c64c42c5c901f377e3f0999f5eb5e248",
+      "rows": 2000
+    },
+    "processed/pipes_summary": {
+      "actual": "902ed93728afdfc8d8f204b81ce54eb607cffe4f2bd3ad79ccaea88ac915f49c",
+      "csv_sha256_ok": true,
+      "expected": "902ed93728afdfc8d8f204b81ce54eb607cffe4f2bd3ad79ccaea88ac915f49c",
+      "rows": 16
+    },
+    "processed/profile_by_segment": {
+      "actual": "3e4b4994a3f3da4fa04c403dcac85bf4484ca9feca68103665db6cc39f2d04ca",
+      "csv_sha256_ok": true,
+      "expected": "3e4b4994a3f3da4fa04c403dcac85bf4484ca9feca68103665db6cc39f2d04ca",
+      "rows": 4668
+    },
+    "processed/profile_rejected": {
+      "actual": "c294007bc5dffc5a496269f5019c190ad4cbb72e8c7934451661477b61337776",
+      "csv_sha256_ok": true,
+      "expected": "c294007bc5dffc5a496269f5019c190ad4cbb72e8c7934451661477b61337776",
+      "rows": 0
+    },
+    "processed/quality_issues": {
+      "actual": "9f9fe8cbfcbb8a777a9eca1d8ba97b568f30a4e3159bb117880fb03f6b190d58",
+      "csv_sha256_ok": true,
+      "expected": "9f9fe8cbfcbb8a777a9eca1d8ba97b568f30a4e3159bb117880fb03f6b190d58",
+      "rows": 70716
+    },
+    "processed/regime_mapped": {
+      "actual": "024a5fdbb032a47c5f6938cf50a0fd3971089b5cd1b2c6915a997589018dcc63",
+      "csv_sha256_ok": true,
+      "expected": "024a5fdbb032a47c5f6938cf50a0fd3971089b5cd1b2c6915a997589018dcc63",
+      "rows": 2000
+    },
+    "processed/rejected_records": {
+      "actual": "6a3ff831ca96d678edfebbe653b74e49bde7e43a481fbd8af64d73788dbe8264",
+      "csv_sha256_ok": true,
+      "expected": "6a3ff831ca96d678edfebbe653b74e49bde7e43a481fbd8af64d73788dbe8264",
+      "rows": 540
+    },
+    "processed/segments_grid": {
+      "actual": "55cce38f655fc47eaabf2255d4e74e31e6d81f774f95df40f47f23adcfeb48a3",
+      "csv_sha256_ok": true,
+      "expected": "55cce38f655fc47eaabf2255d4e74e31e6d81f774f95df40f47f23adcfeb48a3",
+      "rows": 4668
+    },
+    "processed/target_features": {
+      "actual": "1ff33a4842b63f9b255afb189bb36676d202b5ebaacca9c925d18885abbac767",
+      "csv_sha256_ok": true,
+      "expected": "1ff33a4842b63f9b255afb189bb36676d202b5ebaacca9c925d18885abbac767",
+      "rows": 2000
+    },
+    "processed/target_segments_grid": {
+      "actual": "89ee38ef86368798426a5d91daeb4e849518cb40b2185e1c632dd9f3953db936",
+      "csv_sha256_ok": true,
+      "expected": "89ee38ef86368798426a5d91daeb4e849518cb40b2185e1c632dd9f3953db936",
+      "rows": 2000
+    },
+    "processed/training_targets": {
+      "actual": "8f32b9c374533183abf02e25a6a990988d0e7a661b48f34252667708800cdd18",
+      "csv_sha256_ok": true,
+      "expected": "8f32b9c374533183abf02e25a6a990988d0e7a661b48f34252667708800cdd18",
+      "rows": 1080
+    },
+    "processed/uzt_by_segment": {
+      "actual": "aed45ba93f914f2f4d66f02c31d4b144cd865d69bfc6113a94f1fb1689e364ef",
+      "csv_sha256_ok": true,
+      "expected": "aed45ba93f914f2f4d66f02c31d4b144cd865d69bfc6113a94f1fb1689e364ef",
+      "rows": 3
+    },
+    "processed/uzt_rejected": {
+      "actual": "336f046ab254f9a739bd306111b147ed2017a60dc12e2d639faf3cb669c83d57",
+      "csv_sha256_ok": true,
+      "expected": "336f046ab254f9a739bd306111b147ed2017a60dc12e2d639faf3cb669c83d57",
+      "rows": 0
+    },
+    "processed/vtd_by_segment": {
+      "actual": "ab6e17e9f5f286b884b5a3f47ef9109061ccf55c880f961f2cc5c149fd7ccc5e",
+      "csv_sha256_ok": true,
+      "expected": "ab6e17e9f5f286b884b5a3f47ef9109061ccf55c880f961f2cc5c149fd7ccc5e",
+      "rows": 1543
+    },
+    "processed/vtd_rejected": {
+      "actual": "ddc149382a52f8a26295c1ea91c61091ea7771306fe1e94c120e159d9c4a4fc4",
+      "csv_sha256_ok": true,
+      "expected": "ddc149382a52f8a26295c1ea91c61091ea7771306fe1e94c120e159d9c4a4fc4",
+      "rows": 251
+    },
+    "reports/feature_inventory": {
+      "actual": "18f1b27538e9b9bceb1c68de197a5d6de16581625ac04dbfb6e089cbe85b8014",
+      "csv_sha256_ok": true,
+      "expected": "18f1b27538e9b9bceb1c68de197a5d6de16581625ac04dbfb6e089cbe85b8014",
+      "rows": 515
+    }
+  },
+  "manifest_sha256": "eba9d43c1cf5da4b1148d89e34ad5d922eac4f8752c0c4a790bf9b0f93a4c72b",
+  "s1abc_reproduction": {
+    "s1a": {
+      "max_abs_thickness_diff": 0.0,
+      "rows": 2000
+    },
+    "s1b": {
+      "max_abs_thickness_diff": 0.0,
+      "rows": 2000
+    },
+    "s1c": {
+      "max_abs_thickness_diff": 0.0,
+      "rows": 2000
+    }
+  },
+  "target_reference": {
+    "s1_id": 1250022871,
+    "s2_id": 1250009583
+  },
+  "warning": "This audit is read-only; it does not rebuild data. Run src.data_prep to create a new generation."
+}

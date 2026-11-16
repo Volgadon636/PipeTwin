@@ -1,0 +1,7 @@
+{
+  "description": "Restore eligible historical campaigns based on independently verified date and section assignment",
+  "needed": [
+    "source campaign register with section IDs, date and availability",
+    "pre-cutoff commissioning record for excluded 2014 sections"
+  ]
+}

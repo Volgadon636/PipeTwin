@@ -1,0 +1,139 @@
+{
+  "S1_cutoff": "2023-12-01",
+  "S2_cutoff": "2022-07-01",
+  "baseline_oof_sha256": {
+    "S1_100": "7fce5a85334c17c3cde3f62ed38fe0d4cdb80d2ce37823ea3758993fac7fbccc",
+    "S1_200": "81b03f308e69883d87528119d98239803c3d99b6d3cfd7eaf004aa102cb9d379",
+    "S1_500": "c28c7ba0244d4ff1cf5ef4e49c8c528ee652525c6488d7c48e0112432150e37e",
+    "S2": "d8590c203f3e411460259defe35c46d7713b477360535891ef22eacc3b240f7b"
+  },
+  "config": {
+    "s1_defect_stats_variant": "full",
+    "s1_enable_alignment": false,
+    "s1_enable_defect_stats": false,
+    "s1_enable_residual_correction": false,
+    "s2_elevation_scales_m": [
+      100,
+      300,
+      1000
+    ],
+    "s2_enable_multiscale_elevation": false
+  },
+  "gate": "S1 improves r² on all three schemes with no pooled top-decile recall loss; S2 improves pooled r² and signed r in a majority of sections with no pooled top-decile recall loss. MAE is reported as secondary.",
+  "primary": "positive signed Pearson r, then Pearson r²",
+  "random_seed": null,
+  "ridge_alpha": 10.0,
+  "s1_variants": {
+    "defect_stats_full": [
+      "last_mm",
+      "age_last_vtd_years",
+      "prior_vtd_campaign_count",
+      "neighbor_prior_median_mm",
+      "neighbor_prior_count",
+      "neighbor_missing",
+      "slope_m_per_m",
+      "abs_slope_m_per_m",
+      "local_low_m",
+      "relative_position",
+      "prior_defect_count_log",
+      "prior_measured_count_log",
+      "prior_low_count",
+      "prior_min_boundary_m",
+      "prior_min_mm",
+      "prior_p05_mm",
+      "prior_p10_mm",
+      "prior_p05_minus_min_mm",
+      "prior_neighbor_mean_mm",
+      "prior_neighbor_min_mm",
+      "prior_neighbor_count"
+    ],
+    "defect_stats_support": [
+      "last_mm",
+      "age_last_vtd_years",
+      "prior_vtd_campaign_count",
+      "neighbor_prior_median_mm",
+      "neighbor_prior_count",
+      "neighbor_missing",
+      "slope_m_per_m",
+      "abs_slope_m_per_m",
+      "local_low_m",
+      "relative_position",
+      "prior_defect_count_log",
+      "prior_measured_count_log",
+      "prior_low_count",
+      "prior_min_boundary_m"
+    ],
+    "global_ridge_geometry": [
+      "last_mm",
+      "age_last_vtd_years",
+      "prior_vtd_campaign_count",
+      "neighbor_prior_median_mm",
+      "neighbor_prior_count",
+      "neighbor_missing",
+      "slope_m_per_m",
+      "abs_slope_m_per_m",
+      "local_low_m",
+      "relative_position"
+    ]
+  },
+  "s2_variants": {
+    "multiscale_100": [
+      "z",
+      "slope",
+      "abs_slope",
+      "position",
+      "local_low",
+      "pool_depth",
+      "elevation_smooth_100m",
+      "elevation_relative_100m",
+      "elevation_slope_100m"
+    ],
+    "multiscale_1000": [
+      "z",
+      "slope",
+      "abs_slope",
+      "position",
+      "local_low",
+      "pool_depth",
+      "elevation_smooth_1000m",
+      "elevation_relative_1000m",
+      "elevation_slope_1000m"
+    ],
+    "multiscale_100_300_1000": [
+      "z",
+      "slope",
+      "abs_slope",
+      "position",
+      "local_low",
+      "pool_depth",
+      "elevation_smooth_100m",
+      "elevation_relative_100m",
+      "elevation_slope_100m",
+      "elevation_smooth_300m",
+      "elevation_relative_300m",
+      "elevation_slope_300m",
+      "elevation_smooth_1000m",
+      "elevation_relative_1000m",
+      "elevation_slope_1000m"
+    ],
+    "multiscale_300": [
+      "z",
+      "slope",
+      "abs_slope",
+      "position",
+      "local_low",
+      "pool_depth",
+      "elevation_smooth_300m",
+      "elevation_relative_300m",
+      "elevation_slope_300m"
+    ],
+    "spatial_no_temperature_centered": [
+      "z",
+      "slope",
+      "abs_slope",
+      "position",
+      "local_low",
+      "pool_depth"
+    ]
+  }
+}

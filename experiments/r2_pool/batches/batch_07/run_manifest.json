@@ -1,0 +1,138 @@
+{
+  "code_sha256": "8f86aa6dd254ed59cfb21ec8b768234af92cd72c43d0d51079604a92d59e3910",
+  "command": "\"C:\\Users\\Администратор\\Documents\\PipeTwin_s1abc_env\\Scripts\\python.exe\" -B -m src.experiments.r2_pool_stage7 --protocol \"experiments\\r2_pool\\protocol_batch_07.json\" --output \"experiments\\r2_pool\\batches\\batch_07\"",
+  "data_manifest_sha256": "1d99d2f71b51a825e101fbce09f90f9f0ed309b4c68b9921f5e7188b40f6cf43",
+  "data_root": "scratch/odo_alignment_verified",
+  "data_sha256": {
+    "data/cleaned/passport.csv": "4d5245d8a7702cba3f739538726325972db1afc44e36df956200725b879a01ab",
+    "data/cleaned/regime.csv": "65e53ebe1a154c5a7a3b6fa5806f1d8e83122c985e1049f38162e316eb95cb79",
+    "data/cleaned/tech_mode_for_embedings_with_length_with_temperatures_ids16.csv": "a0e58cf2deb665f5c99efc71416edeed68c33334d865ceee1f566a8df031ebfd",
+    "data/cleaned/vtd.csv": "e52f3a5c573078cd03689cc8774047a01fa3176192db9b84b095b45f5c752ab2",
+    "processed/profile_by_segment.csv": "3e4b4994a3f3da4fa04c403dcac85bf4484ca9feca68103665db6cc39f2d04ca",
+    "processed/segments_grid.csv": "55cce38f655fc47eaabf2255d4e74e31e6d81f774f95df40f47f23adcfeb48a3",
+    "processed/training_targets.csv": "8f32b9c374533183abf02e25a6a990988d0e7a661b48f34252667708800cdd18",
+    "processed/uzt_by_segment.csv": "aed45ba93f914f2f4d66f02c31d4b144cd865d69bfc6113a94f1fb1689e364ef",
+    "processed/vtd_by_segment.csv": "ab6e17e9f5f286b884b5a3f47ef9109061ccf55c880f961f2cc5c149fd7ccc5e"
+  },
+  "environment": {
+    "catboost": "1.2.10",
+    "executable": "C:\\Users\\Администратор\\Documents\\PipeTwin_s1abc_env\\Scripts\\python.exe",
+    "joblib": "1.5.3",
+    "matplotlib": "3.10.8",
+    "numpy": "2.3.5",
+    "pandas": "2.2.3",
+    "platform": "Windows-11-10.0.26300-SP0",
+    "pyarrow": "21.0.0",
+    "python": "3.12.8",
+    "scikit-learn": "1.7.2"
+  },
+  "environment_overrides": {
+    "PIPETWIN_NEXT_DATA_ROOT": "C:\\Program Files\\PipeTwin\\experiments\\next_cycle\\data_generation"
+  },
+  "exclusions": [
+    "target S2 diagnostics",
+    "held labels for weight selection and model fits",
+    "S1 repeat labels at or after S2 cutoff for joint S2 evaluation",
+    "outside outer train data for H35 inner fitting"
+  ],
+  "input_sha256": {
+    "C:/Program Files/PipeTwin/src/experiments/r2_pool_stage7.py": "8f86aa6dd254ed59cfb21ec8b768234af92cd72c43d0d51079604a92d59e3910",
+    "C:/Program Files/PipeTwin/src/experiments/r2_pool_stage7_models.py": "b2a3ea7667c10fc35a972bcd00de056be4903048b5f1c9639a9023495c6c0d54",
+    "experiments/r2_pool/batches/batch_03/hypotheses/H11/S1_peer_2023/spatial_residual/validation_predictions.csv": "5aad3f21f428c39940861b2948a45469f9159c3055d5031d04d2baf250640ccc",
+    "experiments/r2_pool/batches/batch_03/hypotheses/H12/S1_peer_2023/selected_lambda/validation_predictions.csv": "fa114538578afb4f88c454af633cca3fd8c467e9632bbaf76f65e0f5ec45a76a",
+    "experiments/r2_pool/batches/batch_04/hypotheses/H16/S1_peer_2023/squared_loss_matched/validation_predictions.csv": "e81a3dfb1e804c480e40c00bd1cdfa0825018953dd316657efb5d6f9b1eae1b5",
+    "experiments/r2_pool/batches/batch_04/hypotheses/H18/S1_peer_2023/geometry_type_distribution/validation_predictions.csv": "4e1e9788494148faa7018fd94b7ec3cd2ee6ee29fc2494315fcea40b15994951",
+    "experiments/r2_pool/batches/batch_06/hypotheses/H27/S2_LOSO_pooled/largest_section_donor/validation_predictions.csv": "2e761e797cbdb1599a3d820142f695c0344422d26f5eda8e1c2c7a9b53895fe7",
+    "experiments/r2_pool/batches/batch_06/hypotheses/H30/S2_LOSO_pooled/shallow_catboost/validation_predictions.csv": "b3bdc96d57b60fc4ab7ee25de6d51b9eb17e5599bc237f36cf3d99d375c3f66c",
+    "experiments/r2_pool/batches/batch_06/hypotheses/H30/S2_retro_2023/shallow_catboost/validation_predictions.csv": "c72fabf2497e067897103f5ca0345b962dfa5cb7457c31a4d3a108c0e7835551",
+    "experiments/r2_pool/protocol_batch_04.json": "81ef00efe8e318f5e5d7ad671d0ab4033091999336e161ca268b6d6538f8fb02",
+    "experiments/r2_pool/protocol_batch_06.json": "5d0d9102717a36983eba6338a158665bd4915021a130b835ec439658689cf70b",
+    "experiments/r2_pool/protocol_photo_v3.json": "1e01371c80b2163082cf4e41a54048bdac3649cc52e495c574c738191b960d7d",
+    "experiments/r2_pool/revisions/r2-pool-v3/baseline/S1_100m_20m/split_keys.csv": "37097f3d33a44feca3f773364e9ec4cbba13bc8f3ef66c0aad70d6d59ca698f1",
+    "experiments/r2_pool/revisions/r2-pool-v3/baseline/S1_100m_20m/validation_predictions.csv": "adbfc5a183551aba6c8f8e0bd0d7211673e2469f3e61d101fad26de5c305266f",
+    "experiments/r2_pool/revisions/r2-pool-v3/baseline/S1_500m_100m/split_keys.csv": "0e475ccbd843538723e2aa60af09b0cbfda727483779b6a93191ade38cf422e2",
+    "experiments/r2_pool/revisions/r2-pool-v3/baseline/S1_500m_100m/validation_predictions.csv": "be25abac8e732914d343fd88458e55e0f6fa0198d32cab3ea14d4bd3563234c2",
+    "experiments/r2_pool/revisions/r2-pool-v3/baseline/S1_peer_2023/anchor_folds.json": "8485dc54da61c3ed1f9e45d0e2b2a7a6f01cb47ad3baa66050b5f015a2c64f66",
+    "experiments/r2_pool/revisions/r2-pool-v3/baseline/S1_peer_2023/split_keys.csv": "76ed57bd6b086c509dfbadc1814aa486193c2bf43f89b29ef71d03dcaf38176d",
+    "experiments/r2_pool/revisions/r2-pool-v3/baseline/S1_peer_2023/validation_predictions.csv": "d3add1b5f212bba280c8c10fe25dd39d43e40db464a3110c5c15c68de475dcf9",
+    "experiments/r2_pool/revisions/r2-pool-v3/baseline/S2_LOSO_pooled/split_keys.csv": "bceba93e9b895b212dfd84a90fcb4fd31b1f4346dda3a4b0f03ad8ee51d11621",
+    "experiments/r2_pool/revisions/r2-pool-v3/baseline/S2_LOSO_pooled/validation_predictions.csv": "76f52f33bb063281b41c5376125075840b0afb9b29ebca4a01aa3264de3c6a10",
+    "experiments/r2_pool/revisions/r2-pool-v3/baseline/S2_retro_2023/split_keys.csv": "157eb4c3de84852d04354d180b0150692f13293d6242e5f1597cd20a7b0c9906",
+    "experiments/r2_pool/revisions/r2-pool-v3/baseline/S2_retro_2023/validation_predictions.csv": "f3cf25e439425da9981af4093efe2b5f08394c719330f5b702fc2f07772c917a"
+  },
+  "linear_algebra_threads": 1,
+  "protocol_sha256": "41f7bfd0729641d967ecf720e3ede304a541a5dec79746a2d88b686d672df0d2",
+  "protocol_version": "r2-pool-v3",
+  "replays": {
+    "S1_100m_20m": {
+      "max_abs_prediction_difference_mm": 5.329070518200751e-15,
+      "rows": 321,
+      "same_keys_labels_and_splits": true
+    },
+    "S1_500m_100m": {
+      "max_abs_prediction_difference_mm": 5.329070518200751e-15,
+      "rows": 321,
+      "same_keys_labels_and_splits": true
+    },
+    "S1_peer_2023": {
+      "max_abs_prediction_difference_mm": 5.329070518200751e-15,
+      "rows": 52,
+      "same_keys_labels_and_splits": true
+    },
+    "S2_LOSO_pooled": {
+      "max_abs_prediction_difference_mm": 5.329070518200751e-15,
+      "rows": 372,
+      "same_keys_labels_and_splits": true
+    },
+    "S2_retro_2023": {
+      "max_abs_prediction_difference_mm": 5.329070518200751e-15,
+      "rows": 94,
+      "same_keys_labels_and_splits": true
+    }
+  },
+  "seconds": 32.99654230001033,
+  "seed": 17,
+  "source_snapshot_sha256": "a00908a87cfd693f277123e19e9d7ab408cbdf0a06cc539cbacddbaad72b7e68",
+  "status": "completed",
+  "validation": {
+    "dependency_replays": {
+      "S1_peer_2023": {
+        "H11": {
+          "max_abs_difference_mm": 5.329070518200751e-15,
+          "path": "experiments/r2_pool/batches/batch_03/hypotheses/H11/S1_peer_2023/spatial_residual/validation_predictions.csv",
+          "r2": 0.31212324951370196
+        },
+        "ensemble_challenger": {
+          "max_abs_difference_mm": 5.329070518200751e-15,
+          "path": "experiments/r2_pool/batches/batch_04/hypotheses/H18/S1_peer_2023/geometry_type_distribution/validation_predictions.csv",
+          "r2": 0.5114922122452283
+        }
+      },
+      "S2_LOSO_pooled": {
+        "ensemble_challenger": {
+          "max_abs_difference_mm": 5.329070518200751e-15,
+          "path": "experiments/r2_pool/batches/batch_06/hypotheses/H30/S2_LOSO_pooled/shallow_catboost/validation_predictions.csv",
+          "r2": 0.005621803877979991
+        }
+      },
+      "S2_retro_2023": {
+        "ensemble_challenger": {
+          "max_abs_difference_mm": 5.329070518200751e-15,
+          "path": "experiments/r2_pool/batches/batch_06/hypotheses/H30/S2_retro_2023/shallow_catboost/validation_predictions.csv",
+          "r2": 0.04733737364698081
+        }
+      }
+    },
+    "execution_log_sha256": "5240b8fa6c11cd7e2c1215a4117492038fb041047da6d810c28bd630f10d72ce",
+    "nested_ensemble_checked_oof_rows": {
+      "S1_peer_2023": 678,
+      "S2_LOSO_pooled": 744,
+      "S2_retro_2023": 372
+    },
+    "stage7_test_sha256": "71b70feea12628b6cf4370b07af48f2385a6c5e5cac62edecad807f4a281a1a1",
+    "test_command": "\"C:\\Users\\Администратор\\Documents\\PipeTwin_s1abc_env\\Scripts\\python.exe\" -B -m unittest tests.test_r2_pool_stage7 tests.test_r2_pool_stage6 tests.test_r2_pool_stage5 tests.test_r2_pool_stage4 tests.test_r2_pool_stage3 tests.test_r2_pool_stage2 tests.test_r2_pool_stage1 tests.test_stage_2_s2_fixes tests.test_s2_terrain tests.test_incremental tests.test_ml_v2 tests.test_s1abc tests.test_s1_joint_alignment tests.test_s1_alignment tests.test_stage_3_s1 -v",
+    "test_count": 72,
+    "test_log_sha256": "a0de94bc5e4b1dc956a8be552fb41c24c69022ee15114201f2e05c34874a22f4",
+    "test_status": "passed"
+  }
+}

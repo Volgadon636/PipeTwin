@@ -1,0 +1,196 @@
+{
+  "head": "1c823c4ab86bde55702495014c8f595f0f769abe",
+  "independent_recalculation": {
+    "H02": {
+      "S1": [
+        {
+          "baseline": {
+            "pearson_r2": 0.29744159004891996,
+            "signed_r": 0.5453820587889924
+          },
+          "candidate": {
+            "pearson_r2": 0.29744159004891996,
+            "signed_r": 0.5453820587889924
+          },
+          "date": "2022-07-06",
+          "id": 1250009490,
+          "n": 4
+        },
+        {
+          "baseline": {
+            "pearson_r2": 0.004150650708069578,
+            "signed_r": 0.06442554390976904
+          },
+          "candidate": {
+            "pearson_r2": 0.004150650708069578,
+            "signed_r": 0.06442554390976904
+          },
+          "date": "2022-07-06",
+          "id": 1250011604,
+          "n": 32
+        },
+        {
+          "baseline": {
+            "pearson_r2": 0.12228166884153176,
+            "signed_r": 0.34968795924585644
+          },
+          "candidate": {
+            "pearson_r2": 0.12228166884153176,
+            "signed_r": 0.34968795924585644
+          },
+          "date": "2022-07-06",
+          "id": 1250022871,
+          "n": 321
+        }
+      ],
+      "S2": [
+        {
+          "baseline": {
+            "pearson_r2": null,
+            "signed_r": null
+          },
+          "candidate": {
+            "pearson_r2": null,
+            "signed_r": null
+          },
+          "date": "2018-09-23",
+          "id": 1250009490,
+          "n": 4
+        },
+        {
+          "baseline": {
+            "pearson_r2": null,
+            "signed_r": null
+          },
+          "candidate": {
+            "pearson_r2": null,
+            "signed_r": null
+          },
+          "date": "2018-09-23",
+          "id": 1250011604,
+          "n": 34
+        },
+        {
+          "baseline": {
+            "pearson_r2": null,
+            "signed_r": null
+          },
+          "candidate": {
+            "pearson_r2": null,
+            "signed_r": null
+          },
+          "date": "2018-09-23",
+          "id": 1250022871,
+          "n": 334
+        }
+      ]
+    },
+    "H04": {
+      "S1": [
+        {
+          "baseline": {
+            "pearson_r2": 0.29744159004891996,
+            "signed_r": 0.5453820587889924
+          },
+          "candidate": {
+            "pearson_r2": 0.29744159004891996,
+            "signed_r": 0.5453820587889924
+          },
+          "date": "2022-07-06",
+          "id": 1250009490,
+          "n": 4
+        },
+        {
+          "baseline": {
+            "pearson_r2": 0.004150650708069578,
+            "signed_r": 0.06442554390976904
+          },
+          "candidate": {
+            "pearson_r2": 0.004150650708069578,
+            "signed_r": 0.06442554390976904
+          },
+          "date": "2022-07-06",
+          "id": 1250011604,
+          "n": 32
+        },
+        {
+          "baseline": {
+            "pearson_r2": 0.12228166884153176,
+            "signed_r": 0.34968795924585644
+          },
+          "candidate": {
+            "pearson_r2": 0.13106121354476266,
+            "signed_r": 0.3620237748335911
+          },
+          "date": "2022-07-06",
+          "id": 1250022871,
+          "n": 321
+        }
+      ],
+      "S2": [
+        {
+          "baseline": {
+            "pearson_r2": null,
+            "signed_r": null
+          },
+          "candidate": {
+            "pearson_r2": null,
+            "signed_r": null
+          },
+          "date": "2018-09-23",
+          "id": 1250009490,
+          "n": 4
+        },
+        {
+          "baseline": {
+            "pearson_r2": null,
+            "signed_r": null
+          },
+          "candidate": {
+            "pearson_r2": null,
+            "signed_r": null
+          },
+          "date": "2018-09-23",
+          "id": 1250011604,
+          "n": 34
+        },
+        {
+          "baseline": {
+            "pearson_r2": null,
+            "signed_r": null
+          },
+          "candidate": {
+            "pearson_r2": null,
+            "signed_r": null
+          },
+          "date": "2018-09-23",
+          "id": 1250022871,
+          "n": 334
+        }
+      ]
+    }
+  },
+  "protocol": "r2-pool-v1",
+  "remote_momo_verified": "1c823c4ab86bde55702495014c8f595f0f769abe",
+  "reproduced_byte_for_byte": [
+    "baseline/metrics_by_profile.csv",
+    "baseline/result.csv",
+    "baseline/S1_validation_predictions.csv",
+    "baseline/S2_validation_predictions.csv",
+    "hypotheses/H02/run_01/metrics_by_profile.csv",
+    "hypotheses/H02/run_01/S1_validation_predictions.csv",
+    "hypotheses/H02/run_01/S2_validation_predictions.csv",
+    "hypotheses/H04/run_01/metrics_by_profile.csv",
+    "hypotheses/H04/run_01/S1_validation_predictions.csv",
+    "hypotheses/H04/run_01/S2_validation_predictions.csv"
+  ],
+  "reproduced_summaries": [
+    "H01",
+    "H02",
+    "H03",
+    "H04",
+    "H05"
+  ],
+  "snapshot_input_and_code_hashes_match": true,
+  "state_preserved": "awaiting_batch_review"
+}

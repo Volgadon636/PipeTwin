@@ -1,0 +1,464 @@
+{
+  "audits": {
+    "H06": {
+      "open_question": "Q-0007",
+      "passport_populated_repair_fields": [
+        "Количество дефектов первоочередного ремонта"
+      ],
+      "verified_dated_spatial_repair_records": 0,
+      "vtd_nonempty_before_cutoff": {
+        "1250009490": {
+          "prerepair_classification": 15,
+          "recommended_repair_method": 223,
+          "repair_method": 0,
+          "repair_time_years": 238
+        },
+        "1250009583": {
+          "prerepair_classification": 0,
+          "recommended_repair_method": 0,
+          "repair_method": 0,
+          "repair_time_years": 0
+        },
+        "1250011604": {
+          "prerepair_classification": 161,
+          "recommended_repair_method": 2331,
+          "repair_method": 0,
+          "repair_time_years": 2492
+        },
+        "1250022871": {
+          "prerepair_classification": 1830,
+          "recommended_repair_method": 26108,
+          "repair_method": 0,
+          "repair_time_years": 27938
+        }
+      }
+    },
+    "H07": {
+      "campaigns": [
+        {
+          "before_commissioning": 398,
+          "date": "2014-12-28",
+          "eligible": 0,
+          "rows": 398,
+          "sections": 5
+        },
+        {
+          "before_commissioning": 0,
+          "date": "2018-09-23",
+          "eligible": 372,
+          "rows": 382,
+          "sections": 3
+        },
+        {
+          "before_commissioning": 0,
+          "date": "2022-07-06",
+          "eligible": 561,
+          "rows": 563,
+          "sections": 3
+        },
+        {
+          "before_commissioning": 0,
+          "date": "2023-08-12",
+          "eligible": 94,
+          "rows": 145,
+          "sections": 7
+        },
+        {
+          "before_commissioning": 0,
+          "date": "2023-12-01",
+          "eligible": 53,
+          "rows": 55,
+          "sections": 2
+        }
+      ],
+      "open_question": "Q-0011",
+      "s2_strict_parent_count": 1,
+      "s2_strict_rows": 372,
+      "verified_new_campaigns": 0
+    },
+    "H08": {
+      "inspection_number_nonempty_by_date": {
+        "2014-12-28": 0,
+        "2018-09-23": 0,
+        "2022-07-06": 0,
+        "2023-08-12": 0,
+        "2023-12-01": 3194
+      },
+      "open_question": "Q-0011",
+      "passport_populated_quality_fields": [],
+      "verified_quality_weights": 0
+    },
+    "H09": {
+      "eligible_previous_segments": [
+        {
+          "date": "2018-09-23",
+          "eligible_rows": 4,
+          "id": 1250009490
+        },
+        {
+          "date": "2022-07-06",
+          "eligible_rows": 5,
+          "id": 1250009490
+        },
+        {
+          "date": "2018-09-23",
+          "eligible_rows": 34,
+          "id": 1250011604
+        },
+        {
+          "date": "2022-07-06",
+          "eligible_rows": 48,
+          "id": 1250011604
+        }
+      ],
+      "rows_with_two_direct_inputs": 36
+    },
+    "H10": {
+      "folds": [
+        {
+          "alpha": 10.0,
+          "baseline_column": null,
+          "coefficient_by_feature": {
+            "abs_slope_m_per_m": -0.013424726708237267,
+            "last_mm": 0.07008425696459063,
+            "local_low_m": -0.010394986581676315,
+            "relative_position": -0.0152163691149512,
+            "slope_m_per_m": 0.004020767294654715
+          },
+          "coefficients": [
+            0.07008425696459063,
+            0.004020767294654715,
+            -0.013424726708237267,
+            -0.010394986581676315,
+            -0.0152163691149512
+          ],
+          "date": "2023-12-01",
+          "dropped_columns": {},
+          "features": [
+            "last_mm",
+            "slope_m_per_m",
+            "abs_slope_m_per_m",
+            "local_low_m",
+            "relative_position"
+          ],
+          "fit_intercept": true,
+          "held_id": 1250009490,
+          "horizon_years": 1.404517453798768,
+          "intercept": 0.01763187050831616,
+          "median_rate_mm_year": 0.0,
+          "model_name": "H10",
+          "model_type": "Ridge",
+          "prediction_policy": "delta",
+          "preprocessing": {
+            "constant_columns": [],
+            "dropped_columns": {},
+            "duplicate_columns": {},
+            "empty_columns": [],
+            "feature_order": [
+              "last_mm",
+              "slope_m_per_m",
+              "abs_slope_m_per_m",
+              "local_low_m",
+              "relative_position"
+            ],
+            "imputer": "median",
+            "imputer_statistics": {
+              "abs_slope_m_per_m": 0.0,
+              "last_mm": 6.11,
+              "local_low_m": 0.0,
+              "relative_position": 0.438228793537078,
+              "slope_m_per_m": 0.0
+            },
+            "scaler": "StandardScaler",
+            "scaler_mean": {
+              "abs_slope_m_per_m": 0.004745688975924718,
+              "last_mm": 6.132747875354108,
+              "local_low_m": -0.007084635963697519,
+              "relative_position": 0.4603394871637879,
+              "slope_m_per_m": -0.0008346069343309188
+            },
+            "scaler_scale": {
+              "abs_slope_m_per_m": 0.009098081254882283,
+              "last_mm": 0.5526147851253276,
+              "local_low_m": 0.10999805143504157,
+              "relative_position": 0.27378766613179795,
+              "slope_m_per_m": 0.010227417936205624
+            },
+            "used_features": [
+              "last_mm",
+              "slope_m_per_m",
+              "abs_slope_m_per_m",
+              "local_low_m",
+              "relative_position"
+            ]
+          },
+          "rate_limits_mm_year": [
+            -0.18764652677279303,
+            0.24843342981186697
+          ],
+          "solver": "cholesky",
+          "target": "robust_rate",
+          "target_mean": 0.01763187050831616,
+          "target_std": 0.13644750930778113,
+          "training_dates": [
+            "2022-07-06"
+          ],
+          "training_rows": 353,
+          "training_sections": [
+            1250011604,
+            1250022871
+          ],
+          "used_features": [
+            "last_mm",
+            "slope_m_per_m",
+            "abs_slope_m_per_m",
+            "local_low_m",
+            "relative_position"
+          ]
+        },
+        {
+          "alpha": 10.0,
+          "baseline_column": null,
+          "coefficient_by_feature": {
+            "abs_slope_m_per_m": -0.013011980807926609,
+            "last_mm": 0.06737256854221192,
+            "local_low_m": -0.013150561645632615,
+            "relative_position": -0.01782019202524762,
+            "slope_m_per_m": 0.0020957966388389848
+          },
+          "coefficients": [
+            0.06737256854221192,
+            0.0020957966388389848,
+            -0.013011980807926609,
+            -0.013150561645632615,
+            -0.01782019202524762
+          ],
+          "date": "2023-12-01",
+          "dropped_columns": {},
+          "features": [
+            "last_mm",
+            "slope_m_per_m",
+            "abs_slope_m_per_m",
+            "local_low_m",
+            "relative_position"
+          ],
+          "fit_intercept": true,
+          "held_id": 1250011604,
+          "horizon_years": 1.404517453798768,
+          "intercept": 0.019857061180463865,
+          "median_rate_mm_year": 0.0026429088277859962,
+          "model_name": "H10",
+          "model_type": "Ridge",
+          "prediction_policy": "delta",
+          "preprocessing": {
+            "constant_columns": [],
+            "dropped_columns": {},
+            "duplicate_columns": {},
+            "empty_columns": [],
+            "feature_order": [
+              "last_mm",
+              "slope_m_per_m",
+              "abs_slope_m_per_m",
+              "local_low_m",
+              "relative_position"
+            ],
+            "imputer": "median",
+            "imputer_statistics": {
+              "abs_slope_m_per_m": 0.0,
+              "last_mm": 6.12,
+              "local_low_m": 0.0,
+              "relative_position": 0.43251276579529,
+              "slope_m_per_m": 0.0
+            },
+            "scaler": "StandardScaler",
+            "scaler_mean": {
+              "abs_slope_m_per_m": 0.004858387953618489,
+              "last_mm": 6.132553846153846,
+              "local_low_m": -0.00015654306210828613,
+              "relative_position": 0.4541803045717821,
+              "slope_m_per_m": -0.0006759843556445649
+            },
+            "scaler_scale": {
+              "abs_slope_m_per_m": 0.009943850407302635,
+              "last_mm": 0.5582747608830738,
+              "local_low_m": 0.113291435089152,
+              "relative_position": 0.26923860055006327,
+              "slope_m_per_m": 0.011046589500004146
+            },
+            "used_features": [
+              "last_mm",
+              "slope_m_per_m",
+              "abs_slope_m_per_m",
+              "local_low_m",
+              "relative_position"
+            ]
+          },
+          "rate_limits_mm_year": [
+            -0.18658936324167866,
+            0.25060240882177975
+          ],
+          "solver": "cholesky",
+          "target": "robust_rate",
+          "target_mean": 0.019857061180463847,
+          "target_std": 0.13738271640863453,
+          "training_dates": [
+            "2022-07-06"
+          ],
+          "training_rows": 325,
+          "training_sections": [
+            1250009490,
+            1250022871
+          ],
+          "used_features": [
+            "last_mm",
+            "slope_m_per_m",
+            "abs_slope_m_per_m",
+            "local_low_m",
+            "relative_position"
+          ]
+        }
+      ],
+      "historical_rate_pairs": 357,
+      "median_control": {
+        "baseline": {
+          "bias_mm": 0.3599138004092422,
+          "mae_mm": 0.37249629242650933,
+          "pearson_r": 0.676772972161371,
+          "pearson_reason": "",
+          "pearson_squared": 0.45802165584813587,
+          "prediction_std": 0.35032434843134647,
+          "rmse_mm": 0.46728941126594137
+        },
+        "candidate": {
+          "bias_mm": 0.3564873281839272,
+          "mae_mm": 0.3696408989054136,
+          "pearson_r": 0.6760503799239976,
+          "pearson_reason": "",
+          "pearson_squared": 0.45704411619538154,
+          "prediction_std": 0.3501296126351783,
+          "rmse_mm": 0.4648286373166769
+        },
+        "changed_predictions": 48,
+        "delta_pearson_squared": -0.0009775396527543223,
+        "independent_parent_count": 1,
+        "max_abs_affine_residual_mm": 0.003507799258980704,
+        "n": 52,
+        "profile_count": 2
+      },
+      "vs_median_control": {
+        "baseline": {
+          "bias_mm": 0.3564873281839272,
+          "mae_mm": 0.3696408989054136,
+          "pearson_r": 0.6760503799239976,
+          "pearson_reason": "",
+          "pearson_squared": 0.45704411619538154,
+          "prediction_std": 0.3501296126351783,
+          "rmse_mm": 0.4648286373166769
+        },
+        "candidate": {
+          "bias_mm": 0.3352707289454273,
+          "mae_mm": 0.3492854941478408,
+          "pearson_r": 0.6699264183293699,
+          "pearson_reason": "",
+          "pearson_squared": 0.44880140597561796,
+          "prediction_std": 0.319267296875085,
+          "rmse_mm": 0.44538378827986413
+        },
+        "changed_predictions": 52,
+        "delta_pearson_squared": -0.008242710219763583,
+        "independent_parent_count": 1,
+        "max_abs_affine_residual_mm": 0.0887268089015194,
+        "n": 52,
+        "profile_count": 2
+      }
+    }
+  },
+  "benchmarks": {
+    "S1_100m_20m": {
+      "n": 321,
+      "pearson_r": 0.5382462739868541,
+      "pearson_squared": 0.2897090514607316
+    },
+    "S1_500m_100m": {
+      "n": 321,
+      "pearson_r": 0.5312421592602138,
+      "pearson_squared": 0.28221823177545435
+    },
+    "S1_peer_2023": {
+      "n": 52,
+      "pearson_r": 0.6767729721613717,
+      "pearson_squared": 0.45802165584813676
+    },
+    "S2_LOSO_pooled": {
+      "n": 372,
+      "pearson_r": 0.09359841726762078,
+      "pearson_squared": 0.008760663715003652
+    },
+    "S2_retro_2023": {
+      "n": 94,
+      "pearson_r": 0.20206882895630215,
+      "pearson_squared": 0.0408318116357713
+    }
+  },
+  "evaluation": {
+    "H09": {
+      "baseline": {
+        "bias_mm": 0.3599138004092422,
+        "mae_mm": 0.37249629242650933,
+        "pearson_r": 0.676772972161371,
+        "pearson_reason": "",
+        "pearson_squared": 0.45802165584813587,
+        "prediction_std": 0.35032434843134647,
+        "rmse_mm": 0.46728941126594137
+      },
+      "candidate": {
+        "bias_mm": 0.25731764656308836,
+        "mae_mm": 0.3358609608351614,
+        "pearson_r": 0.5131231698469064,
+        "pearson_reason": "",
+        "pearson_squared": 0.2632953874337372,
+        "prediction_std": 0.34424085891414236,
+        "rmse_mm": 0.4444444728601806
+      },
+      "changed_predictions": 21,
+      "delta_pearson_squared": -0.19472626841439866,
+      "independent_parent_count": 1,
+      "max_abs_affine_residual_mm": 0.5992355259689948,
+      "n": 52,
+      "profile_count": 2
+    },
+    "H10": {
+      "baseline": {
+        "bias_mm": 0.3599138004092422,
+        "mae_mm": 0.37249629242650933,
+        "pearson_r": 0.676772972161371,
+        "pearson_reason": "",
+        "pearson_squared": 0.45802165584813587,
+        "prediction_std": 0.35032434843134647,
+        "rmse_mm": 0.46728941126594137
+      },
+      "candidate": {
+        "bias_mm": 0.3352707289454273,
+        "mae_mm": 0.3492854941478408,
+        "pearson_r": 0.6699264183293699,
+        "pearson_reason": "",
+        "pearson_squared": 0.44880140597561796,
+        "prediction_std": 0.319267296875085,
+        "rmse_mm": 0.44538378827986413
+      },
+      "changed_predictions": 52,
+      "delta_pearson_squared": -0.009220249872517905,
+      "independent_parent_count": 1,
+      "max_abs_affine_residual_mm": 0.09177571597661949,
+      "n": 52,
+      "profile_count": 2
+    }
+  },
+  "states": {
+    "H06": "blocked_data",
+    "H07": "blocked_data",
+    "H08": "blocked_data",
+    "H09": "implemented",
+    "H10": "implemented"
+  }
+}

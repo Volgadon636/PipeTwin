@@ -1,0 +1,14 @@
+{
+  "description": "Fit a section-centered spatial residual for joint_blend from 2018→2022 using a same-aggregator historical analogue on the published Distance grid.",
+  "features": [
+    "last_mm",
+    "slope_m_per_m",
+    "abs_slope_m_per_m",
+    "relative_position",
+    "local_low_m",
+    "t_mix_mean",
+    "water_fraction_mean"
+  ],
+  "ridge_alpha": 10.0,
+  "training": "Entire scored section excluded. The 2022 historical analogue has no independent 2018 registration and uses original Distance. Center predicted correction on each full fold grid."
+}

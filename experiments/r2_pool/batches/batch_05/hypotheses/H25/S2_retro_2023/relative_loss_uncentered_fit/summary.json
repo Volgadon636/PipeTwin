@@ -1,0 +1,32 @@
+{
+  "baseline": {
+    "bias_mm": 0.31034341905133306,
+    "mae_mm": 0.314582974780016,
+    "pearson_r": 0.20206882895630215,
+    "pearson_reason": "",
+    "pearson_squared": 0.0408318116357713,
+    "prediction_std": 0.10514386144950326,
+    "rmse_mm": 0.45898722934590697
+  },
+  "candidate": {
+    "bias_mm": 0.3058384299466576,
+    "mae_mm": 0.30783349600066706,
+    "pearson_r": 0.2033678485462909,
+    "pearson_reason": "",
+    "pearson_squared": 0.04135848182234711,
+    "prediction_std": 0.07870483497037632,
+    "rmse_mm": 0.45456695791325347
+  },
+  "changed_predictions": 94,
+  "delta_pearson_squared": 0.0005266701865758103,
+  "delta_vs_reference_candidate": -0.004990473180486905,
+  "independent_parent_count": 1,
+  "max_abs_affine_residual_mm": 0.0061104077783902255,
+  "n": 94,
+  "profile_count": 7,
+  "reference_candidate": {
+    "name": "H20 terrain_without_coordinate control",
+    "predictions": "experiments/r2_pool/batches/batch_04/hypotheses/H20/S2_retro_2023/terrain_without_coordinate/validation_predictions.csv",
+    "r2": 0.046348955002834015
+  }
+}

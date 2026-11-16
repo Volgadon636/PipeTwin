@@ -1,0 +1,11 @@
+{
+  "dependency_controls": "lambda=0 and lambda=1 on the same joint_blend baseline",
+  "description": "Retrain unchanged S1C inside each outer historical training set and shrink its correction on the frozen joint_blend base.",
+  "lambdas": [
+    0,
+    0.25,
+    0.5,
+    1
+  ],
+  "selection": "Maximum mean per-section Pearson r squared using inner historical leave-one-section-out on S1B plus S1C residual, minimum three rows; tie goes to smaller lambda."
+}

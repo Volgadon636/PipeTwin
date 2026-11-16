@@ -1,0 +1,261 @@
+{
+  "folds": [
+    {
+      "catboost_used_features": [
+        "z",
+        "slope",
+        "abs_slope",
+        "position",
+        "local_low",
+        "pool_depth",
+        "scenario_cooling_c"
+      ],
+      "constant": {
+        "name": "M0",
+        "rate_mm_year": 0.10186828023218998,
+        "weighting": "W0"
+      },
+      "fold": 1250009490,
+      "physics": {
+        "gap_policy": "own_mean",
+        "interpretation": "Effective segment-minimum thinning rate under declared environment priors; not an electrochemical CO2/H2S constant",
+        "name": "M1",
+        "priors": {
+          "age_exponent": 1.0,
+          "beta_W": 0.3,
+          "beta_v": 0.1,
+          "theta_K": 2500.0,
+          "velocity_offset_m_s": 0.1
+        },
+        "r_ref_mm_year": 0.10537139350469842,
+        "reference": {
+          "temperature_K": 285.6940825298223,
+          "velocity_m_s": 0.5707789385004212,
+          "water_fraction": 0.867897304128054
+        },
+        "training_groups": 1,
+        "training_rows": 368,
+        "weighting": "W0"
+      },
+      "spatial_dropped": {},
+      "spatial_used_features": [
+        "z",
+        "slope",
+        "abs_slope",
+        "position",
+        "local_low",
+        "pool_depth"
+      ],
+      "temp_dropped": {},
+      "temp_used_features": [
+        "z",
+        "slope",
+        "abs_slope",
+        "position",
+        "local_low",
+        "pool_depth",
+        "scenario_cooling_c"
+      ],
+      "test_rows": 4,
+      "train_ids": [
+        1250011604,
+        1250022871
+      ],
+      "train_rows": 368,
+      "velocity_consistent": {
+        "gap_policy": "own_mean",
+        "interpretation": "Effective segment-minimum thinning rate under declared environment priors; not an electrochemical CO2/H2S constant",
+        "name": "M1",
+        "priors": {
+          "age_exponent": 1.0,
+          "beta_W": 0.3,
+          "beta_v": 0.1,
+          "theta_K": 2500.0,
+          "velocity_offset_m_s": 0.1
+        },
+        "r_ref_mm_year": 0.10142406553889556,
+        "reference": {
+          "temperature_K": 285.6940825298223,
+          "velocity_m_s": 0.35789123841617526,
+          "water_fraction": 0.867897304128054
+        },
+        "training_groups": 1,
+        "training_rows": 368,
+        "weighting": "W0"
+      }
+    },
+    {
+      "catboost_used_features": [
+        "z",
+        "slope",
+        "abs_slope",
+        "position",
+        "local_low",
+        "pool_depth",
+        "scenario_cooling_c"
+      ],
+      "constant": {
+        "name": "M0",
+        "rate_mm_year": 0.10179812441514402,
+        "weighting": "W0"
+      },
+      "fold": 1250011604,
+      "physics": {
+        "gap_policy": "own_mean",
+        "interpretation": "Effective segment-minimum thinning rate under declared environment priors; not an electrochemical CO2/H2S constant",
+        "name": "M1",
+        "priors": {
+          "age_exponent": 1.0,
+          "beta_W": 0.3,
+          "beta_v": 0.1,
+          "theta_K": 2500.0,
+          "velocity_offset_m_s": 0.1
+        },
+        "r_ref_mm_year": 0.1050127394112433,
+        "reference": {
+          "temperature_K": 285.6940825298223,
+          "velocity_m_s": 0.5707789385004212,
+          "water_fraction": 0.867897304128054
+        },
+        "training_groups": 1,
+        "training_rows": 338,
+        "weighting": "W0"
+      },
+      "spatial_dropped": {},
+      "spatial_used_features": [
+        "z",
+        "slope",
+        "abs_slope",
+        "position",
+        "local_low",
+        "pool_depth"
+      ],
+      "temp_dropped": {},
+      "temp_used_features": [
+        "z",
+        "slope",
+        "abs_slope",
+        "position",
+        "local_low",
+        "pool_depth",
+        "scenario_cooling_c"
+      ],
+      "test_rows": 34,
+      "train_ids": [
+        1250009490,
+        1250022871
+      ],
+      "train_rows": 338,
+      "velocity_consistent": {
+        "gap_policy": "own_mean",
+        "interpretation": "Effective segment-minimum thinning rate under declared environment priors; not an electrochemical CO2/H2S constant",
+        "name": "M1",
+        "priors": {
+          "age_exponent": 1.0,
+          "beta_W": 0.3,
+          "beta_v": 0.1,
+          "theta_K": 2500.0,
+          "velocity_offset_m_s": 0.1
+        },
+        "r_ref_mm_year": 0.10107884702113186,
+        "reference": {
+          "temperature_K": 285.6940825298223,
+          "velocity_m_s": 0.35789123841617526,
+          "water_fraction": 0.867897304128054
+        },
+        "training_groups": 1,
+        "training_rows": 338,
+        "weighting": "W0"
+      }
+    },
+    {
+      "catboost_used_features": [
+        "z",
+        "slope",
+        "abs_slope",
+        "position",
+        "local_low",
+        "pool_depth",
+        "scenario_cooling_c"
+      ],
+      "constant": {
+        "name": "M0",
+        "rate_mm_year": 0.10467593208273356,
+        "weighting": "W0"
+      },
+      "fold": 1250022871,
+      "physics": {
+        "gap_policy": "own_mean",
+        "interpretation": "Effective segment-minimum thinning rate under declared environment priors; not an electrochemical CO2/H2S constant",
+        "name": "M1",
+        "priors": {
+          "age_exponent": 1.0,
+          "beta_W": 0.3,
+          "beta_v": 0.1,
+          "theta_K": 2500.0,
+          "velocity_offset_m_s": 0.1
+        },
+        "r_ref_mm_year": 0.10850260213494746,
+        "reference": {
+          "temperature_K": 284.2044309050126,
+          "velocity_m_s": 0.6278153748946925,
+          "water_fraction": 0.867581255265375
+        },
+        "training_groups": 1,
+        "training_rows": 38,
+        "weighting": "W0"
+      },
+      "spatial_dropped": {},
+      "spatial_used_features": [
+        "z",
+        "slope",
+        "abs_slope",
+        "position",
+        "local_low",
+        "pool_depth"
+      ],
+      "temp_dropped": {},
+      "temp_used_features": [
+        "z",
+        "slope",
+        "abs_slope",
+        "position",
+        "local_low",
+        "pool_depth",
+        "scenario_cooling_c"
+      ],
+      "test_rows": 334,
+      "train_ids": [
+        1250009490,
+        1250011604
+      ],
+      "train_rows": 38,
+      "velocity_consistent": {
+        "gap_policy": "own_mean",
+        "interpretation": "Effective segment-minimum thinning rate under declared environment priors; not an electrochemical CO2/H2S constant",
+        "name": "M1",
+        "priors": {
+          "age_exponent": 1.0,
+          "beta_W": 0.3,
+          "beta_v": 0.1,
+          "theta_K": 2500.0,
+          "velocity_offset_m_s": 0.1
+        },
+        "r_ref_mm_year": 0.10415657865318495,
+        "reference": {
+          "temperature_K": 284.2044309050126,
+          "velocity_m_s": 0.3836005054759899,
+          "water_fraction": 0.867581255265375
+        },
+        "training_groups": 1,
+        "training_rows": 38,
+        "weighting": "W0"
+      }
+    }
+  ],
+  "sections": [
+    1250009490,
+    1250011604,
+    1250022871
+  ]
+}

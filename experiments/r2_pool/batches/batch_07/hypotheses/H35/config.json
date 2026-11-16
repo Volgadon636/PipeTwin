@@ -1,0 +1,16 @@
+{
+  "controls": [
+    "challenger_endpoint",
+    "equal_weight_ensemble"
+  ],
+  "description": "Use a two-model convex blend. S1 blends joint_blend with a refit of H18 geometry/type/distribution; inner training reconstructs 2018-to-2022 joint_blend analogue without validation thickness. S2 blends the frozen spatial Ridge with a refit of H30 on the scheme's feature contract. Each weight is scored on inner section-wise out-of-fold predictions from models refit without that section or the outer holdout; optimize mean squared Pearson, tie to smaller challenger weight. Report equal weight and challenger endpoint controls, selected weights and donor rows. Do not read outer archived component predictions while choosing weights.",
+  "minimum_inner_profile_rows": 4,
+  "primary": "nested_profile_ensemble",
+  "weights": [
+    0.0,
+    0.25,
+    0.5,
+    0.75,
+    1.0
+  ]
+}

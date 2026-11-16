@@ -1,0 +1,33 @@
+{
+  "audit": {
+    "labels_held_fixed": true,
+    "removed_vtd_rows": 2,
+    "rule": "аномалия поперечного шва (несплошность плоскостного типа)"
+  },
+  "cases": {
+    "S1": {
+      "baseline_r2": 0.14129130319950559,
+      "candidate_pearson_r": 0.3239437925107819,
+      "candidate_r2": 0.14421781810058246,
+      "changed_predictions": 1,
+      "delta_pearson_squared": 0.0029265149010768757,
+      "implementation": "implemented",
+      "independent_parent_count": 1,
+      "n": 357,
+      "profile_count": 3,
+      "result": "local_gain_unconfirmed"
+    },
+    "S2": {
+      "baseline_r2": null,
+      "candidate_pearson_r": null,
+      "candidate_r2": null,
+      "changed_predictions": 38,
+      "delta_pearson_squared": null,
+      "implementation": "implemented",
+      "independent_parent_count": 1,
+      "n": 372,
+      "profile_count": 3,
+      "result": "undefined_metric"
+    }
+  }
+}

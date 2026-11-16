@@ -1,0 +1,95 @@
+{
+  "branch": "next-cycle",
+  "cycle": "next_cycle_2026_11",
+  "data_generation_hashes": {
+    "processed/segments_grid": "55cce38f655fc47eaabf2255d4e74e31e6d81f774f95df40f47f23adcfeb48a3",
+    "processed/target_features": "1ff33a4842b63f9b255afb189bb36676d202b5ebaacca9c925d18885abbac767",
+    "processed/target_segments_grid": "89ee38ef86368798426a5d91daeb4e849518cb40b2185e1c632dd9f3953db936",
+    "processed/training_targets": "8f32b9c374533183abf02e25a6a990988d0e7a661b48f34252667708800cdd18",
+    "processed/vtd_by_segment": "ab6e17e9f5f286b884b5a3f47ef9109061ccf55c880f961f2cc5c149fd7ccc5e"
+  },
+  "data_generation_root": "C:\\Users\\Администратор\\Documents\\PipeTwin_next\\experiments\\next_cycle\\data_generation",
+  "environment": {
+    "numpy": "2.3.5",
+    "pandas": "2.2.3",
+    "pyarrow": "21.0.0",
+    "python": "3.12.8",
+    "sklearn": "1.7.2"
+  },
+  "generated_utc": "2026-11-15T17:17:23.623832+00:00",
+  "manifest_sha256": "eba9d43c1cf5da4b1148d89e34ad5d922eac4f8752c0c4a790bf9b0f93a4c72b",
+  "old_rejected_target_grid": {
+    "actual_sha256": "db7938a639d9e14d8f603484e0147f3da75c15d793faf4285abbbc85843b39d8",
+    "expected_sha256": "89ee38ef86368798426a5d91daeb4e849518cb40b2185e1c632dd9f3953db936",
+    "path": "processed/target_segments_grid.csv in old checkout",
+    "reason": "extra delta_t_c column; rebuilt in data_generation and now manifest-verified"
+  },
+  "policy": {
+    "hidden_target_labels": "not present; never used",
+    "no_push": true,
+    "post_cutoff": "allowed only for isolated retrospective diagnostics, never fit/selection/gate for strict models",
+    "s1_cutoff": "strictly before 2023-12-01",
+    "s1_reference_for_s2": "S1B",
+    "s2_cutoff": "strictly before 2022-07-01",
+    "s2_reference": "fixed S1B rule prediction from repro_s1abc/s1b for S2 result assembly"
+  },
+  "project_root": "C:\\Users\\Администратор\\Documents\\PipeTwin_next",
+  "raw_inputs": {
+    "passport.csv": "c613a97a4e3d8b33e3ef2357caa98dd5fd6dbedefc8f52c8fa28a80ea29bf9e8",
+    "profile.csv": "2b3f5d05d34fff4ff066e9c3da9d47ad5bed0323de08be94b4ab4c06f967947c",
+    "regime.csv": "1c17535b437b0ea036330db1996d04f7e0a4792b555b249b02d57f4e593f2dbf",
+    "tech_mode_for_embedings_with_length_with_temperatures_ids16.csv": "560ba4c56429ae07969385a161e9d1b9665399af728e6d29f66d6e26cb227134",
+    "uzt.csv": "25187e44c134a2bbf157471e03f0c8d37178796d062af4e613dd6a0f4e9a42b9",
+    "vtd.csv": "e4cae76524ea06e44bf5e315f99786f655cebc5fe8206871da4fb70ef8f687b2"
+  },
+  "reproduction_of_s1abc": {
+    "s1a": {
+      "max_abs_thickness_diff": 0.0,
+      "rows": 2000
+    },
+    "s1b": {
+      "max_abs_thickness_diff": 0.0,
+      "rows": 2000
+    },
+    "s1c": {
+      "artifact_sha256_new": "e998606bc75b97ff9b88360b0d6a11a10dfefa466090abfa7ca3afbe61ae83cf",
+      "artifact_sha256_old": "e998606bc75b97ff9b88360b0d6a11a10dfefa466090abfa7ca3afbe61ae83cf",
+      "coefficients_equal": true,
+      "max_abs_thickness_diff": 0.0,
+      "rows": 2000
+    }
+  },
+  "s1_fit_rows": 357,
+  "s1_fit_sections": {
+    "1250009490": 4,
+    "1250011604": 32,
+    "1250022871": 321
+  },
+  "s1_sections": {
+    "1250009490": 5,
+    "1250011604": 48,
+    "1250022871": 508
+  },
+  "s1_training_dates": [
+    "2022-07-06"
+  ],
+  "s1_training_rows": 561,
+  "targets": {
+    "S1": {
+      "date": "2023-12-01",
+      "id": 1250022871,
+      "rows": 525
+    },
+    "S2": {
+      "date": "2022-07-01",
+      "id": 1250009583,
+      "rows": 1475
+    }
+  },
+  "versions": {
+    "numpy": "2.3.5",
+    "pandas": "2.2.3",
+    "pyarrow": "21.0.0",
+    "python": "3.12.8"
+  }
+}

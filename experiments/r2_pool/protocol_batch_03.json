@@ -1,0 +1,43 @@
+{
+  "batch": 3,
+  "protocol_version": "r2-pool-v3",
+  "baseline_protocol": "experiments/r2_pool/protocol_photo_v3.json",
+  "baseline_root": "experiments/r2_pool/revisions/r2-pool-v3/baseline",
+  "pool_sha256": "fb3bc2bedc82de8805a0f0ad09b9889595219f376ac363bbca2ab55d9de4a11b",
+  "seed": 17,
+  "budget": "Keep 52 S1 and 94 S2 reference keys. H11, H12, H14 and H15 have one prespecified primary variant. H12 picks lambda only on inner historical holdouts. H13 has three fixed imputers and a nearest-neighbor control. Additional radii are sensitivity diagnostics.",
+  "hypotheses": {
+    "H11": {
+      "description": "Fit a section-centered spatial residual for joint_blend from 2018→2022 using a same-aggregator historical analogue on the published Distance grid.",
+      "features": ["last_mm", "slope_m_per_m", "abs_slope_m_per_m", "relative_position", "local_low_m", "t_mix_mean", "water_fraction_mean"],
+      "ridge_alpha": 10.0,
+      "training": "Entire scored section excluded. The 2022 historical analogue has no independent 2018 registration and uses original Distance. Center predicted correction on each full fold grid."
+    },
+    "H12": {
+      "description": "Retrain unchanged S1C inside each outer historical training set and shrink its correction on the frozen joint_blend base.",
+      "lambdas": [0, 0.25, 0.5, 1],
+      "selection": "Maximum mean per-section Pearson r squared using inner historical leave-one-section-out on S1B plus S1C residual, minimum three rows; tie goes to smaller lambda.",
+      "dependency_controls": "lambda=0 and lambda=1 on the same joint_blend baseline"
+    },
+    "H13": {
+      "description": "Impute missing own prior minima using local median, bracket interpolation, or linear fit and compare to the existing nearest-neighbor rule.",
+      "methods": ["nearest", "median", "interpolation", "local_linear"],
+      "local_radius_m": 30,
+      "minimum_regression_neighbors": 3,
+      "primary": "interpolation",
+      "validation": "Natural missingness on frozen S1, leave-one-interior-measurement-out reconstruction on the S1 target's past measurements, and separately one masked prior input per scored retrospective key."
+    },
+    "H14": {
+      "description": "Mix frozen prior-derived prediction and a local median with a guard that preserves measured local troughs and keeps fallback rows fixed.",
+      "radii_m": [10, 20],
+      "primary_radius_m": 10,
+      "smooth_weight": 0.5
+    },
+    "H15": {
+      "description": "Train original S1C with and without neighboring minimum/count inputs; apply only the difference of the two unfaded Ridge corrections to joint_blend.",
+      "radii_m": [10, 20, 50, 100],
+      "primary": "multiscale",
+      "training": "Same historical rows, feature fit and regularization as the unmodified S1C auxiliary. Neighborhoods are same-section, latest campaign only, and exclude own segment. No independently confirmed insert boundaries are present in this dataset."
+    }
+  }
+}

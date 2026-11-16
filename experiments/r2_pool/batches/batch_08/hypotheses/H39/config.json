@@ -1,0 +1,39 @@
+{
+  "cases": [
+    "S1",
+    "S2"
+  ],
+  "description": "Choose one declared feature group by mean per-profile Pearson squared on inner section-wise refits; deterministic ties prefer earlier smaller group. S1 ablates the already available H18 features against the frozen joint_blend and matched full H18. S2 ablates the fixed spatial features, keeping physics and preprocessing rules. Save fixed variants, selection scores and paired forecasts.",
+  "primary": "selected_feature_ablation",
+  "s1_groups": {
+    "distribution_only": [
+      "distribution"
+    ],
+    "full_extension": [
+      "geometry",
+      "distribution",
+      "type"
+    ],
+    "geometry_distribution": [
+      "geometry",
+      "distribution"
+    ],
+    "geometry_only": [
+      "geometry"
+    ],
+    "no_extension": []
+  },
+  "s2_drop_groups": {
+    "full_spatial_features": [],
+    "terrain_only_without_elevation": [
+      "position",
+      "z"
+    ],
+    "terrain_without_absolute_elevation": [
+      "z"
+    ],
+    "terrain_without_coordinate": [
+      "position"
+    ]
+  }
+}

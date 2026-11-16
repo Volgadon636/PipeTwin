@@ -1,0 +1,134 @@
+{
+  "duration_seconds": 15.406102500011912,
+  "hypotheses": {
+    "H01": {
+      "audit": {
+        "existing_implementation": "src/ml/s1_joint_alignment.py and src/odo_align.py",
+        "target_2023_vtd_rows": 0,
+        "verified_pre_cutoff_reference_map": false
+      },
+      "cases": {
+        "S1": {
+          "implementation": "blocked_data",
+          "result": "not_evaluated"
+        },
+        "S2": {
+          "implementation": "not_applicable",
+          "result": "not_evaluated"
+        }
+      }
+    },
+    "H02": {
+      "audit": {
+        "defect_depth_pct": {
+          "finite": 47726,
+          "mismatches": 0,
+          "rows": 48040
+        },
+        "distance": {
+          "finite": 48040,
+          "mismatches": 0,
+          "rows": 48040
+        },
+        "residual_wall_thickness": {
+          "finite": 47696,
+          "mismatches": 0,
+          "rows": 48040
+        }
+      },
+      "cases": {
+        "S1": {
+          "baseline_r2": 0.14129130319950559,
+          "candidate_pearson_r": 0.3198318539815371,
+          "candidate_r2": 0.14129130319950559,
+          "changed_predictions": 0,
+          "delta_pearson_squared": 0.0,
+          "implementation": "implemented",
+          "independent_parent_count": 1,
+          "n": 357,
+          "profile_count": 3,
+          "result": "no_increment"
+        },
+        "S2": {
+          "baseline_r2": null,
+          "candidate_pearson_r": null,
+          "candidate_r2": null,
+          "changed_predictions": 0,
+          "delta_pearson_squared": null,
+          "implementation": "implemented",
+          "independent_parent_count": 1,
+          "n": 372,
+          "profile_count": 3,
+          "result": "undefined_metric"
+        }
+      }
+    },
+    "H03": {
+      "audit": {
+        "nominal_mismatch_rows_on_s1_target": 753,
+        "verified_dated_construction_map": false
+      },
+      "cases": {
+        "S1": {
+          "implementation": "blocked_data",
+          "result": "not_evaluated"
+        },
+        "S2": {
+          "implementation": "blocked_data",
+          "result": "not_evaluated"
+        }
+      }
+    },
+    "H04": {
+      "audit": {
+        "labels_held_fixed": true,
+        "removed_vtd_rows": 2,
+        "rule": "аномалия поперечного шва (несплошность плоскостного типа)"
+      },
+      "cases": {
+        "S1": {
+          "baseline_r2": 0.14129130319950559,
+          "candidate_pearson_r": 0.3239437925107819,
+          "candidate_r2": 0.14421781810058246,
+          "changed_predictions": 1,
+          "delta_pearson_squared": 0.0029265149010768757,
+          "implementation": "implemented",
+          "independent_parent_count": 1,
+          "n": 357,
+          "profile_count": 3,
+          "result": "local_gain_unconfirmed"
+        },
+        "S2": {
+          "baseline_r2": null,
+          "candidate_pearson_r": null,
+          "candidate_r2": null,
+          "changed_predictions": 38,
+          "delta_pearson_squared": null,
+          "implementation": "implemented",
+          "independent_parent_count": 1,
+          "n": 372,
+          "profile_count": 3,
+          "result": "undefined_metric"
+        }
+      }
+    },
+    "H05": {
+      "audit": {
+        "above_nominal": 67,
+        "all_uzt_rows": 67,
+        "s1_eligible_before_cutoff": 0,
+        "s1_target_rows": 32
+      },
+      "cases": {
+        "S1": {
+          "implementation": "blocked_data",
+          "result": "not_evaluated"
+        },
+        "S2": {
+          "implementation": "not_applicable",
+          "result": "not_evaluated"
+        }
+      }
+    }
+  }
+}

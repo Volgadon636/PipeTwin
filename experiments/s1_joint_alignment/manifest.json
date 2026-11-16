@@ -1,0 +1,105 @@
+{
+  "available_label_rows": 53,
+  "code_sha256": "46ff680d71dc7e94254ee195f101886359a1501d2038d198c6f34a3b7123c123",
+  "folds": [
+    {
+      "anchors_used": 3,
+      "fold": 0,
+      "hi_with_buffer_m": 20.0,
+      "id": 1250009490,
+      "lo_with_buffer_m": -10.0,
+      "supported": true
+    },
+    {
+      "anchors_used": 1,
+      "fold": 1,
+      "hi_with_buffer_m": 30.0,
+      "id": 1250009490,
+      "lo_with_buffer_m": 0.0,
+      "reason": "Need at least two unique, ordered anchors in both coordinate frames",
+      "supported": false
+    },
+    {
+      "anchors_used": 2,
+      "fold": 2,
+      "hi_with_buffer_m": 40.0,
+      "id": 1250009490,
+      "lo_with_buffer_m": 10.0,
+      "supported": true
+    },
+    {
+      "anchors_used": 3,
+      "fold": 3,
+      "hi_with_buffer_m": 50.0,
+      "id": 1250009490,
+      "lo_with_buffer_m": 20.0,
+      "supported": true
+    },
+    {
+      "anchors_used": 5,
+      "fold": 4,
+      "hi_with_buffer_m": 54.7,
+      "id": 1250009490,
+      "lo_with_buffer_m": 30.0,
+      "supported": true
+    },
+    {
+      "anchors_used": 34,
+      "fold": 0,
+      "hi_with_buffer_m": 110.0,
+      "id": 1250011604,
+      "lo_with_buffer_m": -10.0,
+      "supported": true
+    },
+    {
+      "anchors_used": 32,
+      "fold": 1,
+      "hi_with_buffer_m": 210.0,
+      "id": 1250011604,
+      "lo_with_buffer_m": 90.0,
+      "supported": true
+    },
+    {
+      "anchors_used": 34,
+      "fold": 2,
+      "hi_with_buffer_m": 310.0,
+      "id": 1250011604,
+      "lo_with_buffer_m": 190.0,
+      "supported": true
+    },
+    {
+      "anchors_used": 36,
+      "fold": 3,
+      "hi_with_buffer_m": 410.0,
+      "id": 1250011604,
+      "lo_with_buffer_m": 290.0,
+      "supported": true
+    },
+    {
+      "anchors_used": 35,
+      "fold": 4,
+      "hi_with_buffer_m": 503.4,
+      "id": 1250011604,
+      "lo_with_buffer_m": 390.0,
+      "supported": true
+    }
+  ],
+  "input_sha256": {
+    "data/cleaned/passport.csv": "4d5245d8a7702cba3f739538726325972db1afc44e36df956200725b879a01ab",
+    "data/cleaned/regime.csv": "65e53ebe1a154c5a7a3b6fa5806f1d8e83122c985e1049f38162e316eb95cb79",
+    "data/cleaned/tech_mode_for_embedings_with_length_with_temperatures_ids16.csv": "a0e58cf2deb665f5c99efc71416edeed68c33334d865ceee1f566a8df031ebfd",
+    "data/cleaned/vtd.csv": "e52f3a5c573078cd03689cc8774047a01fa3176192db9b84b095b45f5c752ab2",
+    "processed/profile_by_segment.csv": "3e4b4994a3f3da4fa04c403dcac85bf4484ca9feca68103665db6cc39f2d04ca",
+    "processed/segments_grid.csv": "55cce38f655fc47eaabf2255d4e74e31e6d81f774f95df40f47f23adcfeb48a3",
+    "processed/uzt_by_segment.csv": "aed45ba93f914f2f4d66f02c31d4b144cd865d69bfc6113a94f1fb1689e364ef",
+    "processed/vtd_by_segment.csv": "ab6e17e9f5f286b884b5a3f47ef9109061ccf55c880f961f2cc5c149fd7ccc5e"
+  },
+  "n_peer_anchors": 51,
+  "reference_date": "2023-12-01",
+  "scored_common_rows": 52,
+  "source_date": "2022-07-06",
+  "target_export": {
+    "status": "awaiting verified pre-cutoff anchors"
+  },
+  "track": "retrospective; same-date peer geometry only"
+}

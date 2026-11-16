@@ -26,10 +26,12 @@ from .format_detector import read_and_standardize_all
 from .grid_builder import build_segments_grid
 from .leakage import audit_feature_table, audit_monitoring_use
 from .lineage import build_lineage
+from .odo_align import prepare_odometer_outputs
 from .quality import build_quality_bundle
 from .schema_registry import build_feature_inventory, feature_inventory_summary
 from .segment_mapper import (map_vtd_to_segments, map_uzt_to_segments,
                              map_profile_to_segments, build_features_asof)
+from .segment_quantiles import prepare_quantile_outputs
 from .source_registry import CONTRACTS, DISPLAY_NAME, discover_sources
 from .storage import (publish_tree, save_table, sha256, write_json,
                       write_spreadsheet_safe_csv)
@@ -238,7 +240,8 @@ def quality_report(cleaned, quarantine, tables, issues, validation, extra=None):
 
 
 def run_pipeline(data_dir=DATA_DIR, output_root=BASE_DIR, config_path=None, requests=None,
-                 source_overrides=None, cache_dir=None):
+                 source_overrides=None, cache_dir=None, odometer_alignment_plan=None,
+                 vtd_quantiles=False):
     started = time.perf_counter()
     tracemalloc.start()
     stage_times = {}
@@ -249,6 +252,11 @@ def run_pipeline(data_dir=DATA_DIR, output_root=BASE_DIR, config_path=None, requ
 
     config_path = Path(config_path or BASE_DIR/'configs/preprocessing.json')
     config = json.loads(config_path.read_text(encoding='utf-8'))
+    if odometer_alignment_plan is not None:
+        config['vtd_odometer_alignment'] = json.loads(
+            Path(odometer_alignment_plan).read_text(encoding='utf-8'))
+    if vtd_quantiles:
+        config['vtd_quantiles'] = True
     if config['cutoff_policy'] != 'strictly_before_prediction_date' or config['persistent_days'] < 1:
         raise ValueError('Unsupported cutoff or persistence configuration')
     requests = config['targets'] if requests is None else requests
@@ -270,9 +278,16 @@ def run_pipeline(data_dir=DATA_DIR, output_root=BASE_DIR, config_path=None, requ
     t = stage('parse_clean', t)
     print('2/6 Constructing complete grids and observed thickness histories...', flush=True)
     grid = build_segments_grid(cleaned['passport.csv'])
-    vtd = map_vtd_to_segments(cleaned['vtd.csv'], grid)
     uzt = map_uzt_to_segments(cleaned['uzt.csv'], grid)
     profile = map_profile_to_segments(cleaned['profile.csv'], grid)
+    alignment_tables, alignment_report = ({}, None)
+    if config.get('vtd_odometer_alignment'):
+        alignment_tables, alignment_report = prepare_odometer_outputs(
+            cleaned, grid, profile, uzt, requests, config)
+    vtd = map_vtd_to_segments(cleaned['vtd.csv'], grid)
+    quantile_tables = (prepare_quantile_outputs(cleaned, grid, vtd, requests,
+                                                alignment_tables, alignment_report)
+                       if config.get('vtd_quantiles') else {})
     t = stage('grid_and_measurements', t)
     print('3/6 Building cutoff-specific features and calendar-day filters...', flush=True)
     tables = build_features_asof(cleaned, grid, profile, vtd, uzt, requests, config)
@@ -352,7 +367,7 @@ def run_pipeline(data_dir=DATA_DIR, output_root=BASE_DIR, config_path=None, requ
         for name, df in cleaned.items():
             relative = Path('data/cleaned')/Path(name).stem
             manifest['outputs'][relative.as_posix()] = save_table(df, stage_dir/relative)
-        for name, df in {**tables, **quarantine}.items():
+        for name, df in {**tables, **quarantine, **alignment_tables, **quantile_tables}.items():
             relative = Path('processed')/name
             manifest['outputs'][relative.as_posix()] = save_table(df, stage_dir/relative)
         manifest['outputs']['reports/feature_inventory'] = save_table(
@@ -379,6 +394,8 @@ def run_pipeline(data_dir=DATA_DIR, output_root=BASE_DIR, config_path=None, requ
         write_json(stage_dir/'reports/date_coverage.json', quality['date_coverage'])
         write_json(stage_dir/'reports/spatial_coverage.json', quality['spatial_coverage'])
         write_json(stage_dir/'reports/vtd_campaigns.json', quality['vtd_campaigns'])
+        if alignment_report is not None:
+            write_json(stage_dir/'reports/odometer_alignment.json', alignment_report)
         write_json(stage_dir/'reports/feature_coverage.json', quality['feature_coverage'])
         write_json(stage_dir/'reports/persistence_filter.json', quality['persistence_filter'])
         write_json(stage_dir/'reports/leakage_audit.json', leakage)
@@ -430,7 +447,8 @@ def run_pipeline(data_dir=DATA_DIR, output_root=BASE_DIR, config_path=None, requ
     took = round(time.perf_counter() - started, 4)
     print(f"PASS: {validation['checks_passed']} checks, {validation['csv_parquet_pairs_verified']} CSV/Parquet pairs; "
           f"{len(target_grid)} target segments; {took}s.", flush=True)
-    return {'cleaned': cleaned, 'quarantine': quarantine, 'grid': grid, 'tables': tables,
+    return {'cleaned': cleaned, 'quarantine': quarantine, 'grid': grid,
+            'tables': {**tables, **alignment_tables, **quantile_tables},
             'validation': validation, 'source_summary': source_summary,
             'source_inventory': source_inventory, 'feature_inventory': feature_inventory,
             'quality': quality, 'leakage': leakage, 'lineage': lineage_report,
@@ -454,6 +472,8 @@ def main():
     parser.add_argument('--case', choices=['between_vtd','cold_start'], default='between_vtd')
     parser.add_argument('--inspect-only', action='store_true', help='Print source classification without building')
     parser.add_argument('--cache-dir', type=Path, default=None)
+    parser.add_argument('--odometer-alignment-plan', type=Path, help='JSON list of explicit VTD run pairs')
+    parser.add_argument('--vtd-quantiles', action='store_true', help='Publish VTD segment states and ablation')
     args = parser.parse_args()
     if args.inspect_only:
         print(json.dumps(inspect_sources(args.data_dir), ensure_ascii=False, indent=2, default=str))
@@ -461,7 +481,9 @@ def main():
     if bool(args.as_of) != bool(args.ids):
         parser.error('--as-of and --ids must be supplied together')
     requests = None if not args.as_of else [dict(id=i, prediction_date=args.as_of, case=args.case) for i in args.ids]
-    run_pipeline(args.data_dir, args.output_root, args.config, requests, cache_dir=args.cache_dir)
+    run_pipeline(args.data_dir, args.output_root, args.config, requests, cache_dir=args.cache_dir,
+                 odometer_alignment_plan=args.odometer_alignment_plan,
+                 vtd_quantiles=args.vtd_quantiles)
 
 
 if __name__ == '__main__':

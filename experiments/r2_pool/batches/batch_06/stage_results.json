@@ -1,0 +1,616 @@
+{
+  "H11_linear_r2": 0.31212324951370196,
+  "H11_replay_difference_mm": 5.329070518200751e-15,
+  "H12_r2": 0.47348755379149193,
+  "blocked": {
+    "H28": "blocked_data"
+  },
+  "references": {
+    "S1_100m_20m": {
+      "name": "defect_stats_support",
+      "r2": 0.2897090514607316
+    },
+    "S1_500m_100m": {
+      "name": "defect_stats_support",
+      "r2": 0.28221823177545435
+    },
+    "S1_peer_2023": {
+      "name": "H16 squared-loss diagnostic control",
+      "predictions": "experiments/r2_pool/batches/batch_04/hypotheses/H16/S1_peer_2023/squared_loss_matched/validation_predictions.csv",
+      "r2": 0.5151473103820389
+    },
+    "S2_LOSO_pooled": {
+      "name": "H22 terrain times log liquid velocity",
+      "predictions": "experiments/r2_pool/batches/batch_05/hypotheses/H22/S2_LOSO_pooled/terrain_times_log_liquid_velocity/validation_predictions.csv",
+      "r2": 0.009673329291636557
+    },
+    "S2_retro_2023": {
+      "name": "H22 terrain times log liquid velocity",
+      "predictions": "experiments/r2_pool/batches/batch_05/hypotheses/H22/S2_retro_2023/terrain_times_log_liquid_velocity/validation_predictions.csv",
+      "r2": 0.047078146484865066
+    }
+  },
+  "replays": {
+    "S1_100m_20m": {
+      "max_abs_prediction_difference_mm": 5.329070518200751e-15,
+      "rows": 321,
+      "same_keys_labels_and_splits": true
+    },
+    "S1_500m_100m": {
+      "max_abs_prediction_difference_mm": 5.329070518200751e-15,
+      "rows": 321,
+      "same_keys_labels_and_splits": true
+    },
+    "S1_peer_2023": {
+      "max_abs_prediction_difference_mm": 5.329070518200751e-15,
+      "rows": 52,
+      "same_keys_labels_and_splits": true
+    },
+    "S2_LOSO_pooled": {
+      "max_abs_prediction_difference_mm": 5.329070518200751e-15,
+      "rows": 372,
+      "same_keys_labels_and_splits": true
+    },
+    "S2_retro_2023": {
+      "max_abs_prediction_difference_mm": 5.329070518200751e-15,
+      "rows": 94,
+      "same_keys_labels_and_splits": true
+    }
+  },
+  "results": {
+    "S1_100m_20m": {
+      "H29": {
+        "additive_splines": {
+          "baseline": {
+            "bias_mm": 0.010056871938597858,
+            "mae_mm": 0.3826327359381534,
+            "pearson_r": 0.5382462739868541,
+            "pearson_reason": "",
+            "pearson_squared": 0.2897090514607316,
+            "prediction_std": 0.3341840335691762,
+            "rmse_mm": 0.5027120788170731
+          },
+          "candidate": {
+            "bias_mm": 0.012074058415364136,
+            "mae_mm": 0.44358960348591137,
+            "pearson_r": 0.39888085512145727,
+            "pearson_reason": "",
+            "pearson_squared": 0.15910593658242497,
+            "prediction_std": 0.4240653281655322,
+            "rmse_mm": 0.5776679575238608
+          },
+          "changed_predictions": 321,
+          "delta_pearson_squared": -0.13060311487830664,
+          "delta_vs_reference_candidate": -0.13060311487830664,
+          "independent_parent_count": 1,
+          "max_abs_affine_residual_mm": 1.78475429326374,
+          "n": 321,
+          "profile_count": 1,
+          "reference_candidate": {
+            "name": "defect_stats_support",
+            "r2": 0.2897090514607316
+          }
+        }
+      },
+      "H30": {
+        "shallow_catboost": {
+          "baseline": {
+            "bias_mm": 0.010056871938597858,
+            "mae_mm": 0.3826327359381534,
+            "pearson_r": 0.5382462739868541,
+            "pearson_reason": "",
+            "pearson_squared": 0.2897090514607316,
+            "prediction_std": 0.3341840335691762,
+            "rmse_mm": 0.5027120788170731
+          },
+          "candidate": {
+            "bias_mm": 0.01187683986457764,
+            "mae_mm": 0.41652068457702807,
+            "pearson_r": 0.3703059791058106,
+            "pearson_reason": "",
+            "pearson_squared": 0.13712651816151303,
+            "prediction_std": 0.3407484598749685,
+            "rmse_mm": 0.5667521255454678
+          },
+          "changed_predictions": 321,
+          "delta_pearson_squared": -0.1525825332992186,
+          "delta_vs_reference_candidate": -0.1525825332992186,
+          "independent_parent_count": 1,
+          "max_abs_affine_residual_mm": 1.80938400828268,
+          "n": 321,
+          "profile_count": 1,
+          "reference_candidate": {
+            "name": "defect_stats_support",
+            "r2": 0.2897090514607316
+          }
+        }
+      }
+    },
+    "S1_500m_100m": {
+      "H29": {
+        "additive_splines": {
+          "baseline": {
+            "bias_mm": -0.004711019486804989,
+            "mae_mm": 0.38566531456723574,
+            "pearson_r": 0.5312421592602138,
+            "pearson_reason": "",
+            "pearson_squared": 0.28221823177545435,
+            "prediction_std": 0.33617232663892616,
+            "rmse_mm": 0.5054747897750875
+          },
+          "candidate": {
+            "bias_mm": 0.011423409838492098,
+            "mae_mm": 0.4455016485375505,
+            "pearson_r": 0.3897778358281814,
+            "pearson_reason": "",
+            "pearson_squared": 0.1519267613029007,
+            "prediction_std": 0.42052641868596,
+            "rmse_mm": 0.5804682516789819
+          },
+          "changed_predictions": 321,
+          "delta_pearson_squared": -0.13029147047255366,
+          "delta_vs_reference_candidate": -0.13029147047255366,
+          "independent_parent_count": 1,
+          "max_abs_affine_residual_mm": 1.8129771577181852,
+          "n": 321,
+          "profile_count": 1,
+          "reference_candidate": {
+            "name": "defect_stats_support",
+            "r2": 0.28221823177545435
+          }
+        }
+      },
+      "H30": {
+        "shallow_catboost": {
+          "baseline": {
+            "bias_mm": -0.004711019486804989,
+            "mae_mm": 0.38566531456723574,
+            "pearson_r": 0.5312421592602138,
+            "pearson_reason": "",
+            "pearson_squared": 0.28221823177545435,
+            "prediction_std": 0.33617232663892616,
+            "rmse_mm": 0.5054747897750875
+          },
+          "candidate": {
+            "bias_mm": 0.003485858928007645,
+            "mae_mm": 0.4232415927147523,
+            "pearson_r": 0.3518974051037651,
+            "pearson_reason": "",
+            "pearson_squared": 0.12383178371876337,
+            "prediction_std": 0.34523135185255915,
+            "rmse_mm": 0.5742406973631543
+          },
+          "changed_predictions": 321,
+          "delta_pearson_squared": -0.158386448056691,
+          "delta_vs_reference_candidate": -0.158386448056691,
+          "independent_parent_count": 1,
+          "max_abs_affine_residual_mm": 1.8208633823857632,
+          "n": 321,
+          "profile_count": 1,
+          "reference_candidate": {
+            "name": "defect_stats_support",
+            "r2": 0.28221823177545435
+          }
+        }
+      }
+    },
+    "S1_peer_2023": {
+      "H29": {
+        "additive_splines": {
+          "baseline": {
+            "bias_mm": 0.35991380040924165,
+            "mae_mm": 0.372496292426509,
+            "pearson_r": 0.6767729721613717,
+            "pearson_reason": "",
+            "pearson_squared": 0.45802165584813676,
+            "prediction_std": 0.3503243484313467,
+            "rmse_mm": 0.46728941126594076
+          },
+          "candidate": {
+            "bias_mm": 0.36450690141749537,
+            "mae_mm": 0.38045432382160055,
+            "pearson_r": 0.6274660951433121,
+            "pearson_reason": "",
+            "pearson_squared": 0.393713700554396,
+            "prediction_std": 0.2667737652047443,
+            "rmse_mm": 0.4732829161194697
+          },
+          "changed_predictions": 52,
+          "delta_pearson_squared": -0.06430795529374078,
+          "delta_vs_h12": -0.07977385323709596,
+          "delta_vs_matched_linear": 0.08159045104069401,
+          "delta_vs_reference_candidate": -0.1214336098276429,
+          "h12_r2": 0.47348755379149193,
+          "independent_parent_count": 1,
+          "matched_linear_r2": 0.31212324951370196,
+          "max_abs_affine_residual_mm": 0.21901070301231407,
+          "n": 52,
+          "profile_count": 2,
+          "reference_candidate": {
+            "name": "H16 squared-loss diagnostic control",
+            "predictions": "experiments/r2_pool/batches/batch_04/hypotheses/H16/S1_peer_2023/squared_loss_matched/validation_predictions.csv",
+            "r2": 0.5151473103820389
+          }
+        }
+      },
+      "H30": {
+        "shallow_catboost": {
+          "baseline": {
+            "bias_mm": 0.35991380040924165,
+            "mae_mm": 0.372496292426509,
+            "pearson_r": 0.6767729721613717,
+            "pearson_reason": "",
+            "pearson_squared": 0.45802165584813676,
+            "prediction_std": 0.3503243484313467,
+            "rmse_mm": 0.46728941126594076
+          },
+          "candidate": {
+            "bias_mm": 0.3684693316362693,
+            "mae_mm": 0.38739431008654235,
+            "pearson_r": 0.6115100290677034,
+            "pearson_reason": "",
+            "pearson_squared": 0.3739445156503834,
+            "prediction_std": 0.20920412745312217,
+            "rmse_mm": 0.47958110686729283
+          },
+          "changed_predictions": 52,
+          "delta_pearson_squared": -0.08407714019775336,
+          "delta_vs_h12": -0.09954303814110854,
+          "delta_vs_matched_linear": 0.06182126613668143,
+          "delta_vs_reference_candidate": -0.14120279473165548,
+          "h12_r2": 0.47348755379149193,
+          "independent_parent_count": 1,
+          "matched_linear_r2": 0.31212324951370196,
+          "max_abs_affine_residual_mm": 0.24842866458171908,
+          "n": 52,
+          "profile_count": 2,
+          "reference_candidate": {
+            "name": "H16 squared-loss diagnostic control",
+            "predictions": "experiments/r2_pool/batches/batch_04/hypotheses/H16/S1_peer_2023/squared_loss_matched/validation_predictions.csv",
+            "r2": 0.5151473103820389
+          }
+        }
+      }
+    },
+    "S2_LOSO_pooled": {
+      "H26": {
+        "within_profile_spatial_ridge": {
+          "baseline": {
+            "bias_mm": -0.1210487387347141,
+            "mae_mm": 0.44962603423569575,
+            "pearson_r": 0.09359841726762078,
+            "pearson_reason": "",
+            "pearson_squared": 0.008760663715003652,
+            "prediction_std": 0.11126193619242135,
+            "rmse_mm": 0.5654739387860497
+          },
+          "candidate": {
+            "bias_mm": -0.12100215189860139,
+            "mae_mm": 0.4496339328101905,
+            "pearson_r": 0.09362860579265385,
+            "pearson_reason": "",
+            "pearson_squared": 0.008766315822676174,
+            "prediction_std": 0.11135576197660978,
+            "rmse_mm": 0.5654705920932624
+          },
+          "changed_predictions": 372,
+          "delta_pearson_squared": 5.652107672522028e-06,
+          "delta_vs_reference_candidate": -0.0009070134689603826,
+          "independent_parent_count": 1,
+          "max_abs_affine_residual_mm": 0.001732656904748886,
+          "n": 372,
+          "profile_count": 3,
+          "reference_candidate": {
+            "name": "H22 terrain times log liquid velocity",
+            "predictions": "experiments/r2_pool/batches/batch_05/hypotheses/H22/S2_LOSO_pooled/terrain_times_log_liquid_velocity/validation_predictions.csv",
+            "r2": 0.009673329291636557
+          }
+        }
+      },
+      "H27": {
+        "largest_section_donor": {
+          "baseline": {
+            "bias_mm": -0.1210487387347141,
+            "mae_mm": 0.44962603423569575,
+            "pearson_r": 0.09359841726762078,
+            "pearson_reason": "",
+            "pearson_squared": 0.008760663715003652,
+            "prediction_std": 0.11126193619242135,
+            "rmse_mm": 0.5654739387860497
+          },
+          "candidate": {
+            "bias_mm": -0.12197283742944315,
+            "mae_mm": 0.45035298020515024,
+            "pearson_r": 0.11627891108390939,
+            "pearson_reason": "",
+            "pearson_squared": 0.013520785162859707,
+            "prediction_std": 0.132815228243733,
+            "rmse_mm": 0.5654181695798923
+          },
+          "changed_predictions": 372,
+          "delta_pearson_squared": 0.004760121447856055,
+          "delta_vs_reference_candidate": 0.0038474558712231505,
+          "independent_parent_count": 1,
+          "max_abs_affine_residual_mm": 0.11360423423490662,
+          "n": 372,
+          "profile_count": 3,
+          "reference_candidate": {
+            "name": "H22 terrain times log liquid velocity",
+            "predictions": "experiments/r2_pool/batches/batch_05/hypotheses/H22/S2_LOSO_pooled/terrain_times_log_liquid_velocity/validation_predictions.csv",
+            "r2": 0.009673329291636557
+          }
+        },
+        "nearest_section_donor": {
+          "baseline": {
+            "bias_mm": -0.1210487387347141,
+            "mae_mm": 0.44962603423569575,
+            "pearson_r": 0.09359841726762078,
+            "pearson_reason": "",
+            "pearson_squared": 0.008760663715003652,
+            "prediction_std": 0.11126193619242135,
+            "rmse_mm": 0.5654739387860497
+          },
+          "candidate": {
+            "bias_mm": -0.121952454233769,
+            "mae_mm": 0.45075772114227475,
+            "pearson_r": 0.11318190729066294,
+            "pearson_reason": "",
+            "pearson_squared": 0.01281014413795222,
+            "prediction_std": 0.13351310975608313,
+            "rmse_mm": 0.5659021220889389
+          },
+          "changed_predictions": 372,
+          "delta_pearson_squared": 0.004049480422948568,
+          "delta_vs_reference_candidate": 0.0031368148463156633,
+          "independent_parent_count": 1,
+          "max_abs_affine_residual_mm": 0.11364987254521619,
+          "n": 372,
+          "profile_count": 3,
+          "reference_candidate": {
+            "name": "H22 terrain times log liquid velocity",
+            "predictions": "experiments/r2_pool/batches/batch_05/hypotheses/H22/S2_LOSO_pooled/terrain_times_log_liquid_velocity/validation_predictions.csv",
+            "r2": 0.009673329291636557
+          }
+        }
+      },
+      "H29": {
+        "additive_splines": {
+          "baseline": {
+            "bias_mm": -0.1210487387347141,
+            "mae_mm": 0.44962603423569575,
+            "pearson_r": 0.09359841726762078,
+            "pearson_reason": "",
+            "pearson_squared": 0.008760663715003652,
+            "prediction_std": 0.11126193619242135,
+            "rmse_mm": 0.5654739387860497
+          },
+          "candidate": {
+            "bias_mm": -0.11267686686644357,
+            "mae_mm": 0.4527942110264487,
+            "pearson_r": 0.02933089691899095,
+            "pearson_reason": "",
+            "pearson_squared": 0.0008603015140724729,
+            "prediction_std": 0.08906964301013942,
+            "rmse_mm": 0.5674188442850758
+          },
+          "changed_predictions": 372,
+          "delta_pearson_squared": -0.007900362200931179,
+          "delta_vs_reference_candidate": -0.008813027777564084,
+          "independent_parent_count": 1,
+          "max_abs_affine_residual_mm": 0.13460741493014527,
+          "n": 372,
+          "profile_count": 3,
+          "reference_candidate": {
+            "name": "H22 terrain times log liquid velocity",
+            "predictions": "experiments/r2_pool/batches/batch_05/hypotheses/H22/S2_LOSO_pooled/terrain_times_log_liquid_velocity/validation_predictions.csv",
+            "r2": 0.009673329291636557
+          }
+        }
+      },
+      "H30": {
+        "shallow_catboost": {
+          "baseline": {
+            "bias_mm": -0.1210487387347141,
+            "mae_mm": 0.44962603423569575,
+            "pearson_r": 0.09359841726762078,
+            "pearson_reason": "",
+            "pearson_squared": 0.008760663715003652,
+            "prediction_std": 0.11126193619242135,
+            "rmse_mm": 0.5654739387860497
+          },
+          "candidate": {
+            "bias_mm": -0.11753402428137752,
+            "mae_mm": 0.4501269128340049,
+            "pearson_r": 0.07497868949228252,
+            "pearson_reason": "",
+            "pearson_squared": 0.005621803877980117,
+            "prediction_std": 0.10035861543701205,
+            "rmse_mm": 0.5655103578460815
+          },
+          "changed_predictions": 372,
+          "delta_pearson_squared": -0.0031388598370235346,
+          "delta_vs_reference_candidate": -0.004051525413656439,
+          "independent_parent_count": 1,
+          "max_abs_affine_residual_mm": 0.23622371634602768,
+          "n": 372,
+          "profile_count": 3,
+          "reference_candidate": {
+            "name": "H22 terrain times log liquid velocity",
+            "predictions": "experiments/r2_pool/batches/batch_05/hypotheses/H22/S2_LOSO_pooled/terrain_times_log_liquid_velocity/validation_predictions.csv",
+            "r2": 0.009673329291636557
+          }
+        }
+      }
+    },
+    "S2_retro_2023": {
+      "H26": {
+        "within_profile_spatial_ridge": {
+          "baseline": {
+            "bias_mm": 0.31034341905133306,
+            "mae_mm": 0.314582974780016,
+            "pearson_r": 0.20206882895630215,
+            "pearson_reason": "",
+            "pearson_squared": 0.0408318116357713,
+            "prediction_std": 0.10514386144950326,
+            "rmse_mm": 0.45898722934590697
+          },
+          "candidate": {
+            "bias_mm": 0.31041740997375494,
+            "mae_mm": 0.3146875119996866,
+            "pearson_r": 0.20206914283438868,
+            "pearson_reason": "",
+            "pearson_squared": 0.04083193848582457,
+            "prediction_std": 0.10538296059805988,
+            "rmse_mm": 0.4590559264829287
+          },
+          "changed_predictions": 94,
+          "delta_pearson_squared": 1.2685005327389698e-07,
+          "delta_vs_reference_candidate": -0.006246207999040493,
+          "independent_parent_count": 1,
+          "max_abs_affine_residual_mm": 0.0007488435189308973,
+          "n": 94,
+          "profile_count": 7,
+          "reference_candidate": {
+            "name": "H22 terrain times log liquid velocity",
+            "predictions": "experiments/r2_pool/batches/batch_05/hypotheses/H22/S2_retro_2023/terrain_times_log_liquid_velocity/validation_predictions.csv",
+            "r2": 0.047078146484865066
+          }
+        }
+      },
+      "H27": {
+        "largest_section_donor": {
+          "baseline": {
+            "bias_mm": 0.31034341905133306,
+            "mae_mm": 0.314582974780016,
+            "pearson_r": 0.20206882895630215,
+            "pearson_reason": "",
+            "pearson_squared": 0.0408318116357713,
+            "prediction_std": 0.10514386144950326,
+            "rmse_mm": 0.45898722934590697
+          },
+          "candidate": {
+            "bias_mm": 0.3089343491112778,
+            "mae_mm": 0.3130977660026415,
+            "pearson_r": 0.1990454176769328,
+            "pearson_reason": "",
+            "pearson_squared": 0.03961907829818463,
+            "prediction_std": 0.10560444912426517,
+            "rmse_mm": 0.45831111949329506
+          },
+          "changed_predictions": 94,
+          "delta_pearson_squared": -0.0012127333375866675,
+          "delta_vs_reference_candidate": -0.007459068186680434,
+          "independent_parent_count": 1,
+          "max_abs_affine_residual_mm": 0.07684860203419497,
+          "n": 94,
+          "profile_count": 7,
+          "reference_candidate": {
+            "name": "H22 terrain times log liquid velocity",
+            "predictions": "experiments/r2_pool/batches/batch_05/hypotheses/H22/S2_retro_2023/terrain_times_log_liquid_velocity/validation_predictions.csv",
+            "r2": 0.047078146484865066
+          }
+        },
+        "nearest_section_donor": {
+          "baseline": {
+            "bias_mm": 0.31034341905133306,
+            "mae_mm": 0.314582974780016,
+            "pearson_r": 0.20206882895630215,
+            "pearson_reason": "",
+            "pearson_squared": 0.0408318116357713,
+            "prediction_std": 0.10514386144950326,
+            "rmse_mm": 0.45898722934590697
+          },
+          "candidate": {
+            "bias_mm": 0.30767836731123743,
+            "mae_mm": 0.3131430827881724,
+            "pearson_r": 0.1867263385650841,
+            "pearson_reason": "",
+            "pearson_squared": 0.03486672551392242,
+            "prediction_std": 0.10903048843080321,
+            "rmse_mm": 0.45876359621110824
+          },
+          "changed_predictions": 94,
+          "delta_pearson_squared": -0.00596508612184888,
+          "delta_vs_reference_candidate": -0.012211420970942646,
+          "independent_parent_count": 1,
+          "max_abs_affine_residual_mm": 0.10422736032508251,
+          "n": 94,
+          "profile_count": 7,
+          "reference_candidate": {
+            "name": "H22 terrain times log liquid velocity",
+            "predictions": "experiments/r2_pool/batches/batch_05/hypotheses/H22/S2_retro_2023/terrain_times_log_liquid_velocity/validation_predictions.csv",
+            "r2": 0.047078146484865066
+          }
+        }
+      },
+      "H29": {
+        "additive_splines": {
+          "baseline": {
+            "bias_mm": 0.31034341905133306,
+            "mae_mm": 0.314582974780016,
+            "pearson_r": 0.20206882895630215,
+            "pearson_reason": "",
+            "pearson_squared": 0.0408318116357713,
+            "prediction_std": 0.10514386144950326,
+            "rmse_mm": 0.45898722934590697
+          },
+          "candidate": {
+            "bias_mm": 0.29125823672172424,
+            "mae_mm": 0.29221233986710704,
+            "pearson_r": 0.1892454780367582,
+            "pearson_reason": "",
+            "pearson_squared": 0.03581385095736113,
+            "prediction_std": 0.04195825668512476,
+            "rmse_mm": 0.44612787656407377
+          },
+          "changed_predictions": 94,
+          "delta_pearson_squared": -0.00501796067841017,
+          "delta_vs_reference_candidate": -0.011264295527503937,
+          "independent_parent_count": 1,
+          "max_abs_affine_residual_mm": 0.06711716235651366,
+          "n": 94,
+          "profile_count": 7,
+          "reference_candidate": {
+            "name": "H22 terrain times log liquid velocity",
+            "predictions": "experiments/r2_pool/batches/batch_05/hypotheses/H22/S2_retro_2023/terrain_times_log_liquid_velocity/validation_predictions.csv",
+            "r2": 0.047078146484865066
+          }
+        }
+      },
+      "H30": {
+        "shallow_catboost": {
+          "baseline": {
+            "bias_mm": 0.31034341905133306,
+            "mae_mm": 0.314582974780016,
+            "pearson_r": 0.20206882895630215,
+            "pearson_reason": "",
+            "pearson_squared": 0.0408318116357713,
+            "prediction_std": 0.10514386144950326,
+            "rmse_mm": 0.45898722934590697
+          },
+          "candidate": {
+            "bias_mm": 0.29455401743897786,
+            "mae_mm": 0.29757766597413826,
+            "pearson_r": 0.21757153684933292,
+            "pearson_reason": "",
+            "pearson_squared": 0.04733737364698063,
+            "prediction_std": 0.05848246614860671,
+            "rmse_mm": 0.44647004049527694
+          },
+          "changed_predictions": 94,
+          "delta_pearson_squared": 0.0065055620112093315,
+          "delta_vs_reference_candidate": 0.0002592271621155648,
+          "independent_parent_count": 1,
+          "max_abs_affine_residual_mm": 0.13016527680562184,
+          "n": 94,
+          "profile_count": 7,
+          "reference_candidate": {
+            "name": "H22 terrain times log liquid velocity",
+            "predictions": "experiments/r2_pool/batches/batch_05/hypotheses/H22/S2_retro_2023/terrain_times_log_liquid_velocity/validation_predictions.csv",
+            "r2": 0.047078146484865066
+          }
+        }
+      }
+    }
+  }
+}

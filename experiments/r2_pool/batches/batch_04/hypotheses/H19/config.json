@@ -1,0 +1,11 @@
+{
+  "case": "S2",
+  "controls": [],
+  "description": "Extend the frozen spatial Ridge with height relative to the local length-weighted mean, local elevation slope, and its derivative. Build each physical window on the full grid of one section. Use identical physics, regularization, centering and clipping.",
+  "primary": "multiscale_terrain",
+  "window_widths_m": [
+    100,
+    300,
+    1000
+  ]
+}

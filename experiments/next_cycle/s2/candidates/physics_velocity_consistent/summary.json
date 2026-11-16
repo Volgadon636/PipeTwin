@@ -1,0 +1,28 @@
+{
+  "artifact_path": "C:\\Users\\Администратор\\Documents\\PipeTwin_next\\experiments\\next_cycle\\s2\\candidates\\physics_velocity_consistent\\model_artifact.joblib",
+  "artifact_sha256": "68ea3525db48ce4406110163c42dbdd969d073cb03abe742a938caa4a12af16b",
+  "candidate": "physics_velocity_consistent",
+  "finite": true,
+  "max_mm": 2.8095393790397116,
+  "mean_mm": 2.8095393790397125,
+  "min_mm": 2.8095393790397116,
+  "model_type": "ColdStartPhysics",
+  "rows": 1475,
+  "s1_max_abs_diff": 0.0,
+  "s1_reference": "S1B from repro_s1abc/s1b",
+  "std_mm": 8.881784197001252e-16,
+  "validation": {
+    "bounded": true,
+    "finite_mm": true,
+    "rows": 2000,
+    "template": {
+      "available": false,
+      "key_set_compared": false,
+      "status": "no_template_supplied",
+      "validation_grid": "derived_target_grid"
+    },
+    "unique_keys": true,
+    "upper_bound_column": "upper_mm"
+  },
+  "within_bounds": true
+}

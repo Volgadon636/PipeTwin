@@ -1,0 +1,12 @@
+{
+  "s1_defect_stats_variant": "full",
+  "s1_enable_alignment": false,
+  "s1_enable_defect_stats": false,
+  "s1_enable_residual_correction": false,
+  "s2_elevation_scales_m": [
+    100,
+    300,
+    1000
+  ],
+  "s2_enable_multiscale_elevation": false
+}
