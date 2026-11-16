@@ -1,0 +1,9 @@
+{
+  "description": "Use only dated, confirmed completed repairs and replacements",
+  "needed": [
+    "section ID and affected interval or segment keys",
+    "completion and availability dates before each forecast",
+    "repair type and verified initial thickness if applicable",
+    "source"
+  ]
+}

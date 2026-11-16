@@ -1,0 +1,32 @@
+{
+  "baseline": {
+    "bias_mm": -0.1210487387347141,
+    "mae_mm": 0.44962603423569575,
+    "pearson_r": 0.09359841726762078,
+    "pearson_reason": "",
+    "pearson_squared": 0.008760663715003652,
+    "prediction_std": 0.11126193619242135,
+    "rmse_mm": 0.5654739387860497
+  },
+  "candidate": {
+    "bias_mm": -0.12100215189860139,
+    "mae_mm": 0.4496339328101905,
+    "pearson_r": 0.09362860579265385,
+    "pearson_reason": "",
+    "pearson_squared": 0.008766315822676174,
+    "prediction_std": 0.11135576197660978,
+    "rmse_mm": 0.5654705920932624
+  },
+  "changed_predictions": 372,
+  "delta_pearson_squared": 5.652107672522028e-06,
+  "delta_vs_reference_candidate": -0.0009070134689603826,
+  "independent_parent_count": 1,
+  "max_abs_affine_residual_mm": 0.001732656904748886,
+  "n": 372,
+  "profile_count": 3,
+  "reference_candidate": {
+    "name": "H22 terrain times log liquid velocity",
+    "predictions": "experiments/r2_pool/batches/batch_05/hypotheses/H22/S2_LOSO_pooled/terrain_times_log_liquid_velocity/validation_predictions.csv",
+    "r2": 0.009673329291636557
+  }
+}

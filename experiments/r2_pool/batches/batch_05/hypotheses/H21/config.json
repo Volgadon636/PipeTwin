@@ -1,0 +1,13 @@
+{
+  "case": "S2",
+  "controls": [
+    "terrain_times_constant_water"
+  ],
+  "description": "Append products of approved pre-cutoff water_fraction_mean and three terrain covariates already used by the corresponding frozen Ridge. Use terrain ranks where the frozen control uses ranks. The matched control replaces water on every train and test section with the unweighted mean of training section water fractions. The resulting duplicate terrain columns measure the change due to Ridge regularization. Record environment extrapolation outside the training range.",
+  "primary": "terrain_times_water_fraction",
+  "terrain_features": [
+    "abs_slope",
+    "local_low",
+    "pool_depth"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "audit": {
+    "inspection_number_nonempty_by_date": {
+      "2014-12-28": 0,
+      "2018-09-23": 0,
+      "2022-07-06": 0,
+      "2023-08-12": 0,
+      "2023-12-01": 3194
+    },
+    "open_question": "Q-0011",
+    "passport_populated_quality_fields": [],
+    "verified_quality_weights": 0
+  },
+  "evaluation": null,
+  "evidence": "not_evaluated",
+  "state": "blocked_data"
+}

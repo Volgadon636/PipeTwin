@@ -1,0 +1,129 @@
+{
+  "candidate_scope": {
+    "H31": [
+      "S2"
+    ]
+  },
+  "code_sha256": "78434530181c87d0610b3890fb3746315ba66d6529139ad0a996d953dab3b75b",
+  "command": "\"C:\\Users\\Администратор\\Documents\\PipeTwin_s1abc_env\\Scripts\\python.exe\" -B -m src.experiments.r2_pool_stage8 --protocol \"experiments\\r2_pool\\protocol_batch_08.json\" --output \"experiments\\r2_pool\\batches\\batch_08\"",
+  "data_manifest_sha256": "1d99d2f71b51a825e101fbce09f90f9f0ed309b4c68b9921f5e7188b40f6cf43",
+  "data_root": "scratch/odo_alignment_verified",
+  "data_sha256": {
+    "data/cleaned/passport.csv": "4d5245d8a7702cba3f739538726325972db1afc44e36df956200725b879a01ab",
+    "data/cleaned/regime.csv": "65e53ebe1a154c5a7a3b6fa5806f1d8e83122c985e1049f38162e316eb95cb79",
+    "data/cleaned/tech_mode_for_embedings_with_length_with_temperatures_ids16.csv": "a0e58cf2deb665f5c99efc71416edeed68c33334d865ceee1f566a8df031ebfd",
+    "data/cleaned/vtd.csv": "e52f3a5c573078cd03689cc8774047a01fa3176192db9b84b095b45f5c752ab2",
+    "processed/profile_by_segment.csv": "3e4b4994a3f3da4fa04c403dcac85bf4484ca9feca68103665db6cc39f2d04ca",
+    "processed/segments_grid.csv": "55cce38f655fc47eaabf2255d4e74e31e6d81f774f95df40f47f23adcfeb48a3",
+    "processed/training_targets.csv": "8f32b9c374533183abf02e25a6a990988d0e7a661b48f34252667708800cdd18",
+    "processed/uzt_by_segment.csv": "aed45ba93f914f2f4d66f02c31d4b144cd865d69bfc6113a94f1fb1689e364ef",
+    "processed/vtd_by_segment.csv": "ab6e17e9f5f286b884b5a3f47ef9109061ccf55c880f961f2cc5c149fd7ccc5e"
+  },
+  "environment": {
+    "catboost": "1.2.10",
+    "executable": "C:\\Users\\Администратор\\Documents\\PipeTwin_s1abc_env\\Scripts\\python.exe",
+    "joblib": "1.5.3",
+    "matplotlib": "3.10.8",
+    "numpy": "2.3.5",
+    "pandas": "2.2.3",
+    "platform": "Windows-11-10.0.26300-SP0",
+    "pyarrow": "21.0.0",
+    "python": "3.12.8",
+    "scikit-learn": "1.7.2"
+  },
+  "environment_overrides": {
+    "PIPETWIN_NEXT_DATA_ROOT": "C:\\Program Files\\PipeTwin\\experiments\\next_cycle\\data_generation"
+  },
+  "exclusions": [
+    "target S2 diagnostic data",
+    "outer labels for all fitting and selection",
+    "unobserved gaps other than the declared H40 leading-gap scenarios"
+  ],
+  "heat_loss_assumptions": {
+    "flow_basis": "liquid mass flow rho_liquid*v_liquid*pi*D_inner^2/4; mixture flow unverified",
+    "ground_temperature_c": 5.0,
+    "heat_capacity_j_kg_k": 3500.0,
+    "overall_heat_transfer_w_m2_k": 1.0,
+    "perimeter_basis": "pi*(D_inner-2*roughness) as supplied by mentor; same area basis for U",
+    "roughness_m": 5e-05
+  },
+  "input_sha256": {
+    "C:/Program Files/PipeTwin/src/experiments/r2_pool_stage8.py": "78434530181c87d0610b3890fb3746315ba66d6529139ad0a996d953dab3b75b",
+    "C:/Program Files/PipeTwin/src/experiments/r2_pool_stage8_models.py": "aefaf8c48fddbda79a44349d1c309923f252eac78051b24706536a16fad1dc56",
+    "experiments/r2_pool/batches/batch_03/hypotheses/H12/S1_peer_2023/selected_lambda/validation_predictions.csv": "fa114538578afb4f88c454af633cca3fd8c467e9632bbaf76f65e0f5ec45a76a",
+    "experiments/r2_pool/batches/batch_04/hypotheses/H16/S1_peer_2023/squared_loss_matched/validation_predictions.csv": "e81a3dfb1e804c480e40c00bd1cdfa0825018953dd316657efb5d6f9b1eae1b5",
+    "experiments/r2_pool/batches/batch_04/hypotheses/H18/S1_peer_2023/geometry_type_distribution/validation_predictions.csv": "4e1e9788494148faa7018fd94b7ec3cd2ee6ee29fc2494315fcea40b15994951",
+    "experiments/r2_pool/batches/batch_04/hypotheses/H20/S2_LOSO_pooled/centered_fluid_temperature/validation_predictions.csv": "85cb309613423346610e7b51ebad516ca06af95c6064ebdf40f2bc6a1fd2b151",
+    "experiments/r2_pool/batches/batch_04/hypotheses/H20/S2_retro_2023/centered_fluid_temperature/validation_predictions.csv": "f608a9563fbfccf28352d152ba0171cc87a75ba9267140b71563225c1d391d38",
+    "experiments/r2_pool/batches/batch_06/hypotheses/H27/S2_LOSO_pooled/largest_section_donor/validation_predictions.csv": "2e761e797cbdb1599a3d820142f695c0344422d26f5eda8e1c2c7a9b53895fe7",
+    "experiments/r2_pool/batches/batch_07/S1_peer_2023/ensemble_inner_predictions.csv": "c6fae6a4a479cc6ccbb8f9dbf1c6308a680279eb11a88c6fbaefb27322df31bd",
+    "experiments/r2_pool/batches/batch_07/S2_LOSO_pooled/ensemble_inner_predictions.csv": "30188c181d2240776bd759231b8c7c1f015d76d69d774a36698c2bd87185d0b5",
+    "experiments/r2_pool/batches/batch_07/S2_retro_2023/ensemble_inner_predictions.csv": "5ce4806fc2c9de6d337e473762ed312c6d4949f0c068feff334213dcbc4bc878",
+    "experiments/r2_pool/batches/batch_07/hypotheses/H31/S2_retro_2023/spatial_gaussian_process/validation_predictions.csv": "a442dd24eb356a3c7e6548f7a47c8a0224a1cbd569d36741d1f0bdda56fc73af",
+    "experiments/r2_pool/protocol_batch_04.json": "81ef00efe8e318f5e5d7ad671d0ab4033091999336e161ca268b6d6538f8fb02",
+    "experiments/r2_pool/protocol_photo_v3.json": "1e01371c80b2163082cf4e41a54048bdac3649cc52e495c574c738191b960d7d",
+    "experiments/r2_pool/revisions/r2-pool-v3/baseline/S1_peer_2023/anchor_folds.json": "8485dc54da61c3ed1f9e45d0e2b2a7a6f01cb47ad3baa66050b5f015a2c64f66",
+    "experiments/r2_pool/revisions/r2-pool-v3/baseline/S1_peer_2023/split_keys.csv": "76ed57bd6b086c509dfbadc1814aa486193c2bf43f89b29ef71d03dcaf38176d",
+    "experiments/r2_pool/revisions/r2-pool-v3/baseline/S1_peer_2023/validation_predictions.csv": "d3add1b5f212bba280c8c10fe25dd39d43e40db464a3110c5c15c68de475dcf9",
+    "experiments/r2_pool/revisions/r2-pool-v3/baseline/S2_LOSO_pooled/split_keys.csv": "bceba93e9b895b212dfd84a90fcb4fd31b1f4346dda3a4b0f03ad8ee51d11621",
+    "experiments/r2_pool/revisions/r2-pool-v3/baseline/S2_LOSO_pooled/validation_predictions.csv": "76f52f33bb063281b41c5376125075840b0afb9b29ebca4a01aa3264de3c6a10",
+    "experiments/r2_pool/revisions/r2-pool-v3/baseline/S2_retro_2023/split_keys.csv": "157eb4c3de84852d04354d180b0150692f13293d6242e5f1597cd20a7b0c9906",
+    "experiments/r2_pool/revisions/r2-pool-v3/baseline/S2_retro_2023/validation_predictions.csv": "f3cf25e439425da9981af4093efe2b5f08394c719330f5b702fc2f07772c917a"
+  },
+  "linear_algebra_threads": 1,
+  "protocol_sha256": "6a42eefd959258b52f596f9d695e074cc82a6a7c2db0dcf16f73f1f585c8f8fa",
+  "protocol_version": "r2-pool-v3",
+  "replays": {
+    "S1_peer_2023": {
+      "max_abs_prediction_difference_mm": 5.329070518200751e-15,
+      "rows": 52,
+      "same_keys_labels_and_splits": true
+    },
+    "S2_LOSO_pooled": {
+      "max_abs_prediction_difference_mm": 5.329070518200751e-15,
+      "rows": 372,
+      "same_keys_labels_and_splits": true
+    },
+    "S2_retro_2023": {
+      "max_abs_prediction_difference_mm": 5.329070518200751e-15,
+      "rows": 94,
+      "same_keys_labels_and_splits": true
+    }
+  },
+  "seconds": 20.545732500002487,
+  "seed": 17,
+  "source_snapshot_sha256": "03a24861cf053974c59a7c53262cf41d6ca6eb080a34335e29dbe143f544dc29",
+  "status": "completed",
+  "validation": {
+    "dependency_replays": {
+      "S1_peer_2023": {
+        "H12_r2": 0.47348755379149193,
+        "H18": {
+          "max_abs_difference_mm": 5.329070518200751e-15,
+          "path": "experiments/r2_pool/batches/batch_04/hypotheses/H18/S1_peer_2023/geometry_type_distribution/validation_predictions.csv",
+          "r2": 0.5114922122452283
+        }
+      },
+      "S2_LOSO_pooled": {
+        "H20": {
+          "max_abs_difference_mm": 5.329070518200751e-15,
+          "path": "experiments/r2_pool/batches/batch_04/hypotheses/H20/S2_LOSO_pooled/centered_fluid_temperature/validation_predictions.csv",
+          "r2": 0.0008960937714673732
+        }
+      },
+      "S2_retro_2023": {
+        "H20": {
+          "max_abs_difference_mm": 5.329070518200751e-15,
+          "path": "experiments/r2_pool/batches/batch_04/hypotheses/H20/S2_retro_2023/centered_fluid_temperature/validation_predictions.csv",
+          "r2": 0.040898337001445635
+        }
+      }
+    },
+    "execution_log_sha256": "309970d0399357e3bf090f08a7f515ac777107816e7748b5126b4139552df17c",
+    "stage8_test_sha256": "27251c773bb6e7c9b50dc05694e765edc9c2259b0307328b20124efdd8f91885",
+    "test_command": "\"C:\\Users\\Администратор\\Documents\\PipeTwin_s1abc_env\\Scripts\\python.exe\" -B -m unittest tests.test_r2_pool_stage8 tests.test_r2_pool_stage7 tests.test_r2_pool_stage6 tests.test_r2_pool_stage5 tests.test_r2_pool_stage4 tests.test_r2_pool_stage3 tests.test_r2_pool_stage2 tests.test_r2_pool_stage1 tests.test_stage_2_s2_fixes tests.test_s2_terrain tests.test_incremental tests.test_ml_v2 tests.test_s1abc tests.test_s1_joint_alignment tests.test_s1_alignment tests.test_stage_3_s1 -v",
+    "test_count": 75,
+    "test_log_sha256": "8efdc89c4f405be0efdedd68f2a6659b969afc30b5daf3256544e4b7193eeba4",
+    "test_status": "passed"
+  }
+}

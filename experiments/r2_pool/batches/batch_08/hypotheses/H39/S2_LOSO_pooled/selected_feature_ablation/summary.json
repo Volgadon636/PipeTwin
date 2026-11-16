@@ -1,0 +1,32 @@
+{
+  "baseline": {
+    "bias_mm": -0.1210487387347141,
+    "mae_mm": 0.44962603423569575,
+    "pearson_r": 0.09359841726762078,
+    "pearson_reason": "",
+    "pearson_squared": 0.008760663715003652,
+    "prediction_std": 0.11126193619242135,
+    "rmse_mm": 0.5654739387860497
+  },
+  "candidate": {
+    "bias_mm": -0.12135129998212255,
+    "mae_mm": 0.44934308777452864,
+    "pearson_r": 0.09078579230652732,
+    "pearson_reason": "",
+    "pearson_squared": 0.008242060084723916,
+    "prediction_std": 0.10906774429758864,
+    "rmse_mm": 0.5656108382412903
+  },
+  "changed_predictions": 334,
+  "delta_pearson_squared": -0.0005186036302797358,
+  "delta_vs_reference_candidate": -0.005278725078135439,
+  "independent_parent_count": 1,
+  "max_abs_affine_residual_mm": 0.03737035035043945,
+  "n": 372,
+  "profile_count": 3,
+  "reference_candidate": {
+    "name": "H27 largest-donor diagnostic control",
+    "predictions": "experiments/r2_pool/batches/batch_06/hypotheses/H27/S2_LOSO_pooled/largest_section_donor/validation_predictions.csv",
+    "r2": 0.013520785162859355
+  }
+}

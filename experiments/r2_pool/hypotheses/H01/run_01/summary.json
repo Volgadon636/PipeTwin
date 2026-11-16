@@ -1,0 +1,17 @@
+{
+  "audit": {
+    "existing_implementation": "src/ml/s1_joint_alignment.py and src/odo_align.py",
+    "target_2023_vtd_rows": 0,
+    "verified_pre_cutoff_reference_map": false
+  },
+  "cases": {
+    "S1": {
+      "implementation": "blocked_data",
+      "result": "not_evaluated"
+    },
+    "S2": {
+      "implementation": "not_applicable",
+      "result": "not_evaluated"
+    }
+  }
+}

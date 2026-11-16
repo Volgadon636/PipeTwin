@@ -1,0 +1,18 @@
+{
+  "case": "S1",
+  "controls": [
+    "geometry_distribution"
+  ],
+  "description": "Add prior point summaries to the original S1C Ridge and apply only the difference of the extended and original corrections to joint_blend. Summarize positive lengths and widths in mm at the reported point, with no geometric overlap or cross-campaign matching. Type summaries use prior description of metal loss or corrosion and prior external designation. Train-only preprocessing can drop unsupported type fields.",
+  "geometry_distribution_features": [
+    "prior_log_median_length",
+    "prior_log_median_width",
+    "prior_median_minus_min_mm",
+    "prior_p90_minus_p10_mm"
+  ],
+  "primary": "geometry_type_distribution",
+  "type_features": [
+    "prior_reported_metal_loss_fraction",
+    "prior_external_fraction"
+  ]
+}

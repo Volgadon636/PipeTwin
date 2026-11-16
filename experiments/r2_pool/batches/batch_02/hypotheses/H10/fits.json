@@ -1,0 +1,204 @@
+[
+  {
+    "alpha": 10.0,
+    "baseline_column": null,
+    "coefficient_by_feature": {
+      "abs_slope_m_per_m": -0.013424726708237267,
+      "last_mm": 0.07008425696459063,
+      "local_low_m": -0.010394986581676315,
+      "relative_position": -0.0152163691149512,
+      "slope_m_per_m": 0.004020767294654715
+    },
+    "coefficients": [
+      0.07008425696459063,
+      0.004020767294654715,
+      -0.013424726708237267,
+      -0.010394986581676315,
+      -0.0152163691149512
+    ],
+    "date": "2023-12-01",
+    "dropped_columns": {},
+    "features": [
+      "last_mm",
+      "slope_m_per_m",
+      "abs_slope_m_per_m",
+      "local_low_m",
+      "relative_position"
+    ],
+    "fit_intercept": true,
+    "held_id": 1250009490,
+    "horizon_years": 1.404517453798768,
+    "intercept": 0.01763187050831616,
+    "median_rate_mm_year": 0.0,
+    "model_name": "H10",
+    "model_type": "Ridge",
+    "prediction_policy": "delta",
+    "preprocessing": {
+      "constant_columns": [],
+      "dropped_columns": {},
+      "duplicate_columns": {},
+      "empty_columns": [],
+      "feature_order": [
+        "last_mm",
+        "slope_m_per_m",
+        "abs_slope_m_per_m",
+        "local_low_m",
+        "relative_position"
+      ],
+      "imputer": "median",
+      "imputer_statistics": {
+        "abs_slope_m_per_m": 0.0,
+        "last_mm": 6.11,
+        "local_low_m": 0.0,
+        "relative_position": 0.438228793537078,
+        "slope_m_per_m": 0.0
+      },
+      "scaler": "StandardScaler",
+      "scaler_mean": {
+        "abs_slope_m_per_m": 0.004745688975924718,
+        "last_mm": 6.132747875354108,
+        "local_low_m": -0.007084635963697519,
+        "relative_position": 0.4603394871637879,
+        "slope_m_per_m": -0.0008346069343309188
+      },
+      "scaler_scale": {
+        "abs_slope_m_per_m": 0.009098081254882283,
+        "last_mm": 0.5526147851253276,
+        "local_low_m": 0.10999805143504157,
+        "relative_position": 0.27378766613179795,
+        "slope_m_per_m": 0.010227417936205624
+      },
+      "used_features": [
+        "last_mm",
+        "slope_m_per_m",
+        "abs_slope_m_per_m",
+        "local_low_m",
+        "relative_position"
+      ]
+    },
+    "rate_limits_mm_year": [
+      -0.18764652677279303,
+      0.24843342981186697
+    ],
+    "solver": "cholesky",
+    "target": "robust_rate",
+    "target_mean": 0.01763187050831616,
+    "target_std": 0.13644750930778113,
+    "training_dates": [
+      "2022-07-06"
+    ],
+    "training_rows": 353,
+    "training_sections": [
+      1250011604,
+      1250022871
+    ],
+    "used_features": [
+      "last_mm",
+      "slope_m_per_m",
+      "abs_slope_m_per_m",
+      "local_low_m",
+      "relative_position"
+    ]
+  },
+  {
+    "alpha": 10.0,
+    "baseline_column": null,
+    "coefficient_by_feature": {
+      "abs_slope_m_per_m": -0.013011980807926609,
+      "last_mm": 0.06737256854221192,
+      "local_low_m": -0.013150561645632615,
+      "relative_position": -0.01782019202524762,
+      "slope_m_per_m": 0.0020957966388389848
+    },
+    "coefficients": [
+      0.06737256854221192,
+      0.0020957966388389848,
+      -0.013011980807926609,
+      -0.013150561645632615,
+      -0.01782019202524762
+    ],
+    "date": "2023-12-01",
+    "dropped_columns": {},
+    "features": [
+      "last_mm",
+      "slope_m_per_m",
+      "abs_slope_m_per_m",
+      "local_low_m",
+      "relative_position"
+    ],
+    "fit_intercept": true,
+    "held_id": 1250011604,
+    "horizon_years": 1.404517453798768,
+    "intercept": 0.019857061180463865,
+    "median_rate_mm_year": 0.0026429088277859962,
+    "model_name": "H10",
+    "model_type": "Ridge",
+    "prediction_policy": "delta",
+    "preprocessing": {
+      "constant_columns": [],
+      "dropped_columns": {},
+      "duplicate_columns": {},
+      "empty_columns": [],
+      "feature_order": [
+        "last_mm",
+        "slope_m_per_m",
+        "abs_slope_m_per_m",
+        "local_low_m",
+        "relative_position"
+      ],
+      "imputer": "median",
+      "imputer_statistics": {
+        "abs_slope_m_per_m": 0.0,
+        "last_mm": 6.12,
+        "local_low_m": 0.0,
+        "relative_position": 0.43251276579529,
+        "slope_m_per_m": 0.0
+      },
+      "scaler": "StandardScaler",
+      "scaler_mean": {
+        "abs_slope_m_per_m": 0.004858387953618489,
+        "last_mm": 6.132553846153846,
+        "local_low_m": -0.00015654306210828613,
+        "relative_position": 0.4541803045717821,
+        "slope_m_per_m": -0.0006759843556445649
+      },
+      "scaler_scale": {
+        "abs_slope_m_per_m": 0.009943850407302635,
+        "last_mm": 0.5582747608830738,
+        "local_low_m": 0.113291435089152,
+        "relative_position": 0.26923860055006327,
+        "slope_m_per_m": 0.011046589500004146
+      },
+      "used_features": [
+        "last_mm",
+        "slope_m_per_m",
+        "abs_slope_m_per_m",
+        "local_low_m",
+        "relative_position"
+      ]
+    },
+    "rate_limits_mm_year": [
+      -0.18658936324167866,
+      0.25060240882177975
+    ],
+    "solver": "cholesky",
+    "target": "robust_rate",
+    "target_mean": 0.019857061180463847,
+    "target_std": 0.13738271640863453,
+    "training_dates": [
+      "2022-07-06"
+    ],
+    "training_rows": 325,
+    "training_sections": [
+      1250009490,
+      1250022871
+    ],
+    "used_features": [
+      "last_mm",
+      "slope_m_per_m",
+      "abs_slope_m_per_m",
+      "local_low_m",
+      "relative_position"
+    ]
+  }
+]

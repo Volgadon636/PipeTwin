@@ -1,0 +1,4 @@
+{
+  "id": "H02",
+  "specification": "Verify raw-to-cleaned parsing and the confirmed scale correction by source row. Evaluate a corrective variant only if a confirmed discrepancy changes input data."
+}

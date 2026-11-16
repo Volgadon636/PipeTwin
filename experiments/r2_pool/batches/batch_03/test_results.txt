@@ -1,0 +1,43 @@
+test_guarded_smoothing_keeps_local_troughs_and_fallback (tests.test_r2_pool_stage3.Stage3Contracts.test_guarded_smoothing_keeps_local_troughs_and_fallback) ... ok
+test_imputer_uses_only_remaining_samples_and_respects_nearest_tie (tests.test_r2_pool_stage3.Stage3Contracts.test_imputer_uses_only_remaining_samples_and_respects_nearest_tie) ... ok
+test_neighbor_windows_exclude_own_value_and_missing_donors (tests.test_r2_pool_stage3.Stage3Contracts.test_neighbor_windows_exclude_own_value_and_missing_donors) ... ok
+test_outer_training_excludes_held_section_and_cutoff_day (tests.test_r2_pool_stage3.Stage3Contracts.test_outer_training_excludes_held_section_and_cutoff_day) ... ok
+test_h09_uses_two_direct_prior_measurements (tests.test_r2_pool_stage2.Stage2ContractTests.test_h09_uses_two_direct_prior_measurements) ... ok
+test_h10_excludes_held_section_and_on_or_after_cutoff (tests.test_r2_pool_stage2.Stage2ContractTests.test_h10_excludes_held_section_and_on_or_after_cutoff) ... ok
+test_keys_and_labels_are_locked (tests.test_r2_pool_stage1.PoolProtocolTests.test_keys_and_labels_are_locked) ... ok
+test_sign_and_constant_profiles_keep_distinct_status (tests.test_r2_pool_stage1.PoolProtocolTests.test_sign_and_constant_profiles_keep_distinct_status) ... ok
+test_predict_loads_artifact_without_training_labels (tests.test_s1abc.ArtifactInferenceWithoutLabels.test_predict_loads_artifact_without_training_labels) ... ok
+test_s2_join_is_exact_and_keeps_s2 (tests.test_s1abc.BoundsAndSubmission.test_s2_join_is_exact_and_keeps_s2) ... ok
+test_upper_bound_policy_is_model_specific (tests.test_s1abc.BoundsAndSubmission.test_upper_bound_policy_is_model_specific) ... ok
+test_2022_snapshot_excludes_the_2022_answer (tests.test_s1abc.RealDataContracts.test_2022_snapshot_excludes_the_2022_answer) ... ok
+test_fallback_is_documented_and_stays_in_pipe (tests.test_s1abc.RealDataContracts.test_fallback_is_documented_and_stays_in_pipe) ... ok
+test_history_has_no_two_prior_campaign_test (tests.test_s1abc.RealDataContracts.test_history_has_no_two_prior_campaign_test) ... ok
+test_lopo_models_do_not_change_when_heldout_labels_are_poisoned (tests.test_s1abc.RealDataContracts.test_lopo_models_do_not_change_when_heldout_labels_are_poisoned) ... ok
+test_minimum_tie_uses_earliest_source_date (tests.test_s1abc.RealDataContracts.test_minimum_tie_uses_earliest_source_date) ... ok
+test_production_prediction_ignores_extra_rows_on_cutoff (tests.test_s1abc.RealDataContracts.test_production_prediction_ignores_extra_rows_on_cutoff) ... ok
+test_s1a_last_and_s1b_prior_minimum (tests.test_s1abc.RealDataContracts.test_s1a_last_and_s1b_prior_minimum) ... ok
+test_s1a_matches_previous_v2_on_same_keys (tests.test_s1abc.RealDataContracts.test_s1a_matches_previous_v2_on_same_keys) ... ok
+test_s1b_ignores_poisoned_rows_at_or_after_cutoff (tests.test_s1abc.RealDataContracts.test_s1b_ignores_poisoned_rows_at_or_after_cutoff) ... ok
+test_target_key_counts_and_no_target_grid_checksum_workaround (tests.test_s1abc.RealDataContracts.test_target_key_counts_and_no_target_grid_checksum_workaround) ... ok
+test_ridge_learns_synthetic_correction_and_is_not_baseline (tests.test_s1abc.SyntheticPreprocessingAndModel.test_ridge_learns_synthetic_correction_and_is_not_baseline) ... ok
+test_save_load_predict_is_equivalent (tests.test_s1abc.SyntheticPreprocessingAndModel.test_save_load_predict_is_equivalent) ... ok
+test_train_only_imputation_constant_and_empty_columns (tests.test_s1abc.SyntheticPreprocessingAndModel.test_train_only_imputation_constant_and_empty_columns) ... ok
+test_anchors_match_within_section_and_exclude_both_holdout_coordinates (tests.test_s1_joint_alignment.JointAlignmentTests.test_anchors_match_within_section_and_exclude_both_holdout_coordinates) ... ok
+test_maps_before_binning_with_distinct_quantile_and_valid_bounds (tests.test_s1_joint_alignment.JointAlignmentTests.test_maps_before_binning_with_distinct_quantile_and_valid_bounds) ... ok
+test_strict_export_rejects_same_day_anchors (tests.test_s1_joint_alignment.JointAlignmentTests.test_strict_export_rejects_same_day_anchors) ... ok
+test_cross_section_calibration_uses_only_the_other_section (tests.test_s1_alignment.AlignmentTests.test_cross_section_calibration_uses_only_the_other_section) ... ok
+test_offsets_apply_before_binning_and_exclude_future_and_outside_rows (tests.test_s1_alignment.AlignmentTests.test_offsets_apply_before_binning_and_exclude_future_and_outside_rows) ... ok
+test_configuration_defaults_are_off (tests.test_incremental.ElevationTests.test_configuration_defaults_are_off) ... ok
+test_physical_window_edges_and_pipe_boundary (tests.test_incremental.ElevationTests.test_physical_window_edges_and_pipe_boundary) ... ok
+test_boundary_missing_and_asof (tests.test_incremental.HistoricalDefectStatsTests.test_boundary_missing_and_asof) ... ok
+test_affine_nonnegative_and_catboost_reference (tests.test_stage_3_s1.Stage3Contracts.test_affine_nonnegative_and_catboost_reference) ... ok
+test_artifact_only_predict_matches_full_target (tests.test_stage_3_s1.Stage3Contracts.test_artifact_only_predict_matches_full_target) ... ok
+test_metrics_are_on_same_keys (tests.test_stage_3_s1.Stage3Contracts.test_metrics_are_on_same_keys) ... ok
+test_physical_blocks_and_disjoint_train_test (tests.test_stage_3_s1.Stage3Contracts.test_physical_blocks_and_disjoint_train_test) ... ok
+test_same_keys_and_finite_predictions (tests.test_stage_3_s1.Stage3Contracts.test_same_keys_and_finite_predictions) ... ok
+test_within_block_correlation_counts (tests.test_stage_3_s1.Stage3Contracts.test_within_block_correlation_counts) ... ok
+
+----------------------------------------------------------------------
+Ran 38 tests in 8.943s
+
+OK

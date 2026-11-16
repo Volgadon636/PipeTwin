@@ -1,0 +1,205 @@
+{
+  "primary": "robust_iqr_cap",
+  "schemes": {
+    "S1_peer_2023": {
+      "robust_iqr_cap": {
+        "baseline": {
+          "bias_mm": 0.35991380040924165,
+          "mae_mm": 0.372496292426509,
+          "pearson_r": 0.6767729721613717,
+          "pearson_reason": "",
+          "pearson_squared": 0.45802165584813676,
+          "prediction_std": 0.3503243484313467,
+          "rmse_mm": 0.46728941126594076
+        },
+        "candidate": {
+          "bias_mm": 0.3708153187600075,
+          "mae_mm": 0.3833978107772747,
+          "pearson_r": 0.6485283215091444,
+          "pearson_reason": "",
+          "pearson_squared": 0.4205889837994682,
+          "prediction_std": 0.32599008213154085,
+          "rmse_mm": 0.4792834191774213
+        },
+        "changed_predictions": 2,
+        "delta_pearson_squared": -0.03743267204866857,
+        "delta_vs_H12": -0.05289856999202375,
+        "delta_vs_reference_candidate": -0.09455832658257068,
+        "independent_parent_count": 1,
+        "max_abs_affine_residual_mm": 0.37537745081926666,
+        "n": 52,
+        "profile_count": 2,
+        "reference_candidate": {
+          "name": "H16 squared-loss diagnostic control",
+          "predictions": "experiments/r2_pool/batches/batch_04/hypotheses/H16/S1_peer_2023/squared_loss_matched/validation_predictions.csv",
+          "r2": 0.5151473103820389
+        }
+      },
+      "soft_physical_bounds": {
+        "baseline": {
+          "bias_mm": 0.35991380040924165,
+          "mae_mm": 0.372496292426509,
+          "pearson_r": 0.6767729721613717,
+          "pearson_reason": "",
+          "pearson_squared": 0.45802165584813676,
+          "prediction_std": 0.3503243484313467,
+          "rmse_mm": 0.46728941126594076
+        },
+        "candidate": {
+          "bias_mm": 0.35990059964545157,
+          "mae_mm": 0.37248316724706404,
+          "pearson_r": 0.6767664167942455,
+          "pearson_reason": "",
+          "pearson_squared": 0.4580127829005225,
+          "prediction_std": 0.3503022628083678,
+          "rmse_mm": 0.4672769468798065
+        },
+        "changed_predictions": 52,
+        "delta_pearson_squared": -8.872947614257942e-06,
+        "delta_vs_H12": -0.015474770890969436,
+        "delta_vs_reference_candidate": -0.05713452748151637,
+        "independent_parent_count": 1,
+        "max_abs_affine_residual_mm": 0.0002500235755436009,
+        "n": 52,
+        "profile_count": 2,
+        "reference_candidate": {
+          "name": "H16 squared-loss diagnostic control",
+          "predictions": "experiments/r2_pool/batches/batch_04/hypotheses/H16/S1_peer_2023/squared_loss_matched/validation_predictions.csv",
+          "r2": 0.5151473103820389
+        }
+      }
+    },
+    "S2_LOSO_pooled": {
+      "robust_iqr_cap": {
+        "baseline": {
+          "bias_mm": -0.1210487387347141,
+          "mae_mm": 0.44962603423569575,
+          "pearson_r": 0.09359841726762078,
+          "pearson_reason": "",
+          "pearson_squared": 0.008760663715003652,
+          "prediction_std": 0.11126193619242135,
+          "rmse_mm": 0.5654739387860497
+        },
+        "candidate": {
+          "bias_mm": -0.12121602752731775,
+          "mae_mm": 0.4494587454430916,
+          "pearson_r": 0.09475870583408473,
+          "pearson_reason": "",
+          "pearson_squared": 0.008979212331350604,
+          "prediction_std": 0.11080060888484984,
+          "rmse_mm": 0.5653358954828306
+        },
+        "changed_predictions": 1,
+        "delta_pearson_squared": 0.0002185486163469516,
+        "delta_vs_reference_candidate": -0.004541572831508751,
+        "independent_parent_count": 1,
+        "max_abs_affine_residual_mm": 0.060527405282213564,
+        "n": 372,
+        "profile_count": 3,
+        "reference_candidate": {
+          "name": "H27 largest-donor diagnostic control",
+          "predictions": "experiments/r2_pool/batches/batch_06/hypotheses/H27/S2_LOSO_pooled/largest_section_donor/validation_predictions.csv",
+          "r2": 0.013520785162859355
+        }
+      },
+      "soft_physical_bounds": {
+        "baseline": {
+          "bias_mm": -0.1210487387347141,
+          "mae_mm": 0.44962603423569575,
+          "pearson_r": 0.09359841726762078,
+          "pearson_reason": "",
+          "pearson_squared": 0.008760663715003652,
+          "prediction_std": 0.11126193619242135,
+          "rmse_mm": 0.5654739387860497
+        },
+        "candidate": {
+          "bias_mm": -0.12104907348597667,
+          "mae_mm": 0.44962603298231213,
+          "pearson_r": 0.09359858875639164,
+          "pearson_reason": "",
+          "pearson_squared": 0.008760695817188123,
+          "prediction_std": 0.11126163152703966,
+          "rmse_mm": 0.5654739597033827
+        },
+        "changed_predictions": 372,
+        "delta_pearson_squared": 3.210218447145807e-08,
+        "delta_vs_reference_candidate": -0.0047600893456712316,
+        "independent_parent_count": 1,
+        "max_abs_affine_residual_mm": 1.6027674769603095e-06,
+        "n": 372,
+        "profile_count": 3,
+        "reference_candidate": {
+          "name": "H27 largest-donor diagnostic control",
+          "predictions": "experiments/r2_pool/batches/batch_06/hypotheses/H27/S2_LOSO_pooled/largest_section_donor/validation_predictions.csv",
+          "r2": 0.013520785162859355
+        }
+      }
+    },
+    "S2_retro_2023": {
+      "robust_iqr_cap": {
+        "baseline": {
+          "bias_mm": 0.31034341905133306,
+          "mae_mm": 0.314582974780016,
+          "pearson_r": 0.20206882895630215,
+          "pearson_reason": "",
+          "pearson_squared": 0.0408318116357713,
+          "prediction_std": 0.10514386144950326,
+          "rmse_mm": 0.45898722934590697
+        },
+        "candidate": {
+          "bias_mm": 0.2998360370098438,
+          "mae_mm": 0.30407559273852663,
+          "pearson_r": 0.21915085485957067,
+          "pearson_reason": "",
+          "pearson_squared": 0.04802709718568061,
+          "prediction_std": 0.07723883578501048,
+          "rmse_mm": 0.4495938241371096
+        },
+        "changed_predictions": 8,
+        "delta_pearson_squared": 0.007195285549909308,
+        "delta_vs_reference_candidate": -0.011511069050893975,
+        "independent_parent_count": 1,
+        "max_abs_affine_residual_mm": 0.148087026849395,
+        "n": 94,
+        "profile_count": 7,
+        "reference_candidate": {
+          "name": "H31 spatial Gaussian process",
+          "predictions": "experiments/r2_pool/batches/batch_07/hypotheses/H31/S2_retro_2023/spatial_gaussian_process/validation_predictions.csv",
+          "r2": 0.05953816623657458
+        }
+      },
+      "soft_physical_bounds": {
+        "baseline": {
+          "bias_mm": 0.31034341905133306,
+          "mae_mm": 0.314582974780016,
+          "pearson_r": 0.20206882895630215,
+          "pearson_reason": "",
+          "pearson_squared": 0.0408318116357713,
+          "prediction_std": 0.10514386144950326,
+          "rmse_mm": 0.45898722934590697
+        },
+        "candidate": {
+          "bias_mm": 0.30549986096713183,
+          "mae_mm": 0.31004517393803244,
+          "pearson_r": 0.20486090482874544,
+          "pearson_reason": "",
+          "pearson_squared": 0.0419679903272523,
+          "prediction_std": 0.09927737200539674,
+          "rmse_mm": 0.4550943475695094
+        },
+        "changed_predictions": 94,
+        "delta_pearson_squared": 0.001136178691480999,
+        "delta_vs_reference_candidate": -0.017570175909322285,
+        "independent_parent_count": 1,
+        "max_abs_affine_residual_mm": 0.017143351529191442,
+        "n": 94,
+        "profile_count": 7,
+        "reference_candidate": {
+          "name": "H31 spatial Gaussian process",
+          "predictions": "experiments/r2_pool/batches/batch_07/hypotheses/H31/S2_retro_2023/spatial_gaussian_process/validation_predictions.csv",
+          "r2": 0.05953816623657458
+        }
+      }
+    }
+  }
+}

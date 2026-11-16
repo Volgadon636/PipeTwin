@@ -1,0 +1,8 @@
+{
+  "case": "S2",
+  "controls": [
+    "relative_loss_uncentered_fit"
+  ],
+  "description": "Keep the frozen physics level, training rows, Ridge alpha, sample weights, features, length-weighted inference centering and thickness bounds. Train the Ridge on relative loss (nominal minus measured minimum divided by nominal) centered within each training section and date. Compare to the frozen millimeter residual and to a Ridge fit on uncentered relative loss. Predict a relative deviation on the full grid, center it there, convert to mm by multiplying by the local nominal with negative sign, and add it to the baseline physics level. Audit nomination diversity, clipping, and per-profile affine equivalence.",
+  "primary": "centered_relative_loss"
+}

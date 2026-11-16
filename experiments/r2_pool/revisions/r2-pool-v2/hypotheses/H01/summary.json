@@ -1,0 +1,11 @@
+{
+  "audit": {
+    "target_reference_rows": 0,
+    "verified_pre_cutoff_map": false
+  },
+  "cases": {
+    "S1": "blocked_data",
+    "S2": "not_applicable"
+  },
+  "protocol": "r2-pool-v2"
+}

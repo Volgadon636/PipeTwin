@@ -1,0 +1,153 @@
+{
+  "blocked_count": 3,
+  "cases": {
+    "H01": {
+      "S1": {
+        "implementation": "blocked_data",
+        "result": "not_evaluated"
+      },
+      "S2": {
+        "implementation": "not_applicable",
+        "result": "not_evaluated"
+      }
+    },
+    "H02": {
+      "S1": {
+        "baseline_r2": 0.1605110621045512,
+        "candidate_pearson_r": 0.33438482162780175,
+        "candidate_r2": 0.1605110621045512,
+        "changed_predictions": 0,
+        "delta_pearson_squared": 0.0,
+        "implementation": "implemented",
+        "independent_parent_count": 1,
+        "n": 357,
+        "profile_count": 3,
+        "result": "no_increment"
+      },
+      "S2": {
+        "baseline_r2": 0.307096422369825,
+        "candidate_pearson_r": -0.13934272172489215,
+        "candidate_r2": 0.307096422369825,
+        "changed_predictions": 0,
+        "delta_pearson_squared": 0.0,
+        "implementation": "implemented",
+        "independent_parent_count": 1,
+        "n": 372,
+        "profile_count": 3,
+        "result": "no_increment"
+      }
+    },
+    "H03": {
+      "S1": {
+        "implementation": "blocked_data",
+        "result": "not_evaluated"
+      },
+      "S2": {
+        "implementation": "blocked_data",
+        "result": "not_evaluated"
+      }
+    },
+    "H04": {
+      "S1": {
+        "baseline_r2": 0.1605110621045512,
+        "candidate_pearson_r": 0.33928327212785175,
+        "candidate_r2": 0.16411844958741112,
+        "changed_predictions": 42,
+        "delta_pearson_squared": 0.0036073874828599123,
+        "implementation": "implemented",
+        "independent_parent_count": 1,
+        "n": 357,
+        "profile_count": 3,
+        "result": "local_gain_unconfirmed"
+      },
+      "S2": {
+        "baseline_r2": 0.307096422369825,
+        "candidate_pearson_r": -0.13863817743703036,
+        "candidate_r2": 0.30710257683128134,
+        "changed_predictions": 304,
+        "delta_pearson_squared": 6.154461456278394e-06,
+        "implementation": "implemented",
+        "independent_parent_count": 1,
+        "n": 372,
+        "profile_count": 3,
+        "result": "local_gain_unconfirmed"
+      }
+    },
+    "H05": {
+      "S1": {
+        "implementation": "blocked_data",
+        "result": "not_evaluated"
+      },
+      "S2": {
+        "implementation": "not_applicable",
+        "result": "not_evaluated"
+      }
+    }
+  },
+  "evaluated_count": 2,
+  "implemented_count": 2,
+  "next_hypotheses": [
+    "H06",
+    "H07",
+    "H08",
+    "H09",
+    "H10"
+  ],
+  "previous_review_report": "experiments/r2_pool/batches/batch_01/report_ru.md",
+  "protocol_version": "r2-pool-v2",
+  "review_report": "experiments/r2_pool/revisions/r2-pool-v2/report_ru.md",
+  "reviewed_count": 5,
+  "run_manifest": "experiments/r2_pool/revisions/r2-pool-v2/run_manifest.json",
+  "stage": 1,
+  "stage_hypotheses": [
+    "H01",
+    "H02",
+    "H03",
+    "H04",
+    "H05"
+  ],
+  "status": "awaiting_batch_review",
+  "strongest_baselines": {
+    "S1_100m_20m": {
+      "model": "defect_stats_support",
+      "pooled_r2": 0.2897090514635777,
+      "profile_r2": 0.2897090514635777
+    },
+    "S1_200m_50m": {
+      "model": "defect_stats_support",
+      "pooled_r2": 0.277137183801926,
+      "profile_r2": 0.277137183801926
+    },
+    "S1_500m_100m": {
+      "model": "defect_stats_support",
+      "pooled_r2": 0.2822182317784289,
+      "profile_r2": 0.2822182317784289
+    },
+    "S1_LOSO": {
+      "model": "mix_025",
+      "pooled_r2": 0.10103589391770579,
+      "profile_r2": 0.1605110621045512
+    },
+    "S2_200m_50m": {
+      "model": "spatial_no_temperature_centered",
+      "pooled_r2": 0.0007518233277715952,
+      "profile_r2": 0.0007518233277715952
+    },
+    "S2_500m_100m": {
+      "model": "basin_ranks",
+      "pooled_r2": 0.00278061501944033,
+      "profile_r2": 0.00278061501944033
+    },
+    "S2_LOSO": {
+      "model": "basin_depth",
+      "pooled_r2": 0.0058890494979033006,
+      "profile_r2": 0.307096422369825
+    },
+    "S2_LOSO_pooled": {
+      "model": "basin_ranks",
+      "pooled_r2": 0.00876066369829044,
+      "profile_r2": 0.3068232227947493
+    }
+  },
+  "user_decision": null
+}

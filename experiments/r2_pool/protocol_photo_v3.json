@@ -1,0 +1,26 @@
+{
+  "protocol_version": "r2-pool-v3",
+  "pool_sha256": "fb3bc2bedc82de8805a0f0ad09b9889595219f376ac363bbca2ab55d9de4a11b",
+  "workflow_sha256": "8eec22f9703070299096479550044b817cc1cd2963b6c1e373c46cf510a91b34",
+  "previous_protocol": "experiments/r2_pool/protocol_strong_v2.json",
+  "build": "scratch/odo_alignment_verified",
+  "cutoffs": {"S1": "2023-12-01", "S2": "2022-07-01"},
+  "seed": 17,
+  "budget": "One replay and one previously specified historical-row sensitivity per scheme. No score-based selection or tuning.",
+  "evaluation": "Use pooled Pearson r squared only to reproduce the photo on the exact same validation keys. Save signed r and all separate section-by-campaign scores; fewer than three rows or zero variance make a profile score undefined. Never pool S1 with S2.",
+  "archive_tolerance_mm": 1e-8,
+  "schemes": {
+    "S1_peer_2023": {"case": "S1", "model": "joint_blend", "date": "2023-12-01", "n": 52, "r2": 0.4580216558, "source": "experiments/s1_joint_alignment/peer_oof.csv", "role": "photo_max"},
+    "S2_retro_2023": {"case": "S2", "model": "spatial_no_temperature_centered", "date": "2023-08-12", "n": 94, "r2": 0.04083181163577258, "source": "experiments/targeted_cycle/stage_2_s2_fixes/post_cutoff_retrospective/predictions.csv", "role": "photo_max"},
+    "S1_100m_20m": {"case": "S1", "model": "defect_stats_support", "date": "2022-07-06", "n": 321, "r2": 0.2897090514635777, "block_m": 100, "buffer_m": 20, "source": "experiments/incremental_cycle/s1_100m_20m_oof.csv", "role": "supporting"},
+    "S1_500m_100m": {"case": "S1", "model": "defect_stats_support", "date": "2022-07-06", "n": 321, "r2": 0.2822182317784289, "block_m": 500, "buffer_m": 100, "source": "experiments/incremental_cycle/s1_500m_100m_oof.csv", "role": "supporting"},
+    "S2_LOSO_pooled": {"case": "S2", "model": "basin_ranks", "date": "2018-09-23", "n": 372, "r2": 0.00876066369829044, "source": "experiments/s2_terrain/section_oof.csv", "role": "supporting"}
+  },
+  "batch_01": {
+    "H01": "Use a documented coordinate map available before cutoff. Same-date peer joint starts are retrospective diagnostics only.",
+    "H02": "Verify raw-to-cleaned parsing and the confirmed scale correction by source row. Evaluate a corrective variant only if a confirmed discrepancy changes input data.",
+    "H03": "Use documented local nominal thickness with construction bounds and dates predating each applicable cutoff.",
+    "H04": "Require confirmed noncomparability. Replay the earlier seam-row exclusion only as a sensitivity: current mentor policy retains eligible seam measurements. Keep holdout labels, keys, and geometry fixed.",
+    "H05": "Use independently verified pre-cutoff S1 ultrasonic measurement as a point-level feature. Own-target ultrasonic data are outside the S2 contract."
+  }
+}

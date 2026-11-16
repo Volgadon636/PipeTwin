@@ -1,0 +1,41 @@
+{
+  "batch": 2,
+  "protocol_version": "r2-pool-v3",
+  "baseline_protocol": "experiments/r2_pool/protocol_photo_v3.json",
+  "baseline_root": "experiments/r2_pool/revisions/r2-pool-v3/baseline",
+  "pool_sha256": "fb3bc2bedc82de8805a0f0ad09b9889595219f376ac363bbca2ab55d9de4a11b",
+  "seed": 17,
+  "budget": "One fixed setting for each viable method and one median-only control for H10. Keep the same 52 S1 and 94 S2 validation keys, labels and original folds. No tuning on these outcomes.",
+  "hypotheses": {
+    "H06": {
+      "description": "Use only dated, confirmed completed repairs and replacements",
+      "needed": ["section ID and affected interval or segment keys", "completion and availability dates before each forecast", "repair type and verified initial thickness if applicable", "source"]
+    },
+    "H07": {
+      "description": "Restore eligible historical campaigns based on independently verified date and section assignment",
+      "needed": ["source campaign register with section IDs, date and availability", "pre-cutoff commissioning record for excluded 2014 sections"]
+    },
+    "H08": {
+      "description": "Set training weights based on documented independent measurement quality",
+      "needed": ["tool and campaign ID with pre-cutoff provenance", "calibration, coverage or precision by relevant training section or campaign"]
+    },
+    "H09": {
+      "description": "Blend latest measured minimum and historical measured minimum on the frozen S1 joint_blend baseline",
+      "older_campaign": "2018-09-23",
+      "latest_campaign": "2022-07-06",
+      "last_weight": 0.5,
+      "require_recent_direct_measurement": true,
+      "require_older_direct_measurement": true,
+      "historical_coordinate": "The published local Distance and frozen grid for 2018. The latest campaign retains the existing fold-specific alignment. Classification is exploratory because equivalence of 2018 coordinates could not be verified independently."
+    },
+    "H10": {
+      "description": "Apply a spatially varying apparent thinning rate, shrunk toward the robust global rate, to the frozen S1 joint_blend baseline",
+      "clip_quantiles": [0.10, 0.90],
+      "local_weight": 0.5,
+      "ridge_alpha": 10.0,
+      "training": "Historical eligible pairs 2018 to 2022. Leave the entire scored simple section out of rate estimation. Use only direct eligible prior minima as input for the spatial term, with median-only rate on fallback rows. Signed historical apparent rates are used; output is clipped to the existing thickness bounds.",
+      "features": ["last_mm", "slope_m_per_m", "abs_slope_m_per_m", "local_low_m", "relative_position"],
+      "control": "Apply only the same median rate and horizon to the frozen baseline"
+    }
+  }
+}

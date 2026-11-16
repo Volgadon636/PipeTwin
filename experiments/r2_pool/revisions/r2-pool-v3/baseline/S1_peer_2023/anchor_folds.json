@@ -1,0 +1,83 @@
+[
+  {
+    "anchors_used": 3,
+    "fold": 0,
+    "hi_with_buffer_m": 20.0,
+    "id": 1250009490,
+    "lo_with_buffer_m": -10.0,
+    "supported": true
+  },
+  {
+    "anchors_used": 1,
+    "fold": 1,
+    "hi_with_buffer_m": 30.0,
+    "id": 1250009490,
+    "lo_with_buffer_m": 0.0,
+    "reason": "Need at least two unique, ordered anchors in both coordinate frames",
+    "supported": false
+  },
+  {
+    "anchors_used": 2,
+    "fold": 2,
+    "hi_with_buffer_m": 40.0,
+    "id": 1250009490,
+    "lo_with_buffer_m": 10.0,
+    "supported": true
+  },
+  {
+    "anchors_used": 3,
+    "fold": 3,
+    "hi_with_buffer_m": 50.0,
+    "id": 1250009490,
+    "lo_with_buffer_m": 20.0,
+    "supported": true
+  },
+  {
+    "anchors_used": 5,
+    "fold": 4,
+    "hi_with_buffer_m": 54.7,
+    "id": 1250009490,
+    "lo_with_buffer_m": 30.0,
+    "supported": true
+  },
+  {
+    "anchors_used": 34,
+    "fold": 0,
+    "hi_with_buffer_m": 110.0,
+    "id": 1250011604,
+    "lo_with_buffer_m": -10.0,
+    "supported": true
+  },
+  {
+    "anchors_used": 32,
+    "fold": 1,
+    "hi_with_buffer_m": 210.0,
+    "id": 1250011604,
+    "lo_with_buffer_m": 90.0,
+    "supported": true
+  },
+  {
+    "anchors_used": 34,
+    "fold": 2,
+    "hi_with_buffer_m": 310.0,
+    "id": 1250011604,
+    "lo_with_buffer_m": 190.0,
+    "supported": true
+  },
+  {
+    "anchors_used": 36,
+    "fold": 3,
+    "hi_with_buffer_m": 410.0,
+    "id": 1250011604,
+    "lo_with_buffer_m": 290.0,
+    "supported": true
+  },
+  {
+    "anchors_used": 35,
+    "fold": 4,
+    "hi_with_buffer_m": 503.4,
+    "id": 1250011604,
+    "lo_with_buffer_m": 390.0,
+    "supported": true
+  }
+]

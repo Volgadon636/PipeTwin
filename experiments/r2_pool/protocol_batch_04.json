@@ -1,0 +1,62 @@
+{
+  "batch": 4,
+  "protocol_version": "r2-pool-v3",
+  "baseline_protocol": "experiments/r2_pool/protocol_photo_v3.json",
+  "baseline_root": "experiments/r2_pool/revisions/r2-pool-v3/baseline",
+  "pool_sha256": "fb3bc2bedc82de8805a0f0ad09b9889595219f376ac363bbca2ab55d9de4a11b",
+  "seed": 17,
+  "decision": "начинай этап 4",
+  "budget": "One primary configuration per hypothesis and scheme. Fixed diagnostic controls only. Fit and choose H17 weights on earlier data inside each outer training set. No selection on the outer scores.",
+  "evaluation": "Compare exact archived keys, labels, predictions and split membership. Report pooled Pearson squared for archive comparisons, plus all section-by-campaign scores with an explicit undefined reason. Rank primary variants only.",
+  "reference_candidates": {
+    "S1_peer_2023": {
+      "name": "H12 selected_lambda",
+      "r2": 0.47348755379149166,
+      "predictions": "experiments/r2_pool/batches/batch_03/hypotheses/H12/S1_peer_2023/selected_lambda/validation_predictions.csv"
+    },
+    "S2_retro_2023": {"name": "spatial_no_temperature_centered", "r2": 0.04083181163577258},
+    "S2_LOSO_pooled": {"name": "basin_ranks", "r2": 0.00876066369829044}
+  },
+  "hypotheses": {
+    "H16": {
+      "case": "S1",
+      "primary": "huber_measurement",
+      "controls": ["squared_loss_matched"],
+      "features": ["proxy", "prior_median_minus_min_mm", "prior_p90_minus_p10_mm"],
+      "huber_epsilon": 1.35,
+      "l2_alpha": 1.0,
+      "description": "Predict the next measured minimum minus the historical proxy using prior thickness and within-segment disagreement. Fit Huber and matched squared-loss Ridge with equal section weights. Center correction on all directly measured segments in each full prediction grid, then add it to joint_blend. Both signs of change are allowed."
+    },
+    "H17": {
+      "case": "S1",
+      "primary": "support_gate",
+      "controls": ["best_uniform_gate", "full_correction"],
+      "neighbor_radius_m": 20,
+      "minimum_own_measurements": 2,
+      "minimum_measured_neighbors": 2,
+      "weights": [0.0, 0.5, 1.0],
+      "description": "Apply an unmodified S1C auxiliary with one correction weight for high-support prior segments and one for low-support prior segments. Fit S1C without the outer section. Pick weights on inner leave-one-section-out predictions on the historical proxy. High-support weight cannot exceed low-support weight. Maximize the mean of the defined per-section r-squared scores only when all sections have a defined score. Prefer smaller sums of weights on ties. No correction without direct measurement. Use own and nearby eligible point coverage as a proxy for reliability."
+    },
+    "H18": {
+      "case": "S1",
+      "primary": "geometry_type_distribution",
+      "controls": ["geometry_distribution"],
+      "geometry_distribution_features": ["prior_log_median_length", "prior_log_median_width", "prior_median_minus_min_mm", "prior_p90_minus_p10_mm"],
+      "type_features": ["prior_reported_metal_loss_fraction", "prior_external_fraction"],
+      "description": "Add prior point summaries to the original S1C Ridge and apply only the difference of the extended and original corrections to joint_blend. Summarize positive lengths and widths in mm at the reported point, with no geometric overlap or cross-campaign matching. Type summaries use prior description of metal loss or corrosion and prior external designation. Train-only preprocessing can drop unsupported type fields."
+    },
+    "H19": {
+      "case": "S2",
+      "primary": "multiscale_terrain",
+      "controls": [],
+      "window_widths_m": [100, 300, 1000],
+      "description": "Extend the frozen spatial Ridge with height relative to the local length-weighted mean, local elevation slope, and its derivative. Build each physical window on the full grid of one section. Use identical physics, regularization, centering and clipping."
+    },
+    "H20": {
+      "case": "S2",
+      "primary": "centered_fluid_temperature",
+      "controls": ["local_cooling", "coordinate_only", "terrain_without_coordinate"],
+      "description": "Extend the frozen spatial Ridge with estimated segment temperature (mean of scenario inlet and outlet) minus the full-section length-weighted mean. Use the existing heat-loss scenario from pre-cutoff hydraulic rows. Train with the frozen label set and train-only imputation. For a section without a complete valid thermal profile, use the frozen spatial prediction for the whole section. Local cooling and position/terrain controls run on the same keys and physics."
+    }
+  }
+}

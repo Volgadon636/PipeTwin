@@ -1,0 +1,16 @@
+{
+  "S1_training_rows": 357,
+  "S2_training_rows": 372,
+  "bundle_sha256": "8599d618f141425381a5ce21978ddc27a3b6b8ee4f84f70d76153fad8580e6aa",
+  "case_isolation_all_ablations": true,
+  "forecast_output_checksums": true,
+  "fresh_process_result_byte_identical": true,
+  "previous_baseline_exact": true,
+  "result_sha256": "5fb9bf836c0b9423b0ce33be58d5235866a3bc74a0549c975b37098112011d68",
+  "saved_inference_without_fit_or_training_labels": true,
+  "target_rows": {
+    "S1": 525,
+    "S2": 1475
+  },
+  "training_cutoffs_and_s2_exclusion": true
+}

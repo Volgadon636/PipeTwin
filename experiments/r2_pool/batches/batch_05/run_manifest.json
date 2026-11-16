@@ -1,0 +1,83 @@
+{
+  "code_sha256": "3dbb3d98e84ca666ee5bf052b60004e4b659d521b2f40973e74b034a093ac951",
+  "command": "\"C:\\Users\\Администратор\\Documents\\PipeTwin_s1abc_env\\Scripts\\python.exe\" -B -m src.experiments.r2_pool_stage5 --protocol \"experiments\\r2_pool\\protocol_batch_05.json\" --output \"experiments\\r2_pool\\batches\\batch_05\"",
+  "data_manifest_sha256": "1d99d2f71b51a825e101fbce09f90f9f0ed309b4c68b9921f5e7188b40f6cf43",
+  "data_root": "scratch/odo_alignment_verified",
+  "data_sha256": {
+    "data/cleaned/passport.csv": "4d5245d8a7702cba3f739538726325972db1afc44e36df956200725b879a01ab",
+    "data/cleaned/regime.csv": "65e53ebe1a154c5a7a3b6fa5806f1d8e83122c985e1049f38162e316eb95cb79",
+    "data/cleaned/tech_mode_for_embedings_with_length_with_temperatures_ids16.csv": "a0e58cf2deb665f5c99efc71416edeed68c33334d865ceee1f566a8df031ebfd",
+    "processed/profile_by_segment.csv": "3e4b4994a3f3da4fa04c403dcac85bf4484ca9feca68103665db6cc39f2d04ca",
+    "processed/segments_grid.csv": "55cce38f655fc47eaabf2255d4e74e31e6d81f774f95df40f47f23adcfeb48a3",
+    "processed/training_targets.csv": "8f32b9c374533183abf02e25a6a990988d0e7a661b48f34252667708800cdd18",
+    "processed/uzt_by_segment.csv": "aed45ba93f914f2f4d66f02c31d4b144cd865d69bfc6113a94f1fb1689e364ef",
+    "processed/vtd_by_segment.csv": "ab6e17e9f5f286b884b5a3f47ef9109061ccf55c880f961f2cc5c149fd7ccc5e"
+  },
+  "environment": {
+    "catboost": "1.2.10",
+    "executable": "C:\\Users\\Администратор\\Documents\\PipeTwin_s1abc_env\\Scripts\\python.exe",
+    "joblib": "1.5.3",
+    "matplotlib": "3.10.8",
+    "numpy": "2.3.5",
+    "pandas": "2.2.3",
+    "platform": "Windows-11-10.0.26300-SP0",
+    "pyarrow": "21.0.0",
+    "python": "3.12.8",
+    "scikit-learn": "1.7.2"
+  },
+  "environment_overrides": {
+    "PIPETWIN_NEXT_DATA_ROOT": "C:\\Program Files\\PipeTwin\\experiments\\next_cycle\\data_generation"
+  },
+  "exclusions": [
+    "all target S2 diagnostic data",
+    "hydraulics at or after historical date",
+    "unobserved thermal intervals",
+    "H24 fit with unavailable physical inputs"
+  ],
+  "heat_loss_assumptions": {
+    "flow_basis": "liquid mass flow rho_liquid*v_liquid*pi*D_inner^2/4; mixture flow unverified",
+    "ground_temperature_c": 5.0,
+    "heat_capacity_j_kg_k": 3500.0,
+    "overall_heat_transfer_w_m2_k": 1.0,
+    "perimeter_basis": "pi*(D_inner-2*roughness) as supplied by mentor; same area basis for U",
+    "roughness_m": 5e-05
+  },
+  "input_sha256": {
+    "C:/Program Files/PipeTwin/src/experiments/r2_pool_stage5.py": "3dbb3d98e84ca666ee5bf052b60004e4b659d521b2f40973e74b034a093ac951",
+    "docs/mentor/revisions/SRC-TECH-SPEC/bb88e6101a1ea291.md": "bb88e6101a1ea2918998f6f5afdaa464abb8ecc30ecf9f0d319de1853449eec4",
+    "experiments/r2_pool/batches/batch_04/hypotheses/H20/S2_LOSO_pooled/local_cooling/validation_predictions.csv": "03a68bd857a7b45079d357d7dce531bb060075a4fc635bc624ede1b35c6e1982",
+    "experiments/r2_pool/batches/batch_04/hypotheses/H20/S2_retro_2023/terrain_without_coordinate/validation_predictions.csv": "de3bdbebb1caa3249235818eb5792c4356c2782179194a670d24a4dae71e4a9d",
+    "experiments/r2_pool/protocol_photo_v3.json": "1e01371c80b2163082cf4e41a54048bdac3649cc52e495c574c738191b960d7d",
+    "experiments/r2_pool/revisions/r2-pool-v3/baseline/S2_LOSO_pooled/split_keys.csv": "bceba93e9b895b212dfd84a90fcb4fd31b1f4346dda3a4b0f03ad8ee51d11621",
+    "experiments/r2_pool/revisions/r2-pool-v3/baseline/S2_LOSO_pooled/validation_predictions.csv": "76f52f33bb063281b41c5376125075840b0afb9b29ebca4a01aa3264de3c6a10",
+    "experiments/r2_pool/revisions/r2-pool-v3/baseline/S2_retro_2023/split_keys.csv": "157eb4c3de84852d04354d180b0150692f13293d6242e5f1597cd20a7b0c9906",
+    "experiments/r2_pool/revisions/r2-pool-v3/baseline/S2_retro_2023/validation_predictions.csv": "f3cf25e439425da9981af4093efe2b5f08394c719330f5b702fc2f07772c917a",
+    "src/schema_registry.py": "4dddae070e531c9dd80b91399787372bacc34519c67fd09aab276d40022c0989"
+  },
+  "protocol_sha256": "2251d0ae3a6fbaeda3b950728382b799e6c3d6a792196c0ee8cca553e8c69360",
+  "protocol_version": "r2-pool-v3",
+  "replays": {
+    "S2_LOSO_pooled": {
+      "max_abs_prediction_difference_mm": 5.329070518200751e-15,
+      "rows": 372,
+      "same_keys_labels_and_splits": true
+    },
+    "S2_retro_2023": {
+      "max_abs_prediction_difference_mm": 5.329070518200751e-15,
+      "rows": 94,
+      "same_keys_labels_and_splits": true
+    }
+  },
+  "seconds": 10.262771799985785,
+  "seed": 17,
+  "source_snapshot_sha256": "1e949f107e5ca1afd4061e40b9482e6dbd27a66a580a67c66639316cdaddf747",
+  "status": "completed",
+  "validation": {
+    "execution_log_sha256": "41e077a91d1ef4a719deaef9e268e67e496c465c180b806f3012429c682ee18b",
+    "stage5_test_sha256": "38b42d7cc1d0f84c333aedce25da31a4520554d0e870599965dc5d1da1d97c77",
+    "test_command": "\"C:\\Users\\Администратор\\Documents\\PipeTwin_s1abc_env\\Scripts\\python.exe\" -B -m unittest tests.test_r2_pool_stage5 tests.test_r2_pool_stage4 tests.test_r2_pool_stage3 tests.test_r2_pool_stage2 tests.test_r2_pool_stage1 tests.test_stage_2_s2_fixes tests.test_s2_terrain tests.test_incremental tests.test_ml_v2 tests.test_s1abc tests.test_s1_joint_alignment tests.test_s1_alignment tests.test_stage_3_s1 -v",
+    "test_count": 65,
+    "test_log_sha256": "69749c139497e95642c68565572239bed4df1536df11e711b0d05419305c88ad",
+    "test_status": "passed"
+  }
+}

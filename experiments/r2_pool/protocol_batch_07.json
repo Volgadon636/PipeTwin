@@ -1,0 +1,73 @@
+{
+  "batch": 7,
+  "protocol_version": "r2-pool-v3",
+  "baseline_protocol": "experiments/r2_pool/protocol_photo_v3.json",
+  "baseline_root": "experiments/r2_pool/revisions/r2-pool-v3/baseline",
+  "pool_sha256": "fb3bc2bedc82de8805a0f0ad09b9889595219f376ac363bbca2ab55d9de4a11b",
+  "seed": 17,
+  "decision": "делай этап 7",
+  "evaluation": "H31-H33 cover all five frozen designs. H34 uses S1 peer and audits the S2 cutoff. H35 uses the S1 peer and both S2 designs. Check archived full keys, labels and fold memberships. Report signed r and pooled and separate scores. Fit within outer training only. No tuning or selection on outer validation.",
+  "reference_candidates": {
+    "S1_peer_2023": {
+      "name": "H16 squared-loss diagnostic control",
+      "predictions": "experiments/r2_pool/batches/batch_04/hypotheses/H16/S1_peer_2023/squared_loss_matched/validation_predictions.csv"
+    },
+    "S2_retro_2023": {
+      "name": "H30 shallow CatBoost",
+      "predictions": "experiments/r2_pool/batches/batch_06/hypotheses/H30/S2_retro_2023/shallow_catboost/validation_predictions.csv"
+    },
+    "S2_LOSO_pooled": {
+      "name": "H27 largest-donor diagnostic control",
+      "predictions": "experiments/r2_pool/batches/batch_06/hypotheses/H27/S2_LOSO_pooled/largest_section_donor/validation_predictions.csv"
+    }
+  },
+  "dependencies": {
+    "H11_S1": "experiments/r2_pool/batches/batch_03/hypotheses/H11/S1_peer_2023/spatial_residual/validation_predictions.csv",
+    "H12_S1": "experiments/r2_pool/batches/batch_03/hypotheses/H12/S1_peer_2023/selected_lambda/validation_predictions.csv",
+    "H18_S1": "experiments/r2_pool/batches/batch_04/hypotheses/H18/S1_peer_2023/geometry_type_distribution/validation_predictions.csv",
+    "H30_S2_retro": "experiments/r2_pool/batches/batch_06/hypotheses/H30/S2_retro_2023/shallow_catboost/validation_predictions.csv",
+    "H30_S2_loso": "experiments/r2_pool/batches/batch_06/hypotheses/H30/S2_LOSO_pooled/shallow_catboost/validation_predictions.csv",
+    "batch_04_config": "experiments/r2_pool/protocol_batch_04.json",
+    "batch_06_config": "experiments/r2_pool/protocol_batch_06.json"
+  },
+  "hypotheses": {
+    "H31": {
+      "primary": "spatial_gaussian_process",
+      "length_fraction": 0.25,
+      "feature_length_per_sqrt_dimension": 1.0,
+      "spatial_variance": 4.0,
+      "noise_to_linear_variance": 10.0,
+      "description": "Fixed GP posterior mean of the residual, with linear covariance plus Matérn 3/2 in normalized section coordinate times Gaussian covariance in the fixed standardized predictors. No fitted kernel hyperparameters or observed thickness in S2 inference. Use the corresponding full-grid centering, level and clipping."
+    },
+    "H32": {
+      "primary": "profile_pearson_loss",
+      "minimum_profile_rows": 6,
+      "maximum_iterations": 250,
+      "ftol": 1e-10,
+      "description": "Fit the direction of the same linear correction by minimizing mean within-section/campaign 1 minus squared Pearson over the final level plus correction. Fit preprocessing and initialize on training using the matched Ridge. Preserve the L2 norm of the matched coefficient vector to identify scale. Keep groups with at least six rows and varying truth. Use no clipping inside the differentiable objective; enforce frozen clipping in evaluation. Fixed initialization and one optimizer call per fold."
+    },
+    "H33": {
+      "primary": "normalized_training_residual",
+      "controls": ["centered_training_residual"],
+      "minimum_scale_mm": 0.1,
+      "ridge_alpha": 10.0,
+      "description": "Center the training residual by section and campaign, divide by each training profile's population standard deviation floored at 0.1 mm, and fit the same Ridge. Restore millimeters with the single row-weighted RMS of the floored training profile scales. The centered-only control omits scale normalization. Held labels never contribute scaling information."
+    },
+    "H34": {
+      "primary": "shared_terrain_multitask",
+      "shared_features": {
+        "slope_m_per_m": "slope", "abs_slope_m_per_m": "abs_slope",
+        "relative_position": "position", "local_low_m": "local_low"
+      },
+      "ridge_alpha": 10.0,
+      "description": "Joint Ridge with shared terrain coefficients and case-specific deviations. Independent case offsets and equal total case weights. Shared and private terrain blocks each carry 1/sqrt(2) so the S1-only Gram matrix equals the matched linear control. S2 training predictors contain terrain only. For S1 peer exclude the outer section from both tasks and use only preceding S2 labels. For S2 require any S1 training labels strictly before the frozen 2022-07-01 training boundary."
+    },
+    "H35": {
+      "primary": "nested_profile_ensemble",
+      "controls": ["challenger_endpoint", "equal_weight_ensemble"],
+      "weights": [0.0, 0.25, 0.5, 0.75, 1.0],
+      "minimum_inner_profile_rows": 4,
+      "description": "Use a two-model convex blend. S1 blends joint_blend with a refit of H18 geometry/type/distribution; inner training reconstructs 2018-to-2022 joint_blend analogue without validation thickness. S2 blends the frozen spatial Ridge with a refit of H30 on the scheme's feature contract. Each weight is scored on inner section-wise out-of-fold predictions from models refit without that section or the outer holdout; optimize mean squared Pearson, tie to smaller challenger weight. Report equal weight and challenger endpoint controls, selected weights and donor rows. Do not read outer archived component predictions while choosing weights."
+    }
+  }
+}

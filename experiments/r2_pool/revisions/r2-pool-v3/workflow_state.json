@@ -1,0 +1,148 @@
+{
+  "blocked_count": 4,
+  "blocked_hypotheses": [
+    "H01",
+    "H03",
+    "H04",
+    "H05"
+  ],
+  "cases": {
+    "H01": {
+      "S1": {
+        "baseline_r2": 0.45802165584813587,
+        "implementation": "blocked_data",
+        "independent_parent_count": 1,
+        "n": 52,
+        "profile_count": 2,
+        "result": "not_evaluated"
+      },
+      "S2": {
+        "implementation": "not_applicable",
+        "result": "not_evaluated"
+      }
+    },
+    "H02": {
+      "S1": {
+        "audit": "no_confirmed_correction",
+        "baseline_r2": 0.45802165584813587,
+        "implementation": "not_applicable",
+        "independent_parent_count": 1,
+        "n": 52,
+        "profile_count": 2,
+        "result": "not_evaluated"
+      },
+      "S2": {
+        "audit": "no_confirmed_correction",
+        "baseline_r2": 0.04083181163577258,
+        "implementation": "not_applicable",
+        "independent_parent_count": 1,
+        "n": 94,
+        "profile_count": 7,
+        "result": "not_evaluated"
+      }
+    },
+    "H03": {
+      "S1": {
+        "baseline_r2": 0.45802165584813587,
+        "implementation": "blocked_data",
+        "independent_parent_count": 1,
+        "n": 52,
+        "profile_count": 2,
+        "result": "not_evaluated"
+      },
+      "S2": {
+        "baseline_r2": 0.04083181163577258,
+        "implementation": "blocked_data",
+        "independent_parent_count": 1,
+        "n": 94,
+        "profile_count": 7,
+        "result": "not_evaluated"
+      }
+    },
+    "H04": {
+      "S1": {
+        "baseline_r2": 0.45802165584813587,
+        "candidate_admissibility": "blocked_data",
+        "candidate_pearson_r": 0.676772972161371,
+        "candidate_r2": 0.45802165584813587,
+        "changed_predictions": 0,
+        "delta_pearson_squared": 0.0,
+        "implementation": "implemented",
+        "independent_parent_count": 1,
+        "n": 52,
+        "profile_count": 2,
+        "qualification": "exploratory_sensitivity_only",
+        "result": "no_increment"
+      },
+      "S2": {
+        "baseline_r2": 0.04083181163577258,
+        "candidate_admissibility": "blocked_data",
+        "candidate_pearson_r": 0.19779998808307941,
+        "candidate_r2": 0.039124835285666355,
+        "changed_predictions": 94,
+        "delta_pearson_squared": -0.0017069763501062277,
+        "implementation": "implemented",
+        "independent_parent_count": 1,
+        "n": 94,
+        "profile_count": 7,
+        "qualification": "exploratory_sensitivity_only",
+        "result": "worse"
+      }
+    },
+    "H05": {
+      "S1": {
+        "baseline_r2": 0.45802165584813587,
+        "implementation": "blocked_data",
+        "independent_parent_count": 1,
+        "n": 52,
+        "profile_count": 2,
+        "result": "not_evaluated"
+      },
+      "S2": {
+        "implementation": "not_applicable",
+        "result": "not_evaluated"
+      }
+    }
+  },
+  "evaluated_admissible_count": 0,
+  "evaluated_count": 1,
+  "implemented_count": 1,
+  "next_hypotheses": [
+    "H06",
+    "H07",
+    "H08",
+    "H09",
+    "H10"
+  ],
+  "previous_review_report": "experiments/r2_pool/revisions/r2-pool-v2/report_ru.md",
+  "protocol_version": "r2-pool-v3",
+  "review_report": "experiments/r2_pool/revisions/r2-pool-v3/report_ru.md",
+  "reviewed_count": 5,
+  "run_manifest": "experiments/r2_pool/revisions/r2-pool-v3/run_manifest.json",
+  "stage": 1,
+  "stage_hypotheses": [
+    "H01",
+    "H02",
+    "H03",
+    "H04",
+    "H05"
+  ],
+  "status": "awaiting_batch_review",
+  "strongest_baselines": {
+    "S1": {
+      "date": "2023-12-01",
+      "model": "joint_blend",
+      "n": 52,
+      "pooled_r2": 0.45802165584813587,
+      "source": "experiments/s1_joint_alignment/peer_oof.csv"
+    },
+    "S2": {
+      "date": "2023-08-12",
+      "model": "spatial_no_temperature_centered",
+      "n": 94,
+      "pooled_r2": 0.04083181163577258,
+      "source": "experiments/targeted_cycle/stage_2_s2_fixes/post_cutoff_retrospective/predictions.csv"
+    }
+  },
+  "user_decision": null
+}

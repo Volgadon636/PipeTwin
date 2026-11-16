@@ -1,0 +1,9 @@
+{
+  "controls": [
+    "centered_training_residual"
+  ],
+  "description": "Center the training residual by section and campaign, divide by each training profile's population standard deviation floored at 0.1 mm, and fit the same Ridge. Restore millimeters with the single row-weighted RMS of the floored training profile scales. The centered-only control omits scale normalization. Held labels never contribute scaling information.",
+  "minimum_scale_mm": 0.1,
+  "primary": "normalized_training_residual",
+  "ridge_alpha": 10.0
+}

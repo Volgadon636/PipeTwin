@@ -1,0 +1,98 @@
+{
+  "protocol_version": "r2-pool-v2",
+  "previous_protocol": "experiments/r2_pool/protocol.json",
+  "source_pool_sha256": "fb3bc2bedc82de8805a0f0ad09b9889595219f376ac363bbca2ab55d9de4a11b",
+  "source_workflow_sha256": "8eec22f9703070299096479550044b817cc1cd2963b6c1e373c46cf510a91b34",
+  "build": "scratch/odo_alignment_verified",
+  "seed": 17,
+  "cutoffs": {"S1": "2023-12-01", "S2": "2022-07-01"},
+  "primary_metric": "Pearson r squared. Store signed Pearson r for each section and inspection.",
+  "aggregate": "Rank by maximum arithmetic mean of per-profile r squared unless the scheme explicitly ranks by pooled r squared. Aggregate undefined if any constituent profile is undefined. Minimum 3 rows. Flag profiles under 10 rows.",
+  "evidence_status": "Previously viewed development diagnostics, one parent pipeline. Compare identical keys, measured minima, dates and folds. Later campaigns and same-day geometry are outside these comparisons.",
+  "batch_01": {
+    "H01": "Require independently verified pre-cutoff coordinate ties to the target reference.",
+    "H02": "Reparse Distance, residual thickness and defect depth by source record, using the confirmed 2018 fraction rule.",
+    "H03": "Require dated construction map and verified local nominal thickness.",
+    "H04": "Remove one predeclared category from historical VTD features and S2 fold training. Keep evaluation keys and measured minima immutable.",
+    "H05": "S1 only. Require comparable eligible UZT with date and position."
+  },
+  "schemes": [
+    {
+      "name": "S1_LOSO",
+      "case": "S1",
+      "date": "2022-07-06",
+      "sources": {
+        "experiments/next_cycle/s1/oof_fit_predictions.csv": "s1a s1b old_s1c train_median affine ridge_history ridge_geometry rate_signed rate_nonnegative catboost mix_025 mix_050 mix_100 mix_000"
+      }
+    },
+    {
+      "name": "S1_100m_20m",
+      "case": "S1",
+      "date": "2022-07-06",
+      "block_m": 100,
+      "buffer_m": 20,
+      "sources": {
+        "experiments/targeted_cycle/stage_3_s1_100m_20m/oof_predictions.csv": "s1a train_median affine_global affine_target global_ridge_geometry global_ridge_local target_ridge_geometry catboost_reference",
+        "experiments/incremental_cycle/s1_100m_20m_oof.csv": "s1a global_ridge_geometry defect_stats_support defect_stats_full"
+      }
+    },
+    {
+      "name": "S1_200m_50m",
+      "case": "S1",
+      "date": "2022-07-06",
+      "block_m": 200,
+      "buffer_m": 50,
+      "sources": {
+        "experiments/targeted_cycle/stage_4_s1_robustness/200m_50m/oof_predictions.csv": "s1a train_median affine_global affine_target global_ridge_geometry target_ridge_geometry catboost_reference",
+        "experiments/incremental_cycle/s1_200m_50m_oof.csv": "s1a global_ridge_geometry defect_stats_support defect_stats_full"
+      }
+    },
+    {
+      "name": "S1_500m_100m",
+      "case": "S1",
+      "date": "2022-07-06",
+      "block_m": 500,
+      "buffer_m": 100,
+      "sources": {
+        "experiments/targeted_cycle/stage_4_s1_robustness/500m_100m/oof_predictions.csv": "s1a train_median affine_global affine_target global_ridge_geometry target_ridge_geometry catboost_reference",
+        "experiments/incremental_cycle/s1_500m_100m_oof.csv": "s1a global_ridge_geometry defect_stats_support defect_stats_full"
+      }
+    },
+    {
+      "name": "S2_LOSO",
+      "case": "S2",
+      "date": "2018-09-23",
+      "sources": {
+        "experiments/next_cycle/s2/oof_predictions.csv": "constant_effective_rate physics_priors physics_velocity_consistent physics_spatial physics_spatial_temperature catboost_residual",
+        "experiments/targeted_cycle/stage_2_s2_fixes/oof_predictions.csv": "spatial_no_temperature_uncentered spatial_no_temperature_centered spatial_centered_corrected_temperature",
+        "experiments/incremental_cycle/s2_section_oof.csv": "multiscale_100 multiscale_300 multiscale_1000 multiscale_100_300_1000",
+        "experiments/s2_terrain/section_oof.csv": "profile_ranks basin_depth basin_ranks"
+      }
+    },
+    {
+      "name": "S2_LOSO_pooled",
+      "same_sources_as": "S2_LOSO",
+      "rank_by": "pooled_r2"
+    },
+    {
+      "name": "S2_200m_50m",
+      "case": "S2",
+      "date": "2018-09-23",
+      "block_m": 200,
+      "buffer_m": 50,
+      "sources": {
+        "experiments/s2_terrain/200m_50m_oof.csv": "spatial_no_temperature_centered profile_ranks basin_depth basin_ranks"
+      }
+    },
+    {
+      "name": "S2_500m_100m",
+      "case": "S2",
+      "date": "2018-09-23",
+      "block_m": 500,
+      "buffer_m": 100,
+      "sources": {
+        "experiments/s2_terrain/500m_100m_oof.csv": "spatial_no_temperature_centered profile_ranks basin_depth basin_ranks"
+      }
+    }
+  ]
+}

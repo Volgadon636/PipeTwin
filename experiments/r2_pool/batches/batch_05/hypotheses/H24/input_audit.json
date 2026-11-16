@@ -1,0 +1,168 @@
+{
+  "implementation": "blocked_data",
+  "input_schema_reference": "src/schema_registry.py",
+  "missing_or_unverified": [
+    "operating-condition gas flow and separate oil/water/gas phase velocities",
+    "phase-specific fluid properties and viscosity type/units",
+    "fill coefficient basis and phase",
+    "local boundary conditions or spatial wetting/holdup observations to constrain a closure"
+  ],
+  "observed_hydraulic_fields": [
+    {
+      "id": 1250009490,
+      "intervals": 1201,
+      "nonmissing": {
+        "density_liquid_work_usable": 1201,
+        "fill_coefficient": 1201,
+        "gas_content_rate": 1201,
+        "q_gas": 1201,
+        "q_liquid_usable": 1201,
+        "q_oil_usable": 1201,
+        "viscosity_liquid_work": 1201
+      },
+      "prediction_date": "2018-09-23"
+    },
+    {
+      "id": 1250009583,
+      "intervals": 1414,
+      "nonmissing": {
+        "density_liquid_work_usable": 1414,
+        "fill_coefficient": 1414,
+        "gas_content_rate": 1414,
+        "q_gas": 1414,
+        "q_liquid_usable": 1414,
+        "q_oil_usable": 1414,
+        "viscosity_liquid_work": 1414
+      },
+      "prediction_date": "2022-07-01"
+    },
+    {
+      "id": 1250009584,
+      "intervals": 1826,
+      "nonmissing": {
+        "density_liquid_work_usable": 1826,
+        "fill_coefficient": 1826,
+        "gas_content_rate": 1826,
+        "q_gas": 1826,
+        "q_liquid_usable": 1826,
+        "q_oil_usable": 1826,
+        "viscosity_liquid_work": 1826
+      },
+      "prediction_date": "2023-08-12"
+    },
+    {
+      "id": 1250009587,
+      "intervals": 1826,
+      "nonmissing": {
+        "density_liquid_work_usable": 1826,
+        "fill_coefficient": 1826,
+        "gas_content_rate": 1826,
+        "q_gas": 1826,
+        "q_liquid_usable": 1826,
+        "q_oil_usable": 1826,
+        "viscosity_liquid_work": 1826
+      },
+      "prediction_date": "2023-08-12"
+    },
+    {
+      "id": 1250011604,
+      "intervals": 1201,
+      "nonmissing": {
+        "density_liquid_work_usable": 1201,
+        "fill_coefficient": 653,
+        "gas_content_rate": 1201,
+        "q_gas": 653,
+        "q_liquid_usable": 1201,
+        "q_oil_usable": 1201,
+        "viscosity_liquid_work": 1201
+      },
+      "prediction_date": "2018-09-23"
+    },
+    {
+      "id": 1250022871,
+      "intervals": 1196,
+      "nonmissing": {
+        "density_liquid_work_usable": 1196,
+        "fill_coefficient": 0,
+        "gas_content_rate": 1196,
+        "q_gas": 0,
+        "q_liquid_usable": 1196,
+        "q_oil_usable": 1196,
+        "viscosity_liquid_work": 1196
+      },
+      "prediction_date": "2018-09-23"
+    },
+    {
+      "id": 1250028931,
+      "intervals": 1809,
+      "nonmissing": {
+        "density_liquid_work_usable": 1809,
+        "fill_coefficient": 1809,
+        "gas_content_rate": 1809,
+        "q_gas": 1809,
+        "q_liquid_usable": 1809,
+        "q_oil_usable": 1809,
+        "viscosity_liquid_work": 1809
+      },
+      "prediction_date": "2023-08-12"
+    },
+    {
+      "id": 1250028932,
+      "intervals": 1809,
+      "nonmissing": {
+        "density_liquid_work_usable": 1809,
+        "fill_coefficient": 1809,
+        "gas_content_rate": 1809,
+        "q_gas": 1809,
+        "q_liquid_usable": 1809,
+        "q_oil_usable": 1809,
+        "viscosity_liquid_work": 1809
+      },
+      "prediction_date": "2023-08-12"
+    },
+    {
+      "id": 1250028933,
+      "intervals": 1809,
+      "nonmissing": {
+        "density_liquid_work_usable": 1809,
+        "fill_coefficient": 1809,
+        "gas_content_rate": 1809,
+        "q_gas": 1809,
+        "q_liquid_usable": 1809,
+        "q_oil_usable": 1809,
+        "viscosity_liquid_work": 1809
+      },
+      "prediction_date": "2023-08-12"
+    },
+    {
+      "id": 1250028934,
+      "intervals": 1809,
+      "nonmissing": {
+        "density_liquid_work_usable": 1809,
+        "fill_coefficient": 1809,
+        "gas_content_rate": 1809,
+        "q_gas": 1809,
+        "q_liquid_usable": 1809,
+        "q_oil_usable": 1809,
+        "viscosity_liquid_work": 1809
+      },
+      "prediction_date": "2023-08-12"
+    },
+    {
+      "id": 1250028935,
+      "intervals": 1809,
+      "nonmissing": {
+        "density_liquid_work_usable": 1809,
+        "fill_coefficient": 1809,
+        "gas_content_rate": 1809,
+        "q_gas": 1809,
+        "q_liquid_usable": 1809,
+        "q_oil_usable": 1809,
+        "viscosity_liquid_work": 1809
+      },
+      "prediction_date": "2023-08-12"
+    }
+  ],
+  "result": "not_evaluated",
+  "technical_reference": "docs/mentor/revisions/SRC-TECH-SPEC/bb88e6101a1ea291.md"
+}

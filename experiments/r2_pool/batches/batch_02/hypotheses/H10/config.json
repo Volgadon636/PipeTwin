@@ -1,0 +1,18 @@
+{
+  "clip_quantiles": [
+    0.1,
+    0.9
+  ],
+  "control": "Apply only the same median rate and horizon to the frozen baseline",
+  "description": "Apply a spatially varying apparent thinning rate, shrunk toward the robust global rate, to the frozen S1 joint_blend baseline",
+  "features": [
+    "last_mm",
+    "slope_m_per_m",
+    "abs_slope_m_per_m",
+    "local_low_m",
+    "relative_position"
+  ],
+  "local_weight": 0.5,
+  "ridge_alpha": 10.0,
+  "training": "Historical eligible pairs 2018 to 2022. Leave the entire scored simple section out of rate estimation. Use only direct eligible prior minima as input for the spatial term, with median-only rate on fallback rows. Signed historical apparent rates are used; output is clipped to the existing thickness bounds."
+}

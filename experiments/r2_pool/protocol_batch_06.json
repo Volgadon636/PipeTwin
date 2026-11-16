@@ -1,0 +1,64 @@
+{
+  "batch": 6,
+  "protocol_version": "r2-pool-v3",
+  "baseline_protocol": "experiments/r2_pool/protocol_photo_v3.json",
+  "baseline_root": "experiments/r2_pool/revisions/r2-pool-v3/baseline",
+  "pool_sha256": "fb3bc2bedc82de8805a0f0ad09b9889595219f376ac363bbca2ab55d9de4a11b",
+  "seed": 17,
+  "decision": "начинай этап 6",
+  "evaluation": "Use the five frozen designs. Compare identical full keys, labels, split memberships and reference prediction values. Report pooled and per-profile Pearson r squared and signed r. S1 block and S2 leave-section-out schemes are same-campaign diagnostics with their original exclusion rules. No outer selection or tuning.",
+  "reference_candidates": {
+    "S1_peer_2023": {
+      "name": "H16 squared-loss diagnostic control",
+      "predictions": "experiments/r2_pool/batches/batch_04/hypotheses/H16/S1_peer_2023/squared_loss_matched/validation_predictions.csv"
+    },
+    "S2_retro_2023": {
+      "name": "H22 terrain times log liquid velocity",
+      "predictions": "experiments/r2_pool/batches/batch_05/hypotheses/H22/S2_retro_2023/terrain_times_log_liquid_velocity/validation_predictions.csv"
+    },
+    "S2_LOSO_pooled": {
+      "name": "H22 terrain times log liquid velocity",
+      "predictions": "experiments/r2_pool/batches/batch_05/hypotheses/H22/S2_LOSO_pooled/terrain_times_log_liquid_velocity/validation_predictions.csv"
+    }
+  },
+  "s1_h12_reference": "experiments/r2_pool/batches/batch_03/hypotheses/H12/S1_peer_2023/selected_lambda/validation_predictions.csv",
+  "s1_linear_dependency": "experiments/r2_pool/batches/batch_03/hypotheses/H11/S1_peer_2023/spatial_residual/validation_predictions.csv",
+  "s1_peer_features": ["last_mm", "slope_m_per_m", "abs_slope_m_per_m", "relative_position", "local_low_m", "t_mix_mean", "water_fraction_mean"],
+  "hypotheses": {
+    "H26": {
+      "cases": ["S2"],
+      "primary": "within_profile_spatial_ridge",
+      "description": "Keep the independently fitted physics level and the base spatial feature order and preprocessing. Center the standardized predictors and response within each training section and date, and fit a fixed Ridge alpha 10 on the within-profile relationship. At inference, center the prediction over the full grid using segment lengths and add the unchanged physics estimate. The frozen spatial Ridge already centers the response, so the isolated change is centering the design matrix as well."
+    },
+    "H27": {
+      "cases": ["S2"],
+      "primary": "nearest_section_donor",
+      "controls": ["largest_section_donor"],
+      "min_donor_labels": 20,
+      "distance_scales": {
+        "water_fraction_mean": 0.25, "v_liquid_true_mean": 0.5, "t_mix_mean": 10.0,
+        "nominal_thickness_mm": 2.0, "diameter_mm": 100.0,
+        "log_section_length": 1.0, "mean_abs_slope": 0.05
+      },
+      "description": "Select an earlier training donor by fixed scaled Euclidean distance on as-of environment, passport and full-grid terrain descriptors. Choose the largest if distances tie. In the spatial diagnostic donors can be from the frozen same-date training set. Each eligible donor has its own centered residual Ridge using the frozen features and the shared physics level. Largest-donor control uses the same candidate pool and models. Use full-grid centering. Never use held labels, diagnostic summaries or target thickness to choose a donor."
+    },
+    "H28": {
+      "cases": ["S2"],
+      "primary": null,
+      "description": "Audit dated usable local pH, aqueous CO2, mineralization and protection history. Require verified location, availability before each cutoff and spatial support on the train and target grids. No model in the absence of confirmed local inputs."
+    },
+    "H29": {
+      "cases": ["S1", "S2"],
+      "primary": "additive_splines",
+      "spline": {"n_knots": 3, "degree": 2, "knots": "uniform", "extrapolation": "constant", "include_bias": false},
+      "ridge_alpha": 10.0,
+      "description": "Fit one regularized additive model with a small quadratic spline basis per standardized feature and no interactions. Learn imputation, scaling and spline knots on train only. S1 peer uses the existing H11 residual specification and a matched linear control. S1 block and S2 use the same labels, weights, covariates, level and clipping as the corresponding frozen Ridge."
+    },
+    "H30": {
+      "cases": ["S1", "S2"],
+      "primary": "shallow_catboost",
+      "catboost": {"depth": 2, "iterations": 120, "learning_rate": 0.03, "l2_leaf_reg": 10, "thread_count": 1},
+      "description": "Fit one shallow CatBoost on the same training target, features, preprocessing and weights as the paired linear control, with fixed seed and no outer validation set. S1 peer uses the H11 residual specification. S1 block and S2 use the corresponding frozen Ridge specification, changing only the regressor."
+    }
+  }
+}

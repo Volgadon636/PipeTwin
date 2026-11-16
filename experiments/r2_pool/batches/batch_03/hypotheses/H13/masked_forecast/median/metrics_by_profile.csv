@@ -1,0 +1,3 @@
+case,id,prediction_date,n,weak_profile,independent_parent_count,baseline_pearson_r,baseline_r2,baseline_status,baseline_mae,baseline_rmse,baseline_bias,baseline_std,candidate_pearson_r,candidate_r2,candidate_status,candidate_mae,candidate_rmse,candidate_bias,candidate_std,delta_pearson_squared,changed_predictions
+S1,1250009490,2023-12-01,4,True,1,0.5418106302,0.293558759,defined,0.8548320986,0.9199405126,0.8548320986,0.2200866759,0.01040004865,0.0001081610119,defined,0.8192155802,0.9276034351,0.8192155802,0.1647767268,-0.293450598,2
+S1,1250011604,2023-12-01,48,False,1,0.01337882635,0.0001789929946,defined,0.4923969733,0.6032352568,0.1058106831,0.4832975421,-0.1399015118,0.01957243301,defined,0.3335238585,0.4416720583,0.1083499171,0.199974072,0.01939344002,42

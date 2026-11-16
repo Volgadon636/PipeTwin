@@ -1,0 +1,7 @@
+{
+  "description": "Set training weights based on documented independent measurement quality",
+  "needed": [
+    "tool and campaign ID with pre-cutoff provenance",
+    "calibration, coverage or precision by relevant training section or campaign"
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "case": "S1",
+  "controls": [
+    "squared_loss_matched"
+  ],
+  "description": "Predict the next measured minimum minus the historical proxy using prior thickness and within-segment disagreement. Fit Huber and matched squared-loss Ridge with equal section weights. Center correction on all directly measured segments in each full prediction grid, then add it to joint_blend. Both signs of change are allowed.",
+  "features": [
+    "proxy",
+    "prior_median_minus_min_mm",
+    "prior_p90_minus_p10_mm"
+  ],
+  "huber_epsilon": 1.35,
+  "l2_alpha": 1.0,
+  "primary": "huber_measurement"
+}

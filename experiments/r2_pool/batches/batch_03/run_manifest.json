@@ -1,0 +1,38 @@
+{
+  "code_sha256": "2300d6bda6b58af6d85a699e6bdf4c0b3bd789748418972c50f180463c8bf76e",
+  "command": "\"C:\\Users\\Администратор\\Documents\\PipeTwin_s1abc_env\\Scripts\\python.exe\" -B -m src.experiments.r2_pool_stage3 --protocol \"experiments\\r2_pool\\protocol_batch_03.json\" --output \"experiments\\r2_pool\\batches\\batch_03\"",
+  "data_manifest_sha256": "1d99d2f71b51a825e101fbce09f90f9f0ed309b4c68b9921f5e7188b40f6cf43",
+  "environment": {
+    "catboost": "1.2.10",
+    "executable": "C:\\Users\\Администратор\\Documents\\PipeTwin_s1abc_env\\Scripts\\python.exe",
+    "joblib": "1.5.3",
+    "matplotlib": "3.10.8",
+    "numpy": "2.3.5",
+    "pandas": "2.2.3",
+    "platform": "Windows-11-10.0.26300-SP0",
+    "pyarrow": "21.0.0",
+    "python": "3.12.8",
+    "scikit-learn": "1.7.2"
+  },
+  "input_sha256": {
+    "data/cleaned/passport.csv": "4d5245d8a7702cba3f739538726325972db1afc44e36df956200725b879a01ab",
+    "data/cleaned/regime.csv": "65e53ebe1a154c5a7a3b6fa5806f1d8e83122c985e1049f38162e316eb95cb79",
+    "data/cleaned/tech_mode_for_embedings_with_length_with_temperatures_ids16.csv": "a0e58cf2deb665f5c99efc71416edeed68c33334d865ceee1f566a8df031ebfd",
+    "data/cleaned/vtd.csv": "e52f3a5c573078cd03689cc8774047a01fa3176192db9b84b095b45f5c752ab2",
+    "experiments/r2_pool/protocol_photo_v3.json": "1e01371c80b2163082cf4e41a54048bdac3649cc52e495c574c738191b960d7d",
+    "experiments/r2_pool/revisions/r2-pool-v3/baseline/S1_peer_2023/anchor_folds.json": "8485dc54da61c3ed1f9e45d0e2b2a7a6f01cb47ad3baa66050b5f015a2c64f66",
+    "experiments/r2_pool/revisions/r2-pool-v3/baseline/S1_peer_2023/split_keys.csv": "76ed57bd6b086c509dfbadc1814aa486193c2bf43f89b29ef71d03dcaf38176d",
+    "experiments/r2_pool/revisions/r2-pool-v3/baseline/S1_peer_2023/validation_predictions.csv": "d3add1b5f212bba280c8c10fe25dd39d43e40db464a3110c5c15c68de475dcf9",
+    "experiments/r2_pool/revisions/r2-pool-v3/baseline/S2_retro_2023/validation_predictions.csv": "f3cf25e439425da9981af4093efe2b5f08394c719330f5b702fc2f07772c917a",
+    "processed/profile_by_segment.csv": "3e4b4994a3f3da4fa04c403dcac85bf4484ca9feca68103665db6cc39f2d04ca",
+    "processed/segments_grid.csv": "55cce38f655fc47eaabf2255d4e74e31e6d81f774f95df40f47f23adcfeb48a3",
+    "processed/target_features.csv": "1ff33a4842b63f9b255afb189bb36676d202b5ebaacca9c925d18885abbac767",
+    "processed/training_targets.csv": "8f32b9c374533183abf02e25a6a990988d0e7a661b48f34252667708800cdd18",
+    "processed/uzt_by_segment.csv": "aed45ba93f914f2f4d66f02c31d4b144cd865d69bfc6113a94f1fb1689e364ef",
+    "processed/vtd_by_segment.csv": "ab6e17e9f5f286b884b5a3f47ef9109061ccf55c880f961f2cc5c149fd7ccc5e"
+  },
+  "protocol_sha256": "7e96ac947532fe16cf935a316c44f43319d7497051e31501f5d99f63815381c0",
+  "seconds": 8.364289199991617,
+  "seed": 17,
+  "status": "completed"
+}

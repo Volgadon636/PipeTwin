@@ -1,0 +1,50 @@
+{
+  "baseline_result_sha256": "4fd624c7b605c7bfab12b8855dbe6fad68decb0f3a46e5a732176f72fd5655b2",
+  "code_sha256": "322a5f625a82190690f5e578ead9db57f86d6c52e2914fb1976964241891b29e",
+  "command": "python -B -m src.experiments.r2_pool_stage1",
+  "data_hashes": {
+    "data/cleaned/passport.csv": "4d5245d8a7702cba3f739538726325972db1afc44e36df956200725b879a01ab",
+    "data/cleaned/regime.csv": "65e53ebe1a154c5a7a3b6fa5806f1d8e83122c985e1049f38162e316eb95cb79",
+    "data/cleaned/tech_mode_for_embedings_with_length_with_temperatures_ids16.csv": "a0e58cf2deb665f5c99efc71416edeed68c33334d865ceee1f566a8df031ebfd",
+    "data/cleaned/uzt.csv": "80c67ab7ed812ea195f0965467051dd4871dc78a87d1a9f0445d471dfcbea529",
+    "data/cleaned/vtd.csv": "e52f3a5c573078cd03689cc8774047a01fa3176192db9b84b095b45f5c752ab2",
+    "processed/profile_by_segment.csv": "3e4b4994a3f3da4fa04c403dcac85bf4484ca9feca68103665db6cc39f2d04ca",
+    "processed/segments_grid.csv": "55cce38f655fc47eaabf2255d4e74e31e6d81f774f95df40f47f23adcfeb48a3",
+    "processed/target_features.csv": "1ff33a4842b63f9b255afb189bb36676d202b5ebaacca9c925d18885abbac767",
+    "processed/training_targets.csv": "8f32b9c374533183abf02e25a6a990988d0e7a661b48f34252667708800cdd18",
+    "processed/uzt_by_segment.csv": "aed45ba93f914f2f4d66f02c31d4b144cd865d69bfc6113a94f1fb1689e364ef",
+    "processed/vtd_by_segment.csv": "ab6e17e9f5f286b884b5a3f47ef9109061ccf55c880f961f2cc5c149fd7ccc5e"
+  },
+  "data_manifest_sha256": "1d99d2f71b51a825e101fbce09f90f9f0ed309b4c68b9921f5e7188b40f6cf43",
+  "data_root": "scratch\\odo_alignment_verified",
+  "duration_seconds": 0.0017176000110339373,
+  "hypothesis": "H03",
+  "protocol_sha256": "d401ef4585451d5d62635ee0eb63b454f7cc0f4f2594a999548c246b68838cb4",
+  "protocol_version": "r2-pool-v1",
+  "python": {
+    "catboost": "1.2.10",
+    "executable": "C:\\Users\\Администратор\\Documents\\PipeTwin_s1abc_env\\Scripts\\python.exe",
+    "joblib": "1.5.3",
+    "matplotlib": "3.10.8",
+    "numpy": "2.3.5",
+    "pandas": "2.2.3",
+    "platform": "Windows-11-10.0.26300-SP0",
+    "pyarrow": "21.0.0",
+    "python": "3.12.8",
+    "scikit-learn": "1.7.2"
+  },
+  "seed": 17,
+  "source_snapshot_sha256": "3599032c0f85d3c7cfecb21039bb131114de6742dc75ecd1bc0bb552855db722",
+  "validation_split": {
+    "S1": {
+      "1250009490": 4,
+      "1250011604": 32,
+      "1250022871": 321
+    },
+    "S2": {
+      "1250009490": 4,
+      "1250011604": 34,
+      "1250022871": 334
+    }
+  }
+}

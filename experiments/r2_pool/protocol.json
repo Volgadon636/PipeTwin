@@ -1,0 +1,36 @@
+{
+  "protocol_version": "r2-pool-v1",
+  "source_pool_sha256": "fb3bc2bedc82de8805a0f0ad09b9889595219f376ac363bbca2ab55d9de4a11b",
+  "source_workflow_sha256": "8eec22f9703070299096479550044b817cc1cd2963b6c1e373c46cf510a91b34",
+  "build": "scratch/odo_alignment_verified",
+  "seed": 17,
+  "primary_metric": "signed Pearson r squared, separately per section and inspection",
+  "aggregate": "Unweighted mean of per-profile r² within each case; aggregate undefined if any predeclared profile is undefined. Minimum 3 rows, flag profiles under 10 rows as weak.",
+  "evidence_status": "Previously viewed development diagnostics. No independent final holdout.",
+  "baseline": {
+    "selection": "Documented defaults in README Next cycle and corresponding official assembly in this checkout",
+    "s1": "s1a",
+    "s2": "physics_priors",
+    "result": "experiments/next_cycle/assembled/s1a__physics_priors/result.csv",
+    "extra_reference": "experiments/incremental_cycle/s1_challenger/result.csv"
+  },
+  "S1": {
+    "production_cutoff": "2023-12-01",
+    "validation_date": "2022-07-06",
+    "profiles": {"1250009490":4,"1250011604":32,"1250022871":321},
+    "design": "Fit-eligible historical same-section forecast from earlier VTD. S1A is zero-fit. Fitted future candidates must keep held-section splits inside the campaign, unless evaluated separately on an additional protocol."
+  },
+  "S2": {
+    "production_cutoff": "2022-07-01",
+    "validation_date": "2018-09-23",
+    "profiles": {"1250009490":4,"1250011604":34,"1250022871":334},
+    "design": "Cold start leaving one simple section out of one parent/campaign. Not independent cross-parent or temporal evidence."
+  },
+  "batch_01": {
+    "H01": "Use only independently verified, pre-cutoff coordinate ties; date-T neighbour and density matches to validation labels cannot establish an admissible candidate.",
+    "H02": "Check local raw hash against preprocessing manifest. Independently reparse Distance, residual thickness and defect depth percent by source_record_number, using the confirmed 2018 fraction rule. Budget one verified correction or report already applied/undetermined.",
+    "H03": "Require dated construction map and confirmed local nominal by weld/segment. VTD wall observations alone do not establish replacement/material identity.",
+    "H04": "Single exact, predeclared category: remove transverse-weld planar discontinuity records from historical VTD features and S2 fold training, while keeping validation keys and measured minima immutable.",
+    "H05": "S1 only: require confirmed comparable eligible UZT with date and position. No learned overlay on ineligible readings."
+  }
+}

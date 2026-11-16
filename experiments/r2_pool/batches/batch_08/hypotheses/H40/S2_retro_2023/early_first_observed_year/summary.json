@@ -1,0 +1,32 @@
+{
+  "baseline": {
+    "bias_mm": 0.31034341905133306,
+    "mae_mm": 0.314582974780016,
+    "pearson_r": 0.20206882895630215,
+    "pearson_reason": "",
+    "pearson_squared": 0.0408318116357713,
+    "prediction_std": 0.10514386144950326,
+    "rmse_mm": 0.45898722934590697
+  },
+  "candidate": {
+    "bias_mm": 0.31042071787516745,
+    "mae_mm": 0.3147043885344918,
+    "pearson_r": 0.20287607768704366,
+    "pearson_reason": "",
+    "pearson_squared": 0.041158702897679374,
+    "prediction_std": 0.10518694991860933,
+    "rmse_mm": 0.45897934084894126
+  },
+  "changed_predictions": 22,
+  "delta_pearson_squared": 0.0003268912619080744,
+  "delta_vs_reference_candidate": -0.01837946333889521,
+  "independent_parent_count": 1,
+  "max_abs_affine_residual_mm": 0.0048328372555532795,
+  "n": 94,
+  "profile_count": 7,
+  "reference_candidate": {
+    "name": "H31 spatial Gaussian process",
+    "predictions": "experiments/r2_pool/batches/batch_07/hypotheses/H31/S2_retro_2023/spatial_gaussian_process/validation_predictions.csv",
+    "r2": 0.05953816623657458
+  }
+}

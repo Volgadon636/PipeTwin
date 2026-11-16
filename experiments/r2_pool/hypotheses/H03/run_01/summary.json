@@ -1,0 +1,16 @@
+{
+  "audit": {
+    "nominal_mismatch_rows_on_s1_target": 753,
+    "verified_dated_construction_map": false
+  },
+  "cases": {
+    "S1": {
+      "implementation": "blocked_data",
+      "result": "not_evaluated"
+    },
+    "S2": {
+      "implementation": "blocked_data",
+      "result": "not_evaluated"
+    }
+  }
+}

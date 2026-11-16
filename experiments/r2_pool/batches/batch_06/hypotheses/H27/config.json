@@ -1,0 +1,20 @@
+{
+  "cases": [
+    "S2"
+  ],
+  "controls": [
+    "largest_section_donor"
+  ],
+  "description": "Select an earlier training donor by fixed scaled Euclidean distance on as-of environment, passport and full-grid terrain descriptors. Choose the largest if distances tie. In the spatial diagnostic donors can be from the frozen same-date training set. Each eligible donor has its own centered residual Ridge using the frozen features and the shared physics level. Largest-donor control uses the same candidate pool and models. Use full-grid centering. Never use held labels, diagnostic summaries or target thickness to choose a donor.",
+  "distance_scales": {
+    "diameter_mm": 100.0,
+    "log_section_length": 1.0,
+    "mean_abs_slope": 0.05,
+    "nominal_thickness_mm": 2.0,
+    "t_mix_mean": 10.0,
+    "v_liquid_true_mean": 0.5,
+    "water_fraction_mean": 0.25
+  },
+  "min_donor_labels": 20,
+  "primary": "nearest_section_donor"
+}

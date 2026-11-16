@@ -1,0 +1,10 @@
+{
+  "cases": [
+    "S1",
+    "S2"
+  ],
+  "description": "Fit a nondecreasing piecewise-linear isotonic map on up to five bin summaries of standardized OOF predictions and labels. OOF files come from batch 7 inside each identical outer training split and are checked for exact keys and targets. Equal total weight per section/campaign. Transform on the full grid and restore the original prediction mean and standard deviation before clipping. The affine shape control is the frozen baseline.",
+  "primary": "crossfit_isotonic_shape",
+  "quantile_bins": 5,
+  "shape_blend": 0.5
+}

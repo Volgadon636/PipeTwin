@@ -1,0 +1,40 @@
+{
+  "audit": {
+    "mentor_policy": "docs\\mentor\\sources\\SRC-M2-STRICT-REVIEW.md",
+    "raw_records_excluded_in_sensitivity": [
+      {
+        "date": "2018-09-23",
+        "distance": 2148.44553228737,
+        "id": 1250022871,
+        "residual_for_target_mm": 3.76,
+        "source_row": 33624
+      },
+      {
+        "date": "2018-09-23",
+        "distance": 3438.35122571356,
+        "id": 1250022871,
+        "residual_for_target_mm": 5.87,
+        "source_row": 34049
+      }
+    ],
+    "s2_training_changes": [
+      {
+        "id": 1250022871,
+        "next_mm": 3.76,
+        "next_mm_filtered": 6.26,
+        "prediction_date": "2018-09-23",
+        "segment_id": 214
+      },
+      {
+        "id": 1250022871,
+        "next_mm": 5.87,
+        "next_mm_filtered": null,
+        "prediction_date": "2018-09-23",
+        "segment_id": 343
+      }
+    ],
+    "sensitivity_fit_rows": 371,
+    "strict_fit_rows": 372
+  },
+  "status": "exploratory_sensitivity_only"
+}

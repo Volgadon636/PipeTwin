@@ -1,0 +1,13 @@
+{
+  "cases": [
+    "S1",
+    "S2"
+  ],
+  "controls": [
+    "soft_physical_bounds"
+  ],
+  "description": "On each full grid compare the frozen hard bound with a Tukey IQR cap of that prediction and fixed soft physical bounds applied to the pre-clipping prediction. No labels or fit. Apply admissible thickness bounds after the transformation.",
+  "iqr_factor": 1.5,
+  "primary": "robust_iqr_cap",
+  "softness_mm": 0.15
+}

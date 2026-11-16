@@ -1,0 +1,4341 @@
+{
+  "S1_peer_2023": {
+    "1250009490": {
+      "H16": {
+        "models": {
+          "huber_measurement": {
+            "coef": [
+              -0.6220034614321055,
+              -0.020852518166828315,
+              -0.19338096561075183
+            ],
+            "intercept": 0.041654036344514464,
+            "outlier_count": 155,
+            "scale": 0.23990721803739143
+          },
+          "squared_loss_matched": {
+            "coef": [
+              -0.5727304961664202,
+              -0.08044283211931952,
+              -0.1239217596219751
+            ],
+            "intercept": -0.007448229173764026,
+            "outlier_count": null,
+            "scale": null
+          }
+        },
+        "preprocessing": {
+          "constant_columns": [],
+          "dropped_columns": {},
+          "empty_columns": [],
+          "feature_order": [
+            "proxy",
+            "prior_median_minus_min_mm",
+            "prior_p90_minus_p10_mm"
+          ],
+          "imputer": "SimpleImputer(strategy=median)",
+          "imputer_statistics": {
+            "prior_median_minus_min_mm": 0.28000000000000025,
+            "prior_p90_minus_p10_mm": 0.4480000000000004,
+            "proxy": 6.115304605187726
+          },
+          "scaler": "StandardScaler",
+          "scaler_mean": {
+            "prior_median_minus_min_mm": 0.4000424929178471,
+            "prior_p90_minus_p10_mm": 0.5191841359773371,
+            "proxy": 6.14272068736452
+          },
+          "scaler_scale": {
+            "prior_median_minus_min_mm": 0.4442853202463704,
+            "prior_p90_minus_p10_mm": 0.5000553539647247,
+            "proxy": 0.5406390120305232
+          },
+          "used_features": [
+            "proxy",
+            "prior_median_minus_min_mm",
+            "prior_p90_minus_p10_mm"
+          ]
+        }
+      },
+      "H17": {
+        "auxiliary": {
+          "alpha": 10.0,
+          "artifact_version": "s1c-ridge-v1",
+          "baseline_column": "s1b_prediction",
+          "bounds_policy": {
+            "lower_mm": 0.0,
+            "upper_column": "nominal_thickness_mm",
+            "upper_is_not_baseline": true
+          },
+          "coefficient_by_declared_feature": {
+            "abs_slope_m_per_m": 0.04450897783615495,
+            "age_last_vtd_years": null,
+            "age_min_vtd_years": null,
+            "last_minus_min_mm": null,
+            "last_vtd_thickness_mm": -0.22010359340170838,
+            "local_low_m": 0.030904529524421853,
+            "neighbor_missing": -0.030814406910108005,
+            "neighbor_prior_count": -0.11286030149147541,
+            "neighbor_prior_median_mm": 0.025667062843694733,
+            "prior_vtd_campaign_count": null,
+            "relative_position": 0.03925335341212212,
+            "s1b_prediction": -0.22010359340170732,
+            "slope_m_per_m": -0.006139575998810445
+          },
+          "coefficients": [
+            -0.22010359340170732,
+            -0.22010359340170838,
+            0.025667062843694733,
+            -0.11286030149147541,
+            -0.030814406910108005,
+            -0.006139575998810445,
+            0.04450897783615495,
+            0.03925335341212212,
+            0.030904529524421853
+          ],
+          "contract_version": "s1abc-v1",
+          "dropped_columns": {
+            "age_last_vtd_years": "constant_on_training_fold",
+            "age_min_vtd_years": "constant_on_training_fold",
+            "last_minus_min_mm": "constant_on_training_fold",
+            "prior_vtd_campaign_count": "constant_on_training_fold"
+          },
+          "fallback_policy": "rows without own prior measurement keep S1B and do not enter Ridge",
+          "feature_order": [
+            "s1b_prediction",
+            "last_vtd_thickness_mm",
+            "age_last_vtd_years",
+            "age_min_vtd_years",
+            "prior_vtd_campaign_count",
+            "last_minus_min_mm",
+            "neighbor_prior_median_mm",
+            "neighbor_prior_count",
+            "neighbor_missing",
+            "slope_m_per_m",
+            "abs_slope_m_per_m",
+            "relative_position",
+            "local_low_m"
+          ],
+          "fit_intercept": true,
+          "intercept": -0.025362709059161947,
+          "interpretation": "Learned effective correction to a conservative past minimum; not a physical corrosion rate. Both signs are allowed.",
+          "model_name": "S1C_ridge",
+          "prediction_rule": "clip(baseline + ridge_delta, 0, nominal_thickness_mm)",
+          "preprocessing": {
+            "constant_columns": [
+              "age_last_vtd_years",
+              "age_min_vtd_years",
+              "prior_vtd_campaign_count",
+              "last_minus_min_mm"
+            ],
+            "dropped_columns": {
+              "age_last_vtd_years": "constant_on_training_fold",
+              "age_min_vtd_years": "constant_on_training_fold",
+              "last_minus_min_mm": "constant_on_training_fold",
+              "prior_vtd_campaign_count": "constant_on_training_fold"
+            },
+            "empty_columns": [],
+            "feature_order": [
+              "s1b_prediction",
+              "last_vtd_thickness_mm",
+              "age_last_vtd_years",
+              "age_min_vtd_years",
+              "prior_vtd_campaign_count",
+              "last_minus_min_mm",
+              "neighbor_prior_median_mm",
+              "neighbor_prior_count",
+              "neighbor_missing",
+              "slope_m_per_m",
+              "abs_slope_m_per_m",
+              "relative_position",
+              "local_low_m"
+            ],
+            "imputer": "SimpleImputer(strategy=median)",
+            "imputer_statistics": {
+              "abs_slope_m_per_m": 0.0,
+              "last_vtd_thickness_mm": 6.11,
+              "local_low_m": 0.0,
+              "neighbor_missing": 0.0,
+              "neighbor_prior_count": 3.0,
+              "neighbor_prior_median_mm": 6.1,
+              "relative_position": 0.438228793537078,
+              "s1b_prediction": 6.11,
+              "slope_m_per_m": 0.0
+            },
+            "scaler": "StandardScaler",
+            "scaler_mean": {
+              "abs_slope_m_per_m": 0.004745688975924718,
+              "last_vtd_thickness_mm": 6.132747875354108,
+              "local_low_m": -0.007084635963697519,
+              "neighbor_missing": 0.039660056657223795,
+              "neighbor_prior_count": 2.773371104815864,
+              "neighbor_prior_median_mm": 6.115694050991502,
+              "relative_position": 0.4603394871637879,
+              "s1b_prediction": 6.132747875354108,
+              "slope_m_per_m": -0.0008346069343309188
+            },
+            "scaler_scale": {
+              "abs_slope_m_per_m": 0.009098081254882283,
+              "last_vtd_thickness_mm": 0.5526147851253276,
+              "local_low_m": 0.10999805143504157,
+              "neighbor_missing": 0.19515925948611712,
+              "neighbor_prior_count": 1.1162839104801234,
+              "neighbor_prior_median_mm": 0.40614282838277754,
+              "relative_position": 0.27378766613179795,
+              "s1b_prediction": 0.5526147851253276,
+              "slope_m_per_m": 0.010227417936205624
+            },
+            "used_features": [
+              "s1b_prediction",
+              "last_vtd_thickness_mm",
+              "neighbor_prior_median_mm",
+              "neighbor_prior_count",
+              "neighbor_missing",
+              "slope_m_per_m",
+              "abs_slope_m_per_m",
+              "relative_position",
+              "local_low_m"
+            ]
+          },
+          "solver": "cholesky",
+          "target": "target_delta_mm",
+          "target_delta_mean_mm": -0.05086548716083126,
+          "target_delta_std_mm": 0.652813883602982,
+          "training_date_max": "2022-07-06",
+          "training_dates": [
+            "2022-07-06"
+          ],
+          "training_parents": [
+            "MAIN-2"
+          ],
+          "training_rows": 353,
+          "training_simple_sections": [
+            1250011604,
+            1250022871
+          ],
+          "used_features": [
+            "s1b_prediction",
+            "last_vtd_thickness_mm",
+            "neighbor_prior_median_mm",
+            "neighbor_prior_count",
+            "neighbor_missing",
+            "slope_m_per_m",
+            "abs_slope_m_per_m",
+            "relative_position",
+            "local_low_m"
+          ],
+          "weighting": "equal_total_per_simple_pipe_id_normalized_mean_1",
+          "weighting_detail": "each simple section has equal total weight; weights normalized to mean 1",
+          "weights_max": 5.515625,
+          "weights_min": 0.5498442367601246
+        },
+        "inner_scores": [
+          {
+            "by_section": {
+              "1250011604": 0.0021415613898161773,
+              "1250022871": 0.10538922874802621
+            },
+            "high_support_weight": 0.0,
+            "low_support_weight": 0.0,
+            "mean_r2": 0.053765395068921196
+          },
+          {
+            "by_section": {
+              "1250011604": 0.0024133128530230883,
+              "1250022871": 0.12083400084234128
+            },
+            "high_support_weight": 0.0,
+            "low_support_weight": 0.5,
+            "mean_r2": 0.06162365684768218
+          },
+          {
+            "by_section": {
+              "1250011604": 0.002446333766611652,
+              "1250022871": 0.06491742853475599
+            },
+            "high_support_weight": 0.5,
+            "low_support_weight": 0.5,
+            "mean_r2": 0.03368188115068382
+          },
+          {
+            "by_section": {
+              "1250011604": 0.0025318501919437348,
+              "1250022871": 0.11648668406553944
+            },
+            "high_support_weight": 0.0,
+            "low_support_weight": 1.0,
+            "mean_r2": 0.05950926712874159
+          },
+          {
+            "by_section": {
+              "1250011604": 0.0027756310454444483,
+              "1250022871": 0.05848564457125731
+            },
+            "high_support_weight": 0.5,
+            "low_support_weight": 1.0,
+            "mean_r2": 0.030630637808350878
+          },
+          {
+            "by_section": {
+              "1250011604": 0.0024853151706462607,
+              "1250022871": 0.0033142256961312946
+            },
+            "high_support_weight": 1.0,
+            "low_support_weight": 1.0,
+            "mean_r2": 0.0028997704333887774
+          }
+        ],
+        "uniform_control_low_high": [
+          0.0,
+          0.0
+        ],
+        "weights_low_high": [
+          0.5,
+          0.0
+        ]
+      },
+      "H18": {
+        "geometry_distribution": {
+          "alpha": 10.0,
+          "artifact_version": "s1c-ridge-v1",
+          "baseline_column": "s1b_prediction",
+          "bounds_policy": {
+            "lower_mm": 0.0,
+            "upper_column": "nominal_thickness_mm",
+            "upper_is_not_baseline": true
+          },
+          "coefficient_by_declared_feature": {
+            "abs_slope_m_per_m": 0.03321371680216596,
+            "age_last_vtd_years": null,
+            "age_min_vtd_years": null,
+            "last_minus_min_mm": null,
+            "last_vtd_thickness_mm": -0.23229836333745424,
+            "local_low_m": 0.020167687579541474,
+            "neighbor_missing": -0.026766086258569587,
+            "neighbor_prior_count": -0.10434488718884662,
+            "neighbor_prior_median_mm": 0.03671161238276379,
+            "prior_log_median_length": -0.0360226050462616,
+            "prior_log_median_width": -0.09727061383297368,
+            "prior_median_minus_min_mm": 0.004505606414946576,
+            "prior_p90_minus_p10_mm": -0.09425408671691356,
+            "prior_vtd_campaign_count": null,
+            "relative_position": -0.0011339858059279562,
+            "s1b_prediction": -0.232298363337453,
+            "slope_m_per_m": 0.005664127312107316
+          },
+          "coefficients": [
+            -0.232298363337453,
+            -0.23229836333745424,
+            0.03671161238276379,
+            -0.10434488718884662,
+            -0.026766086258569587,
+            0.005664127312107316,
+            0.03321371680216596,
+            -0.0011339858059279562,
+            0.020167687579541474,
+            -0.0360226050462616,
+            -0.09727061383297368,
+            0.004505606414946576,
+            -0.09425408671691356
+          ],
+          "contract_version": "s1abc-v1",
+          "dropped_columns": {
+            "age_last_vtd_years": "constant_on_training_fold",
+            "age_min_vtd_years": "constant_on_training_fold",
+            "last_minus_min_mm": "constant_on_training_fold",
+            "prior_vtd_campaign_count": "constant_on_training_fold"
+          },
+          "fallback_policy": "rows without own prior measurement keep S1B and do not enter Ridge",
+          "feature_order": [
+            "s1b_prediction",
+            "last_vtd_thickness_mm",
+            "age_last_vtd_years",
+            "age_min_vtd_years",
+            "prior_vtd_campaign_count",
+            "last_minus_min_mm",
+            "neighbor_prior_median_mm",
+            "neighbor_prior_count",
+            "neighbor_missing",
+            "slope_m_per_m",
+            "abs_slope_m_per_m",
+            "relative_position",
+            "local_low_m",
+            "prior_log_median_length",
+            "prior_log_median_width",
+            "prior_median_minus_min_mm",
+            "prior_p90_minus_p10_mm"
+          ],
+          "fit_intercept": true,
+          "intercept": -0.025455399172206444,
+          "interpretation": "Learned effective correction to a conservative past minimum; not a physical corrosion rate. Both signs are allowed.",
+          "model_name": "S1C_ridge",
+          "prediction_rule": "clip(baseline + ridge_delta, 0, nominal_thickness_mm)",
+          "preprocessing": {
+            "constant_columns": [
+              "age_last_vtd_years",
+              "age_min_vtd_years",
+              "prior_vtd_campaign_count",
+              "last_minus_min_mm"
+            ],
+            "dropped_columns": {
+              "age_last_vtd_years": "constant_on_training_fold",
+              "age_min_vtd_years": "constant_on_training_fold",
+              "last_minus_min_mm": "constant_on_training_fold",
+              "prior_vtd_campaign_count": "constant_on_training_fold"
+            },
+            "empty_columns": [],
+            "feature_order": [
+              "s1b_prediction",
+              "last_vtd_thickness_mm",
+              "age_last_vtd_years",
+              "age_min_vtd_years",
+              "prior_vtd_campaign_count",
+              "last_minus_min_mm",
+              "neighbor_prior_median_mm",
+              "neighbor_prior_count",
+              "neighbor_missing",
+              "slope_m_per_m",
+              "abs_slope_m_per_m",
+              "relative_position",
+              "local_low_m",
+              "prior_log_median_length",
+              "prior_log_median_width",
+              "prior_median_minus_min_mm",
+              "prior_p90_minus_p10_mm"
+            ],
+            "imputer": "SimpleImputer(strategy=median)",
+            "imputer_statistics": {
+              "abs_slope_m_per_m": 0.0,
+              "last_vtd_thickness_mm": 6.11,
+              "local_low_m": 0.0,
+              "neighbor_missing": 0.0,
+              "neighbor_prior_count": 3.0,
+              "neighbor_prior_median_mm": 6.1,
+              "prior_log_median_length": 3.044522437723423,
+              "prior_log_median_width": 3.384246605824315,
+              "prior_median_minus_min_mm": 0.28000000000000025,
+              "prior_p90_minus_p10_mm": 0.4480000000000004,
+              "relative_position": 0.438228793537078,
+              "s1b_prediction": 6.11,
+              "slope_m_per_m": 0.0
+            },
+            "scaler": "StandardScaler",
+            "scaler_mean": {
+              "abs_slope_m_per_m": 0.004745688975924718,
+              "last_vtd_thickness_mm": 6.132747875354108,
+              "local_low_m": -0.007084635963697519,
+              "neighbor_missing": 0.039660056657223795,
+              "neighbor_prior_count": 2.773371104815864,
+              "neighbor_prior_median_mm": 6.115694050991502,
+              "prior_log_median_length": 3.035177687791061,
+              "prior_log_median_width": 3.4317197669919017,
+              "prior_median_minus_min_mm": 0.4000424929178471,
+              "prior_p90_minus_p10_mm": 0.5191841359773371,
+              "relative_position": 0.4603394871637879,
+              "s1b_prediction": 6.132747875354108,
+              "slope_m_per_m": -0.0008346069343309188
+            },
+            "scaler_scale": {
+              "abs_slope_m_per_m": 0.009098081254882283,
+              "last_vtd_thickness_mm": 0.5526147851253276,
+              "local_low_m": 0.10999805143504157,
+              "neighbor_missing": 0.19515925948611712,
+              "neighbor_prior_count": 1.1162839104801234,
+              "neighbor_prior_median_mm": 0.40614282838277754,
+              "prior_log_median_length": 0.34162778301819235,
+              "prior_log_median_width": 0.3931633740634266,
+              "prior_median_minus_min_mm": 0.4442853202463704,
+              "prior_p90_minus_p10_mm": 0.5000553539647247,
+              "relative_position": 0.27378766613179795,
+              "s1b_prediction": 0.5526147851253276,
+              "slope_m_per_m": 0.010227417936205624
+            },
+            "used_features": [
+              "s1b_prediction",
+              "last_vtd_thickness_mm",
+              "neighbor_prior_median_mm",
+              "neighbor_prior_count",
+              "neighbor_missing",
+              "slope_m_per_m",
+              "abs_slope_m_per_m",
+              "relative_position",
+              "local_low_m",
+              "prior_log_median_length",
+              "prior_log_median_width",
+              "prior_median_minus_min_mm",
+              "prior_p90_minus_p10_mm"
+            ]
+          },
+          "solver": "cholesky",
+          "target": "target_delta_mm",
+          "target_delta_mean_mm": -0.05086548716083126,
+          "target_delta_std_mm": 0.652813883602982,
+          "training_date_max": "2022-07-06",
+          "training_dates": [
+            "2022-07-06"
+          ],
+          "training_parents": [
+            "MAIN-2"
+          ],
+          "training_rows": 353,
+          "training_simple_sections": [
+            1250011604,
+            1250022871
+          ],
+          "used_features": [
+            "s1b_prediction",
+            "last_vtd_thickness_mm",
+            "neighbor_prior_median_mm",
+            "neighbor_prior_count",
+            "neighbor_missing",
+            "slope_m_per_m",
+            "abs_slope_m_per_m",
+            "relative_position",
+            "local_low_m",
+            "prior_log_median_length",
+            "prior_log_median_width",
+            "prior_median_minus_min_mm",
+            "prior_p90_minus_p10_mm"
+          ],
+          "weighting": "equal_total_per_simple_pipe_id_normalized_mean_1",
+          "weighting_detail": "each simple section has equal total weight; weights normalized to mean 1",
+          "weights_max": 5.515625,
+          "weights_min": 0.5498442367601246
+        },
+        "geometry_type_distribution": {
+          "alpha": 10.0,
+          "artifact_version": "s1c-ridge-v1",
+          "baseline_column": "s1b_prediction",
+          "bounds_policy": {
+            "lower_mm": 0.0,
+            "upper_column": "nominal_thickness_mm",
+            "upper_is_not_baseline": true
+          },
+          "coefficient_by_declared_feature": {
+            "abs_slope_m_per_m": 0.03175634523496337,
+            "age_last_vtd_years": null,
+            "age_min_vtd_years": null,
+            "last_minus_min_mm": null,
+            "last_vtd_thickness_mm": -0.22935265727083734,
+            "local_low_m": 0.019759069972222737,
+            "neighbor_missing": -0.027898276600377574,
+            "neighbor_prior_count": -0.1063559075504389,
+            "neighbor_prior_median_mm": 0.034223715701308936,
+            "prior_external_fraction": null,
+            "prior_log_median_length": -0.03419010197700227,
+            "prior_log_median_width": -0.10016915484354713,
+            "prior_median_minus_min_mm": -0.005485431884462631,
+            "prior_p90_minus_p10_mm": -0.0869341355639369,
+            "prior_reported_metal_loss_fraction": -0.04732483552579242,
+            "prior_vtd_campaign_count": null,
+            "relative_position": -0.0015642253461165508,
+            "s1b_prediction": -0.22935265727083592,
+            "slope_m_per_m": 0.00502917909226094
+          },
+          "coefficients": [
+            -0.22935265727083592,
+            -0.22935265727083734,
+            0.034223715701308936,
+            -0.1063559075504389,
+            -0.027898276600377574,
+            0.00502917909226094,
+            0.03175634523496337,
+            -0.0015642253461165508,
+            0.019759069972222737,
+            -0.03419010197700227,
+            -0.10016915484354713,
+            -0.005485431884462631,
+            -0.0869341355639369,
+            -0.04732483552579242
+          ],
+          "contract_version": "s1abc-v1",
+          "dropped_columns": {
+            "age_last_vtd_years": "constant_on_training_fold",
+            "age_min_vtd_years": "constant_on_training_fold",
+            "last_minus_min_mm": "constant_on_training_fold",
+            "prior_external_fraction": "constant_on_training_fold",
+            "prior_vtd_campaign_count": "constant_on_training_fold"
+          },
+          "fallback_policy": "rows without own prior measurement keep S1B and do not enter Ridge",
+          "feature_order": [
+            "s1b_prediction",
+            "last_vtd_thickness_mm",
+            "age_last_vtd_years",
+            "age_min_vtd_years",
+            "prior_vtd_campaign_count",
+            "last_minus_min_mm",
+            "neighbor_prior_median_mm",
+            "neighbor_prior_count",
+            "neighbor_missing",
+            "slope_m_per_m",
+            "abs_slope_m_per_m",
+            "relative_position",
+            "local_low_m",
+            "prior_log_median_length",
+            "prior_log_median_width",
+            "prior_median_minus_min_mm",
+            "prior_p90_minus_p10_mm",
+            "prior_reported_metal_loss_fraction",
+            "prior_external_fraction"
+          ],
+          "fit_intercept": true,
+          "intercept": -0.024355453899490488,
+          "interpretation": "Learned effective correction to a conservative past minimum; not a physical corrosion rate. Both signs are allowed.",
+          "model_name": "S1C_ridge",
+          "prediction_rule": "clip(baseline + ridge_delta, 0, nominal_thickness_mm)",
+          "preprocessing": {
+            "constant_columns": [
+              "age_last_vtd_years",
+              "age_min_vtd_years",
+              "prior_vtd_campaign_count",
+              "last_minus_min_mm",
+              "prior_external_fraction"
+            ],
+            "dropped_columns": {
+              "age_last_vtd_years": "constant_on_training_fold",
+              "age_min_vtd_years": "constant_on_training_fold",
+              "last_minus_min_mm": "constant_on_training_fold",
+              "prior_external_fraction": "constant_on_training_fold",
+              "prior_vtd_campaign_count": "constant_on_training_fold"
+            },
+            "empty_columns": [],
+            "feature_order": [
+              "s1b_prediction",
+              "last_vtd_thickness_mm",
+              "age_last_vtd_years",
+              "age_min_vtd_years",
+              "prior_vtd_campaign_count",
+              "last_minus_min_mm",
+              "neighbor_prior_median_mm",
+              "neighbor_prior_count",
+              "neighbor_missing",
+              "slope_m_per_m",
+              "abs_slope_m_per_m",
+              "relative_position",
+              "local_low_m",
+              "prior_log_median_length",
+              "prior_log_median_width",
+              "prior_median_minus_min_mm",
+              "prior_p90_minus_p10_mm",
+              "prior_reported_metal_loss_fraction",
+              "prior_external_fraction"
+            ],
+            "imputer": "SimpleImputer(strategy=median)",
+            "imputer_statistics": {
+              "abs_slope_m_per_m": 0.0,
+              "last_vtd_thickness_mm": 6.11,
+              "local_low_m": 0.0,
+              "neighbor_missing": 0.0,
+              "neighbor_prior_count": 3.0,
+              "neighbor_prior_median_mm": 6.1,
+              "prior_log_median_length": 3.044522437723423,
+              "prior_log_median_width": 3.384246605824315,
+              "prior_median_minus_min_mm": 0.28000000000000025,
+              "prior_p90_minus_p10_mm": 0.4480000000000004,
+              "prior_reported_metal_loss_fraction": 1.0,
+              "relative_position": 0.438228793537078,
+              "s1b_prediction": 6.11,
+              "slope_m_per_m": 0.0
+            },
+            "scaler": "StandardScaler",
+            "scaler_mean": {
+              "abs_slope_m_per_m": 0.004745688975924718,
+              "last_vtd_thickness_mm": 6.132747875354108,
+              "local_low_m": -0.007084635963697519,
+              "neighbor_missing": 0.039660056657223795,
+              "neighbor_prior_count": 2.773371104815864,
+              "neighbor_prior_median_mm": 6.115694050991502,
+              "prior_log_median_length": 3.035177687791061,
+              "prior_log_median_width": 3.4317197669919017,
+              "prior_median_minus_min_mm": 0.4000424929178471,
+              "prior_p90_minus_p10_mm": 0.5191841359773371,
+              "prior_reported_metal_loss_fraction": 0.9992917847025495,
+              "relative_position": 0.4603394871637879,
+              "s1b_prediction": 6.132747875354108,
+              "slope_m_per_m": -0.0008346069343309188
+            },
+            "scaler_scale": {
+              "abs_slope_m_per_m": 0.009098081254882283,
+              "last_vtd_thickness_mm": 0.5526147851253276,
+              "local_low_m": 0.10999805143504157,
+              "neighbor_missing": 0.19515925948611712,
+              "neighbor_prior_count": 1.1162839104801234,
+              "neighbor_prior_median_mm": 0.40614282838277754,
+              "prior_log_median_length": 0.34162778301819235,
+              "prior_log_median_width": 0.3931633740634266,
+              "prior_median_minus_min_mm": 0.4442853202463704,
+              "prior_p90_minus_p10_mm": 0.5000553539647247,
+              "prior_reported_metal_loss_fraction": 0.013287296770038048,
+              "relative_position": 0.27378766613179795,
+              "s1b_prediction": 0.5526147851253276,
+              "slope_m_per_m": 0.010227417936205624
+            },
+            "used_features": [
+              "s1b_prediction",
+              "last_vtd_thickness_mm",
+              "neighbor_prior_median_mm",
+              "neighbor_prior_count",
+              "neighbor_missing",
+              "slope_m_per_m",
+              "abs_slope_m_per_m",
+              "relative_position",
+              "local_low_m",
+              "prior_log_median_length",
+              "prior_log_median_width",
+              "prior_median_minus_min_mm",
+              "prior_p90_minus_p10_mm",
+              "prior_reported_metal_loss_fraction"
+            ]
+          },
+          "solver": "cholesky",
+          "target": "target_delta_mm",
+          "target_delta_mean_mm": -0.05086548716083126,
+          "target_delta_std_mm": 0.652813883602982,
+          "training_date_max": "2022-07-06",
+          "training_dates": [
+            "2022-07-06"
+          ],
+          "training_parents": [
+            "MAIN-2"
+          ],
+          "training_rows": 353,
+          "training_simple_sections": [
+            1250011604,
+            1250022871
+          ],
+          "used_features": [
+            "s1b_prediction",
+            "last_vtd_thickness_mm",
+            "neighbor_prior_median_mm",
+            "neighbor_prior_count",
+            "neighbor_missing",
+            "slope_m_per_m",
+            "abs_slope_m_per_m",
+            "relative_position",
+            "local_low_m",
+            "prior_log_median_length",
+            "prior_log_median_width",
+            "prior_median_minus_min_mm",
+            "prior_p90_minus_p10_mm",
+            "prior_reported_metal_loss_fraction"
+          ],
+          "weighting": "equal_total_per_simple_pipe_id_normalized_mean_1",
+          "weighting_detail": "each simple section has equal total weight; weights normalized to mean 1",
+          "weights_max": 5.515625,
+          "weights_min": 0.5498442367601246
+        }
+      },
+      "training_high_support": 211,
+      "training_rows": 353
+    },
+    "1250011604": {
+      "H16": {
+        "models": {
+          "huber_measurement": {
+            "coef": [
+              -0.49886934601114297,
+              0.021757235670502896,
+              -0.2891533599540808
+            ],
+            "intercept": -0.04122300903037413,
+            "outlier_count": 134,
+            "scale": 0.2678007754087665
+          },
+          "squared_loss_matched": {
+            "coef": [
+              -0.5239263729437067,
+              -0.05996638407776307,
+              -0.23399650442371475
+            ],
+            "intercept": -0.07937504422845511,
+            "outlier_count": null,
+            "scale": null
+          }
+        },
+        "preprocessing": {
+          "constant_columns": [],
+          "dropped_columns": {},
+          "empty_columns": [],
+          "feature_order": [
+            "proxy",
+            "prior_median_minus_min_mm",
+            "prior_p90_minus_p10_mm"
+          ],
+          "imputer": "SimpleImputer(strategy=median)",
+          "imputer_statistics": {
+            "prior_median_minus_min_mm": 0.2649999999999997,
+            "prior_p90_minus_p10_mm": 0.4479999999999995,
+            "proxy": 6.13785505020717
+          },
+          "scaler": "StandardScaler",
+          "scaler_mean": {
+            "prior_median_minus_min_mm": 0.3918153846153846,
+            "prior_p90_minus_p10_mm": 0.5168246153846154,
+            "proxy": 6.142628844365458
+          },
+          "scaler_scale": {
+            "prior_median_minus_min_mm": 0.44375852381179265,
+            "prior_p90_minus_p10_mm": 0.5017322086932796,
+            "proxy": 0.5463092756202776
+          },
+          "used_features": [
+            "proxy",
+            "prior_median_minus_min_mm",
+            "prior_p90_minus_p10_mm"
+          ]
+        }
+      },
+      "H17": {
+        "auxiliary": {
+          "alpha": 10.0,
+          "artifact_version": "s1c-ridge-v1",
+          "baseline_column": "s1b_prediction",
+          "bounds_policy": {
+            "lower_mm": 0.0,
+            "upper_column": "nominal_thickness_mm",
+            "upper_is_not_baseline": true
+          },
+          "coefficient_by_declared_feature": {
+            "abs_slope_m_per_m": 0.08029763999114208,
+            "age_last_vtd_years": null,
+            "age_min_vtd_years": null,
+            "last_minus_min_mm": null,
+            "last_vtd_thickness_mm": -0.13714404040139364,
+            "local_low_m": 0.06357633066354033,
+            "neighbor_missing": 0.05002307445999295,
+            "neighbor_prior_count": 0.0914984740935626,
+            "neighbor_prior_median_mm": 0.042846977041769,
+            "prior_vtd_campaign_count": null,
+            "relative_position": 0.12527248739859104,
+            "s1b_prediction": -0.13714404040139488,
+            "slope_m_per_m": 0.038138871522065354
+          },
+          "coefficients": [
+            -0.13714404040139488,
+            -0.13714404040139364,
+            0.042846977041769,
+            0.0914984740935626,
+            0.05002307445999295,
+            0.038138871522065354,
+            0.08029763999114208,
+            0.12527248739859104,
+            0.06357633066354033
+          ],
+          "contract_version": "s1abc-v1",
+          "dropped_columns": {
+            "age_last_vtd_years": "constant_on_training_fold",
+            "age_min_vtd_years": "constant_on_training_fold",
+            "last_minus_min_mm": "constant_on_training_fold",
+            "prior_vtd_campaign_count": "constant_on_training_fold"
+          },
+          "fallback_policy": "rows without own prior measurement keep S1B and do not enter Ridge",
+          "feature_order": [
+            "s1b_prediction",
+            "last_vtd_thickness_mm",
+            "age_last_vtd_years",
+            "age_min_vtd_years",
+            "prior_vtd_campaign_count",
+            "last_minus_min_mm",
+            "neighbor_prior_median_mm",
+            "neighbor_prior_count",
+            "neighbor_missing",
+            "slope_m_per_m",
+            "abs_slope_m_per_m",
+            "relative_position",
+            "local_low_m"
+          ],
+          "fit_intercept": true,
+          "intercept": -0.08841922465695964,
+          "interpretation": "Learned effective correction to a conservative past minimum; not a physical corrosion rate. Both signs are allowed.",
+          "model_name": "S1C_ridge",
+          "prediction_rule": "clip(baseline + ridge_delta, 0, nominal_thickness_mm)",
+          "preprocessing": {
+            "constant_columns": [
+              "age_last_vtd_years",
+              "age_min_vtd_years",
+              "prior_vtd_campaign_count",
+              "last_minus_min_mm"
+            ],
+            "dropped_columns": {
+              "age_last_vtd_years": "constant_on_training_fold",
+              "age_min_vtd_years": "constant_on_training_fold",
+              "last_minus_min_mm": "constant_on_training_fold",
+              "prior_vtd_campaign_count": "constant_on_training_fold"
+            },
+            "empty_columns": [],
+            "feature_order": [
+              "s1b_prediction",
+              "last_vtd_thickness_mm",
+              "age_last_vtd_years",
+              "age_min_vtd_years",
+              "prior_vtd_campaign_count",
+              "last_minus_min_mm",
+              "neighbor_prior_median_mm",
+              "neighbor_prior_count",
+              "neighbor_missing",
+              "slope_m_per_m",
+              "abs_slope_m_per_m",
+              "relative_position",
+              "local_low_m"
+            ],
+            "imputer": "SimpleImputer(strategy=median)",
+            "imputer_statistics": {
+              "abs_slope_m_per_m": 0.0,
+              "last_vtd_thickness_mm": 6.12,
+              "local_low_m": 0.0,
+              "neighbor_missing": 0.0,
+              "neighbor_prior_count": 3.0,
+              "neighbor_prior_median_mm": 6.11,
+              "relative_position": 0.43251276579529,
+              "s1b_prediction": 6.12,
+              "slope_m_per_m": 0.0
+            },
+            "scaler": "StandardScaler",
+            "scaler_mean": {
+              "abs_slope_m_per_m": 0.004858387953618489,
+              "last_vtd_thickness_mm": 6.132553846153846,
+              "local_low_m": -0.00015654306210828613,
+              "neighbor_missing": 0.04,
+              "neighbor_prior_count": 2.8,
+              "neighbor_prior_median_mm": 6.113938461538462,
+              "relative_position": 0.4541803045717821,
+              "s1b_prediction": 6.132553846153846,
+              "slope_m_per_m": -0.0006759843556445649
+            },
+            "scaler_scale": {
+              "abs_slope_m_per_m": 0.009943850407302635,
+              "last_vtd_thickness_mm": 0.5582747608830738,
+              "local_low_m": 0.113291435089152,
+              "neighbor_missing": 0.19595917942265423,
+              "neighbor_prior_count": 1.1176899253508412,
+              "neighbor_prior_median_mm": 0.4164919752453665,
+              "relative_position": 0.26923860055006327,
+              "s1b_prediction": 0.5582747608830738,
+              "slope_m_per_m": 0.011046589500004146
+            },
+            "used_features": [
+              "s1b_prediction",
+              "last_vtd_thickness_mm",
+              "neighbor_prior_median_mm",
+              "neighbor_prior_count",
+              "neighbor_missing",
+              "slope_m_per_m",
+              "abs_slope_m_per_m",
+              "relative_position",
+              "local_low_m"
+            ]
+          },
+          "solver": "cholesky",
+          "target": "target_delta_mm",
+          "target_delta_mean_mm": -0.061340052208533655,
+          "target_delta_std_mm": 0.657467534582484,
+          "training_date_max": "2022-07-06",
+          "training_dates": [
+            "2022-07-06"
+          ],
+          "training_parents": [
+            "MAIN-2"
+          ],
+          "training_rows": 325,
+          "training_simple_sections": [
+            1250009490,
+            1250022871
+          ],
+          "used_features": [
+            "s1b_prediction",
+            "last_vtd_thickness_mm",
+            "neighbor_prior_median_mm",
+            "neighbor_prior_count",
+            "neighbor_missing",
+            "slope_m_per_m",
+            "abs_slope_m_per_m",
+            "relative_position",
+            "local_low_m"
+          ],
+          "weighting": "equal_total_per_simple_pipe_id_normalized_mean_1",
+          "weighting_detail": "each simple section has equal total weight; weights normalized to mean 1",
+          "weights_max": 40.625,
+          "weights_min": 0.5062305295950156
+        },
+        "inner_scores": [
+          {
+            "by_section": {
+              "1250009490": 0.29965358000325676,
+              "1250022871": 0.10538922874802621
+            },
+            "high_support_weight": 0.0,
+            "low_support_weight": 0.0,
+            "mean_r2": 0.20252140437564148
+          },
+          {
+            "by_section": {
+              "1250009490": 0.1964769730252001,
+              "1250022871": 0.10131612903589414
+            },
+            "high_support_weight": 0.0,
+            "low_support_weight": 0.5,
+            "mean_r2": 0.1488965510305471
+          },
+          {
+            "by_section": {
+              "1250009490": 0.4068746654221713,
+              "1250022871": 0.07640047345691674
+            },
+            "high_support_weight": 0.5,
+            "low_support_weight": 0.5,
+            "mean_r2": 0.24163756943954404
+          },
+          {
+            "by_section": {
+              "1250009490": 0.11417986244482241,
+              "1250022871": 0.0939028010826931
+            },
+            "high_support_weight": 0.0,
+            "low_support_weight": 1.0,
+            "mean_r2": 0.10404133176375775
+          },
+          {
+            "by_section": {
+              "1250009490": 0.1786968596038218,
+              "1250022871": 0.06992566972144659
+            },
+            "high_support_weight": 0.5,
+            "low_support_weight": 1.0,
+            "mean_r2": 0.1243112646626342
+          },
+          {
+            "by_section": {
+              "1250009490": 0.15067299926707547,
+              "1250022871": 0.046990339587546094
+            },
+            "high_support_weight": 1.0,
+            "low_support_weight": 1.0,
+            "mean_r2": 0.09883166942731078
+          }
+        ],
+        "uniform_control_low_high": [
+          0.5,
+          0.5
+        ],
+        "weights_low_high": [
+          0.5,
+          0.5
+        ]
+      },
+      "H18": {
+        "geometry_distribution": {
+          "alpha": 10.0,
+          "artifact_version": "s1c-ridge-v1",
+          "baseline_column": "s1b_prediction",
+          "bounds_policy": {
+            "lower_mm": 0.0,
+            "upper_column": "nominal_thickness_mm",
+            "upper_is_not_baseline": true
+          },
+          "coefficient_by_declared_feature": {
+            "abs_slope_m_per_m": 0.06452880604019562,
+            "age_last_vtd_years": null,
+            "age_min_vtd_years": null,
+            "last_minus_min_mm": null,
+            "last_vtd_thickness_mm": -0.2237912321292526,
+            "local_low_m": 0.040285203770645,
+            "neighbor_missing": 0.03459374601466825,
+            "neighbor_prior_count": 0.029499432866540828,
+            "neighbor_prior_median_mm": 0.0637277455271876,
+            "prior_log_median_length": -0.08379582394970732,
+            "prior_log_median_width": -0.04791905188392213,
+            "prior_median_minus_min_mm": 0.06659740952966005,
+            "prior_p90_minus_p10_mm": -0.2846886922896114,
+            "prior_vtd_campaign_count": null,
+            "relative_position": 0.05863362898689745,
+            "s1b_prediction": -0.22379123212925436,
+            "slope_m_per_m": 0.02412106669309452
+          },
+          "coefficients": [
+            -0.22379123212925436,
+            -0.2237912321292526,
+            0.0637277455271876,
+            0.029499432866540828,
+            0.03459374601466825,
+            0.02412106669309452,
+            0.06452880604019562,
+            0.05863362898689745,
+            0.040285203770645,
+            -0.08379582394970732,
+            -0.04791905188392213,
+            0.06659740952966005,
+            -0.2846886922896114
+          ],
+          "contract_version": "s1abc-v1",
+          "dropped_columns": {
+            "age_last_vtd_years": "constant_on_training_fold",
+            "age_min_vtd_years": "constant_on_training_fold",
+            "last_minus_min_mm": "constant_on_training_fold",
+            "prior_vtd_campaign_count": "constant_on_training_fold"
+          },
+          "fallback_policy": "rows without own prior measurement keep S1B and do not enter Ridge",
+          "feature_order": [
+            "s1b_prediction",
+            "last_vtd_thickness_mm",
+            "age_last_vtd_years",
+            "age_min_vtd_years",
+            "prior_vtd_campaign_count",
+            "last_minus_min_mm",
+            "neighbor_prior_median_mm",
+            "neighbor_prior_count",
+            "neighbor_missing",
+            "slope_m_per_m",
+            "abs_slope_m_per_m",
+            "relative_position",
+            "local_low_m",
+            "prior_log_median_length",
+            "prior_log_median_width",
+            "prior_median_minus_min_mm",
+            "prior_p90_minus_p10_mm"
+          ],
+          "fit_intercept": true,
+          "intercept": -0.07287411239930128,
+          "interpretation": "Learned effective correction to a conservative past minimum; not a physical corrosion rate. Both signs are allowed.",
+          "model_name": "S1C_ridge",
+          "prediction_rule": "clip(baseline + ridge_delta, 0, nominal_thickness_mm)",
+          "preprocessing": {
+            "constant_columns": [
+              "age_last_vtd_years",
+              "age_min_vtd_years",
+              "prior_vtd_campaign_count",
+              "last_minus_min_mm"
+            ],
+            "dropped_columns": {
+              "age_last_vtd_years": "constant_on_training_fold",
+              "age_min_vtd_years": "constant_on_training_fold",
+              "last_minus_min_mm": "constant_on_training_fold",
+              "prior_vtd_campaign_count": "constant_on_training_fold"
+            },
+            "empty_columns": [],
+            "feature_order": [
+              "s1b_prediction",
+              "last_vtd_thickness_mm",
+              "age_last_vtd_years",
+              "age_min_vtd_years",
+              "prior_vtd_campaign_count",
+              "last_minus_min_mm",
+              "neighbor_prior_median_mm",
+              "neighbor_prior_count",
+              "neighbor_missing",
+              "slope_m_per_m",
+              "abs_slope_m_per_m",
+              "relative_position",
+              "local_low_m",
+              "prior_log_median_length",
+              "prior_log_median_width",
+              "prior_median_minus_min_mm",
+              "prior_p90_minus_p10_mm"
+            ],
+            "imputer": "SimpleImputer(strategy=median)",
+            "imputer_statistics": {
+              "abs_slope_m_per_m": 0.0,
+              "last_vtd_thickness_mm": 6.12,
+              "local_low_m": 0.0,
+              "neighbor_missing": 0.0,
+              "neighbor_prior_count": 3.0,
+              "neighbor_prior_median_mm": 6.11,
+              "prior_log_median_length": 3.044522437723423,
+              "prior_log_median_width": 3.3865401878277677,
+              "prior_median_minus_min_mm": 0.2649999999999997,
+              "prior_p90_minus_p10_mm": 0.4479999999999995,
+              "relative_position": 0.43251276579529,
+              "s1b_prediction": 6.12,
+              "slope_m_per_m": 0.0
+            },
+            "scaler": "StandardScaler",
+            "scaler_mean": {
+              "abs_slope_m_per_m": 0.004858387953618489,
+              "last_vtd_thickness_mm": 6.132553846153846,
+              "local_low_m": -0.00015654306210828613,
+              "neighbor_missing": 0.04,
+              "neighbor_prior_count": 2.8,
+              "neighbor_prior_median_mm": 6.113938461538462,
+              "prior_log_median_length": 3.0398173003992417,
+              "prior_log_median_width": 3.4392076469050616,
+              "prior_median_minus_min_mm": 0.3918153846153846,
+              "prior_p90_minus_p10_mm": 0.5168246153846154,
+              "relative_position": 0.4541803045717821,
+              "s1b_prediction": 6.132553846153846,
+              "slope_m_per_m": -0.0006759843556445649
+            },
+            "scaler_scale": {
+              "abs_slope_m_per_m": 0.009943850407302635,
+              "last_vtd_thickness_mm": 0.5582747608830738,
+              "local_low_m": 0.113291435089152,
+              "neighbor_missing": 0.19595917942265423,
+              "neighbor_prior_count": 1.1176899253508412,
+              "neighbor_prior_median_mm": 0.4164919752453665,
+              "prior_log_median_length": 0.34419556232809656,
+              "prior_log_median_width": 0.3934715816636214,
+              "prior_median_minus_min_mm": 0.44375852381179265,
+              "prior_p90_minus_p10_mm": 0.5017322086932796,
+              "relative_position": 0.26923860055006327,
+              "s1b_prediction": 0.5582747608830738,
+              "slope_m_per_m": 0.011046589500004146
+            },
+            "used_features": [
+              "s1b_prediction",
+              "last_vtd_thickness_mm",
+              "neighbor_prior_median_mm",
+              "neighbor_prior_count",
+              "neighbor_missing",
+              "slope_m_per_m",
+              "abs_slope_m_per_m",
+              "relative_position",
+              "local_low_m",
+              "prior_log_median_length",
+              "prior_log_median_width",
+              "prior_median_minus_min_mm",
+              "prior_p90_minus_p10_mm"
+            ]
+          },
+          "solver": "cholesky",
+          "target": "target_delta_mm",
+          "target_delta_mean_mm": -0.061340052208533655,
+          "target_delta_std_mm": 0.657467534582484,
+          "training_date_max": "2022-07-06",
+          "training_dates": [
+            "2022-07-06"
+          ],
+          "training_parents": [
+            "MAIN-2"
+          ],
+          "training_rows": 325,
+          "training_simple_sections": [
+            1250009490,
+            1250022871
+          ],
+          "used_features": [
+            "s1b_prediction",
+            "last_vtd_thickness_mm",
+            "neighbor_prior_median_mm",
+            "neighbor_prior_count",
+            "neighbor_missing",
+            "slope_m_per_m",
+            "abs_slope_m_per_m",
+            "relative_position",
+            "local_low_m",
+            "prior_log_median_length",
+            "prior_log_median_width",
+            "prior_median_minus_min_mm",
+            "prior_p90_minus_p10_mm"
+          ],
+          "weighting": "equal_total_per_simple_pipe_id_normalized_mean_1",
+          "weighting_detail": "each simple section has equal total weight; weights normalized to mean 1",
+          "weights_max": 40.625,
+          "weights_min": 0.5062305295950156
+        },
+        "geometry_type_distribution": {
+          "alpha": 10.0,
+          "artifact_version": "s1c-ridge-v1",
+          "baseline_column": "s1b_prediction",
+          "bounds_policy": {
+            "lower_mm": 0.0,
+            "upper_column": "nominal_thickness_mm",
+            "upper_is_not_baseline": true
+          },
+          "coefficient_by_declared_feature": {
+            "abs_slope_m_per_m": 0.06271856196805255,
+            "age_last_vtd_years": null,
+            "age_min_vtd_years": null,
+            "last_minus_min_mm": null,
+            "last_vtd_thickness_mm": -0.2183406854099291,
+            "local_low_m": 0.040794709143164735,
+            "neighbor_missing": 0.03505999037951381,
+            "neighbor_prior_count": 0.029739148342270445,
+            "neighbor_prior_median_mm": 0.05798974756681013,
+            "prior_external_fraction": null,
+            "prior_log_median_length": -0.0788340306858354,
+            "prior_log_median_width": -0.05486010079532847,
+            "prior_median_minus_min_mm": 0.04532637989655212,
+            "prior_p90_minus_p10_mm": -0.2760587474559517,
+            "prior_reported_metal_loss_fraction": -0.07134505886676018,
+            "prior_vtd_campaign_count": null,
+            "relative_position": 0.058232854147382655,
+            "s1b_prediction": -0.21834068540993076,
+            "slope_m_per_m": 0.024298156585925004
+          },
+          "coefficients": [
+            -0.21834068540993076,
+            -0.2183406854099291,
+            0.05798974756681013,
+            0.029739148342270445,
+            0.03505999037951381,
+            0.024298156585925004,
+            0.06271856196805255,
+            0.058232854147382655,
+            0.040794709143164735,
+            -0.0788340306858354,
+            -0.05486010079532847,
+            0.04532637989655212,
+            -0.2760587474559517,
+            -0.07134505886676018
+          ],
+          "contract_version": "s1abc-v1",
+          "dropped_columns": {
+            "age_last_vtd_years": "constant_on_training_fold",
+            "age_min_vtd_years": "constant_on_training_fold",
+            "last_minus_min_mm": "constant_on_training_fold",
+            "prior_external_fraction": "constant_on_training_fold",
+            "prior_vtd_campaign_count": "constant_on_training_fold"
+          },
+          "fallback_policy": "rows without own prior measurement keep S1B and do not enter Ridge",
+          "feature_order": [
+            "s1b_prediction",
+            "last_vtd_thickness_mm",
+            "age_last_vtd_years",
+            "age_min_vtd_years",
+            "prior_vtd_campaign_count",
+            "last_minus_min_mm",
+            "neighbor_prior_median_mm",
+            "neighbor_prior_count",
+            "neighbor_missing",
+            "slope_m_per_m",
+            "abs_slope_m_per_m",
+            "relative_position",
+            "local_low_m",
+            "prior_log_median_length",
+            "prior_log_median_width",
+            "prior_median_minus_min_mm",
+            "prior_p90_minus_p10_mm",
+            "prior_reported_metal_loss_fraction",
+            "prior_external_fraction"
+          ],
+          "fit_intercept": true,
+          "intercept": -0.0732890197358918,
+          "interpretation": "Learned effective correction to a conservative past minimum; not a physical corrosion rate. Both signs are allowed.",
+          "model_name": "S1C_ridge",
+          "prediction_rule": "clip(baseline + ridge_delta, 0, nominal_thickness_mm)",
+          "preprocessing": {
+            "constant_columns": [
+              "age_last_vtd_years",
+              "age_min_vtd_years",
+              "prior_vtd_campaign_count",
+              "last_minus_min_mm",
+              "prior_external_fraction"
+            ],
+            "dropped_columns": {
+              "age_last_vtd_years": "constant_on_training_fold",
+              "age_min_vtd_years": "constant_on_training_fold",
+              "last_minus_min_mm": "constant_on_training_fold",
+              "prior_external_fraction": "constant_on_training_fold",
+              "prior_vtd_campaign_count": "constant_on_training_fold"
+            },
+            "empty_columns": [],
+            "feature_order": [
+              "s1b_prediction",
+              "last_vtd_thickness_mm",
+              "age_last_vtd_years",
+              "age_min_vtd_years",
+              "prior_vtd_campaign_count",
+              "last_minus_min_mm",
+              "neighbor_prior_median_mm",
+              "neighbor_prior_count",
+              "neighbor_missing",
+              "slope_m_per_m",
+              "abs_slope_m_per_m",
+              "relative_position",
+              "local_low_m",
+              "prior_log_median_length",
+              "prior_log_median_width",
+              "prior_median_minus_min_mm",
+              "prior_p90_minus_p10_mm",
+              "prior_reported_metal_loss_fraction",
+              "prior_external_fraction"
+            ],
+            "imputer": "SimpleImputer(strategy=median)",
+            "imputer_statistics": {
+              "abs_slope_m_per_m": 0.0,
+              "last_vtd_thickness_mm": 6.12,
+              "local_low_m": 0.0,
+              "neighbor_missing": 0.0,
+              "neighbor_prior_count": 3.0,
+              "neighbor_prior_median_mm": 6.11,
+              "prior_log_median_length": 3.044522437723423,
+              "prior_log_median_width": 3.3865401878277677,
+              "prior_median_minus_min_mm": 0.2649999999999997,
+              "prior_p90_minus_p10_mm": 0.4479999999999995,
+              "prior_reported_metal_loss_fraction": 1.0,
+              "relative_position": 0.43251276579529,
+              "s1b_prediction": 6.12,
+              "slope_m_per_m": 0.0
+            },
+            "scaler": "StandardScaler",
+            "scaler_mean": {
+              "abs_slope_m_per_m": 0.004858387953618489,
+              "last_vtd_thickness_mm": 6.132553846153846,
+              "local_low_m": -0.00015654306210828613,
+              "neighbor_missing": 0.04,
+              "neighbor_prior_count": 2.8,
+              "neighbor_prior_median_mm": 6.113938461538462,
+              "prior_log_median_length": 3.0398173003992417,
+              "prior_log_median_width": 3.4392076469050616,
+              "prior_median_minus_min_mm": 0.3918153846153846,
+              "prior_p90_minus_p10_mm": 0.5168246153846154,
+              "prior_reported_metal_loss_fraction": 0.9992307692307693,
+              "relative_position": 0.4541803045717821,
+              "s1b_prediction": 6.132553846153846,
+              "slope_m_per_m": -0.0006759843556445649
+            },
+            "scaler_scale": {
+              "abs_slope_m_per_m": 0.009943850407302635,
+              "last_vtd_thickness_mm": 0.5582747608830738,
+              "local_low_m": 0.113291435089152,
+              "neighbor_missing": 0.19595917942265423,
+              "neighbor_prior_count": 1.1176899253508412,
+              "neighbor_prior_median_mm": 0.4164919752453665,
+              "prior_log_median_length": 0.34419556232809656,
+              "prior_log_median_width": 0.3934715816636214,
+              "prior_median_minus_min_mm": 0.44375852381179265,
+              "prior_p90_minus_p10_mm": 0.5017322086932796,
+              "prior_reported_metal_loss_fraction": 0.013846153846153847,
+              "relative_position": 0.26923860055006327,
+              "s1b_prediction": 0.5582747608830738,
+              "slope_m_per_m": 0.011046589500004146
+            },
+            "used_features": [
+              "s1b_prediction",
+              "last_vtd_thickness_mm",
+              "neighbor_prior_median_mm",
+              "neighbor_prior_count",
+              "neighbor_missing",
+              "slope_m_per_m",
+              "abs_slope_m_per_m",
+              "relative_position",
+              "local_low_m",
+              "prior_log_median_length",
+              "prior_log_median_width",
+              "prior_median_minus_min_mm",
+              "prior_p90_minus_p10_mm",
+              "prior_reported_metal_loss_fraction"
+            ]
+          },
+          "solver": "cholesky",
+          "target": "target_delta_mm",
+          "target_delta_mean_mm": -0.061340052208533655,
+          "target_delta_std_mm": 0.657467534582484,
+          "training_date_max": "2022-07-06",
+          "training_dates": [
+            "2022-07-06"
+          ],
+          "training_parents": [
+            "MAIN-2"
+          ],
+          "training_rows": 325,
+          "training_simple_sections": [
+            1250009490,
+            1250022871
+          ],
+          "used_features": [
+            "s1b_prediction",
+            "last_vtd_thickness_mm",
+            "neighbor_prior_median_mm",
+            "neighbor_prior_count",
+            "neighbor_missing",
+            "slope_m_per_m",
+            "abs_slope_m_per_m",
+            "relative_position",
+            "local_low_m",
+            "prior_log_median_length",
+            "prior_log_median_width",
+            "prior_median_minus_min_mm",
+            "prior_p90_minus_p10_mm",
+            "prior_reported_metal_loss_fraction"
+          ],
+          "weighting": "equal_total_per_simple_pipe_id_normalized_mean_1",
+          "weighting_detail": "each simple section has equal total weight; weights normalized to mean 1",
+          "weights_max": 40.625,
+          "weights_min": 0.5062305295950156
+        }
+      },
+      "training_high_support": 192,
+      "training_rows": 325
+    }
+  },
+  "S2_LOSO_pooled": {
+    "1250009490": {
+      "models": {
+        "basin_ranks": {
+          "alpha": 10.0,
+          "baseline_column": null,
+          "candidate": "basin_ranks",
+          "centering": "length-weighted full grid",
+          "coefficient_by_feature": {
+            "abs_slope_rank": -0.03309629524170907,
+            "basin_depth_100m_rank": -0.029501404212349123,
+            "basin_depth_30m_rank": 0.060250651602466614,
+            "local_low_rank": -0.008195643017642678,
+            "pool_depth_rank": 0.0925318388086775,
+            "position_rank": -0.01919987150249136,
+            "slope_rank": -0.016909795051929268,
+            "z_rank": 0.006731958353502896
+          },
+          "coefficients": [
+            0.006731958353502896,
+            -0.016909795051929268,
+            -0.03309629524170907,
+            -0.01919987150249136,
+            -0.008195643017642678,
+            0.0925318388086775,
+            0.060250651602466614,
+            -0.029501404212349123
+          ],
+          "dropped_columns": {},
+          "features": [
+            "z_rank",
+            "slope_rank",
+            "abs_slope_rank",
+            "position_rank",
+            "local_low_rank",
+            "pool_depth_rank",
+            "basin_depth_30m_rank",
+            "basin_depth_100m_rank"
+          ],
+          "fit_intercept": true,
+          "intercept": -1.846709268221059e-17,
+          "model_name": "s2_spatial_ridge",
+          "model_type": "Ridge",
+          "physics_metadata": {
+            "gap_policy": "own_mean",
+            "interpretation": "Effective segment-minimum thinning rate under declared environment priors; not an electrochemical CO2/H2S constant",
+            "name": "M1",
+            "priors": {
+              "age_exponent": 1.0,
+              "beta_W": 0.3,
+              "beta_v": 0.1,
+              "theta_K": 2500.0,
+              "velocity_offset_m_s": 0.1
+            },
+            "r_ref_mm_year": 0.10537139350469842,
+            "reference": {
+              "temperature_K": 285.6940825298223,
+              "velocity_m_s": 0.5707789385004212,
+              "water_fraction": 0.867897304128054
+            },
+            "training_groups": 1,
+            "training_rows": 368,
+            "weighting": "W0"
+          },
+          "prediction_policy": "delta",
+          "preprocessing": {
+            "constant_columns": [],
+            "dropped_columns": {},
+            "duplicate_columns": {},
+            "empty_columns": [],
+            "feature_order": [
+              "z_rank",
+              "slope_rank",
+              "abs_slope_rank",
+              "position_rank",
+              "local_low_rank",
+              "pool_depth_rank",
+              "basin_depth_30m_rank",
+              "basin_depth_100m_rank"
+            ],
+            "imputer": "median",
+            "imputer_statistics": {
+              "abs_slope_rank": 0.3323809523809524,
+              "basin_depth_100m_rank": 0.4438095238095238,
+              "basin_depth_30m_rank": 0.49142857142857144,
+              "local_low_rank": 0.49523809523809526,
+              "pool_depth_rank": 0.43142857142857144,
+              "position_rank": 0.4323809523809524,
+              "slope_rank": 0.5019047619047619,
+              "z_rank": 0.5371428571428571
+            },
+            "scaler": "StandardScaler",
+            "scaler_mean": {
+              "abs_slope_rank": 0.48800077639751555,
+              "basin_depth_100m_rank": 0.5075750517598342,
+              "basin_depth_30m_rank": 0.5012551759834368,
+              "local_low_rank": 0.4993180641821947,
+              "pool_depth_rank": 0.4585960144927536,
+              "position_rank": 0.4504399585921325,
+              "slope_rank": 0.5007052277432713,
+              "z_rank": 0.5346829710144928
+            },
+            "scaler_scale": {
+              "abs_slope_rank": 0.23909600304764517,
+              "basin_depth_100m_rank": 0.16192243703509648,
+              "basin_depth_30m_rank": 0.07281054074658154,
+              "local_low_rank": 0.20830091185409105,
+              "pool_depth_rank": 0.2796422809522079,
+              "position_rank": 0.2788000423047912,
+              "slope_rank": 0.2375080620305507,
+              "z_rank": 0.28287032528373013
+            },
+            "used_features": [
+              "z_rank",
+              "slope_rank",
+              "abs_slope_rank",
+              "position_rank",
+              "local_low_rank",
+              "pool_depth_rank",
+              "basin_depth_30m_rank",
+              "basin_depth_100m_rank"
+            ]
+          },
+          "residual_centering": "within training simple section",
+          "solver": "cholesky",
+          "target": "residual_centered_mm",
+          "target_mean": -1.8704844436619485e-17,
+          "target_std": 0.5533035471391229,
+          "training_dates": [
+            "2018-09-23"
+          ],
+          "training_rows": 368,
+          "training_sections": [
+            1250011604,
+            1250022871
+          ],
+          "used_features": [
+            "z_rank",
+            "slope_rank",
+            "abs_slope_rank",
+            "position_rank",
+            "local_low_rank",
+            "pool_depth_rank",
+            "basin_depth_30m_rank",
+            "basin_depth_100m_rank"
+          ]
+        },
+        "centered_fluid_temperature": {
+          "alpha": 10.0,
+          "baseline_column": null,
+          "candidate": "centered_fluid_temperature",
+          "centering": "length-weighted full grid",
+          "coefficient_by_feature": {
+            "abs_slope_rank": -0.03338813789709475,
+            "basin_depth_100m_rank": -0.03079279645645837,
+            "basin_depth_30m_rank": 0.059618815100485514,
+            "local_low_rank": -0.010334829228409023,
+            "pool_depth_rank": 0.09157597069295621,
+            "position_rank": -0.041026457112148834,
+            "prior_centered_fluid_temperature_c": -0.02349050610310236,
+            "slope_rank": -0.016783179109269176,
+            "z_rank": 0.005893716710621075
+          },
+          "coefficients": [
+            0.005893716710621075,
+            -0.016783179109269176,
+            -0.03338813789709475,
+            -0.041026457112148834,
+            -0.010334829228409023,
+            0.09157597069295621,
+            0.059618815100485514,
+            -0.03079279645645837,
+            -0.02349050610310236
+          ],
+          "dropped_columns": {},
+          "features": [
+            "z_rank",
+            "slope_rank",
+            "abs_slope_rank",
+            "position_rank",
+            "local_low_rank",
+            "pool_depth_rank",
+            "basin_depth_30m_rank",
+            "basin_depth_100m_rank",
+            "prior_centered_fluid_temperature_c"
+          ],
+          "fit_intercept": true,
+          "intercept": -1.603500748321294e-17,
+          "model_name": "s2_spatial_ridge",
+          "model_type": "Ridge",
+          "physics_metadata": {
+            "gap_policy": "own_mean",
+            "interpretation": "Effective segment-minimum thinning rate under declared environment priors; not an electrochemical CO2/H2S constant",
+            "name": "M1",
+            "priors": {
+              "age_exponent": 1.0,
+              "beta_W": 0.3,
+              "beta_v": 0.1,
+              "theta_K": 2500.0,
+              "velocity_offset_m_s": 0.1
+            },
+            "r_ref_mm_year": 0.10537139350469842,
+            "reference": {
+              "temperature_K": 285.6940825298223,
+              "velocity_m_s": 0.5707789385004212,
+              "water_fraction": 0.867897304128054
+            },
+            "training_groups": 1,
+            "training_rows": 368,
+            "weighting": "W0"
+          },
+          "prediction_policy": "delta",
+          "preprocessing": {
+            "constant_columns": [],
+            "dropped_columns": {},
+            "duplicate_columns": {},
+            "empty_columns": [],
+            "feature_order": [
+              "z_rank",
+              "slope_rank",
+              "abs_slope_rank",
+              "position_rank",
+              "local_low_rank",
+              "pool_depth_rank",
+              "basin_depth_30m_rank",
+              "basin_depth_100m_rank",
+              "prior_centered_fluid_temperature_c"
+            ],
+            "imputer": "median",
+            "imputer_statistics": {
+              "abs_slope_rank": 0.3323809523809524,
+              "basin_depth_100m_rank": 0.4438095238095238,
+              "basin_depth_30m_rank": 0.49142857142857144,
+              "local_low_rank": 0.49523809523809526,
+              "pool_depth_rank": 0.43142857142857144,
+              "position_rank": 0.4323809523809524,
+              "prior_centered_fluid_temperature_c": 0.022521702960787593,
+              "slope_rank": 0.5019047619047619,
+              "z_rank": 0.5371428571428571
+            },
+            "scaler": "StandardScaler",
+            "scaler_mean": {
+              "abs_slope_rank": 0.48800077639751555,
+              "basin_depth_100m_rank": 0.5075750517598342,
+              "basin_depth_30m_rank": 0.5012551759834368,
+              "local_low_rank": 0.4993180641821947,
+              "pool_depth_rank": 0.4585960144927536,
+              "position_rank": 0.4504399585921325,
+              "prior_centered_fluid_temperature_c": 0.03221450834185724,
+              "slope_rank": 0.5007052277432713,
+              "z_rank": 0.5346829710144928
+            },
+            "scaler_scale": {
+              "abs_slope_rank": 0.23909600304764517,
+              "basin_depth_100m_rank": 0.16192243703509648,
+              "basin_depth_30m_rank": 0.07281054074658154,
+              "local_low_rank": 0.20830091185409105,
+              "pool_depth_rank": 0.2796422809522079,
+              "position_rank": 0.2788000423047912,
+              "prior_centered_fluid_temperature_c": 0.16350206661281508,
+              "slope_rank": 0.2375080620305507,
+              "z_rank": 0.28287032528373013
+            },
+            "used_features": [
+              "z_rank",
+              "slope_rank",
+              "abs_slope_rank",
+              "position_rank",
+              "local_low_rank",
+              "pool_depth_rank",
+              "basin_depth_30m_rank",
+              "basin_depth_100m_rank",
+              "prior_centered_fluid_temperature_c"
+            ]
+          },
+          "residual_centering": "within training simple section",
+          "solver": "cholesky",
+          "target": "residual_centered_mm",
+          "target_mean": -1.8704844436619485e-17,
+          "target_std": 0.5533035471391229,
+          "training_dates": [
+            "2018-09-23"
+          ],
+          "training_rows": 368,
+          "training_sections": [
+            1250011604,
+            1250022871
+          ],
+          "used_features": [
+            "z_rank",
+            "slope_rank",
+            "abs_slope_rank",
+            "position_rank",
+            "local_low_rank",
+            "pool_depth_rank",
+            "basin_depth_30m_rank",
+            "basin_depth_100m_rank",
+            "prior_centered_fluid_temperature_c"
+          ]
+        },
+        "local_cooling": {
+          "alpha": 10.0,
+          "baseline_column": null,
+          "candidate": "local_cooling",
+          "centering": "length-weighted full grid",
+          "coefficient_by_feature": {
+            "abs_slope_rank": -0.03313041309145322,
+            "basin_depth_100m_rank": -0.029597824418777147,
+            "basin_depth_30m_rank": 0.06031001727201539,
+            "local_low_rank": -0.008238899173314022,
+            "pool_depth_rank": 0.09241403008557562,
+            "position_rank": -0.018050796208613815,
+            "scenario_cooling_c": 0.002870556711641425,
+            "slope_rank": -0.016780829724627466,
+            "z_rank": 0.006655198931369287
+          },
+          "coefficients": [
+            0.006655198931369287,
+            -0.016780829724627466,
+            -0.03313041309145322,
+            -0.018050796208613815,
+            -0.008238899173314022,
+            0.09241403008557562,
+            0.06031001727201539,
+            -0.029597824418777147,
+            0.002870556711641425
+          ],
+          "dropped_columns": {},
+          "features": [
+            "z_rank",
+            "slope_rank",
+            "abs_slope_rank",
+            "position_rank",
+            "local_low_rank",
+            "pool_depth_rank",
+            "basin_depth_30m_rank",
+            "basin_depth_100m_rank",
+            "scenario_cooling_c"
+          ],
+          "fit_intercept": true,
+          "intercept": -1.7036487205992082e-17,
+          "model_name": "s2_spatial_ridge",
+          "model_type": "Ridge",
+          "physics_metadata": {
+            "gap_policy": "own_mean",
+            "interpretation": "Effective segment-minimum thinning rate under declared environment priors; not an electrochemical CO2/H2S constant",
+            "name": "M1",
+            "priors": {
+              "age_exponent": 1.0,
+              "beta_W": 0.3,
+              "beta_v": 0.1,
+              "theta_K": 2500.0,
+              "velocity_offset_m_s": 0.1
+            },
+            "r_ref_mm_year": 0.10537139350469842,
+            "reference": {
+              "temperature_K": 285.6940825298223,
+              "velocity_m_s": 0.5707789385004212,
+              "water_fraction": 0.867897304128054
+            },
+            "training_groups": 1,
+            "training_rows": 368,
+            "weighting": "W0"
+          },
+          "prediction_policy": "delta",
+          "preprocessing": {
+            "constant_columns": [],
+            "dropped_columns": {},
+            "duplicate_columns": {},
+            "empty_columns": [],
+            "feature_order": [
+              "z_rank",
+              "slope_rank",
+              "abs_slope_rank",
+              "position_rank",
+              "local_low_rank",
+              "pool_depth_rank",
+              "basin_depth_30m_rank",
+              "basin_depth_100m_rank",
+              "scenario_cooling_c"
+            ],
+            "imputer": "median",
+            "imputer_statistics": {
+              "abs_slope_rank": 0.3323809523809524,
+              "basin_depth_100m_rank": 0.4438095238095238,
+              "basin_depth_30m_rank": 0.49142857142857144,
+              "local_low_rank": 0.49523809523809526,
+              "pool_depth_rank": 0.43142857142857144,
+              "position_rank": 0.4323809523809524,
+              "scenario_cooling_c": 0.0011902553455769294,
+              "slope_rank": 0.5019047619047619,
+              "z_rank": 0.5371428571428571
+            },
+            "scaler": "StandardScaler",
+            "scaler_mean": {
+              "abs_slope_rank": 0.48800077639751555,
+              "basin_depth_100m_rank": 0.5075750517598342,
+              "basin_depth_30m_rank": 0.5012551759834368,
+              "local_low_rank": 0.4993180641821947,
+              "pool_depth_rank": 0.4585960144927536,
+              "position_rank": 0.4504399585921325,
+              "scenario_cooling_c": 0.0011696468908758756,
+              "slope_rank": 0.5007052277432713,
+              "z_rank": 0.5346829710144928
+            },
+            "scaler_scale": {
+              "abs_slope_rank": 0.23909600304764517,
+              "basin_depth_100m_rank": 0.16192243703509648,
+              "basin_depth_30m_rank": 0.07281054074658154,
+              "local_low_rank": 0.20830091185409105,
+              "pool_depth_rank": 0.2796422809522079,
+              "position_rank": 0.2788000423047912,
+              "scenario_cooling_c": 8.313653476521746e-05,
+              "slope_rank": 0.2375080620305507,
+              "z_rank": 0.28287032528373013
+            },
+            "used_features": [
+              "z_rank",
+              "slope_rank",
+              "abs_slope_rank",
+              "position_rank",
+              "local_low_rank",
+              "pool_depth_rank",
+              "basin_depth_30m_rank",
+              "basin_depth_100m_rank",
+              "scenario_cooling_c"
+            ]
+          },
+          "residual_centering": "within training simple section",
+          "solver": "cholesky",
+          "target": "residual_centered_mm",
+          "target_mean": -1.8704844436619485e-17,
+          "target_std": 0.5533035471391229,
+          "training_dates": [
+            "2018-09-23"
+          ],
+          "training_rows": 368,
+          "training_sections": [
+            1250011604,
+            1250022871
+          ],
+          "used_features": [
+            "z_rank",
+            "slope_rank",
+            "abs_slope_rank",
+            "position_rank",
+            "local_low_rank",
+            "pool_depth_rank",
+            "basin_depth_30m_rank",
+            "basin_depth_100m_rank",
+            "scenario_cooling_c"
+          ]
+        },
+        "multiscale_terrain": {
+          "alpha": 10.0,
+          "baseline_column": null,
+          "candidate": "multiscale_terrain",
+          "centering": "length-weighted full grid",
+          "coefficient_by_feature": {
+            "abs_slope_rank": -0.033152908760006955,
+            "basin_depth_100m_rank": -0.0377793244633617,
+            "basin_depth_30m_rank": 0.0687852199904591,
+            "elevation_curvature_1000m": -0.07893649591247655,
+            "elevation_curvature_100m": 0.0018209073670295876,
+            "elevation_curvature_300m": -0.09029514118088137,
+            "elevation_relative_1000m": 0.020207590291187922,
+            "elevation_relative_100m": 0.07178277335507086,
+            "elevation_relative_300m": -0.10091999520865938,
+            "elevation_slope_1000m": 0.024312631019855677,
+            "elevation_slope_100m": -0.11071268065917302,
+            "elevation_slope_300m": 0.09328744478047264,
+            "local_low_rank": -0.01121928271385233,
+            "pool_depth_rank": 0.09768796517099582,
+            "position_rank": -0.018489327025031824,
+            "slope_rank": -0.004460302264253098,
+            "z_rank": -0.0282811248319617
+          },
+          "coefficients": [
+            -0.0282811248319617,
+            -0.004460302264253098,
+            -0.033152908760006955,
+            -0.018489327025031824,
+            -0.01121928271385233,
+            0.09768796517099582,
+            0.0687852199904591,
+            -0.0377793244633617,
+            0.07178277335507086,
+            -0.11071268065917302,
+            0.0018209073670295876,
+            -0.10091999520865938,
+            0.09328744478047264,
+            -0.09029514118088137,
+            0.020207590291187922,
+            0.024312631019855677,
+            -0.07893649591247655
+          ],
+          "dropped_columns": {},
+          "features": [
+            "z_rank",
+            "slope_rank",
+            "abs_slope_rank",
+            "position_rank",
+            "local_low_rank",
+            "pool_depth_rank",
+            "basin_depth_30m_rank",
+            "basin_depth_100m_rank",
+            "elevation_relative_100m",
+            "elevation_slope_100m",
+            "elevation_curvature_100m",
+            "elevation_relative_300m",
+            "elevation_slope_300m",
+            "elevation_curvature_300m",
+            "elevation_relative_1000m",
+            "elevation_slope_1000m",
+            "elevation_curvature_1000m"
+          ],
+          "fit_intercept": true,
+          "intercept": -1.7351006937625937e-17,
+          "model_name": "s2_spatial_ridge",
+          "model_type": "Ridge",
+          "physics_metadata": {
+            "gap_policy": "own_mean",
+            "interpretation": "Effective segment-minimum thinning rate under declared environment priors; not an electrochemical CO2/H2S constant",
+            "name": "M1",
+            "priors": {
+              "age_exponent": 1.0,
+              "beta_W": 0.3,
+              "beta_v": 0.1,
+              "theta_K": 2500.0,
+              "velocity_offset_m_s": 0.1
+            },
+            "r_ref_mm_year": 0.10537139350469842,
+            "reference": {
+              "temperature_K": 285.6940825298223,
+              "velocity_m_s": 0.5707789385004212,
+              "water_fraction": 0.867897304128054
+            },
+            "training_groups": 1,
+            "training_rows": 368,
+            "weighting": "W0"
+          },
+          "prediction_policy": "delta",
+          "preprocessing": {
+            "constant_columns": [],
+            "dropped_columns": {},
+            "duplicate_columns": {},
+            "empty_columns": [],
+            "feature_order": [
+              "z_rank",
+              "slope_rank",
+              "abs_slope_rank",
+              "position_rank",
+              "local_low_rank",
+              "pool_depth_rank",
+              "basin_depth_30m_rank",
+              "basin_depth_100m_rank",
+              "elevation_relative_100m",
+              "elevation_slope_100m",
+              "elevation_curvature_100m",
+              "elevation_relative_300m",
+              "elevation_slope_300m",
+              "elevation_curvature_300m",
+              "elevation_relative_1000m",
+              "elevation_slope_1000m",
+              "elevation_curvature_1000m"
+            ],
+            "imputer": "median",
+            "imputer_statistics": {
+              "abs_slope_rank": 0.3323809523809524,
+              "basin_depth_100m_rank": 0.4438095238095238,
+              "basin_depth_30m_rank": 0.49142857142857144,
+              "elevation_curvature_1000m": 0.0,
+              "elevation_curvature_100m": -1.946403813587035e-06,
+              "elevation_curvature_300m": -4.402883367078382e-07,
+              "elevation_relative_1000m": -0.04070221402918861,
+              "elevation_relative_100m": 0.0,
+              "elevation_relative_300m": 0.00800348885049118,
+              "elevation_slope_1000m": -0.0001604115301044068,
+              "elevation_slope_100m": 0.0,
+              "elevation_slope_300m": -8.536585365852495e-05,
+              "local_low_rank": 0.49523809523809526,
+              "pool_depth_rank": 0.43142857142857144,
+              "position_rank": 0.4323809523809524,
+              "slope_rank": 0.5019047619047619,
+              "z_rank": 0.5371428571428571
+            },
+            "scaler": "StandardScaler",
+            "scaler_mean": {
+              "abs_slope_rank": 0.48800077639751555,
+              "basin_depth_100m_rank": 0.5075750517598342,
+              "basin_depth_30m_rank": 0.5012551759834368,
+              "elevation_curvature_1000m": 8.918078859968412e-07,
+              "elevation_curvature_100m": -3.13766428481615e-06,
+              "elevation_curvature_300m": 3.949837910040438e-07,
+              "elevation_relative_1000m": 0.0008578659350329748,
+              "elevation_relative_100m": 0.0009011012298592121,
+              "elevation_relative_300m": 0.0043726597006989035,
+              "elevation_slope_1000m": -0.0004240383630799596,
+              "elevation_slope_100m": -0.0007835041465510901,
+              "elevation_slope_300m": -0.0006557315263429536,
+              "local_low_rank": 0.4993180641821947,
+              "pool_depth_rank": 0.4585960144927536,
+              "position_rank": 0.4504399585921325,
+              "slope_rank": 0.5007052277432713,
+              "z_rank": 0.5346829710144928
+            },
+            "scaler_scale": {
+              "abs_slope_rank": 0.23909600304764517,
+              "basin_depth_100m_rank": 0.16192243703509648,
+              "basin_depth_30m_rank": 0.07281054074658154,
+              "elevation_curvature_1000m": 9.352953068336002e-06,
+              "elevation_curvature_100m": 8.620226595629523e-05,
+              "elevation_curvature_300m": 4.7149855915713093e-05,
+              "elevation_relative_1000m": 0.7728030482214535,
+              "elevation_relative_100m": 0.06593369575913727,
+              "elevation_relative_300m": 0.24152969960162776,
+              "elevation_slope_1000m": 0.003026158802359887,
+              "elevation_slope_100m": 0.006124342565869532,
+              "elevation_slope_300m": 0.004966256231392917,
+              "local_low_rank": 0.20830091185409105,
+              "pool_depth_rank": 0.2796422809522079,
+              "position_rank": 0.2788000423047912,
+              "slope_rank": 0.2375080620305507,
+              "z_rank": 0.28287032528373013
+            },
+            "used_features": [
+              "z_rank",
+              "slope_rank",
+              "abs_slope_rank",
+              "position_rank",
+              "local_low_rank",
+              "pool_depth_rank",
+              "basin_depth_30m_rank",
+              "basin_depth_100m_rank",
+              "elevation_relative_100m",
+              "elevation_slope_100m",
+              "elevation_curvature_100m",
+              "elevation_relative_300m",
+              "elevation_slope_300m",
+              "elevation_curvature_300m",
+              "elevation_relative_1000m",
+              "elevation_slope_1000m",
+              "elevation_curvature_1000m"
+            ]
+          },
+          "residual_centering": "within training simple section",
+          "solver": "cholesky",
+          "target": "residual_centered_mm",
+          "target_mean": -1.8704844436619485e-17,
+          "target_std": 0.5533035471391229,
+          "training_dates": [
+            "2018-09-23"
+          ],
+          "training_rows": 368,
+          "training_sections": [
+            1250011604,
+            1250022871
+          ],
+          "used_features": [
+            "z_rank",
+            "slope_rank",
+            "abs_slope_rank",
+            "position_rank",
+            "local_low_rank",
+            "pool_depth_rank",
+            "basin_depth_30m_rank",
+            "basin_depth_100m_rank",
+            "elevation_relative_100m",
+            "elevation_slope_100m",
+            "elevation_curvature_100m",
+            "elevation_relative_300m",
+            "elevation_slope_300m",
+            "elevation_curvature_300m",
+            "elevation_relative_1000m",
+            "elevation_slope_1000m",
+            "elevation_curvature_1000m"
+          ]
+        }
+      },
+      "test_rows": 4,
+      "train_dates": [
+        "2018-09-23"
+      ],
+      "train_rows": 368,
+      "valid_temperature_train_rows": 368
+    },
+    "1250011604": {
+      "models": {
+        "basin_ranks": {
+          "alpha": 10.0,
+          "baseline_column": null,
+          "candidate": "basin_ranks",
+          "centering": "length-weighted full grid",
+          "coefficient_by_feature": {
+            "abs_slope_rank": -0.029349295531391595,
+            "basin_depth_100m_rank": -0.0428545281277744,
+            "basin_depth_30m_rank": 0.05394187345147859,
+            "local_low_rank": -0.01856720632771444,
+            "pool_depth_rank": 0.07115867852679812,
+            "position_rank": -0.0029696838477196144,
+            "slope_rank": -0.013685028636962566,
+            "z_rank": 0.005982273364297125
+          },
+          "coefficients": [
+            0.005982273364297125,
+            -0.013685028636962566,
+            -0.029349295531391595,
+            -0.0029696838477196144,
+            -0.01856720632771444,
+            0.07115867852679812,
+            0.05394187345147859,
+            -0.0428545281277744
+          ],
+          "dropped_columns": {},
+          "features": [
+            "z_rank",
+            "slope_rank",
+            "abs_slope_rank",
+            "position_rank",
+            "local_low_rank",
+            "pool_depth_rank",
+            "basin_depth_30m_rank",
+            "basin_depth_100m_rank"
+          ],
+          "fit_intercept": true,
+          "intercept": -3.9263887681295654e-17,
+          "model_name": "s2_spatial_ridge",
+          "model_type": "Ridge",
+          "physics_metadata": {
+            "gap_policy": "own_mean",
+            "interpretation": "Effective segment-minimum thinning rate under declared environment priors; not an electrochemical CO2/H2S constant",
+            "name": "M1",
+            "priors": {
+              "age_exponent": 1.0,
+              "beta_W": 0.3,
+              "beta_v": 0.1,
+              "theta_K": 2500.0,
+              "velocity_offset_m_s": 0.1
+            },
+            "r_ref_mm_year": 0.1050127394112433,
+            "reference": {
+              "temperature_K": 285.6940825298223,
+              "velocity_m_s": 0.5707789385004212,
+              "water_fraction": 0.867897304128054
+            },
+            "training_groups": 1,
+            "training_rows": 338,
+            "weighting": "W0"
+          },
+          "prediction_policy": "delta",
+          "preprocessing": {
+            "constant_columns": [],
+            "dropped_columns": {},
+            "duplicate_columns": {},
+            "empty_columns": [],
+            "feature_order": [
+              "z_rank",
+              "slope_rank",
+              "abs_slope_rank",
+              "position_rank",
+              "local_low_rank",
+              "pool_depth_rank",
+              "basin_depth_30m_rank",
+              "basin_depth_100m_rank"
+            ],
+            "imputer": "median",
+            "imputer_statistics": {
+              "abs_slope_rank": 0.3323809523809524,
+              "basin_depth_100m_rank": 0.4438095238095238,
+              "basin_depth_30m_rank": 0.49142857142857144,
+              "local_low_rank": 0.49523809523809526,
+              "pool_depth_rank": 0.43142857142857144,
+              "position_rank": 0.4247619047619048,
+              "slope_rank": 0.5019047619047619,
+              "z_rank": 0.5371428571428571
+            },
+            "scaler": "StandardScaler",
+            "scaler_mean": {
+              "abs_slope_rank": 0.4883262890955199,
+              "basin_depth_100m_rank": 0.5073006480698788,
+              "basin_depth_30m_rank": 0.5004198365736827,
+              "local_low_rank": 0.5004705550859396,
+              "pool_depth_rank": 0.4592702169625246,
+              "position_rank": 0.44249084249084253,
+              "slope_rank": 0.4986080586080586,
+              "z_rank": 0.5412228796844182
+            },
+            "scaler_scale": {
+              "abs_slope_rank": 0.23638201660059974,
+              "basin_depth_100m_rank": 0.16478466643561918,
+              "basin_depth_30m_rank": 0.06612311758322582,
+              "local_low_rank": 0.20058529452486257,
+              "pool_depth_rank": 0.27927088993578386,
+              "position_rank": 0.2745402551576399,
+              "slope_rank": 0.23446487867955595,
+              "z_rank": 0.2795968499690223
+            },
+            "used_features": [
+              "z_rank",
+              "slope_rank",
+              "abs_slope_rank",
+              "position_rank",
+              "local_low_rank",
+              "pool_depth_rank",
+              "basin_depth_30m_rank",
+              "basin_depth_100m_rank"
+            ]
+          },
+          "residual_centering": "within training simple section",
+          "solver": "cholesky",
+          "target": "residual_centered_mm",
+          "target_mean": -1.8394227626925672e-17,
+          "target_std": 0.5587450882835931,
+          "training_dates": [
+            "2018-09-23"
+          ],
+          "training_rows": 338,
+          "training_sections": [
+            1250009490,
+            1250022871
+          ],
+          "used_features": [
+            "z_rank",
+            "slope_rank",
+            "abs_slope_rank",
+            "position_rank",
+            "local_low_rank",
+            "pool_depth_rank",
+            "basin_depth_30m_rank",
+            "basin_depth_100m_rank"
+          ]
+        },
+        "centered_fluid_temperature": {
+          "alpha": 10.0,
+          "baseline_column": null,
+          "candidate": "centered_fluid_temperature",
+          "centering": "length-weighted full grid",
+          "coefficient_by_feature": {
+            "abs_slope_rank": -0.03032733375292019,
+            "basin_depth_100m_rank": -0.04194483812456662,
+            "basin_depth_30m_rank": 0.05456935869898002,
+            "local_low_rank": -0.017296673798018292,
+            "pool_depth_rank": 0.07351715241152022,
+            "position_rank": 0.056486657001272596,
+            "prior_centered_fluid_temperature_c": 0.06262489787802099,
+            "slope_rank": -0.013344031613820438,
+            "z_rank": 0.0053603935341979495
+          },
+          "coefficients": [
+            0.0053603935341979495,
+            -0.013344031613820438,
+            -0.03032733375292019,
+            0.056486657001272596,
+            -0.017296673798018292,
+            0.07351715241152022,
+            0.05456935869898002,
+            -0.04194483812456662,
+            0.06262489787802099
+          ],
+          "dropped_columns": {},
+          "features": [
+            "z_rank",
+            "slope_rank",
+            "abs_slope_rank",
+            "position_rank",
+            "local_low_rank",
+            "pool_depth_rank",
+            "basin_depth_30m_rank",
+            "basin_depth_100m_rank",
+            "prior_centered_fluid_temperature_c"
+          ],
+          "fit_intercept": true,
+          "intercept": -2.515101508738636e-17,
+          "model_name": "s2_spatial_ridge",
+          "model_type": "Ridge",
+          "physics_metadata": {
+            "gap_policy": "own_mean",
+            "interpretation": "Effective segment-minimum thinning rate under declared environment priors; not an electrochemical CO2/H2S constant",
+            "name": "M1",
+            "priors": {
+              "age_exponent": 1.0,
+              "beta_W": 0.3,
+              "beta_v": 0.1,
+              "theta_K": 2500.0,
+              "velocity_offset_m_s": 0.1
+            },
+            "r_ref_mm_year": 0.1050127394112433,
+            "reference": {
+              "temperature_K": 285.6940825298223,
+              "velocity_m_s": 0.5707789385004212,
+              "water_fraction": 0.867897304128054
+            },
+            "training_groups": 1,
+            "training_rows": 338,
+            "weighting": "W0"
+          },
+          "prediction_policy": "delta",
+          "preprocessing": {
+            "constant_columns": [],
+            "dropped_columns": {},
+            "duplicate_columns": {},
+            "empty_columns": [],
+            "feature_order": [
+              "z_rank",
+              "slope_rank",
+              "abs_slope_rank",
+              "position_rank",
+              "local_low_rank",
+              "pool_depth_rank",
+              "basin_depth_30m_rank",
+              "basin_depth_100m_rank",
+              "prior_centered_fluid_temperature_c"
+            ],
+            "imputer": "median",
+            "imputer_statistics": {
+              "abs_slope_rank": 0.3323809523809524,
+              "basin_depth_100m_rank": 0.4438095238095238,
+              "basin_depth_30m_rank": 0.49142857142857144,
+              "local_low_rank": 0.49523809523809526,
+              "pool_depth_rank": 0.43142857142857144,
+              "position_rank": 0.4247619047619048,
+              "prior_centered_fluid_temperature_c": 0.042374204729131115,
+              "slope_rank": 0.5019047619047619,
+              "z_rank": 0.5371428571428571
+            },
+            "scaler": "StandardScaler",
+            "scaler_mean": {
+              "abs_slope_rank": 0.4883262890955199,
+              "basin_depth_100m_rank": 0.5073006480698788,
+              "basin_depth_30m_rank": 0.5004198365736827,
+              "local_low_rank": 0.5004705550859396,
+              "pool_depth_rank": 0.4592702169625246,
+              "position_rank": 0.44249084249084253,
+              "prior_centered_fluid_temperature_c": 0.035247548470333206,
+              "slope_rank": 0.4986080586080586,
+              "z_rank": 0.5412228796844182
+            },
+            "scaler_scale": {
+              "abs_slope_rank": 0.23638201660059974,
+              "basin_depth_100m_rank": 0.16478466643561918,
+              "basin_depth_30m_rank": 0.06612311758322582,
+              "local_low_rank": 0.20058529452486257,
+              "pool_depth_rank": 0.27927088993578386,
+              "position_rank": 0.2745402551576399,
+              "prior_centered_fluid_temperature_c": 0.17020770919208358,
+              "slope_rank": 0.23446487867955595,
+              "z_rank": 0.2795968499690223
+            },
+            "used_features": [
+              "z_rank",
+              "slope_rank",
+              "abs_slope_rank",
+              "position_rank",
+              "local_low_rank",
+              "pool_depth_rank",
+              "basin_depth_30m_rank",
+              "basin_depth_100m_rank",
+              "prior_centered_fluid_temperature_c"
+            ]
+          },
+          "residual_centering": "within training simple section",
+          "solver": "cholesky",
+          "target": "residual_centered_mm",
+          "target_mean": -1.8394227626925672e-17,
+          "target_std": 0.5587450882835931,
+          "training_dates": [
+            "2018-09-23"
+          ],
+          "training_rows": 338,
+          "training_sections": [
+            1250009490,
+            1250022871
+          ],
+          "used_features": [
+            "z_rank",
+            "slope_rank",
+            "abs_slope_rank",
+            "position_rank",
+            "local_low_rank",
+            "pool_depth_rank",
+            "basin_depth_30m_rank",
+            "basin_depth_100m_rank",
+            "prior_centered_fluid_temperature_c"
+          ]
+        },
+        "local_cooling": {
+          "alpha": 10.0,
+          "baseline_column": null,
+          "candidate": "local_cooling",
+          "centering": "length-weighted full grid",
+          "coefficient_by_feature": {
+            "abs_slope_rank": -0.02971119161006278,
+            "basin_depth_100m_rank": -0.04251069686935703,
+            "basin_depth_30m_rank": 0.05403313050396324,
+            "local_low_rank": -0.018187753026136563,
+            "pool_depth_rank": 0.07142033052465988,
+            "position_rank": -0.007030192960175247,
+            "scenario_cooling_c": -0.008279791630271578,
+            "slope_rank": -0.013398316459094308,
+            "z_rank": 0.006101051792870106
+          },
+          "coefficients": [
+            0.006101051792870106,
+            -0.013398316459094308,
+            -0.02971119161006278,
+            -0.007030192960175247,
+            -0.018187753026136563,
+            0.07142033052465988,
+            0.05403313050396324,
+            -0.04251069686935703,
+            -0.008279791630271578
+          ],
+          "dropped_columns": {},
+          "features": [
+            "z_rank",
+            "slope_rank",
+            "abs_slope_rank",
+            "position_rank",
+            "local_low_rank",
+            "pool_depth_rank",
+            "basin_depth_30m_rank",
+            "basin_depth_100m_rank",
+            "scenario_cooling_c"
+          ],
+          "fit_intercept": true,
+          "intercept": -2.5520887162321665e-17,
+          "model_name": "s2_spatial_ridge",
+          "model_type": "Ridge",
+          "physics_metadata": {
+            "gap_policy": "own_mean",
+            "interpretation": "Effective segment-minimum thinning rate under declared environment priors; not an electrochemical CO2/H2S constant",
+            "name": "M1",
+            "priors": {
+              "age_exponent": 1.0,
+              "beta_W": 0.3,
+              "beta_v": 0.1,
+              "theta_K": 2500.0,
+              "velocity_offset_m_s": 0.1
+            },
+            "r_ref_mm_year": 0.1050127394112433,
+            "reference": {
+              "temperature_K": 285.6940825298223,
+              "velocity_m_s": 0.5707789385004212,
+              "water_fraction": 0.867897304128054
+            },
+            "training_groups": 1,
+            "training_rows": 338,
+            "weighting": "W0"
+          },
+          "prediction_policy": "delta",
+          "preprocessing": {
+            "constant_columns": [],
+            "dropped_columns": {},
+            "duplicate_columns": {},
+            "empty_columns": [],
+            "feature_order": [
+              "z_rank",
+              "slope_rank",
+              "abs_slope_rank",
+              "position_rank",
+              "local_low_rank",
+              "pool_depth_rank",
+              "basin_depth_30m_rank",
+              "basin_depth_100m_rank",
+              "scenario_cooling_c"
+            ],
+            "imputer": "median",
+            "imputer_statistics": {
+              "abs_slope_rank": 0.3323809523809524,
+              "basin_depth_100m_rank": 0.4438095238095238,
+              "basin_depth_30m_rank": 0.49142857142857144,
+              "local_low_rank": 0.49523809523809526,
+              "pool_depth_rank": 0.43142857142857144,
+              "position_rank": 0.4247619047619048,
+              "scenario_cooling_c": 0.0011936582550733377,
+              "slope_rank": 0.5019047619047619,
+              "z_rank": 0.5371428571428571
+            },
+            "scaler": "StandardScaler",
+            "scaler_mean": {
+              "abs_slope_rank": 0.4883262890955199,
+              "basin_depth_100m_rank": 0.5073006480698788,
+              "basin_depth_30m_rank": 0.5004198365736827,
+              "local_low_rank": 0.5004705550859396,
+              "pool_depth_rank": 0.4592702169625246,
+              "position_rank": 0.44249084249084253,
+              "scenario_cooling_c": 0.0011876287625444894,
+              "slope_rank": 0.4986080586080586,
+              "z_rank": 0.5412228796844182
+            },
+            "scaler_scale": {
+              "abs_slope_rank": 0.23638201660059974,
+              "basin_depth_100m_rank": 0.16478466643561918,
+              "basin_depth_30m_rank": 0.06612311758322582,
+              "local_low_rank": 0.20058529452486257,
+              "pool_depth_rank": 0.27927088993578386,
+              "position_rank": 0.2745402551576399,
+              "scenario_cooling_c": 5.72968390726479e-05,
+              "slope_rank": 0.23446487867955595,
+              "z_rank": 0.2795968499690223
+            },
+            "used_features": [
+              "z_rank",
+              "slope_rank",
+              "abs_slope_rank",
+              "position_rank",
+              "local_low_rank",
+              "pool_depth_rank",
+              "basin_depth_30m_rank",
+              "basin_depth_100m_rank",
+              "scenario_cooling_c"
+            ]
+          },
+          "residual_centering": "within training simple section",
+          "solver": "cholesky",
+          "target": "residual_centered_mm",
+          "target_mean": -1.8394227626925672e-17,
+          "target_std": 0.5587450882835931,
+          "training_dates": [
+            "2018-09-23"
+          ],
+          "training_rows": 338,
+          "training_sections": [
+            1250009490,
+            1250022871
+          ],
+          "used_features": [
+            "z_rank",
+            "slope_rank",
+            "abs_slope_rank",
+            "position_rank",
+            "local_low_rank",
+            "pool_depth_rank",
+            "basin_depth_30m_rank",
+            "basin_depth_100m_rank",
+            "scenario_cooling_c"
+          ]
+        },
+        "multiscale_terrain": {
+          "alpha": 10.0,
+          "baseline_column": null,
+          "candidate": "multiscale_terrain",
+          "centering": "length-weighted full grid",
+          "coefficient_by_feature": {
+            "abs_slope_rank": -0.029092780641113,
+            "basin_depth_100m_rank": -0.04924259091378229,
+            "basin_depth_30m_rank": 0.051294537698956366,
+            "elevation_curvature_1000m": -0.08450298898349866,
+            "elevation_curvature_100m": -0.03826315785018727,
+            "elevation_curvature_300m": -0.1209734712372894,
+            "elevation_relative_1000m": -0.020531242033914505,
+            "elevation_relative_100m": 0.03474857669132584,
+            "elevation_relative_300m": -0.11700704449637694,
+            "elevation_slope_1000m": 0.027325744539546584,
+            "elevation_slope_100m": -0.1447260536340105,
+            "elevation_slope_300m": 0.12605090120926604,
+            "local_low_rank": -0.01726842943775838,
+            "pool_depth_rank": 0.08111232636005805,
+            "position_rank": 0.009570171787586117,
+            "slope_rank": 0.002790787438741793,
+            "z_rank": -0.023660478375529672
+          },
+          "coefficients": [
+            -0.023660478375529672,
+            0.002790787438741793,
+            -0.029092780641113,
+            0.009570171787586117,
+            -0.01726842943775838,
+            0.08111232636005805,
+            0.051294537698956366,
+            -0.04924259091378229,
+            0.03474857669132584,
+            -0.1447260536340105,
+            -0.03826315785018727,
+            -0.11700704449637694,
+            0.12605090120926604,
+            -0.1209734712372894,
+            -0.020531242033914505,
+            0.027325744539546584,
+            -0.08450298898349866
+          ],
+          "dropped_columns": {},
+          "features": [
+            "z_rank",
+            "slope_rank",
+            "abs_slope_rank",
+            "position_rank",
+            "local_low_rank",
+            "pool_depth_rank",
+            "basin_depth_30m_rank",
+            "basin_depth_100m_rank",
+            "elevation_relative_100m",
+            "elevation_slope_100m",
+            "elevation_curvature_100m",
+            "elevation_relative_300m",
+            "elevation_slope_300m",
+            "elevation_curvature_300m",
+            "elevation_relative_1000m",
+            "elevation_slope_1000m",
+            "elevation_curvature_1000m"
+          ],
+          "fit_intercept": true,
+          "intercept": -4.2806881229502195e-17,
+          "model_name": "s2_spatial_ridge",
+          "model_type": "Ridge",
+          "physics_metadata": {
+            "gap_policy": "own_mean",
+            "interpretation": "Effective segment-minimum thinning rate under declared environment priors; not an electrochemical CO2/H2S constant",
+            "name": "M1",
+            "priors": {
+              "age_exponent": 1.0,
+              "beta_W": 0.3,
+              "beta_v": 0.1,
+              "theta_K": 2500.0,
+              "velocity_offset_m_s": 0.1
+            },
+            "r_ref_mm_year": 0.1050127394112433,
+            "reference": {
+              "temperature_K": 285.6940825298223,
+              "velocity_m_s": 0.5707789385004212,
+              "water_fraction": 0.867897304128054
+            },
+            "training_groups": 1,
+            "training_rows": 338,
+            "weighting": "W0"
+          },
+          "prediction_policy": "delta",
+          "preprocessing": {
+            "constant_columns": [],
+            "dropped_columns": {},
+            "duplicate_columns": {},
+            "empty_columns": [],
+            "feature_order": [
+              "z_rank",
+              "slope_rank",
+              "abs_slope_rank",
+              "position_rank",
+              "local_low_rank",
+              "pool_depth_rank",
+              "basin_depth_30m_rank",
+              "basin_depth_100m_rank",
+              "elevation_relative_100m",
+              "elevation_slope_100m",
+              "elevation_curvature_100m",
+              "elevation_relative_300m",
+              "elevation_slope_300m",
+              "elevation_curvature_300m",
+              "elevation_relative_1000m",
+              "elevation_slope_1000m",
+              "elevation_curvature_1000m"
+            ],
+            "imputer": "median",
+            "imputer_statistics": {
+              "abs_slope_rank": 0.3323809523809524,
+              "basin_depth_100m_rank": 0.4438095238095238,
+              "basin_depth_30m_rank": 0.49142857142857144,
+              "elevation_curvature_1000m": 0.0,
+              "elevation_curvature_100m": 0.0,
+              "elevation_curvature_300m": -9.589123154282134e-08,
+              "elevation_relative_1000m": -0.03353545289201065,
+              "elevation_relative_100m": 0.0,
+              "elevation_relative_300m": 0.008449764369352408,
+              "elevation_slope_1000m": 0.00019648774008947315,
+              "elevation_slope_100m": 0.0,
+              "elevation_slope_300m": 0.000287256836775231,
+              "local_low_rank": 0.49523809523809526,
+              "pool_depth_rank": 0.43142857142857144,
+              "position_rank": 0.4247619047619048,
+              "slope_rank": 0.5019047619047619,
+              "z_rank": 0.5371428571428571
+            },
+            "scaler": "StandardScaler",
+            "scaler_mean": {
+              "abs_slope_rank": 0.4883262890955199,
+              "basin_depth_100m_rank": 0.5073006480698788,
+              "basin_depth_30m_rank": 0.5004198365736827,
+              "elevation_curvature_1000m": 9.709624320912354e-07,
+              "elevation_curvature_100m": 1.7865972842639834e-06,
+              "elevation_curvature_300m": 5.244436086777965e-07,
+              "elevation_relative_1000m": 0.015749727705427204,
+              "elevation_relative_100m": 0.0020932044328781027,
+              "elevation_relative_300m": 0.00815125061739634,
+              "elevation_slope_1000m": -3.972919012788744e-05,
+              "elevation_slope_100m": -0.0005496311432801775,
+              "elevation_slope_300m": -0.0004092013144959202,
+              "local_low_rank": 0.5004705550859396,
+              "pool_depth_rank": 0.4592702169625246,
+              "position_rank": 0.44249084249084253,
+              "slope_rank": 0.4986080586080586,
+              "z_rank": 0.5412228796844182
+            },
+            "scaler_scale": {
+              "abs_slope_rank": 0.23638201660059974,
+              "basin_depth_100m_rank": 0.16478466643561918,
+              "basin_depth_30m_rank": 0.06612311758322582,
+              "elevation_curvature_1000m": 9.755263741567359e-06,
+              "elevation_curvature_100m": 8.277672436840804e-05,
+              "elevation_curvature_300m": 4.8441851889863704e-05,
+              "elevation_relative_1000m": 0.7228687968015554,
+              "elevation_relative_100m": 0.07457590434942121,
+              "elevation_relative_300m": 0.24240156773867988,
+              "elevation_slope_1000m": 0.003598060806316203,
+              "elevation_slope_100m": 0.006563157167745687,
+              "elevation_slope_300m": 0.005578990049341751,
+              "local_low_rank": 0.20058529452486257,
+              "pool_depth_rank": 0.27927088993578386,
+              "position_rank": 0.2745402551576399,
+              "slope_rank": 0.23446487867955595,
+              "z_rank": 0.2795968499690223
+            },
+            "used_features": [
+              "z_rank",
+              "slope_rank",
+              "abs_slope_rank",
+              "position_rank",
+              "local_low_rank",
+              "pool_depth_rank",
+              "basin_depth_30m_rank",
+              "basin_depth_100m_rank",
+              "elevation_relative_100m",
+              "elevation_slope_100m",
+              "elevation_curvature_100m",
+              "elevation_relative_300m",
+              "elevation_slope_300m",
+              "elevation_curvature_300m",
+              "elevation_relative_1000m",
+              "elevation_slope_1000m",
+              "elevation_curvature_1000m"
+            ]
+          },
+          "residual_centering": "within training simple section",
+          "solver": "cholesky",
+          "target": "residual_centered_mm",
+          "target_mean": -1.8394227626925672e-17,
+          "target_std": 0.5587450882835931,
+          "training_dates": [
+            "2018-09-23"
+          ],
+          "training_rows": 338,
+          "training_sections": [
+            1250009490,
+            1250022871
+          ],
+          "used_features": [
+            "z_rank",
+            "slope_rank",
+            "abs_slope_rank",
+            "position_rank",
+            "local_low_rank",
+            "pool_depth_rank",
+            "basin_depth_30m_rank",
+            "basin_depth_100m_rank",
+            "elevation_relative_100m",
+            "elevation_slope_100m",
+            "elevation_curvature_100m",
+            "elevation_relative_300m",
+            "elevation_slope_300m",
+            "elevation_curvature_300m",
+            "elevation_relative_1000m",
+            "elevation_slope_1000m",
+            "elevation_curvature_1000m"
+          ]
+        }
+      },
+      "test_rows": 34,
+      "train_dates": [
+        "2018-09-23"
+      ],
+      "train_rows": 338,
+      "valid_temperature_train_rows": 338
+    },
+    "1250022871": {
+      "models": {
+        "basin_ranks": {
+          "alpha": 10.0,
+          "baseline_column": null,
+          "candidate": "basin_ranks",
+          "centering": "length-weighted full grid",
+          "coefficient_by_feature": {
+            "abs_slope_rank": 0.007431743881993702,
+            "basin_depth_30m_rank": 0.0350540013297943,
+            "local_low_rank": -0.022227395063270546,
+            "pool_depth_rank": 0.09188053412961641,
+            "position_rank": -0.014966462924381026,
+            "slope_rank": -0.03234114056404591,
+            "z_rank": 0.01571033537159951
+          },
+          "coefficients": [
+            0.01571033537159951,
+            -0.03234114056404591,
+            0.007431743881993702,
+            -0.014966462924381026,
+            -0.022227395063270546,
+            0.09188053412961641,
+            0.0350540013297943
+          ],
+          "dropped_columns": {
+            "basin_depth_100m_rank": "exact_duplicate"
+          },
+          "features": [
+            "z_rank",
+            "slope_rank",
+            "abs_slope_rank",
+            "position_rank",
+            "local_low_rank",
+            "pool_depth_rank",
+            "basin_depth_30m_rank",
+            "basin_depth_100m_rank"
+          ],
+          "fit_intercept": true,
+          "intercept": 6.663911840441386e-17,
+          "model_name": "s2_spatial_ridge",
+          "model_type": "Ridge",
+          "physics_metadata": {
+            "gap_policy": "own_mean",
+            "interpretation": "Effective segment-minimum thinning rate under declared environment priors; not an electrochemical CO2/H2S constant",
+            "name": "M1",
+            "priors": {
+              "age_exponent": 1.0,
+              "beta_W": 0.3,
+              "beta_v": 0.1,
+              "theta_K": 2500.0,
+              "velocity_offset_m_s": 0.1
+            },
+            "r_ref_mm_year": 0.10850260213494746,
+            "reference": {
+              "temperature_K": 284.2044309050126,
+              "velocity_m_s": 0.6278153748946925,
+              "water_fraction": 0.867581255265375
+            },
+            "training_groups": 1,
+            "training_rows": 38,
+            "weighting": "W0"
+          },
+          "prediction_policy": "delta",
+          "preprocessing": {
+            "constant_columns": [],
+            "dropped_columns": {
+              "basin_depth_100m_rank": "exact_duplicate"
+            },
+            "duplicate_columns": {
+              "basin_depth_100m_rank": {
+                "kept": "basin_depth_30m_rank",
+                "relation": "exact_duplicate"
+              }
+            },
+            "empty_columns": [],
+            "feature_order": [
+              "z_rank",
+              "slope_rank",
+              "abs_slope_rank",
+              "position_rank",
+              "local_low_rank",
+              "pool_depth_rank",
+              "basin_depth_30m_rank",
+              "basin_depth_100m_rank"
+            ],
+            "imputer": "median",
+            "imputer_statistics": {
+              "abs_slope_rank": 0.27,
+              "basin_depth_30m_rank": 0.48,
+              "local_low_rank": 0.52,
+              "pool_depth_rank": 0.44,
+              "position_rank": 0.54,
+              "slope_rank": 0.71,
+              "z_rank": 0.44
+            },
+            "scaler": "StandardScaler",
+            "scaler_mean": {
+              "abs_slope_rank": 0.48763157894736836,
+              "basin_depth_30m_rank": 0.508421052631579,
+              "local_low_rank": 0.4944736842105263,
+              "pool_depth_rank": 0.46657894736842126,
+              "position_rank": 0.5210526315789473,
+              "slope_rank": 0.5192105263157895,
+              "z_rank": 0.47447368421052627
+            },
+            "scaler_scale": {
+              "abs_slope_rank": 0.2768377276019703,
+              "basin_depth_30m_rank": 0.11132045529601924,
+              "local_low_rank": 0.28409317752808766,
+              "pool_depth_rank": 0.2876335050737261,
+              "position_rank": 0.30855170575554064,
+              "slope_rank": 0.27735955743352886,
+              "z_rank": 0.3063511690546707
+            },
+            "used_features": [
+              "z_rank",
+              "slope_rank",
+              "abs_slope_rank",
+              "position_rank",
+              "local_low_rank",
+              "pool_depth_rank",
+              "basin_depth_30m_rank"
+            ]
+          },
+          "residual_centering": "within training simple section",
+          "solver": "cholesky",
+          "target": "residual_centered_mm",
+          "target_mean": -2.1912296538654406e-17,
+          "target_std": 0.452221682877321,
+          "training_dates": [
+            "2018-09-23"
+          ],
+          "training_rows": 38,
+          "training_sections": [
+            1250009490,
+            1250011604
+          ],
+          "used_features": [
+            "z_rank",
+            "slope_rank",
+            "abs_slope_rank",
+            "position_rank",
+            "local_low_rank",
+            "pool_depth_rank",
+            "basin_depth_30m_rank"
+          ]
+        },
+        "centered_fluid_temperature": {
+          "alpha": 10.0,
+          "baseline_column": null,
+          "candidate": "centered_fluid_temperature",
+          "centering": "length-weighted full grid",
+          "coefficient_by_feature": {
+            "abs_slope_rank": -0.00014038951299135335,
+            "basin_depth_30m_rank": 0.035103220752329925,
+            "local_low_rank": -0.026553968702497027,
+            "pool_depth_rank": 0.09830206892623965,
+            "position_rank": 0.019931465354279775,
+            "prior_centered_fluid_temperature_c": 0.08033817669090151,
+            "slope_rank": -0.034194738926948125,
+            "z_rank": -0.015945487911320125
+          },
+          "coefficients": [
+            -0.015945487911320125,
+            -0.034194738926948125,
+            -0.00014038951299135335,
+            0.019931465354279775,
+            -0.026553968702497027,
+            0.09830206892623965,
+            0.035103220752329925,
+            0.08033817669090151
+          ],
+          "dropped_columns": {
+            "basin_depth_100m_rank": "exact_duplicate"
+          },
+          "features": [
+            "z_rank",
+            "slope_rank",
+            "abs_slope_rank",
+            "position_rank",
+            "local_low_rank",
+            "pool_depth_rank",
+            "basin_depth_30m_rank",
+            "basin_depth_100m_rank",
+            "prior_centered_fluid_temperature_c"
+          ],
+          "fit_intercept": true,
+          "intercept": 8.176105428389675e-17,
+          "model_name": "s2_spatial_ridge",
+          "model_type": "Ridge",
+          "physics_metadata": {
+            "gap_policy": "own_mean",
+            "interpretation": "Effective segment-minimum thinning rate under declared environment priors; not an electrochemical CO2/H2S constant",
+            "name": "M1",
+            "priors": {
+              "age_exponent": 1.0,
+              "beta_W": 0.3,
+              "beta_v": 0.1,
+              "theta_K": 2500.0,
+              "velocity_offset_m_s": 0.1
+            },
+            "r_ref_mm_year": 0.10850260213494746,
+            "reference": {
+              "temperature_K": 284.2044309050126,
+              "velocity_m_s": 0.6278153748946925,
+              "water_fraction": 0.867581255265375
+            },
+            "training_groups": 1,
+            "training_rows": 38,
+            "weighting": "W0"
+          },
+          "prediction_policy": "delta",
+          "preprocessing": {
+            "constant_columns": [],
+            "dropped_columns": {
+              "basin_depth_100m_rank": "exact_duplicate"
+            },
+            "duplicate_columns": {
+              "basin_depth_100m_rank": {
+                "kept": "basin_depth_30m_rank",
+                "relation": "exact_duplicate"
+              }
+            },
+            "empty_columns": [],
+            "feature_order": [
+              "z_rank",
+              "slope_rank",
+              "abs_slope_rank",
+              "position_rank",
+              "local_low_rank",
+              "pool_depth_rank",
+              "basin_depth_30m_rank",
+              "basin_depth_100m_rank",
+              "prior_centered_fluid_temperature_c"
+            ],
+            "imputer": "median",
+            "imputer_statistics": {
+              "abs_slope_rank": 0.27,
+              "basin_depth_30m_rank": 0.48,
+              "local_low_rank": 0.52,
+              "pool_depth_rank": 0.44,
+              "position_rank": 0.54,
+              "prior_centered_fluid_temperature_c": -0.001779238279435269,
+              "slope_rank": 0.71,
+              "z_rank": 0.44
+            },
+            "scaler": "StandardScaler",
+            "scaler_mean": {
+              "abs_slope_rank": 0.48763157894736836,
+              "basin_depth_30m_rank": 0.508421052631579,
+              "local_low_rank": 0.4944736842105263,
+              "pool_depth_rank": 0.46657894736842126,
+              "position_rank": 0.5210526315789473,
+              "prior_centered_fluid_temperature_c": -0.0015359697530054704,
+              "slope_rank": 0.5192105263157895,
+              "z_rank": 0.47447368421052627
+            },
+            "scaler_scale": {
+              "abs_slope_rank": 0.2768377276019703,
+              "basin_depth_30m_rank": 0.11132045529601924,
+              "local_low_rank": 0.28409317752808766,
+              "pool_depth_rank": 0.2876335050737261,
+              "position_rank": 0.30855170575554064,
+              "prior_centered_fluid_temperature_c": 0.01407493069498327,
+              "slope_rank": 0.27735955743352886,
+              "z_rank": 0.3063511690546707
+            },
+            "used_features": [
+              "z_rank",
+              "slope_rank",
+              "abs_slope_rank",
+              "position_rank",
+              "local_low_rank",
+              "pool_depth_rank",
+              "basin_depth_30m_rank",
+              "prior_centered_fluid_temperature_c"
+            ]
+          },
+          "residual_centering": "within training simple section",
+          "solver": "cholesky",
+          "target": "residual_centered_mm",
+          "target_mean": -2.1912296538654406e-17,
+          "target_std": 0.452221682877321,
+          "training_dates": [
+            "2018-09-23"
+          ],
+          "training_rows": 38,
+          "training_sections": [
+            1250009490,
+            1250011604
+          ],
+          "used_features": [
+            "z_rank",
+            "slope_rank",
+            "abs_slope_rank",
+            "position_rank",
+            "local_low_rank",
+            "pool_depth_rank",
+            "basin_depth_30m_rank",
+            "prior_centered_fluid_temperature_c"
+          ]
+        },
+        "local_cooling": {
+          "alpha": 10.0,
+          "baseline_column": null,
+          "candidate": "local_cooling",
+          "centering": "length-weighted full grid",
+          "coefficient_by_feature": {
+            "abs_slope_rank": 0.007027747815497873,
+            "basin_depth_30m_rank": 0.036503519584309155,
+            "local_low_rank": -0.02064111999548769,
+            "pool_depth_rank": 0.09376624948761227,
+            "position_rank": -0.015944884431987622,
+            "scenario_cooling_c": -0.00960975975000205,
+            "slope_rank": -0.0320809569601681,
+            "z_rank": 0.015930238335312562
+          },
+          "coefficients": [
+            0.015930238335312562,
+            -0.0320809569601681,
+            0.007027747815497873,
+            -0.015944884431987622,
+            -0.02064111999548769,
+            0.09376624948761227,
+            0.036503519584309155,
+            -0.00960975975000205
+          ],
+          "dropped_columns": {
+            "basin_depth_100m_rank": "exact_duplicate"
+          },
+          "features": [
+            "z_rank",
+            "slope_rank",
+            "abs_slope_rank",
+            "position_rank",
+            "local_low_rank",
+            "pool_depth_rank",
+            "basin_depth_30m_rank",
+            "basin_depth_100m_rank",
+            "scenario_cooling_c"
+          ],
+          "fit_intercept": true,
+          "intercept": 7.048450734982294e-17,
+          "model_name": "s2_spatial_ridge",
+          "model_type": "Ridge",
+          "physics_metadata": {
+            "gap_policy": "own_mean",
+            "interpretation": "Effective segment-minimum thinning rate under declared environment priors; not an electrochemical CO2/H2S constant",
+            "name": "M1",
+            "priors": {
+              "age_exponent": 1.0,
+              "beta_W": 0.3,
+              "beta_v": 0.1,
+              "theta_K": 2500.0,
+              "velocity_offset_m_s": 0.1
+            },
+            "r_ref_mm_year": 0.10850260213494746,
+            "reference": {
+              "temperature_K": 284.2044309050126,
+              "velocity_m_s": 0.6278153748946925,
+              "water_fraction": 0.867581255265375
+            },
+            "training_groups": 1,
+            "training_rows": 38,
+            "weighting": "W0"
+          },
+          "prediction_policy": "delta",
+          "preprocessing": {
+            "constant_columns": [],
+            "dropped_columns": {
+              "basin_depth_100m_rank": "exact_duplicate"
+            },
+            "duplicate_columns": {
+              "basin_depth_100m_rank": {
+                "kept": "basin_depth_30m_rank",
+                "relation": "exact_duplicate"
+              }
+            },
+            "empty_columns": [],
+            "feature_order": [
+              "z_rank",
+              "slope_rank",
+              "abs_slope_rank",
+              "position_rank",
+              "local_low_rank",
+              "pool_depth_rank",
+              "basin_depth_30m_rank",
+              "basin_depth_100m_rank",
+              "scenario_cooling_c"
+            ],
+            "imputer": "median",
+            "imputer_statistics": {
+              "abs_slope_rank": 0.27,
+              "basin_depth_30m_rank": 0.48,
+              "local_low_rank": 0.52,
+              "pool_depth_rank": 0.44,
+              "position_rank": 0.54,
+              "scenario_cooling_c": 0.0009621960057026868,
+              "slope_rank": 0.71,
+              "z_rank": 0.44
+            },
+            "scaler": "StandardScaler",
+            "scaler_mean": {
+              "abs_slope_rank": 0.48763157894736836,
+              "basin_depth_30m_rank": 0.508421052631579,
+              "local_low_rank": 0.4944736842105263,
+              "pool_depth_rank": 0.46657894736842126,
+              "position_rank": 0.5210526315789473,
+              "scenario_cooling_c": 0.0009261909194140266,
+              "slope_rank": 0.5192105263157895,
+              "z_rank": 0.47447368421052627
+            },
+            "scaler_scale": {
+              "abs_slope_rank": 0.2768377276019703,
+              "basin_depth_30m_rank": 0.11132045529601924,
+              "local_low_rank": 0.28409317752808766,
+              "pool_depth_rank": 0.2876335050737261,
+              "position_rank": 0.30855170575554064,
+              "scenario_cooling_c": 0.00013238274112337348,
+              "slope_rank": 0.27735955743352886,
+              "z_rank": 0.3063511690546707
+            },
+            "used_features": [
+              "z_rank",
+              "slope_rank",
+              "abs_slope_rank",
+              "position_rank",
+              "local_low_rank",
+              "pool_depth_rank",
+              "basin_depth_30m_rank",
+              "scenario_cooling_c"
+            ]
+          },
+          "residual_centering": "within training simple section",
+          "solver": "cholesky",
+          "target": "residual_centered_mm",
+          "target_mean": -2.1912296538654406e-17,
+          "target_std": 0.452221682877321,
+          "training_dates": [
+            "2018-09-23"
+          ],
+          "training_rows": 38,
+          "training_sections": [
+            1250009490,
+            1250011604
+          ],
+          "used_features": [
+            "z_rank",
+            "slope_rank",
+            "abs_slope_rank",
+            "position_rank",
+            "local_low_rank",
+            "pool_depth_rank",
+            "basin_depth_30m_rank",
+            "scenario_cooling_c"
+          ]
+        },
+        "multiscale_terrain": {
+          "alpha": 10.0,
+          "baseline_column": null,
+          "candidate": "multiscale_terrain",
+          "centering": "length-weighted full grid",
+          "coefficient_by_feature": {
+            "abs_slope_rank": -0.004371616311534031,
+            "basin_depth_30m_rank": 0.027942109326132624,
+            "elevation_curvature_100m": 0.014679084565044803,
+            "elevation_curvature_300m": -0.01533155226125447,
+            "elevation_relative_1000m": 0.07493900211111365,
+            "elevation_relative_100m": -0.0872187831662142,
+            "elevation_relative_300m": 0.011262724454603315,
+            "elevation_slope_1000m": -0.01721321641434184,
+            "elevation_slope_100m": -0.004799712024599284,
+            "elevation_slope_300m": 0.04038517199084779,
+            "local_low_rank": -0.015621213845113507,
+            "pool_depth_rank": 0.12975486565246433,
+            "position_rank": 0.01630395233487228,
+            "slope_rank": -0.02563920120240625,
+            "z_rank": -0.014134596436601546
+          },
+          "coefficients": [
+            -0.014134596436601546,
+            -0.02563920120240625,
+            -0.004371616311534031,
+            0.01630395233487228,
+            -0.015621213845113507,
+            0.12975486565246433,
+            0.027942109326132624,
+            -0.0872187831662142,
+            -0.004799712024599284,
+            0.014679084565044803,
+            0.011262724454603315,
+            0.04038517199084779,
+            -0.01533155226125447,
+            0.07493900211111365,
+            -0.01721321641434184
+          ],
+          "dropped_columns": {
+            "basin_depth_100m_rank": "exact_duplicate",
+            "elevation_curvature_1000m": "constant_on_train"
+          },
+          "features": [
+            "z_rank",
+            "slope_rank",
+            "abs_slope_rank",
+            "position_rank",
+            "local_low_rank",
+            "pool_depth_rank",
+            "basin_depth_30m_rank",
+            "basin_depth_100m_rank",
+            "elevation_relative_100m",
+            "elevation_slope_100m",
+            "elevation_curvature_100m",
+            "elevation_relative_300m",
+            "elevation_slope_300m",
+            "elevation_curvature_300m",
+            "elevation_relative_1000m",
+            "elevation_slope_1000m",
+            "elevation_curvature_1000m"
+          ],
+          "fit_intercept": true,
+          "intercept": 8.189236885448066e-17,
+          "model_name": "s2_spatial_ridge",
+          "model_type": "Ridge",
+          "physics_metadata": {
+            "gap_policy": "own_mean",
+            "interpretation": "Effective segment-minimum thinning rate under declared environment priors; not an electrochemical CO2/H2S constant",
+            "name": "M1",
+            "priors": {
+              "age_exponent": 1.0,
+              "beta_W": 0.3,
+              "beta_v": 0.1,
+              "theta_K": 2500.0,
+              "velocity_offset_m_s": 0.1
+            },
+            "r_ref_mm_year": 0.10850260213494746,
+            "reference": {
+              "temperature_K": 284.2044309050126,
+              "velocity_m_s": 0.6278153748946925,
+              "water_fraction": 0.867581255265375
+            },
+            "training_groups": 1,
+            "training_rows": 38,
+            "weighting": "W0"
+          },
+          "prediction_policy": "delta",
+          "preprocessing": {
+            "constant_columns": [
+              "elevation_curvature_1000m"
+            ],
+            "dropped_columns": {
+              "basin_depth_100m_rank": "exact_duplicate",
+              "elevation_curvature_1000m": "constant_on_train"
+            },
+            "duplicate_columns": {
+              "basin_depth_100m_rank": {
+                "kept": "basin_depth_30m_rank",
+                "relation": "exact_duplicate"
+              }
+            },
+            "empty_columns": [],
+            "feature_order": [
+              "z_rank",
+              "slope_rank",
+              "abs_slope_rank",
+              "position_rank",
+              "local_low_rank",
+              "pool_depth_rank",
+              "basin_depth_30m_rank",
+              "basin_depth_100m_rank",
+              "elevation_relative_100m",
+              "elevation_slope_100m",
+              "elevation_curvature_100m",
+              "elevation_relative_300m",
+              "elevation_slope_300m",
+              "elevation_curvature_300m",
+              "elevation_relative_1000m",
+              "elevation_slope_1000m",
+              "elevation_curvature_1000m"
+            ],
+            "imputer": "median",
+            "imputer_statistics": {
+              "abs_slope_rank": 0.27,
+              "basin_depth_30m_rank": 0.48,
+              "elevation_curvature_100m": -5.6179841663711035e-05,
+              "elevation_curvature_300m": 0.0,
+              "elevation_relative_1000m": -0.13882326331231098,
+              "elevation_relative_100m": 0.018115065434145095,
+              "elevation_relative_300m": -0.06249310423972787,
+              "elevation_slope_1000m": -0.007272954134532387,
+              "elevation_slope_100m": -0.006736015216261991,
+              "elevation_slope_300m": -0.0061087689728341575,
+              "local_low_rank": 0.52,
+              "pool_depth_rank": 0.44,
+              "position_rank": 0.54,
+              "slope_rank": 0.71,
+              "z_rank": 0.44
+            },
+            "scaler": "StandardScaler",
+            "scaler_mean": {
+              "abs_slope_rank": 0.48763157894736836,
+              "basin_depth_30m_rank": 0.508421052631579,
+              "elevation_curvature_100m": -4.627711418140972e-05,
+              "elevation_curvature_300m": -8.396817011475521e-07,
+              "elevation_relative_1000m": -0.13733944691233696,
+              "elevation_relative_100m": -0.015449566527661917,
+              "elevation_relative_300m": -0.03571499003024501,
+              "elevation_slope_1000m": -0.009261663942052712,
+              "elevation_slope_100m": -0.008207362577629083,
+              "elevation_slope_300m": -0.008219071995852366,
+              "local_low_rank": 0.4944736842105263,
+              "pool_depth_rank": 0.46657894736842126,
+              "position_rank": 0.5210526315789473,
+              "slope_rank": 0.5192105263157895,
+              "z_rank": 0.47447368421052627
+            },
+            "scaler_scale": {
+              "abs_slope_rank": 0.2768377276019703,
+              "basin_depth_30m_rank": 0.11132045529601924,
+              "elevation_curvature_100m": 9.455418049531213e-05,
+              "elevation_curvature_300m": 2.5591187392653698e-05,
+              "elevation_relative_1000m": 1.0736753797089265,
+              "elevation_relative_100m": 0.17436367621047885,
+              "elevation_relative_300m": 0.28046810595831834,
+              "elevation_slope_1000m": 0.0057980356102290374,
+              "elevation_slope_100m": 0.007753885964627128,
+              "elevation_slope_300m": 0.006423058082476048,
+              "local_low_rank": 0.28409317752808766,
+              "pool_depth_rank": 0.2876335050737261,
+              "position_rank": 0.30855170575554064,
+              "slope_rank": 0.27735955743352886,
+              "z_rank": 0.3063511690546707
+            },
+            "used_features": [
+              "z_rank",
+              "slope_rank",
+              "abs_slope_rank",
+              "position_rank",
+              "local_low_rank",
+              "pool_depth_rank",
+              "basin_depth_30m_rank",
+              "elevation_relative_100m",
+              "elevation_slope_100m",
+              "elevation_curvature_100m",
+              "elevation_relative_300m",
+              "elevation_slope_300m",
+              "elevation_curvature_300m",
+              "elevation_relative_1000m",
+              "elevation_slope_1000m"
+            ]
+          },
+          "residual_centering": "within training simple section",
+          "solver": "cholesky",
+          "target": "residual_centered_mm",
+          "target_mean": -2.1912296538654406e-17,
+          "target_std": 0.452221682877321,
+          "training_dates": [
+            "2018-09-23"
+          ],
+          "training_rows": 38,
+          "training_sections": [
+            1250009490,
+            1250011604
+          ],
+          "used_features": [
+            "z_rank",
+            "slope_rank",
+            "abs_slope_rank",
+            "position_rank",
+            "local_low_rank",
+            "pool_depth_rank",
+            "basin_depth_30m_rank",
+            "elevation_relative_100m",
+            "elevation_slope_100m",
+            "elevation_curvature_100m",
+            "elevation_relative_300m",
+            "elevation_slope_300m",
+            "elevation_curvature_300m",
+            "elevation_relative_1000m",
+            "elevation_slope_1000m"
+          ]
+        }
+      },
+      "test_rows": 334,
+      "train_dates": [
+        "2018-09-23"
+      ],
+      "train_rows": 38,
+      "valid_temperature_train_rows": 38
+    }
+  },
+  "S2_retro_2023": {
+    "strict_before_2022_07_01": {
+      "models": {
+        "centered_fluid_temperature": {
+          "alpha": 10.0,
+          "baseline_column": null,
+          "candidate": "centered_fluid_temperature",
+          "centering": "length-weighted full grid",
+          "coefficient_by_feature": {
+            "abs_slope": -0.0176536599235415,
+            "local_low": -0.054599987467277455,
+            "pool_depth": 0.085663954182864,
+            "position": -0.01775350058806809,
+            "prior_centered_fluid_temperature_c": -0.0027596072247617898,
+            "slope": -0.048563984675950286,
+            "z": 0.02932310280891025
+          },
+          "coefficients": [
+            0.02932310280891025,
+            -0.048563984675950286,
+            -0.0176536599235415,
+            -0.01775350058806809,
+            -0.054599987467277455,
+            0.085663954182864,
+            -0.0027596072247617898
+          ],
+          "dropped_columns": {},
+          "features": [
+            "z",
+            "slope",
+            "abs_slope",
+            "position",
+            "local_low",
+            "pool_depth",
+            "prior_centered_fluid_temperature_c"
+          ],
+          "fit_intercept": true,
+          "intercept": -1.1755954187416733e-17,
+          "model_name": "s2_spatial_ridge",
+          "model_type": "Ridge",
+          "physics_metadata": {
+            "gap_policy": "own_mean",
+            "interpretation": "Effective segment-minimum thinning rate under declared environment priors; not an electrochemical CO2/H2S constant",
+            "name": "M1",
+            "priors": {
+              "age_exponent": 1.0,
+              "beta_W": 0.3,
+              "beta_v": 0.1,
+              "theta_K": 2500.0,
+              "velocity_offset_m_s": 0.1
+            },
+            "r_ref_mm_year": 0.10555247320293284,
+            "reference": {
+              "temperature_K": 285.6940825298223,
+              "velocity_m_s": 0.5707789385004212,
+              "water_fraction": 0.867897304128054
+            },
+            "training_groups": 1,
+            "training_rows": 372,
+            "weighting": "W0"
+          },
+          "prediction_policy": "delta",
+          "preprocessing": {
+            "constant_columns": [],
+            "dropped_columns": {},
+            "duplicate_columns": {},
+            "empty_columns": [],
+            "feature_order": [
+              "z",
+              "slope",
+              "abs_slope",
+              "position",
+              "local_low",
+              "pool_depth",
+              "prior_centered_fluid_temperature_c"
+            ],
+            "imputer": "median",
+            "imputer_statistics": {
+              "abs_slope": -0.44923552528216465,
+              "local_low": 0.03987353589666821,
+              "pool_depth": -0.4561191788135494,
+              "position": -0.23401648525708696,
+              "prior_centered_fluid_temperature_c": 0.0209602170556229,
+              "slope": -0.02304655387687253,
+              "z": 0.06337914076041866
+            },
+            "scaler": "StandardScaler",
+            "scaler_mean": {
+              "abs_slope": -0.07462613643461653,
+              "local_low": -0.011665241473470495,
+              "pool_depth": -0.15571808987257665,
+              "position": -0.17145651045226365,
+              "prior_centered_fluid_temperature_c": 0.03186860699215307,
+              "slope": -0.038763229481698386,
+              "z": 0.1405633701184284
+            },
+            "scaler_scale": {
+              "abs_slope": 0.7617851488028493,
+              "local_low": 1.0327842659649233,
+              "pool_depth": 0.7886213479436135,
+              "position": 0.9635774092115081,
+              "prior_centered_fluid_temperature_c": 0.16265453821892642,
+              "slope": 0.7749841572840873,
+              "z": 0.8745879935439962
+            },
+            "used_features": [
+              "z",
+              "slope",
+              "abs_slope",
+              "position",
+              "local_low",
+              "pool_depth",
+              "prior_centered_fluid_temperature_c"
+            ]
+          },
+          "residual_centering": "within training simple section",
+          "solver": "cholesky",
+          "target": "residual_centered_mm",
+          "target_mean": -1.850371707708594e-17,
+          "target_std": 0.5510921878606806,
+          "training_dates": [
+            "2018-09-23"
+          ],
+          "training_rows": 372,
+          "training_sections": [
+            1250009490,
+            1250011604,
+            1250022871
+          ],
+          "used_features": [
+            "z",
+            "slope",
+            "abs_slope",
+            "position",
+            "local_low",
+            "pool_depth",
+            "prior_centered_fluid_temperature_c"
+          ]
+        },
+        "coordinate_only": {
+          "alpha": 10.0,
+          "baseline_column": null,
+          "candidate": "coordinate_only",
+          "centering": "length-weighted full grid",
+          "coefficient_by_feature": {
+            "position": 0.016775988481123178
+          },
+          "coefficients": [
+            0.016775988481123178
+          ],
+          "dropped_columns": {},
+          "features": [
+            "position"
+          ],
+          "fit_intercept": true,
+          "intercept": -1.850371707708594e-17,
+          "model_name": "s2_spatial_ridge",
+          "model_type": "Ridge",
+          "physics_metadata": {
+            "gap_policy": "own_mean",
+            "interpretation": "Effective segment-minimum thinning rate under declared environment priors; not an electrochemical CO2/H2S constant",
+            "name": "M1",
+            "priors": {
+              "age_exponent": 1.0,
+              "beta_W": 0.3,
+              "beta_v": 0.1,
+              "theta_K": 2500.0,
+              "velocity_offset_m_s": 0.1
+            },
+            "r_ref_mm_year": 0.10555247320293284,
+            "reference": {
+              "temperature_K": 285.6940825298223,
+              "velocity_m_s": 0.5707789385004212,
+              "water_fraction": 0.867897304128054
+            },
+            "training_groups": 1,
+            "training_rows": 372,
+            "weighting": "W0"
+          },
+          "prediction_policy": "delta",
+          "preprocessing": {
+            "constant_columns": [],
+            "dropped_columns": {},
+            "duplicate_columns": {},
+            "empty_columns": [],
+            "feature_order": [
+              "position"
+            ],
+            "imputer": "median",
+            "imputer_statistics": {
+              "position": -0.23401648525708696
+            },
+            "scaler": "StandardScaler",
+            "scaler_mean": {
+              "position": -0.17145651045226365
+            },
+            "scaler_scale": {
+              "position": 0.9635774092115081
+            },
+            "used_features": [
+              "position"
+            ]
+          },
+          "residual_centering": "within training simple section",
+          "solver": "cholesky",
+          "target": "residual_centered_mm",
+          "target_mean": -1.850371707708594e-17,
+          "target_std": 0.5510921878606806,
+          "training_dates": [
+            "2018-09-23"
+          ],
+          "training_rows": 372,
+          "training_sections": [
+            1250009490,
+            1250011604,
+            1250022871
+          ],
+          "used_features": [
+            "position"
+          ]
+        },
+        "local_cooling": {
+          "alpha": 10.0,
+          "baseline_column": null,
+          "candidate": "local_cooling",
+          "centering": "length-weighted full grid",
+          "coefficient_by_feature": {
+            "abs_slope": -0.01776978870416579,
+            "local_low": -0.054568991168197724,
+            "pool_depth": 0.08610692242520325,
+            "position": -0.016105119022433362,
+            "scenario_cooling_c": -0.0023704679963066624,
+            "slope": -0.04859940844342887,
+            "z": 0.029580113278368268
+          },
+          "coefficients": [
+            0.029580113278368268,
+            -0.04859940844342887,
+            -0.01776978870416579,
+            -0.016105119022433362,
+            -0.054568991168197724,
+            0.08610692242520325,
+            -0.0023704679963066624
+          ],
+          "dropped_columns": {},
+          "features": [
+            "z",
+            "slope",
+            "abs_slope",
+            "position",
+            "local_low",
+            "pool_depth",
+            "scenario_cooling_c"
+          ],
+          "fit_intercept": true,
+          "intercept": -1.25254265377695e-17,
+          "model_name": "s2_spatial_ridge",
+          "model_type": "Ridge",
+          "physics_metadata": {
+            "gap_policy": "own_mean",
+            "interpretation": "Effective segment-minimum thinning rate under declared environment priors; not an electrochemical CO2/H2S constant",
+            "name": "M1",
+            "priors": {
+              "age_exponent": 1.0,
+              "beta_W": 0.3,
+              "beta_v": 0.1,
+              "theta_K": 2500.0,
+              "velocity_offset_m_s": 0.1
+            },
+            "r_ref_mm_year": 0.10555247320293284,
+            "reference": {
+              "temperature_K": 285.6940825298223,
+              "velocity_m_s": 0.5707789385004212,
+              "water_fraction": 0.867897304128054
+            },
+            "training_groups": 1,
+            "training_rows": 372,
+            "weighting": "W0"
+          },
+          "prediction_policy": "delta",
+          "preprocessing": {
+            "constant_columns": [],
+            "dropped_columns": {},
+            "duplicate_columns": {},
+            "empty_columns": [],
+            "feature_order": [
+              "z",
+              "slope",
+              "abs_slope",
+              "position",
+              "local_low",
+              "pool_depth",
+              "scenario_cooling_c"
+            ],
+            "imputer": "median",
+            "imputer_statistics": {
+              "abs_slope": -0.44923552528216465,
+              "local_low": 0.03987353589666821,
+              "pool_depth": -0.4561191788135494,
+              "position": -0.23401648525708696,
+              "scenario_cooling_c": 0.0011898778438617086,
+              "slope": -0.02304655387687253,
+              "z": 0.06337914076041866
+            },
+            "scaler": "StandardScaler",
+            "scaler_mean": {
+              "abs_slope": -0.07462613643461653,
+              "local_low": -0.011665241473470495,
+              "pool_depth": -0.15571808987257665,
+              "position": -0.17145651045226365,
+              "scenario_cooling_c": 0.0011653814953227052,
+              "slope": -0.038763229481698386,
+              "z": 0.1405633701184284
+            },
+            "scaler_scale": {
+              "abs_slope": 0.7617851488028493,
+              "local_low": 1.0327842659649233,
+              "pool_depth": 0.7886213479436135,
+              "position": 0.9635774092115081,
+              "scenario_cooling_c": 9.466361338576503e-05,
+              "slope": 0.7749841572840873,
+              "z": 0.8745879935439962
+            },
+            "used_features": [
+              "z",
+              "slope",
+              "abs_slope",
+              "position",
+              "local_low",
+              "pool_depth",
+              "scenario_cooling_c"
+            ]
+          },
+          "residual_centering": "within training simple section",
+          "solver": "cholesky",
+          "target": "residual_centered_mm",
+          "target_mean": -1.850371707708594e-17,
+          "target_std": 0.5510921878606806,
+          "training_dates": [
+            "2018-09-23"
+          ],
+          "training_rows": 372,
+          "training_sections": [
+            1250009490,
+            1250011604,
+            1250022871
+          ],
+          "used_features": [
+            "z",
+            "slope",
+            "abs_slope",
+            "position",
+            "local_low",
+            "pool_depth",
+            "scenario_cooling_c"
+          ]
+        },
+        "multiscale_terrain": {
+          "alpha": 10.0,
+          "baseline_column": null,
+          "candidate": "multiscale_terrain",
+          "centering": "length-weighted full grid",
+          "coefficient_by_feature": {
+            "abs_slope": -0.015346995278197762,
+            "elevation_curvature_1000m": -0.08872057954760289,
+            "elevation_curvature_100m": -0.021194238884068538,
+            "elevation_curvature_300m": -0.05447780040361974,
+            "elevation_relative_1000m": 0.0492238919559146,
+            "elevation_relative_100m": 0.025294550314470865,
+            "elevation_relative_300m": -0.04297762231065587,
+            "elevation_slope_1000m": 0.009477864214916207,
+            "elevation_slope_100m": -0.08110930414695232,
+            "elevation_slope_300m": 0.07804039736693459,
+            "local_low": -0.04171114853221891,
+            "pool_depth": 0.08315089109963776,
+            "position": -0.030108811417471116,
+            "slope": -0.03787311421709125,
+            "z": -0.05208193523108973
+          },
+          "coefficients": [
+            -0.05208193523108973,
+            -0.03787311421709125,
+            -0.015346995278197762,
+            -0.030108811417471116,
+            -0.04171114853221891,
+            0.08315089109963776,
+            0.025294550314470865,
+            -0.08110930414695232,
+            -0.021194238884068538,
+            -0.04297762231065587,
+            0.07804039736693459,
+            -0.05447780040361974,
+            0.0492238919559146,
+            0.009477864214916207,
+            -0.08872057954760289
+          ],
+          "dropped_columns": {},
+          "features": [
+            "z",
+            "slope",
+            "abs_slope",
+            "position",
+            "local_low",
+            "pool_depth",
+            "elevation_relative_100m",
+            "elevation_slope_100m",
+            "elevation_curvature_100m",
+            "elevation_relative_300m",
+            "elevation_slope_300m",
+            "elevation_curvature_300m",
+            "elevation_relative_1000m",
+            "elevation_slope_1000m",
+            "elevation_curvature_1000m"
+          ],
+          "fit_intercept": true,
+          "intercept": -1.2241934220641133e-17,
+          "model_name": "s2_spatial_ridge",
+          "model_type": "Ridge",
+          "physics_metadata": {
+            "gap_policy": "own_mean",
+            "interpretation": "Effective segment-minimum thinning rate under declared environment priors; not an electrochemical CO2/H2S constant",
+            "name": "M1",
+            "priors": {
+              "age_exponent": 1.0,
+              "beta_W": 0.3,
+              "beta_v": 0.1,
+              "theta_K": 2500.0,
+              "velocity_offset_m_s": 0.1
+            },
+            "r_ref_mm_year": 0.10555247320293284,
+            "reference": {
+              "temperature_K": 285.6940825298223,
+              "velocity_m_s": 0.5707789385004212,
+              "water_fraction": 0.867897304128054
+            },
+            "training_groups": 1,
+            "training_rows": 372,
+            "weighting": "W0"
+          },
+          "prediction_policy": "delta",
+          "preprocessing": {
+            "constant_columns": [],
+            "dropped_columns": {},
+            "duplicate_columns": {},
+            "empty_columns": [],
+            "feature_order": [
+              "z",
+              "slope",
+              "abs_slope",
+              "position",
+              "local_low",
+              "pool_depth",
+              "elevation_relative_100m",
+              "elevation_slope_100m",
+              "elevation_curvature_100m",
+              "elevation_relative_300m",
+              "elevation_slope_300m",
+              "elevation_curvature_300m",
+              "elevation_relative_1000m",
+              "elevation_slope_1000m",
+              "elevation_curvature_1000m"
+            ],
+            "imputer": "median",
+            "imputer_statistics": {
+              "abs_slope": -0.44923552528216465,
+              "elevation_curvature_1000m": 0.0,
+              "elevation_curvature_100m": -1.6152086718828913e-07,
+              "elevation_curvature_300m": -9.589123154282134e-08,
+              "elevation_relative_1000m": -0.04070221402918861,
+              "elevation_relative_100m": 0.0,
+              "elevation_relative_300m": 0.00800348885049118,
+              "elevation_slope_1000m": -0.00018483358551337896,
+              "elevation_slope_100m": 0.0,
+              "elevation_slope_300m": -0.00011458197595263568,
+              "local_low": 0.03987353589666821,
+              "pool_depth": -0.4561191788135494,
+              "position": -0.23401648525708696,
+              "slope": -0.02304655387687253,
+              "z": 0.06337914076041866
+            },
+            "scaler": "StandardScaler",
+            "scaler_mean": {
+              "abs_slope": -0.07462613643461653,
+              "elevation_curvature_1000m": 8.822185538893482e-07,
+              "elevation_curvature_100m": -3.1039259591729644e-06,
+              "elevation_curvature_300m": 3.90736653466366e-07,
+              "elevation_relative_1000m": 0.0005647898465829642,
+              "elevation_relative_100m": 0.0006075602457659086,
+              "elevation_relative_300m": 0.004041790130897646,
+              "elevation_slope_1000m": -0.0007008303947239975,
+              "elevation_slope_100m": -0.0010564309547169439,
+              "elevation_slope_300m": -0.0009300322336508305,
+              "local_low": -0.011665241473470495,
+              "pool_depth": -0.15571808987257665,
+              "position": -0.17145651045226365,
+              "slope": -0.038763229481698386,
+              "z": 0.1405633701184284
+            },
+            "scaler_scale": {
+              "abs_slope": 0.7617851488028493,
+              "elevation_curvature_1000m": 9.302987166534226e-06,
+              "elevation_curvature_100m": 8.573817103461804e-05,
+              "elevation_curvature_300m": 4.689569463684492e-05,
+              "elevation_relative_1000m": 0.7699001026449469,
+              "elevation_relative_100m": 0.07901847100635319,
+              "elevation_relative_300m": 0.24424347710209154,
+              "elevation_slope_1000m": 0.004013432462233881,
+              "elevation_slope_100m": 0.006630026889870906,
+              "elevation_slope_300m": 0.005596486455717153,
+              "local_low": 1.0327842659649233,
+              "pool_depth": 0.7886213479436135,
+              "position": 0.9635774092115081,
+              "slope": 0.7749841572840873,
+              "z": 0.8745879935439962
+            },
+            "used_features": [
+              "z",
+              "slope",
+              "abs_slope",
+              "position",
+              "local_low",
+              "pool_depth",
+              "elevation_relative_100m",
+              "elevation_slope_100m",
+              "elevation_curvature_100m",
+              "elevation_relative_300m",
+              "elevation_slope_300m",
+              "elevation_curvature_300m",
+              "elevation_relative_1000m",
+              "elevation_slope_1000m",
+              "elevation_curvature_1000m"
+            ]
+          },
+          "residual_centering": "within training simple section",
+          "solver": "cholesky",
+          "target": "residual_centered_mm",
+          "target_mean": -1.850371707708594e-17,
+          "target_std": 0.5510921878606806,
+          "training_dates": [
+            "2018-09-23"
+          ],
+          "training_rows": 372,
+          "training_sections": [
+            1250009490,
+            1250011604,
+            1250022871
+          ],
+          "used_features": [
+            "z",
+            "slope",
+            "abs_slope",
+            "position",
+            "local_low",
+            "pool_depth",
+            "elevation_relative_100m",
+            "elevation_slope_100m",
+            "elevation_curvature_100m",
+            "elevation_relative_300m",
+            "elevation_slope_300m",
+            "elevation_curvature_300m",
+            "elevation_relative_1000m",
+            "elevation_slope_1000m",
+            "elevation_curvature_1000m"
+          ]
+        },
+        "spatial_no_temperature_centered": {
+          "alpha": 10.0,
+          "baseline_column": null,
+          "candidate": "spatial_no_temperature_centered",
+          "centering": "length-weighted full grid",
+          "coefficient_by_feature": {
+            "abs_slope": -0.017667507536957127,
+            "local_low": -0.05461999476164285,
+            "pool_depth": 0.08594768188807936,
+            "position": -0.015251520587215569,
+            "slope": -0.04853773825501767,
+            "z": 0.0294804038049897
+          },
+          "coefficients": [
+            0.0294804038049897,
+            -0.04853773825501767,
+            -0.017667507536957127,
+            -0.015251520587215569,
+            -0.05461999476164285,
+            0.08594768188807936
+          ],
+          "dropped_columns": {},
+          "features": [
+            "z",
+            "slope",
+            "abs_slope",
+            "position",
+            "local_low",
+            "pool_depth"
+          ],
+          "fit_intercept": true,
+          "intercept": -1.1523002500837628e-17,
+          "model_name": "s2_spatial_ridge",
+          "model_type": "Ridge",
+          "physics_metadata": {
+            "gap_policy": "own_mean",
+            "interpretation": "Effective segment-minimum thinning rate under declared environment priors; not an electrochemical CO2/H2S constant",
+            "name": "M1",
+            "priors": {
+              "age_exponent": 1.0,
+              "beta_W": 0.3,
+              "beta_v": 0.1,
+              "theta_K": 2500.0,
+              "velocity_offset_m_s": 0.1
+            },
+            "r_ref_mm_year": 0.10555247320293284,
+            "reference": {
+              "temperature_K": 285.6940825298223,
+              "velocity_m_s": 0.5707789385004212,
+              "water_fraction": 0.867897304128054
+            },
+            "training_groups": 1,
+            "training_rows": 372,
+            "weighting": "W0"
+          },
+          "prediction_policy": "delta",
+          "preprocessing": {
+            "constant_columns": [],
+            "dropped_columns": {},
+            "duplicate_columns": {},
+            "empty_columns": [],
+            "feature_order": [
+              "z",
+              "slope",
+              "abs_slope",
+              "position",
+              "local_low",
+              "pool_depth"
+            ],
+            "imputer": "median",
+            "imputer_statistics": {
+              "abs_slope": -0.44923552528216465,
+              "local_low": 0.03987353589666821,
+              "pool_depth": -0.4561191788135494,
+              "position": -0.23401648525708696,
+              "slope": -0.02304655387687253,
+              "z": 0.06337914076041866
+            },
+            "scaler": "StandardScaler",
+            "scaler_mean": {
+              "abs_slope": -0.07462613643461653,
+              "local_low": -0.011665241473470495,
+              "pool_depth": -0.15571808987257665,
+              "position": -0.17145651045226365,
+              "slope": -0.038763229481698386,
+              "z": 0.1405633701184284
+            },
+            "scaler_scale": {
+              "abs_slope": 0.7617851488028493,
+              "local_low": 1.0327842659649233,
+              "pool_depth": 0.7886213479436135,
+              "position": 0.9635774092115081,
+              "slope": 0.7749841572840873,
+              "z": 0.8745879935439962
+            },
+            "used_features": [
+              "z",
+              "slope",
+              "abs_slope",
+              "position",
+              "local_low",
+              "pool_depth"
+            ]
+          },
+          "residual_centering": "within training simple section",
+          "solver": "cholesky",
+          "target": "residual_centered_mm",
+          "target_mean": -1.850371707708594e-17,
+          "target_std": 0.5510921878606806,
+          "training_dates": [
+            "2018-09-23"
+          ],
+          "training_rows": 372,
+          "training_sections": [
+            1250009490,
+            1250011604,
+            1250022871
+          ],
+          "used_features": [
+            "z",
+            "slope",
+            "abs_slope",
+            "position",
+            "local_low",
+            "pool_depth"
+          ]
+        },
+        "terrain_without_coordinate": {
+          "alpha": 10.0,
+          "baseline_column": null,
+          "candidate": "terrain_without_coordinate",
+          "centering": "length-weighted full grid",
+          "coefficient_by_feature": {
+            "abs_slope": -0.017935271559426955,
+            "local_low": -0.053049225035766985,
+            "pool_depth": 0.07962401038998691,
+            "slope": -0.048398314756320136,
+            "z": 0.03604904153744972
+          },
+          "coefficients": [
+            0.03604904153744972,
+            -0.048398314756320136,
+            -0.017935271559426955,
+            -0.053049225035766985,
+            0.07962401038998691
+          ],
+          "dropped_columns": {},
+          "features": [
+            "z",
+            "slope",
+            "abs_slope",
+            "local_low",
+            "pool_depth"
+          ],
+          "fit_intercept": true,
+          "intercept": -1.1988416884399863e-17,
+          "model_name": "s2_spatial_ridge",
+          "model_type": "Ridge",
+          "physics_metadata": {
+            "gap_policy": "own_mean",
+            "interpretation": "Effective segment-minimum thinning rate under declared environment priors; not an electrochemical CO2/H2S constant",
+            "name": "M1",
+            "priors": {
+              "age_exponent": 1.0,
+              "beta_W": 0.3,
+              "beta_v": 0.1,
+              "theta_K": 2500.0,
+              "velocity_offset_m_s": 0.1
+            },
+            "r_ref_mm_year": 0.10555247320293284,
+            "reference": {
+              "temperature_K": 285.6940825298223,
+              "velocity_m_s": 0.5707789385004212,
+              "water_fraction": 0.867897304128054
+            },
+            "training_groups": 1,
+            "training_rows": 372,
+            "weighting": "W0"
+          },
+          "prediction_policy": "delta",
+          "preprocessing": {
+            "constant_columns": [],
+            "dropped_columns": {},
+            "duplicate_columns": {},
+            "empty_columns": [],
+            "feature_order": [
+              "z",
+              "slope",
+              "abs_slope",
+              "local_low",
+              "pool_depth"
+            ],
+            "imputer": "median",
+            "imputer_statistics": {
+              "abs_slope": -0.44923552528216465,
+              "local_low": 0.03987353589666821,
+              "pool_depth": -0.4561191788135494,
+              "slope": -0.02304655387687253,
+              "z": 0.06337914076041866
+            },
+            "scaler": "StandardScaler",
+            "scaler_mean": {
+              "abs_slope": -0.07462613643461653,
+              "local_low": -0.011665241473470495,
+              "pool_depth": -0.15571808987257665,
+              "slope": -0.038763229481698386,
+              "z": 0.1405633701184284
+            },
+            "scaler_scale": {
+              "abs_slope": 0.7617851488028493,
+              "local_low": 1.0327842659649233,
+              "pool_depth": 0.7886213479436135,
+              "slope": 0.7749841572840873,
+              "z": 0.8745879935439962
+            },
+            "used_features": [
+              "z",
+              "slope",
+              "abs_slope",
+              "local_low",
+              "pool_depth"
+            ]
+          },
+          "residual_centering": "within training simple section",
+          "solver": "cholesky",
+          "target": "residual_centered_mm",
+          "target_mean": -1.850371707708594e-17,
+          "target_std": 0.5510921878606806,
+          "training_dates": [
+            "2018-09-23"
+          ],
+          "training_rows": 372,
+          "training_sections": [
+            1250009490,
+            1250011604,
+            1250022871
+          ],
+          "used_features": [
+            "z",
+            "slope",
+            "abs_slope",
+            "local_low",
+            "pool_depth"
+          ]
+        }
+      },
+      "test_rows": 94,
+      "train_dates": [
+        "2018-09-23"
+      ],
+      "train_rows": 372,
+      "valid_temperature_train_rows": 372
+    }
+  }
+}

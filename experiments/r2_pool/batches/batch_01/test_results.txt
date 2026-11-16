@@ -1,0 +1,33 @@
+test_keys_and_labels_are_locked (tests.test_r2_pool_stage1.PoolProtocolTests.test_keys_and_labels_are_locked) ... ok
+test_sign_and_constant_profiles_keep_distinct_status (tests.test_r2_pool_stage1.PoolProtocolTests.test_sign_and_constant_profiles_keep_distinct_status) ... ok
+test_anchors_match_within_section_and_exclude_both_holdout_coordinates (tests.test_s1_joint_alignment.JointAlignmentTests.test_anchors_match_within_section_and_exclude_both_holdout_coordinates) ... ok
+test_maps_before_binning_with_distinct_quantile_and_valid_bounds (tests.test_s1_joint_alignment.JointAlignmentTests.test_maps_before_binning_with_distinct_quantile_and_valid_bounds) ... ok
+test_strict_export_rejects_same_day_anchors (tests.test_s1_joint_alignment.JointAlignmentTests.test_strict_export_rejects_same_day_anchors) ... ok
+test_aligned_rows_bin_before_aggregation_and_metrics_keep_common_keys (tests.test_odo_align.OdometerAlignmentTests.test_aligned_rows_bin_before_aggregation_and_metrics_keep_common_keys) ... ok
+test_joint_lengths_reject_a_mismatched_weld_and_preserve_monotonicity (tests.test_odo_align.OdometerAlignmentTests.test_joint_lengths_reject_a_mismatched_weld_and_preserve_monotonicity) ... ok
+test_missing_welds_use_signed_density_shift (tests.test_odo_align.OdometerAlignmentTests.test_missing_welds_use_signed_density_shift) ... ok
+test_archival_column_collision_preserved (tests.test_preprocessing.UnitTests.test_archival_column_collision_preserved) ... ok
+test_calendar_gap_breaks_persistence (tests.test_preprocessing.UnitTests.test_calendar_gap_breaks_persistence) ... ok
+test_checks_not_python_asserts (tests.test_preprocessing.UnitTests.test_checks_not_python_asserts) ... ok
+test_dates_parsed_individually (tests.test_preprocessing.UnitTests.test_dates_parsed_individually) ... ok
+test_good_day_breaks_anomaly_run (tests.test_preprocessing.UnitTests.test_good_day_breaks_anomaly_run) ... ok
+test_grid_and_exact_endpoint (tests.test_preprocessing.UnitTests.test_grid_and_exact_endpoint) ... ok
+test_invalid_length_rejected (tests.test_preprocessing.UnitTests.test_invalid_length_rejected) ... ok
+test_missing_source_fails_loudly (tests.test_preprocessing.UnitTests.test_missing_source_fails_loudly) ... ok
+test_mixed_numeric_separators (tests.test_preprocessing.UnitTests.test_mixed_numeric_separators) ... ok
+test_original_aliases_and_ambiguity (tests.test_preprocessing.UnitTests.test_original_aliases_and_ambiguity) ... ok
+test_persistent_run_retained_separately_per_pipe (tests.test_preprocessing.UnitTests.test_persistent_run_retained_separately_per_pipe) ... ok
+test_profile_linear_ramp_and_short_last_segment (tests.test_preprocessing.UnitTests.test_profile_linear_ramp_and_short_last_segment) ... ok
+test_profile_mean_is_distance_weighted (tests.test_preprocessing.UnitTests.test_profile_mean_is_distance_weighted) ... ok
+test_residual_above_passport_nominal_is_not_a_candidate (tests.test_preprocessing.UnitTests.test_residual_above_passport_nominal_is_not_a_candidate) ... ok
+test_segment_with_only_above_nominal_observations_is_missing (tests.test_preprocessing.UnitTests.test_segment_with_only_above_nominal_observations_is_missing) ... ok
+test_target_is_measured_residual_not_nominal_formula (tests.test_preprocessing.UnitTests.test_target_is_measured_residual_not_nominal_formula) ... ok
+test_three_calendar_days_not_three_rows (tests.test_preprocessing.UnitTests.test_three_calendar_days_not_three_rows) ... ok
+test_windows_rename_denied_falls_back_to_verified_copy (tests.test_preprocessing.UnitTests.test_windows_rename_denied_falls_back_to_verified_copy) ... ok
+test_metric_definitions_and_undefined_cases (tests.test_ingestion.MetricTests.test_metric_definitions_and_undefined_cases) ... ok
+test_top_fraction_overlap_ties_are_explicit (tests.test_ingestion.MetricTests.test_top_fraction_overlap_ties_are_explicit) ... ok
+
+----------------------------------------------------------------------
+Ran 28 tests in 0.265s
+
+OK

@@ -1,0 +1,259 @@
+{
+  "audit": {
+    "1250009490": {
+      "alpha": 10.0,
+      "baseline_column": null,
+      "coefficient_by_feature": {
+        "abs_slope_m_per_m": 0.07260684064230272,
+        "last_mm": -0.3356174443035511,
+        "local_low_m": 0.059853795126787145,
+        "relative_position": 0.08291287845745748,
+        "slope_m_per_m": 0.005218865860802275,
+        "t_mix_mean": -0.03189304754292801
+      },
+      "coefficients": [
+        -0.3356174443035511,
+        0.005218865860802275,
+        0.07260684064230272,
+        0.08291287845745748,
+        0.059853795126787145,
+        -0.03189304754292801
+      ],
+      "dropped_columns": {
+        "water_fraction_mean": "near_duplicate_abs_corr_1.00000000"
+      },
+      "features": [
+        "last_mm",
+        "slope_m_per_m",
+        "abs_slope_m_per_m",
+        "relative_position",
+        "local_low_m",
+        "t_mix_mean",
+        "water_fraction_mean"
+      ],
+      "fit_intercept": true,
+      "intercept": -0.06083829917124319,
+      "model_name": "H11",
+      "model_type": "Ridge",
+      "prediction_policy": "delta",
+      "preprocessing": {
+        "constant_columns": [],
+        "dropped_columns": {
+          "water_fraction_mean": "near_duplicate_abs_corr_1.00000000"
+        },
+        "duplicate_columns": {
+          "water_fraction_mean": {
+            "kept": "t_mix_mean",
+            "relation": "near_duplicate_abs_corr_1.00000000"
+          }
+        },
+        "empty_columns": [],
+        "feature_order": [
+          "last_mm",
+          "slope_m_per_m",
+          "abs_slope_m_per_m",
+          "relative_position",
+          "local_low_m",
+          "t_mix_mean",
+          "water_fraction_mean"
+        ],
+        "imputer": "median",
+        "imputer_statistics": {
+          "abs_slope_m_per_m": 0.0,
+          "last_mm": 6.11,
+          "local_low_m": 0.0,
+          "relative_position": 0.438228793537078,
+          "slope_m_per_m": 0.0,
+          "t_mix_mean": 20.841813913465735
+        },
+        "scaler": "StandardScaler",
+        "scaler_mean": {
+          "abs_slope_m_per_m": 0.004745688975924718,
+          "last_mm": 6.132747875354108,
+          "local_low_m": -0.007084635963697519,
+          "relative_position": 0.4603394871637879,
+          "slope_m_per_m": -0.0008346069343309188,
+          "t_mix_mean": 20.78044441348775
+        },
+        "scaler_scale": {
+          "abs_slope_m_per_m": 0.009098081254882283,
+          "last_mm": 0.5526147851253276,
+          "local_low_m": 0.10999805143504157,
+          "relative_position": 0.27378766613179795,
+          "slope_m_per_m": 0.010227417936205624,
+          "t_mix_mean": 0.19437039257744715
+        },
+        "used_features": [
+          "last_mm",
+          "slope_m_per_m",
+          "abs_slope_m_per_m",
+          "relative_position",
+          "local_low_m",
+          "t_mix_mean"
+        ]
+      },
+      "solver": "cholesky",
+      "target": "proxy_residual",
+      "target_mean": -0.06083829917124375,
+      "target_std": 0.6581459704321506,
+      "training_dates": [
+        "2022-07-06"
+      ],
+      "training_rows": 353,
+      "training_sections": [
+        1250011604,
+        1250022871
+      ],
+      "used_features": [
+        "last_mm",
+        "slope_m_per_m",
+        "abs_slope_m_per_m",
+        "relative_position",
+        "local_low_m",
+        "t_mix_mean"
+      ]
+    },
+    "1250011604": {
+      "alpha": 10.0,
+      "baseline_column": null,
+      "coefficient_by_feature": {
+        "abs_slope_m_per_m": 0.07820021462450794,
+        "last_mm": -0.32474936320741354,
+        "local_low_m": 0.0649251108357049,
+        "relative_position": 0.09194808874615612,
+        "slope_m_per_m": 0.0061228028175534886,
+        "t_mix_mean": 0.02733011271991186
+      },
+      "coefficients": [
+        -0.32474936320741354,
+        0.0061228028175534886,
+        0.07820021462450794,
+        0.09194808874615612,
+        0.0649251108357049,
+        0.02733011271991186
+      ],
+      "dropped_columns": {
+        "water_fraction_mean": "near_duplicate_abs_corr_1.00000000"
+      },
+      "features": [
+        "last_mm",
+        "slope_m_per_m",
+        "abs_slope_m_per_m",
+        "relative_position",
+        "local_low_m",
+        "t_mix_mean",
+        "water_fraction_mean"
+      ],
+      "fit_intercept": true,
+      "intercept": -0.07141505042014502,
+      "model_name": "H11",
+      "model_type": "Ridge",
+      "prediction_policy": "delta",
+      "preprocessing": {
+        "constant_columns": [],
+        "dropped_columns": {
+          "water_fraction_mean": "near_duplicate_abs_corr_1.00000000"
+        },
+        "duplicate_columns": {
+          "water_fraction_mean": {
+            "kept": "t_mix_mean",
+            "relation": "near_duplicate_abs_corr_1.00000000"
+          }
+        },
+        "empty_columns": [],
+        "feature_order": [
+          "last_mm",
+          "slope_m_per_m",
+          "abs_slope_m_per_m",
+          "relative_position",
+          "local_low_m",
+          "t_mix_mean",
+          "water_fraction_mean"
+        ],
+        "imputer": "median",
+        "imputer_statistics": {
+          "abs_slope_m_per_m": 0.0,
+          "last_mm": 6.12,
+          "local_low_m": 0.0,
+          "relative_position": 0.43251276579529,
+          "slope_m_per_m": 0.0,
+          "t_mix_mean": 20.841813913465735
+        },
+        "scaler": "StandardScaler",
+        "scaler_mean": {
+          "abs_slope_m_per_m": 0.004858387953618489,
+          "last_mm": 6.132553846153846,
+          "local_low_m": -0.00015654306210828613,
+          "relative_position": 0.4541803045717821,
+          "slope_m_per_m": -0.0006759843556445649,
+          "t_mix_mean": 20.800365240572095
+        },
+        "scaler_scale": {
+          "abs_slope_m_per_m": 0.009943850407302635,
+          "last_mm": 0.5582747608830738,
+          "local_low_m": 0.113291435089152,
+          "relative_position": 0.26923860055006327,
+          "slope_m_per_m": 0.011046589500004146,
+          "t_mix_mean": 0.3713070116395132
+        },
+        "used_features": [
+          "last_mm",
+          "slope_m_per_m",
+          "abs_slope_m_per_m",
+          "relative_position",
+          "local_low_m",
+          "t_mix_mean"
+        ]
+      },
+      "solver": "cholesky",
+      "target": "proxy_residual",
+      "target_mean": -0.07141505042014477,
+      "target_std": 0.6634695468677906,
+      "training_dates": [
+        "2022-07-06"
+      ],
+      "training_rows": 325,
+      "training_sections": [
+        1250009490,
+        1250022871
+      ],
+      "used_features": [
+        "last_mm",
+        "slope_m_per_m",
+        "abs_slope_m_per_m",
+        "relative_position",
+        "local_low_m",
+        "t_mix_mean"
+      ]
+    }
+  },
+  "primary": "spatial_residual",
+  "results": {
+    "spatial_residual": {
+      "baseline": {
+        "bias_mm": 0.3599138004092422,
+        "mae_mm": 0.37249629242650933,
+        "pearson_r": 0.676772972161371,
+        "pearson_reason": "",
+        "pearson_squared": 0.45802165584813587,
+        "prediction_std": 0.35032434843134647,
+        "rmse_mm": 0.46728941126594137
+      },
+      "candidate": {
+        "bias_mm": 0.36071726579492214,
+        "mae_mm": 0.3879375546186405,
+        "pearson_r": 0.5586799168698502,
+        "pearson_reason": "",
+        "pearson_squared": 0.31212324951370274,
+        "prediction_std": 0.21166654261700743,
+        "rmse_mm": 0.4825562802282422
+      },
+      "changed_predictions": 52,
+      "delta_pearson_squared": -0.14589840633443313,
+      "independent_parent_count": 1,
+      "max_abs_affine_residual_mm": 0.3879856861904054,
+      "n": 52,
+      "profile_count": 2
+    }
+  }
+}

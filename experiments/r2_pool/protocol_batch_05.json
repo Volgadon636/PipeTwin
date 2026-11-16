@@ -1,0 +1,56 @@
+{
+  "batch": 5,
+  "protocol_version": "r2-pool-v3",
+  "baseline_protocol": "experiments/r2_pool/protocol_photo_v3.json",
+  "baseline_root": "experiments/r2_pool/revisions/r2-pool-v3/baseline",
+  "pool_sha256": "fb3bc2bedc82de8805a0f0ad09b9889595219f376ac363bbca2ab55d9de4a11b",
+  "seed": 17,
+  "decision": "продолжай",
+  "budget": "One primary per applicable hypothesis and scheme. Fixed matched controls only. No tuning against outer labels. H24 has an input audit and no model fit if verified local phase conditions are absent.",
+  "evaluation": "Use both frozen S2 designs, the original full-grid context and physics, and identical keys, labels and train memberships. Report pooled scores for archive comparisons and each section-by-date score including undefined cases. All H21-H25 are S2-only.",
+  "reference_candidates": {
+    "S2_retro_2023": {
+      "name": "H20 terrain_without_coordinate control",
+      "predictions": "experiments/r2_pool/batches/batch_04/hypotheses/H20/S2_retro_2023/terrain_without_coordinate/validation_predictions.csv"
+    },
+    "S2_LOSO_pooled": {
+      "name": "H20 local_cooling control",
+      "predictions": "experiments/r2_pool/batches/batch_04/hypotheses/H20/S2_LOSO_pooled/local_cooling/validation_predictions.csv"
+    }
+  },
+  "hypotheses": {
+    "H21": {
+      "case": "S2",
+      "primary": "terrain_times_water_fraction",
+      "controls": ["terrain_times_constant_water"],
+      "terrain_features": ["abs_slope", "local_low", "pool_depth"],
+      "description": "Append products of approved pre-cutoff water_fraction_mean and three terrain covariates already used by the corresponding frozen Ridge. Use terrain ranks where the frozen control uses ranks. The matched control replaces water on every train and test section with the unweighted mean of training section water fractions. The resulting duplicate terrain columns measure the change due to Ridge regularization. Record environment extrapolation outside the training range."
+    },
+    "H22": {
+      "case": "S2",
+      "primary": "terrain_times_log_liquid_velocity",
+      "controls": ["terrain_times_constant_velocity"],
+      "terrain_features": ["abs_slope", "local_low", "pool_depth"],
+      "velocity_reference_m_s": 1.0,
+      "description": "Append three products of terrain and log(1+v_liquid_true_mean / 1 m/s) using filtered pre-cutoff source values on their nominal m/s scale. Treat this as a source proxy with unresolved exact phase definition. Estimate interaction coefficients without sign constraints. Use the unweighted training section mean of the transformed speed for the matched control. Record extrapolation. Do not infer a flow-regime category or multiply by a water fraction."
+    },
+    "H23": {
+      "case": "S2",
+      "primary": "integrated_thermal_exposure",
+      "controls": ["constant_conditions_thermal_exposure"],
+      "description": "Integrate T(x)-T_ground at segment centers over available pre-cutoff hydraulic intervals under the existing heat-loss scenario and length-center on the full section. Require finite inlet temperature, positive liquid density and velocity, and usable diameter. Use bounded one-day intervals. Leave unobserved time outside the feature. The control uses the same observed duration and a single profile evaluated at duration-weighted average inlet temperature and mass flow. Unavailable temporal profiles fall back to the frozen spatial prediction for the entire section."
+    },
+    "H24": {
+      "case": "S2",
+      "primary": null,
+      "controls": [],
+      "description": "Audit whether an independently specified physical model of liquid-phase distribution or wall contact can be evaluated. Require verified phase-specific flow rates or velocities in operating conditions, fluid properties needed by the selected closure, and section boundary conditions or independent wetting/holdup observations to constrain the model. No fit with unverified phase semantics or watercut as a substitute for wetting."
+    },
+    "H25": {
+      "case": "S2",
+      "primary": "centered_relative_loss",
+      "controls": ["relative_loss_uncentered_fit"],
+      "description": "Keep the frozen physics level, training rows, Ridge alpha, sample weights, features, length-weighted inference centering and thickness bounds. Train the Ridge on relative loss (nominal minus measured minimum divided by nominal) centered within each training section and date. Compare to the frozen millimeter residual and to a Ridge fit on uncentered relative loss. Predict a relative deviation on the full grid, center it there, convert to mm by multiplying by the local nominal with negative sign, and add it to the baseline physics level. Audit nomination diversity, clipping, and per-profile affine equivalence."
+    }
+  }
+}

@@ -1,0 +1,5 @@
+segment_id,truth_mm,production_fallback_mm,nearest,median,interpolation,local_linear
+17,,6.12,6.12,6.24,6.185,6.165
+247,,6.8,6.8,6.24,6.32,6.213333333
+401,,6.48,6.48,6.48,6.48,6.466666667
+455,,6.72,6.72,6.64,6.68,6.493333333

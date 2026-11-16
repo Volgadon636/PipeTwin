@@ -1,0 +1,16 @@
+{
+  "cases": [
+    "S1",
+    "S2"
+  ],
+  "description": "Fit one regularized additive model with a small quadratic spline basis per standardized feature and no interactions. Learn imputation, scaling and spline knots on train only. S1 peer uses the existing H11 residual specification and a matched linear control. S1 block and S2 use the same labels, weights, covariates, level and clipping as the corresponding frozen Ridge.",
+  "primary": "additive_splines",
+  "ridge_alpha": 10.0,
+  "spline": {
+    "degree": 2,
+    "extrapolation": "constant",
+    "include_bias": false,
+    "knots": "uniform",
+    "n_knots": 3
+  }
+}

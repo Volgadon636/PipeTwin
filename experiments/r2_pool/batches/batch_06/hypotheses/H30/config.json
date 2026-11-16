@@ -1,0 +1,15 @@
+{
+  "cases": [
+    "S1",
+    "S2"
+  ],
+  "catboost": {
+    "depth": 2,
+    "iterations": 120,
+    "l2_leaf_reg": 10,
+    "learning_rate": 0.03,
+    "thread_count": 1
+  },
+  "description": "Fit one shallow CatBoost on the same training target, features, preprocessing and weights as the paired linear control, with fixed seed and no outer validation set. S1 peer uses the H11 residual specification. S1 block and S2 use the corresponding frozen Ridge specification, changing only the regressor.",
+  "primary": "shallow_catboost"
+}

@@ -1,0 +1,195 @@
+{
+  "primary": "centered_fluid_temperature",
+  "schemes": {
+    "S2_LOSO_pooled": {
+      "centered_fluid_temperature": {
+        "baseline": {
+          "bias_mm": -0.1210487387347141,
+          "mae_mm": 0.44962603423569575,
+          "pearson_r": 0.09359841726762078,
+          "pearson_reason": "",
+          "pearson_squared": 0.008760663715003652,
+          "prediction_std": 0.11126193619242135,
+          "rmse_mm": 0.5654739387860497
+        },
+        "candidate": {
+          "bias_mm": 0.052172394739608684,
+          "mae_mm": 0.8429664564329212,
+          "pearson_r": -0.029934825395638662,
+          "pearson_reason": "",
+          "pearson_squared": 0.0008960937714673734,
+          "prediction_std": 0.8678362942417759,
+          "rmse_mm": 1.0434249798117967
+        },
+        "changed_predictions": 372,
+        "delta_pearson_squared": -0.007864569943536279,
+        "delta_vs_reference_candidate": -0.007864569926823066,
+        "independent_parent_count": 1,
+        "max_abs_affine_residual_mm": 1.8587009997893214,
+        "n": 372,
+        "profile_count": 3,
+        "reference_candidate": {
+          "name": "basin_ranks",
+          "r2": 0.00876066369829044
+        }
+      },
+      "local_cooling": {
+        "baseline": {
+          "bias_mm": -0.1210487387347141,
+          "mae_mm": 0.44962603423569575,
+          "pearson_r": 0.09359841726762078,
+          "pearson_reason": "",
+          "pearson_squared": 0.008760663715003652,
+          "prediction_std": 0.11126193619242135,
+          "rmse_mm": 0.5654739387860497
+        },
+        "candidate": {
+          "bias_mm": -0.12135157695643281,
+          "mae_mm": 0.44986334127427646,
+          "pearson_r": 0.09422235859400621,
+          "pearson_reason": "",
+          "pearson_squared": 0.008877852859017496,
+          "prediction_std": 0.11307463148043903,
+          "rmse_mm": 0.5656640784313997
+        },
+        "changed_predictions": 372,
+        "delta_pearson_squared": 0.00011718914401384443,
+        "delta_vs_reference_candidate": 0.00011718916072705685,
+        "independent_parent_count": 1,
+        "max_abs_affine_residual_mm": 0.08160208766595112,
+        "n": 372,
+        "profile_count": 3,
+        "reference_candidate": {
+          "name": "basin_ranks",
+          "r2": 0.00876066369829044
+        }
+      }
+    },
+    "S2_retro_2023": {
+      "centered_fluid_temperature": {
+        "baseline": {
+          "bias_mm": 0.31034341905133306,
+          "mae_mm": 0.314582974780016,
+          "pearson_r": 0.20206882895630215,
+          "pearson_reason": "",
+          "pearson_squared": 0.0408318116357713,
+          "prediction_std": 0.10514386144950326,
+          "rmse_mm": 0.45898722934590697
+        },
+        "candidate": {
+          "bias_mm": 0.31023936965248505,
+          "mae_mm": 0.31445392508857806,
+          "pearson_r": 0.2022333726204641,
+          "pearson_reason": "",
+          "pearson_squared": 0.040898337001447474,
+          "prediction_std": 0.10490101860465559,
+          "rmse_mm": 0.45888510734674715
+        },
+        "changed_predictions": 22,
+        "delta_pearson_squared": 6.652536567617467e-05,
+        "delta_vs_reference_candidate": 6.652536567489098e-05,
+        "independent_parent_count": 1,
+        "max_abs_affine_residual_mm": 0.003695934997358208,
+        "n": 94,
+        "profile_count": 7,
+        "reference_candidate": {
+          "name": "spatial_no_temperature_centered",
+          "r2": 0.04083181163577258
+        }
+      },
+      "coordinate_only": {
+        "baseline": {
+          "bias_mm": 0.31034341905133306,
+          "mae_mm": 0.314582974780016,
+          "pearson_r": 0.20206882895630215,
+          "pearson_reason": "",
+          "pearson_squared": 0.0408318116357713,
+          "prediction_std": 0.10514386144950326,
+          "rmse_mm": 0.45898722934590697
+        },
+        "candidate": {
+          "bias_mm": 0.2925432120291437,
+          "mae_mm": 0.2925432120291437,
+          "pearson_r": 0.0602244199963483,
+          "pearson_reason": "",
+          "pearson_squared": 0.0036269807638965564,
+          "prediction_std": 0.016527985183050282,
+          "rmse_mm": 0.45062413735935913
+        },
+        "changed_predictions": 94,
+        "delta_pearson_squared": -0.03720483087187474,
+        "delta_vs_reference_candidate": -0.037204830871876024,
+        "independent_parent_count": 1,
+        "max_abs_affine_residual_mm": 0.039476209743065205,
+        "n": 94,
+        "profile_count": 7,
+        "reference_candidate": {
+          "name": "spatial_no_temperature_centered",
+          "r2": 0.04083181163577258
+        }
+      },
+      "local_cooling": {
+        "baseline": {
+          "bias_mm": 0.31034341905133306,
+          "mae_mm": 0.314582974780016,
+          "pearson_r": 0.20206882895630215,
+          "pearson_reason": "",
+          "pearson_squared": 0.0408318116357713,
+          "prediction_std": 0.10514386144950326,
+          "rmse_mm": 0.45898722934590697
+        },
+        "candidate": {
+          "bias_mm": 0.31010761892829686,
+          "mae_mm": 0.3142610846137735,
+          "pearson_r": 0.20141046591072864,
+          "pearson_reason": "",
+          "pearson_squared": 0.04056617577837678,
+          "prediction_std": 0.10480185386988522,
+          "rmse_mm": 0.4588529283293564
+        },
+        "changed_predictions": 22,
+        "delta_pearson_squared": -0.00026563585739451667,
+        "delta_vs_reference_candidate": -0.00026563585739580037,
+        "independent_parent_count": 1,
+        "max_abs_affine_residual_mm": 0.0047647367344305636,
+        "n": 94,
+        "profile_count": 7,
+        "reference_candidate": {
+          "name": "spatial_no_temperature_centered",
+          "r2": 0.04083181163577258
+        }
+      },
+      "terrain_without_coordinate": {
+        "baseline": {
+          "bias_mm": 0.31034341905133306,
+          "mae_mm": 0.314582974780016,
+          "pearson_r": 0.20206882895630215,
+          "pearson_reason": "",
+          "pearson_squared": 0.0408318116357713,
+          "prediction_std": 0.10514386144950326,
+          "rmse_mm": 0.45898722934590697
+        },
+        "candidate": {
+          "bias_mm": 0.3155075056554202,
+          "mae_mm": 0.31971713167634397,
+          "pearson_r": 0.21528807445567832,
+          "pearson_reason": "",
+          "pearson_squared": 0.046348955002833696,
+          "prediction_std": 0.10135004130561713,
+          "rmse_mm": 0.46122037431206353
+        },
+        "changed_predictions": 94,
+        "delta_pearson_squared": 0.0055171433670623965,
+        "delta_vs_reference_candidate": 0.005517143367061113,
+        "independent_parent_count": 1,
+        "max_abs_affine_residual_mm": 0.033542006285364856,
+        "n": 94,
+        "profile_count": 7,
+        "reference_candidate": {
+          "name": "spatial_no_temperature_centered",
+          "r2": 0.04083181163577258
+        }
+      }
+    }
+  }
+}

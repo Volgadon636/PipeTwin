@@ -1,0 +1,138 @@
+[
+  {
+    "model": "spatial_no_temperature_centered",
+    "n": 334,
+    "pooled_r2": 0.0007518233277715952,
+    "profile_r2": 0.0007518233277715952,
+    "profiles": [
+      {
+        "baseline_bias": -0.018939443685628728,
+        "baseline_mae": 0.4536965369251498,
+        "baseline_pearson_r": -0.027419396925745746,
+        "baseline_r2": 0.0007518233277715952,
+        "baseline_rmse": 0.5717334529971096,
+        "baseline_status": "defined",
+        "baseline_std": 0.09309453354633247,
+        "candidate_bias": -0.018939443685628728,
+        "candidate_mae": 0.4536965369251498,
+        "candidate_pearson_r": -0.027419396925745746,
+        "candidate_r2": 0.0007518233277715952,
+        "candidate_rmse": 0.5717334529971096,
+        "candidate_status": "defined",
+        "candidate_std": 0.09309453354633247,
+        "case": "S2",
+        "changed_predictions": 0,
+        "delta_pearson_squared": 0.0,
+        "id": 1250022871,
+        "independent_parent_count": 1,
+        "n": 334,
+        "prediction_date": "2018-09-23",
+        "weak_profile": false
+      }
+    ],
+    "source": "experiments/s2_terrain/200m_50m_oof.csv",
+    "source_sha256": "0604428b1ca1369b80b5c9f3ef8eb9cfeb56faef484b2597e19296b55f0e3be8"
+  },
+  {
+    "model": "basin_ranks",
+    "n": 334,
+    "pooled_r2": 0.0002566479416213178,
+    "profile_r2": 0.0002566479416213178,
+    "profiles": [
+      {
+        "baseline_bias": -0.02102094776347304,
+        "baseline_mae": 0.45398844361976054,
+        "baseline_pearson_r": 0.01602023537971018,
+        "baseline_r2": 0.0002566479416213178,
+        "baseline_rmse": 0.5698964602811001,
+        "baseline_status": "defined",
+        "baseline_std": 0.10611130360307162,
+        "candidate_bias": -0.02102094776347304,
+        "candidate_mae": 0.45398844361976054,
+        "candidate_pearson_r": 0.01602023537971018,
+        "candidate_r2": 0.0002566479416213178,
+        "candidate_rmse": 0.5698964602811001,
+        "candidate_status": "defined",
+        "candidate_std": 0.10611130360307162,
+        "case": "S2",
+        "changed_predictions": 0,
+        "delta_pearson_squared": 0.0,
+        "id": 1250022871,
+        "independent_parent_count": 1,
+        "n": 334,
+        "prediction_date": "2018-09-23",
+        "weak_profile": false
+      }
+    ],
+    "source": "experiments/s2_terrain/200m_50m_oof.csv",
+    "source_sha256": "0604428b1ca1369b80b5c9f3ef8eb9cfeb56faef484b2597e19296b55f0e3be8"
+  },
+  {
+    "model": "profile_ranks",
+    "n": 334,
+    "pooled_r2": 0.00023116656853520973,
+    "profile_r2": 0.00023116656853520973,
+    "profiles": [
+      {
+        "baseline_bias": -0.021573248242514966,
+        "baseline_mae": 0.4540912066976048,
+        "baseline_pearson_r": -0.015204162868609693,
+        "baseline_r2": 0.00023116656853520973,
+        "baseline_rmse": 0.5699439971514385,
+        "baseline_status": "defined",
+        "baseline_std": 0.08870342263195631,
+        "candidate_bias": -0.021573248242514966,
+        "candidate_mae": 0.4540912066976048,
+        "candidate_pearson_r": -0.015204162868609693,
+        "candidate_r2": 0.00023116656853520973,
+        "candidate_rmse": 0.5699439971514385,
+        "candidate_status": "defined",
+        "candidate_std": 0.08870342263195631,
+        "case": "S2",
+        "changed_predictions": 0,
+        "delta_pearson_squared": 0.0,
+        "id": 1250022871,
+        "independent_parent_count": 1,
+        "n": 334,
+        "prediction_date": "2018-09-23",
+        "weak_profile": false
+      }
+    ],
+    "source": "experiments/s2_terrain/200m_50m_oof.csv",
+    "source_sha256": "0604428b1ca1369b80b5c9f3ef8eb9cfeb56faef484b2597e19296b55f0e3be8"
+  },
+  {
+    "model": "basin_depth",
+    "n": 334,
+    "pooled_r2": 3.388282747475729e-05,
+    "profile_r2": 3.388282747475729e-05,
+    "profiles": [
+      {
+        "baseline_bias": -0.016855411347305387,
+        "baseline_mae": 0.45228812471257485,
+        "baseline_pearson_r": -0.005820895762230869,
+        "baseline_r2": 3.388282747475729e-05,
+        "baseline_rmse": 0.5706787637309374,
+        "baseline_status": "defined",
+        "baseline_std": 0.09877329081399713,
+        "candidate_bias": -0.016855411347305387,
+        "candidate_mae": 0.45228812471257485,
+        "candidate_pearson_r": -0.005820895762230869,
+        "candidate_r2": 3.388282747475729e-05,
+        "candidate_rmse": 0.5706787637309374,
+        "candidate_status": "defined",
+        "candidate_std": 0.09877329081399713,
+        "case": "S2",
+        "changed_predictions": 0,
+        "delta_pearson_squared": 0.0,
+        "id": 1250022871,
+        "independent_parent_count": 1,
+        "n": 334,
+        "prediction_date": "2018-09-23",
+        "weak_profile": false
+      }
+    ],
+    "source": "experiments/s2_terrain/200m_50m_oof.csv",
+    "source_sha256": "0604428b1ca1369b80b5c9f3ef8eb9cfeb56faef484b2597e19296b55f0e3be8"
+  }
+]

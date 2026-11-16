@@ -1,0 +1,255 @@
+test_configuration_defaults_are_off (test_incremental.ElevationTests.test_configuration_defaults_are_off) ... ok
+test_physical_window_edges_and_pipe_boundary (test_incremental.ElevationTests.test_physical_window_edges_and_pipe_boundary) ... ok
+test_boundary_missing_and_asof (test_incremental.HistoricalDefectStatsTests.test_boundary_missing_and_asof) ... ok
+test_future_vtd_cannot_change_earlier_cutoff (test_ingestion.AsOfTests.test_future_vtd_cannot_change_earlier_cutoff) ... ok
+test_prior_inspection_min_available_before_cutoff (test_ingestion.AsOfTests.test_prior_inspection_min_available_before_cutoff) ... ok
+test_submission_exact_columns_keys_and_priority_separation (test_ingestion.ExportTests.test_submission_exact_columns_keys_and_priority_separation) ... ok
+test_template_inspection_rejects_techmod_named_sample_result (test_ingestion.ExportTests.test_template_inspection_rejects_techmod_named_sample_result) ... ok
+test_every_raw_column_and_unknown_status_is_present (test_ingestion.FeatureInventoryTests.test_every_raw_column_and_unknown_status_is_present) ... ok
+test_leakage_audit_rejects_cold_start_diagnostic_values (test_ingestion.FeatureInventoryTests.test_leakage_audit_rejects_cold_start_diagnostic_values) ... ok
+test_real_supplied_notes_are_idempotent_and_leave_unknowns_unknown (test_ingestion.MentorWorkflowTests.test_real_supplied_notes_are_idempotent_and_leave_unknowns_unknown) ... C:\Program Files\PipeTwin\src\mentor_ingest.py:450: FutureWarning: The behavior of DataFrame concatenation with empty or all-NA entries is deprecated. In a future version, this will no longer exclude empty or all-NA columns when determining the result dtypes. To retain the old behavior, exclude the relevant entries before the concat operation.
+  history_requirements = pd.concat([previous_requirements, requirements_frame], ignore_index=True) if previous_requirements is not None else requirements_frame.copy()
+C:\Program Files\PipeTwin\src\mentor_ingest.py:451: FutureWarning: The behavior of DataFrame concatenation with empty or all-NA entries is deprecated. In a future version, this will no longer exclude empty or all-NA columns when determining the result dtypes. To retain the old behavior, exclude the relevant entries before the concat operation.
+  history_decisions = pd.concat([previous_decisions, decisions_frame], ignore_index=True) if previous_decisions is not None else decisions_frame.copy()
+ok
+test_source_revision_preserves_old_interpretation_and_flags_conflict (test_ingestion.MentorWorkflowTests.test_source_revision_preserves_old_interpretation_and_flags_conflict) ... C:\Program Files\PipeTwin\src\mentor_ingest.py:451: FutureWarning: The behavior of DataFrame concatenation with empty or all-NA entries is deprecated. In a future version, this will no longer exclude empty or all-NA columns when determining the result dtypes. To retain the old behavior, exclude the relevant entries before the concat operation.
+  history_decisions = pd.concat([previous_decisions, decisions_frame], ignore_index=True) if previous_decisions is not None else decisions_frame.copy()
+C:\Program Files\PipeTwin\src\mentor_ingest.py:451: FutureWarning: The behavior of DataFrame concatenation with empty or all-NA entries is deprecated. In a future version, this will no longer exclude empty or all-NA columns when determining the result dtypes. To retain the old behavior, exclude the relevant entries before the concat operation.
+  history_decisions = pd.concat([previous_decisions, decisions_frame], ignore_index=True) if previous_decisions is not None else decisions_frame.copy()
+ok
+test_metric_definitions_and_undefined_cases (test_ingestion.MetricTests.test_metric_definitions_and_undefined_cases) ... ok
+test_top_fraction_overlap_ties_are_explicit (test_ingestion.MetricTests.test_top_fraction_overlap_ties_are_explicit) ... ok
+test_ambiguous_delimiter_is_not_guessed (test_ingestion.ParsingTests.test_ambiguous_delimiter_is_not_guessed) ... ok
+test_cp1251_bom_quoted_newline_and_semicolon (test_ingestion.ParsingTests.test_cp1251_bom_quoted_newline_and_semicolon) ... ok
+test_dates_are_parsed_per_value_and_ambiguous_slash_is_quarantined (test_ingestion.ParsingTests.test_dates_are_parsed_per_value_and_ambiguous_slash_is_quarantined) ... ok
+test_decimal_comma_censored_zero_and_ambiguous (test_ingestion.ParsingTests.test_decimal_comma_censored_zero_and_ambiguous) ... ok
+test_duplicate_headers_and_malformed_records (test_ingestion.ParsingTests.test_duplicate_headers_and_malformed_records) ... ok
+test_identifiers_exact_and_leading_zero_preserved (test_ingestion.ParsingTests.test_identifiers_exact_and_leading_zero_preserved) ... ok
+test_heat_loss_cools_and_preserves_continuity (test_ingestion.PhysicsTests.test_heat_loss_cools_and_preserves_continuity) ... ok
+test_reynolds_dynamic_and_kinematic_agree_in_si (test_ingestion.PhysicsTests.test_reynolds_dynamic_and_kinematic_agree_in_si) ... ok
+test_zero_flow_rejected_and_scenario_is_isolated (test_ingestion.PhysicsTests.test_zero_flow_rejected_and_scenario_is_isolated) ... ok
+test_cache_key_depends_on_all_dependencies (test_ingestion.PublicationAndCacheTests.test_cache_key_depends_on_all_dependencies) ... ok
+test_publish_failure_restores_previous_tree_and_manifest_last (test_ingestion.PublicationAndCacheTests.test_publish_failure_restores_previous_tree_and_manifest_last) ... ok
+test_explicit_override_resolves_conflict (test_ingestion.SourceClassificationTests.test_explicit_override_resolves_conflict) ... ok
+test_identical_copies_are_deduplicated_but_conflicts_fail (test_ingestion.SourceClassificationTests.test_identical_copies_are_deduplicated_but_conflicts_fail) ... ok
+test_identical_numbered_monitoring_copies (test_ingestion.SourceClassificationTests.test_identical_numbered_monitoring_copies) ... ok
+test_missing_required_fails_and_optional_is_explicit (test_ingestion.SourceClassificationTests.test_missing_required_fails_and_optional_is_explicit) ... ok
+test_regime_filename_can_mean_either_source_but_schema_decides (test_ingestion.SourceClassificationTests.test_regime_filename_can_mean_either_source_but_schema_decides) ... ok
+test_sample_result_named_file_is_classified_by_contents (test_ingestion.SourceClassificationTests.test_sample_result_named_file_is_classified_by_contents) ... ok
+test_semantic_types_survive_organizer_names (test_ingestion.SourceClassificationTests.test_semantic_types_survive_organizer_names) ... ok
+test_source_bytes_are_not_modified (test_ingestion.SourceClassificationTests.test_source_bytes_are_not_modified) ... ok
+test_all_historical_features_precede_their_own_label_dates (test_ml.ArtifactTests.test_all_historical_features_precede_their_own_label_dates) ... ok
+test_checksum_failure_is_not_silently_accepted (test_ml.ArtifactTests.test_checksum_failure_is_not_silently_accepted) ... ok
+test_cold_training_stops_before_july_2022_inspection (test_ml.ArtifactTests.test_cold_training_stops_before_july_2022_inspection) ... ok
+test_current_data_has_no_independent_forward_fit_before_targets (test_ml.ArtifactTests.test_current_data_has_no_independent_forward_fit_before_targets) ... ok
+test_future_hydraulics_and_diagnostics_cannot_change_snapshot (test_ml.ArtifactTests.test_future_hydraulics_and_diagnostics_cannot_change_snapshot) ... ok
+test_future_labels_cannot_change_production_fitted_rate (test_ml.ArtifactTests.test_future_labels_cannot_change_production_fitted_rate) ... ok
+test_missing_prior_fallback_is_explicit_and_uses_prior_timestamp (test_ml.ArtifactTests.test_missing_prior_fallback_is_explicit_and_uses_prior_timestamp) ... ok
+test_published_grid_and_features_reused_exactly (test_ml.ArtifactTests.test_published_grid_and_features_reused_exactly) ... ok
+test_cold_constant_ranking_discloses_ties (test_ml.ModelTests.test_cold_constant_ranking_discloses_ties) ... ok
+test_constant_rate_units_and_no_label_clipping (test_ml.ModelTests.test_constant_rate_units_and_no_label_clipping) ... ok
+test_exposure_holds_exact_duration_and_preserves_gap (test_ml.ModelTests.test_exposure_holds_exact_duration_and_preserves_gap) ... ok
+test_invalid_row_stops_prior_interval (test_ml.ModelTests.test_invalid_row_stops_prior_interval) ... ok
+test_missing_exposure_is_unknown_not_zero_measurement (test_ml.ModelTests.test_missing_exposure_is_unknown_not_zero_measurement) ... ok
+test_parent_balance_not_simple_section_balance (test_ml.ModelTests.test_parent_balance_not_simple_section_balance) ... ok
+test_pearson_square_is_not_r2 (test_ml.ModelTests.test_pearson_square_is_not_r2) ... ok
+test_physics_fit_recovers_constant_synthetic_rate_and_gates_groups (test_ml.ModelTests.test_physics_fit_recovers_constant_synthetic_rate_and_gates_groups) ... ok
+test_submission_rejects_duplicate_extra_missing_and_nonfinite (test_ml.ModelTests.test_submission_rejects_duplicate_extra_missing_and_nonfinite) ... ok
+test_inspection_density_uses_observation_counts (test_ml_v2.PairAndSerializationTests.test_inspection_density_uses_observation_counts) ... ok
+test_json_safe_removes_nan (test_ml_v2.PairAndSerializationTests.test_json_safe_removes_nan) ... ok
+test_pair_rate_is_nonnegative (test_ml_v2.PairAndSerializationTests.test_pair_rate_is_nonnegative) ... ok
+test_post_cutoff_pairs_are_never_used (test_ml_v2.PairAndSerializationTests.test_post_cutoff_pairs_are_never_used) ... ok
+test_environment_factors_have_physical_sign (test_ml_v2.PhysicsTests.test_environment_factors_have_physical_sign) ... ok
+test_gap_policies_bracket_unknown_history (test_ml_v2.PhysicsTests.test_gap_policies_bracket_unknown_history) ... ok
+test_parent_balanced_weights (test_ml_v2.PhysicsTests.test_parent_balanced_weights) ... ok
+test_rate_fit_recovers_synthetic_constant_rate (test_ml_v2.PhysicsTests.test_rate_fit_recovers_synthetic_constant_rate) ... ok
+test_rate_is_nonnegative_when_labels_thicken (test_ml_v2.PhysicsTests.test_rate_is_nonnegative_when_labels_thicken) ... ok
+test_gate_blocks_negative_evidence (test_ml_v2.SpatialTests.test_gate_blocks_negative_evidence) ... ok
+test_ridge_recovers_synthetic_spatial_signal_out_of_campaign (test_ml_v2.SpatialTests.test_ridge_recovers_synthetic_spatial_signal_out_of_campaign) ... ok
+test_spatial_features_are_finite_and_contract_correct (test_ml_v2.SpatialTests.test_spatial_features_are_finite_and_contract_correct) ... ok
+test_s1_predict_without_training_labels (test_next_cycle.ArtifactSerialization.test_s1_predict_without_training_labels) ... ok
+test_s1_save_load_predict_same (test_next_cycle.ArtifactSerialization.test_s1_save_load_predict_same) ... ok
+test_duplicate_constant_empty_and_order (test_next_cycle.PreprocessingAndWeights.test_duplicate_constant_empty_and_order) ... ok
+test_weights_are_train_only_and_group_totals (test_next_cycle.PreprocessingAndWeights.test_weights_are_train_only_and_group_totals) ... ok
+test_block_diagnostic_uses_buffer (test_next_cycle.S1Invariants.test_block_diagnostic_uses_buffer) ... ok
+test_future_labels_do_not_change_fold_model (test_next_cycle.S1Invariants.test_future_labels_do_not_change_fold_model) ... ok
+test_last_based_core_ignores_hidden_min_change (test_next_cycle.S1Invariants.test_last_based_core_ignores_hidden_min_change) ... ok
+test_metrics_constant_is_undefined_and_r2_separate (test_next_cycle.S1Invariants.test_metrics_constant_is_undefined_and_r2_separate) ... ok
+test_rate_forecast_uses_actual_dt_and_differs_from_delta (test_next_cycle.S1Invariants.test_rate_forecast_uses_actual_dt_and_differs_from_delta) ... ok
+test_artifact_predict_without_labels (test_next_cycle.S2Contracts.test_artifact_predict_without_labels) ... ok
+test_assembly_fixed_halves (test_next_cycle.S2Contracts.test_assembly_fixed_halves) ... ok
+test_strict_eligibility_is_as_of (test_next_cycle.S2Contracts.test_strict_eligibility_is_as_of) ... ok
+test_target_has_no_vtd_history (test_next_cycle.S2Contracts.test_target_has_no_vtd_history) ... ok
+test_temperature_scenario_sign_and_invalid_flow (test_next_cycle.S2Contracts.test_temperature_scenario_sign_and_invalid_flow) ... ok
+test_aligned_rows_bin_before_aggregation_and_metrics_keep_common_keys (test_odo_align.OdometerAlignmentTests.test_aligned_rows_bin_before_aggregation_and_metrics_keep_common_keys) ... ok
+test_joint_lengths_reject_a_mismatched_weld_and_preserve_monotonicity (test_odo_align.OdometerAlignmentTests.test_joint_lengths_reject_a_mismatched_weld_and_preserve_monotonicity) ... ok
+test_missing_welds_use_signed_density_shift (test_odo_align.OdometerAlignmentTests.test_missing_welds_use_signed_density_shift) ... ok
+1/6 Classifying sources by schema, then parsing loss-aware...
+2/6 Constructing complete grids and observed thickness histories...
+3/6 Building cutoff-specific features and calendar-day filters...
+4/6 Building inventories, lineage, quality and leakage audits...
+5/6 Validating measurements, boundaries, cutoffs and coverage...
+6/6 Writing, round-trip checking and failure-safe publishing...
+PASS: 306 checks, 25 CSV/Parquet pairs; 2000 target segments; 113.1035s.
+test_bad_coordinates_quarantined_not_clipped (test_preprocessing.DatasetTests.test_bad_coordinates_quarantined_not_clipped) ... ok
+test_cold_start_excludes_diagnostic_history (test_preprocessing.DatasetTests.test_cold_start_excludes_diagnostic_history) ... ok
+test_diameter_in_millimeters (test_preprocessing.DatasetTests.test_diameter_in_millimeters) ... ok
+test_empty_past_history_stays_missing (test_preprocessing.DatasetTests.test_empty_past_history_stays_missing) ... ok
+test_every_export_roundtrip_checked (test_preprocessing.DatasetTests.test_every_export_roundtrip_checked) ... ok
+test_fraction_depth_normalized_without_altering_residual (test_preprocessing.DatasetTests.test_fraction_depth_normalized_without_altering_residual) ... ok
+test_future_injection_cannot_change_features (test_preprocessing.DatasetTests.test_future_injection_cannot_change_features) ... ok
+test_impossible_quantities_not_rescued_by_persistence (test_preprocessing.DatasetTests.test_impossible_quantities_not_rescued_by_persistence) ... ok
+test_invalid_chronology_not_training_target (test_preprocessing.DatasetTests.test_invalid_chronology_not_training_target) ... ok
+test_monitoring_conflict_not_joined (test_preprocessing.DatasetTests.test_monitoring_conflict_not_joined) ... ok
+test_original_measured_minimum (test_preprocessing.DatasetTests.test_original_measured_minimum) ... ok
+test_passport_nominal_ceiling_applied_before_segment_minimum (test_preprocessing.DatasetTests.test_passport_nominal_ceiling_applied_before_segment_minimum) ... ok
+test_questionable_uzt_kept_but_not_used (test_preprocessing.DatasetTests.test_questionable_uzt_kept_but_not_used) ... ok
+test_target_grid_exact_keys (test_preprocessing.DatasetTests.test_target_grid_exact_keys) ... ok
+test_third_future_day_does_not_validate_two_day_anomaly (test_preprocessing.DatasetTests.test_third_future_day_does_not_validate_two_day_anomaly) ... ok
+test_archival_column_collision_preserved (test_preprocessing.UnitTests.test_archival_column_collision_preserved) ... ok
+test_calendar_gap_breaks_persistence (test_preprocessing.UnitTests.test_calendar_gap_breaks_persistence) ... ok
+test_checks_not_python_asserts (test_preprocessing.UnitTests.test_checks_not_python_asserts) ... ok
+test_dates_parsed_individually (test_preprocessing.UnitTests.test_dates_parsed_individually) ... ok
+test_good_day_breaks_anomaly_run (test_preprocessing.UnitTests.test_good_day_breaks_anomaly_run) ... ok
+test_grid_and_exact_endpoint (test_preprocessing.UnitTests.test_grid_and_exact_endpoint) ... ok
+test_invalid_length_rejected (test_preprocessing.UnitTests.test_invalid_length_rejected) ... ok
+test_missing_source_fails_loudly (test_preprocessing.UnitTests.test_missing_source_fails_loudly) ... ok
+test_mixed_numeric_separators (test_preprocessing.UnitTests.test_mixed_numeric_separators) ... ok
+test_original_aliases_and_ambiguity (test_preprocessing.UnitTests.test_original_aliases_and_ambiguity) ... ok
+test_persistent_run_retained_separately_per_pipe (test_preprocessing.UnitTests.test_persistent_run_retained_separately_per_pipe) ... ok
+test_profile_linear_ramp_and_short_last_segment (test_preprocessing.UnitTests.test_profile_linear_ramp_and_short_last_segment) ... ok
+test_profile_mean_is_distance_weighted (test_preprocessing.UnitTests.test_profile_mean_is_distance_weighted) ... ok
+test_residual_above_passport_nominal_is_not_a_candidate (test_preprocessing.UnitTests.test_residual_above_passport_nominal_is_not_a_candidate) ... ok
+test_segment_with_only_above_nominal_observations_is_missing (test_preprocessing.UnitTests.test_segment_with_only_above_nominal_observations_is_missing) ... ok
+test_target_is_measured_residual_not_nominal_formula (test_preprocessing.UnitTests.test_target_is_measured_residual_not_nominal_formula) ... ok
+test_three_calendar_days_not_three_rows (test_preprocessing.UnitTests.test_three_calendar_days_not_three_rows) ... ok
+test_windows_rename_denied_falls_back_to_verified_copy (test_preprocessing.UnitTests.test_windows_rename_denied_falls_back_to_verified_copy) ... ok
+test_export_disallows_h31_for_s1_and_wrong_cutoff (test_production_forecast.ProductionForecastGuards.test_export_disallows_h31_for_s1_and_wrong_cutoff) ... ok
+test_failed_export_does_not_publish_or_overwrite_results (test_production_forecast.ProductionForecastGuards.test_failed_export_does_not_publish_or_overwrite_results) ... ok
+test_h18_features_ignore_future_ineligible_and_other_section_points (test_production_forecast.ProductionForecastGuards.test_h18_features_ignore_future_ineligible_and_other_section_points) ... ok
+test_h18_fit_and_predict_reject_cold_start (test_production_forecast.ProductionForecastGuards.test_h18_fit_and_predict_reject_cold_start) ... ok
+test_h18_rejects_partial_grid_before_normalization (test_production_forecast.ProductionForecastGuards.test_h18_rejects_partial_grid_before_normalization) ... ok
+test_h31_rejects_shortened_grid_before_centering (test_production_forecast.ProductionForecastGuards.test_h31_rejects_shortened_grid_before_centering) ... ok
+test_h31_training_rejects_target_inspections_and_cutoff_date (test_production_forecast.ProductionForecastGuards.test_h31_training_rejects_target_inspections_and_cutoff_date) ... ok
+test_validation_reports_undefined_and_negative_correlations (test_production_forecast.ProductionForecastGuards.test_validation_reports_undefined_and_negative_correlations) ... ok
+test_keys_and_labels_are_locked (test_r2_pool_stage1.PoolProtocolTests.test_keys_and_labels_are_locked) ... ok
+test_sign_and_constant_profiles_keep_distinct_status (test_r2_pool_stage1.PoolProtocolTests.test_sign_and_constant_profiles_keep_distinct_status) ... ok
+test_h09_uses_two_direct_prior_measurements (test_r2_pool_stage2.Stage2ContractTests.test_h09_uses_two_direct_prior_measurements) ... ok
+test_h10_excludes_held_section_and_on_or_after_cutoff (test_r2_pool_stage2.Stage2ContractTests.test_h10_excludes_held_section_and_on_or_after_cutoff) ... ok
+test_guarded_smoothing_keeps_local_troughs_and_fallback (test_r2_pool_stage3.Stage3Contracts.test_guarded_smoothing_keeps_local_troughs_and_fallback) ... ok
+test_imputer_uses_only_remaining_samples_and_respects_nearest_tie (test_r2_pool_stage3.Stage3Contracts.test_imputer_uses_only_remaining_samples_and_respects_nearest_tie) ... ok
+test_neighbor_windows_exclude_own_value_and_missing_donors (test_r2_pool_stage3.Stage3Contracts.test_neighbor_windows_exclude_own_value_and_missing_donors) ... ok
+test_outer_training_excludes_held_section_and_cutoff_day (test_r2_pool_stage3.Stage3Contracts.test_outer_training_excludes_held_section_and_cutoff_day) ... ok
+test_invalid_temperature_profile_uses_the_entire_frozen_profile (test_r2_pool_stage4.Stage4Contracts.test_invalid_temperature_profile_uses_the_entire_frozen_profile) ... ok
+test_prior_point_summary_uses_one_section_and_earlier_campaign (test_r2_pool_stage4.Stage4Contracts.test_prior_point_summary_uses_one_section_and_earlier_campaign) ... ok
+test_fractional_loss_keeps_full_grid_center_and_converts_to_mm (test_r2_pool_stage5.Stage5Contracts.test_fractional_loss_keeps_full_grid_center_and_converts_to_mm) ... ok
+test_thermal_integral_distinguishes_histories_with_equal_mean_inputs (test_r2_pool_stage5.Stage5Contracts.test_thermal_integral_distinguishes_histories_with_equal_mean_inputs) ... ok
+test_donor_matching_rejects_cutoff_day_hydraulics (test_r2_pool_stage6.Stage6Contracts.test_donor_matching_rejects_cutoff_day_hydraulics) ... ok
+test_donor_ranking_uses_descriptor_not_model_or_number_of_rows (test_r2_pool_stage6.Stage6Contracts.test_donor_ranking_uses_descriptor_not_model_or_number_of_rows) ... ok
+test_training_centering_groups_by_section_and_campaign (test_r2_pool_stage6.Stage6Contracts.test_training_centering_groups_by_section_and_campaign) ... ok
+test_inner_oof_weight_is_chosen_on_profile_scores (test_r2_pool_stage7.Stage7Contracts.test_inner_oof_weight_is_chosen_on_profile_scores) ... ok
+test_multitask_design_preserves_the_s1_only_gram_matrix (test_r2_pool_stage7.Stage7Contracts.test_multitask_design_preserves_the_s1_only_gram_matrix) ... ok
+test_spatial_covariance_zero_variance_matches_paired_ridge (test_r2_pool_stage7.Stage7Contracts.test_spatial_covariance_zero_variance_matches_paired_ridge) ... ok
+test_squared_pearson_derivative_matches_numerical_gradient (test_r2_pool_stage7.Stage7Contracts.test_squared_pearson_derivative_matches_numerical_gradient) ... ok
+test_selection_never_ignores_an_undefined_fold_to_create_a_winner (test_r2_pool_stage8.Stage8Contracts.test_selection_never_ignores_an_undefined_fold_to_create_a_winner) ... ok
+test_shape_calibration_preserves_prediction_grid_moments (test_r2_pool_stage8.Stage8Contracts.test_shape_calibration_preserves_prediction_grid_moments) ... ok
+test_soft_and_robust_bounds_keep_segment_nominal (test_r2_pool_stage8.Stage8Contracts.test_soft_and_robust_bounds_keep_segment_nominal) ... ok
+test_cross_section_calibration_uses_only_the_other_section (test_s1_alignment.AlignmentTests.test_cross_section_calibration_uses_only_the_other_section) ... ok
+test_offsets_apply_before_binning_and_exclude_future_and_outside_rows (test_s1_alignment.AlignmentTests.test_offsets_apply_before_binning_and_exclude_future_and_outside_rows) ... ok
+test_anchors_match_within_section_and_exclude_both_holdout_coordinates (test_s1_joint_alignment.JointAlignmentTests.test_anchors_match_within_section_and_exclude_both_holdout_coordinates) ... ok
+test_maps_before_binning_with_distinct_quantile_and_valid_bounds (test_s1_joint_alignment.JointAlignmentTests.test_maps_before_binning_with_distinct_quantile_and_valid_bounds) ... ok
+test_strict_export_rejects_same_day_anchors (test_s1_joint_alignment.JointAlignmentTests.test_strict_export_rejects_same_day_anchors) ... ok
+test_predict_loads_artifact_without_training_labels (test_s1abc.ArtifactInferenceWithoutLabels.test_predict_loads_artifact_without_training_labels) ... ok
+test_s2_join_is_exact_and_keeps_s2 (test_s1abc.BoundsAndSubmission.test_s2_join_is_exact_and_keeps_s2) ... ok
+test_upper_bound_policy_is_model_specific (test_s1abc.BoundsAndSubmission.test_upper_bound_policy_is_model_specific) ... ok
+test_2022_snapshot_excludes_the_2022_answer (test_s1abc.RealDataContracts.test_2022_snapshot_excludes_the_2022_answer) ... ok
+test_fallback_is_documented_and_stays_in_pipe (test_s1abc.RealDataContracts.test_fallback_is_documented_and_stays_in_pipe) ... ok
+test_history_has_no_two_prior_campaign_test (test_s1abc.RealDataContracts.test_history_has_no_two_prior_campaign_test) ... ok
+test_lopo_models_do_not_change_when_heldout_labels_are_poisoned (test_s1abc.RealDataContracts.test_lopo_models_do_not_change_when_heldout_labels_are_poisoned) ... ok
+test_minimum_tie_uses_earliest_source_date (test_s1abc.RealDataContracts.test_minimum_tie_uses_earliest_source_date) ... ok
+test_production_prediction_ignores_extra_rows_on_cutoff (test_s1abc.RealDataContracts.test_production_prediction_ignores_extra_rows_on_cutoff) ... ok
+test_s1a_last_and_s1b_prior_minimum (test_s1abc.RealDataContracts.test_s1a_last_and_s1b_prior_minimum) ... ok
+test_s1a_matches_previous_v2_on_same_keys (test_s1abc.RealDataContracts.test_s1a_matches_previous_v2_on_same_keys) ... ok
+test_s1b_ignores_poisoned_rows_at_or_after_cutoff (test_s1abc.RealDataContracts.test_s1b_ignores_poisoned_rows_at_or_after_cutoff) ... ok
+test_target_key_counts_and_no_target_grid_checksum_workaround (test_s1abc.RealDataContracts.test_target_key_counts_and_no_target_grid_checksum_workaround) ... ok
+test_ridge_learns_synthetic_correction_and_is_not_baseline (test_s1abc.SyntheticPreprocessingAndModel.test_ridge_learns_synthetic_correction_and_is_not_baseline) ... ok
+test_save_load_predict_is_equivalent (test_s1abc.SyntheticPreprocessingAndModel.test_save_load_predict_is_equivalent) ... ok
+test_train_only_imputation_constant_and_empty_columns (test_s1abc.SyntheticPreprocessingAndModel.test_train_only_imputation_constant_and_empty_columns) ... ok
+test_basin_depth_and_ranks_use_the_complete_geometry (test_s2_terrain.TerrainTests.test_basin_depth_and_ranks_use_the_complete_geometry) ... ok
+test_selection_rejects_negative_r_and_dominant_section_regression (test_s2_terrain.TerrainTests.test_selection_rejects_negative_r_and_dominant_section_regression) ... ok
+test_ablation_uses_same_keys_and_compares_measured_truth (test_segment_quantiles.SegmentQuantileTests.test_ablation_uses_same_keys_and_compares_measured_truth) ... ok
+test_measured_precedence_sparse_defects_and_coverage (test_segment_quantiles.SegmentQuantileTests.test_measured_precedence_sparse_defects_and_coverage) ... ok
+test_snapshot_excludes_cutoff_day_and_unobserved_cold_start (test_segment_quantiles.SegmentQuantileTests.test_snapshot_excludes_cutoff_day_and_unobserved_cold_start) ... ok
+test_stage_2_s2_fixes (unittest.loader._FailedTest.test_stage_2_s2_fixes) ... ERROR
+test_stage_3_s1 (unittest.loader._FailedTest.test_stage_3_s1) ... ERROR
+test_stage_4_s1 (unittest.loader._FailedTest.test_stage_4_s1) ... ERROR
+test_stage_5_temporal (unittest.loader._FailedTest.test_stage_5_temporal) ... ERROR
+test_candidate_roles_and_hashes (test_stage_6_freeze.Stage6FreezeContracts.test_candidate_roles_and_hashes) ... ok
+test_explicit_pairs_and_contracts (test_stage_6_freeze.Stage6FreezeContracts.test_explicit_pairs_and_contracts) ... ok
+test_external_evaluator_separate_truth (test_stage_6_freeze.Stage6FreezeContracts.test_external_evaluator_separate_truth) ... ok
+test_recheck_new_process_and_no_fit (test_stage_6_freeze.Stage6FreezeContracts.test_recheck_new_process_and_no_fit) ... ok
+
+======================================================================
+ERROR: test_stage_2_s2_fixes (unittest.loader._FailedTest.test_stage_2_s2_fixes)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_stage_2_s2_fixes
+Traceback (most recent call last):
+  File "C:\Users\�������������\AppData\Local\Programs\Python\Python312\Lib\unittest\loader.py", line 396, in _find_test_path
+    module = self._get_module_from_name(name)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\�������������\AppData\Local\Programs\Python\Python312\Lib\unittest\loader.py", line 339, in _get_module_from_name
+    __import__(name)
+  File "C:\Program Files\PipeTwin\tests\test_stage_2_s2_fixes.py", line 23, in <module>
+    raise RuntimeError('Set PIPETWIN_NEXT_DATA_ROOT to the verified LF data_generation root')
+RuntimeError: Set PIPETWIN_NEXT_DATA_ROOT to the verified LF data_generation root
+
+
+======================================================================
+ERROR: test_stage_3_s1 (unittest.loader._FailedTest.test_stage_3_s1)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_stage_3_s1
+Traceback (most recent call last):
+  File "C:\Users\�������������\AppData\Local\Programs\Python\Python312\Lib\unittest\loader.py", line 396, in _find_test_path
+    module = self._get_module_from_name(name)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\�������������\AppData\Local\Programs\Python\Python312\Lib\unittest\loader.py", line 339, in _get_module_from_name
+    __import__(name)
+  File "C:\Program Files\PipeTwin\tests\test_stage_3_s1.py", line 18, in <module>
+    raise RuntimeError('Set PIPETWIN_NEXT_DATA_ROOT to the verified LF data_generation root')
+RuntimeError: Set PIPETWIN_NEXT_DATA_ROOT to the verified LF data_generation root
+
+
+======================================================================
+ERROR: test_stage_4_s1 (unittest.loader._FailedTest.test_stage_4_s1)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_stage_4_s1
+Traceback (most recent call last):
+  File "C:\Users\�������������\AppData\Local\Programs\Python\Python312\Lib\unittest\loader.py", line 396, in _find_test_path
+    module = self._get_module_from_name(name)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\�������������\AppData\Local\Programs\Python\Python312\Lib\unittest\loader.py", line 339, in _get_module_from_name
+    __import__(name)
+  File "C:\Program Files\PipeTwin\tests\test_stage_4_s1.py", line 14, in <module>
+    raise RuntimeError('Set PIPETWIN_NEXT_DATA_ROOT to the verified LF data_generation root')
+RuntimeError: Set PIPETWIN_NEXT_DATA_ROOT to the verified LF data_generation root
+
+
+======================================================================
+ERROR: test_stage_5_temporal (unittest.loader._FailedTest.test_stage_5_temporal)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_stage_5_temporal
+Traceback (most recent call last):
+  File "C:\Users\�������������\AppData\Local\Programs\Python\Python312\Lib\unittest\loader.py", line 396, in _find_test_path
+    module = self._get_module_from_name(name)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\�������������\AppData\Local\Programs\Python\Python312\Lib\unittest\loader.py", line 339, in _get_module_from_name
+    __import__(name)
+  File "C:\Program Files\PipeTwin\tests\test_stage_5_temporal.py", line 14, in <module>
+    raise RuntimeError('Set PIPETWIN_NEXT_DATA_ROOT to the verified LF data_generation root')
+RuntimeError: Set PIPETWIN_NEXT_DATA_ROOT to the verified LF data_generation root
+
+
+----------------------------------------------------------------------
+Ran 175 tests in 139.842s
+
+FAILED (errors=4)

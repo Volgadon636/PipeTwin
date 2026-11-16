@@ -1,0 +1,11 @@
+{
+  "description": "Joint Ridge with shared terrain coefficients and case-specific deviations. Independent case offsets and equal total case weights. Shared and private terrain blocks each carry 1/sqrt(2) so the S1-only Gram matrix equals the matched linear control. S2 training predictors contain terrain only. For S1 peer exclude the outer section from both tasks and use only preceding S2 labels. For S2 require any S1 training labels strictly before the frozen 2022-07-01 training boundary.",
+  "primary": "shared_terrain_multitask",
+  "ridge_alpha": 10.0,
+  "shared_features": {
+    "abs_slope_m_per_m": "abs_slope",
+    "local_low_m": "local_low",
+    "relative_position": "position",
+    "slope_m_per_m": "slope"
+  }
+}

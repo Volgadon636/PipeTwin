@@ -1,0 +1,7 @@
+{
+  "description": "Fit the direction of the same linear correction by minimizing mean within-section/campaign 1 minus squared Pearson over the final level plus correction. Fit preprocessing and initialize on training using the matched Ridge. Preserve the L2 norm of the matched coefficient vector to identify scale. Keep groups with at least six rows and varying truth. Use no clipping inside the differentiable objective; enforce frozen clipping in evaluation. Fixed initialization and one optimizer call per fold.",
+  "ftol": 1e-10,
+  "maximum_iterations": 250,
+  "minimum_profile_rows": 6,
+  "primary": "profile_pearson_loss"
+}

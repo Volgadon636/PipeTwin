@@ -1,0 +1,108 @@
+{
+  "primary": "crossfit_isotonic_shape",
+  "schemes": {
+    "S1_peer_2023": {
+      "crossfit_isotonic_shape": {
+        "baseline": {
+          "bias_mm": 0.35991380040924165,
+          "mae_mm": 0.372496292426509,
+          "pearson_r": 0.6767729721613717,
+          "pearson_reason": "",
+          "pearson_squared": 0.45802165584813676,
+          "prediction_std": 0.3503243484313467,
+          "rmse_mm": 0.46728941126594076
+        },
+        "candidate": {
+          "bias_mm": 0.36653955431011054,
+          "mae_mm": 0.37598147840524054,
+          "pearson_r": 0.6758510055500814,
+          "pearson_reason": "",
+          "pearson_squared": 0.4567745817030561,
+          "prediction_std": 0.3525060453909848,
+          "rmse_mm": 0.4730920320000587
+        },
+        "changed_predictions": 52,
+        "delta_pearson_squared": -0.0012470741450806289,
+        "delta_vs_H12": -0.016712972088435807,
+        "delta_vs_reference_candidate": -0.058372728678982744,
+        "independent_parent_count": 1,
+        "max_abs_affine_residual_mm": 0.15943412898354747,
+        "n": 52,
+        "profile_count": 2,
+        "reference_candidate": {
+          "name": "H16 squared-loss diagnostic control",
+          "predictions": "experiments/r2_pool/batches/batch_04/hypotheses/H16/S1_peer_2023/squared_loss_matched/validation_predictions.csv",
+          "r2": 0.5151473103820389
+        }
+      }
+    },
+    "S2_LOSO_pooled": {
+      "crossfit_isotonic_shape": {
+        "baseline": {
+          "bias_mm": -0.1210487387347141,
+          "mae_mm": 0.44962603423569575,
+          "pearson_r": 0.09359841726762078,
+          "pearson_reason": "",
+          "pearson_squared": 0.008760663715003652,
+          "prediction_std": 0.11126193619242135,
+          "rmse_mm": 0.5654739387860497
+        },
+        "candidate": {
+          "bias_mm": -0.12107834259177538,
+          "mae_mm": 0.4496482701396435,
+          "pearson_r": 0.09370822097963853,
+          "pearson_reason": "",
+          "pearson_squared": 0.008781230679168767,
+          "prediction_std": 0.11122901425354942,
+          "rmse_mm": 0.5654648927553565
+        },
+        "changed_predictions": 4,
+        "delta_pearson_squared": 2.0566964165115442e-05,
+        "delta_vs_reference_candidate": -0.004739554483690588,
+        "independent_parent_count": 1,
+        "max_abs_affine_residual_mm": 0.009596433499524437,
+        "n": 372,
+        "profile_count": 3,
+        "reference_candidate": {
+          "name": "H27 largest-donor diagnostic control",
+          "predictions": "experiments/r2_pool/batches/batch_06/hypotheses/H27/S2_LOSO_pooled/largest_section_donor/validation_predictions.csv",
+          "r2": 0.013520785162859355
+        }
+      }
+    },
+    "S2_retro_2023": {
+      "crossfit_isotonic_shape": {
+        "baseline": {
+          "bias_mm": 0.31034341905133306,
+          "mae_mm": 0.314582974780016,
+          "pearson_r": 0.20206882895630215,
+          "pearson_reason": "",
+          "pearson_squared": 0.0408318116357713,
+          "prediction_std": 0.10514386144950326,
+          "rmse_mm": 0.45898722934590697
+        },
+        "candidate": {
+          "bias_mm": 0.31034341905133356,
+          "mae_mm": 0.3145829747800164,
+          "pearson_r": 0.20206882895630535,
+          "pearson_reason": "",
+          "pearson_squared": 0.04083181163577258,
+          "prediction_std": 0.10514386144950313,
+          "rmse_mm": 0.45898722934590697
+        },
+        "changed_predictions": 0,
+        "delta_pearson_squared": 1.2836953722228372e-15,
+        "delta_vs_reference_candidate": -0.018706354600802,
+        "independent_parent_count": 1,
+        "max_abs_affine_residual_mm": 7.105427357601002e-15,
+        "n": 94,
+        "profile_count": 7,
+        "reference_candidate": {
+          "name": "H31 spatial Gaussian process",
+          "predictions": "experiments/r2_pool/batches/batch_07/hypotheses/H31/S2_retro_2023/spatial_gaussian_process/validation_predictions.csv",
+          "r2": 0.05953816623657458
+        }
+      }
+    }
+  }
+}

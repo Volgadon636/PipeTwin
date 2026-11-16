@@ -1,0 +1,77 @@
+{
+  "S1": {
+    "anchors_sha256": null,
+    "applied_h18_rows": 508,
+    "coordinate_source": "published_distance",
+    "direct_rows": 508,
+    "fallback_rows": 17,
+    "observations_outside_grid": 0,
+    "prior_source_date": "2022-07-06"
+  },
+  "S2": {
+    "h31_clipped_rows": 0,
+    "rows": 1475,
+    "scenario": "cold_start"
+  },
+  "baseline_replay_max_abs_mm": {
+    "S1": 0.0,
+    "S2": 0.0
+  },
+  "bundle_sha256": "8599d618f141425381a5ce21978ddc27a3b6b8ee4f84f70d76153fad8580e6aa",
+  "code_sha256": {
+    "production.py": "cf921b17bd9860d6f2d8dc95c12c4f1881c4f86c190eaaf62c095aa45d38aac3",
+    "production_models.py": "132d4eeb15919ae069822eeaa46d6750c328291198b1f78cf49753d40204029a"
+  },
+  "environment": {
+    "catboost": "1.2.10",
+    "executable": "C:\\Users\\Администратор\\Documents\\PipeTwin_s1abc_env\\Scripts\\python.exe",
+    "joblib": "1.5.3",
+    "matplotlib": "3.10.8",
+    "numpy": "2.3.5",
+    "pandas": "2.2.3",
+    "platform": "Windows-11-10.0.26300-SP0",
+    "pyarrow": "21.0.0",
+    "python": "3.12.8",
+    "scikit-learn": "1.7.2",
+    "scipy": "1.18.1"
+  },
+  "input_sha256": {
+    "data/cleaned/passport.csv": "4d5245d8a7702cba3f739538726325972db1afc44e36df956200725b879a01ab",
+    "data/cleaned/regime.csv": "65e53ebe1a154c5a7a3b6fa5806f1d8e83122c985e1049f38162e316eb95cb79",
+    "data/cleaned/tech_mode_for_embedings_with_length_with_temperatures_ids16.csv": "a0e58cf2deb665f5c99efc71416edeed68c33334d865ceee1f566a8df031ebfd",
+    "data/cleaned/vtd.csv": "e52f3a5c573078cd03689cc8774047a01fa3176192db9b84b095b45f5c752ab2",
+    "processed/profile_by_segment.csv": "3e4b4994a3f3da4fa04c403dcac85bf4484ca9feca68103665db6cc39f2d04ca",
+    "processed/segments_grid.csv": "55cce38f655fc47eaabf2255d4e74e31e6d81f774f95df40f47f23adcfeb48a3",
+    "processed/target_features.csv": "1ff33a4842b63f9b255afb189bb36676d202b5ebaacca9c925d18885abbac767",
+    "processed/uzt_by_segment.csv": "aed45ba93f914f2f4d66f02c31d4b144cd865d69bfc6113a94f1fb1689e364ef",
+    "processed/vtd_by_segment.csv": "ab6e17e9f5f286b884b5a3f47ef9109061ccf55c880f961f2cc5c149fd7ccc5e"
+  },
+  "methods": {
+    "S1": "H18",
+    "S2": "H31"
+  },
+  "outputs_sha256": {
+    "ablation/baseline.csv": "ee07ed00d86c253250ac8fb3022b2e853cff3fbf5220ab3c3aed38370ee7a478",
+    "ablation/h18_h31.csv": "5fb9bf836c0b9423b0ce33be58d5235866a3bc74a0549c975b37098112011d68",
+    "ablation/h18_only.csv": "6031b664831bf9a84703f165928bcdbdd98af29519d3624e667af920b5c3857c",
+    "ablation/h31_only.csv": "c96c5d55835a6d52facaa66a28cb408f696027b092aad00a44e11cd39b9e34da",
+    "previous_result.csv": "ee07ed00d86c253250ac8fb3022b2e853cff3fbf5220ab3c3aed38370ee7a478",
+    "result.csv": "5fb9bf836c0b9423b0ce33be58d5235866a3bc74a0549c975b37098112011d68"
+  },
+  "preprocessing_manifest_sha256": "1d99d2f71b51a825e101fbce09f90f9f0ed309b4c68b9921f5e7188b40f6cf43",
+  "previous_result_source": "experiments/incremental_cycle/e0/result.csv",
+  "submission_validation": {
+    "bounded": true,
+    "finite_mm": true,
+    "rows": 2000,
+    "template": {
+      "available": false,
+      "key_set_compared": false,
+      "status": "no_template_supplied",
+      "validation_grid": "derived_target_grid"
+    },
+    "unique_keys": true,
+    "upper_bound_column": "h0_mm"
+  },
+  "version": "pipetwin-production-v1"
+}
